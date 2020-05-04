@@ -1,0 +1,13 @@
+body {
+    max-width: 300mm;
+    margin: auto;
+    padding: auto;
+
+    line-height: 1.6;
+    font-size: x-large;
+    background-color: #fdf6e3;
+}
+
+audio { display: block }
+
+h1,h2,h3 { line-height: normal }
