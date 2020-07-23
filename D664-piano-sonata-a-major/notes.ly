@@ -129,6 +129,41 @@ LHandI = \relative c {
     cs,8 fs as cs d,8 fs b d |
     e,,8-. cs'( e a) e,8-. e'( gs b) |
     <a, e' a>4 r4 r2
-    \obr %% original line
+    \obr %% original line 5
+    \clef treble
+    \tuplet 3/2 { a''8( cs a e' cs a gs b gs e' b gs) } |
+    \tuplet 3/2 { fs( b fs ds' b fs e b' gs e' b gs) } |
+    \tuplet 3/2 { a( c a e' c a g b g e' b g) } |
+    \tuplet 3/2 { f( a f ds' a f e gs e b' gs e) } |
+    \obr %% original line 6
+    \clef bass
+    \tuplet 3/2 { gs,8( b gs e' b gs) gs( b gs e' b gs) } |
+    \tuplet 3/2 { a( b a ds b a) gs( b gs e' b gs) } |
+    \tuplet 3/2 { gs( b gs e' b gs) e( gs e cs' gs e) } |
+    \tuplet 3/2 { a,( a' cs b, a' b) gs-. \clef treble gs'( b d? b gs) }|
+    \opr %% original page 3, line 1
+    a2 \tuplet 3/2 { r8 gs( b d b gs) } |
+    a2 <es gs>4 \tuplet 3/2 { e8 fs cs' } |
+    <ds, fs>4 \tuplet 3/2 { d8 e b' } <cs, e>4 <c e>8 <c e>8 |
+    <b e gs>2 <b fs' a>2 |
+    \clef bass
+    \tuplet 3/2 { gs'8 gs( ds e b gs e-\cresc gs ds e d b) } |
+    \obr %% original line 2
+    a4-\mf a8 a a4( g8) r8 |
+    \tuplet 3/2 { r8 fs( g a g fs } e4 g8) r8 |
+    a'4 a8 a a4( g8) r8 |
+    \tuplet 3/2 { r8 f( g af g f) } f4( e8) r8 |
+    \obr %% original line 3
+    ds4-> ds'8 ds d,4-> d'8 d |
+    cs,4-> cs'8 cs c,4-> c'8 c8 | % Switches to treble on last two eighths
+    b2( e8) r8 r4 |              % until this bar.
+    b,2( e8) r8 r4 |
+    \obr %% original line 4
+    e4-.( e8-. e-.) e4-.( e8-. e-.) |
+    d'4->-.( d8-. d-.) cs4->-.( c8-. c-.) |
+    b4\(( a) gs8\) r8 r4 |
+    e,4-.( e8-. e-.) e4-.( e8-. e-.) |
+    d'4->-.( d8-. d-.) cs4->-.( c8-. c-.) |
+    b2( e8) r8
   }
 }
