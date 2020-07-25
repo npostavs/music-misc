@@ -63,18 +63,20 @@ RHandImIAa = \relative c' {
   e2( \< d8. cs16 \! b8 fs) |
   e'2( \> d8. cs16 \! b8 fs') |
   fs4( a,8) r8 fs'8.( ds16 e8 gs,) |
-  \set Staff.beatStructure = #'(1 1 1 1)
-  \tuplet 3/2 { a8( b cs d e fs gs a b cs d ds) } |
 }
 
 RHandImIC = \relative c' {
+  \set Staff.beatStructure = #'(1 1 1 1)
+  \tuplet 3/2 { a'='8( b cs d e fs gs a b cs d ds) } |
   \obr %% original line 5
-  e''='''4 e8 e e4( b8) r |
+  e='''4 e8 e e4( b8) r |
   \tuplet 3/2 { a8( b a cs b a} gs4 b8) r8 |
   e='''4 e8 e e4( b8) r |
   \tuplet 3/2 { a8( b a c  b a} gs?4 b8) r8 |
+}
+RHandImICCC = \relative c' {
   \obr %% original line 6
-  gs=''4( b8) r b4( e8) r |
+  gs''=''4( b8) r b4( e8) r |
   \tuplet 3/2 { r8 fs,( gs a gs fs } as4-> b8) r |
   gs=''4( b8) r e4( gs8) r |
   \tuplet 3/2 { r8 fs,( gs a gs fs } e2) |
@@ -86,11 +88,11 @@ RHandImID = \relative c' {
   \tuplet 3/2 { r8 cs=''( e cs' e, cs cs' gs cs,) } as'8 as |
   \tuplet 3/2 { b8 fs b, } gs'8 gs \tuplet 3/2 { a8 e a, } fs' \< fs |
   b2.( \> \tuplet 3/2 { a8 b, ds) \! } |
-  e8
+  \tuplet 3/2 { e8 }
 }
 
 RHandImICc = \relative c' {
-  r8 r4 r2
+  \tuplet 3/2 { r8 r8 } r4 r2
   \obr %% original line 2
   \tuplet 3/2 { c='8-. e( c' e c e,) b-. e( b' e b e,) } |
   \tuplet 3/2 { b-. a'( b ds b a) b,-. g'( b e b g) } |
@@ -164,22 +166,29 @@ LHandImIAa = \relative c {
   as8 e' g cs b,8 d fs b |
   cs,8 fs as cs d,8 fs b d |
   e,,8-. cs'( e a) e,8-. e'( gs b) |
-  <a, e' a>4 r4 r2
 }
 
 LHandImIC = \relative c {
+  <a' e'>4 r4 r2
   \obr %% original line 5
-  \clef treble
-  \tuplet 3/2 { a''8( cs a e' cs a gs b gs e' b gs) } |
+  % \clef treble
+  \tuplet 3/2 { a'='8( cs a e' cs a gs b gs e' b gs) } |
   \tuplet 3/2 { fs( b fs ds' b fs e b' gs e' b gs) } |
   \tuplet 3/2 { a( c a e' c a g b g e' b g) } |
   \tuplet 3/2 { f( a f ds' a f e gs e b' gs e) } |
+}
+LHandImICCC = \relative c {
   \obr %% original line 6
   \clef bass
-  \tuplet 3/2 { gs,8( b gs e' b gs) gs( b gs e' b gs) } |
+  \tuplet 3/2 { gs'=8( b gs e' b gs) gs( b gs e' b gs) } |
   \tuplet 3/2 { a( b a ds b a) gs( b gs e' b gs) } |
   \tuplet 3/2 { gs( b gs e' b gs) e( gs e cs' gs e) } |
-  \tuplet 3/2 { a,( a' cs b, a' b) gs-. \clef treble gs'( b d? b gs) }|
+  \tuplet 3/2 { a,( a' cs b, a' b) gs-.
+                % \clef treble
+                \ottava #1
+                gs'( b d? b gs)
+                \ottava #0
+              } |
 }
 
 LHandImID = \relative c {
@@ -193,7 +202,8 @@ LHandImID = \relative c {
 
 LHandImICc = \relative c {
   \clef bass
-  \tuplet 3/2 { gs''='8([ ds] e b gs e-\cresc gs ds e d b) } |
+  %% Bug?  If \tuplet is not split, triplet bracket doesn't end.
+  \tuplet 3/2 { gs''='8( ds } \tuplet 3/2 { e b gs e-\cresc gs ds e d b) } |
   \obr %% original line 2
   a4-\mf a8 a a4( g8) r8 |
   \tuplet 3/2 { r8 fs( g a g fs } e4 g8) r8 |
@@ -222,7 +232,7 @@ LHandI = \relative c {
   \time 4/4 \key a \major
   \repeat volta 2 {
     \LHandImIA \LHandImIB
-    \LHandImIAa \LHandImIC
+    \LHandImIAa \LHandImIC \LHandImICCC
     \LHandImID \LHandImICc
     \LHandImIE
   }
@@ -248,11 +258,11 @@ RHandIImIB = \relative c' {
   cs8 es'\pp es es fs2->( |
   \obr %% original line 3
   es4)-\mf gs,4 a2~ |
-  a1 |
+  a2.
 }
 
 RHandIImIAa = \relative c' {
-  a'='2 gs |
+  a'='4 | a2 gs |
   cs,2~ cs8 r8 r4 |
   e='2 d |
   \obr %% original line 4
@@ -260,12 +270,14 @@ RHandIImIAa = \relative c' {
   g fs |
   e fs |
   cs d4. d8 |
-  cs4 r4 r2 |
 }
 
 RHandIImIC = \relative c' {
+  cs4 r4 r2 |
   \obr %% original line 5
   R1*4 |
+}
+RHandIImICCC = \relative c' {
   \obr %% original line 6
   gs'='4( b8) r b4( e8) r |
   R1*1 |
@@ -279,10 +291,11 @@ RHandIImID = \relative c' {
   r2 r4 as'='8 as |
   r4 gs8 gs r4 fs8 fs |
   b2. r4 |
+  \tuplet 3/2 { r8 }
 }
 
 RHandIImICc = \relative c' {
-  R1*1 |
+  \tuplet 3/2 { r8 r8 } r4 r2 |
   \obr %% original line 2
   R1*4 |
   \obr %% original line 3
