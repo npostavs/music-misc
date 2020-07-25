@@ -167,3 +167,62 @@ LHandI = \relative c {
     b2( e8) r8
   }
 }
+
+
+RHandII = \relative c' {
+  \time 4/4 \key a \major
+  \repeat volta 2 {
+    %% original line 1
+    \partial 4 r4 |
+    a'2 gs |
+    cs2~ cs8 r8 r4 |
+    e,='2 d2 |
+    e2 r2 |
+    g fs |
+    \obr %% original line 2
+    e d |
+    d d4. d8 |
+    cs2 r4 a8.( b16) |
+    cs2 cs |
+    cs8 es\pp es es fs2->( |
+    \obr %% original line 3
+    es4)-\mf gs4 a2~ |
+    a1 |
+    a='2 gs |
+    cs2~ cs8 r8 r4 |
+    e,='2 d |
+    \obr %% original line 4
+    e2 r2 |
+    g fs |
+    e fs |
+    cs d4. d8 |
+    cs4 r4 r2 |
+    \obr %% original line 5
+    R1*4 |
+    \obr %% original line 6
+    gs'='4( b8) r b4( e8) r |
+    R1*1 |
+    gs,='4( b8) r e4( gs8) r |
+    R1*1 |
+    \opr %% original page 2, line 1
+    R1*1 |
+    r2 r4 as,='8 as |
+    r4 gs8 gs r4 fs8 fs |
+    b2. r4 |
+    R1*1 |
+    \obr %% original line 2
+    R1*4 |
+    \obr %% original line 3
+    \tuplet 3/2 { r8 fs'='' fs fs8 fs fs r8 f f f8 f f } |
+    \tuplet 3/2 { r8 e e e8 e e r8 e e e8 e e } |
+    b4 r4 r2 |
+    R1*1 |
+    \obr %% original line 4
+    R1*1 |
+    gs4-.( gs8-. gs-.) g4-.( g8-. g-.) |
+    gs4 r4 r2 |
+    R1*1 |
+    gs4-.( gs8-. gs-.) g4-.( g8-. g-.) |
+    gs4 a gs8 r8 
+  }
+}
