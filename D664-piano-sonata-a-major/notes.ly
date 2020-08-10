@@ -85,9 +85,9 @@ RHandImICCC = \relative c' {
 RHandImID = \relative c' {
   \opr %% original page 2, line 1
   \tuplet 3/2 { r8 cs'=''( e cs' e, cs } e2) |
-  \tuplet 3/2 { r8 cs=''( e cs' e, cs cs' gs cs,) } as'8 as |
-  \tuplet 3/2 { b8 fs b, } gs'8 gs \tuplet 3/2 { a8 e a, } fs' \< fs |
-  b2.( \> \tuplet 3/2 { a8 b, ds) \! } |
+  \tuplet 3/2 { r8 cs=''( e cs' e, cs cs' gs cs,) } <as as'>8 <as as'> |
+  \tuplet 3/2 { b8 fs b, } <gs' gs'>8 <gs gs'> \tuplet 3/2 { a'=''8 e a, } <fs fs'>8 \< <fs fs'> |
+  b'=''2.( \> \tuplet 3/2 { a8 b, ds) \! } |
   \tuplet 3/2 { e8 }
 }
 
@@ -111,8 +111,8 @@ RHandImIE = \relative c' {
   e'4-.( e8-. e-.) as,4(-. as8-. as-.) |
   b4->( \tuplet 3/2 { a8 b, ds e8-.) b'[( gs'] e b gs } |
   e8) r8 r4 \ottava #-1 e,4-.(\ppp e8-. e-.) |
-  \ottava #0 f'4-.->( e8-. e-.) a,4-.->( a8-. a-.) |
-  b4~->( \tuplet 3/2 { b8 cs ds } e8) r8
+  f'4-.->( e8-. e-.) a,4-.->( a8-. a-.) |
+  b4~->( \tuplet 3/2 { b8 cs ds } e8) r8 \ottava #0
 }
 
 RHandI = \relative c' {
@@ -255,9 +255,19 @@ RHandIImIA = \relative c' {
 RHandIImIB = \relative c' {
   a=8.( b16) |
   cs2 cs |
-  cs8 es'\pp es es fs2->( |
+  cs8 es'=''\pp es es fs2->( |
   \obr %% original line 3
-  es4)-\mf gs,4 a2~ |
+  es4)-\mf gs,='4 a2~ |
+  a2.
+}
+
+%% Adjust octave range.
+RHandIImIBflute = \relative c' {
+  a'='8.( b16) |
+  cs2 cs |
+  cs8 es=''\pp es es fs2->( |
+  \obr %% original line 3
+  es4)-\mf gs,='4 a2~ |
   a2.
 }
 
