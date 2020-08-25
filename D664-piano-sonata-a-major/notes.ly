@@ -115,6 +115,75 @@ RHandImIE = \relative c' {
   b4~->( \tuplet 3/2 { b8 cs ds } e8) r8 \ottava #0
 }
 
+RHandImIF = \relative c' {
+  \obr %% original line 5
+  gs'='8.( a16) |
+  b2 a8.( gs16 fs8 gs) |
+  es2( fs8) r8 fs8.( gs16) |
+  a2 gs8.( fs16 e8 fs) |
+  ds2( e8) r8 e8.-\f( fs) |
+  gs2 gs8.( a16 gs fss) |
+  \obr %% original line 6
+  gs8 ds'-\pp[ ds ds ds2]~ |
+  ds8 r8 gs,4 gs8.( a16 gs8 fss) |
+  gs8.( a16) gs8 fss) gs8.( a16 gs8 fs) |
+  gs2-\fz gs-\fz |
+}
+
+RHandImIG = \relative c' {
+  cs'=''4-\f r4 r2
+  \obr %% original line 7
+  \ottava #1
+  \tuplet 3/2 { e8 fs gs as8 bs cs ds8 e fs } gs8 gs |
+  a1-\fz |
+  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a gs } a8 a |
+  a1-\fz |
+  \obr %% original page 4, line 1
+  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a gs } a8 a |
+  c1-\fz |
+  \tuplet 3/2 { a,=''8 b c d8s e f  gs8 a gs } c8 a |
+  e4-\fz \ottava #0 e,='' e8-.( e-.) e4-.( e8-. e-.) |
+  e4 r4 gs'='''-.( gs8-. gs-.) |
+  \obr %% original line 2
+  gs4( ds8) r8 e4( b8) r8 |
+  cs4( gs8) r8 a4( fs8) r8 |
+  cs8.( d16 cs8 d) e2 |
+  b8.( cs16 b8 cs d4. gs,8 |
+  a8) r8 r4 r2 |
+  r2 gs'4-.(-\pp gs8-. gs-.) |
+  \obr %% original line 3
+  gs4( ds8) r8 e4( b8) r8 |
+  cs'4( gs8) r8 a4( fs8) r8 |
+  cs8.( d16 cs8 d e2) |
+  b8.( cs16 b8 cs d2) |
+  cs2 cs8.( d16 cs8 bs) |
+  cs2 cs8.( d16 cs8 bs) |
+  \obr %% original line 4
+  cs8.( d16 cs8 bs cs8. d16 cs8. d16) |
+  e2( d8. cs16 b8 cs) |
+  e,2~ e8( fs gs a) |
+  b4.( cs8 d8.( fs16 b,8 e) |
+  cs2 r4 cs'8.( d16) |
+  \obr %% original line 5
+  e2( d8.( cs16 b8 cs) |
+  fs2~ fs8 b( cs d) |
+  d4( gs,8) r8 fs'8.( ds16 e8 gs,) |
+  a2 r2 |
+  r8 gs gs gs gs2~ |
+  gs8 r8 cs,4-\pp cs8.( d16 cs8 bs) |
+  \obr %% original line 6
+  cs8 gs'8 gs gs gs2~ |
+  gs2 e4 cs8. d16 |
+  a2( d8. cs16 b8 cs) |
+  e,2~ e8 fs( gs a) |
+  b4.( cs8 d8. fs16 b,8 e) |
+  \obr %% original line 7
+  cs2 r4 cs'8.( d16) |
+  e='''2-> d8.( cs16 b8 fs) |
+  e'='''2-> d8.( cs16 b8 fs') |
+  fs'4( a,8) r8 fs'8.( ds16 e8 gs,) |
+}
+
 RHandI = \relative c' {
   \set Staff.beamExceptions = #'()
 
