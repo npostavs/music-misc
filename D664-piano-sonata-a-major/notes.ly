@@ -121,12 +121,12 @@ RHandImIF = \relative c' {
   b2 a8.( gs16 fs8 gs) |
   es2( fs8) r8 fs8.( gs16) |
   a2 gs8.( fs16 e8 fs) |
-  ds2( e8) r8 e8.-\f( fs) |
-  gs2 gs8.( a16 gs fss) |
+  ds2( e8) r8 e8.-\f( fs16) |
+  gs2 gs8.[( a16 gs8 fss)] |
   \obr %% original line 6
   gs8 ds'-\pp[ ds ds ds2]~ |
-  ds8 r8 gs,4 gs8.( a16 gs8 fss) |
-  gs8.( a16) gs8 fss) gs8.( a16 gs8 fs) |
+  ds8 r8 gs,4 gs8.[( a16 gs8 fss)] |
+  gs8.[( a16 gs8 fss)] gs8.[( a16 gs8 fs)] |
   gs2-\fz gs-\fz |
 }
 
@@ -195,9 +195,12 @@ RHandI = \relative c' {
     \mark \markup { \box "B" } \RHandImIB
     \mark \markup { \box "A2" } \RHandImIAa
     \mark \markup { \box "C" } \RHandImIC
+    \mark \markup { \box "C3" } \RHandImICCC
     \mark \markup { \box "D" } \RHandImID
     \mark \markup { \box "C2" } \RHandImICc
     \mark \markup { \box "E" } \RHandImIE
+    \mark \markup { \box "F" } \RHandImIF
+    \mark \markup { \box "G" } \RHandImIG
   }
 }
 
@@ -399,7 +402,7 @@ RHandII = \relative c' {
   \time 4/4 \key a \major
   \repeat volta 2 {
     \RHandIImIA \RHandIImIB
-    \RHandIImIAa \RHandIImIC
+    \RHandIImIAa \RHandIImIC \RHandIImICCC
     \RHandIImID \RHandIImICc
     \RHandIImIE
   }
