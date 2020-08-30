@@ -118,13 +118,13 @@ RHandImIE = \relative c' {
 RHandImIF = \relative c' {
   \obr %% original line 5
   gs'='8.( a16) |
-  b2 a8.( gs16 fs8 gs) |
+  b2 a8.[( gs16 fs8 gs)] |
   es2( fs8) r8 fs8.( gs16) |
-  a2 gs8.( fs16 e8 fs) |
+  a2 gs8.[( fs16 e8 fs)] |
   ds2( e8) r8 e8.-\f( fs16) |
   gs2 gs8.[( a16 gs8 fss)] |
   \obr %% original line 6
-  gs8 ds'-\pp[ ds ds ds2]~ |
+  gs8 ds'-\pp[ ds ds] ds2~ |
   ds8 r8 gs,4 gs8.[( a16 gs8 fss)] |
   gs8.[( a16 gs8 fss)] gs8.[( a16 gs8 fs)] |
   gs2-\fz gs-\fz |
@@ -136,52 +136,86 @@ RHandImIG = \relative c' {
   \ottava #1
   \tuplet 3/2 { e8 fs gs as8 bs cs ds8 e fs } gs8 gs |
   a1-\fz |
-  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a gs } a8 a |
+  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a b } a8 a |
   a1-\fz |
   \obr %% original page 4, line 1
-  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a gs } a8 a |
+  \tuplet 3/2 { a,=''8 b cs d8 e fs gs8 a b } a8 a |
   c1-\fz |
-  \tuplet 3/2 { a,=''8 b c d8s e f  gs8 a gs } c8 a |
-  e4-\fz \ottava #0 e,='' e8-.( e-.) e4-.( e8-. e-.) |
+  \tuplet 3/2 { a,=''8 b c ds8 e f  gs8 a b } c8 a |
+  e4-\fz e,=''8-.( e-.) e4-.( e8-. e-.) |
   e4 r4 gs'='''-.( gs8-. gs-.) |
   \obr %% original line 2
   gs4( ds8) r8 e4( b8) r8 |
   cs4( gs8) r8 a4( fs8) r8 |
-  cs8.( d16 cs8 d) e2 |
-  b8.( cs16 b8 cs d4. gs,8 |
+  \ottava #0 cs8.[( d?16 cs8 d)] e2 |
+  b8.([ cs16 b8 cs] d4. gs,8 |
   a8) r8 r4 r2 |
   r2 gs'4-.(-\pp gs8-. gs-.) |
   \obr %% original line 3
   gs4( ds8) r8 e4( b8) r8 |
   cs'4( gs8) r8 a4( fs8) r8 |
-  cs8.( d16 cs8 d e2) |
-  b8.( cs16 b8 cs d2) |
-  cs2 cs8.( d16 cs8 bs) |
-  cs2 cs8.( d16 cs8 bs) |
+  cs8.([ d16 cs8 d] e2) |
+  b8.([ cs16 b8 cs] d2) |
+  cs2 cs8.[( d16 cs8 bs)] |
+  cs2 cs8.[( d16 cs8 bs)] |
   \obr %% original line 4
-  cs8.( d16 cs8 bs cs8. d16 cs8. d16) |
-  e2( d8. cs16 b8 cs) |
-  e,2~ e8( fs gs a) |
-  b4.( cs8 d8.( fs16 b,8 e) |
+  cs8.[( d16 cs8 bs] cs8.[ d16 cs8. d16]) |
+  e2( d8.[ cs16 b8 cs]) |
+  e,2~ e8[( fs gs a)] |
+  b4.( cs8 d8.[ fs16 b,8 e]) |
   cs2 r4 cs'8.( d16) |
   \obr %% original line 5
-  e2( d8.( cs16 b8 cs) |
-  fs2~ fs8 b( cs d) |
-  d4( gs,8) r8 fs'8.( ds16 e8 gs,) |
+  e2( d8.[ cs16 b8 cs]) |
+  fs,=''2~ fs8[ b( cs d)] |
+  d4( gs,8) r8 fs'8.[( ds16 e8 gs,)] |
   a2 r2 |
-  r8 gs gs gs gs2~ |
-  gs8 r8 cs,4-\pp cs8.( d16 cs8 bs) |
+  r8 gs[ gs gs] gs2~ |
+  gs8 r8 cs,4-\pp cs8.[( d16 cs8 bs)] |
   \obr %% original line 6
-  cs8 gs'8 gs gs gs2~ |
+  cs8 gs'8[ gs gs] gs2~ |
   gs2 e4 cs8. d16 |
-  a2( d8. cs16 b8 cs) |
-  e,2~ e8 fs( gs a) |
-  b4.( cs8 d8. fs16 b,8 e) |
+  a2( d8.[ cs16 b8 cs]) |
+  e,2~ e8[ fs( gs a)] |
+  b4.( cs8 d8.[ fs16 b,8 e]) |
   \obr %% original line 7
   cs2 r4 cs'8.( d16) |
-  e='''2-> d8.( cs16 b8 fs) |
-  e'='''2-> d8.( cs16 b8 fs') |
-  fs'4( a,8) r8 fs'8.( ds16 e8 gs,) |
+  e='''2-> d8.[( cs16 b8 fs)] |
+  e'='''2-> d8.[( cs16 b8 fs')] |
+  fs4( a,8) r8 fs'8.[( ds16 e8 gs,)] |
+}
+
+RHandImIH = \relative c' {
+  \times 2/3  { <a' a'>8 ( b8 cs8 d8 e8 fs8 gs8 a8 b8 cs8 d8 ds8 } |
+  e4 ) e8 e8 e4 ( b8 ) r8 | % 101
+  \times 2/3  { a8 ( b8 a8 cs8 b8 a8 } gs4 b8 ) r8 | % 102
+  fs8 [( a8 ) a8 ( -. a8 )] -. a4 ( e8 ) r8 | % 103
+  \times 2/3  { d8 ( e8 d8 fs8 e8 d8 } cs4 e8 ) r8 | % 104
+  <cs, cs'>4 ( <e e'>8 ) r8 <e e'>4 ( <a a'>8 ) r8 | % 105
+  \times 2/3  { r8 b8 ( cs8 d8 cs8 b8 } ds4 -> e8 ) r8 | % 106
+  <cs cs'>4 ( <e e'>8 ) r8 <a a'>4 ( <cs cs'>8 ) r8 | % 107
+  \times 2/3  { r8 b8 ( cs8 d8 cs8 b8 } a2 ) | % 108
+  \times 2/3  { r8 fs8 ( a8 fs'8 a,8 fs8 ) } a2 | % 109
+  \times 2/3  { r8 fs8 ( a8 fs'8 a,8 fs8 fs'8 cs8 fs,8 ) } ds8 ds8 | \barNumberCheck #110
+  \times 2/3  { e'8 \< b8 e,8 } cs8 cs8 \times 2/3  {d'8 a8 d,8 } b'8 b8 | % 111
+  e2. \mp \> ( \times 2/3  {d8 e,8 \p gs8 ) } | % 112
+  a4 r4 r2 | % 113
+  \times 2/3  { \ottava #-1 f,,8 \mf -. a8 ( f'8 a8 f8 a,8 ) e8 -. a8 ( e'8 a8 e8 a,8 ) } | % 114
+  \times 2/3  { e8 -. d'8 ( e8 gs8 e8 d8 ) e,8 -. c'8 ( e8 a8 e8 c8 ) } | % 115
+  \times 2/3  { f,8 \f -. a8 ( f'8 a8 f8 a,8 ) e8 -. a8 ( e'8 a8 e8 a,8 ) } | % 116
+  \times 2/3  { e8 -. g8 ( e'8 g8 e8 g,8 ) c,8 -. f8 ( c'8 f8 c8 f,8 ) } | % 117
+  \ottava #0
+  \times 2/3  { r8 e''=''8 e8 e8 e8 e8 r8 cs cs cs8 cs cs } | % 118
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  { r8 d8 d8 d8 d8 d8 r8 b b b8 b b } | % 119
+  <e, e'>4 \p \times 2/3  { d'8 e,8 gs8( a8 cs8 e8 a8 cs8 d8 ) } | \barNumberCheck #120
+  <e, e'>4 ( \times 2/3  { d'8 e,8 gs8 a8 ) \ottava #1 e'8 ( cs'8 a8 e8 cs8 } |
+  a8 ) r8 r4 \ottava #0 a,4 ( -. a8 -. a8 ) -. | % 122
+  a'4 ( -. -> a8 -. a8 ) -. d,4 ( -. -> d8 -. d8 ) -. | % 123
+  e4 ( -> \times 2/3  { d8 e,8 gs8 a8 ) e'8 ([ cs'8] a8 e8 cs8 } | % 124
+  a8 ) r8 r4 a,4 ( -. a8 -. a8 ) -. | % 125
+  bf'4 ( -. -> a8 -. a8 ) -. ds,4 ( -. -> ds8 -. ds8 ) -. | % 126
+  e4 ( ~ -> \times 2/3  {e8 fs8 gs8 } a8 ) r8
 }
 
 RHandI = \relative c' {
@@ -201,6 +235,7 @@ RHandI = \relative c' {
     \mark \markup { \box "E" } \RHandImIE
     \mark \markup { \box "F" } \RHandImIF
     \mark \markup { \box "G" } \RHandImIG
+    \mark \markup { \box "H" } \RHandImIH
   }
 }
 
@@ -298,6 +333,158 @@ LHandImIE = \relative c {
   b2( e8) r8
 }
 
+LHandImIF = \relative c {
+  r4 | % 48
+  es2 ( fs8 ) r8 a,8. ( b16 ) | % 49
+  cs2 b8. [( a16 gs8 a8 )] |
+  \barNumberCheck #50
+  ds,2 ( e8 ) r8 gs8. ( a16 ) | % 51
+  b2 a8. [( gs16 fs8 gs8 )] | % 52
+  bs8 gs8 gs8 gs8 gs2 ~ | % 53
+  gs8 r8 \ottava #-1 gs,4 gs8. ( a16 gs8 fss8 ) | % 54
+  gs8 \ottava #0 gs'8 gs8 gs8 gs2 ~ | % 55
+  gs2 ~ gs4 a4 | % 56
+  gs2 gs2 | % 57
+  \times 2/3  { cs8 ds8 e8 fs8 gs8 as8 bs8 cs8 ds8 }
+  e8 -! e8 -! | % 58
+  e1 | % 59
+  \times 2/3  { g,,8 a8 b8 cs8 d8 e8 fs8 g8 a8 }
+  g8 -! g8 -! | \barNumberCheck #60
+  g1 | % 61
+  \times 2/3  { fs,8 g8 a8 b8 cs8 d8 e8 fs8 g8 }
+  fs8 -! fs8 -! | % 62
+  fs1 | % 63
+  \times 2/3  { f,8 g8 a8 b8 c8 d8 e8 f8 g8 }
+  f8 -! f8 -! | % 64
+  fs1 | % 65
+  e,4 r4 r2 | % 66
+  e''4 ( -. e8 -. e8 ) -. e4 ( b8 ) r8 | % 67
+  bs4 ( -. bs8 -. bs8 ) -. cs4 ( d?8 ) r8 | % 68
+  e4 ( d8 ) r8 <fs, cs'>4 ( <ds c'>8 ) r8 | % 69
+  e2 cs8. [( d16 cs8 d8 )] | \barNumberCheck #70
+  e2 b8. [( cs16 d8 e8 )] | % 71
+  <a, e' a>4 e'8 ( -. e8 ) -. e4 ( -. e8 -. e8 ) -. | % 72
+  e'4 ( -. e8 -. e8 ) -. e4 ( b8 ) r8 | % 73
+  bs4 ( -. bs8 -. bs8 ) -. cs4 ( d8 ) r8 | % 74
+  % e4 ( d8 ) r8 cs4 ( c8 ) r8 | % 75
+  % <a cs>2 ~ ~ <a cs>2 | % 76
+  % <a b>2 ( ~ <gs b>2 ) | % 77
+  e4 ( d8 ) r8 <fs, cs'>4 ( <ds c'>8 ) r8 | % 75
+  e2 cs8. [( d16 cs8 d8 )] | \barNumberCheck #76
+  e2 b8. [( cs16 d8 fs,8 )] | % 77
+  cs'=4 cs8 cs8 cs2 | % 78
+  cs4 cs8 cs8 <fs, cs'>2 ~ | % 79
+  <f cs'>2( ~ <e cs'>4 cs4) | \barNumberCheck #80
+  \ottava #-1 a8 \ottava #0 a'8 cs8 e8 b8 d8 e8 gs8 | % 81
+  cs,8 ( a'8 e8 cs8 a8 e8 \ottava #-1 cs8 a8 ) | % 82
+  gs8 -. \ottava #0 b'8 ( e8 gs8 ) e,8 -. e'8 ( gs8 b8 ) | % 83
+  a,8 ( cs8 e8 a8 cs8 a8 e8 cs8 ) | % 84
+  as8 ( e'8 g8 cs8 ) b,8 ( d8 fs8 d'8 ) | % 85
+  cs,8 ( fs8 as8 e'8 ) d,8 -. fs'8 ( d8 b8 ) | % 86
+  e,,8 -. e'8 ( gs8 b8 ) e,,8 -. e'8 ( b'8 d8 ) | % 87
+  a,8 ( e'8 cs'8 a8 \< e8[ cs8 ) a8. b16] | % 88
+  cs2 \mf \ottava #-1 cs,8.[ ( d16 cs8. bs16 )] | % 89
+  cs8 \ottava #0 cs'8 cs8 cs8 cs2 ~ | \barNumberCheck #90
+  cs8 r8 \ottava #-1 cs,4 cs8. [( d16 cs8. bs16 )] | % 91
+  cs8. ([ d16 cs8. bs16] cs8.[ d16 cs8. b16] ) | % 92
+  a8 \ottava #0 a'8 cs8 e8 b8 d8 e8 gs8 | % 93
+  cs,8 ( a'8 e8 cs8 a8 \ottava #-1 e8 cs8 a8 ) | % 94
+  gs8 -. \ottava #0 b'8 ( e8 gs8 ) e,8 -. b'8 ( e8 gs8 ) | % 95
+  a,8 ( cs8 e8 a8 cs8 a8 e8 cs8 ) | % 96
+  as8 ( e'8 g8 cs8 ) b,8 ( d8 fs8 b8 ) | % 97
+  cs,8 ( fs8 as8 e'8 ) d,8 ( fs8 b8 d8 ) | % 98
+  e,,8 -. cs'8 ( e8 a8 ) e,8 -. d'8 ( e8 b'8 ) | % 99
+  <a, e' a>4 r4 r2 |
+  \barNumberCheck #100
+  \clef "treble"
+  \times 2/3  { a''='8 ( cs8 a8 e'8 cs8 a8 gs8 b8 gs8 e'8 b8 gs8 ) } | % 101
+  \times 2/3  { fs8 ( b8 fs8 ds'8 b8 fs8 e8 b'8 gs8 e'8 b8 gs8 ) } | % 102
+  \times 2/3  { d8 ( fs8 d8 a'8 fs8 d8 cs8 e8 cs8 a'8 e8 cs8 ) } | % 103
+  \times 2/3  { b8 ( e8 b8 gs'8 e8 b8 a8 cs8 a8 e'8 cs8 a8 ) } | % 104
+  \clef "bass"
+  \times 2/3  { cs,8 ( e8 cs8 a'8 e8 cs8 ) cs8 ( e8 cs8 a'8 e8 cs8 ) } | % 105
+  \times 2/3  { d8 ( e8 d8 gs8 e8 d8 ) cs8 ( e8 cs8 a'8 e8 cs8 ) } | % 106
+  \times 2/3  { cs'8 ( e8 cs8 a'8 e8 cs8 ) a8 ( cs8 a8 fs'8 cs8 a8 ) } | % 107
+  \times 2/3  {
+    d,8 ( d'8 fs8 e,8 d'8 e8 ) 
+    <a, cs>8 \clef "treble" cs'8 ( e8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    g8 e8 cs8 ) }
+  | % 108
+  d2 \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    r8 cs8 ( e8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    g8 e8 cs8 ) }
+  | % 109
+  d2 <as cs>4 \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    a8 b8 fs'8 }
+  | \barNumberCheck #110
+  <gs, b>4 \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    g8 a8 e'8 }
+  <fs, a>4 <f a>8 <f a>8 | % 111
+  <a cs>2 <b d>2 | % 112
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    <a cs>8 cs8 ( gs8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    a8 e8 cs8 }
+  \clef "bass" \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    a8 cs8 gs8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    a8 g8 e8 ) }
+  | % 113
+  d4 d8 d8 d4 ( c8 ) r8 | % 114
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    r8 b8 ( c8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    d8 c8 b8 ) }
+  b4 ( a8 ) r8 | % 115
+  <d, d'>4 <d d'>8 <d d'>8 <d d'>4 ( <c c'>8 ) r8 | % 116
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    r8 bf'8 ( c8 }
+  \once \override TupletBracket #'stencil = ##f
+  \once \override TupletNumber #'stencil = ##f
+  \times 2/3  {
+    df8 c8 bf8 ) }
+  bf4 ( a8 ) r8 | % 117
+  gs4 -> gs'8 gs8 g,4 -> g'8 g8 | % 118
+  fs,4 -> fs'8 fs8 f,4 -> f'8 f8
+  | % 119
+  <a cs>4 ( <b d>4 cs8 ) r8 r4 | \barNumberCheck #120
+  \ottava #1 <a' cs>4 ( <b d>4 cs8 ) r8 r4 | % 121
+  \ottava #0 | % 121
+  a,4 \pp ( -. a8 -. a8 ) -. a4 ( -. a8 -. a8 ) -. | % 122
+  <a g'>4 ( -. <a g'>8 -. <a g'>8 ) -. <a fs'>4 ( -. <a f'>8 -. <a
+                                                                 f'>8 ) -. | % 123
+  <a cs e>4 ( <b d>4 cs8 ) r8 r4 | % 124
+  a,4 \ppp ( -. a8 -. a8 ) -. a4 ( -. a8 -. a8 ) -. | % 125
+  <a g'>4 ( -. <a g'>8 -. <a g'>8 ) -. <a fs'>4 ( -. <a f'>8 -. <a
+                                                                 f'>8 ) -. | % 126
+  <e e'>2 ( ~ <a e'>8 ) r8
+}
 
 LHandI = \relative c {
   \clef bass
@@ -307,6 +494,9 @@ LHandI = \relative c {
     \LHandImIAa \LHandImIC \LHandImICCC
     \LHandImID \LHandImICc
     \LHandImIE
+  }
+  \repeat volta 2 {
+    \LHandImIF
   }
 }
 
