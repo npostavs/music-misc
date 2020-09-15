@@ -2,6 +2,7 @@
 
 \score {
   \relative c' {
+    \compressFullBarRests
     \tupletSpan 4
     \time 4/4 \key a \major
     \clef bass
@@ -16,6 +17,10 @@
       \mark \markup { \box "C2" } \LHandImICc
       \mark \markup { \box "E" } \LHandImIE
     }
+    \repeat volta 2 {
+      \mark \markup { \box "F" } \LHandImIF
+    }
+    \mark \markup { \box "Z" } \LHandImIZ
   }
 
   \layout {}

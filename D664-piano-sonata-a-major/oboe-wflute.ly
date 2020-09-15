@@ -15,6 +15,12 @@
       \mark \markup { \box "C2" } \RHandImICc
       \mark \markup { \box "E" } \RHandImIE
     }
+    \repeat volta 2 {
+      \mark \markup { \box "F" } \RHandImIF
+      \mark \markup { \box "G" } \RHandImIG
+      \mark \markup { \box "H" } \RHandImIH
+    }
+    \mark \markup { \box "Z" } \RHandImIZ
   }
 
   \layout {
