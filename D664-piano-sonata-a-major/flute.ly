@@ -2,6 +2,7 @@
 
 \score {
   \relative c' {
+    \compressFullBarRests
     \tupletSpan 4
     \time 4/4 \key a \major
     \repeat volta 2 {
@@ -15,11 +16,15 @@
       \mark \markup { \box "E" } \RHandIImIE
     }
     \repeat volta 2 {
-      \mark \markup { \box "F" } \ottava #-1 \RHandIImIF \ottava #0 
+      \mark \markup { \box "F" } \ottava #-1 \RHandIImIF \ottava #0
       \mark \markup { \box "G" } \RHandIImIG
-      \mark \markup { \box "H" } \RHandIImIH
+      \mark \markup { \box "H" } \ottava #1 \transpose c c' { \RHandImIH } \ottava #0
+      \mark \markup { \box "H2" } { \RHandImIHH }
+      \mark \markup { \box "J" } \RHandImIJ
+      \mark \markup { \box "J2" } \RHandIImIJJ
+      \mark \markup { \box "J3" }\transpose c c' { \RHandIImIJJJ }
     }
-    \mark \markup { \box "Z" } \RHandIImIZ
+    \mark \markup { \box "Z" } \RHandImIZ
   }
   \layout {}
 }

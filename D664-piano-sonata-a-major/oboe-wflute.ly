@@ -18,12 +18,20 @@
     \repeat volta 2 {
       \mark \markup { \box "F" } \RHandImIF
       \mark \markup { \box "G" } \RHandImIG
-      \mark \markup { \box "H" } \RHandImIH
+      \mark \markup { \box "H" } \transpose c c' { \RHandIImIH }
+      \mark \markup { \box "H2" } { \RHandIImIHH }
+      \mark \markup { \box "J" } \RHandIImIJ
+      \mark \markup { \box "J2" } \RHandImIJJ
+      \mark \markup { \box "J3" } \transpose c c' { \RHandImIJJJ }
     }
-    \mark \markup { \box "Z" } \RHandImIZ
+    \mark \markup { \box "Z" } \RHandIImIZ
   }
 
   \layout {
+    \context {
+      \Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
   }
 }
 

@@ -147,7 +147,10 @@ RHandImIG = \relative c' {
   \obr %% original line 2
   gs4( ds8) r8 e4( b8) r8 |
   cs4( gs8) r8 a4( fs8) r8 |
-  \ottava #0 cs8.[( d?16 cs8 d)] e2 |
+  \ottava #0
+}
+RHandImIH = \relative c' {
+  cs'=''8.[( d?16 cs8 d)] e2 |
   b8.([ cs16 b8 cs] d4. gs,8 |
   a8) r8 r4 r2 |
   r2 gs'4-.(-\pp gs8-. gs-.) |
@@ -163,7 +166,10 @@ RHandImIG = \relative c' {
   e2( d8.[ cs16 b8 cs]) |
   e,2~ e8[( fs gs a)] |
   b4.( cs8 d8.[ fs16 b,8 e]) |
-  cs2 r4 cs'8.( d16) |
+  cs2 r4
+}
+RHandImIHH = \relative c' {
+  cs''='''8.( d16) |
   \obr %% original line 5
   e2( d8.[ cs16 b8 cs]) |
   fs,=''2~ fs8[ b( cs d)] |
@@ -184,7 +190,7 @@ RHandImIG = \relative c' {
   fs4( a,8) r8 fs'8.[( ds16 e8 gs,)] |
 }
 
-RHandImIH = \relative c' {
+RHandImIJ = \relative c' {
   \times 2/3  { <a' a'>8 ( b8 cs8 d8 e8 fs8 gs8 a8 b8 cs8 d8 ds8 } |
   e4 ) e8 e8 e4 ( b8 ) r8 | % 101
   \times 2/3  { a8 ( b8 a8 cs8 b8 a8 } gs4 b8 ) r8 | % 102
@@ -204,13 +210,18 @@ RHandImIH = \relative c' {
   \once \override TupletBracket #'stencil = ##f
   \once \override TupletNumber #'stencil = ##f
   \times 2/3  { r8 d8 d8 d8 d8 d8 r8 b b b8 b b } | % 119
-  <e, e'>4 \p \times 2/3  { d'8 e,8 gs8( a8 cs8 e8 a8 cs8 d8 ) } | \barNumberCheck #120
+}
+RHandImIJJ = \relative c' {
+  <e=' e'>4 \p \times 2/3  { d'8 e,8 gs8( a8 cs8 e8 a8 cs8 d8 ) } | \barNumberCheck #120
   <e, e'>4 ( \times 2/3  { d'8 e,8 gs8 a8 ) \ottava #1 e'8 ( cs'8 a8 e8 cs8 } |
-  a8 ) r8 r4 \ottava #0 a,4 ( -. a8 -. a8 ) -. | % 122
+  a8 ) r8 r4 \ottava #0 a,='4 ( -. a8 -. a8 ) -. | % 122
   a'4 ( -. -> a8 -. a8 ) -. d,4 ( -. -> d8 -. d8 ) -. | % 123
   e4 ( -> \times 2/3  { d8 e,8 gs8 a8 ) e'8 ([ cs'8] a8 e8 cs8 } | % 124
-  a8 ) r8 r4 r2 | % 125
-  bf='4 ( -. -> a8 -. a8 ) -. ds,4 ( -. -> ds8 -. ds8 ) -. | % 126
+  a8 ) r8 r4
+}
+RHandImIJJJ = \relative c' {
+  r2 | % 125
+  bf'='4 ( -. -> a8 -. a8 ) -. ds,4 ( -. -> ds8 -. ds8 ) -. | % 126
   e4 ( ~ -> \times 2/3  {e8 fs8 gs8 } a8 ) r8
 }
 
@@ -246,6 +257,10 @@ RHandI = \relative c' {
     \mark \markup { \box "F" } \RHandImIF
     \mark \markup { \box "G" } \RHandImIG
     \mark \markup { \box "H" } \RHandImIH
+    \mark \markup { \box "H2" } \RHandImIHH
+    \mark \markup { \box "J" } \RHandImIJ
+    \mark \markup { \box "J2" } \RHandImIJJ
+    \mark \markup { \box "J3" } \RHandImIJJJ
   }
   \mark \markup { \box "Z" } \RHandImIZ
 }
@@ -277,8 +292,8 @@ LHandImIB = \relative c {
 LHandImIAa = \relative c {
   cs,=,) |
   a8 \p a' cs e b8 d e gs |
-  cs,8 a' e cs a8 e cs a |
-  gs8-. b'( e gs) e,-. b'( e gs) |
+  cs,8 a' e cs a8 \ottava #-1 e cs a |
+  gs8-. \ottava #0 b'( e gs) e,-. b'( e gs) |
   \obr %% original line 4
   a,8( cs e a cs8 a e cs) |
   as8 e' g cs b,8 d fs b |
@@ -372,7 +387,9 @@ LHandImIF = \relative c {
   e''4 ( -. e8 -. e8 ) -. e4 ( b8 ) r8 | % 67
   bs4 ( -. bs8 -. bs8 ) -. cs4 ( d?8 ) r8 | % 68
   e4 ( d8 ) r8 <fs, cs'>4 ( <ds c'>8 ) r8 | % 69
-  e2 cs8. [( d16 cs8 d8 )] | \barNumberCheck #70
+}
+LHandImIH = \relative c {
+  e=2 cs8. [( d16 cs8 d8 )] | \barNumberCheck #70
   e2 b8. [( cs16 d8 e8 )] | % 71
   <a, e' a>4 e'8 ( -. e8 ) -. e4 ( -. e8 -. e8 ) -. | % 72
   e'4 ( -. e8 -. e8 ) -. e4 ( b8 ) r8 | % 73
@@ -472,7 +489,8 @@ LHandI = \relative c {
     \LHandImIE
   }
   \repeat volta 2 {
-    \LHandImIF
+    \LHandImIF % F & G
+    \LHandImIH
   }
   \LHandImIZ
 }
@@ -589,7 +607,9 @@ RHandIImIG = \relative c' {
   gs,4 gs8 gs8 gs2 |
   gs'=''4( ds8) r8 e4( b8) r8 |
   cs4( gs8) r8 a4( fs8) r8 |
-  cs8.( a16 cs8 a) a2 |
+}
+RHandIImIH = \relative c' {
+  cs='8.( a16 cs8 a) a2 |
   a8 b e4 e8( b gs) d' |
   cs r8 r4 r2 |
   gs=4 gs8 gs8 gs2 |
@@ -603,7 +623,10 @@ RHandIImIG = \relative c' {
   cs,='2 d8 gs e4 |
   cs2 r2 |
   d4 e d e |
-  e2 r4 cs'=''8.( d16) |
+  e2 r4
+}
+RHandIImIHH = \relative c' {
+  cs'=''8.( d16) |
   e2( d8.[ cs16 b8 cs]) |
   fs,='2~ fs8[ b( cs d)] |
   d4( gs,8) r8 fs'8.[( ds16 e8 gs,)] |
@@ -622,7 +645,7 @@ RHandIImIG = \relative c' {
   \barNumberCheck #99
 }
 
-RHandIImIH = \relative c' {
+RHandIImIJ = \relative c' {
   a'='4 r4 r2
   \times 2/3  { a='8 ( cs8 a8 e'8 cs8 a8 gs8 b8 gs8 e'8 b8 gs8 ) } | % 101
   \times 2/3  { fs8 ( b8 fs8 ds'8 b8 fs8 e8 b'8 gs8 e'8 b8 gs8 ) } | % 102
@@ -645,12 +668,17 @@ RHandIImIH = \relative c' {
 
   \times 2/3 { r8 b=' b b8 b b r8 bf bf bf8 bf bf } | % 118
   \times 2/3 { r8 a a a8 a a r8 a a a8 a a } | % 119
+}
+RHandIImIJJ = \relative c' {
   e='4( fs a,8) r8 r4 |
   e''=''4( fs a,8) r8 r4 |
   R1 |
   cs4-.->( cs8-. cs8-.) c4-.->( c8-. c8-.) |
   R1 |
-  r2 a,4 ( -. a8 -. a8 ) -. |
+  r2
+}
+RHandIImIJJJ = \relative c' {
+  a=4 ( -. a8 -. a8 ) -. |
   e'4-.( e8-. e-.) c4-.( c8-. c-.) |
   cs4( d cs8) r8
 }
@@ -677,7 +705,8 @@ RHandII = \relative c' {
   \repeat volta 2
   {
     \RHandIImIF \RHandIImIG
-    \RHandIImIH
+    \RHandIImIH \RHandIImIHH
+    \RHandIImIJ \RHandIImIJJ \RHandIImIJJJ
   }
   \RHandIImIZ
 }
