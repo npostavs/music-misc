@@ -1,8 +1,8 @@
 d := $(dir $(lastword $(filter-out targets-per-dir.mk,$(MAKEFILE_LIST))))
-notparts := $(addprefix $(d),score.ly notes.ly definitions.ly)
+notparts := $(addprefix $(d),$(score-name) $(notes-name) definitions.ly)
 parts := $(filter-out $(notparts),$(wildcard $(d)*.ly))
 
-$(foreach part,$(parts) $(d)score.ly,$(eval $(basename $(part)).pdf : $(part) $(d)notes.ly))
+$(foreach part,$(parts) $(d)$(score-name),$(eval $(basename $(part)).pdf : $(part) $(d)$(notes-name)))
 
-$(eval $(d)all : $(addsuffix .pdf,$(basename $(parts) $(d)score.ly)))
+$(eval $(d)all : $(addsuffix .pdf,$(basename $(parts) $(d)$(score-name))))
 .PHONY: $(d)all
