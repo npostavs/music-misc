@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-# dirs := <FILL IN>
+dirs := telemann/Concerto_a_4_D-lys telemann/Sonata_a_4_C-lys telemann/Concerto_a_4_G-lys
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
