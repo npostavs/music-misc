@@ -270,8 +270,8 @@ LHandImIA = \relative c {
   %% original line 1
   \partial 4 r4 |
   a=,8 cs e a b,8 d e gs |
-  cs,( a' e cs a8 e cs a) |
-  gs-. b'( e gs) e,-. b'( e gs) |
+  cs,( a' e cs a8 \ottava #-1 e cs a) |
+  gs-. \ottava #0 b'( e gs) e,-. b'( e gs) |
   a,( cs e a cs8 a e cs) |
   as8 e' g cs b,8 d fs b |
   \obr %% original line 2
@@ -290,8 +290,8 @@ LHandImIB = \relative c {
 }
 
 LHandImIAa = \relative c {
-  cs,=,) |
-  a8 \p a' cs e b8 d e gs |
+  cs=) |
+  a8 \p a cs e b8 d e gs |
   cs,8 a' e cs a8 \ottava #-1 e cs a |
   gs8-. \ottava #0 b'( e gs) e,-. b'( e gs) |
   \obr %% original line 4

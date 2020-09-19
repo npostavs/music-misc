@@ -21,6 +21,7 @@
       \mark \markup { \box "F" } \LHandImIF % F & G
       \mark \markup { \box "H" } \LHandImIH
     }
+    \mark \markup { \box "Z" } \LHandImIZ
   }
 
   \layout {}
