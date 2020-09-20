@@ -32,6 +32,9 @@
   }
   \largoViolinIII
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+    }
     indent = 6
   }
 }
@@ -42,6 +45,9 @@
   }
   \allegroViolinIII
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+    }
     indent = 6
   }
 }

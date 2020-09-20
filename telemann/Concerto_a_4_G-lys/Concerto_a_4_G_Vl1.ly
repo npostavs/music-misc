@@ -4,6 +4,7 @@
 
 \paper {
   ragged-last-bottom = ##f
+  page-count = #2
 }
 
 \header {
@@ -32,6 +33,9 @@
   }
   \largoViolinI
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+    }
     indent = 6
   }
 }
@@ -42,6 +46,9 @@
   }
   \allegroViolinI
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+    }
     indent = 6
   }
 }

@@ -4,6 +4,7 @@
 
 \paper {
   ragged-last-bottom = ##f
+  page-count = #2
 }
 
 \header {
@@ -32,6 +33,9 @@
   }
   \graveAViolinIV
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+    }
     indent = 0.6 \cm
   }
 }
@@ -42,6 +46,9 @@
   }
   \allegroAViolinIV
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+    }
     indent = 0.6 \cm
   }
 }
@@ -54,6 +61,9 @@
   }
   \largoAViolinIV
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
     indent = 0.6 \cm
   }
 }
@@ -64,6 +74,9 @@
   }
   \allegroIIAViolinIV
   \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+    }
     indent = 0.6 \cm
   }
 }

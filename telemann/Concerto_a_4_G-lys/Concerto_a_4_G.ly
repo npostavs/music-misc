@@ -53,7 +53,7 @@ largoViolinI = \relative g'' {
   \barNumberCheck 30
   d4 \slurDashed c8( h) c( d) \slurSolid
   h4 g'8( fis) g( fis)
-  g8( fis) g( fis) g( fis)
+  \repeat tremolo 3 { g8( fis) }
   g8( a) fis4. g8
   g4 d d
 
@@ -61,7 +61,7 @@ largoViolinI = \relative g'' {
   d4 d c
   c4 c c
   h4 h8( a) h( a)
-  h8( a) h( a) h( a)
+  \repeat tremolo 3 { h8( a) }
   h8( c) a4. h8
 
   \barNumberCheck 40
@@ -744,8 +744,7 @@ vivaceViolinI = \relative d' {
   r4 cis8
   d4 e8
   e8( d) r
-  R4.
-  R4.
+  R4.*2
 
   \barNumberCheck 70
   d,8 d16 d d d
@@ -890,8 +889,7 @@ vivaceViolinII = \relative d' {
   \slurDashed h8( a) r \slurSolid
 
   \barNumberCheck 65
-  R4.
-  R4.
+  R4.*2
   a8 a16 a a a
   a8 fis d
   e4 fis8
@@ -1069,8 +1067,7 @@ vivaceViolinIII = \relative d' {
   g4 e'8
   e8( d) d
   \slurDashed d8( c) r \slurSolid
-  R4.
-  R4.
+  R4.*2
 
   \barNumberCheck 90
   r4 d8

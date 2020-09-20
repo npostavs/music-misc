@@ -4,6 +4,7 @@
 % Grave %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 graveGlobal = {
+  \compressFullBarRests
   \set Score.tempoHideNote = ##t
   \key c \major
   \time 4/4
@@ -72,8 +73,7 @@ graveAViolinIII = \relative g' {
 
 graveAViolinIV = \relative d'' {
   \graveGlobal
-  R1
-  R1
+  R1*2
   d4 g,2 fis4
   g2. f!4
   e4 r h'' e,~
@@ -93,6 +93,7 @@ graveAViolinIV = \relative d'' {
 % Allegro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 allegroGlobal = {
+  \compressFullBarRests
   \set Score.tempoHideNote = ##t
   \key c \major
   \time 2/2
@@ -128,9 +129,10 @@ allegroAViolinI = \relative e'' {
     h8 g d'4 r8 g, c4
     r8 fis, h4 r8 e, a4
     r8 d, g4 r16 g a g fis e d c
-    h16 g' h, g' h, g' h, g' a, g' a g fis e d c
+    \repeat tremolo 4 { h16 g' }
+    a, g' a g fis e d c
     \barNumberCheck 20
-    h16 g' h, g' h, g' h, g' a, fis' a, fis' a, fis' a, fis'
+    \repeat tremolo 4 { h16 g' } \repeat tremolo 4 { a, fis' }
     g8. a16 fis8. g16 g4 r
   } \break
   \repeat volta 2 {
@@ -146,10 +148,10 @@ allegroAViolinI = \relative e'' {
     h,16 h' h, h' dis, a' dis, a' e gis e gis d! gis d gis
     c,16 c' c, c' e, h' e, h' f a f a e a e a
     d,16 a' d, a' c, a' c, a' h, a' h, a' h, gis' h, gis'
-    a16 e, e e e e e e e e e e e e e e
-    e16 e e e e e e e f f f f f f f f
-    g16 g g g g g g g fis fis fis fis fis fis fis fis
-    f!16 f f f f f f f c' e c e d f d f
+    a16 e, e e e4:16 e2:
+    e2: f2:
+    g2: fis2:
+    f!2: c'16 e c e d f d f
     e16 g e g f a f a g c g c f, c' f, c'
     e,4 r c16 e c e d f d f
     e16 g e g f a f a g c g c e, c' e, c'
@@ -159,8 +161,8 @@ allegroAViolinI = \relative e'' {
     c8 e, f4 r8 fis g4
     r8 gis a4 r8 a b4
     r8 h! c4 r16 c d c h a g f
-    e16 c' e, c' e, c' e, c' d, c' d c h a g f
-    e16 c' e, c' e, c' e, c' d, h' d, h' d, h' d, h'
+    \repeat tremolo 4 { e16 c' } d, c' d c h a g f
+    \repeat tremolo 4 { e16 c' } \repeat tremolo 4 { d, h' }
     c8. d16 h8. c16 c4 r
   }
 }
@@ -187,28 +189,28 @@ allegroAViolinII = \relative e'' {
     g4 r8 a g4 r8 g
     fis4 r8 fis e4 r8 e
     d4 r8 d d4 r
-    g,16 g, g' g, g' g, g' g, d'4 r
+    \repeat tremolo 4 { g,16 g, } d'4 r
     \barNumberCheck 20
-    g16 g, g' g, g' g, g' g, fis' d fis d fis d fis d
+    \repeat tremolo 4 { g16 g, } \repeat tremolo 4 { fis' d }
     h8 g d'8. d16 g,4 r
   }
   \repeat volta 2 {
     r2 g'16 h g h a c a c
     h16 d h d c e c e d g d g c, g' c, g'
     h,4 r g16 h g h a c a c
-    h16 d h d h d h d h d h d e, h' e, h'
+    \repeat tremolo 6 { h16 d } e, h' e, h'
     e,4 r r2
     a16 c a c h d h d c e c e d f d f
     e16 a e a d, a' d, a' c, 4 r
-    a,8 a' a, a' a16 d, a' d, a' d, a' d,
+    \repeat tremolo 2 { a,8 a' } \repeat tremolo 4 { a16 d, }
     \barNumberCheck 30
-    dis8 h' h, h' h16 e, h' e, h' e, h' e,
+    dis8 h' h, h' \repeat tremolo 4 { h16 e, }
     e8 c' c, c' f r e r
     d8 r c r h r h r
-    c16 c, c c c c c c cis cis cis cis cis cis cis cis
-    cis16 cis cis cis cis cis cis cis d d d d d d d d
-    e16 e e e e e e e c! c c c c c c c
-    d16 d d d d d d d e4 r
+    c16 c, c c c4:16 cis2:
+    cis2: d2:
+    e2: c?2:
+    d2: e4 r
     c'16 e c e d f d f e g e g f a f a
     g16 c g c f, c' f, c' e,4 r
     c16 e c e d f d f e g e g c, e c e
@@ -218,8 +220,8 @@ allegroAViolinII = \relative e'' {
     c4 r8 c' d4 r8 d
     e4 r8 r f4 r8 f
     g4 r8 es d4 r
-    g16 e! g e g e g e d4 r
-    g16 e g e g e g e g d g d g d g d
+    \repeat tremolo 4 { g16 e? } d4 r
+    \repeat tremolo 4 { g16 e } \repeat tremolo 4 { g d }
     e8. f16 d8. e16 e4 r
   }
 }
@@ -227,8 +229,7 @@ allegroAViolinII = \relative e'' {
 allegroAViolinIII = \relative e'' {
   \allegroGlobal
   \repeat volta 2 {
-    R1
-    R1
+    R1*2
     e16 g e g d g d g e g e g d g d g
     c,16 e c e h d h d c e c e h d h d
     g,16 c g e g h g h g c g e g h g h
@@ -261,24 +262,24 @@ allegroAViolinIII = \relative e'' {
     a16 c a c h d h d c e c e d f d f
     e16 c e c e cis e cis d,8 d' d, d'
     \barNumberCheck 30
-    fis16 dis fis dis fis dis fis dis e,8 e' e, e'
-    g16 e g e g e g e f8 r e r
+    \repeat tremolo 4 { fis16 dis } \repeat tremolo 2 {  e,8 e' }
+    \repeat tremolo 4 { g16 e } f8 r e r
     d8 r c r d, r e r
-    e16 a, a a a a a a b b b b b b b b
-    a16 a a a a a a a h! h h h h h h h
-    cis16 cis cis cis cis cis cis cis a a a a a a a a
-    h16 h h h h h h h c4 r
+    e16 a, a a a4:16 b2:
+    a2: h?:
+    cis: a:
+    h: c4 r
     r2 c'16 e c e d f d f
     e16 g e g f a f a g c g c f, c' f, c'
-    e,4 r c,8 c' c, c'
+    e,4 r \repeat tremolo 2 { c,8 c' }
     \barNumberCheck 40
     c16 a c a d a d a h g h g c a c a
     f8 e d c f d g g,
     c4 r8 a b4 r8 h
     c4 r8 cis d4 r8 d
     es4 r8 c g'4 r
-    c16 c, c' c, c' c, c' c, g'4 r
-    c16 c, c' c, c' c, c' c, h' g h g h g h g
+    \repeat tremolo 4 { c16 c, } g'4 r
+    \repeat tremolo 4 { c16 c, } \repeat tremolo 4 { h' g }
     e8 c g' g, c4 r
   }
 }
@@ -286,9 +287,7 @@ allegroAViolinIII = \relative e'' {
 allegroAViolinIV = \relative e'' {
   \allegroGlobal
   \repeat volta 2 {
-    R1
-    R1
-    R1
+    R1*3
     e16 g e g d g d g e g e g d g d g
     c,16 e c e h d h d c e c e h d h d
     g,16 c g c a e' a, e' fis, h fis h g d' g, d'
@@ -305,28 +304,28 @@ allegroAViolinIV = \relative e'' {
     d4 r8 d h4 r8 c
     a4 r8 h g4 r8 a
     fis4 r8 h a4 r
-    g'16 h, g' h, g' h, g' h, fis4 r
+    \repeat tremolo 4 { g'16 h, } fis4 r
     \barNumberCheck 20
-    g'16 h, g' h, g' h, g' h, a d, a' d, a' d, a' d,
+    \repeat tremolo 4 { g'16 h, } \repeat tremolo 4 { a d, }
     d'8. d16 d8. d16 d4 r
   } \break
   \repeat volta 2 {
     R1
     r2 g,16 h g h a c a c
     h16 d h d c e c e d g d g c, g' c, g'
-    g,,16 g' g, g' g, g' g, g' e gis e gis e gis e gis
+    \repeat tremolo 4 { g,,16 g' } \repeat tremolo 4 { e gis }
     a,4 r a'16 c a c h d h d
     c16 e c e d f d f e a e a d, a' d, a'
     c,4 r a16 c a c h d h d
-    c16 e c e a, e' a, e' fis, a fis a fis a fis a
+    c16 e c e a, e' a, e' \repeat tremolo 4 { fis, a }
     \barNumberCheck 30
-    dis?16 fis dis fis h, fis' h, fis' gis, h gis h gis h gis h
+    dis?16 fis dis fis h, fis' h, fis' \repeat tremolo 4 { gis, h }
     e16 g! e g c, g' c, g' f8 r e r
     d8 r c r d, r e r
-    a,16 a a a a a a a a a a a a a a a
-    g16 g g g g g g g gis gis gis gis gis gis gis gis
-    a16 a a a a a a a a a a a a a a a
-    g16 g g g g g g g c4 r
+    a,2:16 a:
+    g: gis:
+    a: a:
+    g: c4 r
     R1
     c'16 e c e d f d f e g e g f a f a
     g16 c g c f, c' f, c' c, e c e g, c g c
@@ -336,8 +335,8 @@ allegroAViolinIV = \relative e'' {
     c4 r8 f d4 r8 g
     e4 r8 a f4 r8 b
     g4 r8 g g4 r
-    c16 g' c, g' c, g' c, g' h,4 r
-    c16 g' c, g' c, g' c, g' d g d g d g d g
+    \repeat tremolo 4 { c16 g' } h,4 r
+    \repeat tremolo 4 { c16 g' } \repeat tremolo 4 { d g }
     g,8. g16 g8. g16 g4 r
   }
 }
@@ -502,6 +501,7 @@ largoAViolinIV = \relative a {
 % Allegro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 allegroIIGlobal = {
+  \compressFullBarRests
   \set Score.tempoHideNote = ##t
   \key c \major
   \time 2/2
@@ -585,9 +585,9 @@ allegroIIAViolinII = \relative h' {
   r2 r4 r8 a16 h
   c16( h a) h c( h a) c d( c h) c d( c h) d
   c4 r8 cis d4 r8 dis8
-  e8 r e r e e e e
-  f8 f f f e e e e
-  h8 h h h h h h h
+  e8 r e r e2:8
+  f2: e2:
+  h1:
   c8 e c a h c16 d e8 e,
   \barNumberCheck 20
   a8 cis d2 cis4
@@ -599,9 +599,9 @@ allegroIIAViolinII = \relative h' {
   r4 r16 fis e fis g g fis g e e d e
   fis16 fis e fis d d c d e e d e c c h c
   d16 d c d h h a h c c h c a a g a
-  h8 h h h c c c c
+  h2:8 c2:
   \barNumberCheck 30
-  h8 h h h h h h h
+  h1:
   h8 h h4 h r
   c,4 r r2
   r8 c' h g a h16 c d8 d,
@@ -638,9 +638,9 @@ allegroIIAViolinIII = \relative g'' {
   a16( g f) g a( g f) a g8 e a a
   a1~
   a8 r a,, r d r h r
-  e8 r d r c c c c
-  f8 f f f c c c c
-  e8 e e e e e e e
+  e8 r d r c2:8
+  f: c:
+  e: e:
   a,4 a'2 gis4
   \barNumberCheck 20
   a4r r2
@@ -652,9 +652,9 @@ allegroIIAViolinIII = \relative g'' {
   e8 g h2 a4~
   a4 g2 fis4~
   fis4 e2 dis4
-  e8 e, e e g g g g
+  e8 e, e e g2:8
   \barNumberCheck 30
-  g8 g g g fis fis fis fis
+  g2: fis:
   fis8 e dis4 g4 r
   e4 r r2
   R1
@@ -668,9 +668,9 @@ allegroIIAViolinIII = \relative g'' {
   g2 f
   e2 d
   c4 r e,16( f e) c e( f e) c
-  g'16( a g) e g( a g) e c'8 c c c
-  c8 c c c c c c c
-  c8 c c c c4 r \bar "|."
+  g'16( a g) e g( a g) e c'2:8
+  c2: c2:
+  c2: c4 r \bar "|."
 }
 
 allegroIIAViolinIV = \relative c'' {
@@ -691,9 +691,9 @@ allegroIIAViolinIV = \relative c'' {
   f16( e d) e f( e d) f e8 c r4
   R1
   a8 r a r a r h r
-  h8 r h r c c c c
-  c8 c c c c c c c
-  h8 h h h e, e e e
+  h8 r h r c2:8
+  c: c:
+  h: e,:
   e4 r r2
   \barNumberCheck 20
   r8 a' f d e f16 g a8 a,
@@ -705,13 +705,11 @@ allegroIIAViolinIV = \relative c'' {
   r4 r16 dis' cis dis e e d e c c h c
   d16 d c d h h a h c c h c a a g a
   h16 h a h g g fis g a a g a fis fis e fis
-  g8 g, g g a a a a
+  g8 g, g g a2:8
   \barNumberCheck 30
-  g8 g g g h h h h
+  g: h:
   h8 c h4 e r
-  R1
-  R1
-  R1
+  R1*3
   r8 c' h g a h16 c d8 d,
   g4 r16 d' c d e e d e c c h c
   d16 d c d h h a h c c h c a a g a
@@ -720,8 +718,8 @@ allegroIIAViolinIV = \relative c'' {
   \barNumberCheck 40
   f4 e2 d4~
   d4 c2 h4
-  c8 c, c c c c c c
-  c8 c c c c c c c
-  f8 f f f c c c c
-  f8 f f f c4 r \bar "|."
+  c8 c, c c c2:8
+  c: c:
+  f: c2:8
+  f: c4 r \bar "|."
 }
