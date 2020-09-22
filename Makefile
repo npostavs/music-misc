@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-# dirs := <FILL IN>
+dirs := stv-186.3-string-trio
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
