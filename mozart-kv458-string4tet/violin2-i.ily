@@ -38,8 +38,8 @@ violinIIFirstMov =  \relative d'' {
 	| a r bes(  a) r bes(
 	|  a) r bes'(  a) r bes(
 	|   a)[  a(-. a-.]  a[-. a-.  a)-.] 
-	| a4 r8 r4 r8
-	| r4 r8 r r f\f
+	| a4 r8 r4.
+	| r4. r4 f8\f
 	|  f[(  d) d-.]  d[(  bes) bes-.]
 	| bes4(  d8) c4 d8
 	|  es16[( f  es8) c-.]  c16[( d  c8) a-.]
@@ -78,16 +78,16 @@ violinIIFirstMov =  \relative d'' {
 	| r8  d[-. c-.] \grace c16 bes8[-. a-. g-.]
 
 % 60
-	| f4 r8 r4 r8
-	| bes4(\fp  a8) r4 r8
-	| bes4(\fp  a8) r4 r8
+	| f4 r8 r4.
+	| bes4(\fp  a8) r4.
+	| bes4(\fp  a8) r4.
 	| g4(\fp  f8) c'4(  bes8)
 	|  g16[( a g a  g8)]  c16[( d c d  c8)]
 	| r8  d[-. c-.] \grace c16 bes8[-. a-. g-.]
-	| f4 r8 r4 r8
+	| f4 r8 r4.
 	|  g16[(\f a g a  bes8)]  e,16[( f e f  g8)]
 	| bes'4(  a8) \grace a16 g8[-. f-. e-.]
-	| f4 r8 r4 r8
+	| f4 r8 r4.
 
 % 70
 	|  g,16[( a g a  bes8)]  e,16[( f e f  g8)]
@@ -95,15 +95,15 @@ violinIIFirstMov =  \relative d'' {
 	|  es!)
 	| f ~
 	| f4.(  as)
-	| a!8 r r r4 r8
+	| a!8 r r r4.
 	| c,4.(  e)
-	| f r8 r c'\f
+	| f4. r4 c'8\f
 	| d4(  c8)  bes8.[^\trill a16 bes8]
 	| b4(  c8) a4(\p  es!8)
 
 % 80
 	| d4.(  bes)
-	| a4. r8 r cis'\f
+	| a4. r4 cis'8\f
 	| d4(  c8)  bes8.[^\trill a16 bes8]
 	| b4(  c8) \grace { c32[ d] } es!8.[ d16 c8]
 	| bes!4\p r8 bes4 r8
@@ -114,7 +114,7 @@ violinIIFirstMov =  \relative d'' {
 	| a4\pp r8 a'4 r8
 
 % 90
-	| a4 r8 r r
+	| a4 r8 r4
     }
     \pageBreak
 
@@ -163,7 +163,7 @@ violinIIFirstMov =  \relative d'' {
 	| d(  as')
 	|  g16[ es bes es g es]  as[ f bes, f' as f]
 	|  g[ es bes es g es]  as[ f bes, f' as f]
-	| es4 r8 r4 r8
+	| es4 r8 r4.
 	| es16[(-\parentF f es f  es8)]  c16[( d c d  c8)]
 
 % 130
@@ -171,10 +171,10 @@ violinIIFirstMov =  \relative d'' {
 	| bes g'
 	| f a
 	| bes  bes,16[( c bes c  bes8)]
-	| a r r r4 r8
-	| r4 r8  c[(\p a  c)]
+	| a r r r4.
+	| r4. c8[(\p a  c)]
 	| es! r r  a[( f a]
-	|  c) r r r r d,8-.-\parentF
+	|  c) r r r4 d,8-.-\parentF
 	|  d[(  bes) bes-.]  bes[(  f) f-.]
 	| f4(  bes8) a4 bes8
 
@@ -213,8 +213,8 @@ violinIIFirstMov =  \relative d'' {
 
 % 160
 	|   a)[  a(-. a-.]  a[-. a-.  a)-.] 
-	| a4 r8 r4 r8
-	| r4 r8 r r f\f
+	| a4 r8 r4.
+	| r4. r4 f8\f
 	|  f[(  d) d-.]  d[(  bes) bes-.]
 	| bes4(  d8) c4 d8
 	|  es16[( f  es8) c-.]  c16[( d  c8) a-.]
@@ -241,7 +241,7 @@ violinIIFirstMov =  \relative d'' {
 	| a4. r8  d8[-.\p bes-.]
 	|  f16[( g f g  f8)] r4 r8
 	| R2.*2
-	|  f16[( g f g  f8)] r4 r8
+	|  f16[( g f g  f8)] r4.
 	| a,4.(\f bes
 	| c bes
 	| c  bes)
@@ -259,16 +259,16 @@ violinIIFirstMov =  \relative d'' {
 	| r8  g[-. f-.] \appoggiatura f16 es8[-. d-. c-.]
 
 % 200
-        | bes4 r8 r4 r8
-	| es4(\fp  d8) r4 r8
-	| es4(\fp  d8) r4 r8
+        | bes4 r8 r4.
+	| es4(\fp  d8) r4.
+	| es4(\fp  d8) r4.
 	| as4(\fp  g8) bes4(\fp  a8)
 	|  d,16[(\fp es d es  d8)]  f16[(\fp g f g  f8)]
 	| r8  g[-.\p f-.] \appoggiatura f16 es8[-. d-. c-.]
 	| bes4 r8  bes'16[(\f c bes c  d8)]
 	|  c16[( d c d  es8)]  a,16[( bes a bes  c8)]
 	| es4(  d8) \grace d16 c8[-. bes-. a-.]
-	| bes4 r8 r4 r8
+	| bes4 r8 r4.
 
 % 210
 	|  c,16[( d c d  es8)]  a,16[( bes a bes  c8)]
@@ -276,15 +276,15 @@ violinIIFirstMov =  \relative d'' {
 	|  as)
 	| bes(
 	|  b4.) des(
-	|  d!8) r r r4 r8
+	|  d!8) r r r4.
 	| f,4.(  a)
-	| bes r8 r f\f
+	| bes r4 f8\f
 	| g4(  f8)  es8.[^\trill d16 es8]
 	| e4(  f8) d4(\p  as8)
 
 % 220
 	| g4.(  es')
-	| d r8 r fis'8\f
+	| d4. r4 fis'8\f
 	| g4(  f!8)  es8.[^\trill d16 es8]
 	| e4(  f8) \grace { d32[(  es)] } f8.[ es16 d8]
 	| c4\p r8 c4 r8
@@ -298,24 +298,23 @@ violinIIFirstMov =  \relative d'' {
         {
 	  | d8 r r d' r r
 	  | \set Timing.measureLength = #(ly:make-moment 5 8)
-	    d4 r8 r r
+	    d4 r8 r4
 	}
 
 	{
 	  | \set Timing.measureLength = #(ly:make-moment 6 8)
 	    d,!8 r r d' r r
-	  | d4 r8 r4
+	  | d4 r8 r4.
 	}
     }
 
-      r8
     | as,4\f r8 b'4 r8
-    | b4 r8 r4 r8
+    | b4 r8 r4.
     | R2.*2
     | <g bes!>2.\p ~
     | <g bes>
-    | a4 r8 r4 r8
-    | r r bes\f  bes[(  g) g-.]
+    | a4 r8 r4.
+    | r4 bes8\f  bes[(  g) g-.]
     |  g[(  es) es-.] es4(  c'8)
 
 % 240
@@ -324,7 +323,7 @@ violinIIFirstMov =  \relative d'' {
     | bes4(  g8)  g[(  es) es-.]
     |  es[ c es]  f[ d f]
     |  g[ es g]  a[ f a]
-    | bes4 r8 r r bes
+    | bes4 r8 r4 bes8
     |  bes[(  g) g-.]  g[(  es) es-.]
     | es4(  g8)  g[(  a) a-.]
     |  a[(  f) f-.]  f[(  d) d-.]
@@ -355,16 +354,16 @@ violinIIFirstMov =  \relative d'' {
       g'>]
     | <bes f'>[ <bes f'> <bes f'> <bes f'> <bes f'> <bes f'>] <es, a>[
       <es a> <es a> <es a> <es a> <es a>]
-    | <d bes'>4. r8 r d
+    | <d bes'>4. r4 d8
 
 % 270
     | d4(  as'8) g4 b8
-    |  c4 r8 r4 r8
+    |  c4 r8 r4.
     |  d,16[(  f d f d f]  d[ f d f es  f)]
     |  d8[ f\p f] f r r
     | r <f a>[ <f a>] <f a> r r
     | r  d16[( c es d]  f8) r r
     | r  c16[( bes d  c)] es8  c'16[( d es  c)]
     | d4 r8 <bes, f' d'>4\f r8
-    | bes4 r8 r4 r8
+    | bes4 r8 r4.
 }

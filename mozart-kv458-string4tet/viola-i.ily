@@ -36,7 +36,7 @@ violaFirstMov =  \relative bes' {
 	|  f) r g'(  f) r g(
 	|   f)[  c(-. c-.]  c[-. c-.  c)-.] 
 	| c4 r8 r4.
-	| r4. r8 r d8\f
+	| r4. r4 d8\f
 	% The Breitkopf score has 'g,8', but it is certainly a mistake
 	|  d[(  bes) bes-.]  bes[(  d,) d-.]
 	| f4(  bes8) a4 b8
@@ -98,13 +98,13 @@ violaFirstMov =  \relative bes' {
 	| c4.(  f) ~
 	| f8 r r r4.
 	| a,4.(  bes)
-	| a r8 r a'\f
+	| a r4 a'8\f
 	| bes4(  a8)  g8.[^\trill f16 g8]
 	| gis4(  a8) f4(\p  c8)
 
 % 80
 	| bes4.(  g)
-	| f r8 r a'\f
+	| f r4 a'8\f
 	| bes4(  a8)  g8.[^\trill f16 g8]
 	| gis4(  a8) \grace { a32[ bes] } c8.[ bes16 a8]
 	| g!4 r8 g4 r8
@@ -212,7 +212,7 @@ violaFirstMov =  \relative bes' {
 % 160
 	|   f)[  c(-. c-.]  c[-. c-.  c)-.] 
 	| c4 r8 r4.
-	| r4. r8 r d8\f  % This is `d', not `g' (unlike bar #26)
+	| r4. r4 d8\f  % This is `d', not `g' (unlike bar #26)
 	|  d[(  bes) bes-.]  bes[(  d,) d-.]
 	| f4(  bes8) a4 b8
 	|  c16[( d  c8) a-.]  a16[( bes!  a8) c,-.]
@@ -353,7 +353,7 @@ violaFirstMov =  \relative bes' {
     |  bes16[( c bes c  d8)]  a16[( bes a bes  c8)]
     |  f16[\f f f f f f]  es4.:16
     |  d:  c:
-    | bes4 r8 r r g'
+    | bes4 r8 r4 g'8
     | g4(  b,8) c4 f8
     | g4 r8 r4.
     |  f8[ f f]  f[ f a]

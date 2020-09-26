@@ -35,7 +35,7 @@ celloFirstMov =  \relative bes {
 	| f8 r c(  f) r c(
 	|  f) r c'(  f,) r c'(
 	|   f,)[  f(-. f-.]  f[-. f-.  f)-.] 
-	| f4 r8 r4 r8
+	| f4 r8 r4.
 	| R2.*2
 	| d4(\f  bes8) f'4 r8
 	| R2.
@@ -55,10 +55,10 @@ celloFirstMov =  \relative bes {
 
 % 40
 	| f d\p
-	| c r4 r8
+	| c r4.
 	| R2.
-	| r4 r8 r  a[-.\p f-.]
-	|  c'16[( d c d  c8)] r4 r8
+	| r4. r8  a[-.\p f-.]
+	|  c'16[( d c d  c8)] r4.
 	| R2.
 	| \stemUp \slurDown c4.(\f des
 	| c des
@@ -69,15 +69,15 @@ celloFirstMov =  \relative bes {
 	|  a8) r r bes r r
 	| g r r e r r
 	| f4.\f  bes,8[-. c-. c-.]
-	| f,4 r8 r4 r8
-	| e'4(\fp  f8) r4 r8
-	| e4(\fp  f8) r4 r8
+	| f,4 r8 r4.
+	| e'4(\fp  f8) r4.
+	| e4(\fp  f8) r4.
 	| e4(\fp  f8) a4(\fp  bes8)
 	| b4(\fp  c8) e4(\fp  f8)
 	| bes,4\p r8 c4 r8
 
 % 60
-	| f,4 r8 r4 r8
+	| f,4 r8 r4.
 	| R2.*3
 	| b4(\fp  c8) e4(\fp  f8)
 	| bes,!4\p r8 c4 r8
@@ -92,7 +92,7 @@ celloFirstMov =  \relative bes {
 	|  fis)
 	| gis(
 	| a4. b
-	|  c8) r r r4 r8
+	|  c8) r r r4.
 	| c,2. \tag #'clar { \ottava #0 }
 	| f2.\f ~
 	| f ~
@@ -111,7 +111,7 @@ celloFirstMov =  \relative bes {
 	| f,4\pp r8 f'4 r8
 
 % 90
-	| f4 r8 r r	
+	| f4 r8 r4
     }
 
   \pageBreak
@@ -124,7 +124,7 @@ celloFirstMov =  \relative bes {
 	| f2. ~
 	| f
 	| c(
-	|  f4) r8 r4 r8
+	|  f4) r8 r4.
 	| f'2. ~
 
 % 100
@@ -160,7 +160,7 @@ celloFirstMov =  \relative bes {
 	| r \slurDown  bes!16[( a c bes]  d4.) \slurNeutral
 	| es(  d)
 	| es(  d)
-	| es4 r8 r4 r8
+	| es4 r8 r4.
 	| c16[(-\parentF d c d  c8)]  a16[( bes a bes  a8)]
 
 % 130
@@ -168,10 +168,10 @@ celloFirstMov =  \relative bes {
 	|  f'16[( g f g  f8)] r  bes,[-. f-.]
 	|  f'16[( g f g  f8)] r  c[-. f,-.]
 	|  f'16[( g f g  f8)] r  f[ f,]
-	| f' r r r4 r8
+	| f' r r r4.
 	| R2.
-	| r4 r8  a[(\p c  a)]
-	| f r r r4 r8
+	| r4.  a8[(\p c  a)]
+	| f r r r4.
 	| bes4-\parentF r8 bes,4 r8
 	| d4(  bes8) f'4 d8
 
@@ -206,12 +206,12 @@ celloFirstMov =  \relative bes {
 % 160
 	|  f) r c'(  f,) r c'(
 	|   f,)[  f(-. f-.]  f[-. f-.  f)-.] 
-	| f4 r8 r4 r8
+	| f4 r8 r4.
 	| R2.*2
 	| d4(\f  bes8) f'4 r8
 	| R2.
 	| f,4(  a8) bes4 r8
-	| es4 r8 r4 r8
+	| es4 r8 r4.
 	| g4(  es8) bes'4 r8
 	| R2.
 
@@ -230,10 +230,10 @@ celloFirstMov =  \relative bes {
 % 180
 	| f4.(  a)
 	| bes g\p
-	| f r4 r8
+	| f r4.
 	| R2.
-	| r4 r8 r  d[-.\p bes-.]
-	|  f16[( g f g  f8)] r4 r8
+	| r4. r8  d[-.\p bes-.]
+	|  f16[( g f g  f8)] r4.
 	| R2.
 	|  f4.(\f  ges
 	| f ges
@@ -244,19 +244,19 @@ celloFirstMov =  \relative bes {
 	|  d8) r r es r r
 	| g r r a r r
 	| bes4.\f  es,8[-. f-. f-.]
-	| bes,4 r8 r4 r8
-	| a'4(\fp  bes8) r4 r8
-	| a4(\fp  bes8) r4 r8
+	| bes,4 r8 r4.
+	| a'4(\fp  bes8) r4.
+	| a4(\fp  bes8) r4.
 	| fis4(\fp  g8) b4(\fp  c8)
 	| e,4(\fp  f!8) a4(\fp  bes!8)
 	| es,!4\p r8 f4 r8
 
 % 200
-	| bes,4 r8 r4 r8
+	| bes,4 r8 r4.
 	| R2.*3
 	| fis'4(\fp  g8) a4(\fp  bes8)
 	| es,4\p r8 f!4 r8
-	| bes,4 r8 r4 r8
+	| bes,4 r8 r4.
 	| \ottava #1  es'16[( f es f  g8)]  c,16[( d c d  es8)]
 	| \ottava #0 a,4(  bes8)  es,[-. f-. f-.]
 	|  bes16[( c bes c  d8)]  g,16[( a g a  bes8)]
@@ -267,7 +267,7 @@ celloFirstMov =  \relative bes {
 	|  b)
 	| cis(
 	| d4.  e)
-	| f8 r r r4 r8
+	| f8 r r r4.
 	| f,2.
 	| bes\f ~
 	| bes ~
@@ -289,19 +289,18 @@ celloFirstMov =  \relative bes {
         {
 	  | bes,8 r r bes' r r 
 	  | \set Timing.measureLength = #(ly:make-moment 5 8)
-	    bes4 r8 r r
+	    bes4 r8 r4
 	}
 
 	{
 	  | \set Timing.measureLength = #(ly:make-moment 6 8)
 	    bes,8 r r bes' r r
-	  | bes4 r8 r4
+	  | bes4 r8 r4.
 	}
     }
 
-      r8
     | d,,4\f r8 d'4 r8
-    | d4 r8 r4 r8
+    | d4 r8 r4.
     | R2.*4
     | f,2.\f ~
     | f ~
@@ -345,12 +344,12 @@ celloFirstMov =  \relative bes {
 
 % 270
     | g4(  f8) es4 d8
-    | c4 r8 r4 r8
-    |  f[ f f]  f[ f f]
+    | c4 r8 r4.
+    |  f8[ f f]  f[ f f]
     |  bes,[ bes'\p bes] bes r r
     | r  f[ f] f r r
     | r  bes,[ bes] bes r r
     | r  f[ f] f r r
-    | r4 r8 bes'4\f r8
-    | bes,4 r8 r4 r8
+    | r4. bes'4\f r8
+    | bes,4 r8 r4.
 }

@@ -12,9 +12,9 @@
 
 \paper {
   % page-count = #8
-  page-breaking = #ly:page-turn-breaking
+  % page-breaking = #ly:page-turn-breaking
   %% auto-first-page-number = ##t
-  first-page-number = #2
+  % first-page-number = #2
 }
 
 \include "viola-i.ily"
@@ -56,6 +56,8 @@
     \layout { }
 }
 
+\pageBreak
+
 \include "viola-iii.ily"
 
 \score {
@@ -72,6 +74,8 @@
     \layout { }
 }
 
+\pageBreak
+
 \include "viola-iv.ily"
 
 \score {
@@ -87,7 +91,11 @@
 	\context Voice = "markings" { \markingsIV }
     >>
 
-    \layout { }
+    \layout {
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+      }
+    }
 }
 
 
