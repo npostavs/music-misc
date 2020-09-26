@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-# dirs := <FILL IN>
+dirs := mozart-kv458-string4tet
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
