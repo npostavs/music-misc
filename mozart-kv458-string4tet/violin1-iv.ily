@@ -122,7 +122,7 @@ violinIFourthMov =  \relative bes' {
 	| \times 2/3 {  d[ cis d] } \times 2/3 {  bes[ a bes] }
 	| \times 2/3 {  a[( d c!] } \times 2/3 {  bes[ a  g)] }
 	| f4 r
-	| r r8 c'8
+	| r4. c'8
 	|  f[( e d  c)]
 
 % 100
@@ -132,7 +132,7 @@ violinIFourthMov =  \relative bes' {
  	| c[(-\parentF f g,  d')]
 	| f,4(  g)
 	| bes(  a8) r
-	| r4 r8 e'(\p
+	| r4. e'8(\p
 	|   f)[ c-. f-. a-.]
 	| bes4 r8 e,(
 	|   f)[_\parentCresc c-. f-. a-.]
@@ -170,7 +170,7 @@ violinIFourthMov =  \relative bes' {
 
     \repeat volta 2 {
         | R2
-	| r4 r8 as'(\p
+	| r4. as'8(\p
 	|  c[ as c as]
 	|  c4) r8 c,
 	|  b[-. c-. b-. c-.]
