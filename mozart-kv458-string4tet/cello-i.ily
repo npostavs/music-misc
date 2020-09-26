@@ -1,8 +1,7 @@
 \version "2.16.0"
 
 celloFirstMov =  \relative bes {
-    \key bes \major
-    \clef bass
+  \key bes \major
 
     \noTupletBracket
 
@@ -82,19 +81,19 @@ celloFirstMov =  \relative bes {
 	| R2.*3
 	| b4(\fp  c8) e4(\fp  f8)
 	| bes,!4\p r8 c4 r8
-	| \ottava #1  f16[( g f g  a8)]  d,16[( e d e  f8)]
-	|  bes,16[( c bes c  d8)]  g,16[( a g a  bes8)] \ottava #0
+	| \tag #'cello { \ottava #1 }  f16[( g f g  a8)]  d,16[( e d e  f8)]
+	|  bes,16[( c bes c  d8)]  g,16[( a g a  bes8)] \tag #'cello { \ottava #0 }
 	| e,4(  f8)  bes[-. c-. c-.]
 	|  f,16[( g f g  a8)]  d,16[( e d e  f8)]
 
 % 70
 	|  bes,16[( c bes c  d8)]  g,16[( a g a  bes8)]
-	|  e,2.(\fp 
+	|  \tag #'clar { \ottava #-1 } e,2.(\fp 
 	|  fis)
 	| gis(
 	| a4. b
 	|  c8) r r r4 r8
-	| c,2.
+	| c,2. \tag #'clar { \ottava #0 }
 	| f2.\f ~
 	| f ~
 	| f4. ~ f4(\p   a8)
@@ -115,6 +114,7 @@ celloFirstMov =  \relative bes {
 	| f4 r8 r r	
     }
 
+  \pageBreak
     \repeat volta 2 {
         r8
 	| f,,2.\p ~

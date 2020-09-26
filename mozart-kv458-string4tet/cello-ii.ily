@@ -2,7 +2,6 @@
 
 celloSecondMov =  \relative bes, {
     \key bes \major
-    \clef bass
 
     \noTupletBracket
 
@@ -54,8 +53,8 @@ celloSecondMov =  \relative bes, {
 	| bes'2( a4
 	| g f  e)
 	| f r r
-	| c,(\sfp  c') d
-	| bes g c
+	| \tag #'clar { \ottava #-1 } c,(\sfp  c') d
+	| bes g c \tag #'clar { \ottava #0 }
 	| \tag #'part {f,4 r r
 	  \override VoltaBracket #'stencil = ##f}
     }

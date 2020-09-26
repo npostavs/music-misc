@@ -2,7 +2,6 @@
 
 celloThirdMov =  \relative es {
     \key es \major
-    \clef bass
 
     \noTupletBracket
 
@@ -46,7 +45,7 @@ celloThirdMov =  \relative es {
     | es4(\p   d8)[\sf  r16. es32]  bes8[-. es,-.] r4
     | r2 c'4\f d
     |  es8[\p es,] r  g(  bes[ es_\cresc g  bes)]
-    |   des[-.\p des,-.] r4  c8[-. c,-.] r4
+    |   des[-.\p des,-.] r4  \tag #'clar { \ottava #-1 } c8[-. c,-.] r4 \tag #'clar { \ottava #0 }
     | f'8 r f r f r bes, r
 
 % 30
@@ -83,7 +82,7 @@ celloThirdMov =  \relative es {
 % 50
     | as8 r bes r es,4 r8 bes'
     | es4 r8 bes,8 es4 r
-    | c,\f d  es8[-.\p es'-.] r4
+    | \tag #'clar { \ottava #-1 } c,\f d  es8[-.\p es'-.] r4 \tag #'clar { \ottava #0 }
     |  bes8[_ \markup{ {\dynamic "pp"} {\italic " staccato"}} bes bes
       bes(]  es) r8 r4
 }

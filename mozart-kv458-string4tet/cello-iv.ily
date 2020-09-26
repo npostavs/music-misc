@@ -2,7 +2,6 @@
 
 celloFourthMov =  \relative a {
     \key bes \major
-    \clef bass
 
     \noTupletBracket
 

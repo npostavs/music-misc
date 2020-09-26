@@ -32,9 +32,10 @@ $(d)k458-viola-treble.pdf: $(d)k458-viola-treble.ly $(VIOLA_FILES)
 
 ############################################################
 
-$(d)cello: $(d)k458-cello.pdf
+$(d)cello: $(d)k458-cello.pdf $(d)k458-cello-treble-bflat.pdf
 
 $(d)k458-cello.pdf: $(d)k458-cello.ly $(CELLO_FILES)
+$(d)k458-cello-treble-bflat.pdf: $(d)k458-cello-treble-bflat.ly $(CELLO_FILES)
 
 ############################################################
 

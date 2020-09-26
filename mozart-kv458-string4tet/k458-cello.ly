@@ -24,10 +24,11 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"cello"
 
+    \clef "bass"
 	\time 6/8
 	\partial 8
 
-	\celloFirstMov
+	\removeWithTag #'clar \celloFirstMov
 	\context Voice = "markings" { \markingsI }
     >>
 
@@ -42,9 +43,10 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"cello"
 
+    \clef "bass"
 	\time 3/4
 
-	\removeWithTag #'score \celloSecondMov
+	\removeWithTag #'(clar score) \celloSecondMov
 	\context Voice = "markings" { \markingsII }
 	\context Voice=markingsBis { \markingsIIbisSolo }
     >>
@@ -60,7 +62,8 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"cello"
 
-	\celloThirdMov
+    \clef "bass"
+	\removeWithTag #'clar \celloThirdMov
 	\context Voice = "markings" { \markingsIII }
     >>
 
@@ -76,9 +79,10 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"cello"
 
-	\time 2/4
+    \clef "bass"
+    \time 2/4
 
-	\celloFourthMov
+	\removeWithTag #'clar \celloFourthMov
 	\context Voice = "markings" { \markingsIV }
     >>
 
