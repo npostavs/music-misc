@@ -10,6 +10,12 @@
     \compressFullBarRests
 }
 
+\paper {
+  page-breaking = #ly:page-turn-breaking
+  % first-page-number = 2
+  % page-count = #8
+}
+
 \include "cello-i.ily"
 
 \score {
@@ -24,13 +30,6 @@
 	\celloFirstMov
 	\context Voice = "markings" { \markingsI }
     >>
-
-    
-  \midi {
-    \tempo 4 = 140
-    }
-
-
 
     \layout { }
 }
@@ -50,13 +49,6 @@
 	\context Voice=markingsBis { \markingsIIbisSolo }
     >>
 
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
-
     \layout { }
 }
 
@@ -71,13 +63,6 @@
 	\celloThirdMov
 	\context Voice = "markings" { \markingsIII }
     >>
-
-    
-  \midi {
-    \tempo 4 = 40
-    }
-
-
 
     \layout { }
 }
@@ -96,13 +81,6 @@
 	\celloFourthMov
 	\context Voice = "markings" { \markingsIV }
     >>
-
-    
-  \midi {
-    \tempo 4 = 140
-    }
-
-
 
     \layout { }
 }

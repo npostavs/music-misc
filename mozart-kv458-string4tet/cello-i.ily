@@ -82,8 +82,8 @@ celloFirstMov =  \relative bes {
 	| R2.*3
 	| b4(\fp  c8) e4(\fp  f8)
 	| bes,!4\p r8 c4 r8
-	| \clef tenor  f16[( g f g  a8)]  d,16[( e d e  f8)]
-	|  bes,16[( c bes c  d8)]  g,16[( a g a  bes8)] \clef bass
+	| \ottava #1  f16[( g f g  a8)]  d,16[( e d e  f8)]
+	|  bes,16[( c bes c  d8)]  g,16[( a g a  bes8)] \ottava #0
 	| e,4(  f8)  bes[-. c-. c-.]
 	|  f,16[( g f g  a8)]  d,16[( e d e  f8)]
 
@@ -257,8 +257,8 @@ celloFirstMov =  \relative bes {
 	| fis'4(\fp  g8) a4(\fp  bes8)
 	| es,4\p r8 f!4 r8
 	| bes,4 r8 r4 r8
-	| \clef tenor  es'16[( f es f  g8)]  c,16[( d c d  es8)]
-	| \clef bass a,4(  bes8)  es,[-. f-. f-.]
+	| \ottava #1  es'16[( f es f  g8)]  c,16[( d c d  es8)]
+	| \ottava #0 a,4(  bes8)  es,[-. f-. f-.]
 	|  bes16[( c bes c  d8)]  g,16[( a g a  bes8)]
 
 % 210
