@@ -11,7 +11,10 @@
 }
 
 \paper {
-  page-count = #8
+  % page-count = #8
+  page-breaking = #ly:page-turn-breaking
+  %% auto-first-page-number = ##t
+  first-page-number = #2
 }
 
 \include "viola-i.ily"

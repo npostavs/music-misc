@@ -35,8 +35,8 @@ violaFirstMov =  \relative bes' {
 	| f r g(  f) r g(
 	|  f) r g'(  f) r g(
 	|   f)[  c(-. c-.]  c[-. c-.  c)-.] 
-	| c4 r8 r4 r8
-	| r4 r8 r r d8\f
+	| c4 r8 r4.
+	| r4. r8 r d8\f
 	% The Breitkopf score has 'g,8', but it is certainly a mistake
 	|  d[(  bes) bes-.]  bes[(  d,) d-.]
 	| f4(  bes8) a4 b8
@@ -57,31 +57,31 @@ violaFirstMov =  \relative bes' {
 % 40
 	| c2. ~
 	| c4(  a8)  f4.(\p 
-	|  g) r4 r8
-	| r4 r8 r  a8[-. f-.]
-	|  c'16[( d c d  c8)] r4 r8
-	| r4 r8  c16[( d c d  c8)]
+	|  g) r4.
+	| r4. r8  a8[-. f-.]
+	|  c'16[( d c d  c8)] r4.
+	| r4.  c16[( d c d  c8)]
 	| R2.*2
 	|  bes16[(\f c bes c  bes8)] r   bes[(-.  bes)-.]
           
-	| f'4(  e8) r4 r8
+	| f'4(  e8) r4.
 
 % 50
 	|  bes16[( c bes c  bes8)] g'4(\fp  e16[  g)]
 	| f8 r r f r r
 	| bes, r r c r r
 	| c4.\f  d8[-. c-. bes-.]
-	| a4 r8 r4 r8
-	| bes4(\fp  a8) r4 r8
-	| bes4(\fp  a8) r4 r8
+	| a4 r8 r4.
+	| bes4(\fp  a8) r4.
+	| bes4(\fp  a8) r4.
 	| bes4(\fp  a8) es'!4(\fp  d8)
 	| f4(\fp  e8) bes'4(\fp  a8)
 	| r  bes[-.\p a-.] \grace a16 g8[-. f-. e-.]
 
 % 60
-	| f4 r8 r4 r8
-	| e4(\fp  f8) r4 r8
-	| e4(\fp  f8) r4 r8
+	| f4 r8 r4.
+	| e4(\fp  f8) r4.
+	| e4(\fp  f8) r4.
 	| cis4(\fp  d8) fis4(\fp  g8)
 	| f!4(  e8) bes'4(\fp  a8)
 	| r  bes[-.\p a-.] \grace a16 g8[-. f-. e-.]
@@ -96,7 +96,7 @@ violaFirstMov =  \relative bes' {
 	|  a)
 	| d
 	| c4.(  f) ~
-	| f8 r r r4 r8
+	| f8 r r r4.
 	| a,4.(  bes)
 	| a r8 r a'\f
 	| bes4(  a8)  g8.[^\trill f16 g8]
@@ -127,7 +127,7 @@ violaFirstMov =  \relative bes' {
 	| a4.( ~  a8[ f  a)]
 	| a4.( ~  a8[ c  a)]
 	| g4.( ~  g8[ bes  g)]
-	| a4 r8 r4 r8
+	| a4 r8 r4.
 	| f'2. ~
 
 % 100
@@ -155,7 +155,7 @@ violaFirstMov =  \relative bes' {
 	| r  fis'16[( e g fis]  a8) r r
 
 % 120
-	| r4 r8 r8  fis16[( e g  fis)]
+	| r4. r8  fis16[( e g  fis)]
 	| a4.(  a,)
 	|  g( f'!
 	| e  g) 
@@ -171,10 +171,10 @@ violaFirstMov =  \relative bes' {
 	| r  d[-. bes-.]  e16[( f e f  e8)]
 	| r  f[-. c-.]  es!16[( f es f  es8)]
 	| r  des[-. bes-.]  g'16[( a g a  g8)]
-	| f8 r r r4 r8
+	| f8 r r r4.
 	| R2.
-	| r4 r8  c8[(\p es!  c)]
-	| a r r r4 r8
+	| r4.  c8[(\p es!  c)]
+	| a r r r4.
 	| bes'4(-\parentF  f8)  f[(  d) d-.]
 	| d4(  f8) f4.
 
@@ -209,8 +209,8 @@ violaFirstMov =  \relative bes' {
 
 % 160
 	|   f)[  c(-. c-.]  c[-. c-.  c)-.] 
-	| c4 r8 r4 r8
-	| r4 r8 r r d8\f  % This is `d', not `g' (unlike bar #26)
+	| c4 r8 r4.
+	| r4. r8 r d8\f  % This is `d', not `g' (unlike bar #26)
 	|  d[(  bes) bes-.]  bes[(  d,) d-.]
 	| f4(  bes8) a4 b8
 	|  c16[( d  c8) a-.]  a16[( bes!  a8) c,-.]
@@ -234,31 +234,31 @@ violaFirstMov =  \relative bes' {
 %  180
 	| f4. f' ~
 	| f4(  d8) bes4.\p
-	| c r4 r8
-	| r4 r8 r  d[-.\p bes-.]
-	|  f'16[( g f g  f8)] r4 r8
-	| r4 r8  f,16[( g f g  f8)]
+	| c r4.
+	| r4. r8  d[-.\p bes-.]
+	|  f'16[( g f g  f8)] r4.
+	| r4.  f,16[( g f g  f8)]
 	| R2.*2
 	|   es16[(\f  f es f  es8)] r
            es[-. es-.]
-	| bes'4(  a8) r4 r8
+	| bes'4(  a8) r4. \allowPageTurn
 	|  es'16[( f es f  es8)] f4.\fp ~
 
 % 190
 	| f8 r r es r r
 	| bes r r c r r
 	| bes4.\f  g'8[-. f-. es-.]
-	| d4 r8 r4 r8
-	| es4(\fp  d8) r4 r8
-	| es4(\fp  d8) r4 r8
+	| d4 r8 r4.
+	| es4(\fp  d8) r4.
+	| es4(\fp  d8) r4.
 	| c4(\fp  bes8) f'4(\fp  es8)
 	| bes4(\fp  a8) es'4(\fp  d8)
 	| r  es[-.\p d-.] \grace d16 c8[-. bes-. a-.]
 
 % 200
-	| bes4 r8 r4 r8
-	| a'4(  bes8) r4 r8
-	| a4(  bes8) r4 r8
+	| bes4 r8 r4.
+	| a'4(  bes8) r4.
+	| a4(  bes8) r4.
 	| d,4(\fp  es8) e4(\fp  f8)
 	| c4(\fp  bes8) es!4(\fp  d8)
 	| r  es[-.\p d-.] \grace d16 c8[-. bes-. a-.]
@@ -273,7 +273,7 @@ violaFirstMov =  \relative bes' {
 	|  d)
 	| g
 	| as4.(  bes) ~
-	| bes8 r r r4 r8
+	| bes8 r r r4.
 	| d,4.(  es)
 	| d r8 r d\f
 	| es4(  d8)  c8.[^\trill bes16 c8]
@@ -309,11 +309,11 @@ violaFirstMov =  \relative bes' {
 
       r8
     | f,4\f r8 f'4 r8
-    | f4 r8 r4 r8
+    | f4 r8 r4.
     | R2.*2
     | es2.(\p
     |  e)
-    | f4 r8 r4 r8
+    | f4 r8 r4.
     | R2.
     | r8  f,8[\f f]  f[ f f]
 
@@ -326,14 +326,14 @@ violaFirstMov =  \relative bes' {
     | f4 f'8  f[(  d) d-.]
     |  d[(  bes) bes-.] bes4(  bes'8)
     |  bes[(  c) c-.] c4 r8
-    | r4 r8 r  a[ a]
+    | r4. r8  a[ a]
     |  a[(  bes) bes-.] bes4 r8
 
 % 250
-    | r4 r8 r  c,[ c]
+    | r4. r8  c,[ c]
     |  c[(  a) a-.]  a[(  f) f-.]
     | c'4 r8 des4 r8
-    | r4 r8 d!4.(\p ~
+    | r4. d!4.(\p ~
     |  d8[ es  e)] f4(  es8)
     | d4 r8 <c es>4 r8
     | <bes d>4 r8 <c es>4 r8
@@ -343,7 +343,7 @@ violaFirstMov =  \relative bes' {
 
 % 260
     | g,\p r r a r r
-    | r4 r8 r  c[-. f,-.]
+    | r4. r8  c[-. f,-.]
     |  f'16[( g f g  f8)] r  a[-. c-.]
     |  f,16[( g f g  f8)] r  c[-. f,-.]
     |  f'16[( g f g  f8)] r  a[-. c-.]
@@ -353,12 +353,12 @@ violaFirstMov =  \relative bes' {
     |  d[ d d d d d]  c[ c c c c c]
     | bes4 r8 r r g'
     | g4(  b,8) c4 f8
-    | g4 r8 r4 r8
-    |  f[ f f]  f[ f a]
+    | g4 r8 r4.
+    |  f8[ f f]  f[ f a]
     |  bes[ d,\p d] d r r
     | r <c es>[ <c es>] <c es> r r
     | r  bes16[( a c  bes)] d8 r r
     | r  a16[( g bes  a)]  c8[ f f]
     | bes,4 r8 bes'4\f r8
-    | bes,4 r8 r4 r8
+    | bes,4 r8 r4.
 }
