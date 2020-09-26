@@ -115,8 +115,10 @@ violaFirstMov =  \relative bes' {
 	| f4\pp r8 c'4 r8
 
 % 90
-	| c4 r8 r r
+	| c4 r8 r4
     }
+
+    \pageBreak
 
     \repeat volta 2 {
         r8
@@ -349,8 +351,8 @@ violaFirstMov =  \relative bes' {
     |  f'16[( g f g  f8)] r  a[-. c-.]
     | f,8\f r r es r r
     |  bes16[( c bes c  d8)]  a16[( bes a bes  c8)]
-    |  f16[\f f f f f f]  es[ es es es es es]
-    |  d[ d d d d d]  c[ c c c c c]
+    |  f16[\f f f f f f]  es4.:16
+    |  d:  c:
     | bes4 r8 r r g'
     | g4(  b,8) c4 f8
     | g4 r8 r4.

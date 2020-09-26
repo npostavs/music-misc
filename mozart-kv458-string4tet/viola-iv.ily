@@ -133,10 +133,10 @@ violaFourthMov =  \relative as {
 	|  e[ g bes  g)]
 	|  f[\f f' f, f']
 	| f4(  c)
-	|  c16[ c c c]  c[ c c c]
-	|  d[ d d d]  f[ f f f]
-	|  f[ f f f]  f[ f f f]
-	|  e[ e e e]  e[ e e e]
+	|  c16[ c c c]  c4:16
+	|  d: f:
+	|  f2:
+	|  e2:
 	| f4 r
 	|  f16[( e f e]  f8) r
 	|  f16[( e f e]   f8)[ f-.]
@@ -355,8 +355,8 @@ violaFourthMov =  \relative as {
 	| d4._\cresc f8(
 	|  es4.) es8(
 	|   f16)[\f f f f]  f[ f f f]
-	|  f,[ f f f]  f[ f f f]
-	|  g[ g g g]  g[ g g g]
+	|  f,2:16
+	|  g2:16
 
 % 310
 	| bes'2:16
