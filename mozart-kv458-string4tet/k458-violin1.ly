@@ -10,6 +10,12 @@
     \compressFullBarRests
 }
 
+\paper {
+  %% page-breaking = #ly:page-turn-breaking
+  % first-page-number = 2
+  page-count = #8
+}
+
 \include "violin1-i.ily"
 
 \score {
@@ -25,14 +31,12 @@
 	\context Voice = "markings" { \markingsI }
     >>
 
-    
-  \midi {
-    \tempo 4 = 140
+    \layout {
+      \context {
+        \Score
+        \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 6/8)
+      }
     }
-
-
-
-    \layout { }
 }
 
 \include "violin1-ii.ily"
@@ -50,15 +54,10 @@
 	\context Voice=markingsBis { \markingsIIbisSolo }
     >>
 
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
-
     \layout { }
 }
+
+\pageBreak
 
 \include "violin1-iii.ily"
 
@@ -72,15 +71,15 @@
 	\context Voice = "markings" { \markingsIII }
     >>
 
-    
-  \midi {
-    \tempo 4 = 40
+    \layout {
+      \context {
+        \Score
+        \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+      }
     }
-
-
-
-    \layout { }
 }
+
+\pageBreak
 
 \include "violin1-iv.ily"
 
@@ -96,12 +95,10 @@
 	\context Voice = "markings" { \markingsIV }
     >>
 
-    
-  \midi {
-    \tempo 4 = 140
+    \layout {
+      \context {
+        \Score
+        \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+      }
     }
-
-
-
-    \layout { }
 }
