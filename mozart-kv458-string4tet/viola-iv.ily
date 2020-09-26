@@ -2,7 +2,6 @@
 
 violaFourthMov =  \relative as {
     \key bes \major
-    \clef alto
 
     \noTupletBracket
 

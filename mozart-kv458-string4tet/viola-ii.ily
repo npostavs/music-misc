@@ -2,7 +2,6 @@
 
 violaSecondMov =  \relative f' {
     \key bes \major
-    \clef alto
 
     \noTupletBracket
 

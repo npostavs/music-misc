@@ -2,7 +2,6 @@
 
 violaFirstMov =  \relative bes' {
     \key bes \major
-    \clef alto
 
     \noTupletBracket
 

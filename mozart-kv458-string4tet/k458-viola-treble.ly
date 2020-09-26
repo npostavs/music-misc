@@ -10,6 +10,10 @@
     \compressFullBarRests
 }
 
+\paper {
+  page-count = #8
+}
+
 \include "viola-i.ily"
 
 \score {
@@ -18,7 +22,7 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"viola"
 
-    \clef "alto"
+    \clef "treble_8"
 	\time 6/8
 	\partial 8
 
@@ -37,7 +41,7 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"viola"
 
-    \clef "alto"
+    \clef "treble_8"
 	\time 3/4
 
 	\violaSecondMov
@@ -55,7 +59,7 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"viola"
 
-    \clef "alto"
+    \clef "treble_8"
 	\violaThirdMov
 	\context Voice = "markings" { \markingsIII }
     >>
@@ -71,7 +75,7 @@
 	\set Staff.autoBeaming = ##f
         \set Staff.midiInstrument = #"viola"
 
-    \clef "alto"
+    \clef "treble_8"
 	\time 2/4
 
 	\violaFourthMov

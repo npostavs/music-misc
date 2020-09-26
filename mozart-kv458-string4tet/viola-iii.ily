@@ -2,7 +2,6 @@
 
 violaThirdMov =  \relative bes {
     \key es \major
-    \clef alto
 
     \noTupletBracket
 
