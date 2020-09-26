@@ -139,11 +139,11 @@ violinIIFourthMov =  \relative f' {
 	|   g)[-. g-. c,-. c-.]
 	| c4(\f  bes)
 	|  a,8[-. a'-. g,-. g'-.]
-	|  f16[ f f f]  f[ f f f]
-	|  f[ f f f]  g[ g g g]
-	|  a[ a a a]  a[ a a a]
-	|  g[ g g g]  g[ g g g]
-	|  f[( e f e]  f8) r
+	|  f16[ f f f]  f4:16
+	|  f4: g4:
+	|  a2:
+	|  g2:
+	|  f16[( e f e]  f8) r
 	|  as16[( g as g]  as8) r
 	|  a!16[( gis a gis]   a8)[ a-.]
 
@@ -165,6 +165,8 @@ violinIIFourthMov =  \relative f' {
 	| <c f>[-. <c e>-. <c f>-. <c e>-.]
 	| <c f>4-. r
     }
+
+       \pageBreak
 
     \repeat volta 2 {
         | R2
@@ -367,9 +369,9 @@ violinIIFourthMov =  \relative f' {
 	| f2 ~
 	|   f8[_\cresc  fis(]  g4) ~
 	|  g8[ g(]  a4)
-	|  bes16[\f bes bes bes]  bes[ bes bes bes]
-	|  bes,[ bes bes bes]  bes[ bes bes bes]
-	|  bes[ bes bes bes]  bes[ bes bes bes]
+	|  bes16[\f bes bes bes]  bes4:16
+	|  bes,2:16
+	|  bes2:16
 
 % 310
 	| des'2:16

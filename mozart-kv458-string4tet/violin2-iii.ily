@@ -30,15 +30,11 @@ violinIIThirdMov =  \relative es' {
     |   a8)[  r16 b(]  c8) r r4   f,16[(-. f-. f-.  f)-.]
 
 % 15
-    |  f[(-. f-. f-.  f)-.]  e[(-. e-. e-.  e)-.]  f[(-. f-. f-.  f)-.]
-       f[(-. f-. es-.  es)-.]
-    |  es[(-. es-. es-.  es)-.]  d![(-. d-. d-.  d)-.]  es8 r
-       c16.[( d32  es16)] r
+    |  f4:16 e: f: f16[(-. f-. es-.  es)-.]
+    |  es4:16 d?4: es8 r c16.[( d32  es16)] r
     |  d16.[( es32  f16)] r es r es r  d[ d'(-. d-. d-.]  d[-. d-. d-.  d)-.]
-    |   des[(-. des-. des-.  des)-.]  c[(-. c-. c-.  c)-.]
-       c[(-. c-. c-.  c)-.]  c[(-. c-. c-.  c)-.]
-    |  ces[(-. ces-. ces-.  ces)-.]  bes[(-. bes-. bes-.  bes)-.]
-       bes[(-. bes-. bes-.  bes)-.]   es,16.[( d32  c!16)] r32 c
+    |   des4:16 c4: c2:
+    |  ces4: bes4: bes4: es,16.[( d32  c!16)] r32 c
 
 % 20
     |  f16.[( es32  d16)] r32 d g16 r es r d8 r  c'16.[( bes32  a16)] r32 a
@@ -69,18 +65,14 @@ violinIIThirdMov =  \relative es' {
     | f(\f  es)  d8[  r16 es(\p]   d8)[  r16 es'(]
     |   d8)[  r16 e(]  f8) r r4 
        bes,16[(-. bes-. bes-.  bes)-.]
-    |  bes[(-. bes-. bes-.  bes)-.]  a[(-. a-. a-.  a)-.]
-       bes[(-. bes-. bes-.  bes)-.]  bes[(-. bes-. as-.  as)-.]
-    |  as[(-. as-. as-.  as)-.]  g[(-. g-. g-.  g)-.]  as8 r
-       f16.[( g32  as16)] r
+    |  bes4:16 a4: bes4: bes16[(-. bes-. as-.  as)-.]
+    |  as4:16 g4: as8 r f16.[( g32  as16)] r
     |  g16.[( as32  bes16)] r as r as r   g[(-. g-. g-.  g)-.]
-       g[(-. g-. g-.  g)-.]
+       g4:16
 
 % 40
-    |  ges[(-. ges-. ges-.  ges)-.]  f[(-. f-. f-.  f)-.]
-       f[(-. f-. f-.  f)-.]  f[(-. f-. f-.  f)-.]
-    |  fes[(-. fes-. fes-.  fes)-.]   es[(-.  es-.  es-.  es)-.]   es[(-.
-      es-.  es-.  es)-.]   as16.[( g32  f16)] r32 f
+    |  ges4:16 f4:16 f2:16
+    |  fes4:16 es4:16 es4:16 as16.[( g32  f16)] r32 f
     |  bes16.[( as32  g16)] r32 g c16 r as r g8 r  f'16.[( es32  d16)]
       r32 d
     |  g16.[( f32  es16)] r32 es es16 r as, r r32  g[( bes g]  bes[ g bes

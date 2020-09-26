@@ -3,11 +3,16 @@
 \include "defs.ily"
 
 \header {
-    instrument = "Violino II."
+  instrument = "Violino II."
+  tagline = ##f
 }
 
 \layout {
     \compressFullBarRests
+  }
+
+\paper {
+  page-count = #7
 }
 
 \include "violin2-i.ily"
@@ -25,14 +30,11 @@
 	\context Voice = "markings" { \markingsI }
     >>
 
-    
-  \midi {
-    \tempo 4 = 140
+    \layout {
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 3/8)
+      }
     }
-
-
-
-    \layout { }
 }
 
 \include "violin2-ii.ily"
@@ -50,13 +52,6 @@
 	\context Voice=markingsBis { \markingsIIbis }
     >>
 
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
-
     \layout { }
 }
 
@@ -72,15 +67,14 @@
 	\context Voice = "markings" { \markingsIII }
     >>
 
-    
-  \midi {
-    \tempo 4 = 40
+    \layout { 
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+      }
     }
-
-
-
-    \layout { }
 }
+
+\pageBreak
 
 \include "violin2-iv.ily"
 
@@ -96,12 +90,9 @@
 	\context Voice = "markings" { \markingsIV }
     >>
 
-    
-  \midi {
-    \tempo 4 = 140
+    \layout {
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1)
+      }
     }
-
-
-
-    \layout { }
 }
