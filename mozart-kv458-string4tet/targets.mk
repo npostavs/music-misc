@@ -1,10 +1,10 @@
 d := $(dir $(lastword $(filter-out targets-per-dir.mk,$(MAKEFILE_LIST))))
 
 COMMON_FILES := $(d)defs.ily
-VIOLIN1_FILES := $(COMMON_FILES) $(addprefix $(d),$(wildcard violin1*.ily))
-VIOLIN1_FILES := $(COMMON_FILES) $(addprefix $(d),$(wildcard violin2*.ily))
-VIOLIN1_FILES := $(COMMON_FILES) $(addprefix $(d),$(wildcard viola*.ily))
-VIOLIN1_FILES := $(COMMON_FILES) $(addprefix $(d),$(wildcard cello*.ily))
+VIOLIN1_FILES := $(COMMON_FILES) $(wildcard $(d)violin1*.ily)
+VIOLIN2_FILES := $(COMMON_FILES) $(wildcard $(d)violin2*.ily)
+VIOLA_FILES := $(COMMON_FILES) $(wildcard $(d)viola*.ily)
+CELLO_FILES := $(COMMON_FILES) $(wildcard $(d)cello*.ily)
 
 .PHONY: $(d)all $(d)help $(d)score $(d)violin1 $(d)violin2 $(d)viola $(d)cello
 
@@ -24,9 +24,11 @@ $(d)k458-violin2.pdf: $(d)k458-violin2.ly $(VIOLIN2_FILES)
 
 ############################################################
 
-$(d)viola: $(d)k458-viola.pdf
+$(d)viola: $(d)k458-viola-treble.pdf
+ # $(d)k458-viola.pdf
 
 $(d)k458-viola.pdf: $(d)k458-viola.ly $(VIOLA_FILES)
+$(d)k458-viola-treble.pdf: $(d)k458-viola-treble.ly $(VIOLA_FILES)
 
 ############################################################
 
