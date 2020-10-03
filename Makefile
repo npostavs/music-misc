@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-# dirs := <FILL IN>
+dirs := Op.47-Suite-Espanola-No.1
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
