@@ -2,9 +2,9 @@
 
 \score {
   \new StaffGroup <<
-    \new Staff { \PartFlute }
-    \new Staff { \PartCello }
-    \new Staff { \PartHarp }
+    \new Staff { \transpose a bf \PartFlute }
+    \new Staff { \transpose a bf \PartCello }
+    \new Staff { \transpose a bf \PartHarp }
   >>
   \layout {}
   \midi {

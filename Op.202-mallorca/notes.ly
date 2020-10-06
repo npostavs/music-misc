@@ -144,10 +144,10 @@ PartCello = \relative d' {
     cs4. r4. \fermata | % 95
     r8 \pp d''8 ( cs8 ) b4. | % 96
     r8 d8 ( cs8 ) b4. | % 97
-    cs4. r4. | % 98
+    fs,16( bs cs a' cs fs) r4. | % 98
     R2. | % 99
-    r2. \fermata | \barNumberCheck #100
-    r2. \fermata \bar "|."
+    fs,2. \fermata | \barNumberCheck #100
+    a2. \fermata \bar "|."
   }
 }
 
@@ -188,26 +188,28 @@ PartFlute = \relative c' {
   cs4. r4. \fermata \bar "||"
   \key fs \major | % 34
   \repeat volta 2 {
-    as'8 \< b8 cs8 ds8 es8 fs8 \! | % 35
-    es16 \> ds16 es8 cs8 ds4. \! | % 36
-    as8 \< b8 cs8 ds8 es8 fs8 \! | % 37
-    es16 \> ds16 es8 cs8 as4. \! | % 38
-    gs8 \< cs8 ds8 \! b16 \> as16 gs8 ds'8 \! | % 39
-    cs8 \< gs'8 fs8 \! ds16 cs16 as8 cs8 | \barNumberCheck #40
-    ds8 as'8 gs8 es16 \> ds16 cs8 gs8 \! | % 41
-    ds'16 \dim es16 cs8 gs8 b4. \! | % 42
-    R2.*2 |
-    ds8 \< e8 fs8 gs8 as8 b8 \! | \barNumberCheck #45
-    as16 \> gs16 as8 fs8 ds4. \!
-    d16 \p cs16 d8 a'8 g4 d8 | % 47
-    cs16 \p bs16 cs8 gs'8 fs4 cs8 |
+    fs16\< cs'8 as fs as fs as16 ~ | \barNumberCheck #35
+    as16\> fs8 as fs as fs as16\! |
+    fs16\< cs'8 as fs as fs as16 ~ |
+    as16\> fs8 as fs cs' fs, cs'16\! |
+    fs,16\< b8 es b\> es b es16 ~ | \barNumberCheck #39
+    es16\< as,8 fs8\! as8 fs8 as8 fs16 \! |
+    fs16 es8 b'\> es, b' es,\! b'16 ~ |
+    b16\!\dim es8 cs es cs es cs16\! |
+    fs16\< cs8 fs as fs as fs16\! ~ | \barNumberCheck #43
+    fs16 as8 fs as fs as fs16 |
+    b,16\< fs8 b ds b ds b16 ~ |
+    b16\> ds8 b ds b fs b16\! |
+    c16\p fs,8 a d g, d' g,16 | \barNumberCheck #47
+    b16\p es,8 gs cs fs, cs' fs,16 |
+
   }
   \alternative {
     \relative c' {
-      | \barNumberCheck #48 % alternative 1.
-      fs8 gs as b16 \< cs ds fs gs as |
-      b4\ff as8 fs4. | \barNumberCheck #50
-      R2.*2 |
+      fs16 ds8 fs ds16 fs8\< b ds |
+      fs4\ff cs8 ds16( gs as fs es \prall ds) |
+      gs16 b8 es, b' es, b' es,16 ~ | \barNumberCheck #51
+      es16 b'8 cs b cs b cs16 |
       a8.(\mf gs16 as gs) gs8. fs16 e8 |
       d8.( cs16 d cs) cs8. b16 a8 |
       R2.*1 | \barNumberCheck #55
@@ -262,8 +264,8 @@ PartFlute = \relative c' {
     r4. es,16 ( gs16 b16 cs16 es16 d16 ) | % 97
     cs4. r4. | % 98
     R2. | % 99
-    r2. \fermata | \barNumberCheck #100
-    r2. \fermata \bar "|."
+    a2. \fermata | \barNumberCheck #100
+    cs'2. \fermata \bar "|."
   }
 }
 
@@ -271,9 +273,9 @@ PartHarp = \relative c' {
   \key a \major \time 6/8 | % 1
   \repeat unfold 2 { fs'8\pp a cs( gs) b cs | }
   \repeat unfold 2 { fs, a cs ~ cs a,16 cs fs a | }
-  \repeat unfold 2 { fs,4 a8 b4. | }
+  \repeat unfold 2 { fs4 a8 b4. | }
   fs4.\< d' |
-  fs=''4\> b,8 ~ b4.\! \breathe | \barNumberCheck #9
+  fs,=''4\> b,8 ~ b4.\! \breathe | \barNumberCheck #9
   \repeat unfold 2 { fs4 a8 fs' b d | }
   a4 cs8 a d a |
   a4\ppp e8 cs8 a'4 |
@@ -300,28 +302,27 @@ PartHarp = \relative c' {
 
   \key fs \major
   \repeat volta 2 {
-    fs,16\< cs'8 as fs as fs as16 ~ | \barNumberCheck #35
-    as16\> fs8 as fs as fs as16\! |
-    fs16\< cs'8 as fs as fs as16 ~ |
-    as16\> fs8 as fs cs' fs, cs'16\! |
-    fs,16\< b8 es b\> es b es16 ~ | \barNumberCheck #39
-    es16\< as,8 fs8\! as8 fs8 as8 fs16 \! |
-    fs16 es8 b'\> es, b' es,\! b'16 ~ |
-    b16\!\dim es8 cs es cs es cs16\! |
-    fs16\< cs8 fs as fs as fs16\! ~ | \barNumberCheck #43
-    fs16 as8 fs as fs as fs16 |
-    b,16\< fs8 b ds b ds b16 ~ |
-    b16\> ds8 b ds b fs b16\! |
-    c16\p fs,8 a d g, d' g,16 | \barNumberCheck #47
-    b16\p es,8 gs cs fs, cs' fs,16 |
+    as8 \< b8 cs8 ds8 es8 fs8 \! | % 35
+    es16 \> ds16 es8 cs8 ds4. \! | % 36
+    as8 \< b8 cs8 ds8 es8 fs8 \! | % 37
+    es16 \> ds16 es8 cs8 as4. \! | % 38
+    gs8 \< cs8 ds8 \! b16 \> as16 gs8 ds'8 \! | % 39
+    cs8 \< gs'8 fs8 \! ds16 cs16 as8 cs8 | \barNumberCheck #40
+    ds8 as'8 gs8 es16 \> ds16 cs8 gs8 \! | % 41
+    ds'16 \dim es16 cs8 gs8 b4. \! | % 42
+    R2.*2 |
+    ds8 \< e8 fs8 gs8 as8 b8 \! | \barNumberCheck #45
+    as16 \> gs16 as8 fs8 ds4. \!
+    d16 \p cs16 d8 a'8 g4 d8 | % 47
+    cs16 \p bs16 cs8 gs'8 fs4 cs8 |
   }
   \alternative {
     \relative c' {
-      fs16 ds8 fs ds16 fs8\< b ds |
-      fs4\ff cs8 ds16( gs as fs es \prall ds) |
-      gs16 b8 es, b' es, b' es,16 ~ | \barNumberCheck #51
-      es16 b'8 cs b cs b cs16 |
-      fs,4 e8 d4 cs8 |
+      | \barNumberCheck #48 % alternative 1.
+      fs8 gs as b16 \< cs ds fs gs as |
+      b4\ff as8 fs4. | \barNumberCheck #50
+      R2.*2 |
+      fs=''4 e8 d4 cs8 |
       b4 a8 gs4 ds8 | \barNumberCheck #54
       gs4 ds8 fs16 gs16 gs8 r8 |
       gs16 fs16 ds4 ds8 fs gs |
@@ -329,11 +330,11 @@ PartHarp = \relative c' {
       gs fs ds b as es |
     }
     \relative c' {
-      b16 ds8 fs ds fs ds fs16 ~ |
+      b'16 ds8 fs ds fs ds fs16 ~ |
       fs16 ds8 fs ds fs ds fs16 | \barNumberCheck #60
     }
   }
-  cs='16 a' cs=''4 ~ cs4. |
+  cs,='16 a' cs=''4 ~ cs4. |
   cs,='16 gs' b4 cs4. | \bar "||"
   \key a \major
   \repeat unfold 2 { fs8\pp a cs( gs) b cs | } \barNumberCheck #64
@@ -367,9 +368,9 @@ PartHarp = \relative c' {
   es16( d b gs es d) cs4. \fermata |
   fs,8\pp a cs gs'4 cs,8 |
   fs,8 a cs gs'4 cs,8 | \barNumberCheck #97
-  d,='16( gs a a' cs fs) a,,='16(\< cs fs gs a cs) |
+  cs,4. a'='16(\< cs fs gs a cs) |
   fs16(\> gs fs cs a gs) fs(\! cs a gs fs cs)\pp |
-  fs16 a cs a cs fs cs4. \fermata |
-  fs16 a cs a cs fs cs4. \fermata |
+  cs2. \fermata
+  fs2. \fermata
 }
 
