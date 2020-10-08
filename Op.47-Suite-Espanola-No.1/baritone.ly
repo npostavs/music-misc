@@ -1,10 +1,17 @@
 \include "notes.ly"
 
+\paper {
+  page-count = #2
+}
+
 \score {
   <<
     \new Staff { \NotesBari }
   >>
-  \layout {}
-  %% \midi {}
+  \layout {
+    \context {
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
+  }
 }
 

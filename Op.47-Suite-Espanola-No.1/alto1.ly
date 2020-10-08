@@ -15,7 +15,7 @@
   >>
   \layout {
     \context {
-      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 3/32)
     }
   }
 }

@@ -8,6 +8,7 @@
   title = "Suite española No 1, Op. 47"
   subtitle = "3. Sevilla \"Sevillanas\""
   piece = "Allegretto"
+  tagline = #f
 }
 
 psub = \markup { \dynamic p \bold\italic {sub.} }
@@ -16,9 +17,101 @@ pocoaccel = \markup{ \italic {poco accel.} }
 atempo = \markup{ \bold {a Tempo} }
 sempre = \markup{ \italic {sempre} }
 crescSempre = \markup{ \italic {cresc. sempre} }
+mfp = \markup { \concat { \dynamic mf \dynamic p } }
 
-NotesSopr =  \relative b' {
-  \transposition bf
+subdivideTupleOnce = {
+  \once \set subdivideBeams = ##t
+  \once \set Staff.beamExceptions = #'()
+  \once \set Staff.baseMoment = #(ly:make-moment 1/8)
+  \once \set Staff.beatStructure = #'(2 2 2)
+}
+
+defaults = {
+  \override TupletBracket.bracket-visibility = #'if-no-beam
+  \override DynamicTextSpanner.style = #'none
+}
+
+baritoneCueBarXXV = {
+  <<
+    { s4 -\pocorit s4 s4 }
+    \new CueVoice { g,8 ^ "baritone" g16 g16 g8 g16 g16 g8 g8 }
+  >>
+  \bar "||"
+}
+
+%% bar 74-75 & 103-104
+baritoneCuePreFermata = {
+  <<
+    { s2. | s4. }
+    \new CueVoice {
+      \relative c'' {
+        g='8-. g16^"baritone" g16 g16 g16 g16 g16 g16 g16 g16 g16 |
+        g4 ~ g8
+      }
+    }
+  >>
+  r8 r4 \fermata \bar "||" |
+}
+
+%% bar 76-78 & 104-106
+sopranoCuePostFermata = {
+  << \new CueVoice
+     \relative c'' { r8 g8^"soprano" a8 bf8 c8 ef | % 77
+       g4 ~ g16 f16 ef16 d16 c16 d16 ef16 c | % 78
+       d16 ef16 d16 c16 bf c16 bf16 a16 g16 a16 bf16 d | % 79
+     }
+     { s2.*3 }
+   >>
+}
+
+sopranoCueBarLXXXIV = {
+  << \new CueVoice
+     \relative c''' { \defaults
+       bf4 ~ bf16^"soprano" a16 g16 f16
+       \subdivideTupleOnce
+       \tuplet 3/2  { g16 a16 g16 } f16 ef | % 85
+       f16 g16 f16 ef16 d8 c16 d16 ef16 f16 g16 ef16 | % 86
+       \subdivideTupleOnce
+       \tuplet 3/2  { d16 ef16 d16 } c16 d16 bf8 a16 bf16
+       \subdivideTupleOnce
+       \tuplet 3/2  { c16 d16 c16 } bf16 c | % 87
+       \subdivideTupleOnce
+       \tuplet 3/2 { a16 bf16 a16 } g16 bf16 a8 g16 a16 bf16 c16 d16 ef16 | % 88
+       \tuplet 3/2 { c16 d16 c16 bf16 c16 bf16 }
+       \tuplet 3/2 { a16 bf16 a16 g16 a16 g16 }
+       \tuplet 3/2 { f16 g16 f16 ef16 f16 ef16 } | % 89
+     }
+     { s2.*4 }
+   >>
+}
+
+
+tenorCueBarCX = {
+  <<
+    { s2.*2 | }
+    \new CueVoice {
+      ef16 ^ "baritone" ( d16 ) c16 g16 ef'16 ( d16 ) c16 g16 f'16 ( ef16 ) d16 g,16 | % 111
+      c8-. ef16[ d16] ef8 -. c16 b16 c8 -. g8 -. |
+    }
+  >>
+}
+
+%% 22-23, 72-73, 136-137
+tenorCueBarsL_XXII = {
+  <<
+    { s2.*2 }
+    \new CueVoice {
+      d8 r8^"tenor" d8 r8 d8 r8 | % 23
+      d8 r8 d8 r8 d8 r8 | % 24
+    }
+  >>
+}
+
+
+NotesSopr = \transpose bf c' \relative b' {
+  \defaults
+
+  % \transposition bf
   \key g \major \time 3/4 | % 1
   b8 \p -. b8 -. b8 -. b-. \< c8 -. c8 -. | % 2
   b8 -. b8 -. b8 -. \! b-. c8 -. c8 -. | % 3
@@ -38,27 +131,24 @@ NotesSopr =  \relative b' {
   d16 -\psub ( ef16 d16 ef16 ) f16
   ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 15
   d2 d8 -. d16 c16 | % 16
-  b4. -\markup{ \italic {cresc. sempre} } c16 -> d16 ef8 -. f16 ef16 | % 17
+  b4. -\crescSempre c16 -> d16 ef8 -. f16 ef16 | % 17
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 18
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 19
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. \mf | \barNumberCheck #20
   b8 \p -. r8 r8 d,8 -. d8 -. g8 -. | % 21
-  g8 -. b8 -. b8 -. d8 -\cresc -\sempre -. d8 -. g8
+  g8 -. b8 -. b8 -. d8 -\crescSempre -. d8 -. g8
   -. | % 22
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 23
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 24
   g4 \f r4 r4 | % 25
-  <<
-    { s4 -\pocorit s4 s4 }
-    \new CueVoice { g,8 ^ "baritone" g16 g16 g8 g16 g16 g8 g8 } \bar "||"
-  >>
+  \baritoneCueBarXXV
+  % <<
+  %   { s4 -\pocorit s4 s4 }
+  %   \new CueVoice { g,8 ^ "baritone" g16 g16 g8 g16 g16 g8 g8 } \bar "||"
+  % >>
   \key ef \major | % 26
   ef''2 \< \! -> d8. ( bf16 ) | % 27
-  c8 -. \once \override TupletBracket #'stencil = ##f
-  \tuplet 3/2  {
-    c16 ( d16 c16 }
-  bf4 ) af8. ( f16 ) | % 28
-  \key ef \major | % 28
+  c8 -. \tuplet 3/2  { c16 ( d16 c16 } bf4 ) af8. ( f16 ) | % 28
   g16 \> ( af16 bf8 \! ~ bf4 ) r4 | % 29
   R2. | \barNumberCheck #30
   ef2 -> d8. ( bf16 ) | % 31
@@ -66,7 +156,7 @@ NotesSopr =  \relative b' {
   bf4 ) a8. ( g16 ) \bar "||"
   \key d \major | % 32
   fs16 \> ( g16 a8 \! ~ a4 ) r4 | % 33
-  \key d \major R2. | % 34
+  R2. | % 34
   d2 \f -> cs8. ( a16 ) | % 35
   b8 -. \tuplet 3/2  { b16 ( cs16 b16 }
   a4 ) g8. ( e16 ) | % 36
@@ -84,9 +174,9 @@ NotesSopr =  \relative b' {
 
   d8 -. r8 r4 r4 | % 47
   R2.*2 || % 49
-  d'8 -. d16 \< d16 d8 -. d16 d16 d8 -. d16 \! d16 \bar "||"
+  \ottava #1 d'8 -. d16 \< d16 d8 -. d16 d16 d8 -. d16 \! d16 \bar "||"
   | \barNumberCheck #50
-  \key g \major \grace { d8 ( } g8-\f ) -^ b,,8 -. b8 -. b8 -. \> c8 -. c-. | % 51
+  \key g \major \grace { d8( } g8-\f)-^ \ottava #0 b,,8 -. b8 -. b8 -. \> c8 -. c-. | % 51
   b8 -. b8 -. b8 -. b8 -. -. \! c8 -. c-. | % 52
   g'2->\mp fs8. ( d16 ) | % 53
   e8 -. \tuplet 3/2  { e16 ( fs16 e16 } d4 ) c8. ( a16 ) | % 54
@@ -103,46 +193,43 @@ NotesSopr =  \relative b' {
   d16 -\psub ( ef16 d16 ef16 )
   f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 64
   d2 d8 -. d16 c16 | % 65
-  b4. \cresc -\sempre c16 d16 ef8 -. f16 ef16 | % 66
+  b4. -\crescSempre c16 d16 ef8 -. f16 ef16 | % 66
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 67
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 68
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 69
   b8 \mf -. r8 r8 d,8 -. \p d8 -. g8 -. | \barNumberCheck #70
-  g8 -. b8 \cresc -\sempre -. b8 -. d8 -. d8 -. g8 -. | % 71
+  g8 -. b8 -\crescSempre -. b8 -. d8 -. d8 -. g8 -. | % 71
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 72
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 73
   g4-\f r4 r4 | % 74
-  <<
-    { s4  -\pocorit s4 s4 | s4 s8 }
-    \new CueVoice {
-      g,8 ^"baritone" g16 g g8 g16 g16 g8 g8 | % 75
-      g4 ~ g8
-    }
-  >>
-  r8 r4 \fermata \bar "||" | % 76
+  \baritoneCuePreFermata
   \key ef \major
-  % -\markup{ \italic {solo} } -\markup{ \bold {Più lento} }
-  r8 c8 \p ( d8 ef8 f8 af8 | % 77
+  r8 c,=''8 \p ( d8 ef8 f8 af8 | % 77
   c4 ~ c16 ) bf16 ( af16 g16 f16 g16 af16 f16 | % 78
   g16) af16 ( g16 f16 ef16 -\pocorit f16 ef16 d16 c16 d16 ef16 g16 ) | % 79
   g4. f16 ( ef16 d16-\pocoaccel ef16 f16 af16 ) | \barNumberCheck #80
-  \tuplet 3/2  { g16 ( af16 g16 }
-  f16 ef16 d16 ef16 f16 g16 )
-  \tuplet 3/2  {f16 ( g16 f16 }
-  ef16 d16 | % 81
-  c8-.) % -\markup{ \bold {Più animato} }
+  \subdivideTupleOnce
+  \tuplet 3/2  { g16 ( af16 g16 } f16 ef16 d16 ef16 f16 g16 )
+  \subdivideTupleOnce
+  \tuplet 3/2  {f16 ( g16 f16 } ef16 d16 | % 81
+  c8-.)
   r8 r4 r4 | % 82
-  R2. % -\markup{ \bold {Più lento} }
+  R2.
   | % 83
   r8 c8 \p ( d8 ef8 f8 af8 | % 84
-  ef'4 ~ ef16 ) d16 ( c16 bf16 \tuplet 3/2  {c16 d16 c16 } bf16 af16 | % 85
+  ef'4 ~ ef16 ) d16 ( c16 bf16
+  \subdivideTupleOnce
+  \tuplet 3/2  {c16 d16 c16 } bf16 af16 | % 85
   bf16 c16 bf16 af16 g8 ) f16 ( g16 af16 bf16 c16 af16 ) | % 86
+  \subdivideTupleOnce
   \tuplet 3/2  {g16 ( af16 g16 } f16 g16) ef8 ( -\pocorit d16 ef16
+  \subdivideTupleOnce
   \tuplet 3/2  {f16 g16 f16 } ef16 f16 | % 87
-  \tuplet 3/2  { d16 ef16 d16 } c16 ef16 d8 ) c16 ( d16 ef16 f16 g16 af16 ) | % 88
-  \tuplet 3/2  { f16 ( g16 f16 ef16 f16 ef
-                d16 -\pocoaccel ef16 d16 c16 d16 c16
-                bf16 c16 bf16 af16 bf16 af } | % 89
+  \subdivideTupleOnce
+  \tuplet 3/2 { d16 ef16 d16 } c16 ef16 d8 ) c16 ( d16 ef16 f16 g16 af16 ) | % 88
+  \tuplet 3/2 { f16 ( g16 f16 ef16 f16 ef }
+  \tuplet 3/2 { d16 -\pocoaccel ef16 d16 c16 d16 c16 }
+  \tuplet 3/2 { bf16 c16 bf16 af16 bf16 af } | % 89
   g4) r4 r4 % -\markup{ \bold {Più animato} }
   | \barNumberCheck #90
   R2. | % 91
@@ -151,6 +238,7 @@ NotesSopr =  \relative b' {
 
   g4 \> ( f8. \!) d16 \< ( ef16 f16 g16 \! af16 ) | % 93
   g8. \> ( af32 g32 \! f8 ) d16 ( f16 ) 
+  \subdivideTupleOnce
   \tuplet 3/2  {ef16 ( f16 \< ef16 } d16 c16 \! ) | % 94
   b8. \> ( d16 ) \! d2 | % 95
   r8 g8-- -\mp g8-- g8 \< -- g8.-- g16-- \! | % 96
@@ -161,33 +249,25 @@ NotesSopr =  \relative b' {
   b8-.) % -\markup{ \bold {Tempo primo} }
   r8 r4 r4 | % 99
   R2.*3 | \barNumberCheck #102
-  <<
-    { s4  -\pocorit s4 s4 | s4 s8 }
-    \new CueVoice {
-      r8 g16^"baritone" g16 g16 g16 g16 g16 g16 g16 g16 g16 | % 103
-      g4 ~ g8
-    }
-  >>
-  r8 r4 \fermata \bar "||" | % 76
+  \baritoneCuePreFermata
 
-  r8 c8 \p ( d8 ef8 f8 af8 | % 105
+  r8 c=''8 \p ( d8 ef8 f8 af8 | % 105
   c4 ~ c16 ) bf16 ( af16 g16 f16 g16 af16 f16 | % 106
   g16 ) af16 ( g16 f16 ef16 -\pocorit f16 ef16 d16 c16 d16 ef16 g16 ) | % 107
   g4. f16( ef16 -\pocoaccel d16 ef16 f16 af16 ) | % 108
-  \tuplet 3/2  { g16 ( af16 g16 }
-  f16 ef16 d16 ef16 f16 g16 )
+  \subdivideTupleOnce
+  \tuplet 3/2  { g16 ( af16 g16 } f16 ef16 d16 ef16 f16 g16 )
+  \subdivideTupleOnce
   \tuplet 3/2  { f16 ( g16 f16 } ef16 d16 | % 109
-  c8) -. % -\markup{ \bold {Più animato} }
-  r8 r4 r4 |
+  c8) -. r8 r4 r4 |
   \barNumberCheck #110
-  ef16 d16 c16 g16 ef'16 d16 c16 g16 f'16 ef16 d16 g,16 | % 111
-  c8 ef16 d16 ef8 c16 b16 c8 g8 | % 112
+  \tenorCueBarCX
   r8 ef'8-. ef8-. bf-. \cresc bf8-. g8-. | % 113
   d'8 -. d8 -. d8 -. g8 -. g8 -. b8 -. | % 114
   b8-. d8-. -\pocorit d8-. d16-\f d16 d8 -. d8 -. \bar "||" | % 115
   \key g \major | % 115
                                 % -\markup{ \bold {a Tempo} }
-  b,8-.-\psub b8-. b-. \< b-. c8 -. c8 -. | % 116
+  b,8-.-\psub b8-. b-. b-.\< c8 -. c8 -. | % 116
   b8 -. b8 -. b8 -. b-. \! c8 -. c8 -. | % 117
   g'2-\mp -> fs8. ( d16 ) | % 118
   e8 -. \tuplet 3/2  { e16 ( fs16 e16 }
@@ -204,12 +284,12 @@ NotesSopr =  \relative b' {
   d16 ( ef16 d16 ef16 ) f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 128
   d16 -\psub ( ef16 d16 ef16 ) f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 129
   d2 d8 -. d16 c16 | \barNumberCheck #130
-  b4.-\cresc -\sempre c16 d16 ef8 -. f16 ef16 | % 131
+  b4.-\crescSempre c16 d16 ef8 -. f16 ef16 | % 131
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 132
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 133
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 134
   b8 \mf -. r8 r8 d,8-\p -. d8 -. g8 -. | % 135
-  g8 -. b8 -. b8 -. d8 -. d8 -. g8 -. | % 136
+  \autoBeamOff g8-. \autoBeamOn b8-. b8 -. d8 -. d8 -. g8 -. | % 136
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 137
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 138
   g2.-\f ~ | % 139
@@ -217,8 +297,9 @@ NotesSopr =  \relative b' {
   g,2. \fermata \bar "|."
 }
 
-NotesAltoI =  \relative d'' {
-  \transposition ef
+NotesAltoI = \transpose c g, \relative d'' {
+  % \transposition ef
+  \defaults
 
   \key d \major \time 3/4 | % 1
   d8 \p -. a8 -. a8 -. d-. \< cs8 -. a8 -. | % 2
@@ -241,14 +322,14 @@ NotesAltoI =  \relative d'' {
   fs8 -. d16 e16 fs8 -. d16 e16 cs8 -. cs16 d16 | % 18
   a8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 19
   a8 -. d16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | \barNumberCheck #20
-  d8 \mf -. fs,8-. -\p fs8 -. d8 -. d8 -. fs8 -\pocorit -. | % 21
+  d8 ^\mf-. fs,8-._\p[ fs8 -. d8 -. d8 -. fs8-.] | % 21
   fs8  -. d'16 cs16 -\crescSempre d8 -. fs16 es16 fs8 -"" -. a16 gs16 | % 22
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 23
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 24
   a4 \f r4 r4 | % 25
-  d,8 d16 d16 d8 d16 d16 d8 d8 \bar "||"
+  \baritoneCueBarXXV
   \key bf \major | % 26
-  d'2 \mp -> c8. ( a16 ) | % 27
+  d''='''2 \mp -> c8. ( a16 ) | % 27
   bf2 a8. ( ef16 ) | % 28
   f16 \> ( ef16 d4 \! ) r8 r4 | % 29
   r8 f16 g16 f16 \< g16 bf16 g16 a8 -. g16 \! f16 | \barNumberCheck #30
@@ -258,7 +339,7 @@ NotesAltoI =  \relative d'' {
   e16 \> ( d16 cs4 \! ) r8 r4 | % 33
   r8 e,16 fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 34
   cs''2->-\f b8. ( gs16 ) | % 35
-  \key a \major a2 gs8. ( d16 ) | % 36
+  a2 gs8. ( d16 ) | % 36
   e16 \> ( d16 cs4 \! ) r8 r4 | % 37
   r8 e,16 -> fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 38
   cs''2 \ff -> bf8. ( gs16 ) | % 39
@@ -303,25 +384,16 @@ NotesAltoI =  \relative d'' {
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 72
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 73
   a4-\f r4 r4 | % 74
-  d,8 d16-\pocorit d16 d8 d16 d16 d8 d8 | % 75
-  d4 ~ d8 r8 r4 \fermata \bar "||"
-  | % 76
+  \baritoneCuePreFermata
   \key bf \major % -\markup{ \bold {Più lento} }
-  r8 g,8 a8 bf8 c8 ef | % 77
-  g4 ~ g16 f16 ef16 d16 c16 d16 ef16 c | % 78
-  d16 ef16 d16 c16 bf c16 -\pocorit bf16 a16 g16 a16 bf16 d | % 79
-  r8 c,8 ef'2-\p ~ -\pocoaccel | \barNumberCheck #80
+  \sopranoCuePostFermata
+  r4 ef=''2-\p ~ | \barNumberCheck #80
   ef2 fs4 ( | % 81
   g8 ) -. r8 g2 \< | % 82
   g8 \mf -. d8 -. g8 -. d8 -. fs8 -. d8 -. | % 83
   g8 -. r8 r4 r4 | % 84
-  bf4 ~ bf16 a16 g16 f16 \tuplet 3/2  { g16 a16 g16 } f16 ef | % 85
-  f16 g16 f16 ef16 d8 c16 d16 ef16 f16 g16 ef16 | % 86
-  \tuplet 3/2  { d16 ef16 d16 } c16 d16 bf8 a16 bf16 -\pocorit \tuplet 3/2  { c16 d16 c16 } bf16 c |
-
-  \tuplet 3/2  { a16 bf16 a16 } g16 bf16 a8 g16 a16 bf16 c16 d16 ef16 | % 88
-  \tuplet 3/2  { c16 d16 c16 bf16 c16 bf16 a16 bf16 a16 g16 a16 g16 f16 g16 f16 ef16 f16 ef16 } | % 89
-  r8 d8 g'2 \p \< | \barNumberCheck #90
+  \sopranoCueBarLXXXIV
+  r4\p g'2 \< | \barNumberCheck #90
   fs8 \mf -. d8 -. fs8 -. d8 -. g8-. cs,8 -. | % 91
   d8-. r8 r4 r4 | % 92
   r4 r4 ef4-\p | % 93
@@ -334,20 +406,16 @@ NotesAltoI =  \relative d'' {
   a8 -. r8 r4 r4 | \barNumberCheck #100
   r8 c16 c16 ef16 ef16 a,16 a16 c16 c16 fs,16 fs16 | % 101
   a8 -. r8 r4 r4 | % 102
-  r8 d16 d16 d16 d16 d16 d16 d16 d16 d16 d16 | % 103
-  d4 ~ d8 r8 r4 \fermata \bar "||" | % 104
-  r8 g,='8 a8 bf8 c8 ef | % 105
-  g=''4 ~ g16 f16 ef16 d16 c16 d16 ef16 c16 | % 106
-  d16 ef16 d16 c bf16 -\pocorit c16 bf16 a16 g16
-  a16 bf16 d | % 107
-  r8 c,8 ef'2 -\p ~ -\pocoaccel | % 108
+  \baritoneCuePreFermata
+  \sopranoCuePostFermata
+  r4 ef=''2 -\p ~ | % 108
   ef2 fs4 ( | % 109
   g8 ) -. r8 g2 \< | \barNumberCheck #110
   g8-.-\mf d8 -. g8 -. d8 -. fs8 -. d8 -. | % 111
   g8 \mp -. g8 -. g8 -. d8 -. d8 -. bf8 -. | % 112
   bf'8 -. f-. -\cresc f8 -. d8 -. d8-. bf8 -. | % 113
-  fs'8 -. fs8 -. fs8-. a8 -. a8 -. a16 gs16 -\pocorit | % 114
-  a8 -. fs'16-\pocorit es16 fs8 -. d16-\f d16 cs8 -. cs8 -. \bar "||"
+  fs'8 -. fs8 -. fs8-. a8 -. a8 -. a16 gs16 | % 114
+  a8 -. fs'16 es16 fs8 -. d16-\f d16 cs8 -. cs8 -. \bar "||"
   \key d \major | % 115
   d,8-. a8-. -\psub a8-. d-. \< cs8-. a-. | % 116
   a8-. d16 cs16 c8 -. b16 \! bf16 a8 -. cs16 a16 | % 117
@@ -377,8 +445,9 @@ NotesAltoI =  \relative d'' {
   d,,2. \fermata \bar "|."
 }
 
-NotesAltoII =  \relative a' {
-  \transposition ef
+NotesAltoII = \transpose c g, \relative a' {
+  % \transposition ef
+  \defaults
 
   \key d \major \time 3/4 | % 1
   a8-.-\p d16 cs16 c8-. b16 \< bf16 a8 -. cs16 a16 | % 2
@@ -406,10 +475,9 @@ NotesAltoII =  \relative a' {
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 23
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 24
   fs4 \f r4 r4 | % 25
-  d8 d16 -\pocorit d16 d8 d16 d16 d8 d8 \bar
-  "||"
+  \baritoneCueBarXXV
   \key bf \major | % 26
-  f2 \mp -> ef8. ( c16 ) | % 27
+  f'=''2 \mp -> ef8. ( c16 ) | % 27
   d2 c8. ( a16 ) | % 28
   bf8 \> ~ bf4 \! d16 f16 ef16 f16 ef16 f16 | % 29
   d8 -. d4 \< -. d8 -. ef8 \! -. ef8 -. | \barNumberCheck #30
@@ -431,9 +499,9 @@ NotesAltoII =  \relative a' {
 
   cs16 d16 e16 f16 g16 f16 e16 d16 c16 d16
   c16 bf16 | % 44
-  e,8 \mf -. a8 -. cs8 -. e8 -. f8 -. d8 -. | % 45
+  e,8 \mf -. a8[ -. cs8 -. e8 -. f8 -. d8] -. | % 45
   cs8 \< -. a8 -. cs8 -. e8 -. f8 \! -. d8 -. | % 46
-  cs8 \f -. cs8 -. cs8 -. cs8 -. d8 -. d8 -. | % 47
+  cs8 \f -. cs8[ -. cs8 -. cs8 -. d8 -. d8] -. | % 47
   cs8 -. a16 \< gs16 g8 -. fs16 f16 e8-. gs16 \! e16 | % 48
   a4 \ff r4 r4 | % 49
   cs8 \mf -. \< cs16 c16 cs8-. cs16 cs16 cs8-. \! cs16 cs16 \bar "||" | \barNumberCheck #50
@@ -463,24 +531,16 @@ NotesAltoII =  \relative a' {
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 72
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 73
   fs4 \f r4 r4 | % 74
-  d8 d16 -\pocorit d16 d8 d16 d16 d8 d8 | % 75
-  d4 ~ d8 r8 r4 \fermata \bar "||" | % 76
-  \key bf \major r8 g,8 a8 bf8 c8 ef | % 77
-  g=''4 ~ g16 f16 ef16 d16 c16 d16 ef16 c | % 78
-  d16 ef16 d16 c16 bf c16 -\pocorit bf16 a16 g16 a16 bf16 d | % 79
-  r8 c,8 c'=''2-\p ~ -\pocoaccel | \barNumberCheck #80
+  \baritoneCuePreFermata
+  \key bf \major
+  \sopranoCuePostFermata
+  r4 c=''2-\p ~ | \barNumberCheck #80
   c2 c4 ( | % 81
   d8 ) -. r8 ef2 \< | % 82
   d8 \mf -. bf8 -. d8 -. bf8 -. d8 -. c16 a16 | % 83
   bf8 -. r8 r4 r4 | % 84
-  bf'4 ~ bf16 a16 g16 f16
-  \tuplet 3/2 { g16 a16 g16 } f16 ef | % 85
-  f16 g16 f16 ef16 d8 c16 d16 ef16 f16 g16 ef16 | % 86
-  \tuplet 3/2 { d16 ef16 d16 } c16 d16 bf8 a16 bf16 -\pocorit \tuplet 3/2 {c16 d16 c16 } bf16 c |
-
-  \tuplet 3/2  { a16 bf16 a16 } g16 bf16 a8 g16 a16 bf16 c16 d16 ef16 | % 88
-  \tuplet 3/2  { c16 d16 c16 bf16 c16 bf16 a16 bf16 a16 g16 a16 g16 f16 g16 f16 ef16 f16 ef16 } | % 89
-  r8 d8 cs'2 \p \< | \barNumberCheck #90
+  \sopranoCueBarLXXXIV
+  r4 cs=''2 \p \< | \barNumberCheck #90
   d8 \mf -. a8 -. d8 -. a8 -. cs8 -. a16 g16 | % 91
   fs8-. r8 r4 r4 | % 92
   r4 r8 a8\p ~ a4 | % 93
@@ -488,18 +548,14 @@ NotesAltoII =  \relative a' {
   r4 r8 fs8 ( a4 ~ | % 95
   a2 ~ a8 ) r8 | % 96
   r4 r8 a8 ~ a4 | % 97
-  r4 -\pocoaccel r8 a8 ~ a4 ~ | % 98
+  r4 r8 a8 ~ a4 ~ | % 98
   a8-. c16\f c16 ef8 -. a,16 a16 c8 -. fs,16 fs16 | % 99
   a8 -. r8 r4 r4 | \barNumberCheck #100
   r8 c16 c16 ef16 ef16 a,16 a16 c16 c16 fs,16 fs16 | % 101
   a8 -. r8 r4 r4 | % 102
-  r8 d16 d16 d16 d16 d16 d16 d16 d16 d16 d16 | % 103
-  d4 ~ d8 r8 r4 \fermata \bar "||" | % 104
-  r8 g,='8 a8 bf8 c8 ef | % 105
-  g=''4 ~ g16 f16 ef16 d16 c16 d16 ef16 c16 | % 106
-  d16 ef16 d16 c bf16 -\pocorit c16 bf16 a16 g16
-  a16 bf16 d | % 107
-  r8 c,8 c'2-\p-\pocoaccel ~ | % 108
+  \baritoneCuePreFermata
+  \sopranoCuePostFermata
+  r4 c=''2-\p ~ | % 108
   c2 c4 ( | % 109
   d8 ) -. r8 ef2 \< | \barNumberCheck #110
   d8 \mf -. bf8 -. d8 -. bf8 -. d8 -. c16 a16 | % 111
@@ -507,7 +563,7 @@ NotesAltoII =  \relative a' {
   f'8-. d16 \cresc cs16 d8 -. bf16 a16
   bf8 -. f8 -. | % 113
   d'8 -. d16 cs16 d8 -. fs16 es16 fs8 -. d8 -. | % 114
-  d8-.-\pocorit d'8 -. d8 -. fs,16-\f fs16 g8 -. g8 -. \bar "||"
+  d8-. d'8 -. d8 -. fs,16-\f fs16 g8 -. g8 -. \bar "||"
   \key d \major | % 115
   a,8 -\psub -. d16 cs16 c8 -. b16 \< bf16 a8 -. cs16 a16 | % 116
   d8-. a8 -. a8 -. d-. \! cs8 -. a8 -. | % 117
@@ -529,8 +585,8 @@ NotesAltoII =  \relative a' {
   d8-. a16 b16 a8 -. a16 b16 a8 -. g16 a16 | % 132
   fs8-. d'16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | % 133
   d8-. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 134
-  a8 \mf -. d,16-\p cs16 d8 -. fs16 es16 fs8 -. a16 gs16 | % 135
-  a8 -. a8-. -\crescSempre a8 -. d8 -. d8-. fs8 -. | % 136
+  a8 \mf-. d,16[-\p cs16] d8 -. fs16 es16 fs8 -. a16 gs16 | % 135
+  a8 -. a8-.[ -\crescSempre a8 -. d8 -. d8-. fs8] -. | % 136
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es | % 137
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 138
   fs2. \f ~ | % 139
@@ -538,8 +594,9 @@ NotesAltoII =  \relative a' {
   d,,='2. \fermata \bar "|."
 }
 
-NotesTenor =  \relative a' {
-  \transposition bf,
+NotesTenor = \transpose bf c' \relative a' {
+  % \transposition bf,
+  \defaults
 
   \key g \major \time 3/4 | % 1
   g4. \p -- d8-. \< a'8 -. d,8 -. | % 2
@@ -562,14 +619,14 @@ NotesTenor =  \relative a' {
   b8 -. b16 c16 b8 -. b16 c16 c8 -. a16 b16 | % 18
   g4. -- d8 -. a'8 -. d,8 -. | % 19
   g4. -- d8 -. a'8 -. d,8 -. | \barNumberCheck #20
-  g8 \mf -. d8-.\p d8 -. g8 -. g8 -. b8 -. | % 21
+  g8 \mf -. d8-.[\p d8 -. g8 -. g8 -. b8 -.] | % 21
   b8 -. r8 b8 -\crescSempre -. r8 d8 -. r8 | % 22
   g8 -. r8 g8 -. r8 g8 -. r8 | % 23
   g8 -. r8 g8 -. r8 g8 -. r8 | % 24
   g4 \f r4 r4 | % 25
-  g8 g16 g16 -\pocorit g8 g16 g16 g8 g8 \bar "||"
+  \baritoneCueBarXXV
   \key ef \major | % 26
-  ef,4. \mp -> bf'8 -. f8 -. bf8 -. | % 27
+  ef='4. \mp -> bf'8 -. f8 -. bf8 -. | % 27
   g4. bf8 -. f8 -. bf8 -. | % 28
   ef,8 \> ~ ef4 \! ef8 -. d8 -. d8 -. | % 29
   ef8 -. ef4 \< -. ef8 -. f8 -. f8 \! -. | \barNumberCheck #30
@@ -617,37 +674,21 @@ NotesTenor =  \relative a' {
   b8 -. b16 c16 b8 -. b16 c16 c8 -. a16 b16 | % 67
   g4. -- d8 -. a'8 -. d,8 -. | % 68
   g4. -- d8 -. a'8 -. -> d,8 -. | % 69
-  g8 \mf -. d8-.\p d8 -. g8 -. g8 -. b8 -. | \barNumberCheck #70
+  g8 \mf -. d8-.[\p d8 -. g8 -. g8 -. b8] -. | \barNumberCheck #70
   b8 -. r8 b8 -. r8-\crescSempre d8 -. r8 | % 71
   g8 -. r8 g8 -. r8 g8 -. r8 | % 72
   g8 -. r8 g8 -. r8 g8 -. r8 | % 73
   g4 \f r4 r4 | % 74
-  g8 g16 -\pocorit g16 g8 g16 g16 g8 g8 | % 75
-  g4 ~ g8 r8 r4 \fermata \bar "||"
-  | % 76
+  \baritoneCuePreFermata
   \key ef \major | % 76
-  r8 c,,8 d8 ef8 f8 af8 | % 77
-  c4 ~ c16 bf16 af16 g16 f16 g16 af16 f16 | % 78
-  g16 af16 g16 f16 ef f16 -\pocorit ef16 d16 c16 d16 ef16 g | % 79
-  r8 f8 d'2 ~ -\p -\pocoaccel | \barNumberCheck #80
+  \sopranoCuePostFermata
+  r4 d=''2 ~ -\p | \barNumberCheck #80
   d2 d4 ( | % 81
   ef8 ) -. r8 \< f2 \! | % 82
   ef16 \mf ( d16 ) c16 g16 ef'16 ( d16 ) c16 g16 f'16 ( ef16 ) d16 g,16 | % 83
   c8 -. r8 r4 r4 | % 84
-  ef4 ~ ef16 d16 c16 bf16
-  \times 2/3  {
-    c16 d16 c16 }
-  bf16 af16 | % 85
-  bf16 c16 bf16 af16 g8 f16 g16 af16 bf16 c16 af16 | % 86
-  \times 2/3  { g16 af16 g16 }
-  f16 g16 ef8 d16 -\pocorit ef16
-  \times 2/3  {f16 g16 f16 } ef16 f | % 87
-  \times 2/3  {d16 ef16 d16 }
-  c16 ef16 d8 c16 d16 ef16 f16 g16 af | % 88
-  \times 2/3  { f16 g16 f16 ef16 f16 ef16
-                d16-\pocoaccel ef16 d16 c16 d16 c16
-                bf16 c16 bf16 af16 bf16 af16 } | % 89
-  r8 g'8 d'2 \p \< | \barNumberCheck #90
+  \sopranoCueBarLXXXIV
+  r4\p d=''2 \< | \barNumberCheck #90
   d16 \mf ( c16 ) b16 g16 d'16 ( c16 ) b16 g16 e'16 ( d16 ) c16 a16 | % 91
   g8 -. r8 r4 r4
 
@@ -661,17 +702,13 @@ NotesTenor =  \relative a' {
   r8 af16-\f af16 c8 -. f,16 f16 af8 -. d,16 d16 | \barNumberCheck #100
   g8 -. r8 r4 r4 | % 101
   d'16 d16 af16 af16 c16 c16 f,16 f16 af16 af16 d,16 d16 | % 102
-  g8-. g16 g16 g16 g16 g16 g16 g16 g16 g16 g16 | % 103
-  g4 ~ g8 r8 r4 \fermata \bar "||" | % 104
-  r8 c,8 d8 ef8 f8 af8 | % 105
-  c4 ~ c16 bf16 af16 g16 f16 g16 af16 f | % 106
-  g16 af16 g16 f16 -\pocorit ef f16 ef16 d16
-  c16 d16 ef16 g16 | % 107
-  r8 f8 d'2 ~ -\p -\pocoaccel | % 108
+  \baritoneCuePreFermata
+  \sopranoCuePostFermata
+  r4 d'=''2 ~ -\p | % 108
   d2 d4 ( | % 109
   ef8 ) -. r8 f2 \< | \barNumberCheck #110
   ef16 \mf ( d16 ) c16 g16 ef'16 ( d16 ) c16 g16 f'16 ( ef16 ) d16 g,16 | % 111
-  c8-. ef16\mp d16 ef8 -. c16 b16 c8 -. g8 -. | % 112
+  c8-. ef16[\mp d16] ef8 -. c16 b16 c8 -. g8 -. | % 112
   g'8 -.-\cresc r8 r4 r4 | % 113
   d8 -. r8 d8 -. r8 d8 -. r8 | % 114
   d8-. r8 d8 -. d16-\f d16 d8 -. d8 -. \bar "||"
@@ -695,7 +732,7 @@ NotesTenor =  \relative a' {
   b8-. b16 c16 b8 -. b16 c16 c8 -. a16 b16 | % 132
   g4. -- d8 -. a'8 -. d,8 -. | % 133
   g4. -- d8 -. a'8 -. d,8 -. | % 134
-  g8 \mf -. d8-.\p d8 -. g8 -. g8 -. b8 -. | % 135
+  g8 \mf -. d8-.[\p d8 -. g8 -. g8 -. b8] -. | % 135
   b8 -\crescSempre -. r8 b8 -. r8 d8 -. r8 | % 136
   g8-. r8 g8-. r8 g8-. r8 | % 137
   g8 -. r8 g8 -. r8 g8 -. r8 | % 138
@@ -705,8 +742,9 @@ NotesTenor =  \relative a' {
 }
 
 
-NotesBari =  \relative d' {
-  \transposition ef,
+NotesBari = \transpose c g, \relative d' {
+  % \transposition ef,
+  \defaults
 
   \key d \major \time 3/4 | % 1
   d4. \p -- a8-. \< e'8 -. a,8 -. | % 2
@@ -731,10 +769,9 @@ NotesBari =  \relative d' {
   d4.-- a8 -. e'8 -. a,8 -. | \barNumberCheck #20
   d8 \mf -. r8 fs8-.\p r8 a8 -. r8 | % 21
   d8 -. -\crescSempre r8 r4 r4 | % 22
-  d8 r8 d8 r8 d8 r8 | % 23
-  d8 r8 d8 r8 d8 r8 | % 24
+  \tenorCueBarsL_XXII
   r8 d,16\f d16 d16 d16 d16 d16 d16 d16 d16 d16 | % 25
-  d8-- d16 \> d16 -\pocorit d8-- d16 d16 d8-- \! d8-- \bar "||"
+  d8-- d16 \> d16 d8-- d16 d16 d8-- \! d8-- \bar "||"
   \key bf \major | % 26
   bf8 \mp -- f'16 g16 f8 -. f8 -. bf,8 -. f'8 -. | % 27
   bf,8 -- f'16 g16 f8 -. f8 -. bf,8 -. f'8 -. | % 28
@@ -787,30 +824,18 @@ NotesBari =  \relative d' {
   d4. a8 -. e'8 -. a,8 -. | % 69
   d8 \mf -. r8 fs8-.\p r8 a8 -. r8 | \barNumberCheck #70
   d8-. r8 -\crescSempre r4 r4 | % 71
-  d8 r8 d8 r8 d8 r8 | % 72
-  d8 r8 d8 r8 d8 r8 | % 73
+  \tenorCueBarsL_XXII
   r8 d,16\f d16 d16 d16 d16 d16 d16 d16 d16 d16 | % 74
-  d8 d16 -\pocorit d16 d8 d16 d16 d8 d8 | % 75
+  d8 d16 d16 d8 d16 d16 d8 d8 | % 75
   d4 \> ~ -- d8 \! r8 r4 \fermata \bar "||" | % 76
-  \key bf \major r8 g8 a8 bf8 c8 ef | % 77
-  g4 ~ g16 f16 ef16 d16 c16 d16 ef16 c16 | % 78
-  d16 ef16 d c16 -\pocorit bf16 c16 bf16 a16 g16 a16 bf16 d | % 79
-  r8 c,8\p g''2 ~ | \barNumberCheck #80
+  \key bf \major
+  \sopranoCuePostFermata
+  r8 c='8\p g''2 ~ | \barNumberCheck #80
   g2 -\pocoaccel d4 ( | % 81
   g,8 ) -. c16 ( d16 ) c16 ( d) \< ef16 f16 g16 ( ef16 ) d \! c16 | % 82
   d,8 \mf -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 83
   g,8 -. r8 r4 r4 | % 84
-  bf'4 ~ bf16 a16 g16 f16
-  \times 2/3  { g16 a16 g16 } f16 ef16 | % 85
-  f16 g16 f16 ef16 d8 c16 d16 ef16 f16 g16 ef | % 86
-  \times 2/3  {d16 ef16 d16 }
-  c16 d16 bf8 a16 -\pocorit bf16
-  \times 2/3  { c16 d16 c16 } bf16 c16 | % 87
-  \times 2/3  {a16 bf16 a16 }
-  g16 bf16 a8 g16 a16 bf16 c16 d16 ef | % 88
-  \times 2/3  { c16 -\pocoaccel d16 c16 bf16 c16 bf16
-                a16 bf16 a16 g16 a16 g16
-                f16 g16 f16 ef16 f16 ef }
+  \sopranoCueBarLXXXIV
 
   r8 d8\p -. a'16 ( b) \< cs16 d16 e16 ( fs16 ) g \! e16 | \barNumberCheck #90
   a,,8 \mf -. a'8 -. a,8 -. a'8 -. a,8 -. a'8 -. | % 91
@@ -820,18 +845,15 @@ NotesBari =  \relative d' {
   d2. ~ | % 95
   d4 r4 r4 | % 96
   ef2 r4 | % 97
-  ef2. -\pocoaccel ( | % 98
-  d8) -. c'16\f c16 ef8 -. a,16 a16 c8 -. fs,16 fs16 | % 99
-  a8 -. ef16 ef16 g8 -. c,16 c16 ef8 -. a,16 a16 | \barNumberCheck
-  #100
-  d8 -. c'16 c16 ef16 ef16 a,16 a16 c16 c16 fs,16 fs16 | % 101
+  ef2. ( | % 98
+  d8) -. c'16[\f c16] ef8 -. a,16 a16 c8 -. fs,16 fs16 | % 99
+  a8 -. ef16 ef16 g8 -. c,16 c16 ef8 -. a,16 a16 | \barNumberCheck #100
+  d8 -. c'16[ c16] ef16 ef16 a,16 a16 c16 c16 fs,16 fs16 | % 101
   a16 a16 ef16 ef16 g16 g16 c,16 c16 ef16 ef16 a,16 a16 | % 102
   d8 -. d16 d16 d16 d16 d16 d16 d16 d16 d16 d16 | % 103
   d4 ~ \> d8 \! r8 r4 \fermata \bar "||" | % 104
-  r8 g a8 bf8 c8 ef | % 105
-  g4 ~ g16 f16 ef16 d16 c16 d16 ef16 c16 | % 106
-  d16 ef16 d c16 -\pocorit bf16 c16 bf16 a16 g16 a16 bf16 d | % 107
-  r8 c,8\p g''2 ~ | % 108
+  \sopranoCuePostFermata
+  r8 c='8\p g''2 ~ | % 108
   g2 -\pocoaccel d4 ( | % 109
   g,8 ) -. c16 ( d16 ) c16 ( d) \< ef16 f16 g16 ( ef16 ) d \! c16 | \barNumberCheck #110
   d,8 \mf -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 111
@@ -862,8 +884,7 @@ NotesBari =  \relative d' {
   d4.-- a8 -. e'8 -. a,8 -. | % 134
   d8-.-\mf r8 fs8-.-\p r8 a8 -. r8 | % 135
   d8 -. -\crescSempre r8 r4 r4 | % 136
-  d8 r8 d8 r8 d8 r8 | % 137
-  d8 r8 d8 r8 d8 r8 | % 138
+  \tenorCueBarsL_XXII
   d2. \f ~ | % 139
   d4 d2 | \barNumberCheck #140
   d,2. \fermata \bar "|."
