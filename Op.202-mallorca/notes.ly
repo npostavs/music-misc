@@ -1,15 +1,13 @@
 
 \version "2.18.2"
-                                % automatically converted by musicxml2ly from page2p-Violoncello.xml
 
-%% additional definitions required by the score:
 \language "english"
-
 
 \header {
   composer = "Albéniz, Issac"
   title = "Mallorca op. 202 Barcarola"
   piece = "Andantino"
+  tagline = ##f
 }
 
 pocorit = \markup { \italic {poco riten.}}
@@ -55,7 +53,7 @@ PartCello = \relative d' {
   b2. \pp ~ | % 31
   b2. | % 32
   cs,,2. ~ | % 33
-  cs4. r4. \fermata \clef "tenor" \bar "||" | % 34
+  cs4. r4. \fermata \clef "tenor" | % 34
   \key fs \major
   \repeat volta 2 {
     %% NOTE: transcription error due to pdf2xml misreading clef,
@@ -75,7 +73,8 @@ PartCello = \relative d' {
       fs8 \< e,8 as'8 b8 cs8 ds8 \! | % 45
       cs16 \> b16 ( cs8 as8 ) fs4. \! | % 46
     }
-    R2.*2 }
+    R2.*2
+  }
   \alternative {
     { | % 48 alternative 1
       \modalTranspose es cs, \diatonicScaleEsMaj \relative fs' {
@@ -185,7 +184,7 @@ PartFlute = \relative c' {
   d,2. \pp ~ | % 31
   d2. | % 32
   cs2. ~ | % 33
-  cs4. r4. \fermata \bar "||"
+  cs4. r4. \fermata
   \key fs \major | % 34
   \repeat volta 2 {
     fs16\< cs'8 as fs as fs as16 ~ | \barNumberCheck #35
@@ -372,5 +371,6 @@ PartHarp = \relative c' {
   fs16(\> gs fs cs a gs) fs(\! cs a gs fs cs)\pp |
   cs2. \fermata
   fs2. \fermata
+  \bar "|."
 }
 
