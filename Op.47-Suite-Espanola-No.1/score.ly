@@ -8,7 +8,11 @@
     \new Staff { \NotesTenor }
     \new Staff { \NotesBari }
   >>
-  \layout {}
+  \layout {
+    \context {
+      \Voice \consists "Ambitus_engraver"
+    }
+  }
   \midi { \tempo 4 = 100 }
 }
 

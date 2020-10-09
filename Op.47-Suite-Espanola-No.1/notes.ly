@@ -18,6 +18,7 @@ atempo = \markup{ \bold {a Tempo} }
 sempre = \markup{ \italic {sempre} }
 crescSempre = \markup{ \italic {cresc. sempre} }
 mfp = \markup { \concat { \dynamic mf \dynamic p } }
+oct = \markup { \italic {8ve}}
 
 subdivideTupleOnce = {
   \once \set subdivideBeams = ##t
@@ -136,8 +137,7 @@ NotesSopr = \transpose bf c' \relative b' {
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 19
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. \mf | \barNumberCheck #20
   b8 \p -. r8 r8 d,8 -. d8 -. g8 -. | % 21
-  g8 -. b8 -. b8 -. d8 -\crescSempre -. d8 -. g8
-  -. | % 22
+  g8 -. b8 -. b8 -. d8 -\crescSempre -. d8 -. g8 -. | % 22
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 23
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 24
   g4 \f r4 r4 | % 25
@@ -174,9 +174,9 @@ NotesSopr = \transpose bf c' \relative b' {
 
   d8 -. r8 r4 r4 | % 47
   R2.*2 || % 49
-  \ottava #1 d'8 -. d16 \< d16 d8 -. d16 d16 d8 -. d16 \! d16 \bar "||"
+  d8^\oct -. d16 \< d16 d8 -. d16 d16 d8 -. d16 \! d16 \bar "||"
   | \barNumberCheck #50
-  \key g \major \grace { d8( } g8-\f)-^ \ottava #0 b,,8 -. b8 -. b8 -. \> c8 -. c-. | % 51
+  \key g \major \grace { d8( } g8-\f)-^ b,8 -. b8 -. b8 -. \> c8 -. c-. | % 51
   b8 -. b8 -. b8 -. b8 -. -. \! c8 -. c-. | % 52
   g'2->\mp fs8. ( d16 ) | % 53
   e8 -. \tuplet 3/2  { e16 ( fs16 e16 } d4 ) c8. ( a16 ) | % 54
@@ -198,7 +198,7 @@ NotesSopr = \transpose bf c' \relative b' {
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 68
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 69
   b8 \mf -. r8 r8 d,8 -. \p d8 -. g8 -. | \barNumberCheck #70
-  g8 -. b8 -\crescSempre -. b8 -. d8 -. d8 -. g8 -. | % 71
+  g8 -. b8[ -\crescSempre -. b8 -. d8 -. d8 -. g8] -. | % 71
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 72
   g8 -. g8 -. g8 -. g8 -. g8 -. g8 -. | % 73
   g4-\f r4 r4 | % 74
@@ -322,9 +322,9 @@ NotesAltoI = \transpose c g, \relative d'' {
   fs8 -. d16 e16 fs8 -. d16 e16 cs8 -. cs16 d16 | % 18
   a8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 19
   a8 -. d16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | \barNumberCheck #20
-  d8 ^\mf-. fs,8-._\p[ fs8 -. d8 -. d8 -. fs8-.] | % 21
+  d8 ^\mf-. fs8-.^\oct_\p[ fs8 -. d8 -. d8 -. fs8-.] | % 21
   fs8  -. d'16 cs16 -\crescSempre d8 -. fs16 es16 fs8 -"" -. a16 gs16 | % 22
-  a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 23
+  a8-. a,8 -. a8 -. a8 -. a8 -. a8 -. | % 23
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 24
   a4 \f r4 r4 | % 25
   \baritoneCueBarXXV
@@ -337,12 +337,12 @@ NotesAltoI = \transpose c g, \relative d'' {
   bf2 \mp gs8. ( e16 ) \bar "||"
   \key a \major | % 32
   e16 \> ( d16 cs4 \! ) r8 r4 | % 33
-  r8 e,16 fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 34
-  cs''2->-\f b8. ( gs16 ) | % 35
+  r8 e16^\oct fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 34
+  cs'2->-\f b8. ( gs16 ) | % 35
   a2 gs8. ( d16 ) | % 36
   e16 \> ( d16 cs4 \! ) r8 r4 | % 37
-  r8 e,16 -> fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 38
-  cs''2 \ff -> bf8. ( gs16 ) | % 39
+  r8 e16^\oct -> fs16 e16 \< fs16 a16 fs16 gs8 -. fs16 \! e16 | % 38
+  cs'2 \ff -> bf8. ( gs16 ) | % 39
   a2 bf8. ( gs16 ) | \barNumberCheck #40
   a2 bf8. ( g16 ) | % 41
   g16 -\psub a16 bf16 c16 bf16
@@ -353,8 +353,8 @@ NotesAltoI = \transpose c g, \relative d'' {
   c16 bf16 | % 44
   a8 \mf -. e'8 -. a8 -. cs8 -. d8 -. f,8 -. | % 45
   e8 \< -. e8 -. a8 -. cs8 -. d8 f,8 \! -. -. | % 46
-  e8 \f -. a,16 gs16 g8 -. fs16 f16 e8 -. gs16 e16 | % 47
-  a8 -. -. \< cs8 -. cs8 -. cs-. d8 -. d-. \! | % 48
+  e8 \f -. a16^\oct gs16 g8 -. fs16 f16 e8 -. gs16 e16 | % 47
+  a8-. -. \< cs,8 -. cs8 -. cs-. d8 -. d-. \! | % 48
   cs4-\ff r4 r4 | % 49
   g'8-.-\mf \< g16 g g8 -. g16 g16 g8 -. \! g16 g \bar "||"
   | \barNumberCheck #50
@@ -378,16 +378,16 @@ NotesAltoI = \transpose c g, \relative d'' {
   d4. -\crescSempre e16 fs16 g8 -. e16 d16 | % 66
   fs8 -. d16 e16 fs8 -. d16 e16 cs8 -. cs16 d16 | % 67
   a8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 68
-  a8-. d16 cs c8-. b16 bf16 a8 -. cs16 a16 | % 69
+  a8-. d'16^\oct cs c8-. b16 bf16 a8 -. cs16 a16 | % 69
   d8 \mf -. fs,8 -.\p fs8 -. d8 -. d8 -. fs8-.| \barNumberCheck #70
-  fs8-. d'16-\crescSempre cs16 d8 -. fs16 es16 -. fs8-. a16 gs16 | % 71
+  fs8-. d'16[-\crescSempre cs16] d8 -. fs16 es16 -. fs8-. a16 gs16 | % 71
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 72
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 73
   a4-\f r4 r4 | % 74
   \baritoneCuePreFermata
   \key bf \major % -\markup{ \bold {Più lento} }
   \sopranoCuePostFermata
-  r4 ef=''2-\p ~ | \barNumberCheck #80
+  r4 ef,=''2-\p ~ | \barNumberCheck #80
   ef2 fs4 ( | % 81
   g8 ) -. r8 g2 \< | % 82
   g8 \mf -. d8 -. g8 -. d8 -. fs8 -. d8 -. | % 83
@@ -435,14 +435,14 @@ NotesAltoI = \transpose c g, \relative d'' {
   d4. -\crescSempre e16 fs16 g8 -. e16 d16 | % 131
   fs8 -. d16 e16 fs8 -. d16 e16 cs8 -. cs16 d16 | % 132
   a8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 133
-  a8-. d16 cs16 c8-. b16 bf16 a8-. cs16 a16 | % 134
+  a8-. d'16^\oct cs16 c8-. b16 bf16 a8-. cs16 a16 | % 134
   d8-.-\mf fs,8-.-\p fs8 -. d8 -. d8 -. fs8 -. | % 135
-  fs8 -. d'16 cs16 d8 -. fs16 es16 fs8 -. a16 gs16 | % 136
-  a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 137
+  fs8 -. d'16[ cs16] d8 -. fs16 es16 fs8 -. a16 gs16 | % 136
+  a8 -. a,8 -. a8 -. a8 -. a8 -. a8 -. | % 137
   a8 -. a8 -. a8 -. a8 -. a8 -. a8 -. | % 138
   a2. \f ~ | % 139
   a4 d2 | \barNumberCheck #140
-  d,,2. \fermata \bar "|."
+  d,2. \fermata \bar "|."
 }
 
 NotesAltoII = \transpose c g, \relative a' {
@@ -469,8 +469,8 @@ NotesAltoII = \transpose c g, \relative a' {
   d8-. a16 b16 a8 -. a16 b16 a8 -. g16 a16 | % 18
   fs8 -. d'16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | % 19
   d8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | \barNumberCheck #20
-  a8 \mf -. d,16-\p cs16 d8 -. fs16 es16 fs8 -. a16 gs16 | % 21
-  a8 -. a8 -. a8 -. d8 -\crescSempre -. d8 -. fs8
+  a8 \mf -.  d16-\p^\oct cs16 d8 -. fs16 es16 fs8 -. a16 gs16 | % 21
+  a8-. a,8 -. a8 -. d8 -\crescSempre -. d8 -. fs8
   -. | % 22
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 23
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 24
@@ -484,13 +484,13 @@ NotesAltoII = \transpose c g, \relative a' {
   f2 \mf -> ef8. ( c16 ) | % 31
   d2 b8. ( gs16 ) \bar "||"
   \key a \major | % 32
-  a8 \> ~ a4 \! cs,16 e16 d16 e16 d16 e16 | % 33
+  a8 \> ~ a4 \! cs16^\oct e16 d16 e16 d16 e16 | % 33
   cs8 -. cs4 \< -. cs8 -. d8 -. d8 \! -. | % 34
-  e'2 \f -> d8. ( b16 ) | % 35
+  e2 \f -> d8. ( b16 ) | % 35
   cs2 b8. ( gs16 ) | % 36
-  a8 \> ~ a4 \! cs,16 e16 d16 e16 d16 e16 | % 37
+  a8 \> ~ a4 \! cs16^\oct e16 d16 e16 d16 e16 | % 37
   cs8 -. cs4 \< -. cs8 -. d8 -. d8 \! -. | % 38
-  e'2->-\ff d8. ( b16 ) | % 39
+  e2->-\ff d8. ( b16 ) | % 39
   cs2 d8. ( b16 ) | \barNumberCheck #40
   cs2 d8. ( bf16 ) | % 41
   g'16 -\psub a16 bf16 c16 bf16
@@ -499,12 +499,12 @@ NotesAltoII = \transpose c g, \relative a' {
 
   cs16 d16 e16 f16 g16 f16 e16 d16 c16 d16
   c16 bf16 | % 44
-  e,8 \mf -. a8[ -. cs8 -. e8 -. f8 -. d8] -. | % 45
+  e8^\oct \mf -. a,8[ -. cs8 -. e8 -. f8 -. d8] -. | % 45
   cs8 \< -. a8 -. cs8 -. e8 -. f8 \! -. d8 -. | % 46
   cs8 \f -. cs8[ -. cs8 -. cs8 -. d8 -. d8] -. | % 47
-  cs8 -. a16 \< gs16 g8 -. fs16 f16 e8-. gs16 \! e16 | % 48
+  cs8 -. a'16^\oct \< gs16 g8 -. fs16 f16 e8-. gs16 \! e16 | % 48
   a4 \ff r4 r4 | % 49
-  cs8 \mf -. \< cs16 c16 cs8-. cs16 cs16 cs8-. \! cs16 cs16 \bar "||" | \barNumberCheck #50
+  cs,8 \mf -. \< cs16 c16 cs8-. cs16 cs16 cs8-. \! cs16 cs16 \bar "||" | \barNumberCheck #50
   \key d \major | \barNumberCheck #50
   \grace { d8 ( } fs8 \f ) -^ d16 cs16 c8-. b16 bf16 a8 \> -. cs16 a16 | % 51
   d8-. a8 -. a8 -. d8 -. cs-. \! a8-. | % 52
@@ -525,9 +525,9 @@ NotesAltoII = \transpose c g, \relative a' {
   d8 -. a16 b16 a8 -. a16 b16 a8 -. g16 a16 | % 67
   fs8 -. d'16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | % 68
   d8 -. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 69
-  a8 \mf -. d,16-\p cs16 d8 -. fs16 es16 fs8 -. a16 gs16 |
+  a8 \mf -. d16^\oct-\p cs16 d8 -. fs16 es16 fs8 -. a16 gs16 |
   \barNumberCheck #70
-  a8 -. a8-. -\crescSempre a8 -. d8 -. d8 -. fs8 -. | % 71
+  a8 -. a,8[-. -\crescSempre a8 -. d8 -. d8 -. fs8] -. | % 71
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 72
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 73
   fs4 \f r4 r4 | % 74
@@ -585,13 +585,13 @@ NotesAltoII = \transpose c g, \relative a' {
   d8-. a16 b16 a8 -. a16 b16 a8 -. g16 a16 | % 132
   fs8-. d'16 cs16 c8 -. b16 bf16 a8 -. cs16 a16 | % 133
   d8-. a8 -. a8 -. d8 -. cs8 -. a8 -. | % 134
-  a8 \mf-. d,16[-\p cs16] d8 -. fs16 es16 fs8 -. a16 gs16 | % 135
-  a8 -. a8-.[ -\crescSempre a8 -. d8 -. d8-. fs8] -. | % 136
+  a8 \mf-. d16^\oct[-\p cs16] d8 -. fs16 es16 fs8 -. a16 gs16 | % 135
+  a8 -. a,8-.[ -\crescSempre a8 -. d8 -. d8-. fs8] -. | % 136
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es | % 137
   fs8 -. fs16 es16 fs8 -. fs16 es16 fs8 -. fs16 es16 | % 138
   fs2. \f ~ | % 139
   fs4 a2 | \barNumberCheck #140
-  d,,='2. \fermata \bar "|."
+  d,=''2. \fermata \bar "|."
 }
 
 NotesTenor = \transpose bf c' \relative a' {
@@ -655,7 +655,7 @@ NotesTenor = \transpose bf c' \relative a' {
   a4 \ff r4 r4 | % 49
   a8 \mf -. \< a16 a a8-. a16 a16 a8-. \! a16 a \bar "||" | \barNumberCheck #50
   \key g \major
-  g4. \f -- d8-. a'8-. \> d,8 -. | % 51
+  \grace {s8} g4. \f -- d8-. a'8-. \> d,8 -. | % 51
   g4. -- d8 -. a'-. \! d,8 -. | % 52
   g4. \mp -> d8 -. a'8 -. d,8 -. | % 53
   b'4. d,8 -. a'8 -. d,8 -. | % 54
@@ -737,8 +737,8 @@ NotesTenor = \transpose bf c' \relative a' {
   g8-. r8 g8-. r8 g8-. r8 | % 137
   g8 -. r8 g8 -. r8 g8 -. r8 | % 138
   g2. \f ~ | % 139
-  g4 b2 | \barNumberCheck #140
-  g,2. \fermata \bar "|."
+  g4 b,2 | \barNumberCheck #140
+  g2. \fermata \bar "|."
 }
 
 
@@ -803,7 +803,7 @@ NotesBari = \transpose c g, \relative d' {
   "||"
   | \barNumberCheck #50
   \key d \major | \barNumberCheck #50
-  d,4. \f a8 -. e'-. \> a,8 -. | % 51
+  \grace {s8} d,4. \f a8 -. e'-. \> a,8 -. | % 51
   d4. a8 -. e'-. a,8 -. | % 52
   d8-- \mp a'16 b16 a8-. a8 -. d,8 -. a'8 -. | % 53
   d,8-- a'16 b16 a8 -. a8 -. d,8 -. a'8 -. | % 54
