@@ -109,7 +109,7 @@ tenorCueBarsL_XXII = {
 }
 
 
-NotesSopr = \transpose bf c' \relative b' {
+NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   \defaults
 
   % \transposition bf
@@ -297,7 +297,7 @@ NotesSopr = \transpose bf c' \relative b' {
   g,2. \fermata \bar "|."
 }
 
-NotesAltoI = \transpose c g, \relative d'' {
+NotesAltoI = \transpose c ef \transpose c g, \relative d'' {
   % \transposition ef
   \defaults
 
@@ -445,7 +445,7 @@ NotesAltoI = \transpose c g, \relative d'' {
   d,2. \fermata \bar "|."
 }
 
-NotesAltoII = \transpose c g, \relative a' {
+NotesAltoII = \transpose c ef \transpose c g, \relative a' {
   % \transposition ef
   \defaults
 
@@ -594,7 +594,7 @@ NotesAltoII = \transpose c g, \relative a' {
   d,=''2. \fermata \bar "|."
 }
 
-NotesTenor = \transpose bf c' \relative a' {
+NotesTenor = \transpose c ef \transpose bf c' \relative a' {
   % \transposition bf,
   \defaults
 
@@ -742,7 +742,7 @@ NotesTenor = \transpose bf c' \relative a' {
 }
 
 
-NotesBari = \transpose c g, \relative d' {
+NotesBari = \transpose c ef \transpose c g, \relative d' {
   % \transposition ef,
   \defaults
 
