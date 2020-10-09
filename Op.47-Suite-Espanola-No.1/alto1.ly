@@ -5,17 +5,18 @@
 }
 
 \header {
-  instrument = "Alto I"
+  instrument = \markup{ \pieceTitle \normal-text{ - \small #"Alto I"}}
 }
 
 
 \score {
   <<
-    \new Staff { \NotesAltoI }
+    \new Staff << \pageBreakAtFermata \tempoMarkings \NotesAltoI >>
   >>
   \layout {
+    indent = 0
     \context {
-      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 3/32)
+      \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 4/32)
     }
   }
 }
