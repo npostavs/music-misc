@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-dirs := $(wildcard albeniz/Op.*)
+# dirs := <FILL IN>
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
