@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-dirs := D664-piano-sonata-a-major
+dirs := $(wildcard schubert/D*)
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
