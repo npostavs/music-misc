@@ -6,7 +6,8 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-# dirs := <FILL IN>
+dirs := $(wildcard albeniz/Op.*) strozzi/amor-dormiglione $(wildcard vivaldi/rv*) \
+$(wildcard schubert/D*) $(wildcard sterkel/stv*) $(wildcard mozart/kv*)
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
