@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-dirs := strozzi/amor-dormiglione
+# dirs := <FILL IN>
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
