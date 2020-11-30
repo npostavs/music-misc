@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-dirs := rv92-converto
+dirs := $(wildcard vivaldi/rv*)
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
