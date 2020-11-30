@@ -6,7 +6,7 @@ LYFLAGS += -dno-point-and-click
 .SUFFIXES:
 .SUFFIXES: .ly .pdf
 
-dirs := mozart-kv458-string4tet
+dirs := $(wildcard mozart/kv*)
 
 define main
 all : $(foreach dir,$(dirs),$(dir)/all)
