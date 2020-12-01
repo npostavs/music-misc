@@ -2,8 +2,11 @@
 
 \score {
   \new StaffGroup <<
-    \new Staff \voicea
-    \new Staff \voiceb
+    \new Staff { \new CueVoice { \opening}
+                 \clef "treble" \ottava #0
+                 \new Voice \voicea }
+    \new Dynamics \dynamics
+    \new Staff { \opening \ottava #0 \voiceb }
   >>
   \layout{}
   \midi {

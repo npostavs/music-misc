@@ -41,30 +41,38 @@ frit = \markup {\dynamic f \small \italic rit.}
 
 deprecateddim = \dim %% ??
 
-voicea = \relative c {
+opening = \relative a, {
+  \clef "bass"
   \key d \minor
   \time 3/4
-  \override TupletBracket.transparent = ##t
-  \tuplet 7/8 { a32( e' a cs e a cs }  a'2) \fermata
+  \tuplet 7/8 { a32( e' a cs e \ottava #2 a cs }  a'2 ) \fermata
   \bar "||"
-  \time 3/8
-  r8 \tuplet 3/2 {cs,,16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
+}
+
+themeIvoiceA = \relative c' {
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
+  r16 d-.[ r e-. r d-.]
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 
-%%5
-  <bf d>16-.[ r <bf d e>-. r <bf d>-.] r
+  %%5
+  d16-.[ r e-. r d-.] r
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
+  r16 d-.[ r e-. r d-.]
 
-%%10
+  %%10
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. r
   r8 <bf d>-. r
   r8 <bf d>-. r
+}
 
+voicea = \relative c' {
+  \key d \minor
+  \override TupletBracket.transparent = ##t
+  \time 3/8
+  \themeIvoiceA
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%15
   r8 <bf d>-. <d e>-.
@@ -115,7 +123,7 @@ voicea = \relative c {
   e4\) d16\( e
   f4 g8
   \tuplet 3/2 {f16 g f} e4\)
-  \tuplet 3/2 {d16_( e d} c8 bf)
+  \tuplet 3/2 {d16( e d} c8 bf)
 %%50
   r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
 
@@ -128,22 +136,7 @@ voicea = \relative c {
 
   \tuplet 3/2 {e16 f e} d4)
   \tuplet 3/2 {c16([ d c]} bf f c bf)
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-%%60
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. <d e>-.
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-%%65
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. r
-  r8 <bf d>-. r
-  r8 <bf d>-. r
+  \themeIvoiceA
 %%70
   \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Lento" }
@@ -222,25 +215,11 @@ c>^.]
   \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Adagio" }
   \cadenzaOn
-  e'8 r16 f32([ e] d e f g \once \override Voice.TextScript.extra-offset =
-#'(0.7 . -1) f16^\markup{\musicglyph #"scripts.prall"}) e32[ d] e([ f g f]
+  e'8 r16 f32([ e] d[ e f g] f16-\prall) e32[ d] e([ f g f]
 e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   \break
-  r8 \tuplet 3/2 {cs'16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-%%100
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. <d e>-.
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-%%105
-  r8 <bf d> r
-  r8 <bf d> r
-  r8 <bf d> r
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
+  \themeIvoiceA
+  r8 \tuplet 3/2 {cs'16( e a} a,8-.)
   r8 <bf d>-. <d e>-.
 %%110
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
@@ -296,20 +275,7 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
 %%150
   \tuplet 3/2 {e16 f e} d4)
   \tuplet 3/2 {c16([ d c]} bf f c bf)
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-%%155
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. <d e>-.
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-%%160
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. r
-  r8 <bf d>-. r
-  r8 <bf d>-. r
+  \themeIvoiceA
   \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Lento" }
   \bar "||"
@@ -320,34 +286,34 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   \bar "|."
 }
 
+themeIvoiceB = \relative c {
+  << {r8 e4}
+  \\ {a,4.} >> |
+  f'16-. bf-. g-. bf-. e,-. bf'-. |
+  << {r8 e,4}
+  \\ {a,4.} >> |
+%%5
+  <f' bf>16-.[ r <g bf>-. r <e bf'>-.] r |
+  << {r8 e4}
+  \\ {a,4.} >> |
+  \tuplet 3/2 {d16([ e f])} \tuplet 3/2 {g([ a bf])} \tuplet 3/2 {c([ bf a])}
+  << {r8 e4}
+     \\ {a,4.} >>
+  f'16-. bf-. g-. bf-. e,-. bf'-. |
+%%10
+  << {r8 e,4}
+  \\ {a,4.} >>
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+}
+
 voiceb = \relative c {
   \clef bass
   \key d \minor
-  \time 3/4
   \override TupletBracket.transparent = ##t
-  \skip 4*3
   \time 3/8
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-%%5
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-  \tuplet 3/2 {d16([ e f])} \tuplet 3/2 {g([ a bf])} \tuplet 3/2 {c([ bf a])}
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-%%10
-  << {r8 e4}
-  \\ {a,4.} >>
-  \override TupletNumber.transparent = ##t
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \dimTextDim
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g\>[ a bf]\!} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \themeIvoiceB
   << {r8 e4}
   \\ {a,4.} >>
 %%15
@@ -422,26 +388,7 @@ voiceb = \relative c {
   \\ {a,4.} >>
   a8 \tuplet 3/2 {e'16( a d} f8)-.
   a,,8( d f)
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-%%60
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-  \override TupletNumber.transparent = ##t
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  << {r8 e4}
-  \\ {a,4.} >>
-%%65
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \themeIvoiceB
 %%70
   a,4( e' cs'2
   \clef treble
@@ -474,29 +421,15 @@ voiceb = \relative c {
   f,8( c' a')
   bf,8( f' d')
   g,,8( g' <e bf' d g>\arpeggio)
-%%95
-  \skip 8*9
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-%%100
-  << {r8 e4}
-  \\ {a,4.} >>
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-%%105
-  \override TupletNumber.transparent = ##t
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  << {r8 e4}
+  %%95
+  \new CueVoice {
+    \cadenzaOn
+    \clef "bass^8"
+    e'8 r16 f32([ e] d[ e f g] f16-\prall) e32[ d] e([ f g f]
+    e[ f d e]) \cadenzaOff c16\prall \clef "bass" bf32([ a] bf[ c bf f] d[ c bf f])
+  }
+  \themeIvoiceB
+  << {r8 e'4}
   \\ {a,4.} >>
   d16-. f-. g8-. bf-.
 %%110
@@ -542,7 +475,7 @@ voiceb = \relative c {
   \\ {a,4.} >>
 %%135
   \dimTextDim
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[\> a bf\!]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[a bf]} \tuplet 3/2 {c[ bf a])}
   \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   \override TupletNumber.transparent = ##f
@@ -570,26 +503,7 @@ voiceb = \relative c {
 %%150
   a8 \tuplet 3/2 {e'16( a d} f8)-.
   a,,8( d f)
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-%%155
-  f'16-.[ r g-. r e-.] r
-  << {r8 e4}
-  \\ {a,4.} >>
-  \override TupletNumber.transparent = ##t
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  << {r8 e4}
-  \\ {a,4.} >>
-  f'16-.[ r g-. r e-.] r
-%%160
-  << {r8 e4}
-  \\ {a,4.} >>
-  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
-  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \themeIvoiceB
   a,4( e' cs'2
   \clef treble
   <a' e' cs'>1\arpeggio \fermata)
@@ -691,18 +605,15 @@ dynamics = {
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s4.*3
 %%105
-  \once \override Hairpin.extra-offset = #'(0 . 1.5)
   s8\<^\deprecateddim s\! s16*2/3\> s s\!
   s8\< s\! s16*2/3\> s s\!
   s8\< s\! s16*2/3\> s s\!
-  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
   s4.*4
   s4.\<
   s4 s16 s\!
 %%115
   s4.*5
 %%120
-  \once \override TextScript.extra-offset = #'(0 . 2.1)
   s4.-\can
   s4\< s16. s32\!
   s4.*7
@@ -738,7 +649,6 @@ dynamics = {
   s4.*3
   s8\< s16*2/3\! s s\> s s s\!
   s4.*3
-  \once \override TextScript.extra-offset = #'(0 . 2.1)
   s8-\deprecateddim s4
   \dimHairpin
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
