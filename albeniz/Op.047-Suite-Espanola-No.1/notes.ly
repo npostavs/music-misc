@@ -94,7 +94,7 @@ tenorCueBarCX = {
   <<
     { s2.*2 | }
     \new CueVoice {
-      ef16 ( d16 ) c16^"baritone" g16 ef'16 ( d16 ) c16 g16 f'16 ( ef16 ) d16 g,16 | % 111
+      ef16 ( d16 ) c16^"tenor" g16 ef'16 ( d16 ) c16 g16 f'16 ( ef16 ) d16 g,16 | % 111
       c8-. ef16[ d16] ef8 -. c16 b16 c8 -. g8 -. |
     }
   >>
@@ -105,7 +105,7 @@ tenorCueBarsL_XXII = {
   <<
     { s2.*2 }
     \new CueVoice {
-      d8 r8^"tenor" d8 r8 d8 r8 | % 23
+      d8 r8^\markup{ \normalsize {tenor}} d8 r8 d8 r8 | % 23
       d8 r8 d8 r8 d8 r8 | % 24
     }
   >>
@@ -155,7 +155,9 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   d16 -\psub ( ef16 d16 ef16 ) f16
   ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 15
   d2 d8 -. d16 c16 | % 16
-  b4. -\crescSempre c16 -> d16 ef8 -. f16 ef16 | % 17
+  << { \once \stemUp b4. -\crescSempre }
+     \new CueVoice \transpose f c \relative c'' { c8-. c16-> df c8-. }
+   >> c16 -> d16 ef8 -. f16 ef16 | % 17
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 18
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 19
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. \mf | \barNumberCheck #20
@@ -212,7 +214,10 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   d16 -\psub ( ef16 d16 ef16 )
   f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 64
   d2 d8 -. d16 c16 | % 65
-  b4. -\crescSempre c16 d16 ef8 -. f16 ef16 | % 66
+  << { \once \override NoteColumn #'ignore-collision = ##t b4. -\crescSempre }
+     \new CueVoice \transpose f c \relative c''' { \voiceOne c8-. c16-> df c8-. }
+   >> \oneVoice
+  c16 d16 ef8 -. f16 ef16 | % 66
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 67
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 68
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 69
@@ -231,10 +236,20 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   \tuplet 3/2  { g16 ( af16 g16 } f16 ef16 d16 ef16 f16 g16 )
   \subdivideTupleOnce
   \tuplet 3/2  {f16 ( g16 f16 } ef16 d16 | % 81
-  c8-.)
-  r8 r4 r4 | % 82
-  R2. | % 83
-  r8 c8 \p ( d8 ef8 f8 af8 | % 84
+  c8-.) r8
+  << { r4 r4 | % 82
+       R2. | % 83
+       r8
+     }
+     \new CueVoice \transpose f c \relative c''' {
+       \voiceOne
+       bf2 | % 82
+       af16(-"Tenor" g) f c af'16( g) f c bf'16( af) g c | % 83
+       f8
+     }
+   >>
+  \oneVoice
+  c8 \p ( d8 ef8 f8 af8 | % 84
   ef'4 ~ ef16 ) d16 ( c16 bf16
   \subdivideTupleOnce
   \tuplet 3/2  {c16 d16 c16 } bf16 af16 | % 85
@@ -248,9 +263,18 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   \tuplet 3/2 { f16 ( g16 f16 ef16 f16 ef }
   \tuplet 3/2 { d16 ef16 d16 c16 d16 c16 }
   \tuplet 3/2 { bf16 c16 bf16 af16 bf16 af } | % 89
-  g4) r4 r4 | \barNumberCheck #90
-  R2. | % 91
-  r8 g'8-- \mp g-- -\< g-- g8.-- g16-- \!
+  g4) << { r4^"Tenor" r4 | \barNumberCheck #90
+           R2. | % 91
+           r8
+         }
+         \new CueVoice \transpose f c \relative c''' {
+           \voiceOne
+           g2 | \barNumberCheck #90
+           g16( f) e c g'( f) e c a'( g) f d | % 91
+           c8-.
+         }
+       >> \oneVoice
+  g'8-- \mp g-- -\< g-- g8.-- g16-- \!
   g4 \> ( f8. \!) d16 \< ( ef16 f16 g16 \! af16 ) | % 93
   g8. \> ( af32 g32 \! f8 ) d16 ( f16 ) 
   \subdivideTupleOnce
@@ -263,7 +287,15 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   \tuplet 3/2  { f16( \< g16 f16 ef16 d \! c16 } | % 98
   b8-.) % -\markup{ \bold {Tempo primo} }
   r8 r4 r4 | % 99
-  R2.*3 | \barNumberCheck #102
+  << { s2.*3 | % 102
+     }
+     \new CueVoice \transpose f c \relative c''' {
+       r8-"Tenor" df16 df f8-. bf,16 bf df8-. g,16 g | % 100
+       c8-. r8 r4 r4 | % 101
+       g'16 g df df f f  bf, bf df df g, g | % 102
+     }
+   >>
+  | \barNumberCheck #102
   \baritoneCuePreFermata
 
   r8 c=''8 \p ( d8 ef8 f8 af8 | % 105
@@ -299,7 +331,11 @@ NotesSopr = \transpose c ef \transpose bf c' \relative b' {
   d16 ( ef16 d16 ef16 ) f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 128
   d16 -\psub ( ef16 d16 ef16 ) f16 ( g16 a16 g16 ) f16 ( ef16 d16 c16 ) | % 129
   d2 d8 -. d16 c16 | \barNumberCheck #130
-  b4.-\crescSempre c16 d16 ef8 -. f16 ef16 | % 131
+  << { \once \override NoteColumn #'ignore-collision = ##t
+       b4. -\crescSempre }
+     \new CueVoice \transpose f c \relative c''' { \voiceOne c8-. c16-> df c8-. }
+   >> \oneVoice
+  c16 d16 ef8 -. f16 ef16 | % 131
   d8 -. b16 c16 d8 -. b16 c16 b8 -. a16 b16 | % 132
   g8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 133
   b8 -. b8 -. b8 -. b8 -. c8 -. c8 -. | % 134
@@ -413,10 +449,21 @@ NotesAltoI = \transpose c ef \transpose c g, \relative d'' {
   d8-.\ottava #0 r8 r4 r4 | % 92
   r4 r4 ef4-\p | % 93
   r4 r4 ef4 | % 94
-  r4 r4 r8 d8 ( | % 95
+  << { r4 r4. }
+     \new CueVoice \transpose c d \relative c''' {
+       \voiceOne s8.-"Tenor" g16( c4.)
+     }
+   >> \oneVoice
+  d8 ( | % 95
   fs2. ) | % 96
-  r4 r4 ef4 | % 97
-  r4 r4 ef4 ( | % 98
+  << { r4 r4 ef4 | % 97
+       r4 r4 ef4 ( | % 98
+     }
+     \new CueVoice \transpose c d \relative c'' {
+       \voiceOne s8.-"Tenor" b16( f'4) s4 | % 97
+       \voiceOne s8.-"Tenor" b,16( f'4) s4 | % 97
+     }
+   >> \oneVoice
   d8 \f ) -. c16 c16 ef8 -. a,16 a16 c8 -. fs,16 fs16 | % 99
   a8 -. r8 r4 r4 | \barNumberCheck #100
   r8 c16 c16 ef16 ef16 a,16 a16 c16 c16 fs,16 fs16 | % 101
