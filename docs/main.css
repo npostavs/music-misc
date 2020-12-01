@@ -8,6 +8,6 @@ body {
     background-color: #fdf6e3;
 }
 
-audio { display: block }
+audio {  position: relative; top:1ex }
 
 h1,h2,h3 { line-height: normal }
