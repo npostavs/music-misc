@@ -44,9 +44,8 @@ deprecateddim = \dim %% ??
 voicea = \relative c {
   \key d \minor
   \time 3/4
-  \change Staff = lower
   \override TupletBracket.transparent = ##t
-  a32*8/7( e' a \change Staff = upper cs e a cs a'2)\fermata
+  \tuplet 7/8 { a32( e' a cs e a cs }  a'2) \fermata
   \bar "||"
   \time 3/8
   r8 \tuplet 3/2 {cs,,16^( e a} a,8-.)
