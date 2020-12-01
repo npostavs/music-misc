@@ -2,7 +2,6 @@
 \include "english.ly"
 
 \header {
-  dedication = "A mi ilustre amigo el Excemo: Sr. General Lopez Dominguez"
   title = "Rumores de la Caleta"
   subtitle = "Malagueña"
   subsubtitle = \markup {"No. 6 from" \italic "Recuerdos de viaje"}
@@ -16,7 +15,6 @@
  date = "1887"
  source = "Union Musical Española"
  style = "Romantic"
- copyright = "Public Domain"
  maintainer = "David Surtees"
  maintainerEmail = "mutopia@davidsurtees.com"
  maintainerWeb = "http://www.davidsurtees.com"
@@ -28,7 +26,7 @@
 pmel = \markup {\dynamic p \small \italic melancólico}
 can = \markup {\small \italic cantando}
 semprep = \markup {\italic \small sempre \dynamic p}
-pocorit = \markup {\italic \small "poco ritard."}
+pocorit = \markup {\italic \small "poco rit."}
 atempo = \markup {\italic \small "a tempo"}
 mtempo = \markup {\italic \small "tempo"}
 rit = \markup {\italic \small "rit."}
@@ -63,9 +61,7 @@ themeIvoiceA = \relative c' {
 
   %%10
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d>-. r
-  r8 <bf d>-. r
-  r8 <bf d>-. r
+  \repeat percent 3 { r8 <bf d>-. r }
 }
 
 voicea = \relative c' {
@@ -83,14 +79,12 @@ voicea = \relative c' {
 %%20
   r8 <d e>-. <d e>-.
   r8 <d e>-. <d e>-.
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d e>-. r
-
-  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-%%25
-  r8 <bf d e>-. r
+  \repeat percent 2 {
+    r8 \tuplet 3/2 {cs16^( e a} a,8-.)
+    r8 <bf d e>-. r
+  }
+  \barNumberCheck #26
   \once \override Score.RehearsalMark.self-alignment-X = #left
-  \once \override Score.RehearsalMark.extra-offset = #'(0 . 2.5)
   \mark \markup {\small \bold "Meno tempo" }
   r8 e'\( g~
   g8[ f]~ f16 g32( f
@@ -113,9 +107,7 @@ voicea = \relative c' {
 
 %%40
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
-  r8 <bf d> r
-  r8 <bf d> r
-  r8 <bf d> r
+  \repeat percent 3 { r8 <bf d> r }
   r8 e'\( g
 
 %%45
@@ -138,30 +130,23 @@ voicea = \relative c' {
   \tuplet 3/2 {c16([ d c]} bf f c bf)
   \themeIvoiceA
 %%70
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \mark \markup {\small \bold "Lento" }
   \bar "||"
   \time 4/4
   r2 a'4 a'(
   <a e' a>1)\arpeggio \fermata
-  \bar "|." \break
+  \bar "||"
+  \pageBreak
   \time 3/8
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
-  \mark \markup {\small \bold "Lento" }
   a4 g8
   a4\prall g8
   a8\prall r32 g([ a g] f d bf g
 %%75
   \override Staff.NoteCollision.merge-differently-dotted = ##t
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
-  \mark \markup {\small \bold "Tempo I°" }
   \voiceOne << {f4.)~
       f4.
 
       c'8( d16 e f8~
-      f8) r32 ef([ f ef] d ef f ef
+      f8) s32 ef([ f ef] d ef f ef
       d4.)~
 %%80
       d4.
@@ -212,8 +197,6 @@ c>^.]
       f'16 <e, bf'> r4} >>
 %%95
   \oneVoice
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \mark \markup {\small \bold "Adagio" }
   \cadenzaOn
   e'8 r16 f32([ e] d[ e f g] f16-\prall) e32[ d] e([ f g f]
 e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
@@ -234,9 +217,6 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   r8 \tuplet 3/2 {cs16^( e a} a,8)
   r8 <bf d e> r
 %%120
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
-  \mark \markup {\small \bold "Meno mosso" }
   r8 e'( g)\(~
   g8[ f]~ f16 g32( f
   e4)\) d16\( e
@@ -255,9 +235,7 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   r8 <d e>-. <d e>-.
   r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%135
-  r8 <bf d> r
-  r8 <bf d> r
-  r8 <bf d> r
+  \repeat percent 3 { r8 <bf d> r }
   r8 e'\( g
   g8[ f]~ f16 g32 f
 %%140
@@ -276,8 +254,6 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   \tuplet 3/2 {e16 f e} d4)
   \tuplet 3/2 {c16([ d c]} bf f c bf)
   \themeIvoiceA
-  \once \override Score.RehearsalMark.self-alignment-X = #left
-  \mark \markup {\small \bold "Lento" }
   \bar "||"
   \time 4/4
   r2 a'4 a'(
@@ -390,14 +366,21 @@ voiceb = \relative c {
   a,,8( d f)
   \themeIvoiceB
 %%70
-  a,4( e' cs'2
+  \time 4/4
+  a,4( e' cs'2 |
   \clef treble
-  <a' e' cs'>1)\arpeggio \fermata
+  <a' e' cs'>1)\arpeggio \fermata |
+  \pageBreak
+  \time 3/8
+  << { s4.*3 }
+     \new CueVoice {
+       \clef "bass^15" a'4 g8
+       a4\prall g8
+       a8\prall r32 g[ a g] f d bf g
+     }
+   >>
   \clef bass
-  r4 r8
-  r4 r8
-  r4 r8
-%%75
+  \barNumberCheck #75
   f,,8( c' a')
   f,8( c' a')
   f,8( c' a')
@@ -504,9 +487,11 @@ voiceb = \relative c {
   a8 \tuplet 3/2 {e'16( a d} f8)-.
   a,,8( d f)
   \themeIvoiceB
-  a,4( e' cs'2
+  \time 4/4
+  a,4( e' cs'2 |
   \clef treble
-  <a' e' cs'>1\arpeggio \fermata)
+  <a' e' cs'>1\arpeggio \fermata) |
+  \bar "|."
 }
 
 dynamics = {
@@ -515,21 +500,26 @@ dynamics = {
   s4.*4
   s8\< s\! s16*2/3\> s s\!
   s4.*3
-  s8\< s16*2/3\! s s s\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
+  <<
+    \tag #'top { s4.*3 }
+    \tag #'bottom {
+      s8\< s16*2/3\! s s s\> s s\!
+      s16*2/3\< s s\! s8 s16*2/3\> s s\!
+      s16*2/3\< s s\! s8 s16*2/3\> s s\!
+    }
+  >>
+  s4.\pp
 %%15
   s8\< s\! s
-  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
+  s4.\pp
   s8\< s\! s
-  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
+  s4.\pp
   s8 s4\<
 %%20
   s4 s16 s\!
   s4\> s16 s\!
   s4.*4
-  s16 \once \override TextScript.extra-offset = #'(0 . 2.1) s-\can s4
+  s16 s-\can s4
   s4\< s16. s32\!
   s4.*2
   s16*2/3\> s s\! s4
@@ -542,9 +532,13 @@ dynamics = {
   s4\> s16 s\!
 %%40
   s4.
-  s8\< s\! s16*2/3\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
+  << \tag #'top { s4.*3 }
+     \tag #'bottom {
+       s8\< s\! s16*2/3\> s s\!
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+     }
+   >>
   s8 s\< s\!
 %%45
   s4.
@@ -564,30 +558,40 @@ dynamics = {
   s4.*5
   s8\< s\! s16*2/3\> s s\!
   s4.*3
-  \once \override TextScript.extra-offset = #'(0 . 2.1)
-  s8-\deprecateddim s4
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
+  << \tag #'top { s4.*3 }
+     \tag #'bottom {
+       s8-\deprecateddim s4
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+     }
+   >>
 %%70
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Lento" }
   s1*2
-  s4\ff s8
-  s4.
-  s8 s32 s16.\> s s32\!
+  \barNumberCheck #72
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Lento" }
+  << \tag #'top { s4\ff s8 |
+                  s4.
+                  s8 s32 s16.\> s s32\!|
+                }
+     \tag #'bottom { s4.*3 }
+   >>
 %%75
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Tempo I°" }
   s4-\semprep s8
   s4.*2
-  s8 s16 \once \override TextScript.extra-offset = #'(0 . 2) s-\pocorit s8
+  s8 s16 s-\pocorit s8
   s8-\mtempo s4
 %%80
-  s4 s16 s-\rit
-  \once \override Hairpin.extra-offset = #'(0 . 1)
+  s4 s8-\rit
   s8.\> s16\! s8
-  \override TextScript.extra-offset = #'(0 . 1.5)
-  s4 s16 s-\rit
+  s4 s8-\rit
   s4-\atempo s8
   s4.
 %%85
-  \once \override DynamicText.extra-offset = #'(2 . 2.5)
   s4\mf s8
   s4 s32 s16.-\rit
   s4-\atempo s8
@@ -599,36 +603,51 @@ dynamics = {
   s8-\moltorit s\< s\!
   s4.-\riten
 %%95
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Adagio" }
   s8-\cadlen s8*3 s8-\adlib s s16 s-\frit s4
   s4.-\pmel
   s4.*4
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s4.*3
-%%105
-  s8\<^\deprecateddim s\! s16*2/3\> s s\!
-  s8\< s\! s16*2/3\> s s\!
-  s8\< s\! s16*2/3\> s s\!
-  s4.*4
+  %%105
+  \barNumberCheck #105
+  << \tag #'top { s4.*3 }
+     \tag #'bottom {
+       s8\<^\deprecateddim s\! s16*2/3\> s s\!
+       s8\< s\! s16*2/3\> s s\!
+       s8\< s\! s16*2/3\> s s\!
+     }
+   >>
+  \barNumberCheck #108
+  s4.*5
+  \barNumberCheck #113
   s4.\<
   s4 s16 s\!
 %%115
   s4.*5
-%%120
+  \barNumberCheck #120
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Meno mosso" }
   s4.-\can
   s4\< s16. s32\!
   s4.*7
   s8\< s\! s16*2/3\> s s\!
-%%130
+  \barNumberCheck #130
   s4.
   s4\< s16 s\!
   s4.
   s4\> s16 s\!
   s4.
-%%135
+  \barNumberCheck #135
   s8\< s\! s16*2/3\> s s\!
-  s8\< s\! s16*2/3\> s s\!
-  s8\< s\! s16*2/3\> s s\!
-  s8 s16 s\< s s\!
+  << \tag #'top { s4.*3 }
+     \tag #'bottom { 
+       s8\< s\! s16*2/3\> s s\!
+       s8\< s\! s16*2/3\> s s\!
+       s8 s16 s\< s s\!
+     }
+   >>
   s4.
 %%140
   s8\< s16*2/3 s s\! s8
@@ -649,10 +668,16 @@ dynamics = {
   s4.*3
   s8\< s16*2/3\! s s\> s s s\!
   s4.*3
-  s8-\deprecateddim s4
-  \dimHairpin
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  s16*2/3\< s s\! s8 s16*2/3\> s s\!
+  << \tag #'top { s4.*3 }
+     \tag #'bottom {
+       s8-\deprecateddim s4
+       \dimHairpin
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+       s16*2/3\< s s\! s8 s16*2/3\> s s\!
+     }
+   >>
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \mark \markup {\small \bold "Lento" }
   s1*2
 }
 
