@@ -1,4 +1,4 @@
-\version "2.10.0"
+\version "2.18.0"
 \include "english.ly"
 
 \header {
@@ -22,7 +22,7 @@
  maintainerWeb = "http://www.davidsurtees.com"
  lastupdated = "2006/Dec/27"
  footer = "Mutopia-2006/12/29-898"
- tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } • \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
+ tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } • \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
 pmel = \markup {\dynamic p \small \italic melancólico}
@@ -39,51 +39,51 @@ adlib = \markup {\italic \small "ad lib."}
 dim = \markup {\italic \small "dim."}
 frit = \markup {\dynamic f \small \italic rit.}
 
-setTextDim = {} %% ??
+deprecateddim = \dim %% ??
 
 voicea = \relative c {
   \key d \minor
   \time 3/4
   \change Staff = lower
-  \override TupletBracket #'transparent = ##t
+  \override TupletBracket.transparent = ##t
   a32*8/7( e' a \change Staff = upper cs e a cs a'2)\fermata
   \bar "||"
   \time 3/8
-  r8 \times 2/3 {cs,,16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs,,16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 
 %%5
   <bf d>16-.[ r <bf d e>-. r <bf d>-.] r
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
 
 %%10
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. r
   r8 <bf d>-. r
   r8 <bf d>-. r
 
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%15
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
 %%20
   r8 <d e>-. <d e>-.
   r8 <d e>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. r
 
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%25
   r8 <bf d e>-. r
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
-  \once \override Score.RehearsalMark #'extra-offset = #'(0 . 2.5)
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \once \override Score.RehearsalMark.extra-offset = #'(0 . 2.5)
   \mark \markup {\small \bold "Meno tempo" }
   r8 e'\( g~
   g8[ f]~ f16 g32( f
@@ -91,21 +91,21 @@ voicea = \relative c {
   f4 g8
 
 %30
-  \times 2/3 {f16 g f} e4\)
-  \times 2/3 {d16([ e d]} c8 bf)
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  \tuplet 3/2 {f16 g f} e4\)
+  \tuplet 3/2 {d16([ e d]} c8 bf)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 
 %%35
   r8 <bf d> r
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
   r8 <d e>-. <d e>-.
   r8 <d e>-. <d e>-.
 
 %%40
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d> r
   r8 <bf d> r
   r8 <bf d> r
@@ -115,38 +115,38 @@ voicea = \relative c {
   g8[ f]~ f16 g32 f
   e4\) d16\( e
   f4 g8
-  \times 2/3 {f16 g f} e4\)
-  \times 2/3 {d16_( e d} c8 bf)
+  \tuplet 3/2 {f16 g f} e4\)
+  \tuplet 3/2 {d16_( e d} c8 bf)
 %%50
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
 
   r16 cs'( d e g f
-  \times 2/3 {e16 f e} d4)
-  \times 2/3 {d16( e d} c8 bf)
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  \tuplet 3/2 {e16 f e} d4)
+  \tuplet 3/2 {d16( e d} c8 bf)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
 %%55
   cs'16( d e f a g
 
-  \times 2/3 {e16 f e} d4)
-  \times 2/3 {c16([ d c]} bf f c bf)
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  \tuplet 3/2 {e16 f e} d4)
+  \tuplet 3/2 {c16([ d c]} bf f c bf)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
 %%60
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%65
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
 
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. r
   r8 <bf d>-. r
   r8 <bf d>-. r
 %%70
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
+  \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Lento" }
   \bar "||"
   \time 4/4
@@ -154,16 +154,16 @@ voicea = \relative c {
   <a e' a>1)\arpeggio \fermata
   \bar "|." \break
   \time 3/8
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
-  \once \override Score.RehearsalMark #'extra-offset = #'(0 . 1.5)
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
   \mark \markup {\small \bold "Lento" }
   a4 g8
   a4\prall g8
   a8\prall r32 g([ a g] f d bf g
 %%75
-  \override Staff.NoteCollision #'merge-differently-dotted = ##t
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
-  \once \override Score.RehearsalMark #'extra-offset = #'(0 . 1.5)
+  \override Staff.NoteCollision.merge-differently-dotted = ##t
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
   \mark \markup {\small \bold "Tempo I°" }
   \voiceOne << {f4.)~
       f4.
@@ -182,7 +182,7 @@ voicea = \relative c {
 %%85
       c'8( f4)
       a8\rest a16\rest e32([ f] e d c d
-      e4) \times 2/3 {d16(_\( e d\)}
+      e4) \tuplet 3/2 {d16(_\( e d\)}
       c4.)
 
       bf8( c16 d e8~
@@ -220,62 +220,62 @@ c>^.]
       f'16 <e, bf'> r4} >>
 %%95
   \oneVoice
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
+  \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Adagio" }
   \cadenzaOn
-  e'8 r16 f32([ e] d e f g \once \override Voice.TextScript #'extra-offset =
+  e'8 r16 f32([ e] d e f g \once \override Voice.TextScript.extra-offset =
 #'(0.7 . -1) f16^\markup{\musicglyph #"scripts.prall"}) e32[ d] e([ f g f]
 e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
   \break
-  r8 \times 2/3 {cs'16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs'16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
 %%100
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%105
   r8 <bf d> r
   r8 <bf d> r
   r8 <bf d> r
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
 %%110
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
   r8 <d e>-. <d e>-.
 %%115
   r8 <d e>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. r
-  r8 \times 2/3 {cs16^( e a} a,8)
+  r8 \tuplet 3/2 {cs16^( e a} a,8)
   r8 <bf d e> r
 %%120
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
-  \once \override Score.RehearsalMark #'extra-offset = #'(0 . 1.5)
+  \once \override Score.RehearsalMark.self-alignment-X = #left
+  \once \override Score.RehearsalMark.extra-offset = #'(0 . 1.5)
   \mark \markup {\small \bold "Meno mosso" }
   r8 e'( g)\(~
   g8[ f]~ f16 g32( f
   e4)\) d16\( e
   f4 g8
-  \times 2/3 {f16 g f} e4\)
+  \tuplet 3/2 {f16 g f} e4\)
 %%125
-  \times 2/3 {d16\( e d} c8 bf\)
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  \tuplet 3/2 {d16\( e d} c8 bf\)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. r
 %%130
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d e>-. <d e>-.
   r8 <d e>-. <d e>-.
   r8 <d e>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%135
   r8 <bf d> r
   r8 <bf d> r
@@ -285,33 +285,33 @@ e[ f d e]) \cadenzaOff c16\prall bf32([ a] bf[ c bf f] d[ c bf f])
 %%140
   e4\) d16\( e
   f4 g8
-  \times 2/3 {f16 g f} e4\)
-  \times 2/3 {d16_( e d} c8 bf)
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  \tuplet 3/2 {f16 g f} e4\)
+  \tuplet 3/2 {d16_( e d} c8 bf)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
 %%145
   r16 cs'( d e g f
-  \times 2/3 {e16 f e} d4)
-  \times 2/3 {d16( e d} c8 bf)
-  r8 \times 2/3 {cs,16^( e a} a,8-.)
+  \tuplet 3/2 {e16 f e} d4)
+  \tuplet 3/2 {d16( e d} c8 bf)
+  r8 \tuplet 3/2 {cs,16^( e a} a,8-.)
   cs'16( d e f a g
 %%150
-  \times 2/3 {e16 f e} d4)
-  \times 2/3 {c16([ d c]} bf f c bf)
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  \tuplet 3/2 {e16 f e} d4)
+  \tuplet 3/2 {c16([ d c]} bf f c bf)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
 %%155
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. <d e>-.
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r16 <bf d>-.[ r <bf d e>-. r <bf d>-.]
 %%160
-  r8 \times 2/3 {cs16^( e a} a,8-.)
+  r8 \tuplet 3/2 {cs16^( e a} a,8-.)
   r8 <bf d>-. r
   r8 <bf d>-. r
   r8 <bf d>-. r
-  \once \override Score.RehearsalMark #'self-alignment-X = #left
+  \once \override Score.RehearsalMark.self-alignment-X = #left
   \mark \markup {\small \bold "Lento" }
   \bar "||"
   \time 4/4
@@ -325,7 +325,7 @@ voiceb = \relative c {
   \clef bass
   \key d \minor
   \time 3/4
-  \override TupletBracket #'transparent = ##t
+  \override TupletBracket.transparent = ##t
   \skip 4*3
   \time 3/8
   << {r8 e4}
@@ -337,18 +337,18 @@ voiceb = \relative c {
   f'16-.[ r g-. r e-.] r
   << {r8 e4}
   \\ {a,4.} >>
-  \times 2/3 {d16([ e f])} \times 2/3 {g([ a bf])} \times 2/3 {c([ bf a])}
+  \tuplet 3/2 {d16([ e f])} \tuplet 3/2 {g([ a bf])} \tuplet 3/2 {c([ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
   f'16-.[ r g-. r e-.] r
 %%10
   << {r8 e4}
   \\ {a,4.} >>
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \setTextDim
-  \times 2/3 {d,([ e f]} \times 2/3 {g\>[ a bf]\!} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \dimTextDim
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g\>[ a bf]\!} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
 %%15
@@ -369,13 +369,13 @@ voiceb = \relative c {
   \\ {a,4.} >>
 %%25
   f'4( g16)-. e-.
-  \override TupletNumber #'transparent = ##f
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  \override TupletNumber.transparent = ##f
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d e>-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d e>-. e,-.
 %%30
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   << {r8 bf_( d)}
   \\ {a,8 <d f>4 } >>
   << {r8 e4}
@@ -384,8 +384,8 @@ voiceb = \relative c {
   << {r8 e,4}
   \\ {a,4.} >>
 %%35
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
   d16-. e-. f-. g-. a-. bf-.
@@ -394,26 +394,26 @@ voiceb = \relative c {
 %%40
   << {r8 e4}
   \\ {a,4.} >>
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \setTextDim
-  \times 2/3 {d,16([ e f]} \times 2/3 {g[\> a bf\!]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \override TupletNumber #'transparent = ##f
-  a,8-. \times 2/3 {e'16( a cs} e8)-.
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \dimTextDim
+  \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[\> a bf\!]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \override TupletNumber.transparent = ##f
+  a,8-. \tuplet 3/2 {e'16( a cs} e8)-.
 %%45
   a,,8-. bf'-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d g>-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   << {r8 bf d}
   \\ {a,8 <d f>4 } >>
 %%50
   << {r8 e4}
   \\ {a,4.} >>
-  \override Staff.NoteCollision #'merge-differently-dotted = ##t
+  \override Staff.NoteCollision.merge-differently-dotted = ##t
   << {a8 e'_. bf'_.}
   \\ {a,4.} >>
-  a8 \times 2/3 {e'16( a d} f8)-.
+  a8 \tuplet 3/2 {e'16( a d} f8)-.
   << {r8 <f, bf> d'}
   \\ {a,8 <d f>4 } >>
   << {r8 e4}
@@ -421,7 +421,7 @@ voiceb = \relative c {
 %%55
   << {a8 e'_. bf'_.}
   \\ {a,4.} >>
-  a8 \times 2/3 {e'16( a d} f8)-.
+  a8 \tuplet 3/2 {e'16( a d} f8)-.
   a,,8( d f)
   << {r8 e4}
   \\ {a,4.} >>
@@ -432,17 +432,17 @@ voiceb = \relative c {
   f'16-.[ r g-. r e-.] r
   << {r8 e4}
   \\ {a,4.} >>
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
 %%65
   f'16-.[ r g-. r e-.] r
   << {r8 e4}
   \\ {a,4.} >>
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
 %%70
   a,4( e' cs'2
   \clef treble
@@ -486,17 +486,17 @@ voiceb = \relative c {
 %%100
   << {r8 e4}
   \\ {a,4.} >>
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
   f'16-.[ r g-. r e-.] r
   << {r8 e4}
   \\ {a,4.} >>
 %%105
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
   d16-. f-. g8-. bf-.
@@ -517,12 +517,12 @@ voiceb = \relative c {
   \\ {a,4.} >>
   f'4( g16)-. e-.
 %%120
-  \override TupletNumber #'transparent = ##f
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  \override TupletNumber.transparent = ##f
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d e>-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d e>-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
 %%125
   << {r8 bf d}
   \\ {a,8 <d f>4 } >>
@@ -531,8 +531,8 @@ voiceb = \relative c {
   d16-. f-. g8-. bf-.
   << {r8 e,4}
   \\ {a,4.} >>
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
 %%130
   << {r8 e4}
   \\ {a,4.} >>
@@ -542,26 +542,26 @@ voiceb = \relative c {
   << {r8 e4}
   \\ {a,4.} >>
 %%135
-  \setTextDim
-  \times 2/3 {d16([ e f]} \times 2/3 {g[\> a bf\!]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \override TupletNumber #'transparent = ##f
-  a,8-. \times 2/3 {e'16( a cs} e8)-.
+  \dimTextDim
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[\> a bf\!]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \override TupletNumber.transparent = ##f
+  a,8-. \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. bf'-. e,-.
 %%140
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   a,,8-. <bf' d g>-. e,-.
-  a,8 \times 2/3 {e'16( a cs} e8)-.
+  a,8 \tuplet 3/2 {e'16( a cs} e8)-.
   << {r8 bf d}
   \\ {a,8 <d f>4 } >>
   << {r8 e4}
   \\ {a,4.} >>
 %%145
-  \override Staff.NoteCollision #'merge-differently-dotted = ##t
+  \override Staff.NoteCollision.merge-differently-dotted = ##t
   << {a8 e'_. bf'_.}
   \\ {a,4.} >>
-  a8 \times 2/3 {e'16( a d} f8)-.
+  a8 \tuplet 3/2 {e'16( a d} f8)-.
   << {r8 <f, bf> d'}
   \\ {a,8 <d f>4 } >>
   << {r8 e4}
@@ -569,7 +569,7 @@ voiceb = \relative c {
   << {a8 e'_. bf'_.}
   \\ {a,4.} >>
 %%150
-  a8 \times 2/3 {e'16( a d} f8)-.
+  a8 \tuplet 3/2 {e'16( a d} f8)-.
   a,,8( d f)
   << {r8 e4}
   \\ {a,4.} >>
@@ -580,17 +580,17 @@ voiceb = \relative c {
   f'16-.[ r g-. r e-.] r
   << {r8 e4}
   \\ {a,4.} >>
-  \override TupletNumber #'transparent = ##t
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \override TupletNumber.transparent = ##t
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   << {r8 e4}
   \\ {a,4.} >>
   f'16-.[ r g-. r e-.] r
 %%160
   << {r8 e4}
   \\ {a,4.} >>
-  \times 2/3 {d16([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
-  \times 2/3 {d,([ e f]} \times 2/3 {g[ a bf]} \times 2/3 {c[ bf a])}
+  \tuplet 3/2 {d16([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
+  \tuplet 3/2 {d,([ e f]} \tuplet 3/2 {g[ a bf]} \tuplet 3/2 {c[ bf a])}
   a,4( e' cs'2
   \clef treble
   <a' e' cs'>1\arpeggio \fermata)
@@ -605,18 +605,18 @@ dynamics = {
   s8\< s16*2/3\! s s s\> s s\!
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
-  \once \override DynamicText #'extra-offset = #'(1 . 2.5) s4.\pp
+  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
 %%15
   s8\< s\! s
-  \once \override DynamicText #'extra-offset = #'(1 . 2.5) s4.\pp
+  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
   s8\< s\! s
-  \once \override DynamicText #'extra-offset = #'(1 . 2.5) s4.\pp
+  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
   s8 s4\<
 %%20
   s4 s16 s\!
   s4\> s16 s\!
   s4.*4
-  s16 \once \override TextScript #'extra-offset = #'(0 . 2.1) s-\can s4
+  s16 \once \override TextScript.extra-offset = #'(0 . 2.1) s-\can s4
   s4\< s16. s32\!
   s4.*2
   s16*2/3\> s s\! s4
@@ -651,8 +651,8 @@ dynamics = {
   s4.*5
   s8\< s\! s16*2/3\> s s\!
   s4.*3
-  \once \override TextScript #'extra-offset = #'(0 . 2.1)
-  s8-\dim s4
+  \once \override TextScript.extra-offset = #'(0 . 2.1)
+  s8-\deprecateddim s4
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
 %%70
@@ -663,23 +663,23 @@ dynamics = {
 %%75
   s4-\semprep s8
   s4.*2
-  s8 s16 \once \override TextScript #'extra-offset = #'(0 . 2) s-\pocorit s8
+  s8 s16 \once \override TextScript.extra-offset = #'(0 . 2) s-\pocorit s8
   s8-\mtempo s4
 %%80
   s4 s16 s-\rit
-  \once \override Hairpin #'extra-offset = #'(0 . 1)
+  \once \override Hairpin.extra-offset = #'(0 . 1)
   s8.\> s16\! s8
-  \override TextScript #'extra-offset = #'(0 . 1.5)
+  \override TextScript.extra-offset = #'(0 . 1.5)
   s4 s16 s-\rit
   s4-\atempo s8
   s4.
 %%85
-  \once \override DynamicText #'extra-offset = #'(2 . 2.5)
+  \once \override DynamicText.extra-offset = #'(2 . 2.5)
   s4\mf s8
   s4 s32 s16.-\rit
   s4-\atempo s8
   s4 s16 s-\rit
-  \revert TextScript #'extra-offset
+  \revert TextScript.extra-offset
   s4\> s8\!
 %%90
   s4.*3
@@ -692,18 +692,18 @@ dynamics = {
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s4.*3
 %%105
-  \once \override Hairpin #'extra-offset = #'(0 . 1.5)
-  s8\<^\dim s\! s16*2/3\> s s\!
+  \once \override Hairpin.extra-offset = #'(0 . 1.5)
+  s8\<^\deprecateddim s\! s16*2/3\> s s\!
   s8\< s\! s16*2/3\> s s\!
   s8\< s\! s16*2/3\> s s\!
-  \once \override DynamicText #'extra-offset = #'(1 . 2.5) s4.\pp
+  \once \override DynamicText.extra-offset = #'(1 . 2.5) s4.\pp
   s4.*4
   s4.\<
   s4 s16 s\!
 %%115
   s4.*5
 %%120
-  \once \override TextScript #'extra-offset = #'(0 . 2.1)
+  \once \override TextScript.extra-offset = #'(0 . 2.1)
   s4.-\can
   s4\< s16. s32\!
   s4.*7
@@ -739,178 +739,178 @@ dynamics = {
   s4.*3
   s8\< s16*2/3\! s s\> s s s\!
   s4.*3
-  \once \override TextScript #'extra-offset = #'(0 . 2.1)
-  s8-\dim s4
-  \setHairpinDim
+  \once \override TextScript.extra-offset = #'(0 . 2.1)
+  s8-\deprecateddim s4
+  \dimHairpin
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s16*2/3\< s s\! s8 s16*2/3\> s s\!
   s1*2
 }
 
 pedal = {
-  s2\sustainDown s4 \sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s2\sustainOn s4 \sustainOff
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
 %%5
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
 %10
-  s4\sustainDown s8 \sustainUp
+  s4\sustainOn s8 \sustainOff
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
 %%15
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s8
+  s4\sustainOn s8
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.*3
-  s4\sustainDown s8 \sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s8 \sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%30
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.*3
 %%40
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
 %%45
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%50
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%55
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
   s4.
 %%60
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s8
+  s4\sustainOn s8
   s4.
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
 %%65
   s4.
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.*3
 %%70
-  s1\sustainDown
-  s1\sustainUp
+  s1\sustainOn
+  s1\sustainOff
   s4.*3
 %%75
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16. s32\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16. s32\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%80
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16. s32\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16. s32\sustainOff
 %%85
-  s4\sustainDown s16 s\sustainUp
-  s4.\sustainDown
-  s4.\sustainDown
-  s4.\sustainDown
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4.\sustainOn
+  s4.\sustainOn
+  s4.\sustainOn
+  s4\sustainOn s16 s\sustainOff
 %%90
-  s4\sustainDown s16 s\sustainUp
-  s4.\sustainDown
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4.\sustainOn
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%95
   \skip 8*9
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4.\sustainDown
+  s4.\sustainOn
   s4.
 %%100
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
 %%105
   s4.*3
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.
 %%110
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.*3
-  s4\sustainDown s16 s\sustainUp
-  s4.\sustainDown
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4.\sustainOn
+  s4\sustainOn s16 s\sustainOff
   s4.
 %%120
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4.\sustainDown
+  s4.\sustainOn
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
 %%130
-  s4.\sustainDown
+  s4.\sustainOn
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
 %%135
   s4.*3
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
 %%140
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%145
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
 %%150
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
+  s4\sustainOn s16 s\sustainOff
   s4.
-  s4\sustainDown s16 s\sustainUp
+  s4\sustainOn s16 s\sustainOff
 %%155
   s4.
-  s4.\sustainDown
+  s4.\sustainOn
   s4.
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.
 %%160
-  s4\sustainDown s8\sustainUp
+  s4\sustainOn s8\sustainOff
   s4.*3
-  s1\sustainDown
+  s1\sustainOn
 %%165
-  s1\sustainUp
+  s1\sustainOff
 }
