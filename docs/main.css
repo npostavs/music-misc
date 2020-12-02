@@ -1,13 +1,19 @@
 body {
     max-width: 300mm;
     margin: auto;
-    padding: auto;
 
     line-height: 1.6;
     font-size: x-large;
     background-color: #fdf6e3;
 }
 
-audio {  position: relative; top:1ex }
-
 h1,h2,h3 { line-height: normal }
+
+h3 { display: inline; }
+
+span.selected {
+    border: 2px solid black;
+}
+label:hover {
+    background: #eee8d5;
+}

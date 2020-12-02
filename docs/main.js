@@ -1,29 +1,35 @@
-function playWhenCalled(toPlay) {
-    return (function () { toPlay.play() });
-}
-function syncVolumeToI (i) {
-    return function () {
-        var audioElts = document.getElementsByTagName('audio');
-        for (var j = 0; j < audioElts.length; j++) {
-            if (j != i) {
-                audioElts[j].volume = audioElts[i].volume;
-            }
-        }
-    }
-}
-
-function alertFooI(str, num) {
-    return (function () { alert(str + num); });
-}
-
 function setupAudio() {
-    var audioElts = document.getElementsByTagName('audio');
-    for (var i = 0; i < audioElts.length; i++) {
-        if (i < (audioElts.length-1)) { // Nothing to play after the last one.
-            audioElts[i].addEventListener('ended', playWhenCalled(audioElts[i+1]));
+    var audio = document.createElement('audio');
+    audio.setAttribute("controls", "");
+    document.getElementById('audio-holder').appendChild(audio);
+
+    var selectedSrcIndex = undefined;
+    var audioSrcs = document.querySelectorAll("a.mp3.asrc");
+    function setAudioSrc(srcIndex, play) {
+        if (srcIndex < audioSrcs.length) {
+            audio.setAttribute("src", audioSrcs[srcIndex]["href"]);
+            audioSrcs[srcIndex].parentNode.setAttribute("class", "selected");
+            if (play) { audio.play(); }
         }
-        audioElts[i].addEventListener('volumechange', syncVolumeToI(i));
+        if (selectedSrcIndex < audioSrcs.length) {
+            audioSrcs[selectedSrcIndex].parentNode.removeAttribute("class");
+        }
+        selectedSrcIndex = srcIndex;
     }
+    audio.addEventListener('ended', function () {
+        setAudioSrc(selectedSrcIndex + 1, true);
+    });
+    for (var i = 0; i < audioSrcs.length; i++) {
+        var inputs = audioSrcs[i].parentNode.getElementsByTagName("input");
+        if (inputs.length === 1) {
+            let index = i;
+            inputs[0].addEventListener('change', function (event) {
+                setAudioSrc(index, false);
+            });
+        }
+    }
+
+    setAudioSrc(0, false);
 }
 
 window.onload = setupAudio;
