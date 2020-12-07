@@ -2,7 +2,6 @@
 
 violaThirdMov =  \relative g {
     \key es \major
-    \clef alto
     \noTupletBracket
 
     R1*8

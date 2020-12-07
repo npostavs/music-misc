@@ -3,11 +3,16 @@
 \include "defs.ily"
 
 \header {
-    instrument = "Viola"
+    instrument = "Cello"
 }
 
 \layout {
     \compressFullBarRests
+}
+
+\paper {
+    % page-breaking = #ly:page-turn-breaking
+    page-count = #5
 }
 
 \include "viola-i.ily"
@@ -20,14 +25,14 @@
 
 	\markingsI
 
-    \clef alto
+    \clef "bass^8"
 	\violaFirstMov
     >>
 
     
-  \midi {
-    \tempo 4 = 70
-    }
+  % \midi {
+  %   \tempo 4 = 70
+  %   }
 
 
 
@@ -45,20 +50,21 @@
 
 	\markingsII
 
-    \clef alto
+    \clef "bass^8"
 	\violaSecondMov
     >>
 
     
-  \midi {
-    \tempo 4 = 120
-    }
+  % \midi {
+  %   \tempo 4 = 120
+  %   }
 
 
 
     \layout { }
 }
 
+\pageBreak
 
 \include "viola-iii.ily"
 
@@ -70,14 +76,14 @@
 
 	\markingsIII
 
-    \clef alto
+    \clef "bass^8"
 	\violaThirdMov
     >>
 
     
-  \midi {
-    \tempo 4 = 120
-    }
+  % \midi {
+  %   \tempo 4 = 120
+  %   }
 
 
 

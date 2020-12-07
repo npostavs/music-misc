@@ -2,7 +2,6 @@
 
 violaSecondMov =  \relative bes {
     \key bes \major
-    \clef alto
     \time 3/4
     \noTupletBracket
 

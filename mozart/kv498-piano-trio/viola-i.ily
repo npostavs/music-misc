@@ -2,7 +2,6 @@
 
 violaFirstMov =  \relative g {
     \key es \major
-    \clef alto
     \time 6/8
 
     <g es'>4\f ~  es'16[ f64(\p es d es]  g8[ es  bes)]
