@@ -2,6 +2,7 @@
 
 clarinetSecondMov =  \relative e'' {
     \time 3/4
+    \key c \major
     \noTupletBracket
 
     \repeat volta 2 {
