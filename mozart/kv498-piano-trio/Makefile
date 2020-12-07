@@ -16,7 +16,7 @@ PIANO_FILES = $(COMMON_FILES) piano-dynamics.ily \
 	piano-right-ii.ily piano-left-ii.ily \
 	piano-right-iii.ily piano-left-iii.ily
 
-.PHONY: help all clarinet violin viola piano-solo piano cello
+.PHONY: help all clarinet violin viola piano-solo piano cello celloF piano-soloF pianoF violinF
 
 help:
 	@echo "Usage: make [TARGET]"
@@ -34,14 +34,19 @@ all: clarinet violin viola piano-solo piano cello
 clarinet: k498-clarinet.pdf
 
 violin: k498-violin.pdf
+violinF: k498-violinFmaj.pdf
 
 viola: k498-viola.pdf
 
 cello: k498-cello.pdf
 
+celloF: k498-cello-Fmaj.pdf
+
 piano-solo: k498-piano-solo.pdf
+piano-soloF: k498-piano-soloFmaj.pdf
 
 piano: k498-piano.pdf
+pianoF: k498-pianoFmaj.pdf
 
 LYFLAGS := -dpaper-size=\"letter\"
 LYFLAGS += -dno-point-and-click

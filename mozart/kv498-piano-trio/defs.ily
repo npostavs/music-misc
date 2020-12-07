@@ -1,7 +1,7 @@
 \version "2.16.0"
 
 \header {
-  title = "Trio in E-flat Major"
+  title = \markup { "Trio in F " \small { "(originally E" \flat ")" } " Major" }
   subtitle = "(Kegelstatt Trio)"
   subsubtitle = "for Clarinet, Viola and Piano"
   composer = "W.A. Mozart (1756-1791)"
