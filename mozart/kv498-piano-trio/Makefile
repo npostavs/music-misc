@@ -44,6 +44,7 @@ celloF: k498-cello-Fmaj.pdf
 
 piano-solo: k498-piano-solo.pdf
 piano-soloF: k498-piano-soloFmaj.pdf
+piano-midi: k498-piano-midi.mid
 
 piano: k498-piano.pdf
 pianoF: k498-pianoFmaj.pdf
@@ -51,6 +52,8 @@ pianoF: k498-pianoFmaj.pdf
 LYFLAGS := -dpaper-size=\"letter\"
 LYFLAGS += -dno-point-and-click
 %.pdf : %.ly
+	lilypond $(LYFLAGS) $<
+%.mid : %.ly
 	lilypond $(LYFLAGS) $<
 
 k498-clarinet.pdf: k498-clarinet.ly $(CLARINET_FILES)
