@@ -1,8 +1,7 @@
-twoNotes = \relative c'' {
+mI_twoNotes = \relative c'' {
     \time 4/4
     \key c \major
     \tempo 2 = 78
-    \clef "treble"
 
     \set Score.markFormatter = #format-mark-box-alphabet
     \accidentalStyle Score.modern-cautionary
@@ -224,7 +223,7 @@ twoNotes = \relative c'' {
     a4(\< f2\> d4) |
     c\! r r2 |
     a'4(\< f2\> d4) |
-    g4\! r r2 |
+    g4\! r r2 | \allowPageTurn
     a4(\< f2\>) f4 |
     e8\! g e g e g e g | \mark \default
     e g e g e g e g |
@@ -238,7 +237,7 @@ twoNotes = \relative c'' {
 
     % Bars 177-184
     f8 g b g b g d' g, |
-    c4 r r2 | \mark \default
+    c4 r r2 | \mark \default \allowPageTurn
     r2 r4 c8.(\p d16) |
     ees4-.( ees-. ees-. c-.) |
     aes2( g\< |

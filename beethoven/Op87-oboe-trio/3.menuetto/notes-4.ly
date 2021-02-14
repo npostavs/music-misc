@@ -1,8 +1,7 @@
-fourNotes = \relative c' {
+mIII_fourNotes = \relative c' {
     \time 3/4
     \key g \major
     \tempo 2. = 100
-    \clef "treble"
 
     \set Score.markFormatter = #format-mark-box-alphabet
     \accidentalStyle Score.modern-cautionary

@@ -1,8 +1,7 @@
-oneNotes = \relative c''' {
+mIII_oneNotes = \relative c''' {
     \time 3/4
     \key c \major
     \tempo 2. = 100
-    \clef "treble"
 
     \set Score.markFormatter = #format-mark-box-alphabet
     \accidentalStyle Score.modern-cautionary

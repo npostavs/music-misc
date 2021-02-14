@@ -1,8 +1,7 @@
-fourNotes = \relative c'' {
+mIV_fourNotes = \relative c'' {
     \time 2/4
     \key g \major
     \tempo 2 = 75
-    \clef "treble"
 
     \set Score.markFormatter = #format-mark-box-alphabet
     \accidentalStyle Score.modern-cautionary
@@ -199,7 +198,7 @@ fourNotes = \relative c'' {
     c |
     f,\> |
     fis |
-    g4)\! r |
+    g4)\! r | \pageBreak
     r2 | \mark \default
 
     % Bars 165-176

@@ -1,8 +1,7 @@
-fourNotes = \relative c'' {
+mI_fourNotes = \relative c'' {
     \time 4/4
     \key g \major
     \tempo 2 = 78
-    \clef "treble"
 
     \set Score.markFormatter = #format-mark-box-alphabet
     \accidentalStyle Score.modern-cautionary
@@ -148,7 +147,7 @@ fourNotes = \relative c'' {
     d r r \bar ":|]"
 
     % Bars 102-110
-    \partial 4 r4 | \mark \default 
+    \partial 4 r4 | \mark \default \allowPageTurn
     r1 | 
     r4 a'(\p g fis |
     e-.) a'-.\f g-. fis-. |
@@ -259,7 +258,7 @@ fourNotes = \relative c'' {
     d,8-. c'-. a-. g-. fis4 r |
     r8 a-.\p fis-. e-. d4 r |
     r8 c'-.\f a-. g-. fis-. a-. fis-. e-. |
-    d4 r r2 | \mark \default 
+    d4 r r2 | \allowPageTurn \mark \default 
     g2(\p c |
     b4) r r fis |
 
