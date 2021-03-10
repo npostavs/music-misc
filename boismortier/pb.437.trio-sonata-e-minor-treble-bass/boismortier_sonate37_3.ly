@@ -1,43 +1,14 @@
 \version "2.13.22"
 
-\header {
-    title = " Sonate op. XXXVII/2"
-    composer = "."
-    arranger = \markup {\fontsize #2 "Joseph Bodin de Boismortier (1682 - 1765)" }
-    meter = \markup \bold { \fontsize #3.5 " III -   Allegro"   } 
-    tagline = "Created by J.J.Gerbaud using LilyPond (http://lilypond.org)"
-}
-
-\paper{
-	top-margin = 15\mm
-	after-title-space = 30\mm
-	paper-width = 210\mm	
-
-	}
-
-#(set-global-staff-size 18)
-#(set-default-paper-size "a4")
-
-global = { }
-globalTempo = { 
-    \override Score.MetronomeMark #'transparent = ##t
-		}
-	
-resetBarnum = \context Score \applyContext % pour la numérotation des mesures
-  #(set-bar-number-visibility 2)
-
-
-
-
 %% Identification
-voixI =
+mIIIvoixI =
 
 \context Voice = "voice 1"
 
 \relative c' { 
 	 
 	 \set Staff.instrumentName = \markup { \column { "Hautbois" } }
-         \set Staff.midiInstrument = "Oboe"
+         % \set Staff.midiInstrument = "Oboe"
   \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
   \override TextScript #'padding = #2.0
   \override MultiMeasureRest #'expand-limit = 1
@@ -46,7 +17,7 @@ voixI =
      \tempo 4 = 100
     	\clef "treble"
                 \key g \major
-                \partial 8 g''8  ^\markup  \huge "Allegro"
+                \partial 8 g''8
   
   
            g8 (fis) b, dis
@@ -147,17 +118,13 @@ voixI =
                 
 %% fin voix 1 ----------------------------------------------
          
-voixII =
+mIIIvoixII =
 \context Voice = "voice 2"
 \relative c { 
 	 \set Staff.instrumentName = \markup { \column { "Basson" } }
-         \set Staff.midiInstrument = "Bassoon"
-  \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
-  \override TextScript #'padding = #2.0
-  \override MultiMeasureRest #'expand-limit = 1
-  \once \override Staff.TimeSignature #'style = #'() 
+         % \set Staff.midiInstrument = "Bassoon"
 \clef "bass"
-                \key g \major
+                \key g \major \time 2/4
                 \partial 8
               
 	r8
@@ -257,16 +224,17 @@ voixII =
 	e4 dis-+ 
 	e4 e,
 
+    \bar "|."
 }
 
 %% fin voix 2 ----------------------------------------------
 
 %% voix 3
-voixIII =
+mIIIvoixIII =
 \context Voice = "voice 3"
 \relative c { 
 	 \set Staff.instrumentName = \markup { \column { "B.C." } }
-         \set Staff.midiInstrument = "Cello"
+         % \set Staff.midiInstrument = "Cello"
   \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
   \override TextScript #'padding = #2.0
   \override MultiMeasureRest #'expand-limit = 1
@@ -375,47 +343,3 @@ voixIII =
 %% fin voix 3
   
   }
-\score {
-	
-  <<
-  \new StaffGroup <<
-  
-  {
-         \override Score.BarNumber  #'break-visibility =#end-of-line-invisible
-         \override Score.RehearsalMark  #'padding = #2.5
-         \resetBarnum
-
-  }
-  
-  \new Staff  {\voixI }
-
-  \new Staff  {\voixII } 
-
-%  \new Staff \with { %%colorisation de cette portée
-%     \override StaffSymbol #'stencil = #(lambda (grob)
-%        (let* ((staff (ly:staff-symbol::print grob))
-%               (X-ext (ly:stencil-extent staff X))
-%               (Y-ext (ly:stencil-extent staff Y)))
-%         (set! Y-ext (cons
-%            (- (car Y-ext) 0)
-%            (+ (cdr Y-ext) 0)))
-%         (ly:grob-set-property! grob 'layer -10)
-%         (ly:stencil-add
-%           (ly:make-stencil (list 'color (rgb-color 1 0.8 0.6)
-%             (ly:stencil-expr (ly:round-filled-box X-ext Y-ext 0))
-%           X-ext Y-ext))
-%         staff)))
-%  		}
-%  		{ \voixII }
-	
-	
-  \new Staff  {\voixIII } 
-  
- >>
- 
- >>
- \layout { }
- 	
- \midi { }
-}
- %%%%%%%%%%%%%%%%%%%%%%%%%

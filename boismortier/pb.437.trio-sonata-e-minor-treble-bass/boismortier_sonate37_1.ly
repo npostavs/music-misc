@@ -1,43 +1,14 @@
 \version "2.13.22"
 
-\header {
-    title = " Sonate op. XXXVII/2"
-    composer = "."
-  arranger = \markup {\fontsize #2.5 "Joseph Bodin de Boismortier (1682 - 1765)" }
-    meter = \markup { \fontsize #3.5 " I -   Allegro"   } 
-    tagline = \markup { \fontsize #2   "Created by J.J.Gerbaud using LilyPond (http://lilypond.org)" }
-}
-
-\paper{
-	top-margin = 15\mm
-	after-title-space = 30\mm
-	paper-width = 210\mm	
-
-	}
-
-#(set-global-staff-size 18)
-#(set-default-paper-size "a4")
-
-global = { }
-globalTempo = {
-    \override Score.MetronomeMark #'transparent = ##t
-		}
-	
-resetBarnum = \context Score \applyContext % pour la numérotation des mesures
-  #(set-bar-number-visibility 2)
-
-
-
-
 %% Identification
-voixI =
+mIvoixI =
 
 \context Voice = "voice 1"
 
 \relative c' { 
 	 
 	 \set Staff.instrumentName = \markup { \column { "Hautbois" } }
-         \set Staff.midiInstrument = "Oboe"
+         % \set Staff.midiInstrument = "Oboe"
   \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
   \override TextScript #'padding = #2.0
   \override MultiMeasureRest #'expand-limit = 1
@@ -63,7 +34,7 @@ voixI =
 % 11
 	e4 dis2-+
 	e2 r4
-	R2. R2. R2. R2.
+	R2.*4
 % 17
 	g8 fis16 e d c b a g8 e'
 	e4-+ (d4.) g8 
@@ -73,7 +44,7 @@ voixI =
 %22
 	fis4 d g ~
 	g4 fis2-+
-	g2 r4 R2. R2. R2. R2.
+	g2 r4 R2.*4
 % 29		
 	b8 a16 g fis e d cis b8 g'
 	g4-+ (fis4.) b8
@@ -82,7 +53,7 @@ voixI =
 	e16 d e fis e8 e e e
 % 34
 	fis16 e fis g fis8 fis fis fis 
-	e8 (d)cis2-+ \appoggiatura b8
+	e8 (d) \afterGrace cis2-+( { b8) }
 	b4. b8 e b
 	c8 (b a) c b a 
 	gis4-+ \appoggiatura fis8 e4 b'
@@ -91,7 +62,7 @@ voixI =
 	b4. e,8 a4\trill ~
 	a4 gis2-+
 	a8 c e a e e
-	d8 c b2-+ \appoggiatura a8
+	d8 c \afterGrace b2-+( { a8) }
 	a16 (b a b) c (d c d) e (fis e fis)
 % 45
 	g2.
@@ -138,18 +109,13 @@ voixI =
                 
 %% fin voix 1 ----------------------------------------------
          
-voixII =
+mIvoixII =
 \context Voice = "voice 2"
 \relative c { 
 	 \set Staff.instrumentName = \markup { \column { "Basson" } }
-         \set Staff.midiInstrument = "Bassoon"
-  \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
-  \override TextScript #'padding = #2.0
-  \override MultiMeasureRest #'expand-limit = 1
-  \once \override Staff.TimeSignature #'style = #'() 
+         % \set Staff.midiInstrument = "Bassoon"
 
-  		\clef bass
-                 \key g \major
+	\clef bass \key g \major \time 3/4
 
                   
 	R2.*8                
@@ -186,8 +152,7 @@ voixII =
 	d16 cis d e d8 d d d
 	cis8 (b) fis4 ais
 	b4 b, r4
-	R2.
-	R2.
+	R2.*2
 % 39
 	a'8 g16 f e d c b a8 f'
 	f4-+ (e4.) a8 
@@ -238,16 +203,17 @@ voixII =
 	e4
 	e,2 
 
+    \bar "|."
 }
 
 %% fin voix 2 ----------------------------------------------
 
 %% voix 3
-voixIII =
+mIvoixIII =
 \context Voice = "voice 3"
 \relative c { 
 	 \set Staff.instrumentName = \markup { \column { "Cello" } }
-         \set Staff.midiInstrument = "Cello"
+         % \set Staff.midiInstrument = "Cello"
   \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
   \override TextScript #'padding = #2.0
   \override MultiMeasureRest #'expand-limit = 1
@@ -351,45 +317,3 @@ voixIII =
   
   }
  %%%%%%%%%% fin de la musique 
-\score {
-	
-  <<
-  \new StaffGroup <<
-  
-  {
-         \override Score.BarNumber  #'break-visibility =#end-of-line-invisible
-         \override Score.RehearsalMark  #'padding = #2.5
-         \resetBarnum
-
-  }
-  
-  \new Staff  {\voixI }
-    \new Staff  {\voixII } 
-
-%  \new Staff \with { %%colorisation de cette portée
-%     \override StaffSymbol #'stencil = #(lambda (grob)
-%        (let* ((staff (ly:staff-symbol::print grob))
-%               (X-ext (ly:stencil-extent staff X))
-%               (Y-ext (ly:stencil-extent staff Y)))
-%         (set! Y-ext (cons
-%            (- (car Y-ext) 0)
-%            (+ (cdr Y-ext) 0)))
-%         (ly:grob-set-property! grob 'layer -10)
-%         (ly:stencil-add
-%           (ly:make-stencil (list 'color (rgb-color 1 0.8 0.6)
-%             (ly:stencil-expr (ly:round-filled-box X-ext Y-ext 0))
-%           X-ext Y-ext))
-%         staff)))
-%  		}
-%  		{ \voixII }		
-	
-  \new Staff  {\voixIII } 
-  
- >>
- 
- >>
- \layout { }
- 	
- \midi { }
-}
- %%%%%%%%%%%%%%%%%%%%%%%%%
