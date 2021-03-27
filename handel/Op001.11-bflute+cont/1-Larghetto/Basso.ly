@@ -1,8 +1,9 @@
-\new Staff  {
-	\set Staff.instrumentName="Basso"
-	\set Staff.midiInstrument="harpsichord"
+bassoI = {
+	% \set Staff.instrumentName="Basso"
+	% \set Staff.midiInstrument="harpsichord"
 	\key f \major
-	\clef bass
+    \time 3/4
+	% \clef bass
 	\relative c { 	
 		f2 r4 |
 		r f, g |
@@ -48,7 +49,7 @@
 		f2 e4 |
 		d2. |
 		c |
-	\bar "||"
+	\bar "|."
 	}
 
 }

@@ -1,9 +1,11 @@
-\new Staff  {
-	\set Staff.instrumentName="Basso"
-	\set Staff.midiInstrument="harpsichord"
+bassoII = {
+	% \set Staff.instrumentName="Basso"
+	% \set Staff.midiInstrument="harpsichord"
 	\key f \major
-	\clef bass
-	\relative c { 	
+	% \clef bass
+	\time 4/4
+    \relative c {
+        \repeat volta 2 {
 		\partial 8 r8 |
 		r f a f b f a f |
 		e c e c f c e c |
@@ -18,7 +20,10 @@
 		c e, f g a d g, h |
 		c f, g g, a d g, h |
 		c f g g, a a' h h, |
-		c f g g, c4. \bar ":|:" r8 |
+		c f g g, c4.
+        }
+        \repeat volta 2 {
+        r8 |
 		r c e c f c e c |
 		g a b c d a' b fis |
 		g d' es fis, c' a fis d |
@@ -33,7 +38,7 @@
 		f a, b c d g c, e |
 		f b c c, d f e c |
 		f a, b c f,4.
-	\bar "|."
+        }
 	}
 
 }
