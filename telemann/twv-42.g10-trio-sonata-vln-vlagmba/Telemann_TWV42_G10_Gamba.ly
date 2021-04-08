@@ -3,36 +3,30 @@
 
 Instrument = "Viola da Gamba"
 
-ClefGamba = \clef alto
+ClefGamba = \clef "bass^8"
 
 \include "Global.ly"
 \include "Gambamusc.ly"
 
 \header {
-  title = \Title
-  subtitle = \Subtitle
-  subsubtitle = \Subsubtitle
-  composer = \Composer
-  instrument = \Instrument
+  % title = \Title
+  % subtitle = \Subtitle
+  % subsubtitle = \Subsubtitle
+  % composer = \Composer
+  % instrument = \markup { \smaller \medium { \Instrument "-" \Footnote } }
   copyright = \Copyright
-  footer = \Footnote
+  footer = ##f % \Footnote
+  tagline = ##f
 }
 
 \paper {
   page-breaking = #ly:page-turn-breaking
 }
 
-\pageBreak
-
 \bookpart { 
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\Footnote}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
+
   \header {
-    subtitle = ##f
-    subsubtitle = ##f
-    composer = \Comp
+    instrument = \markup { \small { \Instrument "-" \Footnote } }
   }
 
   \score {
@@ -43,6 +37,7 @@ ClefGamba = \clef alto
       
     \layout {
       indent = 3.0\cm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 3/64) }
     }
   }
   
@@ -75,7 +70,8 @@ ClefGamba = \clef alto
     } \gambaD
     
     \layout {
-      indent = 1.0\cm
+      indent = 0.5\cm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8) }
     }
   }
 }
