@@ -3,7 +3,10 @@
 
 Instrument = "Viola da Gamba"
 
-ClefGamba = \clef "bass^8"
+#(define gambaClefOption
+  (or (ly:get-option 'gambaClef) "bass^8"))
+
+ClefGamba = \clef #gambaClefOption
 
 \include "Global.ly"
 \include "Gambamusc.ly"
