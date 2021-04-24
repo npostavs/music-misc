@@ -2,6 +2,12 @@
 
 Instrument = "Violoncello"
 
+#(define celloClefOption
+  (or (ly:get-option 'celloClef) "bass"))
+
+ClefCello = \clef #celloClefOption
+
+
 \include "Global.ly"
 \include "Cellomusic.ly"
 
@@ -9,325 +15,134 @@ Instrument = "Violoncello"
   title = \Title
   subtitle = \Subtitle
   composer = \Composer
-  instrument = \Instrument
+  instrument = \markup \small { \Instrument "-" \Title "-" \Comp  }
   copyright = \Copyright
   footer = \Footnote
+  tagline = ##f
 }
 
 \paper {
   page-breaking = #ly:page-turn-breaking
+  auto-first-page-number = ##t
+  bookTitleMarkup = \bookTitleMarkupSansInstrument
 }
 
-\pageBreak
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.1"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO I"
-    subtitle = ##f
-    composer = \Comp
+  \score {
+    \header {
+      piece = "DIVERTIMENTO I"
+      composer = \Comp
+    }
+    \new Staff \CelloNotesIA
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesIA
-      \context Staff = "Cello" {
-        \FiguresIA
-      }
-    >>
-
-    \layout {indent = 2.0\cm}
-  }
-
-  \score {
-    <<
-      \new Staff ="Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIB
-      \context Staff = "Cello" {
-        \FiguresIB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesIB
+    \layout {indent = 5\mm}
   }
   
   \score {
-    <<
-      \new Staff = "Cello" \with {
-        instrumentName = "Tempo di Minuetto"
-        midiInstrument = "cello"
-      }
-      \CelloNotesIC
-      \context Staff = "Cello" {
-        \FiguresIC
-      }
-    >>
-    
-    \layout {indent = 3.5\cm}
-  }
-}
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.2"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO II"
-    subtitle = ##f
-    composer = \Comp
+    \header { piece = "Tempo di Minuetto" }
+    \new Staff \CelloNotesIC
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesIIA
-      \context Staff = "Cello" {
-        \FiguresIIA
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header {
+      piece = "DIVERTIMENTO II"
+      composer = \Comp
+    }
+    \new Staff \CelloNotesIIA
+    \layout {
+      indent = 5\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIIB
-      \context Staff = "Cello" {
-        \FiguresIIB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesIIB
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIIC
-      \context Staff = "Cello" {
-        \FiguresIIC
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
-  }
-}
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.3"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO III"
-    subtitle = ##f
-    composer = \Comp
+    \new Staff \CelloNotesIIC
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesIIIA
-      \context Staff = "Cello" {
-        \FiguresIIIA
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header {
+      piece = "DIVERTIMENTO III"
+      composer = \Comp
+    }
+    \new Staff \CelloNotesIIIA
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIIIB
-      \context Staff = "Cello" {
-        \FiguresIIIB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesIIIB
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIIIC
-      \context Staff = "Cello" {
-        \FiguresIIIC
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
-  }
-}
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.4"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO IV"
-    subtitle = ##f
-    composer = \Comp
+    \new Staff { \autoPageBreaksOff \CelloNotesIIIC \autoPageBreaksOff }
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesIVA
-      \context Staff = "Cello" {
-        \FiguresIVA
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header {
+      piece = "DIVERTIMENTO IV"
+      composer = \Comp
+    }
+    \new Staff \CelloNotesIVA
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIVB
-      \context Staff = "Cello" {
-        \FiguresIVB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesIVB
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesIVC
-      \context Staff = "Cello" {
-        \FiguresIVC
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
-  }
-}
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.5"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO V"
-    subtitle = ##f
-    composer = \Comp
+    \new Staff \CelloNotesIVC
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesVA
-      \context Staff = "Cello" {
-        \FiguresVA
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header {
+      piece = "DIVERTIMENTO V"
+      composer = \Comp
+    }
+    \new Staff \CelloNotesVA
+    \layout {indent = 5\mm}
   }
   
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesVB
-      \context Staff = "Cello" {
-        \FiguresVB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesVB
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesVC
-      \context Staff = "Cello" {
-        \FiguresVC
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
-  }
-}
-
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.6"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO VI"
-    subtitle = ##f
-    composer = \Comp
+    \new Staff \CelloNotesVC
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-          instrumentName = "Violoncello"
-          midiInstrument = "cello"
-      }
-      \CelloNotesVIA
-      \context Staff = "Cello" {
-        \FiguresVIA
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header {
+      piece = "DIVERTIMENTO VI"
+      composer = \Comp
+    }
+    \new Staff { \autoPageBreaksOff \CelloNotesVIA \autoPageBreaksOn }
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {midiInstrument = "cello"}
-      \CelloNotesVIB
-      \context Staff = "Cello" {
-        \FiguresVIB
-      }
-    >>
-    
-    \layout {indent = 1.0\cm}
+    \new Staff \CelloNotesVIB
+    \layout {indent = 5\mm}
   }
 
   \score {
-    <<
-      \new Staff = "Cello" \with {
-        instrumentName = "Grazioso"
-        midiInstrument = "cello"
-      }
-      \CelloNotesVIC
-      \context Staff = "Cello" {
-        \FiguresVIC
-      }
-    >>
-    
-    \layout {indent = 2.0\cm}
+    \header { piece = "Grazioso" }
+    \new Staff \CelloNotesVIC
+    \layout {indent = 5\mm}
   }
-}
+

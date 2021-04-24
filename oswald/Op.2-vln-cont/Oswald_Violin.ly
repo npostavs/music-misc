@@ -2,6 +2,9 @@
 
 Instrument = "Violin"
 
+% cbreak = \pageBreak % careful manually place breaks
+cbreak = {}
+
 \include "Global.ly"
 \include "Violinmusic.ly"
 
@@ -9,29 +12,44 @@ Instrument = "Violin"
   title = \Title
   subtitle = \Subtitle
   composer = \Composer
-  instrument = \Instrument
+  instrument = \markup \small { \Instrument "-" \Title "-" \Comp  }
   copyright = \Copyright
   footer = \Footnote
+  tagline = ##f
 }
 
 \paper {
+  top-margin = 2\mm
+  bottom-margin = 3\mm
+  right-margin = 5\mm
+  left-margin = 5\mm
+
+  % system-system-spacing = #'((basic-distance . 3.0) (padding . ))
+  % ragged-last-bottom = ##f
+  % ragged-bottom = ##f
+
+  % annotate-spacing = ##t
   page-breaking = #ly:page-turn-breaking
+  auto-first-page-number = ##t
+  % page-breaking = #ly:optimal-breaking
+  % page-breaking = #ly:minimal-breaking
+  bookTitleMarkup = \bookTitleMarkupSansInstrument
 }
 
-\pageBreak
+% \pageBreak
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.1"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO I"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.1"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
+    \header {
+      piece = "DIVERTIMENTO I"
+      subtitle = ##f
+      composer = \Comp
+    }
     {
       \new Staff \with {
           instrumentName = "Violin"
@@ -40,7 +58,10 @@ Instrument = "Violin"
       \ViolinNotesIA
     }
     
-    \layout {indent = 2.0\cm}
+    \layout {
+      indent = 1.0\cm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8) }
+    }
   }
 
   \score {
@@ -49,43 +70,45 @@ Instrument = "Violin"
       \ViolinNotesIB
     }
     
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
   
   \score {
+    \header { piece = "Tempo di Minuetto" }
     {
-      \new Staff \with {
-        instrumentName = "Tempo di Minuetto"
-        midiInstrument = "violin"
-      }
-      \ViolinNotesIC
+      \new Staff \ViolinNotesIC
     }
     
-    \layout {indent = 3.5\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8) }
+    }
   }
-}
+% }
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.2"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO II"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.2"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
+    \header {
+      piece = "DIVERTIMENTO II"
+      subtitle = ##f
+      composer = \Comp
+    }
     {
-      \new Staff \with {
-          instrumentName = "Violin"
-          midiInstrument = "violin"
-      }
-      \ViolinNotesIIA
+      \new Staff \ViolinNotesIIA
     }
     
-    \layout {indent = 2.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4) }
+    }
   }
 
   \score {
@@ -94,7 +117,10 @@ Instrument = "Violin"
       \ViolinNotesIIB
     }
     
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 3/16) }
+    }
   }
 
   \score {
@@ -102,32 +128,33 @@ Instrument = "Violin"
       \new Staff \with {midiInstrument = "violin"}
       \ViolinNotesIIC
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0.25\cm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1) }
+    }
   }
-}
+% }
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.3"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO III"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.3"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
+    \header {
+      piece = "DIVERTIMENTO III"
+      subtitle = ##f
+      composer = \Comp
+    }
     {
-      \new Staff \with {
-          instrumentName = "Violin"
-          midiInstrument = "violin"
-      }
-      \ViolinNotesIIIA
+      \new Staff \ViolinNotesIIIA
     }
     
-    \layout {indent = 2.0\cm}
+    \layout {
+      indent = 0.5\cm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1) }
+    }
   }
   
   \score {
@@ -135,41 +162,42 @@ Instrument = "Violin"
       \new Staff \with {midiInstrument = "violin"}
       \ViolinNotesIIIB
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 2\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
 
   \score {
     {
-      \new Staff \with {midiInstrument = "violin"}
-      \ViolinNotesIIIC
+      \new Staff { \autoPageBreaksOff \ViolinNotesIIIC \autoPageBreaksOn }
     }
     
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 2\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
-}
+% }
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.4"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO IV"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.4"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
-    {
-      \new Staff \with {
-          instrumentName = "Violin"
-          midiInstrument = "violin"
-      }
-      \ViolinNotesIVA
+    \header {
+      piece = "DIVERTIMENTO IV"
+      subtitle = ##f
+      composer = \Comp
     }
-    
-    \layout {indent = 2.0\cm}
+    \new Staff \ViolinNotesIVA
+    \layout {
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8) }
+      indent = 0\mm
+    }
   }
 
   \score {
@@ -177,50 +205,53 @@ Instrument = "Violin"
       \new Staff \with {midiInstrument = "violin"}
       \ViolinNotesIVB
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
 
   \score {
     {
-      \new Staff \with {midiInstrument = "violin"}
-      \ViolinNotesIVC
+      \new Staff { \autoPageBreaksOff \ViolinNotesIVC \autoPageBreaksOn }
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
-}
+% }
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.5"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO V"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.5"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
-    {
-      \new Staff \with {
-          instrumentName = "Violin"
-          midiInstrument = "violin"
-      }
-      \ViolinNotesVA
+    \header {
+      piece = "DIVERTIMENTO V"
+      subtitle = ##f
+      composer = \Comp
     }
-    
-    \layout {indent = 2.0\cm}
+    {
+      \new Staff \ViolinNotesVA
+    }
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
-  
+  \cbreak
   \score {
     {
       \new Staff \with {midiInstrument = "violin"}
       \ViolinNotesVB
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
 
   \score {
@@ -228,52 +259,51 @@ Instrument = "Violin"
       \new Staff \with {midiInstrument = "violin"}
       \ViolinNotesVC
     }
-    
-    \layout {indent = 1.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
-}
+% }
 
-\bookpart {
-  \paper {
-    oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.6"}}}
-    evenFooterMarkup = \oddFooterMarkup 
-  }
-  \header {
-    title = "DIVERTIMENTO VI"
-    subtitle = ##f
-    composer = \Comp
-  }
+% \bookpart {
+%   \paper {
+%     oddFooterMarkup = \markup{\fill-line {\concat {\Footnote " No.6"}}}
+%     evenFooterMarkup = \oddFooterMarkup 
+%   }
 
   \score {
+    \header {
+      piece = "DIVERTIMENTO VI"
+      subtitle = ##f
+      composer = \Comp
+    }
     {
-      \new Staff \with {
-          instrumentName = "Violin"
-          midiInstrument = "violin"
-      }
+      \new Staff
       \ViolinNotesVIA
     }
-    
-    \layout {indent = 2.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
 
   \score {
-    {
-      \new Staff \with {midiInstrument = "violin"}
-      \ViolinNotesVIB
+    \new Staff \ViolinNotesVIB
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1) }
     }
-    
-    \layout {indent = 1.0\cm}
   }
 
   \score {
+    \header { piece = "Grazioso" }
     {
-      \new Staff \with{
-        instrumentName = "Grazioso"
-        midiInstrument = "violin"
-      }
-      \ViolinNotesVIC
+      \new Staff \ViolinNotesVIC
     }
-    
-    \layout {indent = 2.0\cm}
+    \layout {
+      indent = 0\mm
+      \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1) }
+    }
   }
-}
+% }

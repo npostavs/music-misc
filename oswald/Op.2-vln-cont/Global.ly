@@ -1,12 +1,12 @@
 \version "2.18.2"
 
-Title = "DIVERTIMENTI Op.2"
+Title = "6 DIVERTIMENTI Op.2"
 Subtitle = "for Violin and Violoncello"
 Composer = "James Oswald (1710 - 1769)"
-Comp = "James Oswald"
+Comp = "J. Oswald"
 Copyright = \markup{\center-column
                       {\line {"Martin Sheen 2019 v1.0a"}
-                       \line {"from the edition sold by Wm. Randall and Straight & Skillern, London"}
+                       % \line {"from the edition sold by Wm. Randall and Straight & Skillern, London"}
                        \line {\small "Creative Commons BY-NC-SA 4.0"}
                     }}
 Footnote = "James Oswald: Divertimenti Op.2"
@@ -18,7 +18,7 @@ BassFigures = {\bassFigureStaffAlignmentUp}
 
 editAccidental = {
   \once \set suggestAccidentals = ##t
-  \once \override AccidentalSuggestion #'font-size = #-1
+  \once \override AccidentalSuggestion #'font-size = #-5
   \once \override AccidentalSuggestion #'outside-staff-priority = #0
   \once \override AccidentalSuggestion #'avoid-slur = #'inside
 }
@@ -32,3 +32,35 @@ editDynamic =
   \normal-text \fontsize #2 ]
 }
 #}))
+
+bookTitleMarkupSansInstrument = \markup {
+    \override #'(baseline-skip . 3.5)
+    \column {
+      \fill-line { \fromproperty #'header:dedication }
+      \override #'(baseline-skip . 3.5)
+      \column {
+        \fill-line {
+          \huge \larger \larger \bold
+          \fromproperty #'header:title
+        }
+        \fill-line {
+          \large \bold
+          \fromproperty #'header:subtitle
+        }
+        \fill-line {
+          \smaller \bold
+          \fromproperty #'header:subsubtitle
+        }
+        \fill-line {
+          \fromproperty #'header:poet
+          % { \large \bold \fromproperty #'header:instrument }
+          \fromproperty #'header:composer
+        }
+        \fill-line {
+          \fromproperty #'header:meter
+          \fromproperty #'header:arranger
+        }
+      }
+    }
+}
+

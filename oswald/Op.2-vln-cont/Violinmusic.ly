@@ -110,6 +110,7 @@ ViolinNotesIB = \relative c'' {
     d16 bf' g ef \appoggiatura d8 c4\trill |
     bf r8
   }
+  \break
   \repeat volta 2 {
     bf |
     f'8. g16 f ef d c |
@@ -326,6 +327,8 @@ ViolinNotesIIC = \relative c'' {
   \time 3/8
   \tempo "Allegretto"
   \clef treble
+     \override TupletNumber.text = \markup \null % ##f % #tuplet-number::calc-fraction-text
+    % \omit TupletNumber
   \repeat volta 2 {
     d8( fs) a |
     \tuplet 3/2 {g16( a b)} a4\trill |
@@ -339,10 +342,8 @@ ViolinNotesIIC = \relative c'' {
     d b'16( a) b8 |
     d,( cs) b |
     cs a'16( gs) a8 |
-    a,( cs) e |
-    \appoggiatura e16 d8 b16 d cs8 |
-    a( cs) e |
-    \appoggiatura e16 d8 b16 d cs8 |
+    \repeat unfold 2 { a,( cs) e |
+    \appoggiatura e16 d8 b16 d cs8 | }
     d16.\trill cs32 d16 e fs gs |
     a e cs a a' e |
     \tuplet 3/2 {fs( e d)} cs8[ b] |
@@ -352,6 +353,7 @@ ViolinNotesIIC = \relative c'' {
     \tuplet 3/2 {fs16( e d)} cs8[ b] |
     a4.
   }
+  \break
   \repeat volta 2 {
     a8( cs) e |
     \tuplet 3/2 {d16( e fs)} e4 |
@@ -450,22 +452,23 @@ ViolinNotesIIIB = \relative c'' {
   \repeat volta 2 {
     c8 |
     g' f32( e d c) c'8 e, |
-    e8.(\trill d32 e) f4~ |
+    e8.(\prall d32 e) f4~ |
     f8 g16 a g,8 f' |
     e8 f16. g32 c4~ |
     c16 b d16.( b32) g8 f |
     \tuplet 3/2 {e16( d c)} c8 r g |
     c32( g16.) e'32( c16.) g'32( e16.) c'32( e,16.) |
-    e8\trill d g4~ |
+    e8\prall d g4~ |
     g8 fs16 g a16. a,32 b16. c32 |
     \appoggiatura c8 b4 r8 d |
     \tuplet 3/2 {e16( d c)} c'4 e,16 a |
     g( fs) e( d) g16. b32 a16. c32 |
     \tuplet 6/4 4 {b16( a g fs e d) e( d c b a g)} |
-    d8. g32( a) a4\trill |
+    % {b8\glissando d, e\glissando g,} |
+    d8. g32( a) a4\prall |
     \tuplet 3/2 {b16( c d)} d4 c8 |
     \tuplet 3/2 {b16( c d)} d4 e16 f? |
-    \tuplet 3/2 8 {e( fs g) a,[( b c])} b8 a\trill |
+    \tuplet 3/2 8 {e( fs g) a,[( b c])} b8 a\prall |
     g4 r8
   }
   \repeat volta 2 {
@@ -474,23 +477,23 @@ ViolinNotesIIIB = \relative c'' {
     g8 fs16( g) a16. c32 b16. d32 |
     c8.( d32 e) d8 c |
     b[ g' g g] |
-    g8.(\trill fs32 g) a16( fs) d( c) |
+    g8.(\prall fs32 g) a16( fs) d( c) |
     \tuplet 3/2 {b a g} g8 r d' |
     \tuplet 3/2 {ef16( d c)} g'4 ef8 |
     ef32( c16.) b32( d16.) c32( g16.) d'32( f16.) |
     \tuplet 3/2 {ef16( d c)} g'4 af16 c, |
     b16. a32 g8 r c |
     g' f32( e d c) c'16 e, d c |
-    c8\trill b d4~ |
+    c8\prall b d4~ |
     d8 e16 f \appoggiatura g16 f16 e \appoggiatura f16 e16 d |
     e8 f16 g \appoggiatura a16 g16 f \appoggiatura g16 f16 e |
     a8 a4 b8 |
     \tuplet 3/2 {c16( b a)} g4 f8 |
     e32( c16.) g'32( e16.) a32( f16.) e32( d16.) |
-    c8. d16 d4\trill |
+    c8. d16 d4\prall |
     \tuplet 3/2 {e16( f g)} g4 f8 |
     \tuplet 3/2 {e16( f g)} g4 a16 bf |
-    \tuplet 3/2 8 {a( b? c) d,[( e f])} e8 d\trill |
+    \tuplet 3/2 8 {a( b? c) d,[( e f])} e8 d\prall |
     c4 r8
   }
 }
@@ -504,13 +507,13 @@ ViolinNotesIIIC = \relative c'' {
   \clef treble
   \repeat volta 2 {
     d8 |
-    g g g |
-    g g g |
-    g fs16( g a c) |
+    g4.:8 |
+    g4.:8 |
+    g8 fs16( g a c) |
     \appoggiatura c8 b4 d,8\p |
-    g g g |
-    g g g |
-    g\trill fs16( g a c) |
+    g4.:8 |
+    g4.:8
+    g8\prall fs16( g a c) |
     \appoggiatura c8 b4 d,8\f |
     e( g) c |
     c4 e,16 c |
@@ -535,9 +538,9 @@ ViolinNotesIIIC = \relative c'' {
     g16 e g cs e cs |
     \once \slurDashed g8( fs) e |
     \appoggiatura e8 fs4 fs'16( g) |
-    a8 a a |
+    a4.:8 |
     a4 d16 b |
-    g8 g g |
+    g4.:8 |
     g4 b16 g |
     fs8 d cs' |
     d4 b16 g |
@@ -546,28 +549,28 @@ ViolinNotesIIIC = \relative c'' {
     a fs d' |
     a fs d |
     a' fs d' |
-    g, g g |
+    g,4.:8 |
     g8. a16 b g |
     fs16 e d8 cs |
     d16 a' g fs e d |
-    g8 g g |
+    g4.:8 |
     g8. a16 b g |
     fs16 e d8 cs |
     d4
   }
   \repeat volta 2 {
     a8 |
-    d d d |
-    d d d |
-    d cs16( d e g) |
-    \appoggiatura g8 fs4 r16 a,\p |
-    d8 d d |
-    d d d |
-    d cs16( d e g) |
+    d4.:8 |
+    d4.:8 |
+    d8 cs16( d e g) |
+    \appoggiatura g8 fs4 a,8\p |
+    d4.:8 |
+    d4.:8 |
+    d8 cs16( d e g) |
     \appoggiatura g8 fs4 a8\f |
     b16 a g8[ cs] |
     d4 a16( fs) |
-    b16 a g8[ cs]\trill |
+    b16 a g8[ cs]\prall |
     d4 a8 |
     a( fs) d16.[ a'32] |
     a8( fs) d16[ d'] |
@@ -577,8 +580,8 @@ ViolinNotesIIIC = \relative c'' {
     cs-! cs( b) |
     a e'8. g16 |
     \appoggiatura g8 fs4 d8 |
-    d' d d |
-    d d d |
+    d'4.:8 |
+    d4.:8 |
     d8. a16 fs d |
     b'8 g d |
     e16 d c8 g' |
@@ -588,27 +591,27 @@ ViolinNotesIIIC = \relative c'' {
     c( b) a8[ a'] |
     a4 c,16( a) |
     \appoggiatura a8 b4 d8 |
-    g g g |
-    g g g |
-    g fs16( g a c) |
+    g4.:8 |
+    g4.:8 |
+    g8 fs16( g a c) |
     \appoggiatura c8 b4 d,8\p |
-    g g g |
-    g g g |
-    g fs16( g a c) |
+    g4.:8 |
+    g4.:8 |
+    g8 fs16( g a c) |
     \appoggiatura c8 b4 d,8\f |
-    e e e |
+    e4.:8 |
     e4 g16( e) |
-    d8 d d |
+    d4.:8 |
     d4 g16( d) |
     c8 a fs' |
     g4 d16( b) |
-    e8 c fs\trill |
+    e8 c fs\prall |
     g4 \once \slurDashed d16( f) |
     e8( c) a16( d) |
     b8. d16( g d) |
-    \tuplet 3/2 {e16( d c)} b8[ a]\trill |
+    \tuplet 3/2 {e16( d c)} b8[ a]\prall |
     \appoggiatura a8 b8. d16( g d) |
-    \tuplet 3/2 {e16( d c)} b8[ a]\trill |
+    \tuplet 3/2 {e16( d c)} b8[ a]\prall |
     g4
   }
 }
@@ -620,6 +623,7 @@ ViolinNotesIVA = \relative c'' {
   \tempo "Allegro ma non presto"
   \clef treble
   \repeat volta 2 {
+  \autoPageBreaksOff
     a8 |
     d a \appoggiatura g'16 fs8 e16 d a'8 a, r a' |
     g16. fs32 e16. d32 cs16. b32 a16. g32 fs16. a32 d8 r a' |
@@ -637,6 +641,9 @@ ViolinNotesIVA = \relative c'' {
     e \tuplet 3/2 {fs16( e d)} cs8 b a8 \tuplet 3/2 {a'16( b a)} e8 e |
     e \tuplet 3/2 {fs16( e d)} cs8 b a4 r8
   }
+  \autoPageBreaksOn
+  \break
+  \autoPageBreaksOff
   \repeat volta 2 {
     e a e \appoggiatura d'16 cs8 b16( a) e'8 e, r e' |
     d16 b cs d e fs gs a b cs d cs gs? fs e d |
@@ -659,6 +666,7 @@ ViolinNotesIVA = \relative c'' {
     a \tuplet 3/2 {b16( a g)} fs8 e fs \tuplet 3/2 {d'16( e d)} a8 as |
     b8 \appoggiatura c'16 b16( a32 g) fs8 e\trill d4 r8
   }
+  \autoPageBreaksOn
 }
 
 ViolinNotesIVB = \relative c'' {
@@ -811,6 +819,7 @@ ViolinNotesVA = \relative c'' {
   \partial 8
   \clef treble
   \tempo "Allegro moderato"
+  \autoPageBreaksOff
   \repeat volta 2 {
     d8 |
     \tuplet 3/2 {g16( fs e)} d4 e16. c32 |
@@ -843,6 +852,9 @@ ViolinNotesVA = \relative c'' {
     a,8. d32( e) \appoggiatura fs8 e4\trill |
     d4 r8
   }
+  \autoPageBreaksOn
+  \break
+  \autoPageBreaksOff
   \repeat volta 2 {
     a8 |
     \tuplet 3/2 {d16( cs b)} a4 b16. g32 |
@@ -885,6 +897,7 @@ ViolinNotesVA = \relative c'' {
     d,8.( g32 a) a4\trill |
     g4 r8
   }
+  \autoPageBreaksOn
 }
 
 ViolinNotesVB = \relative c'' {
@@ -1080,7 +1093,7 @@ ViolinNotesVIB = \relative c'' {
     e d c8.(\trill b32 a) b8. c16 d8 d, |
     e c'16 a fs4\trill g16. fs32 g16. a32 b16. c32 a16. c32 |
     b16 g b d g8 d d8.(\trill c32 d) e8 g, |
-    \editAccidental fs16.(\trill e32) d8 r d' b16 a g a b c d c |
+    fs?16.(\trill e32) d8 r d' b16 a g a b c d c |
     b a b c d e f g f e d e f g a b |
     c8 c, r g' e16 d c d e f g f |
     e d e f g a bf c bf a g a bf c d bf |

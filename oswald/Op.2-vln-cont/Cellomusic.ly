@@ -9,7 +9,7 @@ CelloNotesIA = \relative c {
   \time 2/4
   \partial 8
   \tempo "Adagio"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     r g[ bf c] |
@@ -30,9 +30,9 @@ CelloNotesIA = \relative c {
     bf[ bf c d] |
     ef4 r8 f |
     bf16 d, d4 ef8 d16 bf' d,4 ef8 |
-    d8 c16. bf32 ef8 ef' |
+    d8 c16. bf32 \ottava #1 ef8 ef' |
     d[ ef f f,] |
-    bf,4 r8
+    \ottava #0 bf,4 r8
   }
   \repeat volta 2 {
     r8 |
@@ -116,7 +116,7 @@ CelloNotesIB = \relative c {
   \time 2/4
   \partial 8
   \tempo "Allegro moderato"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     r g[ bf d] |
@@ -300,7 +300,7 @@ CelloNotesIC = \relative c {
   \numericTimeSignature
   \time 3/8
   \tempo "Andante"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     R4. |
     g'8 d c |
@@ -322,7 +322,7 @@ CelloNotesIC = \relative c {
     f a a |
     bf f f, |
     bf16. bf'32 bf,4 |
-    r8 r d |
+    r4 d8 |
     ef f f, |
     bf4 r8
   }
@@ -428,10 +428,10 @@ CelloNotesIIA = \relative c {
   \time 4/4
   \partial 8
   \tempo "Allegro moderato"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
-    r4 r8 a d fs e a |
+    r4. a8 d fs e a |
     fs e16 fs g4~ g8 fs16 e fs g fs e |
     fs8 d r a d fs e g |
     fs e16 fs g8 b a a e cs |
@@ -449,7 +449,7 @@ CelloNotesIIA = \relative c {
   }
   \repeat volta 2 {
     r8 |
-    r4 r8 e' a cs b e |
+    r4. e'8 a cs b e |
     cs b16 a gs8 a e e, r4 |
     e'8( cs a cs) d4 r8 fs |
     g16 a b a b8 g g,4 r8 e' |
@@ -516,7 +516,7 @@ CelloNotesIIB = \relative c {
   \time 2/4
   \partial 8
   \tempo "Adagio"
-  \clef bass
+  \ClefCello
   \repeat volta 2{
     r8 |
     r g'[ fs d] |
@@ -605,7 +605,7 @@ CelloNotesIIC = \relative c {
   \numericTimeSignature
   \time 3/8
   \tempo "Allegretto"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     d4 fs8 |
     e fs d |
@@ -619,9 +619,9 @@ CelloNotesIIC = \relative c {
     b4 r8 |
     b'( a) gs |
     a4 r8 |
-    r r a |
+    r4 a8 |
     b( gs) a |
-    r r a |
+    r4 a8 |
     b( gs) a |
     r fs d |
     cs a cs |
@@ -734,7 +734,7 @@ CelloNotesIIIA = \relative c {
   \time 4/4
   \partial 8
   \tempo "Allegro moderato"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     g'4 r8 b c b16 a b4 |
@@ -830,7 +830,7 @@ CelloNotesIIIB = \relative c {
   \time 2/4
   \partial 8
   \tempo "Adagio"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     c4 r8 c |
@@ -856,11 +856,11 @@ CelloNotesIIIB = \relative c {
     r8 |
     g4 r8 e' |
     d8.[ e16 fs8 g] |
-    a fs r d |
+    a fs r \ottava #1 d |
     g g16 a b g b c |
     d8[ e fs fs,] |
     g8 g16 a b d b g |
-    c8[ c, b g] |
+    c8[ \ottava #0 c, b g] |
     c[ g' ef b] |
     c c16 d ef8 f |
     g4 g16 f e? d |
@@ -932,7 +932,7 @@ CelloNotesIIIC = \relative c {
   \time 3/8
   \partial 8
   \tempo "Presto"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     e d c |
@@ -1158,7 +1158,7 @@ CelloNotesIVA = \relative c {
   \time 4/4
   \partial 8
   \tempo "Allegro ma non presto"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     r d' d d r cs cs d|
@@ -1250,7 +1250,7 @@ CelloNotesIVB = \relative c {
   \time 2/4
   \partial 8
   \tempo "Andante"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     g4 r8 b |
@@ -1343,8 +1343,9 @@ CelloNotesIVC = \relative c {
   \numericTimeSignature
   \time 3/8
   \tempo "Allegro"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
+  \autoPageBreaksOff
     r8 d' a |
     fs d d, |
     r fs' e |
@@ -1379,8 +1380,10 @@ CelloNotesIVC = \relative c {
     a\editDynamic\p a, r |
     a4 cs8 d4 b8 a d e |
     a,4 r8
+  \autoPageBreaksOn
   }
   \repeat volta 2 {
+  \autoPageBreaksOff
     r8 a' e |
     cs a a |
     r cs b |
@@ -1426,6 +1429,7 @@ CelloNotesIVC = \relative c {
     g4 e8 |
     d g a |
     d,4 r8
+  \autoPageBreaksOn
   }
 }
 
@@ -1520,9 +1524,10 @@ CelloNotesVA = \relative c {
   \numericTimeSignature
   \time 2/4
   \partial 8
-  \clef bass
+  \ClefCello
   \tempo "Allegro moderato"
   \repeat volta 2 {
+\autoPageBreaksOff
     r8 |
     r g'16. a32 b8 a |
     g[ g, b g] |
@@ -1553,8 +1558,10 @@ CelloNotesVA = \relative c {
     d fs g4~ |
     g8 fs16. g32 a8 a, |
     d4 r8
+\autoPageBreaksOn
   }
   \repeat volta 2 {
+\autoPageBreaksOff
     r8 |
     r d16 e fs8 e |
     d d, r d' |
@@ -1595,6 +1602,7 @@ CelloNotesVA = \relative c {
     g4 c~ |
     c8 b16 c d8 d, |
     g4 r8
+\autoPageBreaksOn
   }
 }
 
@@ -1678,7 +1686,7 @@ CelloNotesVB = \relative c {
   \time 4/4
   \partial 8
   \tempo "Adagio affettuoso"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     d4 d, r8 d'16 e fs a fs d |
@@ -1735,7 +1743,7 @@ CelloNotesVC = \relative c {
   \numericTimeSignature
   \time 3/8
   \tempo "Andante"
-  \clef bass
+  \ClefCello
   \repeat volta 2{
     r8 g' g, |
     r g' g, |
@@ -1887,7 +1895,7 @@ CelloNotesVIA = \relative c {
   \key c \major
   \numericTimeSignature
   \time 2/4
-  \clef bass
+  \ClefCello
   \partial 8
   \tempo "Adagio"
   \repeat volta 2 {
@@ -1986,7 +1994,7 @@ CelloNotesVIB = \relative c {
   \time 4/4
   \partial 8
   \tempo "Allegro andante"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     r8 |
     r e d b c c16 d e8 e, |
@@ -2081,7 +2089,7 @@ CelloNotesVIC = \relative c {
   \numericTimeSignature
   \time 3/8
   \tempo "Andante"
-  \clef bass
+  \ClefCello
   \repeat volta 2 {
     \once \slurDashed c8( e) f |
     e e( d) |
