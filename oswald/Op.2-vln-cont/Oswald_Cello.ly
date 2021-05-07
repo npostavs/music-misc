@@ -38,7 +38,10 @@ ClefCello = \clef #celloClefOption
 
   \score {
     \new Staff \CelloNotesIB
-    \layout {indent = 5\mm}
+    \layout {
+        indent = 5\mm
+        \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2) }
+    }
   }
   
   \score {
@@ -61,12 +64,17 @@ ClefCello = \clef #celloClefOption
 
   \score {
     \new Staff \CelloNotesIIB
-    \layout {indent = 5\mm}
+    \layout {
+        indent = 5\mm
+        \context { \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/1) }
+    }
   }
 
   \score {
     \new Staff \CelloNotesIIC
-    \layout {indent = 5\mm}
+    \layout {
+        indent = 5\mm
+    }
   }
 
   \score {
