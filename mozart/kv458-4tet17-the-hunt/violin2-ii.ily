@@ -5,11 +5,12 @@ violinIISecondMov =  \relative d' {
     \clef violin
 
     \noTupletBracket
+    \override Score.OttavaBracket.style = #'none
 
     \repeat volta 2 {
-	 d2(\f  es4
+	 \ottDown d2(\f  es4
 	| f es  d)
-	| c2  es'8.[(\sf  d16)]
+	| c2 \ottava #0  es'8.[(\sf  d16)]
 	| d2  c8.[(\sf  bes16)]
 	| bes2( as4\sf
 	| g bes  a!)
@@ -29,17 +30,17 @@ violinIISecondMov =  \relative d' {
 	| d'4( c  bes)
 	| a r  d8.[(  es!16)]
 	| es2  d8.[(  des16)]
-	| c2   f,8.[(_\cresc   e16)]
+	| c2 \ottDown  f,8.[(_\cresc   e16)]
 	| es!2  d8.[(  des16)]
 
 % 20
 	| c4 r r
 	|  d2(\f  es4
 	| f es  d)
-	| c2  es'8.[(\sf  d16)]
+	| c2 \ottava #0  es'8.[(\sf  d16)]
 	| d2  c8.[(\sf  bes16)]
 	| bes2(  as4)\sf
-	| g( f  a,)
+	| g( f \ottDown a,)
 	| des4  d8.[(  bes16) c8.(  a16)]
 	| bes4 r r
     }
@@ -50,16 +51,16 @@ violinIISecondMov =  \relative d' {
 	|  f'[-. d-. es-. c-. d-. bes-.]
 	|  c[-. bes-. c-. bes-. c-. bes-.]
 	|  c[-. bes-. c-. a-. d-. bes-.]
-	|  d'[-. f,-. d'-. f,-. c'-. d,-.]
-	|  bes'[-. d,-. bes'-. d,-. g-. c,-.]
-	|  f[-. a,-. a'-. f-. a-. f-.]
-	|  g[-.\sfp e-. g-. e-. f-. a-.]
+	|  \ottava #0 d'[-. f,-. d'-. f,-. c'-. \ottDown d,-.] \ottava #0
+	|  bes'[-. \ottDown d,-. \ottava #0 bes'-. \ottDown d,-. \ottava #0 g-. \ottDown c,-.] \ottava #0
+	|  f[-. \ottDown a,-. \ottava #0 a'-. f-. a-. f-.]
+	|  \ottDown g[-.\sfp \ottava #0 e-. g-. e-. f-. a-.]
 	|  d[-. bes-. d-. bes-. g-. e-.]
     }
 
     \alternative {
-        { |  f8[-. g( f es! d  c)] }
-        { |  f8[-. f( as g f  es!)] }
+        { |  f8[-. \ottDown g( f es! d  c)] \ottava #0 }
+        { |  f8[-. \ottDown f( as g f  es!)] }
     }
 
     \repeat volta 2 {
@@ -67,11 +68,11 @@ violinIISecondMov =  \relative d' {
 
 % 40
 	|  d[-. b-. d-. es-. f-. d-.]
-	| bes'!4(  a) r
-	| c,2 r4
+	| \ottava #0 bes'!4(  a) r
+	| \ottDown c,2 r4 \ottava #0
 	| R2.
 	| f4( a  f)
-	| bes,2.
+	| \ottDown bes,2.
 	|  c4(_\cresc  d  es)
 	|  d8[-.\p bes-. d-. bes-. d-. bes-.]
 	|  f'[-. d-. es-. c-. d-. bes-.]
@@ -79,22 +80,23 @@ violinIISecondMov =  \relative d' {
 
 % 50
 	|  as[-. f-. f-. d-. g-. es-.]
-	| r4 g ~ g8 r
+	| \ottava #0 r4 g ~ g8 r
 	| r4 f ~ f8 r
 	| R2.
 	|  a8[-.\f f-. a-. f-. a-. f-.]
 	| c'4(  bes) bes
-	| f2(\p  a4)
+	| \ottava #0 f2(\p  a4)
 	|  bes8[-. f-. f'-. d-. bes-. d-.]
-	|  g,[-. es-. c'-. bes-. a-. c,-.]
-	|  d[-. bes'-. d-. bes-. d,-. bes'-.]
+	|  g,[-. es-. c'-. bes-. a-. \ottDown c,-.]
+	|  d[-. \ottava #0 bes'-. d-. bes-. \ottDown d,-. \ottava #0 bes'-.]
 
 % 60
-	|  g[-. es-. g-. es-. c-. a-.]
+	|  g[-. es-. g-. es-. \ottDown c-. a-.]
     }
 
     \alternative {
         { |  bes8[-. f'( as g f  es)] }
         { | bes4 r r }
     }
+    \ottava #0
 }

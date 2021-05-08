@@ -5,15 +5,18 @@ violinIIFourthMov =  \relative f' {
     \clef violin
 
     \noTupletBracket
+    \override Score.OttavaBracket.style = #'none
+    \override Staff.MultiMeasureRest.space-increment = 0
+    \override Staff.MultiMeasureRest.bound-padding = 0
 
     \repeat volta 2 {
 	R2*2
 	|  f8[\p f f f]
 	| f4 r
 	| R2*2
-	|  g8[ g a, a]
+	|  g8[ g \ottDown a, a]
 	| bes4 r
-	| bes'4(\f  c)
+	| \ottava #0 bes'4(\f  c)
 
 % 10
 	| \grace bes16 a8[ g16 f]  bes8[ bes]
@@ -24,7 +27,7 @@ violinIIFourthMov =  \relative f' {
 	|  c[ c f, f]
 	| d4 r
 	| R2
-	|  f8[(\p d  bes)] r
+	|  \ottDown f8[(\p d  bes)] r
 	| R2
 
 % 20
@@ -47,14 +50,14 @@ violinIIFourthMov =  \relative f' {
 	|  f8.[^\trill g16 as8] r
 	| R2
 	|  f8[ f f f]
-	|  f[ f f f]
-	|  e[ e e e]
-	|  e[ e e e]
+	|  f2:8
+	|  e2:8
+	|  e2:8
 
 % 40
-	|  d[ d d d]
-	|  d[ d d d]
-	| c4 r8 b'8(
+	|  d2:8
+	|  d2:8
+	| \ottava #0 c4 r8 b'8(
 	|  c4) r8 b(
 	|  c4) r8 <d f>\f-.
 	| <c e>[-. <d f>-. <c e>-. <d f>-.]
@@ -98,11 +101,11 @@ violinIIFourthMov =  \relative f' {
 	| r8  f[ f f]
 	| e4 r8 g
 	| f4 r8 f
-	|  d[-. bes'-. a-. g-.]
+	| \ottDown d[-. \ottava #0 bes'-. a-. g-.]
 
 % 80
 	| f4 r
-	|  f2(\p 
+	| \ottDown f2(\p 
 	|  e)
 	|   f8[(_\cresc a f  bes)]
 	| a4(  g)
@@ -129,7 +132,7 @@ violinIIFourthMov =  \relative f' {
 	|  e[ g bes  g)]
 	| c4(-\parentF  bes)
 	| a(  e)
-	| g(   f8)[ f'(]
+	| g(   f8)[ \ottava #0 f'(]
 	|   g)[-. g-. c,-. c-.]
 	| a4 r8 f'(
 	|   g)[-. g-. c,-. c-.]
@@ -138,7 +141,7 @@ violinIIFourthMov =  \relative f' {
 % 110
 	|   g)[-. g-. c,-. c-.]
 	| c4(\f  bes)
-	|  a,8[-. a'-. g,-. g'-.]
+	|  \ottDown a,8[-. a'-. g,-. g'-.]
 	|  f16[ f f f]  f4:16
 	|  f4: g4:
 	|  a2:
@@ -157,16 +160,14 @@ violinIIFourthMov =  \relative f' {
 	| r g(
 	|  a) r8 f
 	|  f[ f e e]
-	| f4 r8 f'(
+	| f4 r8 \ottava #0 f'(
 
 % 130
 	|  a[ f a f]
-	|  a4) r8 <c,, e>\f-.
+	|  a4) r8 \ottDown <c,, e>\f-.
 	| <c f>[-. <c e>-. <c f>-. <c e>-.]
-	| <c f>4-. r
+	| <c f>4-. r \ottava #0
     }
-
-       \pageBreak
 
     \repeat volta 2 {
         | R2
@@ -177,7 +178,7 @@ violinIIFourthMov =  \relative f' {
 	| f4 r
 
 % 140
-	| c(  d)
+	| \ottDown c(  d)
 	| \grace c16 b8[ a16 g]  c8[ c]
 	| d(  f4) b,8
 	| c4 r
@@ -186,13 +187,13 @@ violinIIFourthMov =  \relative f' {
 	| f4(  g8) r
 	| R2
 	| a!4(  bes8) r
-	| g'4(  a)
+	| \ottava #0 g'4(  a)
 
 % 150
 	| \grace g16 fis8[ e16 d]  g8[ g]
 	| bes4(  c)
 	| \grace bes16 a8[ g16 fis]  bes8[ bes]
-	| r  d,[(  c) es,(]
+	| r \ottDown d,[(  c) es,(]
 	|   d)[ c'(  bes) d,(]
 	|   c)[ bes'(  as) c,(]
 	|   bes)[ as'(  g) bes,(]
@@ -203,7 +204,7 @@ violinIIFourthMov =  \relative f' {
 % 160
 	|   e)[ d(  c) e(]
 	|  fis) r a r g r g r
-	|  fis[-. d-. fis'-. c-.]
+	|  fis[-. d-. \ottava #0 fis'-. c-.]
 	|  bes[-. g-. bes'-. g-.]
 	| fis4 r
 	| R2*3
@@ -224,17 +225,17 @@ violinIIFourthMov =  \relative f' {
 % 180
 	| f8 r \grace c'16 bes8[ a16 g]
 	| f8 r \grace c'16 bes8[ a16 g]
-	|  f8[ f f f]
+	|  f2:8
 	| f4 r
 	| b2(
 	|  c4) \grace bes!16 a8[ g16 f]
 	|  f'8[(  d)]  g,[-. g-.]
-	| f2(  ges)
+	| \ottDown f2( | ges)
 	| \grace f16 es8[ des16 c]  a'8[ a]
 
 % 190
 	|  bes[-. bes-. e,-. e-.]
-	| f4 r8 a(
+	| f4 r8 \ottava #0 a(
 	|  c[ a c a]
 	|  c4) r8 c(
 	|  es[ c es c]
@@ -244,11 +245,11 @@ violinIIFourthMov =  \relative f' {
 	| R2*3
 
 % 201
-	|  f,,8[\p f f f]
+	|  f,,2:8\p
 	| f4 r
 	| R2*2
-	|  g8[ g a, a]
-	| bes4 r
+	|  g8[ g \ottDown a, a]
+	| bes4 \ottava #0 r
 	| bes'4(\f  c)
 	| \grace bes16 a8[ g16 f]  bes8[ bes]
 	|  c[ c d d]
@@ -257,7 +258,7 @@ violinIIFourthMov =  \relative f' {
 	|  f[(  es)] c r
 	| bes4(  c)
 	| \grace bes16 a8[ g16 f]  bes8[ bes]
-	|  c[ c f, f]
+	|  c[ c \ottDown  f, f]
 	| d4 r
 	| R2
 	|  f8[(\p d  bes)] r
@@ -292,7 +293,7 @@ violinIIFourthMov =  \relative f' {
 % 240
 	| a4 r
 	| R2
-	| d4.(\p  f8)
+	| \ottava #0 d4.(\p  f8)
 	|  c[-. c-. c-. d-.]
 	|  f[(  es)] es-. r
 	| R2
@@ -302,7 +303,7 @@ violinIIFourthMov =  \relative f' {
 	| R2
 
 % 250
-	| d,4.(  as'8)
+	| \ottDown d,4.(  as'8)
 	|  g[ g f f]
 	|  d[(  es) es ges]
 	|  f[ f es es]
@@ -332,13 +333,13 @@ violinIIFourthMov =  \relative f' {
 	| bes4 r8 bes
 	|  g[ es'-. d-. c-.]
 	| bes4 r
-	| bes2(\p
+	| \ottava #0 bes2(\p
 	|  a)
 	|  bes8[(_\cresc d bes  es)]
 	| d4(  c)
 
 % 280
-	| f,2\p ~
+	| \ottDown f,2\p ~
 	| f ~
 	|  f8.[(  d16)] \times 2/3 {  es8[( g  es)] }
 	| d4(  c8) r
@@ -350,19 +351,19 @@ violinIIFourthMov =  \relative f' {
 	|  es4) bes' ~
 
 % 290
-	| \times 2/3 {  bes8[ es( d] } \times 2/3 {  c[ bes  a)] }
+	| \times 2/3 {  bes8[ \ottava #0 es( d] } \times 2/3 {  c[ bes  a)] }
 	|  bes8[-. f-. bes-. d-.]
 	| es4 r8 a,(
 	|   bes)[ f-. bes-. d-.]
 	| es4 r8 a,(
 	|   bes)[ f-.-\parentCresc bes-. d-.]
-	| es4 r8 a,
+	| es4 r8 \ottDown a,
 	| bes[(-\parentF  d) g,(  bes)]
 	| d,4(  a)
 	| a'(  bes8) r
 
 % 300
-	| r4 r8 f\p
+	| r4 r8 \ottava #0 f\p
 	|  bes[( a g  f)]
 	| f4. f8
 	|  bes[( a g  f)]
@@ -370,7 +371,7 @@ violinIIFourthMov =  \relative f' {
 	|   f8[_\cresc  fis(]  g4) ~
 	|  g8[ g(]  a4)
 	|  bes16[\f bes bes bes]  bes4:16
-	|  bes,2:16
+	|  \ottDown bes,2:16
 	|  bes2:16
 
 % 310
@@ -393,9 +394,9 @@ violinIIFourthMov =  \relative f' {
 	| r c(
 	|  d) r8 bes
 	|  bes[-. bes-. a-. a-.]
-	| bes4 r8 bes'(\p
+	| bes4 r8 \ottUp bes'(\p
 	|  d[ bes d bes]
-	|  d4) r8 d,(
+	|  d4) r8 \ottava #0 d,(
 
 % 330
 	|  f[ d f d]
@@ -404,5 +405,7 @@ violinIIFourthMov =  \relative f' {
 	|  d4) r8 <f, es'>\f-.
 	| <f d'>[-. <f es'>-. <f d'>-. <f es'>-.]
 	| <f d'>4 r
+    \ottava #0
     }
+    \autoPageBreaksOn
 }

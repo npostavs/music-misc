@@ -28,17 +28,15 @@ violaThirdMov =  \relative bes {
        d[(-.\p d-. d-. d-.]  d[-. d-. d-.  d)-.]
 
 % 15
-    |  des[(-. des-. des-.  des)-.]  c[(-. c-. c-.  c)-.]
-       c[(-. c-. c-.  c)-.]  c[(-. c-. c-.  c)-.]
-    |  ces[(-. ces-. ces-.  ces)-.]  bes[(-. bes-. bes-.  bes)-.] bes8 r
+    |  des4:16  c4:16 c2:16
+    |  ces4:16  bes4:16 bes8 r
       % The last note is probably `c', not `ces' (see also bar #38)
         a16.[( bes32  c16)] r
     |  bes16.[( c32  d16)] r c r c r   bes[ bes'(-. bes-. bes-.]
        bes[-. bes-. bes-.  bes)-.]
-    |  bes[(-. bes-. bes-.  bes)-.]  bes[(-. bes-. bes-.  bes)-.]
-       bes[(-. bes-. a-.  a)-.]  as[(-. as-. as-.  as)-.] 
-    |  as[(-. as-. as-.  as)-.]  as[(-. as-. as-.  as)-.]
-       as[(-. as-. g-.  g)-.]   c,16.[( bes32  a16)] r32 a
+    |  bes2:16
+       bes16[(-. bes-. a-.  a)-.]  as[(-. as-. as-.  as)-.] 
+    |  as2:16 as16[(-. as-. g-.  g)-.]   c,16.[( bes32  a16)] r32 a
 
 % 20
     |  d16.[( c32  bes16)] r32 bes bes16 r a r bes8 r r  f'32[( e f es]
@@ -70,19 +68,14 @@ violaThirdMov =  \relative bes {
     | as,\f  a8[(  c)] f, r r16  bes[\p bes8] ~
     |  bes16[ bes'_\cresc] bes4(  a16[  as)] 
        g[(-. g-. g-.  g)-.]  g[(-. g-. g-.  g)-.]
-    |  ges[(-. ges-. ges-.  ges)-.]  f[(-. f-. f-.  f)-.]
-       f[(-. f-. f-.  f)-.]  f[(-. f-. f-.  f)-.]
-    |  fes[(-. fes-. fes-.  fes)-.]  es[(-. es-. es-.  es)-.] 
-      es8 r  d16.[( es32  f16)] r
+    |  ges4:16  f4:16 f2:16
+    |  fes4:16  es4:16 es8 r  d16.[( es32  f16)] r
     |  es16.[( f32  g!16)] r f r f r   es[(-. es-. es-.  es)-.]
        es[(-. es-. es-.  es)-.]
 
 % 40
-    |  es[-. es-. es-. es-.] % There is no slur here
-       es[(-. es-. es-.  es)-.]  es[(-. es-. d-.  d)-.]
-       des[(-. des-. des-.  des)-.]
-    |  des[(-. des-. des-.  des)-.]  des[(-. des-. des-.  des)-.]
-       des[(-. des-. c-.  c)-.]   f16.[( es32  d16)] r32 d
+    |  es2:16  es16[(-. es-. d-.  d)-.] des4:16
+    |  des2:16 des16[(-. des-. c-.  c)-.]   f16.[( es32  d16)] r32 d
     |  g16.[( f32  es16)] r32 es es16 r d r es8 r r  bes'32[( a bes as]
     |  g16) r  c32[( b c bes]  as16) r f r r32 \stemDown  es[( g es]  g[ es
       g  es)] r  bes[( g' bes,]  g'[ bes, g'  bes,)]

@@ -23,6 +23,11 @@
 
 % Some useful macros
 
+% NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
+ottUp = { \ottava #1 \set Staff.ottavation = #"" }
+ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
+ottDDown = { \ottava #-2 \set Staff.ottavation = #"" }
+
 cresc = \markup { \italic cresc.}
 
 noTupletBracket = \override TupletBracket

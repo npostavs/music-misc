@@ -5,7 +5,9 @@ violinIIThirdMov =  \relative es' {
     \clef violin
 
     \noTupletBracket
+    \override Score.OttavaBracket.style = #'none
 
+    \ottDown
       es4(-\parentP   f8)[\sf  r16. es32\p]
       \grace es16 d8[-. es-.] r4
     | r2 g,4\f bes
@@ -13,9 +15,9 @@ violinIIThirdMov =  \relative es' {
     | r8  d[( es!  bes)] c r as r
 
 % 5
-    | g4 r es''4(   f8)[\sf  r16. es32]
+    | g4 r \ottava #0 es''4(   f8)[\sf  r16. es32]
     | \grace es16 d8[-. es-.] r4 r2
-    | r16  es,[ es es] r  d[ d d] r  es[(  g) g] r  as[(  d,) d]
+    | \ottDown r16  es,[ es es] r  d[ d d] r  es[(  g) g] r  as[(  d,) d]
     | r  es[(  g) g] r  f[ f f] r  f[(  es)  es_\cresc]
        ~  es[ es( c  a)]
     | r  d[\p d d] r  es[( c  a')] r  bes[ bes bes] r  g[ g(  es)]
@@ -51,18 +53,18 @@ violinIIThirdMov =  \relative es' {
     | es4(\p   f8)[\sf  r16. es32\p] \grace es16 d8[-. es-.] r4
     | r2 g,4\f bes
     |  es16.[^\trill\p f32 g8] r4 r r8 des'(
-    |  bes[_\cresc g e  des)]  e'16.[\p^\trill f32 g8] r4
+    |  bes[_\cresc g e  des)] \ottava #0 e'16.[\p^\trill f32 g8] r4
     | r16  as,[ as as] r  g[ g g] r  as[(  c) c] r  bes[(  g) g]
 
 % 30
-    | r  as[(  f) f] r  g[(  e) e] r  e[( f es_\cresc]  d[ as' f  d)]
-    | r  es[\p es es] r  d[ d d] r  es[ es es] r  c'[ c(  as)]
+    | r  as[(  f) f] r  g[(  e) e] r \ottDown e[( f es_\cresc]  d[ as' f  d)]
+    | r  es[\p es es] r  d[ d d] r  es[ es es] r \ottava #0 c'[ c(  as)]
     | r  g[(  bes) bes] r  f[(  as) as] r  a[ a a] r  bes[_\cresc bes bes]
     | r  c[(  bes) bes] r  ges'[(\f f  es)] d4(\p  es)
     | f(  es) as,(  ges)
 
 % 35
-    | f(\f  es)  d8[  r16 es(\p]   d8)[  r16 es'(]
+    | \ottDown f(\f  es)  d8[  r16 es(\p] \ottava #0  d8)[  r16 es'(]
     |   d8)[  r16 e(]  f8) r r4 
        bes,16[(-. bes-. bes-.  bes)-.]
     |  bes4:16 a4: bes4: bes16[(-. bes-. as-.  as)-.]
@@ -76,23 +78,23 @@ violinIIThirdMov =  \relative es' {
     |  bes16.[( as32  g16)] r32 g c16 r as r g8 r  f'16.[( es32  d16)]
       r32 d
     |  g16.[( f32  es16)] r32 es es16 r as, r r32  g[( bes g]  bes[ g bes
-       g)] r  g[(\sf bes g]  bes[ g bes  g)]
+       g)] r \ottDown g[(\sf bes g]  bes[ g bes  g)]
     | r  as[(\p c as]  c[ as c  as)] r  f[( as f]  as[ f as  f)] r  es[( g
       es]  g[ es g  es)] r   bes[(\sf des bes]  des[ bes
       des  bes)]
 
 % 45
-    | r  c[(\p  f c]  f[ c f  c)] r  d![( f d]  bes[ as bes
-       as)]  g[( es' g  es)] d16 r  es32[( g bes  es)] d16 r
-    |  es,32[( d f es]  g16) r  g32[( f as g]  bes16) r  bes32[( as c bes]
+    | r  c[(\p  f c]  f[ c f  c)] r d![( f d]  bes[ as bes
+       as)]  g[( es' g  es)] d16 r  \ottava #0 es32[( g bes  es)] d16 r
+    |  \ottDown es,32[( d f es]  g16) r \ottava #0  g32[( f as g]  bes16) r  bes32[( as c bes]
        des16) r r4
-    | r8 e,8(  f4) r8  d[( es  bes)]
+    | r8 \ottDown e,8(  f4) r8  d[( es  bes)]
     | c r as r g4 r
-    | r16  e'[( f g]  as8) r r16  bes[( c  d)]  es!8[ bes]
+    | r16 \ottava #0 e'[( f g]  as8) r r16  bes[( c  d)]  es!8[ bes]
 
 % 50
-    | c r as r g r16 bes(  es[ g f  d)]
-    | es8 r16 g,,(  es'[ g f  d)] es4 r
+    | c r as r g \ottava #0 r16 bes(  es[ g f  d)]
+    | es8 r16 \ottDown g,,(  es'[ g f  d)] es4 r
     | g,4\f bes  es16.[\p^\trill f32 g8] r4
     | \appoggiatura es16 d8[_ \markup{
       {\dynamic "pp"} {\italic " staccato"}}
