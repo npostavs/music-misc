@@ -1,8 +1,9 @@
 % \version "2.18.2"      % Boccherini - Sonate n°1 G1 - basse 2ème mvt
 
-\relative c { \clef bass
+\relative c { \ClefBass
+\override Score.OttavaBracket.style = #'none
 \time 3/4 \key c \major \tempo "Largo"
-
+\ottDown
 
 
 

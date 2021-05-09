@@ -9,6 +9,20 @@ cRefConcert = "13004-1"
 cCopyright = \markup {\fontsize #-6 \concat {
 				\epsfile #X #2  #"cc.eps"  " 2012-" \italic {"Le Concert - "} \cRefConcert " / " \cCompositeur " - " \cTitre " - v.1" }}
 
+%%% NP Extra =============================================
+% NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
+ottUp = { \ottava #1 \set Staff.ottavation = #"" }
+ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
+ottDDown = { \ottava #-2 \set Staff.ottavation = #"" }
+ottZ = { \ottava #0 }
+
+
+% ClefBass = \clef "bass"
+% ClefTenor = \clef "tenor"
+
+ClefBass = \clef "alto"
+ClefTenor = { \ottZ \clef "alto" }
+
 %%% CONSTANTES ==============================================================
 arco = ^\markup {"Arco"}
 pizz = ^\markup {"Pizz."}

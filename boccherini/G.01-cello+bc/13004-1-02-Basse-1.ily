@@ -1,6 +1,7 @@
 % \version "2.18.2"      % Boccherini - Sonate n°1 G1 - basse 1er mvt
 
-\relative c { \clef bass
+\relative c { \ClefBass
+\override Score.OttavaBracket.style = #'none
 \time 4/4 \key f \major \tempo "Allegro moderato"
 
 
@@ -13,7 +14,7 @@ f f, f f f f' g e
 f f, f f f f f f
 f f a bes a bes c c,
 f f f f f f f f
-f f f f f4 r8 b,
+f f f f f4 r8 \ottDown b,
 c c16. c32 c16 c' g e c8 c16. d32 e8 fis
 g g g g g g g g
 e e e e e e e e
@@ -52,10 +53,10 @@ f c-.( c-. c-.) bes2
 aes8 f' e! c f c g' c,
 aes'16 g f e! f4 f16 aes f e f4
 f8 e f b c <c,, c'> q r
-\clef tenor \repeat unfold 2 {f''8\trill g16 f e8\trill f16 g}
-f8 \clef bass g, bes bes c c c, c
-\clef tenor \repeat unfold 2 {f'8\trill g16 f e8\trill f16 g}
-f8 \clef bass f, r4 d' bes
-c e, f8 bes c c, f f, f r r2 \bar "|."  \tag #'score \pageTurn		%---------------------------
+\ClefTenor \repeat unfold 2 {f''8\trill g16 f e8\trill f16 g}
+f8 \ClefBass g, bes bes c c c, c
+\ClefTenor \repeat unfold 2 {f'8\trill g16 f e8\trill f16 g}
+f8 \ClefBass f, r4 d' bes
+c e, f8 bes c c, \ottDown f f, f r r2 \bar "|."  \tag #'score \pageTurn		%---------------------------
 }
 

@@ -1,9 +1,10 @@
 % \version "2.18.2"      % Boccherini - Sonate n°1 G1 - basse 3ème mvt
 
-\relative c { \clef bass
+\relative c { \ClefBass
+\override Score.OttavaBracket.style = #'none
 \time 3/8 \key f \major \tempo "Amoroso"
 
-
+\ottDown
 
 
 
@@ -64,21 +65,22 @@ g e c
 aes' f c
 bes' g e
 f4 r8
+\ottZ
 f'( g e)
 f( g e)
 f r f,
 c c' e
-\clef tenor g4 f8
+\ClefTenor g4 f8
 \appoggiatura f e4 f8
 g16( f g a f g)
 \appoggiatura f8 e4 f8
-\clef bass bes, bes bes
+\ClefBass bes, bes bes
 a a a
 bes c c,
 f16 a c a f a
 bes8 bes bes
 a r a
 bes c c,
-f f, r \bar ":|."
+\ottDown f f, r \bar ":|."
 }
 
