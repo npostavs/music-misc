@@ -1,6 +1,6 @@
 \version "2.16.0"
 violaFirstMov = \relative g' {
-    \clef alto
+    \clefAlto
 
     \repeat volta 2 {
         r8

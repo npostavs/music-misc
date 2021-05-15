@@ -1,11 +1,12 @@
 \version "2.16.0"
 
 violinIISecondMov = \relative g' {
+    \override Score.OttavaBracket.style = #'none
     \repeat volta 2 {
         r4 r d'\p
 	| r r g,
 	| R2.*5
-	| g2.\f ~
+	| \ottDown g2.\f ~
 	| g4.(  e8[ d  c)]
 % 10
 	|  b[(  a)]  b'[( g a  fis)]
@@ -31,7 +32,7 @@ violinIISecondMov = \relative g' {
 	| e\p e e
 % 30
 	| d r r
-	|  e'8[( cis e cis e  cis)]
+	| \ottZ e'8[( cis e cis e  cis)]
 	| b4 r r
 	|  b8[(\f d b d b  d)]
 	| cis2(  d4)
@@ -39,7 +40,7 @@ violinIISecondMov = \relative g' {
 	|  fis8[-. d'(\p cis c b  bes)]
 	| a2. ~
 	| a4 r r
-	|  cis,8[( d e fis g  fis)]
+	| \ottDown cis,8[( d e fis g  fis)]
 % 40
 	| fis4 r r
     }
@@ -48,7 +49,7 @@ violinIISecondMov = \relative g' {
         r4 r fis\p
 	| r r fis
 	| R2.*2
-	| fis4( a  c!)
+	| \ottZ fis4( a  c!)
 	| fis2. ~
 	| fis2.- \markup{\italic "cresc."}
 	| e4(\f dis  e)
@@ -59,7 +60,7 @@ violinIISecondMov = \relative g' {
 	| d( e  d)
 	| b r g
 	| fis r r
-	| bes\trill r8. c!16 bes4
+	| \ottDown bes\trill r8. c!16 bes4
 	| a r r
 	| bes,\trill r8. c16 bes4
 	| a r r
@@ -76,15 +77,15 @@ violinIISecondMov = \relative g' {
 	| c!\f cis\p  d!)\f
 	| g, r r
 % 70
-	| g'2 ~  g8[( a16  g)]
+	| \ottZ g'2 ~  g8[( a16  g)]
 	| fis4( e!  d) ~
 	| d( c  b)
-	| a,(  b) c
+	| \ottDown a,(  b) c
 	|  b8[(\p d g, d' b  d)]
 	| c4 r r
 	|  c8[( d a d c  d)]
 	| b4 r r
-	| d'2(\f  b8.[  a16)]
+	| \ottZ d'2(\f  b8.[  a16)]
 	| a4( c  e)
 	|  e8[( d c b a  b)]
 % 80
@@ -93,11 +94,11 @@ violinIISecondMov = \relative g' {
 	| g4 r r
 	| b b b
 	|  b8[( e dis d cis  c)]
-	|  b[(\f a g e g  e)]
+	| \ottDown b[(\f a g e g  e)]
 	| d4( fis  g)
 	| e d c
 	| b r r
-	|  a'8[(\p b c d e  d)]
+	| \ottZ a'8[(\p b c d e  d)]
 % 90
 	| d4 r r
 	| fis,4( g a
@@ -107,7 +108,7 @@ violinIISecondMov = \relative g' {
     \key g \minor
 
     \repeat volta 2 {
-        g,4^\f r  bes8.[(\trill a32 bes]
+      \ottDown g,4^\f r  bes8.[(\trill a32 bes]
 	|  d4) r  g8.[(\trill fis32 g]
 	|  bes4) r g
 	| cis(  d) r

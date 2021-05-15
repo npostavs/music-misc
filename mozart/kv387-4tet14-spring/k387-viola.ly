@@ -19,13 +19,6 @@
 	\violaFirstMov
     >>
 
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
-
     \layout { }
 }
 
@@ -45,13 +38,6 @@
 	\markingsII
 	\violaSecondMov
     >>
-
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
 
     \layout { }
 }
@@ -74,13 +60,6 @@
 	\violaThirdMov
     >>
 
-    
-  \midi {
-    \tempo 4 = 50
-    }
-
-
-
     \layout { }
 }
 
@@ -101,13 +80,6 @@
 	\markingsIV
 	\violaFourthMov	
     >>
-
-    
-  \midi {
-    \tempo 2 = 120
-    }
-
-
 
     \layout { }
 }

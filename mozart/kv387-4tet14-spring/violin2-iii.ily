@@ -1,8 +1,9 @@
 \version "2.16.0"
 violinIIThirdMov = \relative c' {
+    \override Score.OttavaBracket.style = #'none
     \override TupletBracket   #'bracket-visibility = ##f
 
-    r4
+    r4 \ottDown
     | r8 <g e'>4\p <g e'> <g e'>8
     | r <g e'>4- \markup{\italic "cresc."} <g e'> <g e'>8
     | r <g e'>4 <g e'>(  g'8)
@@ -13,10 +14,10 @@ violinIIThirdMov = \relative c' {
     | a4.( b8  c4) ~
     | c  b8.[( a16]  g8.[  a16)]
 % 10
-    | bes4(  a8)   f''[(-.- \markup{\italic "cresc."} f-.  f)-.]
+    | bes4(  a8) \ottZ f''[(-.- \markup{\italic "cresc."} f-.  f)-.]
       
     |  g16[( f e  d)]  c[( b! a g]  a[ c b  d)]
-    |  c8[(\f  g)] r  c,[( e  c')]
+    |  c8[(\f  g)] r \ottDown c,[( e  c')]
     | c8\p r c r b r
     | c r r4 \times 4/6 { r16  e,[ f]  g[ a b] }
     | c2.\fp
@@ -53,7 +54,7 @@ violinIIThirdMov = \relative c' {
     | r g' r g r d
     |  d[-. fis16.( g64 a]  g8)  c16.[( d64 e]  d8) r
     | r4 r8  c,16.[( d64 e]  f!4)(
-    |  e)(  d8)  d'16.[( e64 fis]  g4)
+    |  e)(  d8) \ottZ d'16.[( e64 fis]  g4)
     | e8 r d r c r
     | b r r  g'16.[( fis64 e]  d4) ~
     | d8[ g16.( fis64  e)] d4 ~ \times 2/3 {  d16[ c b] }
@@ -64,7 +65,7 @@ violinIIThirdMov = \relative c' {
     % suitable to the context.  Also, this is the solution chosen by
     % the Quartetto Italiano in the Philips 8-CD set `Mozart String
     % Quartets'.
-    | g8 r b\p r r r16. d,32
+    | g8 r b\p r r r16. \ottDown d,32
     | d8 r d' r r r16. d,32
 % 50
     | es8 r c' r r r16. g32
@@ -93,7 +94,7 @@ violinIIThirdMov = \relative c' {
     | es4(\f   g8)[ c\p]  c,[(  es)]
     | d4.\f  b8[(\p d  f)]
     | es4(\f   g8)[ c\p]  c,[(  es)]
-    | d4 r8   g'8[(-. g-.  g)-.] 
+    | d4 r8 \ottZ g'8[(-. g-.  g)-.] 
     |  g8[(  a,)]  a[  f'8(-. f-.  f)-.] 
     |  f8[(  g,)]  g[  e'8(-. e-.  e)-.] 
     |  e8[(  f,)]  f[ d'8( f  d)]
@@ -102,7 +103,7 @@ violinIIThirdMov = \relative c' {
     % previous bar and bar 23.
     | r8  as[(\f  c)  c(-.\p c-.  c)-.] 
 % 80
-    | as8 r r4 f8\p r
+    | as8 r r4 \ottDown f8\p r
     | es4 r8   g[(-. g-.  g)-.] 
     | \times 4/6 {  g16[( fis d g fis d] } \times 4/6 {  g[ f d g f d] }
       \times 4/6 {  es[ g f es d  c)] }
@@ -118,22 +119,22 @@ violinIIThirdMov = \relative c' {
     | r  g4(- \markup{\italic "cresc."}  b  d8)
     | r e\p r f r e
     | <g, f'>2.\sf
-    | r8  g''[(\p  f16)] r  f8[(  e16)] r e8(
+    | r8 \ottZ g''[(\p  f16)] r  f8[(  e16)] r e8(
     |  d16) r r8 r4 r
-    |   bes8[(-. bes-. as-. as-. g-.  g)-.]
+    | \ottDown bes8[(-. bes-. as-. as-. g-.  g)-.]
     |  fis[(-. fis-. f-. f-. e-.  e)-.] 
     | r a! r e r f
-    | e-.  b'16.[( c64 d]   c8)[ d16.( e64 f]  e8) r
-    | r4 r8  g,,16.[( a64 b]  c4)\p ~
+    | e-. \ottZ b'16.[( c64 d]   c8)[ d16.( e64 f]  e8) r
+    | r4 r8 \ottDown g,,16.[( a64 b]  c4)\p ~
     |  c8[ f(  e)- \markup{\italic "cresc."} bes'(]  a) r
     | d\p r c r b! r
     | c r r  c16.[(^\f b64 a]  g4) ~
     |  g8[ c16.( b64 a]  g4) ~ \times 2/3 {  g16[ f e] } \grace e16
  \times 2/3 {  d16[ c d] }
     | \times 4/6 {  c16[ e\p f]  g[ a b] } \times 4/6 {   c[(
-      e d]  c[\trill b  c)]  } \times 4/6 {  b[( d f]  a[ g
+      \ottZ e d]  c[\trill b  c)]  } \times 4/6 {  b[( d f]  a[ g
        f)] }
-    | \times 4/6 {  e[-. g( f]   e)[ e( d] } \times 4/6 {   c)[ b-. a-.]
+    | \times 4/6 {  e[-. g( f]   e)[ e( d] } \times 4/6 {   c)[ \ottDown b-. a-.]
        g[-. f-. e-.] } d4\pp
     | d4(  c8) r r4
 }

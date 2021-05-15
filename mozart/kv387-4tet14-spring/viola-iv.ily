@@ -1,6 +1,6 @@
 \version "2.16.0"
 violaFourthMov = \relative g' {
-    \clef alto
+    \clefAlto
 
     \repeat volta 2 {
         R1*12

@@ -19,13 +19,6 @@
 	\violinIFirstMov
     >>
 
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
-
     \layout { }
 }
 
@@ -45,13 +38,6 @@
 	\markingsII
 	\violinISecondMov
     >>
-
-    
-  \midi {
-    \tempo 4 = 120
-    }
-
-
 
     \layout { }
 }
@@ -74,13 +60,6 @@
 	\violinIThirdMov
     >>
 
-    
-  \midi {
-    \tempo 4 = 50
-    }
-
-
-
     \layout { }
 }
 
@@ -101,13 +80,6 @@
 	\markingsIV
 	\violinIFourthMov	
     >>
-
-    
-  \midi {
-    \tempo 2 = 120
-    }
-
-
 
     \layout { }
 }

@@ -1,7 +1,7 @@
 \version "2.16.0"
 
 violaThirdMov = \relative c' {
-    \clef alto
+    \clefAlto
     \override TupletBracket   #'bracket-visibility = ##f
 
     r4
