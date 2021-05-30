@@ -15,6 +15,16 @@ dolce = _\markup {\italic "dolce"}
 rinf = _\markup {\italic "rinf."}
 un = -\tag #'partie ^\markup{\huge \bold "1"}
 
+%%% NP Extra =============================================
+% NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
+ottUp = { \ottava #1 \set Staff.ottavation = #"" }
+ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
+ottDDown = { \ottava #-2 \set Staff.ottavation = #"" }
+ottZ = { \ottava #0 }
+
+clefBass = { \ottZ \clef "alto_8" }
+clefTenor = { \ottUp }
+
 %%% FONCTIONS =======================================================================
 	%%% staccato ..........................................
 	#(define (make-script x)

@@ -1,7 +1,7 @@
 ﻿\version "2.16.0"      %Boccherini: Trio 2 violons/cello G83 - violoncelle 2 1er mvt
 
 \relative c{
-\clef bass
+\clefBass
 
 \set Score.skipBars = ##t
 \override MultiMeasureRest #'expand-limit = #1
@@ -21,13 +21,13 @@ ees,2:8\pp \repeat unfold 15 ees:
 d8\f d' d d d\p d d d
 ees ees, \repeat unfold 6 ees
 d8\f d' d d d\p d d d
-ees4 \clef tenor g'2 \acciaccatura g8 f8 ees
+ees4 \clefTenor g'2 \acciaccatura g8 f8 ees
 \acciaccatura g8 f4 ees2 d4
 \times 2/3 {ees8( f g)} g2  \acciaccatura g8 f8 ees
 \acciaccatura g8 f4 ees2 des4
 \repeat unfold 2 c2:8
 \repeat unfold 2 ces2:8
-bes4 \clef bass bes,2 bes4
+bes4 \clefBass bes,2 bes4
 \repeat unfold 2 ees2:8
 \repeat unfold 2 d2:8
 c: f,:
@@ -90,11 +90,11 @@ ees,2:8\p \repeat unfold 13 ees:
 ees8\f ees' \repeat unfold 6 ees
 d2:8 d:
 c: f,:
-bes8 r r4 r \clef tenor d'\p
+bes8 r r4 r \clefTenor d'\p
 ees( f g f)
 \acciaccatura f8 ees4 d2 d4
 ees( f g f)
-\acciaccatura f8 ees4 d2 r4 \clef bass
+\acciaccatura f8 ees4 d2 r4 \clefBass
 ees,8\rinf ees ees ees ees\p ees ees ees
 d2:8 d:
 ees8\rinf ees ees ees ees ees ees ees

@@ -1,7 +1,7 @@
 ﻿\version "2.16.0"      %Boccherini: Trio 2 violons/cello G83 - violoncelle 2ème mvt
 
 \relative c{
-\clef bass
+\clefBass
 
 
 
