@@ -1,7 +1,7 @@
 ﻿\version "2.16.0"
 
 cTitre = "Trio op.4 n°1"
-cSousTitre = "(G.83)"
+cSousTitre = \markup { "(G.83) -" \tiny { "Originally E" \flat " Major" } }
 cCompositeur =	"Luigi BOCCHERINI"
 cDates = "(1743 - 1805)"
 cCompositeurDates = \markup {\center-column {\cCompositeur \cDates}}

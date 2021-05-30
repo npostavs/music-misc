@@ -29,15 +29,15 @@
 \score {		%%1er mvt
 \new StaffGroup	<< 		
 		\new Staff \with { instrumentName = "Violon I" }
-		<<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V1-1.ily"}
 		>>
 		\new Staff \with { instrumentName = "Violon II"}
-		<<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V2-1.ily"}
 		>>
 			\new Staff \with { instrumentName = "Basse"}
-		<<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-1.ily"}
 		>>
 	>>
@@ -46,15 +46,15 @@
 \score {		%%2e mvt
 \new StaffGroup	<< 		
 		\new Staff
-		<<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V1-2.ily"}
 		>>
 		\new Staff
-		<<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V2-2.ily"}
 		>>
 			\new Staff
-		<<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-2.ily"}
 		>>
 	>>
@@ -63,15 +63,15 @@
 \score {		%%3e mvt
 \new StaffGroup	<< 		
 		\new Staff
-		<<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V1-3.ily"}
 		>>
 		\new Staff
-		<<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-V2-3.ily"}
 		>>
 			\new Staff
-		<<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-3.ily"}
 		>>
 	>>}	%% fin score 3e mvt

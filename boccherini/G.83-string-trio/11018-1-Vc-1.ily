@@ -3,6 +3,7 @@
 \relative c{
 \clefBass
 
+\override Score.OttavaBracket.style = #'none
 \set Score.skipBars = ##t
 \override MultiMeasureRest #'expand-limit = #1
 

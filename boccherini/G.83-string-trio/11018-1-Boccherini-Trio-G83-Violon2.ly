@@ -32,7 +32,7 @@ cInstrument = "Violon II"
 
 \score {		%%1er mvt
 	\new Staff << 
-		<<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\include "11018-1-V2-1.ily"
 		>>
 	>>
@@ -40,7 +40,7 @@ cInstrument = "Violon II"
 
 \score {		%%2e mvt
 	\new Staff << 
-		<<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\include "11018-1-V2-2.ily"
 		>>
 	>>
@@ -48,7 +48,7 @@ cInstrument = "Violon II"
 
 \score {		%%3e mvt
 	\new Staff << 
-		<<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\include "11018-1-V2-3.ily"
 		>>
 	>>
