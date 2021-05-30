@@ -1,22 +1,7 @@
 ﻿\version "2.16.0"
 \include "11018-1-Boccherini-Trio-G83-Global.ily" 
-     
-#(set-global-staff-size 22)  
-#(ly:set-option 'point-and-click #f)
 
 cInstrument = "Violoncelle"
-
-\paper { 		%% réglages généraux dans Global
-    first-page-number = 2
-}	%% fin paper
-
-\layout {
-	\context { 
-		\Voice 
-			\override Script #'font-size = #-2
-			\override Script #'padding = #0.5
-	}
-}	%% fin layout
 
 \book {
 

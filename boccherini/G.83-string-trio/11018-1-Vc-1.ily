@@ -19,9 +19,9 @@ ees,2:8\pp \repeat unfold 15 ees:
 
 
 
-d8\f d' d d d\p d d d
-ees ees, \repeat unfold 6 ees
-d8\f d' d d d\p d d d
+d8\f d' d d d2:8\p
+ees8 ees, ees ees ees2:8
+d8\f d' d d d2:8\p
 ees4 \clefTenor g'2 \acciaccatura g8 f8 ees
 \acciaccatura g8 f4 ees2 d4
 \times 2/3 {ees8( f g)} g2  \acciaccatura g8 f8 ees
@@ -37,8 +37,8 @@ bes: bes4\p d
 
 ees d ees d
 ees8 ees( d c) bes4 d
-\repeat unfold 6 ees8 e e
-f f c a f4 r
+ees2:8 ees4:8 e4:8
+f8 f c a f4 r
 bes'!8\rinf bes bes bes bes\p bes bes bes
 \repeat unfold 2 a2:8
 bes8\rinf bes bes bes bes\p bes bes bes
@@ -88,7 +88,7 @@ ees,2:8\p \repeat unfold 13 ees:
 
 
 
-ees8\f ees' \repeat unfold 6 ees
+ees8\f ees' ees ees ees2:8
 d2:8 d:
 c: f,:
 bes8 r r4 r \clefTenor d'\p
@@ -96,10 +96,10 @@ ees( f g f)
 \acciaccatura f8 ees4 d2 d4
 ees( f g f)
 \acciaccatura f8 ees4 d2 r4 \clefBass
-ees,8\rinf ees ees ees ees\p ees ees ees
+ees,8\rinf ees ees ees ees2:8\p
 d2:8 d:
-ees8\rinf ees ees ees ees ees ees ees
-d\p bes' f d bes4 r
+ees2:8\rinf ees2:8
+d8\p bes' f d bes4 r
 R1*3
 
 
