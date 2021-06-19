@@ -8,15 +8,18 @@
 
 
 \header {
-    subtitle =  \markup { "(from: O du eselhafter Martin [Jakob], K.560b - 1788)" }
+    subtitle =  \markup { "(O du eselhafter Martin [Jakob], K.560b - 1788)" }
     copyright =  \markup { "CC BY-NC 4.0 © Michel Rondeau 2020 - Gatineau,QC.,CA." }
-    title =  "CANON in G MAJOR"
+    title =  \markup { "CANON in C" \tiny { " (originally F) " } "MAJOR" }
     composer =  \markup { "Wolfgang Amadeus Mozart (1756 - 1791)" }
     encodingdate =  "2021-06-19"
     encodingsoftware =  "MuseScore 3.6.0"
 }
 
-Notes = \relative d'' {
+segno = \markup { \musicglyph "scripts.segno" }
+
+Notes = \relative d'' \repeat volta 2 {
+
     \key g \major \time 2/4
     \tempo "Allegro" 4=90
     d8. d16 d16 d16 d16 d16 | % 2
@@ -26,7 +29,8 @@ Notes = \relative d'' {
     e'4 r16 g,16 g16 g16 | % 6
     d'4 r16 b16 b16 b16 | % 7
     a8 e'8 d8 fs,8 | % 8
-    g16 g16 g16 g16 g16 g16 g16 g16 | % 9
+    g16-\fermata g16 g16 g16 g16 g16 g16 g16 | % 9
+    \break \mark \segno
     fs8 d8 r4 | \barNumberCheck #10
     r16 g16 g16 g16 g16 g16 g16 g16 | % 11
     fs8 d8 r4 | % 12
@@ -34,7 +38,8 @@ Notes = \relative d'' {
     r16 g16 g16 g16 c4 | % 14
     r16 g16 g16 g32 a32 b16 g16 e16 d16 | % 15
     c8 c8 d8 d8 | % 16
-    g8 r8 r16 g16 a16 b16 | % 17
+    g8-\fermata r8 r16 g16 a16 b16 | % 17
+    \break \mark \segno
     c8. a16 fs16 a16 d,16 fs16 | % 18
     g8 r8 r16 g16 a16 b16 | % 19
     c8. a16 fs16 a16 d,16 fs16 | \barNumberCheck #20
@@ -42,7 +47,8 @@ Notes = \relative d'' {
     g8 g,8 g'4 ~ | % 22
     g8 b,8 d16 b16 g16 fs16 | % 23
     e8 c'8 b8 a8 | % 24
-    g8 r8 r4 | % 25
+    g8-\fermata r8 r4 | % 25
+    \break \mark \segno
     a8 a16 a16 c8 r16 a16 | % 26
     g16. a32 b8 r8. g16 | % 27
     a8 r16 a16 c8 r16 a16 | % 28
@@ -50,13 +56,8 @@ Notes = \relative d'' {
     r4 e'8 g,8 | \barNumberCheck #30
     r4 d'8 g,8 | % 31
     r8 a8 b8 c8 | % 32
-    b4 r4 \bar "|."
+    b4-\fermata r4
 }
 
-
-% The score definition
-\score {
-    \new Staff { \Notes }
-    \layout {}
-}
-
+trebleBlockFlute = \new Staff \transpose g c' { \Notes }
+bassBlockFlute = \new Staff \transpose g c' { \clef "bass^15" \Notes }
