@@ -11,17 +11,17 @@ rightHandFirstMov =  \relative c' {
     es4 ~  es16[ f64( es d es] g8 es  bes)
     | g r r r4 bes'8
     | bes(  es,) es-. \appoggiatura f32 es8-. d-. es-.
-    | \appoggiatura { d16[ es] } f8 r r r4 r8
+    | \appoggiatura { d16[ es] } f8 r r r4.
     | f4 ~  f16[ g64( f e f] as8 f  d)
     | bes r r r4 bes'8
     | bes(  f) f-. \appoggiatura g32 f8-. es-. f-.
-    | \appoggiatura { es16[ f] } g8 r r r4 r8 \clef bass
+    | \appoggiatura { es16[ f] } g8 r r r4. \clef bass
     | r16 es,( g bes es  bes) r g( bes es g  es)
 
 % 10
     | r f,( as c es  c) r as( c es f  es)
     | r es,( g bes es  bes) r f( as bes d  bes)
-    | <g es'>8 r r r4 r8 \clef violin
+    | <g es'>8 r r r4. \clef violin
     | es''4 ~  es16[ f64( es d es] g8 es  b)
     | c4 ~  c16[ d64( c b c] es8 c  ges)
     | g!4 ~  g16[ as64( g f g] bes!8 as  f)
@@ -46,7 +46,7 @@ rightHandFirstMov =  \relative c' {
     | r bes( <d f> bes <d f>  bes) r a( <c f> a <c f>  a)
     | r bes( <d f> bes <d f>  bes) r b( <d f> b <d f>  b)
     | r bes!( <c g'> bes <c e> bes <c es> a <c es> a <bes d>  g)
-    | <es' g>8 r r r4 r8
+    | <es' g>8 r r r4.
     | R2.
     | d'4 ~  d16[ es64( d c d] f8 es  c)
     |  a16[(  bes)]  bes8[ bes]  b16[(  c)]  c8[ c]
@@ -100,24 +100,24 @@ rightHandFirstMov =  \relative c' {
     | r  as[( <c f> as <c f>  as)] r  c[( <es! fis> c <es fis>  c)]
     | r  bes[( <d! g> bes <d g>  bes)] r  d[( <f! as!> d <f as>  d)]
     | r  c[( <es g> c <e g>  des)] r  c[( <f c'> c <fis c'>  c)]
-    | <d! g b>4 r8 r4 r8
+    | <d! g b>4 r8 r4.
     | fis'4 ~  fis16[ g64( fis e fis]  es'8[ c  fis,)]
-    | g4 r8 r4 r8
+    | g4 r8 r4.
     | fis4 ~  fis16[ g64( fis e fis]  es'8[ c  fis,)]
     | g8 r fis(  g) r fis(
-    |  g4) r8 r4 r8
+    |  g4) r8 r4.
 
 % 70
-    | as r g(  as) r g(
-    |  as4) r8 r4 r8
+    | as8 r g(  as) r g(
+    |  as4) r8 r4.
     | <f d'>8 r \tieDown <f es'>( ~ <f d'>) r <f es'>( ~
-    | <f d'>4) \tieNeutral r8 r4 r8
-    | <g,, bes es>4 r8 r4 r8
-    | r4 r8 bes''4 ~  bes16[ c64( bes a bes]
+    | <f d'>4) \tieNeutral r8 r4.
+    | <g,, bes es>4 r8 r4.
+    | r4. bes''4 ~  bes16[ c64( bes a bes]
     |  es8[ bes  g)] \appoggiatura f32 es8[-. d-. es-.]
     | \appoggiatura { d16[ es] } f8 r r r16  as16[(  c) bes-. as-. g-.]
-    | f8 r r r4 r8
-    | r4 r8 d'4 ~  d16[ es64( d c d]
+    | f8 r r r4.
+    | r4. d'4 ~  d16[ es64( d c d]
 
 % 80
     |  f8[ d  as)] \appoggiatura g16 f8[-. es-. f-.]
@@ -163,7 +163,7 @@ rightHandFirstMov =  \relative c' {
     | <c es> r <c es> << { es4(  d8) } \\ bes4.  >>
     | <bes es>4 r8 r4 <d f>8
     | <c es> r <c es> <bes es>4( <as d>8)
-    | <g es'>4 r8 r4 r8
+    | <g es'>4 r8 r4.
     | R2.*2
 
 % 120
@@ -181,6 +181,6 @@ rightHandFirstMov =  \relative c' {
     \set Staff.subdivideBeams = ##f
 
     |   es8)[ es] r <g, es'>[ <g es'>] r
-    | <g es'>[ <g es'>] r r4 r8
+    | <g es'>[ <g es'>] r r4.
     | 
 }

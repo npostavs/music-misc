@@ -146,5 +146,5 @@ violaFirstMov =  \relative g {
     |  g'[( bes g]  f[ as  f)]
     |  g[( bes  g)]  f[ f f]
     | es r bes'(  g) r bes,(
-    |  g) r r r4 r8 \bar "|."
+    |  g) r r r4. \bar "|."
 }

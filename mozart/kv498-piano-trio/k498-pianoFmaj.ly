@@ -1,7 +1,5 @@
 \version "2.16.0"
 
-#(set-global-staff-size 16)
-
 \include "defs.ily"
 
 \include "piano-dynamics.ily"
@@ -11,12 +9,26 @@
 \include "piano-right-i.ily"
 \include "piano-left-i.ily"
 
+\paper {
+    page-breaking = #ly:page-turn-breaking
+    auto-first-page-number = ##t
+}
+
+lessSpace = \with {
+            \override VerticalAxisGroup.default-staff-staff-spacing =
+            #'((basic-distance . 1)
+               (minimum-distance . 1)
+               (padding . 1)
+               (stretchability . 10))
+             % \override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #1
+        }
+
 \score {
     <<
 	\override Score.BarNumber   #'padding = #3
 
-	\context Staff = "clarinet" <<
-        \magnifyStaff #5/7
+	\context Staff = "clarinet" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.midiInstrument = #"violin"
 	    \set Staff.instrumentName = "Violin"
 	    % \transposition ais 
@@ -26,12 +38,12 @@
         \clarinetFirstMov
 	>>
 	
-	\context Staff = "viola" <<
-        \magnifyStaff #5/7
+	\context Staff = "viola" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
 	    \set Staff.midiInstrument = #"viola"
 	    \set Staff.instrumentName = "Viola"
-	    
+	    \clef "bass^8"
 	    \transpose es f \violaFirstMov
 	>>
 	
@@ -71,8 +83,8 @@
     <<
 	\override Score.BarNumber   #'padding = #3
 
-	\context Staff = "clarinet" <<
-        \magnifyStaff #5/7
+	\context Staff = "clarinet" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
 	    \set Staff.midiInstrument = #"clarinet"
 	    \set Staff.instrumentName = "Violin"
@@ -83,12 +95,12 @@
 	    \clarinetSecondMov
 	>>
 	
-	\context Staff = "viola" <<
-        \magnifyStaff #5/7
+	\context Staff = "viola" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
 	    \set Staff.midiInstrument = #"viola"
 	    \set Staff.instrumentName = "Viola"
-	    
+	    \clef "bass^8"
 	    \transpose es f \violaSecondMov
 	>>
 	
@@ -128,8 +140,8 @@
     <<
 	\override Score.BarNumber   #'padding = #3
 
-	\context Staff = "clarinet" <<
-        \magnifyStaff #5/7
+	\context Staff = "clarinet" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
 	    \set Staff.midiInstrument = #"clarinet"
 	    \set Staff.instrumentName = "Violin"
@@ -140,12 +152,12 @@
 	    \clarinetThirdMov
 	>>
 	
-	\context Staff = "viola" <<
-        \magnifyStaff #5/7
+	\context Staff = "viola" \with \lessSpace <<
+        \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
 	    \set Staff.midiInstrument = #"viola"
 	    \set Staff.instrumentName = "Viola"
-	    
+	    \clef "bass^8"
 	    \transpose es f \violaThirdMov
 	>>
 	

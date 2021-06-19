@@ -17,6 +17,12 @@
 \include "piano-right-i.ily"
 \include "piano-left-i.ily"
 
+\paper {
+    page-breaking = #ly:page-turn-breaking
+    auto-first-page-number = ##t
+}
+
+
 \score {
     \context PianoStaff <<
 	\set PianoStaff.midiInstrument = #"acoustic grand"

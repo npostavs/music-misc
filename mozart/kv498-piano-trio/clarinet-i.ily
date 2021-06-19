@@ -148,5 +148,5 @@ clarinetFirstMov =  \relative f'' {
       bes, bes]
     \set Staff.subdivideBeams = ##f
     | a r a'(  f!) r a,(
-    |  f) r r r4 r8 \bar "|."
+    |  f) r r r4. \bar "|."
 }
