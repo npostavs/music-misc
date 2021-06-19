@@ -18,10 +18,10 @@
 
 segno = \markup { \musicglyph "scripts.segno" }
 
-Notes = \relative d'' \repeat volta 2 {
+Notes = \shiftDurations #-1 #0 \relative d'' \repeat volta 2 {
 
-    \key g \major \time 2/4
-    \tempo "Allegro" 4=90
+    \key g \major \time 2/2
+    \tempo "Allegro" 2=90
     d8. d16 d16 d16 d16 d16 | % 2
     b8 g8 r4 | % 3
     d'8 d16 d16 d8 d16 d16 | % 4
