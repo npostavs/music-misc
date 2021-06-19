@@ -143,7 +143,7 @@ violaThirdMov =  \relative g {
 
 % 130
     |  g[(  as) c(  as)]  as[(  g) g(  f)]
-    | f2(  es4) r \bar "||"
+    | f2(  es4) r
 
     \repeat volta 2 {
 	R1*3

@@ -86,7 +86,7 @@ dynamicsThirdMov =  {
     | s4\f s4 s2
     | s1*40
     | s2- \markup{ {\dynamic "mf"} {\italic " legato"}} s2
-    | s1*23 \bar "||"
+    | s1*23
     | s1*44
     | s2 s16 s16\f s8 s4
     | s2 s2\sf
