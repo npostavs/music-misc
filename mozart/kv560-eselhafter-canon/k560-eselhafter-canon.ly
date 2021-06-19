@@ -1,3 +1,4 @@
+% -*- coding: utf-8 -*-
 \version "2.20.0"
 % automatically converted by musicxml2ly from K560bSco-Part.mxl
 \pointAndClickOff
@@ -7,24 +8,17 @@
 
 
 \header {
-    subtitle =  \markup \column {
-        \line { "(from: O du eselhafter Martin [Jakob], K.560b - 1788)"}
-        \line { ""} }
-    
-    copyright =  "© 2020 - Gatineau,QC.,CA."
-    encodingdate =  "2021-06-19"
+    subtitle =  \markup { "(from: O du eselhafter Martin [Jakob], K.560b - 1788)" }
+    copyright =  \markup { "CC BY-NC 4.0 © Michel Rondeau 2020 - Gatineau,QC.,CA." }
     title =  "CANON in G MAJOR"
-    poet =  Part
-    composer =  \markup \column {
-        \line { "Wolfgang Amadeus Mozart (1756 - 1791)"}
-        \line { ""} }
-    
+    composer =  \markup { "Wolfgang Amadeus Mozart (1756 - 1791)" }
+    encodingdate =  "2021-06-19"
     encodingsoftware =  "MuseScore 3.6.0"
-    }
+}
 
-PartPOneVoiceOne =  \relative d'' {
-    \transposition bf \clef "treble" \key g \major \time 2/4 | % 1
-    \tempo "Allegro" 4=90 | % 1
+Notes = \relative d'' {
+    \key g \major \time 2/4
+    \tempo "Allegro" 4=90
     d8. d16 d16 d16 d16 d16 | % 2
     b8 g8 r4 | % 3
     d'8 d16 d16 d8 d16 d16 | % 4
@@ -57,27 +51,12 @@ PartPOneVoiceOne =  \relative d'' {
     r4 d'8 g,8 | % 31
     r8 a8 b8 c8 | % 32
     b4 r4 \bar "|."
-    }
+}
 
 
 % The score definition
 \score {
-    <<
-        
-        \new Staff
-        <<
-            \set Staff.instrumentName = "Trumpet in Bb 1"
-            \set Staff.shortInstrumentName = "Bb Tpt. 1"
-            
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
-                >>
-            >>
-        
-        >>
+    \new Staff { \Notes }
     \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 90 }
-    }
+}
 
