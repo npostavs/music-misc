@@ -7,20 +7,20 @@ leftHandFirstMov =  \relative c, {
     \noTupletBracket
 
     <<es4. es'4>> g8( es  bes)
-    | g r r r4 r8
-    | <es' g bes> r r <es g bes> r r
-    | <d as' bes> r r r4 r8
+    | g r r r4.
+    | <es' g bes>8 r r <es g bes> r r
+    | <d as' bes> r r r4.
     | <f, f'>4. as'8( f  d)
-    | bes r r r4 r8
-    | <d as' bes> r r <bes d bes'> r r
-    | <es g bes> r r r4 r8
-    | g, r r es r r
+    | bes r r r4.
+    | <d as' bes>8 r r <bes d bes'> r r
+    | <es g bes> r r r4.
+    | g,8 r r es r r
 
 % 10
     | as r r f r r
     | bes r r bes, r r
-    | c r r r4 r8
-    | <g' g'> r r <es es'> r r
+    | c r r r4.
+    | <g' g'>8 r r <es es'> r r
     | <as as'>4. <a a'>
     | <bes bes'> <bes, bes'>
     | <es es'>4 ~  es'16[ f64( es d es] g8 es  b)
@@ -32,7 +32,7 @@ leftHandFirstMov =  \relative c, {
     | <es, es'>4 ~  es'16[ f64( es d es] g8 es  b)
     | c4 r8 r4 b'8(
     |  c4) r8 r4 b8(
-    |  c4) r8 r4 r8
+    |  c4) r8 r4.
     | \set doubleSlurs = ##t
       <ges ges,>4.( <f f,>8) r r
       \set doubleSlurs = ##f
@@ -87,26 +87,26 @@ leftHandFirstMov =  \relative c, {
     |  g,[( c es]  g,[ c  es)]
     |  g,[( b d]  g,[ b  d)]
     |  g,[( c es]  g,[ c  es)]
-    | g,8 r r r4 r8
+    | g,8 r r r4.
     | g'4 ~  g16[ a64( g fis g]  d'8[ b  g)]
 
 % 70
-    | f! r r r4 r8
+    | f! r r r4.
     | f4 ~  f16[ g64( f e f]  as8[ f  d)]
-    | bes!8 r r r4 r8
+    | bes!8 r r r4.
     | \stemUp \slurDown bes4 ~  bes16[ c64( bes a bes]  f'8[ d  bes)]
       \slurNeutral \stemNeutral
     | <es, es'>4 ~  es'16[ f64( es d es]  g8[ es  bes)]
-    | g r r r4 r8
+    | g r r r4.
     | r4 \clef violin r8 <es'' g bes> r r
-    | <d as' bes> r r r4 r8 \clef bass
+    | <d as' bes> r r r4. \clef bass
     | <f,, f'>4 ~  f'16[ g64( f e f]  as8[ f  d)]
-    | bes r r r4 r8
+    | bes r r r4.
 
 % 80
     | r4 \clef violin r8 <bes' d as'> r r
-    | <es g> r r r4 r8 \clef bass
-    | es, r r g, r r
+    | <es g> r r r4. \clef bass
+    | es,8 r r g, r r
     | as r r f r r
     | bes r r bes, r r
     | << { es'2. ~ | es8 } \\ { es4.(  des) | c8 } >> r8 r as r r
@@ -121,7 +121,7 @@ leftHandFirstMov =  \relative c, {
     | <as, as'>4 ~  as'16[ bes64( as g as]  c8[ as  e)]
     | f4 r8 r4 e'8(
     |  f4) r8 r4 e8(
-    |  f4) r8 r4 r8
+    |  f4) r8 r4.
     | \set doubleSlurs = ##t
       <ces ces,>4.( <bes bes,>8) r r
       \set doubleSlurs = ##f
@@ -167,5 +167,5 @@ leftHandFirstMov =  \relative c, {
       \times 2/3 { r16  bes,[( b } \times 2/3 { c cis d] }
     \set Staff.subdivideBeams = ##f
 
-    |  es8) r r r4 r8
+    |  es8) r r r4.
 }
