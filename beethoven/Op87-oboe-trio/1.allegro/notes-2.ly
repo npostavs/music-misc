@@ -20,6 +20,7 @@ mI_twoNotes = \relative c'' {
     % Bars 10-16
     e cis d) r |
     d( b c) r |
+    \ottD
     a( f2\sf d4) |
     c4 r r2 |
     a'4( f2\sf d4) |
@@ -37,7 +38,7 @@ mI_twoNotes = \relative c'' {
     e g e g e g e g |
     f g f g f g f g |
     f g f g f g d g |
-    e4 e'8.( d16) c4-. c8.( b16) |
+    e4 \ottZ e'8.( d16) c4-. c8.( b16) |
 
     % Bars 26-31
     a4-. a8.( g16) f4-. f8.( e16) |
@@ -77,14 +78,14 @@ mI_twoNotes = \relative c'' {
     d8 d g4~ g8 e fis4 |
     g8 d4 d8~ d d4 d8~ |
     d d g4~ g8 e fis4 |
-    d8-.\cresc ees-. d-. c-. b-. c-. b-. a-. |
+    \ottD d8-.\cresc ees-. d-. c-. b-. c-. b-. a-. |
 
     % Bars 56-61
     g-. aes-. g-. f-. e-. f-. e-. d-. |
     c4(\fp d e fis |
     g gis a c8 a) |
     g4( b a fis) |
-    g4 r r8 a'-.\< g-. fis-. |
+    g4 \ottZ r r8 a'-.\< g-. fis-. |
     e8-. f-.\f e-. d-. c-. d-. c-. b-. |
 
     % Bars 62-70
@@ -135,13 +136,13 @@ mI_twoNotes = \relative c'' {
     % Bars 97-102
     b-.) r r a( |
     g-.) a( g-.) a( |
-    g-.) r r a8-.\f c-. |
+    g-.) r r \ottD a8-.\f c-. |
     b-. b-. a-. c-. b-. b-. a-. c-. |
     b4 r b r |
-    g r r \bar ":|]" 
+    g r r \bar ":|][|:" 
     
     % Bars 102-109
-    b8.(\p c16) | \mark \default
+    \ottZ b8.(\p c16) | \mark \default
     d4-. d-. d-. b-. |
     gis1( |
     a4-.) f'-.\f e-. d-. |
@@ -195,7 +196,7 @@ mI_twoNotes = \relative c'' {
     r1 |
     r2 r4 b8.(\p c16) |
     d4-. d-. d-. b-. |
-    g-. r4 r d8.( e16) |
+    g-. r4 r \ottD d8.( e16) |
     f4-. f-. f-. d-. |
     b-. r r d8.( e16) |
 
@@ -203,7 +204,7 @@ mI_twoNotes = \relative c'' {
     f4-. d-. b-. d8.( e16) |
     f4-. d-. b-. d8.( e16) |
     f4-. d8.( e16) f4-. d8.( e16) |
-    f4-. r r2 |
+    f4-. \ottZ r r2 |
     r1 |
     b2.\fermata\p r8. g16\f | \mark \default
     g1(\> |
@@ -220,7 +221,7 @@ mI_twoNotes = \relative c'' {
 
     % Bars 164-171
     d( b c) r |
-    a4(\< f2\> d4) |
+    \ottD a4(\< f2\> d4) |
     c\! r r2 |
     a'4(\< f2\> d4) |
     g4\! r r2 | \allowPageTurn
@@ -237,7 +238,7 @@ mI_twoNotes = \relative c'' {
 
     % Bars 177-184
     f8 g b g b g d' g, |
-    c4 r r2 | \mark \default \allowPageTurn
+    c4 \ottZ r r2 | \mark \default \allowPageTurn
     r2 r4 c8.(\p d16) |
     ees4-.( ees-. ees-. c-.) |
     aes2( g\< |
@@ -310,10 +311,10 @@ mI_twoNotes = \relative c'' {
     b bes |
 
     % Bars 235-243
-    a) aes8( f) f-. f-. |
+    a) \ottD aes8( f) f-. f-. |
     g( e) e-. e-. f(\< c) c-. c-. |
     c2\f c2~(\> |
-    c4 e) r\! f4-.\p |
+    c4 e) r\! \ottZ f4-.\p |
     e-. r c'2~(\f\> |
     c4 e) r\! f-.\p |
     e-. r c2~\ff\> |

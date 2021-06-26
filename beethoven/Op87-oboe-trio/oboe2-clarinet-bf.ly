@@ -18,14 +18,14 @@ ottZ = { }
     composer = "Beethoven"
     arranger = "arr. Aaron Dalton"
     copyright = "Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"
-    instrument = "Oboe II"
+    instrument = \markup { "Oboe II in B" \flat }
 }
 
 \score {
     \header {
         piece = \markup { \bold "Allegro" }
     }
-    \new Staff { \clef "alto" \transpose c c, \mI_twoNotes }
+    \new Staff { \transpose bes, c \mI_twoNotes }
     \layout {
         \context {
             \Score \override SpacingSpanner.base-shortest-duration = #(ly:make-moment 1/1)
@@ -39,7 +39,7 @@ ottZ = { }
     \header {
         piece = \markup { \bold "Adagio" }
     }
-    \new Staff { \clef "alto" \transpose c c, \mII_twoNotes }
+    \new Staff { \transpose bes, c \mII_twoNotes }
     \layout {}
 }
 
@@ -49,7 +49,7 @@ ottZ = { }
     \header {
         piece = \markup { \bold "Menuetto" }
     }
-    \new Staff { \clef "alto" \transpose c c, \mIII_twoNotes }
+    \new Staff { \transpose bes, c \mIII_twoNotes }
     \layout {}
 }
 
@@ -60,6 +60,6 @@ ottZ = { }
     \header {
         piece = \markup { \bold "Finale" }
     }
-    \new Staff { \clef "alto" \transpose c c, \mIV_twoNotes }
+    \new Staff { \transpose bes, c \mIV_twoNotes }
     \layout {}
 }

@@ -1,0 +1,17 @@
+\paper {
+  oddHeaderMarkup = \markup {
+    \fill-line {
+      \on-the-fly \not-part-first-page \concat { \fromproperty #'header:title " - " \fromproperty #'header:composer }
+      \on-the-fly \not-part-first-page \fromproperty #'header:instrument
+      \fromproperty #'page:page-number-string
+    }
+  }
+  % copy from oddHeaderMarkup, probably there is a better way to do this
+  evenHeaderMarkup = \markup {
+    \fill-line {
+      \on-the-fly \not-part-first-page \concat { \fromproperty #'header:title " - " \fromproperty #'header:composer }
+      \on-the-fly \not-part-first-page \fromproperty #'header:instrument
+      \fromproperty #'page:page-number-string
+    }
+  }
+}

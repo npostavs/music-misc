@@ -144,7 +144,7 @@ mI_fourNotes = \relative c'' {
     d( a') a-. a-. a-. a-. a,-.\f a'-. |
     d,-. a'-. a,-. a'-. d,-. a'-. a,-. a'-. |
     d,4 r d, r |
-    d r r \bar ":|]"
+    d r r \bar ":|][|:"
 
     % Bars 102-110
     \partial 4 r4 | \mark \default \allowPageTurn
