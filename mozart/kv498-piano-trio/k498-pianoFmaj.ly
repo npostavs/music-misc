@@ -10,8 +10,12 @@
 \include "piano-left-i.ily"
 
 \paper {
-    page-breaking = #ly:page-turn-breaking
+    % page-breaking = #ly:page-turn-breaking
     auto-first-page-number = ##t
+    right-margin = 5\mm
+    left-margin = 5\mm
+    top-margin = 5\mm
+    bottom-margin = 5\mm
 }
 
 lessSpace = \with {
@@ -73,6 +77,8 @@ lessSpace = \with {
     % }
 }
 
+\pageBreak
+
 
 \include "clarinet-ii.ily"
 \include "viola-ii.ily"
@@ -83,11 +89,9 @@ lessSpace = \with {
     <<
 	\override Score.BarNumber   #'padding = #3
 
-	\context Staff = "clarinet" \with \lessSpace <<
+	\new Staff \with \lessSpace <<
         \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
-	    \set Staff.midiInstrument = #"clarinet"
-	    \set Staff.instrumentName = "Violin"
 	    % \transposition ais 
 	    
 	    \markingsII
@@ -95,18 +99,15 @@ lessSpace = \with {
 	    \clarinetSecondMov
 	>>
 	
-	\context Staff = "viola" \with \lessSpace <<
+	\new Staff \with \lessSpace <<
         \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
-	    \set Staff.midiInstrument = #"viola"
-	    \set Staff.instrumentName = "Viola"
 	    \clef "bass^8"
 	    \transpose es f \violaSecondMov
 	>>
 	
-	\context PianoStaff = "piano" <<
+	\new PianoStaff <<
 	    \set PianoStaff.midiInstrument = #"acoustic grand"
-	    \set PianoStaff.instrumentName = "Piano"
 	    
 	    \context Staff = "upper" <<
 		\transpose es f \rightHandSecondMov
@@ -119,7 +120,7 @@ lessSpace = \with {
 	>>
     >>
     
-    \layout { }
+    \layout { indent = 2\mm }
     
     % \midi {
 	% \tempo 4 = 120
@@ -130,6 +131,7 @@ lessSpace = \with {
     % }
 }
 
+\pageBreak
 
 \include "clarinet-iii.ily"
 \include "viola-iii.ily"
@@ -143,8 +145,6 @@ lessSpace = \with {
 	\context Staff = "clarinet" \with \lessSpace <<
         \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
-	    \set Staff.midiInstrument = #"clarinet"
-	    \set Staff.instrumentName = "Violin"
 	    % \transposition ais 
 	    
 	    \markingsIII
@@ -155,15 +155,12 @@ lessSpace = \with {
 	\context Staff = "viola" \with \lessSpace <<
         \magnifyStaff #(magstep -4)
 	    \set Staff.autoBeaming = ##f
-	    \set Staff.midiInstrument = #"viola"
-	    \set Staff.instrumentName = "Viola"
 	    \clef "bass^8"
 	    \transpose es f \violaThirdMov
 	>>
 	
 	\context PianoStaff = "piano" <<
 	    \set PianoStaff.midiInstrument = #"acoustic grand"
-	    \set PianoStaff.instrumentName = "Piano"
 	    
 	    \context Staff = "upper" <<
 		\transpose es f \rightHandThirdMov
@@ -176,7 +173,7 @@ lessSpace = \with {
 	>>
     >>
     
-    \layout { }
+    \layout { indent = 2\mm}
     
     % \midi {
 	% \tempo 4 = 120

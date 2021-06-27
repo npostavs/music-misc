@@ -104,7 +104,7 @@ clarinetSecondMov =  \relative e'' {
 	| a r r
     }
 
-    \repeat volta 2 {
+    
 	f'4( g e
 	|  f) r r
 	| g(\f a  fis)
@@ -177,5 +177,4 @@ clarinetSecondMov =  \relative e'' {
 	|  c) r b'(
 	|  c) r d,\f
 	| e r r \bar "|."
-    }
 }

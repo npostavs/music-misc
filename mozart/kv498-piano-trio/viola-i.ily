@@ -5,10 +5,10 @@ violaFirstMov =  \relative g {
     \time 6/8
 
     <g es'>4\f ~  es'16[ f64(\p es d es]  g8[ es  bes)]
-    | g8 r r r4 r8
+    | g8 r r r4.
     | R2.*2
     | f'4\f ~  f16[ g64(\p f e f]  as8[ f  d)]
-    | bes8 r r r4 r8
+    | bes8 r r r4.
     | R2.*6
 
 % 13
@@ -24,9 +24,9 @@ violaFirstMov =  \relative g {
     | es4 r8 r4 d'8(
     |  c4) r8 r4 d8(
     |  c4) r8 r4 d8(
-    |  c4) r8 r4 r8
+    |  c4) r8 r4.
     | R2.*3
-    | r4 r8 r  es16[( c es  c)]
+    | r4. r8  es16[( c es  c)]
     | f2. ~
     | f ~
 
@@ -61,7 +61,7 @@ violaFirstMov =  \relative g {
     | bes4 r8 r4 f8\f
     | c'4. ~ c8 r r^\fermata
     | R2.*2
-    | r4 r8 r  des16[(\p bes des  bes)]
+    | r4. r8  des16[(\p bes des  bes)]
     | es2. ~
     | es ~
 
@@ -75,14 +75,14 @@ violaFirstMov =  \relative g {
     | g4 ~  g16[ a64( g fis g]  d'8[ b  g)]
     |  fis[( es  c)] a4(  a'8)
     | d,8 r c'(  b) r c(
-    |  b4) r8 r4 r8
+    |  b4) r8 r4.
 
 % 70
-    | b r c(  b) r c(
-    |  b4) r8 r4 r8
-    | bes! r ces(  bes) r ces(
-    |  bes4) r8 r4 r8
-    | r4 r8 es,4\f ~  es16[ f64( es d es]
+    | b8 r c(  b) r c(
+    |  b4) r8 r4.
+    | bes!8 r ces(  bes) r ces(
+    |  bes4) r8 r4.
+    | r4. es,4\f ~  es16[ f64( es d es]
     |  g8[ es  bes)] g r r
     | R2.
     | r16  as'[(  c) bes-. as-. g-.]  f[-. f(  as) g-. f-. es-.]
@@ -92,7 +92,7 @@ violaFirstMov =  \relative g {
 % 80
     | R2.
     | r16  es'16[(  d) c-. bes-. as-.]  g[-. c(  bes) as-. g-. f-.]
-    | es4\p r8 r4 r8
+    | es4\p r8 r4.
     | R2.*2
     | << es2. \\ { g,4.(  bes) } >>
     | r16  as[( c es as  es)] r  c[( es as c  as)]
@@ -107,7 +107,7 @@ violaFirstMov =  \relative g {
     | as4 r8 r4 g'8(
     |  f4) r8 r4 g8(
     |  f4) r8 r4 g8(
-    |  f4) r8 r4 r8
+    |  f4) r8 r4.
     | R2.
     | g4.(\p  bes8[ as  f)]
     |  es[ es es]  e16[(  f)]  f8[ f]
@@ -132,7 +132,7 @@ violaFirstMov =  \relative g {
     | g r f as4(  f8)
     | es4 r8 r4 g8
     | g r f as4(  f8)
-    | es4 r8 r4 r8
+    | es4 r8 r4.
     | es4 ~  es16[ f64( es d es]  bes'8[ g  es)]
     |  des16[( c des c des c]   des8)[ des'(  bes)]
 

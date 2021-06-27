@@ -3,6 +3,7 @@
 \include "defs.ily"
 
 \header {
+    title = \markup { "Trio in E" \flat " Major" }
     instrument = "Cello"
 }
 

@@ -24,7 +24,7 @@ clarinetFirstMov =  \relative f'' {
     | f4 r8 r4 g8(
     |  f4) r8 r4 g8(
     |  f4) r8 r4 g8(
-    |  f4) r8 r4 r8
+    |  f4) r8 r4.
     | R2.
     | e'4.  g8[( f  d)]
     |  c[ c c]  cis16[(  d)]  d8[ d]
@@ -38,7 +38,7 @@ clarinetFirstMov =  \relative f'' {
     |  g[( fis  d)] f4( e8 ~
     |  e16[ d f a f  d)] c4(  e16[  d)]
     |  c8[ e,( g]  c[ g c]
-    |  e4) r8 r4 r8
+    |  e4) r8 r4.
     | R2.*2
     | g2. ~
     | g ~
@@ -72,31 +72,31 @@ clarinetFirstMov =  \relative f'' {
     |  cis16[(  d)]  d8[ d]  g16[(  f)] r8 r
     |  dis16[(  e!)]  e8[ e]  a16[(  g)] r8 r
     | f4( fis8 g4  gis8)
-    | a4 r8 r4 r8
+    | a4 r8 r4.
     |  f8[( cis d]  f8.[ e16  d8)]
-    | cis4 r8 r4 r8
+    | cis4 r8 r4.
     |  f8[( cis d]  f8.[ e16  d8)]
     | cis8 r f(  e) r f(
-    |  e4) r8 r4 r8
+    |  e4) r8 r4.
 
 % 70
-    | e r f(  e) r f(
-    |  e4) r8 r4 r8
+    | e8 r f(  e) r f(
+    |  e4) r8 r4.
     | bes'2. ~
-    | bes4 r8 r4 r8
+    | bes4 r8 r4.
     | R2.
     | f4\f ~  f16[ g64( f e f]  a8[ f c]
-    |  a) r r r4 r8
+    |  a) r r r4.
     | R2.*2
     | g'4 ~  g16[ a64( g fis g]  bes8[ g e]
 
 % 80
-    |  c4) r8 r4 r8
+    |  c4) r8 r4.
     | R2.
     | f4\p ~  f16[ g64( f e f]  a8[ f  c)]
     | d4 ~  d16[ e64( d cis d]  f8[ d  bes)]
     | a4 ~  a16[ bes64( a g a]  c!8[ bes  g)]
-    | f8 r r r4 r8
+    | f8 r r r4.
     | bes2. ~
     | bes
     | bes4 ~  bes16[ c64( bes a bes]  d8[ c  a)]
@@ -109,18 +109,18 @@ clarinetFirstMov =  \relative f'' {
     | bes4 r8 r4 c8(
     |  bes4) r8 r4 c8(
     |  bes4) r8 r4 c8(
-    |  bes4) r8 r4 r8
+    |  bes4) r8 r4.
     | R2.*3
 
 % 100
-    | r4 r8 r  c8[\p c]
+    | r4. r8  c8[\p c]
     | c'2. ~
     | c
     | c4. ~  c8[ bes16( g bes  g)]
     | f4.(  fis)
     | f!( e4  f8)
     |  d8.[( bes16 d  bes)]  a8[( c  e,)]
-    | f r r r4 r8
+    | f r r r4.
     | R2.
     | d'4.( ~  d16[ cis d e f  e)]
 
@@ -132,7 +132,7 @@ clarinetFirstMov =  \relative f'' {
     | a r d g,4(  a16[  bes)]
     | a4 r8 r4 a8
     | a r d g,4(  bes16[  a)]
-    | f4 r8 r4 r8
+    | f4 r8 r4.
     | R2.
     | c'4 ~  c16[ d64( c b c]  es8[ c  a)]
 
