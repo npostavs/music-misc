@@ -1,6 +1,6 @@
 ﻿\version "2.16.0"
 \include "11018-1-Boccherini-Trio-G83-Global.ily" 
-         
+
 #(set-global-staff-size 17)  
 #(ly:set-option 'point-and-click #f)
 
@@ -16,6 +16,9 @@
 			\override Script #'padding = #0.5
 	}
 }	%% fin layout
+
+\include "11018-1-V2-3.ily"
+
 
 \book {
 
@@ -34,9 +37,12 @@
 		>>
 		\new Staff \with { instrumentName = "Violon II"}
 		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
-				\removeWithTag #'partie {\include "11018-1-V2-1.ily"}
-		>>
-			\new Staff \with { instrumentName = "Basse"}
+				\removeWithTag #'(flute partie) {\include "11018-1-V2-1.ily"} >>
+        \new Staff \with { instrumentName = "Violon/flute II"}
+		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+				\removeWithTag #'(violin partie) {\include "11018-1-V2-1.ily"} >>
+
+		\new Staff \with { instrumentName = "Basse"}
 		\transpose ees f <<	\keepWithTag #'mvtI {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-1.ily"}
 		>>
@@ -51,9 +57,12 @@
 		>>
 		\new Staff
 		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
-				\removeWithTag #'partie {\include "11018-1-V2-2.ily"}
-		>>
-			\new Staff
+				\removeWithTag #'(flute partie) {\include "11018-1-V2-2.ily"} >>
+		\new Staff
+		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+				\removeWithTag #'(violin partie) {\include "11018-1-V2-2.ily"} >>
+
+		\new Staff
 		\transpose ees f <<	\keepWithTag #'mvtII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-2.ily"}
 		>>
@@ -68,9 +77,12 @@
 		>>
 		\new Staff
 		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
-				\removeWithTag #'partie {\include "11018-1-V2-3.ily"}
-		>>
-			\new Staff
+				\removeWithTag #'(flute partie) { \VIImvmtIII } >>
+		\new Staff
+		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
+				\removeWithTag #'(violin partie) { \VIImvmtIII } >>
+
+		\new Staff
 		\transpose ees f <<	\keepWithTag #'mvtIII {\include "11018-1-Boccherini-Trio-G83-Trame.ily"}
 				\removeWithTag #'partie {\include "11018-1-Vc-3.ily"}
 		>>
