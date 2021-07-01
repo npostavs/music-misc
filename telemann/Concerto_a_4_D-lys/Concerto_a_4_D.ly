@@ -1,6 +1,16 @@
 \version "2.18.2"
 \language "deutsch"
 
+% NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
+ottUp = { \ottava #1 \set Staff.ottavation = #"" }
+ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
+ottDDown = { \ottava #-2 \set Staff.ottavation = #"" }
+ottZ = { \ottava #0 }
+
+\paper {
+    print-page-number = ##f
+}
+
 % Adagio %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 adagioGlobal = {
@@ -667,7 +677,8 @@ allegroIIViolinIV = \relative d'' {
   cis4 r4 r8 gis16 fis gis a gis a
   h16 a h cis h cis a h gis8 a gis4
   a8 cis, cis cis e e e e
-  h8 h gis gis a4 r
+  \ottDown
+  h8 h gis gis a4 r \ottZ
 
   \barNumberCheck 10
   r2 r8 a' a a
@@ -686,9 +697,9 @@ allegroIIViolinIV = \relative d'' {
   \barNumberCheck 20
   h8 d h g a d, d' d
   d8 c16 h c8 d16 c h8 h16 a h8 c16 h
-  a8 h a4 g8 g, g g
+  a8 h a4 g8 \ottDown g, g g \ottZ
   d'8 d' a fis e e d d
-  g,4 r r8 d'16 e fis e fis d
+  \ottDown g,4 \ottZ r r8 d'16 e fis e fis d
 
   \barNumberCheck 25
   a'4 r r8 gis16 fis gis a gis a
@@ -707,7 +718,7 @@ allegroIIViolinIV = \relative d'' {
   \barNumberCheck 35
   r8 e a a a g16 fis g8 a16 g
   fis8 d, d d d d d d
-  d8 g, a4 d r8 fis
+  d8 \ottDown g, a4 \ottZ d r8 fis
   g4 r8 d g4 r8 gis
   a4 r8 e a4 r8 e'
 
