@@ -1,0 +1,320 @@
+\version "2.20.0"
+% automatically converted by musicxml2ly from IMSLP35017-PMLP78799-Stadlmair_-_canzon
+\pointAndClickOff
+
+%% additional definitions required by the score:
+\language "english"
+
+\header {
+    poet = \markup \smaller { "Editor: André Vierendeels" }
+    composer = "Joannes Stadlmair (1575 - 1648)"
+    title = "Canzon (1624)"
+    copyright = \markup \smaller { "© 08/03/76 - CC BY 3.0" }
+}
+
+minSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 0)
+               (padding . 0)
+               (stretchability . 10))
+             % \override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #1
+}
+
+lessSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 2)
+               (padding . 2)
+               (stretchability . 10))
+}
+
+
+PartPOneVoiceOne =  \relative e'' {
+    \clef "treble" \time 2/2 | % 1
+    e2 d4 d4 | % 2
+    cs2 r2 | % 3
+    r4 e4 f4 d4 | % 4
+    cs2 r2 | % 5
+    r4 e4 f4 d4 | % 6
+    cs4 d4 d4 cs4 | % 7
+    d2 r2 | % 8
+    r2 d4 d8 d8 | % 9
+    d4 g4 d4 g4 | \barNumberCheck #10
+    e2 r4 g4 | % 11
+    e4 g4 c,8 d8 e8 f8 | % 12
+    g4 g,4 g8 a8 b8 c8 | % 13
+    d8 c8 d8 e8 f8 e8 f8 g8 | % 14
+    a4 e4 a2 ~ | % 15
+    a4 gs8 fs8 gs2 | % 16
+    a1 | % 17
+    r2 r4 e4 | % 18
+    e2 r2 | % 19
+    r4 c8 d8 e4 e4 | \barNumberCheck #20
+    e2 r2 | % 21
+    r4 c8 d8 e4 c4 | % 22
+    g'4 c,8 d8 e4 c4 |
+    g'=''2 r2 | % 24
+    r4 d8 e8 f4 d4 | % 25
+    a'4 d,8 e8 f4 d4 | % 26
+    a'2 r2 | % 27
+    R1 | % 28
+    r4 a4 g8 f8 e8 d8 | % 29
+    cs4 d2 d4 | \barNumberCheck #30
+    d4 d2 cs4 | % 31
+    d2 r8 d8 f8 g8 | % 32
+    a8 d,8 f8 g8 a2 | % 33
+    r8 a,8 c8 d8 e8 a,8 c8 d8 | % 34
+    e2 r2 | % 35
+    r2 r4 g8 f8 | % 36
+    e8 d8 c2 b4 | % 37
+    c2 r4 g'8 f8 | % 38
+    e8 d8 c2 b4 | % 39
+    c2 r4 f4 | \barNumberCheck #40
+    f8 g8 a8 f8 g2 | % 41
+    e2 r4 c4 | % 42
+    b2 c4 e4 | % 43
+    e1 | % 44
+    e1 | % 45
+    r4 a,4 c4. d8 | % 46
+    e4 f4 e2 | % 47
+    r4 a,4 c4. d8 | % 48
+    e4 f4 e4 a4 | % 49
+    e2 r4 a4 | \barNumberCheck #50
+    e2 r4 e4 | % 51
+    c4 a4 r4 d4 | % 52
+    b4 g4 r4 d'4 | % 53
+    b4 g4 r4 g'4 |
+    e=''4 c4 r4 e8 f8 | % 55
+    g4 f4 e2 | % 56
+    r2 r4 e8 f8 | % 57
+    g4 f4 e2 | % 58
+    R1 | % 59
+    r2 r4 f4 | \barNumberCheck #60
+    e8 d8 d2 cs4 | % 61
+    d2 r4 d4 | % 62
+    e4 g4. f8 e4 | % 63
+    d2 c2 | % 64
+    r2 r4 d4 | % 65
+    e4 g4. f8 e4 | % 66
+    d2 c2 | % 67
+    r4 c8 d8 e8 d8 e8 f8 | % 68
+    g2 r4 e8 f8 | % 69
+    g8 f8 e8 d8 c4 e8 f8 | \barNumberCheck #70
+    g8 f8 e8 d8 c4 e8 f8 | % 71
+    e4 a4 e4 f4 | % 72
+    c4 d4 e4 f4 | % 73
+    g4 a2 gs4 | % 74
+    a1 | % 75
+    r4 e4 d4 d4 | % 76
+    cs2 r2 | % 77
+    r4 e4 f4 d4 | % 78
+    cs2 r2 | % 79
+    r4 e4 f4 d4 | \barNumberCheck #80
+    cs4 d4 d4 cs4 | % 81
+    d2 r2 | % 82
+    r2 d8 d8 d8 d8 | % 83
+    d4 g4 d4 g4 |
+    e=''2 r4 g4 | % 85
+    e4 g4 c,8 d8 e8 f8 | % 86
+    g4 g,4 g8 a8 b8 c8 | % 87
+    d8 c8 d8 e8 f8 e8 f8 g8 | % 88
+    a4 e4 a2 ~ | % 89
+    a4 gs8 fs8 gs2 | \barNumberCheck #90
+    a2 r4 e4 | % 91
+    a4. g8 f4. e8 | % 92
+    d2 f2 | % 93
+    e1 ~ | % 94
+    e1 \bar "|."
+}
+
+PartPTwoVoiceOne =  \relative e'' {
+    \clef "treble" \time 2/2 | % 1
+    R1 | % 2
+    r4 e4 d4 d4 | % 3
+    cs2 r2 | % 4
+    r4 e4 f4 d4 | % 5
+    cs2 r2 | % 6
+    R1 | % 7
+    r4 d4 d4 cs4 | % 8
+    d2 b4 b8 b8 | % 9
+    b4 d4 b4 d4 | \barNumberCheck #10
+    c4 g'4 e4 g4 | % 11
+    c,8 d8 e8 f8 g4 g,4 | % 12
+    g8 a8 b8 c8 d8 c8 d8 e8 | % 13
+    f8 e8 f8 g8 a4 g8 f8 | % 14
+    e2 e2 | % 15
+    e1 | % 16
+    e1 | % 17
+    r4 e4 e2 | % 18
+    r4 c8 d8 e4 e4 | % 19
+    e2 r2 | \barNumberCheck #20
+    r4 c8 d8 e4 c4 | % 21
+    g'2 r2 | % 22
+    R1 | % 23
+    r4 d=''8 e8 f4 d4 | % 24
+    a'2 r2 | % 25
+    R1 | % 26
+    r4 a4 g8 f8 e8 d8 | % 27
+    cs4 d2 cs4 | % 28
+    d2 r2 | % 29
+    R1*2 | % 31
+    r8 d8 f8 g8 a2 | % 32
+    r2 r8 a,8 c8 d8 | % 33
+    e2 r2 | % 34
+    r4 g8 f8 e8 d8 c4 ~ | % 35
+    c4 b4 c2 | % 36
+    R1*3 | % 39
+    r2 f2 | \barNumberCheck #40
+    c2 c8 d8 e8 f8 | % 41
+    g2 e2 | % 42
+    d4 e4 c4 c4 | % 43
+    b1 | % 44
+    cs1 | % 45
+    R1 | % 46
+    r4 a4 c4. d8 | % 47
+    e4 f4 e2 | % 48
+    R1 | % 49
+    r4 a4 e2 | \barNumberCheck #50
+    r4 e4 c4 a4 | % 51
+    r4 e'4 c4 a4 | % 52
+    r4 d4 b4 g4 | % 53
+    r4 g'4 e4 c4 |
+    r4 g'=''4 e4 c4 | % 55
+    r2 r4 e8 f8 | % 56
+    g4 f4 e2 | % 57
+    r2 r4 c8 d8 | % 58
+    e4 f4 e8 d8 d4 ~ | % 59
+    d4 cs4 d2 | \barNumberCheck #60
+    R1*3 | % 63
+    r4 d4 e4 g4 ~ | % 64
+    g8 f8 e4 d2 | % 65
+    c2 r2 | % 66
+    r2 r4 c8 d8 | % 67
+    e8 d8 e8 f8 g2 | % 68
+    r4 e8 f8 g8 f8 e8 d8 | % 69
+    c2 r4 c8 d8 | \barNumberCheck #70
+    e8 d8 c8 b8 a4 d4 | % 71
+    c2 r4 a'4 | % 72
+    e4 f4 c4 d4 | % 73
+    e4 c4 b2 | % 74
+    a1 | % 75
+    R1 | % 76
+    r4 e'4 d4 d4 | % 77
+    cs2 r2 | % 78
+    r4 e4 f4 d4 | % 79
+    cs2 r2 | \barNumberCheck #80
+    R1 | % 81
+    r4 d4 d4 c4 | % 82
+    d2 b8 b8 b8 b8 | % 83
+    b4 d4 b4 d4 |
+    c=''4 g'4 e4 g4 | % 85
+    c,8 d8 e8 g8 g4 g,4 | % 86
+    g8 a8 b8 c8 d8 c8 d8 e8 | % 87
+    f8 e8 f8 g8 a4 f4 | % 88
+    e2 e2 | % 89
+    e1 | \barNumberCheck #90
+    r4 e4 a4. g8 | % 91
+    f4. e8 d2 ~ | % 92
+    d2 d2 ~ | % 93
+    d2 cs4 b4 | % 94
+    cs1 \bar "|."
+}
+
+PartPThreeVoiceOne =  \relative a {
+    \clef "bass" \time 2/2 | % 1
+    a2 f4 d4 | % 2
+    a'2 f4 d4 | % 3
+    a'2 d4 bf4 | % 4
+    a2 d4 bf4 | % 5
+    a2 d4 bf4 | % 6
+    a4 fs4 g4 a4 | % 7
+    d,2 a'2 | % 8
+    d,2 g4 g8 g8 | % 9
+    g1 | \barNumberCheck #10
+    c,1 | % 11
+    c1 | % 12
+    g'1 | % 13
+    d1 | % 14
+    a'4. b8 a4. g16 f16 | % 15
+    e4 d4 e2 | % 16
+    a,1 | % 17
+    r4 a'4 a2 | % 18
+    a2 a2 | % 19
+    c4 c4 c2 | \barNumberCheck #20
+    c4 c4 c2 | % 21
+    c4 c4. b8 a4 | % 22
+    g4 c4. b8 a4 |
+    g=2 d2 | % 24
+    d2 d'4 d4 | % 25
+    d2 d,2 | % 26
+    d2 g2 | % 27
+    a4 bf4 g4 a4 | % 28
+    d,2 g2 | % 29
+    a4 bf4 a2 | \barNumberCheck #30
+    d,2 g4 a4 | % 31
+    R1 | % 32
+    d2 a2 | % 33
+    a1 | % 34
+    c2. a4 | % 35
+    g2 c,4. c8 | % 36
+    c'4 a4 g2 | % 37
+    c,1 | % 38
+    c'4 a4 g2 | % 39
+    c,2 f2 ~ | \barNumberCheck #40
+    f2 c2 | % 41
+    e2. c4 | % 42
+    g'4 e4 a4 a,4 | % 43
+    e'1 | % 44
+    a,1 | % 45
+    r4 d4 a'4. b8 | % 46
+    cs4 d4 a2 | % 47
+    cs4 d4 a4. b8 | % 48
+    cs4 d4 a2 | % 49
+    a1 ~ | \barNumberCheck #50
+    a1 | % 51
+    a2 c4 d4 | % 52
+    g,1 | % 53
+    g2 c2 |
+    c='2 c4 c,8 d8 | % 55
+    e4 f4 c4. d8 | % 56
+    e4 f4 c4. d8 | % 57
+    e4 f4 c2 ~ | % 58
+    c4 f4 a4 bf4 | % 59
+    a2 d,2 | \barNumberCheck #60
+    g4. f8 e2 | % 61
+    d2 d2 | % 62
+    c2 c8 d8 e8 f8 | % 63
+    g2 c,2 | % 64
+    c8 d8 e8 f8 g2 | % 65
+    c,1 | % 66
+    g'2 c,2 | % 67
+    c'1 | % 68
+    c,1 ~ | % 69
+    c1 | \barNumberCheck #70
+    c2 f2 | % 71
+    a2 a2 ~ | % 72
+    a2 a4 g8 f8 | % 73
+    e1 | % 74
+    a,1 | % 75
+    a'2 f4 d4 | % 76
+    a'2 f4 d4 | % 77
+    a'2 d4 bf4 | % 78
+    a2 d4 bf4 | % 79
+    a2 d4 bf4 | \barNumberCheck #80
+    a4 f4 g4 a4 | % 81
+    d,2 g4 a4 | % 82
+    d,2 g4 g4 | % 83
+    g1 |
+    c,=1 | % 85
+    c1 | % 86
+    g'1 | % 87
+    d1 | % 88
+    a'4. b8 a4. g16 f16 | % 89
+    e4 d4 e2 | \barNumberCheck #90
+    a,4 a'2 a4 | % 91
+    d,1 | % 92
+    d1 | % 93
+    a1 ~ | % 94
+    a1 \bar "|."
+}
