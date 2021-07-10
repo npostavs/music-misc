@@ -205,11 +205,11 @@ PartPTwoVoiceOne =  \relative e'' {
     r4 e4 f4 d4 | % 79
     cs2 r2 | \barNumberCheck #80
     R1 | % 81
-    r4 d4 d4 c4 | % 82
+    r4 d4 d4 c4^\markup{\smaller \sharp} | % 82
     d2 b8 b8 b8 b8 | % 83
     b4 d4 b4 d4 |
     c=''4 g'4 e4 g4 | % 85
-    c,8 d8 e8 g8 g4 g,4 | % 86
+    c,8 d8 e8 f8 g4 g,4 | % 86
     g8 a8 b8 c8 d8 c8 d8 e8 | % 87
     f8 e8 f8 g8 a4 f4 | % 88
     e2 e2 | % 89
