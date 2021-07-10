@@ -16,27 +16,27 @@
 \include "ITH-1-holmes-ayresTTB-B-notes.lyi"
 
 \score {
-    \header { piece = "Ayre 1" }
+    \header { \pieceMarkupI }
     \new Staff \with { instrumentName = "Bass" } \PartBassAyreI
     \layout { indent = 10\mm }
 }
 \score {
-    \header { piece = "Ayre 2" }
+    \header { \pieceMarkupII }
     \new Staff \PartBassAyreII
     \layout { }
 }
 \score {
-    \header { piece = "Ayre 3" }
+    \header { \pieceMarkupIII }
     \new Staff \PartBassAyreIII
     \layout { }
 }
 \score {
-    \header { piece = "Pavane" }
+    \header { \pieceMarkupIV }
     \new Staff \PartBassPavane
     \layout { }
 }
 \score {
-    \header { piece = "Almaine" }
+    \header { \pieceMarkupV }
     \new Staff \PartBassAlmaine
     \layout { }
 }

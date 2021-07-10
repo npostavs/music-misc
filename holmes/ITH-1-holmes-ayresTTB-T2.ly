@@ -16,31 +16,31 @@
 \include "ITH-1-holmes-ayresTTB-T2-notes.lyi"
 
 \score {
-    \header { piece = "Ayre 1" }
-    \new Staff \with { instrumentName = "Treble II" } \TrebleIIAyreI
+    \header { piece = \pieceTitleI }
+    \new Staff \with { instrumentName = "Treble II" } { \clef "treble" \TrebleIIAyreI }
     \layout { indent = 10\mm }
 }
 \score {
-    \header { piece = "Ayre 2" }
-    \new Staff \TrebleIIAyreII
+    \header { piece = \pieceTitleII }
+    \new Staff { \clef "treble" \TrebleIIAyreII }
     \layout { }
 }
 
 \pageBreak
 
 \score {
-    \header { piece = "Ayre 3" }
-    \new Staff \TrebleIIAyreIII
+    \header { piece = \pieceTitleIII }
+    \new Staff { \clef "treble" \TrebleIIAyreIII }
     \layout { }
 }
 \score {
-    \header { piece = "Pavane" }
-    \new Staff \TrebleIIPavane
+    \header { piece = \pieceTitleIV }
+    \new Staff { \clef "treble" \TrebleIIPavane }
     \layout { }
 }
 \score {
-    \header { piece = "Almaine" }
-    \new Staff \TrebleIIAlmaine
+    \header { piece = \pieceTitleV }
+    \new Staff { \clef "treble" \TrebleIIAlmaine }
     \layout { }
 }
 
