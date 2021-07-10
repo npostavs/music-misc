@@ -18,10 +18,30 @@
 
 \paper {
     page-count = #1
+    % system-count = #5
     bottom-margin = 1\mm
     top-margin = 1\mm
     indent = 0
 }
+
+
+minSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 1)
+               (padding . 1)
+               (stretchability . 10))
+             % \override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #1
+}
+
+lessSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 2)
+               (padding . 2)
+               (stretchability . 10))
+}
+
 
 meter = { \compoundMeter #'((3 4) (2 4)) }
 
@@ -117,15 +137,4 @@ PartPThree = \relative f, {
     df4 r4 f,4 gf4 gf'8 f8 | % 24
     e4 r4 c4 f4 f,4 \fermata }
 
-
-% The score definition
-\score {
-    \new GrandStaff <<
-        \new Staff { << { \tempo 4 = 120 } \PartPOne >> }
-        \new Staff { \PartPTwo }
-        \new Staff { \PartPThree }
-    >>
-    \layout {}
-    % \midi {\tempo 4 = 120 }
-}
 
