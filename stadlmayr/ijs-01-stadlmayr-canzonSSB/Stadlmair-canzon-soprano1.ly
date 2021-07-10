@@ -12,7 +12,7 @@
 
 \score {
     \new StaffGroup <<
-        \new Staff \with \minSpace
+        \new Staff \with \lessSpace
         { \PartPOneVoiceOne }
         \new Staff \with \minSpace
         { \magnifyStaff #(magstep -4) \PartPTwoVoiceOne }

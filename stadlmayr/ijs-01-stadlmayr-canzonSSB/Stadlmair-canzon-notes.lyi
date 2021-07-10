@@ -15,8 +15,8 @@
 minSpace = \with {
             \override VerticalAxisGroup.staff-staff-spacing =
             #'((basic-distance . 0)
-               (minimum-distance . 0)
-               (padding . 0)
+               (minimum-distance . 1)
+               (padding . 1)
                (stretchability . 10))
              % \override VerticalAxisGroup.default-staff-staff-spacing.basic-distance = #1
 }
@@ -29,6 +29,15 @@ lessSpace = \with {
                (stretchability . 10))
 }
 
+\paper {
+    bottom-margin = 1\mm
+}
+
+% NOTE: also use \ottOverride at the top-level
+ottOverride = { \override Score.OttavaBracket.style = #'none }
+ottUp = { \ottava #1 \set Staff.ottavation = #"" }
+ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
+ottZ = { \ottava #0 }
 
 PartPOneVoiceOne =  \relative e'' {
     \clef "treble" \time 2/2 | % 1
@@ -223,6 +232,7 @@ PartPTwoVoiceOne =  \relative e'' {
 
 PartPThreeVoiceOne =  \relative a {
     \clef "bass" \time 2/2 | % 1
+    \ottOverride
     a2 f4 d4 | % 2
     a'2 f4 d4 | % 3
     a'2 d4 bf4 | % 4
@@ -238,7 +248,7 @@ PartPThreeVoiceOne =  \relative a {
     d1 | % 14
     a'4. b8 a4. g16 f16 | % 15
     e4 d4 e2 | % 16
-    a,1 | % 17
+    \ottDown a,1 \ottZ | % 17
     r4 a'4 a2 | % 18
     a2 a2 | % 19
     c4 c4 c2 | \barNumberCheck #20
@@ -264,9 +274,9 @@ PartPThreeVoiceOne =  \relative a {
     c,2 f2 ~ | \barNumberCheck #40
     f2 c2 | % 41
     e2. c4 | % 42
-    g'4 e4 a4 a,4 | % 43
+    g'4 e4 a4 \ottDown a,4 \ottZ | % 43
     e'1 | % 44
-    a,1 | % 45
+    \ottDown a,1 \ottZ | % 45
     r4 d4 a'4. b8 | % 46
     cs4 d4 a2 | % 47
     cs4 d4 a4. b8 | % 48
@@ -296,7 +306,7 @@ PartPThreeVoiceOne =  \relative a {
     a2 a2 ~ | % 72
     a2 a4 g8 f8 | % 73
     e1 | % 74
-    a,1 | % 75
+    \ottDown a,1 \ottZ | % 75
     a'2 f4 d4 | % 76
     a'2 f4 d4 | % 77
     a'2 d4 bf4 | % 78
@@ -312,9 +322,9 @@ PartPThreeVoiceOne =  \relative a {
     d1 | % 88
     a'4. b8 a4. g16 f16 | % 89
     e4 d4 e2 | \barNumberCheck #90
-    a,4 a'2 a4 | % 91
+    \ottDown a,4 \ottZ a'2 a4 | % 91
     d,1 | % 92
     d1 | % 93
-    a1 ~ | % 94
-    a1 \bar "|."
+    \ottDown a1 ~ | % 94
+    a1 \ottZ \bar "|."
 }
