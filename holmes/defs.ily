@@ -10,3 +10,9 @@
 }
 
 timeSingleDigit = { \once \override Staff.TimeSignature.style = #'single-digit }
+
+pieceTitleI   = \markup { \bold \large "Ayre 1" }
+pieceTitleII  = \markup { \bold \large "Ayre 2" }
+pieceTitleIII = \markup { \bold \large "Ayre 3" }
+pieceTitleIV  = \markup { \bold \large "Pavane" }
+pieceTitleV   = \markup { \bold \large "Almaine" }
