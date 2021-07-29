@@ -270,7 +270,7 @@ PartieQuatreI = {
   \override NoteHead.style = #'baroque
   \key f\major
   \time 2/2
-  \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*4 } |
+  \cueDuringWithClef "partieUnI" #UP "treble" { <>^"Viol I" R1*4 } |
   d2 g4. g8  |  % 5
   g4 bes4 a4. f8  |  % 6
   g8 f8 g8 a8 bes4 a4 ~   |  % 7
@@ -817,7 +817,7 @@ PartieQuatreIII = {
   \override NoteHead.style = #'baroque
   \key c \major
   \time 2/2
-  \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*7 } |  % 1
+  \cueDuringWithClef "partieUnIII" #UP "treble" { <>^"Viol I" R1*7 } |  % 1
   a,4. b,8 c4 d4  |  % 8
   f4 c4 d2  |  % 9
   a,2 r4  e4  |  % 10
@@ -1095,9 +1095,8 @@ PartieQuatreIV = {
   \override NoteHead.style = #'baroque
   \key c \major
   \time 2/2
-  \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*3 } |  % 1
- 
-  r2  e2  |  % 4
+  \cueDuringWithClef "partieUnIV" #UP "treble" { <>^"Viol I" R1*3 |  % 1
+  r2 } e2  |  % 4
   f4 g4 a2 ~ |  % 5
   a4 e4 g2  |  % 6
   f2 e2 ~ |  % 7
@@ -1365,7 +1364,7 @@ PartieQuatreV = {
   \override NoteHead.style = #'baroque
   \key f \major
   \time 2/2
-  \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*8 } |  % 1
+  \cueDuringWithClef "partieUnV" #UP "treble" { <>^"Viol I" R1*8 } |  % 1
   f2 d4 g4  |  % 9
   f4. e8 d8 c8 d4  |  % 10
   bes,4 \ficta ees4 d4 bes4 ~ |  % 11
@@ -1637,8 +1636,8 @@ PartieQuatreVI = {
   \override NoteHead.style = #'baroque
  \key f \major
  \time 2/2
- \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*5 } |  % 1
- r4  c4 d4. e8  |  % 6
+ \cueDuringWithClef "partieUnVI" #UP "treble" { <>^"Viol I" R1*5 |  % 1
+ r4 } c4 d4. e8  |  % 6
  f4 g4 f4 d4  |  % 7
  e4 f4 bes,8 c8 d8 e8  |  % 8
  f2. bes,4  |  % 9
@@ -1946,8 +1945,8 @@ PartieQuatreVII = {
   \override NoteHead.style = #'baroque
  \key c \major
  \time 2/2
- \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*7 } |  % 1
- r2  g2 ~ |  % 8
+ \cueDuringWithClef "partieUnVII" #UP "treble" { <>^"Viol I" R1*7 |  % 1
+ r2 } g2 ~ |  % 8
  g2 f2  |  % 9
  e4. f8 g4 e4  |  % 10
  d8 e8 f8 g8 a8 b8 c'4  |  % 11
@@ -2248,7 +2247,7 @@ PartieQuatreVIII = {
   \override NoteHead.style = #'baroque
  \key c \major
  \time 2/2
- \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*5 } |  % 1
+ \cueDuringWithClef "partieUnVIII" #UP "treble" { <>^"Viol I" R1*5 } |  % 1
  c2 d2  |  % 6
  c4 f4 e4 d4  |  % 7
  f4. e16 d16 c4 e4  |  % 8
