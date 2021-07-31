@@ -39,6 +39,9 @@ hem = ^\markup{  \pad-around #0.4 \rotate # -90  "[ "}  %hémiole sur une note
 delb =\override Staff.BarLine.transparent = ##t %bar transparent
 adelb = \revert Staff.BarLine.transparent           %fin bar transparent
 
+cueIV = { <>^\markup{\smaller "Viol IV" } }
+cueI = { <>^\markup{\smaller "Viol I" } }
+
 %***********Instruments*********************
 \paper {
     page-breaking = #ly:minimal-breaking
@@ -270,7 +273,7 @@ PartieQuatreI = {
   \override NoteHead.style = #'baroque
   \key f\major
   \time 2/2
-  \cueDuringWithClef "partieUnI" #UP "treble" { <>^"Viol I" R1*4 } |
+  \cueDuringWithClef "partieUnI" #UP "treble" { \cueI R1*4 } |
   d2 g4. g8  |  % 5
   g4 bes4 a4. f8  |  % 6
   g8 f8 g8 a8 bes4 a4 ~   |  % 7
@@ -552,7 +555,7 @@ PartieQuatreII = {
   \override NoteHead.style = #'baroque
   \key c\major
   \time 2/2
-  \cueDuringWithClef "partieUnII" #UP "treble" { <>^"Viol I" R1*6 }   |  % 1
+  \cueDuringWithClef "partieUnII" #UP "treble" { \cueI R1*6 }   |  % 1
   g2 d4 f4  |  % 7
   g4 a4 \ficta bes4. a8  |  % 8
   g8 a8 f4 g2  |  % 9
@@ -817,7 +820,7 @@ PartieQuatreIII = {
   \override NoteHead.style = #'baroque
   \key c \major
   \time 2/2
-  \cueDuringWithClef "partieUnIII" #UP "treble" { <>^"Viol I" R1*7 } |  % 1
+  \cueDuringWithClef "partieUnIII" #UP "treble" { \cueI R1*7 } |  % 1
   a,4. b,8 c4 d4  |  % 8
   f4 c4 d2  |  % 9
   a,2 r4  e4  |  % 10
@@ -1095,7 +1098,7 @@ PartieQuatreIV = {
   \override NoteHead.style = #'baroque
   \key c \major
   \time 2/2
-  \cueDuringWithClef "partieUnIV" #UP "treble" { <>^"Viol I" R1*3 |  % 1
+  \cueDuringWithClef "partieUnIV" #UP "treble" { \cueI R1*3 |  % 1
   r2 } e2  |  % 4
   f4 g4 a2 ~ |  % 5
   a4 e4 g2  |  % 6
@@ -1137,13 +1140,13 @@ PartieQuatreIV = {
   d'4 c'4 d'4 g4  |  % 42
   a2 d4. e8  |  % 43
   f8  g8  a8  b8  c'8  d'8  b4  |  % 44
-  a4 e4 r2  |  % 45
-  R1  |  % 46
+  a4 e4 \cueDuringWithClef "partieUnIV" #UP "treble" { \cueI r2  |  % 45
+  R1 } |  % 46
   a4 g8  e8  f8  g8  a8  b8  |  % 47
   c'4. b8 a8  g8  f4  |  % 48
-  e4 r4 r2  |  % 49
+  e4 \cueDuringWithClef "partieUnIV" #UP "treble" { \cueI r4 r2  |  % 49
   R1  |  % 50
-  r2  d'4 c'8  a8  |  % 51
+  r2 } d'4 c'8  a8  |  % 51
   b8  c'8  d'8  e'8  f'4 e'4  |  % 52
   d'4 r4  a4 g8  e8  |  % 53
   f8  g8  a8  b8  c'4 f4 ~ |  % 54
@@ -1189,9 +1192,8 @@ PartieUnV = {
   f''4 d''4. c''8 c''8 d''8  |  % 19
   \ficta b'4 c''2 \ficta b'!4  |  % 20
   c''1  |  % 21
-  R1   |  % 22
-  R1   |  % 23
-  r2 r4  c''4  |  % 24
+  \cueDuringWithClef "partieQuatreV" #UP "bass" { \cueIV R1*2 |  % 23
+  r2 r4 } c''4  |  % 24
   bes'4 a'4 bes'4. d''8  |  % 25
   c''4 bes'4 c''4. bes'8  |  % 26
   a'8 f'8 c''4 bes'4 a'8 c''8 ~ |  % 27
@@ -1267,8 +1269,7 @@ PartieDeuxV = {
   a'4. c''8 bes'4 a'4  |  % 31
   bes'4. a'8 g'8 f'8 g'4  |  % 32
   f'8 d'8 e'4 f'2  |  % 33
-  R1*3   |  % 34
- 
+  \cueDuringWithClef "partieQuatreV" #UP "bass" { \cueIV R1*3 } |  % 34
   r4  f'4 g'8 f'8 g'8 a'8  |  % 37
   bes'8 a'8 g'8 f'8 e'4 a'4  |  % 38
   g'4 a'4. g'8 f'8 d'8  |  % 39
@@ -1364,7 +1365,7 @@ PartieQuatreV = {
   \override NoteHead.style = #'baroque
   \key f \major
   \time 2/2
-  \cueDuringWithClef "partieUnV" #UP "treble" { <>^"Viol I" R1*8 } |  % 1
+  \cueDuringWithClef "partieUnV" #UP "treble" { \cueI R1*8 } |  % 1
   f2 d4 g4  |  % 9
   f4. e8 d8 c8 d4  |  % 10
   bes,4 \ficta ees4 d4 bes4 ~ |  % 11
@@ -1449,10 +1450,7 @@ PartieUnVI = {
  f'4 bes'2 a'4  |  % 24
  d''4. c''8 bes'4 a'4  |  % 25
  g'2 a'2  |  % 26
- R1   |  % 27
- R1   |  % 28
- R1*2   |  % 29
- 
+ \cueDuringWithClef "partieQuatreVI" #UP "bass" { \cueIV R1*4 } |  % 29
  r4  f'4 c''4. c''8  |  % 31
  c''4 d''4 c''4 bes'4  |  % 32
  c''4. bes'8 a'8 g'8 a'4  |  % 33
@@ -1636,7 +1634,7 @@ PartieQuatreVI = {
   \override NoteHead.style = #'baroque
  \key f \major
  \time 2/2
- \cueDuringWithClef "partieUnVI" #UP "treble" { <>^"Viol I" R1*5 |  % 1
+ \cueDuringWithClef "partieUnVI" #UP "treble" { \cueI R1*5 |  % 1
  r4 } c4 d4. e8  |  % 6
  f4 g4 f4 d4  |  % 7
  e4 f4 bes,8 c8 d8 e8  |  % 8
@@ -1733,8 +1731,7 @@ PartieUnVII = {
  e''4 d''2 c''8 b'8  |  % 30
  a'4 d''2 \ficta cis''4  |  % 31
  d''1  |  % 32
- R1*4   |  % 33
- 
+ \cueDuringWithClef "partieQuatreVII" #UP "bass" { \cueIV R1*4 } |  % 33
  r4  d''4 c''4 d''4  |  % 37
  b'4 c''4 d''4 b'4  |  % 38
  a'2 g'2 ~ |  % 39
@@ -1755,8 +1752,7 @@ PartieUnVII = {
  a'8 b'8 c''8 d''8 e''4 d''4 ~ |  % 54
  d''8 c''8 b'4 a'4. b'8  |  % 55
  c''4 b'8 a'8 b'2  |  % 56
- R1   |  % 57
- R1   |  % 58
+ \cueDuringWithClef "partieQuatreVII" #UP "bass" { \cueIV R1*2 } |  % 58
  r4  a'4 b'4 g''4 ~ |  % 59
  g''8 f''8 e''8 d''8 c''8 d''8 e''8 f''8  |  % 60
  e''8 d''8 c''8 b'8 a'8 b'8 c''8 d''8  |  % 61
@@ -1945,7 +1941,7 @@ PartieQuatreVII = {
   \override NoteHead.style = #'baroque
  \key c \major
  \time 2/2
- \cueDuringWithClef "partieUnVII" #UP "treble" { <>^"Viol I" R1*7 |  % 1
+ \cueDuringWithClef "partieUnVII" #UP "treble" { \cueI R1*7 |  % 1
  r2 } g2 ~ |  % 8
  g2 f2  |  % 9
  e4. f8 g4 e4  |  % 10
@@ -1985,15 +1981,14 @@ PartieQuatreVII = {
  d'2 r2   |  % 44
  r4  g4 a8 f8 a8 b8  |  % 45
  c'4 c'4 f4. g8  |  % 46
- a2 r2   |  % 47
- R1   |  % 48
+ a2 \cueDuringWithClef "partieUnVII" #UP "treble" { \cueI r2 |  % 47
+ R1 } |  % 48
  r4  d4 e8 c8 e8 f8  |  % 49
  g8 a8 b4 c'4 a4  |  % 50
  g1  |  % 51
  c1  |  % 52
- R1*3   |  % 53
- 
- r2 r4  g4  |  % 56
+ \cueDuringWithClef "partieUnVII" #UP "treble" { \cueI R1*3   |  % 53
+ r2 } r4 g4  |  % 56
  a4 c'4. b8 a8 g8  |  % 57
  f8 g8 a8 b8 a8 g8 f8 e8  |  % 58
  d2 g4 e4  |  % 59
@@ -2025,9 +2020,8 @@ PartieUnVIII = {
  c''4. b'16 a'16 g'4 b'4  |  % 3
  a'8 b'8 c''8 d''8 e''4 c''4 ~ |  % 4
  c''8 b'16 a'16 b'4 e'4 f'4  |  % 5
- g'2 r2   |  % 6
- R1*4   |  % 7
- 
+ g'2 \cueDuringWithClef "partieQuatreVIII" #UP "bass" { \cueIV r2 |  % 6
+ R1*4 } |  % 7
  g'2 a'2  |  % 11
  g'4 c''4 b'4 a'4  |  % 12
  c''4. b'16 a'16 g'4 b'4  |  % 13
@@ -2035,8 +2029,7 @@ PartieUnVIII = {
  a'4 g'4 a'2  |  % 15
  b'4 d'4 e'2  |  % 16
  d'2 r2   |  % 17
- R1   |  % 18
- R1   |  % 19
+ R1*2 |  % 19
  r4  g'4 c''4. b'8  |  % 20
  c''4 a'4 b'4 c''4 ~ |  % 21
  c''8 b'8 a'8 g'8 a'4 f'4  |  % 22
@@ -2247,7 +2240,7 @@ PartieQuatreVIII = {
   \override NoteHead.style = #'baroque
  \key c \major
  \time 2/2
- \cueDuringWithClef "partieUnVIII" #UP "treble" { <>^"Viol I" R1*5 } |  % 1
+ \cueDuringWithClef "partieUnVIII" #UP "treble" { \cueI R1*5 } |  % 1
  c2 d2  |  % 6
  c4 f4 e4 d4  |  % 7
  f4. e16 d16 c4 e4  |  % 8
@@ -2331,6 +2324,15 @@ pieceVIII = \markup { \bold "Ricercar del Ottavo Tono" }
 \addQuote "partieUnVII"  { \PartieUnVII }
 \addQuote "partieUnVIII" { \PartieUnVIII }
 
+\addQuote "partieQuatreI"    { \PartieQuatreI }
+\addQuote "partieQuatreII"   { \PartieQuatreII }
+\addQuote "partieQuatreIII"  { \PartieQuatreIII }
+\addQuote "partieQuatreIV"   { \PartieQuatreIV }
+\addQuote "partieQuatreV"    { \PartieQuatreV }
+\addQuote "partieQuatreVI"   { \PartieQuatreVI }
+\addQuote "partieQuatreVII"  { \PartieQuatreVII }
+\addQuote "partieQuatreVIII" { \PartieQuatreVIII }
+
 %-----dessus----------
 \book {
   \paper { page-count = #8 }
@@ -2354,7 +2356,7 @@ pieceVIII = \markup { \bold "Ricercar del Ottavo Tono" }
   \score {
     \header { piece = \pieceIII }
     << \new Staff \with \minSpace { \InstrumentUn \PartieUnIII }
-       \new Staff { \magnifyStaff #(magstep -2) \InstrumentDeux \removeWithTag #'fict \PartieDeuxIII } >>
+       \new Staff { \magnifyStaff #(magstep -2) \InstrumentDeux \clef "treble_8" \removeWithTag #'fict \PartieDeuxIII } >>
   }
   \pageBreak
   \score {
@@ -2372,12 +2374,12 @@ pieceVIII = \markup { \bold "Ricercar del Ottavo Tono" }
   \score {
     \header { piece = \pieceVI }
     << \new Staff \with \minSpace { \InstrumentUn \PartieUnVI }
-       \new Staff { \magnifyStaff #(magstep -2) \InstrumentDeux \removeWithTag #'fict \PartieDeuxVI } >>
+       \new Staff { \magnifyStaff #(magstep -2) \InstrumentDeux \clef "treble_8" \removeWithTag #'fict \PartieDeuxVI } >>
   }
   \pageBreak
   \score {
     \header { piece = \pieceVII }
-    << \new Staff \with \minSpace { \InstrumentUn \PartieUnVII }
+    << \new Staff \with \minSpace { \autoPageBreaksOff \InstrumentUn \PartieUnVII }
        \new Staff { \magnifyStaff #(magstep -2) \InstrumentDeux \removeWithTag #'fict \PartieDeuxVII } >>
   }
   \pageBreak
@@ -2435,7 +2437,7 @@ pieceVIII = \markup { \bold "Ricercar del Ottavo Tono" }
   \pageBreak
   \score {
     \header { piece = \pieceVII }
-    << \new Staff \with \minSpace { \magnifyStaff #(magstep -2) \InstrumentUn \removeWithTag #'fict \PartieUnVII }
+    << \new Staff \with \minSpace { \autoPageBreaksOff \magnifyStaff #(magstep -2) \InstrumentUn \removeWithTag #'fict \PartieUnVII }
        \new Staff { \InstrumentDeux \transpose bes, c \PartieDeuxVII } >>
   }
   \pageBreak
