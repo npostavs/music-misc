@@ -10,7 +10,7 @@
   }
   \new Staff {
     \set Staff.instrumentName = "Cello"
-    { \PartPThreeVoiceOne }
+    { \clef bass \PartPThreeVoiceOne }
   }
   \layout {
     \compressFullBarRests
@@ -25,7 +25,7 @@
   }
   \new Staff {
     \set Staff.instrumentName = "Cello"
-    { \PartPThreeMvTwo }
+    { \clef bass \PartPThreeMvTwo }
   }
   \layout {
     \compressFullBarRests

@@ -4,6 +4,7 @@
 
 \header {
     tagline = ##f
+    subtitle = \markup { "in B"\flat }
 }
 \paper {
     page-count = #1
@@ -13,11 +14,11 @@
 \score {
     \new StaffGroup <<
         \new Staff \with \lessSpace
-        { \PartPOneVoiceOne }
+        { \transpose bf c' \PartPOneVoiceOne }
         \new Staff \with \minSpace
-        { \magnifyStaff #(magstep -4) \PartPTwoVoiceOne }
+        { \magnifyStaff #(magstep -4) \transpose bf c' \PartPTwoVoiceOne }
         \new Staff \with \minSpace
-        { \magnifyStaff #(magstep -4) \PartPThreeVoiceOne }
+        { \magnifyStaff #(magstep -4) \transpose bf c' \PartPThreeVoiceOne }
     >>
     \layout {
       indent = 0\cm

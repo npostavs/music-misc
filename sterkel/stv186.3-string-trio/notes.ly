@@ -1,4 +1,4 @@
-
+% -*- coding: utf-8 -*-
 \version "2.18.2"
                                 % automatically converted by musicxml2ly from page1p-IMSLP532745-PMLP861564-Sterkel_TrioStWV186_3.xml
 

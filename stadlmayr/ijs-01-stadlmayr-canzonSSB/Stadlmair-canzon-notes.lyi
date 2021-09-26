@@ -1,3 +1,4 @@
+% -*- coding: utf-8 -*-
 \version "2.20.0"
 % automatically converted by musicxml2ly from IMSLP35017-PMLP78799-Stadlmair_-_canzon
 \pointAndClickOff
@@ -9,7 +10,7 @@
     poet = \markup \smaller { "Editor: André Vierendeels" }
     composer = "Joannes Stadlmair (1575 - 1648)"
     title = "Canzon (1624)"
-    copyright = \markup \smaller { "© 08/03/76 - CC BY 3.0" }
+    copyright = \markup \tiny { "© 08/03/76 - CC BY 3.0" }
 }
 
 minSpace = \with {
@@ -40,7 +41,7 @@ ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
 ottZ = { \ottava #0 }
 
 PartPOneVoiceOne =  \relative e'' {
-    \clef "treble" \time 2/2 | % 1
+    \clef "treble" \key c \major \time 2/2 | % 1
     e2 d4 d4 | % 2
     cs2 r2 | % 3
     r4 e4 f4 d4 | % 4
@@ -138,7 +139,7 @@ PartPOneVoiceOne =  \relative e'' {
 }
 
 PartPTwoVoiceOne =  \relative e'' {
-    \clef "treble" \time 2/2 | % 1
+    \clef "treble" \key c \major \time 2/2 | % 1
     R1 | % 2
     r4 e4 d4 d4 | % 3
     cs2 r2 | % 4
@@ -231,7 +232,7 @@ PartPTwoVoiceOne =  \relative e'' {
 }
 
 PartPThreeVoiceOne =  \relative a {
-    \clef "bass" \time 2/2 | % 1
+    \clef "bass" \key c \major \time 2/2 | % 1
     \ottOverride
     a2 f4 d4 | % 2
     a'2 f4 d4 | % 3

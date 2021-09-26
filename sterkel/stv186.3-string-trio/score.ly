@@ -22,13 +22,13 @@
             \new Staff <<
                 \set Staff.instrumentName = "Violoncello"
                 \context Staff << 
-                    \context Voice = "PartPThreeVoiceOne" { \PartPThreeVoiceOne }
+                    \context Voice = "PartPThreeVoiceOne" { \clef bass \PartPThreeVoiceOne }
                     >>
                 >>
             >>
         >>
   \layout {}
-  \midi { \tempo 4 = 80 }
+  % \midi { \tempo 4 = 80 }
 }
 
 \score {
@@ -38,9 +38,9 @@
   \new StaffGroup <<
     \new Staff { \PartPOneMvTwo }
     \new Staff { \PartPTwoMvTwo }
-    \new Staff { \PartPThreeMvTwo }
+    \new Staff { \clef bass \PartPThreeMvTwo }
   >>
   \layout {}
-  \midi { \tempo 4. = 90 }
+  % \midi { \tempo 4. = 90 }
 }
 
