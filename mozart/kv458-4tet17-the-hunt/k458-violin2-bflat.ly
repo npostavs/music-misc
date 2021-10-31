@@ -3,8 +3,8 @@
 \include "defs.ily"
 
 \header {
-    instrument = "Viola"
-    tagline = ##f
+  instrument = \markup { "Violino II - B" \tiny \flat }
+  tagline = ##f
 }
 
 \layout {
@@ -13,7 +13,7 @@
 }
 
 \paper {
-    page-count = #6
+    % page-count = #6
     top-margin = 5\mm
     bottom-margin = 2\mm
     right-margin = 5\mm
@@ -75,19 +75,18 @@
     }
 }
 
-\include "viola-i.ily"
+\include "violin2-i.ily"
 
 \score {
     \context Staff <<
 	\set Score.skipBars = ##t
 	\set Staff.autoBeaming = ##f
-        \set Staff.midiInstrument = #"viola"
+        \set Staff.midiInstrument = #"violin"
 
-    \clef "alto"
 	\time 6/8
 	\partial 8
 
-	\violaFirstMov
+	\transpose bes c' \removeWithTag #'bflute \violinIIFirstMov
 	\context Voice = "markings" { \markingsI }
     >>
 
@@ -98,60 +97,66 @@
     }
 }
 
-\pageBreak
-
-\include "viola-ii.ily"
+\include "violin2-ii.ily"
 
 \score {
     \context Staff <<
 	\set Score.skipBars = ##t
 	\set Staff.autoBeaming = ##f
-        \set Staff.midiInstrument = #"viola"
+        \set Staff.midiInstrument = #"violin"
 
-    \clef "alto"
 	\time 3/4
 
-	\violaSecondMov
+	\transpose bes c' \removeWithTag #'bflute \violinIISecondMov
 	\context Voice = "markings" { \markingsII }
 	\context Voice=markingsBis { \markingsIIbis }
     >>
+
     \layout { }
-}
-
-\include "viola-iii.ily"
-
-\score {
-    \context Staff <<
-	\set Score.skipBars = ##t
-	\set Staff.autoBeaming = ##f
-        \set Staff.midiInstrument = #"viola"
-
-    \clef "alto"
-	\violaThirdMov
-	\context Voice = "markings" { \markingsIII }
-    >>
-
-    \layout { indent = 5\mm }
 }
 
 \pageBreak
 
-\include "viola-iv.ily"
+
+\include "violin2-iii.ily"
 
 \score {
     \context Staff <<
 	\set Score.skipBars = ##t
 	\set Staff.autoBeaming = ##f
-        \set Staff.midiInstrument = #"viola"
+        \set Staff.midiInstrument = #"violin"
 
-    \clef "alto"
+	\transpose bes c' \removeWithTag #'bflute \violinIIThirdMov
+	\context Voice = "markings" { \markingsIII }
+    >>
+
+    \layout { 
+      indent = 0
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+      }
+    }
+}
+
+\pageBreak
+
+\include "violin2-iv.ily"
+
+\score {
+    \context Staff <<
+	\set Score.skipBars = ##t
+	\set Staff.autoBeaming = ##f
+        \set Staff.midiInstrument = #"violin"
+
 	\time 2/4
 
-	\violaFourthMov
+	\transpose bes c' \removeWithTag #'bflute \violinIIFourthMov
 	\context Voice = "markings" { \markingsIV }
     >>
 
-    \layout { }
+    \layout {
+      \context {
+        \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
+      }
+    }
 }
-
-

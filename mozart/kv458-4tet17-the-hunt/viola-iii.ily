@@ -6,7 +6,7 @@ violaThirdMov =  \relative bes {
     \noTupletBracket
 
       bes4-\parentP ~ bes8\sf r \grace bes16 as8[-.\p g-.] r4
-    | r2 es4\f f
+    | r2 es4 \tweak X-offset #-2.7 \f f
     |  bes8[-.\p es-.] r4 r8 g,(  as4)
     | r8  f[( g  es)] c r f r
 
@@ -20,12 +20,12 @@ violaThirdMov =  \relative bes {
 
 % 10
     | r  bes[ bes(  d)] r  a[ a(  c)] r  e[ e e_\cresc] r  f[ f f]
-    | r  g[(  f) f] r  bes,[(\f a  bes)] c4(\p  des)
+    | r  g[(  f) f] r  bes,[(\f a  bes)] c4( \tweak X-offset #0.5 \p  des)
     | c'(  bes) a,(  bes)
-    |  es,(\f   e)  f16[ f'\p f8.]  f16[
+    |  es,( \tweak X-offset #-2.7 \f   e)  f16[ f'\p f8.]  f16[
       f8] ~
     |  f16[ f]  f4(_\cresc   e16[  es)] 
-       d[(-.\p d-. d-. d-.]  d[-. d-. d-.  d)-.]
+       d[(-. \tweak X-offset #-1.7 \p d-. d-. d-.]  d[-. d-. d-.  d)-.]
 
 % 15
     |  des4:16  c4:16 c2:16

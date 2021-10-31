@@ -2,8 +2,7 @@
 
 
 \header {
-    title = "String Quartet KV. 458 (nr. 17) ``Hunt''"
-    subtitle = "for 2 violins, viola and cello"
+    title = "String Quartet KV. 458 (nr. 17) \"Hunt\""
     composer = "W. A. Mozart (1756-1791)"
         
     mutopiatitle = "String Quartet KV. 458 (nr. 17) \"Hunt\""
@@ -13,7 +12,7 @@
     date = "19th November 1784 (Wien)"
     source = "Breitkopf und Härtel (1882)"
     style = "Classical"
-    copyright = "Public Domain"
+    copyright = \markup { \tiny "Public Domain" }
     maintainer = "Maurizio Tomasi"
     maintainerEmail = "zio_tom78@hotmail.com"
 
@@ -24,9 +23,9 @@
 % Some useful macros
 
 % NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
-ottUp = { \ottava #1 \set Staff.ottavation = #"" }
-ottDown = { \ottava #-1 \set Staff.ottavation = #"" }
-ottDDown = { \ottava #-2 \set Staff.ottavation = #"" }
+ottUp = { \tag #'bflute { \ottava #1 \set Staff.ottavation = #"" } }
+ottDown = { \tag #'bflute { \ottava #-1 \set Staff.ottavation = #"" } }
+ottDDown = { \tag #'bflute { \ottava #-2 \set Staff.ottavation = #"" } }
 
 cresc = \markup { \italic cresc.}
 

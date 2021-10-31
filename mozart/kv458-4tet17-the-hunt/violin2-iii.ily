@@ -10,7 +10,7 @@ violinIIThirdMov =  \relative es' {
     \ottDown
       es4(-\parentP   f8)[\sf  r16. es32\p]
       \grace es16 d8[-. es-.] r4
-    | r2 g,4\f bes
+    | r2 g,4 \tweak X-offset #-2.7 \f bes
     |  es16.[^\trill\p f32 g8] r4 r8 e(  f4)
     | r8  d[( es!  bes)] c r as r
 
@@ -27,14 +27,14 @@ violinIIThirdMov =  \relative es' {
       des]
     | r  des[ des des] r  des'[(\f c  bes)] a4(  bes)
     | es(  des) es,(  des)
-    |  c(\f  bes)  a8[  r16 bes(\p]
+    |  c(-\tweak X-offset #-2.7 \f  bes)  a8[  r16 bes(\p]
          a8)[  r16 bes'(]
     |   a8)[  r16 b(]  c8) r r4   f,16[(-. f-. f-.  f)-.]
 
 % 15
     |  f4:16 e: f: f16[(-. f-. es-.  es)-.]
     |  es4:16 d?4: es8 r c16.[( d32  es16)] r
-    |  d16.[( es32  f16)] r es r es r  d[ d'(-. d-. d-.]  d[-. d-. d-.  d)-.]
+    |  d16.[( es32  f16)] r es r es r \stemDown d[ d'(-. d-. d-.]  d[-. d-. d-.  d)-.] \stemNeutral
     |   des4:16 c4: c2:
     |  ces4: bes4: bes4: es,16.[( d32  c!16)] r32 c
 

@@ -207,7 +207,8 @@ violinIIFourthMov =  \relative f' {
 	|  fis[-. d-. \ottava #0 fis'-. c-.]
 	|  bes[-. g-. bes'-. g-.]
 	| fis4 r
-	| R2*3
+\pageBreak
+    | R2*3
 	| g2(\p
 
 % 170

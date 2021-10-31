@@ -57,7 +57,7 @@ violinIIFirstMov =  \relative d'' {
 	|  f[(  e)] bes'4\fp  a8[(  g)]
 	|  g[(  f)] a4\fp  g8[(  f)]
 
-% 40
+\barNumberCheck #40
 	|  f[(  e)] bes'4\fp  a8[(  g)]
 	|  g[(  f)] a4\fp r8 f
 	| e4. r8  a[-.\p f-.]

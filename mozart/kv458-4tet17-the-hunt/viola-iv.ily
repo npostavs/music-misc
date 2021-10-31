@@ -119,7 +119,7 @@ violaFourthMov =  \relative as {
 
 % 100
 	| bes4 r8 e,(
-	|   f)[ c-. f-.-\parentCresc a-.]
+	|   f)[ c-. f-.\tweak X-offset #2.7 -\parentCresc a-.]
 	| bes4 r8 e,
 	| f4(-\parentF d'
 	| c  bes) 
@@ -179,7 +179,7 @@ violaFourthMov =  \relative as {
 	| R2
 	|  d8[( fis]  g) r
 	| R2*2
-
+\pageBreak
 % 151
 	| g4(  a)
 	| \grace g16 fis8[ e16 d]  g8[ g]

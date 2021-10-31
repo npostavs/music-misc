@@ -118,8 +118,6 @@ violaFirstMov =  \relative bes' {
 	| c4 r8 r4
     }
 
-    \pageBreak
-
     \repeat volta 2 {
         r8
 	| a,4.(\p ~  a8[ f  a)]
