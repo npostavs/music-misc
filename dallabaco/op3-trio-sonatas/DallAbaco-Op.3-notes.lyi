@@ -4,12 +4,15 @@
 \language "english"
 
 \header {
-    copyright = \markup { \tiny "Fine PAK 26/11 2012" }
+    copyright = \markup {
+        \tiny { "Fine PAK 26/11 2012" }
+        \epsfile #Y #2 "../../by-sa.eps"
+        \small "Creative Commons Attribution-ShareAlike 4.0" }
     encodingdate =  "2021-11-23"
     title =  "12 Sonatas - Opus 3"
     composer = "Evaristo Felice Dall'Abaco"
     encodingsoftware =  "Audiveris 5.2.4"
-    source = "IMSLP581513-PMLP89040-1_C.pdf"
+    source = "IMSLP581513-IMSLP581514"
     tagline = ##f
     }
 
