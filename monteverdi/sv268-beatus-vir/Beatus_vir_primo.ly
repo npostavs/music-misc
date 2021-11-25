@@ -95,92 +95,91 @@ staffSopranoI = \new Staff  {
 			c8 c c4 c8 c c8. h16 |
 			c4 r r2 |
 			R1 |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			r1 r c |
-			h1. a2 gis1 |
+			\time 3/4
+			\tempo 4=160
+			r4 r c |
+			h4. a8 gis4 |
 			a h a |
-			a\breve gis1 |
-			a a r1 | \barNumberCheck #67
-			R\breve.*10 | \barNumberCheck #77
-			a='1 a a |
+			a2 gis4 |
+			a a r4 | \barNumberCheck #67
+			R2.*10 | \barNumberCheck #77
+			a='4 a a |
 			a a a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*5 |
-			a='1 a a |
-			a\breve a1 |
-			a\breve gis1 |
-			a1. a2 a1 |
-			e'\breve. |
-			e\breve. |
-			e\breve. |
-			e\breve. |
-			e\breve. |
-			e\breve. |
-			d1 c d |
-			h\breve h1 |
-			a\breve c=''1\startGroup |
+			a2 gis4 |
+			a2 r4 |
+			R2.*5 |
+			a='4 a a |
+			a2 a4 |
+			a2 gis4 |
+			a4. a8 a4 |
+			e'2. |
+			e2. |
+			e2. |
+			e2. |
+			e2. |
+			e2. |
+			d4 c d |
+			h2 h4 |
+			a2 c=''4\startGroup |
 			% Merge Violin I
-		h1. a2 gis1 |
+		h4. a8 gis4 |
 		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-			a1\stopGroup c,='' h |
+		d4. c8 h4 |
+		a2. |
+		a8 h c d e4 |
+		f4. g8 a4 |
+		a2 gis4 |
+			a4\stopGroup c,='' h |
 			h\melisma a\melismaEnd a |
-			a\breve gis1 |
+			a2 gis4 |
 			a a r |
-			R\breve.*2 |
+			R2.*2 |
 			% Merge Violin I
-		r1\startGroup c='' h |
+		r4\startGroup c='' h |
 		h a a |
-		a\breve gis1 |
-		a\breve r1\stopGroup |
-			R\breve.*6 |
+		a2 gis4 |
+		a2 r4\stopGroup |
+			R2.*6 |
 			% Merge Violin I
-		r1\startGroup r c |
-		h1. a2 gis1 |
+		r4\startGroup r c |
+		h4. a8 gis4 |
 		a h a |
-		d1. c2 h1 |
+		d4. c8 h4 |
 		a a\stopGroup e'='' |
-			d1. c2 h1 |
+			d4. c8 h4 |
 			c d c |
-			h1. a2 gis1 |
+			h4. a8 gis4 |
 			a a r |
-			R\breve.*5 |
-			r1 a a |
-			h\breve h1 |
-			a\breve r1 |
-			R\breve.*3 |
-			a\breve. |
+			R2.*5 |
+			r4 a a |
+			h2 h4 |
+			a2 r4 |
+			R2.*3 |
+			a2. |
 			a |
 			a |
 			a |
 			a |
 			a |
-			R\breve.*11 |
-			r1 r e' |
+			R2.*11 |
+			r4 r e' |
 			e d c |
-			h\breve h1 |
-			a1 a r |
-			R\breve.*13 |
-			e'1.\melisma f2 e f |
-			d e c1\melismaEnd h |
+			h2 h4 |
+			a4 a r |
+			R2.*13 |
+			e'4.\melisma f8 e f |
+			d e c4\melismaEnd h |
 			a a r | \barNumberCheck #179
-			R\breve.*1 | \barNumberCheck #180
+			R2.*1 | \barNumberCheck #180
 			% Merge Violin I
-		r1\startGroup c e |
-		d2 c h a a2. gis4 |
-		a\breve r1\stopGroup | \barNumberCheck #183
-			R\breve.*5 | \barNumberCheck #188
-			e'2 e e e d d |
-			c\melisma d4 e c2 d4 c h2 c4 h |
-			a1.\melismaEnd a2 a1 |
-			R\breve.*7 |
+		r4\startGroup c e |
+		d8 c h a a8. gis16 |
+		a2 r4\stopGroup | \barNumberCheck #183
+			R2.*5 | \barNumberCheck #188
+			e'8 e e e d d |
+			c\melisma d16 e c8 d16 c h8 c16 h |
+			a4.\melismaEnd a8 a4 |
+			R2.*7 |
 			\time 4/4
 			\tempo 4=100
 			r8 e' e4 d8 d d d |
@@ -319,89 +318,88 @@ staffSopranoII = \new Staff  {
 			r8 e e4 d8 d8 d8. d16 |
 			c4 r r2 |
 			R1 |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			r1 r e |
-			d1. c2 h1 |
+			\time 3/4
+			\tempo 4=160
+			r4 r e |
+			d4. c8 h4 |
 			c d c |
-			h\breve h1 |
-			a a r1 | \barNumberCheck #67
-			R\breve.*10 | \barNumberCheck #77
-			a1 a a |
+			h2 h4 |
+			a a r4 | \barNumberCheck #67
+			R2.*10 | \barNumberCheck #77
+			a4 a a |
 			a a h |
-			h\breve h1 |
-			a\breve. |
-			R\breve.*5 |
-			a1 a a |
-			a\breve h1 |
-			h\breve h1 |
-			a1. a2 a1 |
-			R\breve.*8 |
+			h2 h4 |
+			a2. |
+			R2.*5 |
+			a4 a a |
+			a2 h4 |
+			h2 h4 |
+			a4. a8 a4 |
+			R2.*8 |
 			% Merge Violin II
-		r1\startGroup r e'='' |
-		d1. c2 h1 |
+		r4\startGroup r e'='' |
+		d4. c8 h4 |
 		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-			a1\stopGroup e='' d |
+		h4. a8 gis4 |
+		a8 h c d e4 |
+		f2 g4 |
+		a4. h8 c4 |
+		h2 h4 |
+			a4\stopGroup e='' d |
 			d\melisma c\melismaEnd h |
-			h\breve h1 |
+			h2 h4 |
 			a a r |
-			R\breve.*2 |
+			R2.*2 |
 			% Merge Violin II
-		r1\startGroup e'='' d |
+		r4\startGroup e'='' d |
 		d c h |
-		h\breve h1 |
-		a\breve r1\stopGroup |
-			R\breve.*6 |		
+		h2 h4 |
+		a2 r4\stopGroup |
+			R2.*6 |		
 			% Merge Violin II
-		r1\startGroup r e' |
-		d1. c2 h1 |
+		r4\startGroup r e' |
+		d4. c8 h4 |
 		c d c |
-		h1. a2 gis1 |
+		h4. a8 gis4 |
 		a a\stopGroup c |
-			h1. a2 gis1 |
+			h4. a8 gis4 |
 			a h a |
-			d1. c2 h1 |
+			d4. c8 h4 |
 			a a r |
-			R\breve.*5 |
-			r1 a a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*3 |
-			a\breve. |
+			R2.*5 |
+			r4 a a |
+			a2 gis4 |
+			a2 r4 |
+			R2.*3 |
+			a2. |
 			a |
 			a |
 			a |
 			a |
 			a |
-			R\breve.*11 |
-			r1 r c |
+			R2.*11 |
+			r4 r c |
 			c h a |
-			a\breve gis1 |
+			a2 gis4 |
 			a a r |
-			R\breve.*13 |
-			c1.\melisma d2 c d |
-			h c a1\melismaEnd gis |
+			R2.*13 |
+			c4.\melisma d8 c d |
+			h c a4\melismaEnd gis |
 			a a r | \barNumberCheck #179
-			R\breve.*1 | \barNumberCheck #180
+			R2.*1 | \barNumberCheck #180
 			% Merge Violin II
-		r1\startGroup e' e |
-		f2 e d c h2. h4 |
-		a\breve r1\stopGroup | \barNumberCheck #183
-			a2 a a a g g |
-			f\melisma g4 a f2 g4 f e2 f4 e |
-			d1.\melismaEnd d2 d1 | \barNumberCheck #186
-		g'=''2\startGroup g g g f f |
-		e f4 g e2 f4 e d2 e4 d |
-			c=''2 c c c\stopGroup h h | \barNumberCheck #189
-			a\melisma h4 c a2 h4 a g2 a4 g |
-			f1.\melismaEnd g2 a1 |
-			R\breve.*7 |
+		r4\startGroup e' e |
+		f8 e d c h8. h16 |
+		a2 r4\stopGroup | \barNumberCheck #183
+			a8 a a a g g |
+			f\melisma g16 a f8 g16 f e8 f16 e |
+			d4.\melismaEnd d8 d4 | \barNumberCheck #186
+		g'=''8\startGroup g g g f f |
+		e f16 g e8 f16 e d8 e16 d |
+			c=''8 c c c\stopGroup h h | \barNumberCheck #189
+			a\melisma h16 c a8 h16 a g8 a16 g |
+			f4.\melismaEnd g8 a4 |
+			R2.*7 |
 			\time 4/4
 			\tempo 4=100
 			R1 |
@@ -506,64 +504,63 @@ staffAlto = \new Staff  {
 			r8 g' e4 a8 a g g |
 			g4 r r2 |
 			R1 |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			R\breve.*4 | \barNumberCheck #66
+			\time 3/4
+			\tempo 4=160
+			R2.*4 | \barNumberCheck #66
 			% Merge Violin I
-                r1 r1 c1\startGroup |
-		h1. a2 gis1 |
+                r4 r4 c4\startGroup |
+		h4. a8 gis4 |
 		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-		a\breve r1\stopGroup | \barNumberCheck #75
-			R\breve.*5 | \barNumberCheck #80
+		d4. c8 h4 |
+		a2. |
+		a8 h c d e4 |
+		f4. g8 a4 |
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #75
+			R2.*5 | \barNumberCheck #80
 			% Merge Violin I
-		c,=''1\startGroup c h |
+		c,=''4\startGroup c h |
 		h a a |
-		a\breve gis1 |
-		a\breve r1\stopGroup | \barNumberCheck #84
-			R\breve.*50 | \barNumberCheck #134
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #84
+			R2.*50 | \barNumberCheck #134
 			% Merge Violin I
-		r1\startGroup a a |
-		a\breve gis1 |
-		a\breve r1\stopGroup | \barNumberCheck #137
-			R\breve. | \barNumberCheck #138
+		r4\startGroup a a |
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #137
+			R2. | \barNumberCheck #138
 			% Merge Violin I
-		r1\startGroup r a |
-		a\breve gis1 | %instead of a\breve g1 |
-		a\breve r1\stopGroup | \barNumberCheck #141
-                        R\breve.*10 | \barNumberCheck #151
+		r4\startGroup r a |
+		a2 gis4 | %instead of a\breve g1 |
+		a2 r4\stopGroup | \barNumberCheck #141
+                        R2.*10 | \barNumberCheck #151
                         % Merge Violin I
-		r1\startGroup r c |
-		h1. a2 gis1 |
+		r4\startGroup r c |
+		h4. a8 gis4 |
 		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-		a\breve r1\stopGroup | \barNumberCheck #160		
-			R\breve.*5 | \barNumberCheck #165
+		d4. c8 h4 |
+		a2. |
+		a8 h c d e4 |
+		f4. g8 a4 |
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #160		
+			R2.*5 | \barNumberCheck #165
 			% Merge Violin I
-		r1\startGroup c, c |
+		r4\startGroup c, c |
 		c h a |
-		a\breve gis1 |
-		a\breve r1\stopGroup | \barNumberCheck #169
-			R\breve.*5 | \barNumberCheck #174
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #169
+			R2.*5 | \barNumberCheck #174
 			% Merge Violin I
-		c1.\startGroup d2 c d |
-		h c a1 gis |
+		c4.\startGroup d8 c d |
+		h c a4 gis |
 		a a r\stopGroup | \barNumberCheck #177
-			R\breve.*9 | \barNumberCheck #186
+			R2.*9 | \barNumberCheck #186
 			% Merge Violin I
-		e'2\startGroup e e e h h |
-		c d4 e c2 d4 c h2 c4 h |
-		a1 a r\stopGroup | \barNumberCheck #189
-			R\breve.*9 | \barNumberCheck #198
+		e'8\startGroup e e e h h |
+		c d16 e c8 d16 c h8 c16 h |
+		a4 a r\stopGroup | \barNumberCheck #189
+			R2.*9 | \barNumberCheck #198
 			\time 4/4
 			\tempo 4=100
 			R1 |
@@ -680,89 +677,88 @@ staffTenoreI = \new Staff  {
 			r8 c c4 f8 e d8. d16 |
 			e4 r8 g, a4 h |
 			c r8 e d d d8. d16 |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			c\breve r1 |
-			R\breve.*11 |
-			e1 e d |
+			\time 3/4
+			\tempo 4=160
+			c2 r4 |
+			R2.*11 |
+			e4 e d |
 			d c h |
-			h\breve h1 |
-			a\breve a1 |
-			R\breve.*5 |
-			c1 c\melisma h\melismaEnd |
+			h2 h4 |
+			a2 a4 |
+			R2.*5 |
+			c4 c\melisma h\melismaEnd |
 			h\melisma a\melismaEnd a |
-			a\breve gis1 |
+			a2 gis4 |
 			a a r |
-			R\breve.*4 |
-			r1 e fis |
-			gis\breve a1 |
-			h1 a c |
-			h\breve a1 |
-			gis1. gis2 a1 |
+			R2.*4 |
+			r4 e fis |
+			gis2 a4 |
+			h4 a c |
+			h2 a4 |
+			gis4. gis8 a4 |
 			h h a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*15 |
-			r1 e' d |
-			c\breve h1 |
-			a\breve a1 |
-			a\breve a1 |
-			a\breve a1 |
-			a\breve a1 |
-			a\breve a1 |
-			h\breve. |
-			a\breve r1 |
-			R\breve.*7 |
-			r1 r e' |
-			d1. c2 h1 |
+			a2 gis4 |
+			a2 r4 |
+			R2.*15 |
+			r4 e' d |
+			c2 h4 |
+			a2 a4 |
+			a2 a4 |
+			a2 a4 |
+			a2 a4 |
+			a2 a4 |
+			h2. |
+			a2 r4 |
+			R2.*7 |
+			r4 r e' |
+			d4. c8 h4 |
 			c d c |
-			h1. a2 gis1 |
-			a1. a2 a1 |
-			R\breve.*5 |
-			r1 r a |
-			h\breve. |
-			a\breve r1 |
-			R\breve. |
-			a1 a a |
-			f1. f2 e1 |
-			d1. d2 cis1 |
-			d1. d2 e1 |
-			f\breve g1 |
+			h4. a8 gis4 |
+			a4. a8 a4 |
+			R2.*5 |
+			r4 r a |
+			h2. |
+			a2 r4 |
+			R2. |
+			a4 a a |
+			f4. f8 e4 |
+			d4. d8 cis4 |
+			d4. d8 e4 |
+			f2 g4 |
 			a\melisma h\melismaEnd c |
-			h\breve. |
-			a\breve r1 |
-			R\breve.*10 |
-			r1 e' e |
+			h2. |
+			a2 r4 |
+			R2.*10 |
+			r4 e' e |
 			e d c |
-			h\breve h1 |
-			a\breve r1 |
-			R\breve.*2 |
-			e'1 e e2 e |
-			f\breve cis1 |
-			d\breve e1 |
-			f1. f2 e1 |
+			h2 h4 |
+			a2 r4 |
+			R2.*2 |
+			e'4 e e8 e |
+			f2 cis4 |
+			d2 e4 |
+			f4. f8 e4 |
 			e d c |
-			h\breve h1 |
-			a\breve r1 |
-			R\breve.*3 |
-			r1 e' e |
-			f2 e d c h2. h4 |
-			a\breve r1 |
-			R\breve.*2 |
-			f'2 f f f cis cis |
-			d\melisma e4 f d2 e4 d c2 d4 c |
-			h2 c4 d h2 c4 h a2 h4 a |
-			g1.\melismaEnd g2 d'1 |
-			R\breve.*3 |
-			f2 f f f e e |
-			d\melisma e4 f d2 e4 d c2 d4 c |
-			h2 c4 d h2 c4 h a2 h4 a |
-			gis2 a4 h gis2 a4 gis fis2 gis4 fis |
-			e1. fis4 gis a h c d |
-			e1 r r2 h |
-			c4 h c gis a\breve~ |
-			a\melismaEnd gis1 |
+			h2 h4 |
+			a2 r4 |
+			R2.*3 |
+			r4 e' e |
+			f8 e d c h8. h16 |
+			a2 r4 |
+			R2.*2 |
+			f'8 f f f cis cis |
+			d\melisma e16 f d8 e16 d c8 d16 c |
+			h8 c16 d h8 c16 h a8 h16 a |
+			g4.\melismaEnd g8 d'4 |
+			R2.*3 |
+			f8 f f f e e |
+			d\melisma e16 f d8 e16 d c8 d16 c |
+			h8 c16 d h8 c16 h a8 h16 a |
+			gis8 a16 h gis8 a16 gis fis8 gis16 fis |
+			e4. fis16 gis a h c d |
+			e4 r r8 h |
+			c16 h c gis a2~ |
+			a\melismaEnd gis4 |
 			\time 4/4
 			\tempo 4=100
 			a4 r r2 |
@@ -873,83 +869,82 @@ staffTenoreII = \new Staff  {
 			r8 g g4 a8 a d g, |
 			g4 r8 e f4 g |
 			a r8 c c c c8.\melisma h16\melismaEnd |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			c\breve r1 |
-			R\breve.*11 |
-			c1 c h |
+			\time 3/4
+			\tempo 4=160
+			c2 r4 |
+			R2.*11 |
+			c4 c h |
 			h a a |
-			a\breve gis1 |
-			a\breve a1 |
-			R\breve.*5 |
-			e'1 e\melisma d\melismaEnd |
+			a2 gis4 |
+			a2 a4 |
+			R2.*5 |
+			e'4 e\melisma d\melismaEnd |
 			d\melisma c\melismaEnd c |
-			h\breve h1 |
+			h2 h4 |
 			a a r |
-			R\breve.*3 |
-			r1 e fis |
-			gis\breve a1 |
+			R2.*3 |
+			r4 e fis |
+			gis2 a4 |
 			h c c |
-			h\breve a1 |
-			gis\breve a1 |
-			h\breve r1 |
+			h2 a4 |
+			gis2 a4 |
+			h2 r4 |
 			h h a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*17 |
-			r1 a g |
-			f\breve e1 |
-			f\breve e1 |
-			d\breve e1 |
+			a2 gis4 |
+			a2 r4 |
+			R2.*17 |
+			r4 a g |
+			f2 e4 |
+			f2 e4 |
+			d2 e4 |
 			f\melisma g\melismaEnd a |
-			a\breve\melisma gis1\melismaEnd |
-			a\breve r1 |
-			R\breve.*7 |
-			r1 r c |
-			h1. a2 gis1 |
+			a2\melisma gis4\melismaEnd |
+			a2 r4 |
+			R2.*7 |
+			r4 r c |
+			h4. a8 gis4 |
 			a h a |
 			d c h |
-			a1. a2 a1 |
-			R\breve.*5 |
-			r1 r a |
-			a\breve\melisma gis1\melismaEnd |
-			a\breve r1 |
-			a1 a g |
-			f1. f2 e1 |
-			d1. d2 cis1 |
-			d1. d2 e1 |
-			f2\melisma e f g a1\melismaEnd |
-			a2\melisma g a h c1\melismaEnd |
+			a4. a8 a4 |
+			R2.*5 |
+			r4 r a |
+			a2\melisma gis4\melismaEnd |
+			a2 r4 |
+			a4 a g |
+			f4. f8 e4 |
+			d4. d8 cis4 |
+			d4. d8 e4 |
+			f8\melisma e f g a4\melismaEnd |
+			a8\melisma g a h c4\melismaEnd |
 			f,\melisma g\melismaEnd a |
-			a\breve\melisma gis1\melismaEnd |
-			a\breve r1 |
-			R\breve.*10 |
-			r1 c c |
+			a2\melisma gis4\melismaEnd |
+			a2 r4 |
+			R2.*10 |
+			r4 c c |
 			c h a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*2 |
-			c1 c c2 c |
-			d\breve e1 |
-			f\breve e1 |
-			d1. d2 c1 |
+			a2 gis4 |
+			a2 r4 |
+			R2.*2 |
+			c4 c c8 c |
+			d2 e4 |
+			f2 e4 |
+			d4. d8 c4 |
 			c h a |
-			a\breve gis1 |
-			a\breve r1 |
-			R\breve.*3 |
-			r1 c e |
-			d2 c h a a2. gis4 |
-			a\breve r1 |
-			R\breve.*9 |
-			d2 d d d c c |
-			h\melisma c4 d h2 c4 h a2 h4 a |
-			gis2 a4 h gis2 a4 gis fis2 gis4 fis |
-			e1. fis4 gis a h c d |
-			e1 r r |
-			r2 h c4 h c d gis,1 |
-			r1 r2 c d4 c d a |
-			h\breve\melismaEnd h1 |
+			a2 gis4 |
+			a2 r4 |
+			R2.*3 |
+			r4 c e |
+			d8 c h a a8. gis16 |
+			a2 r4 |
+			R2.*9 |
+			d8 d d d c c |
+			h\melisma c16 d h8 c16 h a8 h16 a |
+			gis8 a16 h gis8 a16 gis fis8 gis16 fis |
+			e4. fis16 gis a h c d |
+			e4 r r |
+			r8 h c16 h c d gis,4 |
+			r4 r8 c d16 c d a |
+			h2\melismaEnd h4 |
 			\time 4/4
 			a4 r r2 |
 			r8 g g4 a8 a d g, |
@@ -1068,110 +1063,109 @@ staffBasso = \new Staff  {
 			r8 c e4 f8 f g g |
 			c,4 r r2 |
 			R1 |
-			\time 3/2
-			\tempo 2=320
-			\set Score.measureLength = #(ly:make-moment 3 1)
-			R\breve.*4 | \barNumberCheck #66
+			\time 3/4
+			\tempo 4=160
+			R2.*4 | \barNumberCheck #66
 			% Merge Violin II
-	        r1 r1 e1\startGroup | \barNumberCheck #67
-		d1. c2 h1 |
+	        r4 r4 e4\startGroup | \barNumberCheck #67
+		d4. c8 h4 |
 		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-		a\breve r1\stopGroup | \barNumberCheck #75
-			R\breve.*5 | \barNumberCheck #80
+		h4. a8 gis4 |
+		a8 h c d e4 |
+		f2 g4 |
+		a4. h8 c4 |
+		h2 h4 |
+		a2 r4\stopGroup | \barNumberCheck #75
+			R2.*5 | \barNumberCheck #80
 			% Merge Violin II
-		e1\startGroup e d |
+		e4\startGroup e d |
 		d c h |
-		h\breve h1 |
-		a\breve r1\stopGroup |
-		        R\breve.*5
-			r1 a h |
-			c\breve d1 |
+		h2 h4 |
+		a2 r4\stopGroup |
+		        R2.*5
+			r4 a h |
+			c2 d4 |
 			e e r |
 			r e fis |
-			gis\breve a1 |
+			gis2 a4 |
 			h h c |
-			h\breve a1 |
-			d,\breve. |
+			h2 a4 |
+			d,2. |
 			e |
-			a,\breve r1 |
-			R\breve.*10 |
-			r1 c' h |
+			a,2 r4 |
+			R2.*10 |
+			r4 c' h |
 			a\melisma g\melismaEnd f |
-			e\breve e1 |
+			e2 e4 |
 			a, a r |
-			R\breve.*2 |
-			r1 a' g |
-			f\breve e1 |
-			d\breve cis1 |
-			d\breve e1 |
-			f\breve cis1 | %instead of f\breve c1 |
-			d\breve f1 |
-			e\breve. |
-			a,\breve r1 | \barNumberCheck #123
-			R\breve.*11 | \barNumberCheck #134
+			R2.*2 |
+			r4 a' g |
+			f2 e4 |
+			d2 cis4 |
+			d2 e4 |
+			f2 cis4 | %instead of f\breve c1 |
+			d2 f4 |
+			e2. |
+			a,2 r4 | \barNumberCheck #123
+			R2.*11 | \barNumberCheck #134
 			% Merge Violin II
-		r1\startGroup a a |
-		h\breve h1 |
-		a\breve r1\stopGroup | \barNumberCheck #137
-			R\breve. | \barNumberCheck #138
+		r4\startGroup a a |
+		h2 h4 |
+		a2 r4\stopGroup | \barNumberCheck #137
+			R2. | \barNumberCheck #138
 			% Merge Violin II
-		r1\startGroup r a |
-		h\breve h1 |
-		a\breve r1\stopGroup | \barNumberCheck #141
-			R\breve. | \barNumberCheck #142
-			a'1 a g |
-			f1. f2 e1 |
-			d1. d2 cis1 |
-			d1. d2 e1 |
-			f\breve a1 |
-			f\breve e1 |
-			d\breve e1 |
-			f\breve c1 |
+		r4\startGroup r a |
+		h2 h4 |
+		a2 r4\stopGroup | \barNumberCheck #141
+			R2. | \barNumberCheck #142
+			a'4 a g |
+			f4. f8 e4 |
+			d4. d8 cis4 |
+			d4. d8 e4 |
+			f2 a4 |
+			f2 e4 |
+			d2 e4 |
+			f2 c4 |
 			d\melisma h e\melismaEnd | \barNumberCheck #151
-			a,\breve e'1\startGroup |
+			a,2 e'4\startGroup |
 			% Merge Violin II
-		d1. c2 h1 |
+		d4. c8 h4 |
 		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-		a\breve r1\stopGroup | \barNumberCheck #160
-			R\breve.*5 | \barNumberCheck #165
+		h4. a8 gis4 |
+		a8 h c d e4 |
+		f2 g4 |
+		a4. h8 c4 |
+		h2 h4 |
+		a2 r4\stopGroup | \barNumberCheck #160
+			R2.*5 | \barNumberCheck #165
 			% Merge Violin II
-		r1\startGroup e e |
+		r4\startGroup e e |
 		e d c |
-		h\breve h1 |
-			a=,1\stopGroup a'= g2 g | \barNumberCheck #169
-			f\breve e1 |
-			d\breve a'1 |
-			d,1. d2 e1 |
+		h2 h4 |
+			a=,4\stopGroup a'= g8 g | \barNumberCheck #169
+			f2 e4 |
+			d2 a'4 |
+			d,4. d8 e4 |
 			f c c |
-			d\breve e1 | \barNumberCheck #174
-			a,1 e'2\startGroup f2 e f |
+			d2 e4 | \barNumberCheck #174
+			a,4 e'8\startGroup f8 e f |
 			% Merge Violin II
-		d e c1 h |
+		d e c4 h |
 		a a r\stopGroup | \barNumberCheck #177
-			R\breve.*5 | \barNumberCheck #182
-			a'2 a a a g g |
-			f\melisma g4 a f2 g4 f e2 f4 e |
-			d1.\melismaEnd d2 d1 |
-			g2 g g g f f |
-			e\melisma f4 g e2 f4 e d2 e4 d |
-			c1.\melismaEnd c2 g'1 |
-			c,2 c c c g g |
-			a\breve a1 |
-			d\breve.~ |
+			R2.*5 | \barNumberCheck #182
+			a'8 a a a g g |
+			f\melisma g16 a f8 g16 f e8 f16 e |
+			d4.\melismaEnd d8 d4 |
+			g8 g g g f f |
+			e\melisma f16 g e8 f16 e d8 e16 d |
+			c4.\melismaEnd c8 g'4 |
+			c,8 c c c g g |
+			a2 a4 |
+			d2.~ |
 			d |
-			R\breve.*4 |
-			r1 r f |
-			e\breve e1 |
+			R2.*4 |
+			r4 r f |
+			e2 e4 |
 			\time 4/4
 			\tempo 4=100
 			a,4 r r2 |
@@ -1310,77 +1304,76 @@ staffBassoContinuo = \new Staff  {
 		c, e f g |
 		c, h a g |
 		f e f g |
-		\time 3/2
-		\tempo 2=320
-		\set Score.measureLength = #(ly:make-moment 3 1)
-		c\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a\breve g1 f\breve e1 |
-		d\breve c1 d\breve e1 |
-		a,\breve h1 c\breve d1 |
-		e\breve e1 a a g |
-		f e d e\breve e1 |
-		a,\breve h1 c\breve d1 |
-		e\breve e1 a,\breve h1 |
-		c\breve d1 e\breve e1 |
-		a\breve g1 f e d |
-		e\breve e1 a, a h |
-		c\breve d1 e\breve a,1 |
-		e'\breve fis1 gis\breve a1 |
-		gis\breve a1 gis\breve a1 |
-		d,\breve d1 e\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a\breve g1 f\breve e1 |
-		d\breve c1 d\breve e1 | %instead of d\breve cis1 d\breve e1 |
-		a,\breve h1 c\breve d1 |
-		e\breve e1 a,\breve h1 |
-		c\breve d1 e\breve e1 |
-		a,\breve h1 c\breve d1 |
-		e\breve d1 a'\breve g1 |
-		f\breve e1 d\breve cis1 |
-		d\breve cis1 d\breve cis1 |
-		d e f e\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a\breve g1 f\breve e1 |
-		d\breve cis1 d\breve cis1 |
-		d\breve cis1 d\breve cis1 |
-		d\breve e1 f\breve c1 |
-		d\breve e1 a,\breve c1 |
-		d\breve e1 a,\breve c1 |
-		d\breve e1 a\breve g1 |
-		f\breve e1 d\breve cis1 |
-		d\breve e1 a,\breve h1 |
-		c\breve d1 e\breve e1 |
-		a,\breve h1 c\breve d1 |
-		e\breve e1 a,\breve h1 |
-		c\breve d1 e\breve e1 |
-		a\breve g1 f\breve e1 |
-		d\breve a'1 d,\breve e1 |
-		f c c d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a,\breve c1 d\breve e1 |
-		a\breve g1 f\breve e1 |
-		d\breve d1 g\breve f1 |
-		e\breve d1 c\breve g'1 |
-		c,1. c2 g1 a\breve a1 |
-		d\breve. d |
+		\time 3/4
+		\tempo 4=160
+		c2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a2 g4 f2 e4 |
+		d2 c4 d2 e4 |
+		a,2 h4 c2 d4 |
+		e2 e4 a a g |
+		f e d e2 e4 |
+		a,2 h4 c2 d4 |
+		e2 e4 a,2 h4 |
+		c2 d4 e2 e4 |
+		a2 g4 f e d |
+		e2 e4 a, a h |
+		c2 d4 e2 a,4 |
+		e'2 fis4 gis2 a4 |
+		gis2 a4 gis2 a4 |
+		d,2 d4 e2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a2 g4 f2 e4 |
+		d2 c4 d2 e4 | %instead of d\breve cis1 d\breve e1 |
+		a,2 h4 c2 d4 |
+		e2 e4 a,2 h4 |
+		c2 d4 e2 e4 |
+		a,2 h4 c2 d4 |
+		e2 d4 a'2 g4 |
+		f2 e4 d2 cis4 |
+		d2 cis4 d2 cis4 |
+		d e f e2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a2 g4 f2 e4 |
+		d2 cis4 d2 cis4 |
+		d2 cis4 d2 cis4 |
+		d2 e4 f2 c4 |
+		d2 e4 a,2 c4 |
+		d2 e4 a,2 c4 |
+		d2 e4 a2 g4 |
+		f2 e4 d2 cis4 |
+		d2 e4 a,2 h4 |
+		c2 d4 e2 e4 |
+		a,2 h4 c2 d4 |
+		e2 e4 a,2 h4 |
+		c2 d4 e2 e4 |
+		a2 g4 f2 e4 |
+		d2 a'4 d,2 e4 |
+		f c c d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a,2 c4 d2 e4 |
+		a2 g4 f2 e4 |
+		d2 d4 g2 f4 |
+		e2 d4 c2 g'4 |
+		c,4. c8 g4 a2 a4 |
+		d2. d |
 		e e |
 		e e |
-		e1 f\breve e e1 |
+		e4 f2 e e4 |
 		\time 4/4
 		\tempo 4=100
 		a2 f4 g |
@@ -1455,77 +1448,76 @@ staffBassoContinuo = \new Staff  {
 staffBC = \new FiguredBass {
 	\figuremode {
 		s1*61 |
-		\time 3/2
-		\tempo 2=320
-		\set Score.measureLength = #(ly:make-moment 3 1)
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. 
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve <_+>1 s\breve. |
-		s\breve. s\breve. |
-		s\breve <_+>1 s\breve. |
-		s\breve. s\breve. |
-		s\breve <_+>1 s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve. |
-		<_+>\breve s1 s\breve. |
-		s\breve. <_+>\breve s1 |
-		s\breve. s\breve. |
-		s\breve <_+>1 s\breve. |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve <_+>1 |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		s\breve. s\breve. |
-		<_+>\breve. <_+>\breve. |
-		<_+>\breve. <_+>\breve. |
-		s\breve. <_+>\breve s1 |
+		\time 3/4
+		\tempo 4=160
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2. |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. <_+>2 s4 |
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. <_+>2 s4 |
+		s2. s2. |
+		<_+>2 s4 s2. 
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. s2. |
+		s2. <_+>2 s4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. <_+>2 s4 |
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. s2. |
+		s2. s2. |
+		s2. <_+>2 s4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2. |
+		s2. s2. |
+		s2. s2. |
+		s2 <_+>4 s2. |
+		s2. s2. |
+		s2 <_+>4 s2. |
+		s2. s2. |
+		s2 <_+>4 s2. |
+		s2. <_+>2 s4 |
+		s2. s2. |
+		<_+>2 s4 s2. |
+		s2. <_+>2 s4 |
+		s2. s2. |
+		s2 <_+>4 s2. |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2 <_+>4 |
+		s2. s2. |
+		s2. s2. |
+		s2. s2. |
+		s2. s2. |
+		s2. s2. |
+		<_+>2. <_+>2. |
+		<_+>2. <_+>2. |
+		s2. <_+>2 s4 |
 		\time 4/4
 		\tempo 4=100
 		s1 |
