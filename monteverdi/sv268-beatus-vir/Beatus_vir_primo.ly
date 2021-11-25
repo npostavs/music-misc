@@ -21,43 +21,6 @@
 
 \include "deutsch.ly"
 
-verseSI= \lyricmode {
-Be -- a -- tus be -- a -- tus vir Be -- a -- tus be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num Be -- a -- tus be -- a -- tus vir Be -- a -- tus be -- a -- tus vir po -- tens in ter -- ra e -- rit se -- men e -- ius be -- ne -- di -- ce -- tur ge -- ne -- ra -- ti -- o rec -- to -- rum Be -- a -- tus be -- a -- tus vir Be -- a -- tus be -- a -- tus vir glo -- ri -- a "&" di -- vi -- ti -- e in do -- mo e -- ius Be -- a -- tus be -- a -- tus vir be -- a -- tus be -- a -- tus vir be -- a -- tus be -- a -- tus vir be -- a -- tus ex or -- tum est in te -- ne -- bris "&" mi -- se -- ra -- tor be -- a -- tus be -- a -- tus vir be -- a -- tus be -- a -- tus vir
-Iu -- cun -- dus iu -- cun -- dus iu -- cun -- dus ho -- mo qui mi -- se -- re -- tur "&" co -- mo -- dat ser -- mo -- nes su -- os in iu -- di -- ti -- o qui -- a in e -- ter -- num non com -- mo -- ve -- bi -- tur in me -- mo -- ri -- a e -- ter -- na pa -- ra -- tum pa -- ra -- tum pa -- ra -- tum cor e -- ius con -- fir -- ma -- tum est non com -- mo -- ve -- bi -- tur dis -- per -- sit dis -- per -- sit de -- dit cor -- nu e -- ius ex -- al -- ta -- bi -- tur in glo -- ri -- a
-Be -- a -- tus be -- a -- tus vir be -- a -- tus be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num i -- ra -- sce -- tur i -- ra -- sce -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- bes -- cet de -- si -- de -- ri -- um pec -- ca -- to -- rum de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- but pe -- ri -- bit Be -- a -- tus vir qui ti -- met Do -- mi -- num
-Glo -- ri -- a pa -- tri glo -- ri -- a "&" spi -- ri -- tu -- i san -- cto glo -- ri -- a "&" nunc "&" sem -- per glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men.
-}
-verseSII= \lyricmode {
-Be -- a -- tus Be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num Be -- a -- tus Be -- a -- tus vir po -- tens in ter -- ra e -- rit se -- men e -- ius be -- ne -- di -- ce -- tur ge -- ne -- ra -- ti -- o re -- cto -- rum Be -- a -- tus be -- a -- tus vir glo -- ri -- a "&" di -- vi -- ti -- e in do -- mo in do -- mo e -- ius be -- a -- tus be -- a -- tus vir Be -- a -- tus be -- a -- tus vir be -- a -- tus ex -- or -- tum est in te -- ne -- bris "&" mi -- se -- ra -- tor Be -- a -- tus be -- a -- tus vir
-Iu -- cun -- dus iu -- cun -- dus iu -- cun -- dus ho -- mo qui mi -- se -- re -- tur "&" com -- mo -- dat ser -- mo -- nes su -- os in iu -- di -- ti -- o in me -- mo -- ri -- a e -- ter -- na pa -- ra -- tum pa -- ra -- tum pa -- ra -- tum cor e -- ius con -- fir -- ma -- tum est non com -- mo -- ve -- bi -- tus dis -- per -- sit dis -- per -- sit de -- dit cor -- nu e -- ius ex -- al -- ta -- bi -- tur in glo -- ri -- a ex -- al -- ta -- bi -- tur in glo -- ri -- a
-Be -- a --  tus be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num i -- ra -- sce -- tur i -- ra -- sce -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- be -- scet de -- si -- de -- ri -- um pec -- ca -- to -- rum de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit Be -- a -- tus vir qui ti -- met Do -- mi -- num.
-Glo -- ri -- a "&" spi -- ri -- tu -- i san -- cto glo -- ri -- a "&" nunc "&" sem -- per glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men.
-}
-verseA= \lyricmode {
-Be -- a -- tus be -- a -- tus vir be -- a -- tus be -- a -- tus vir po -- tens in ter -- ra e -- rit se -- men e -- ius be -- ne -- di -- ce -- tur glo -- ri -- a "&" di -- vi -- ti -- e be -- a -- tus be -- a -- tus vir ex -- or -- tum est mi -- se -- ra -- tor "&" iu -- stus be -- a -- tus be -- a -- tus vir
-Be -- a -- tus be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num i -- ras -- se  -- tur i -- ras -- se -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- be -- scet De -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit be -- a -- tus vir qui ti -- met Do -- mi -- num
-Glo -- ri -- a pa -- tri glo -- ri -- a "&" fi -- li -- o Glo -- ri -- a "&" spi -- ri -- tu -- i san -- cto glo -- ri -- a si -- cut e -- rat in prin -- ci -- pi -- o glo -- ri -- a  "&" nunc "&" sem -- per Glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men A -- men.
-}
-verseTI= \lyricmode {
-Be -- a -- tus be -- a -- us vir in man -- da -- tis e -- ius vo -- let ni -- mis Be -- a -- tus be -- a -- tus vir po -- tens in ter -- ra e -- rit se -- men e -- ius ge -- ne -- ra -- ti -- o rec -- to -- rum be -- ne -- di -- ce -- tur glo -- ri -- a "&" di -- vi -- ti -- e "&" iu -- sti -- ti -- a e -- ius ma -- net in se -- cu -- lum se -- cu -- li Be -- a -- tus be -- a -- tus vir ex -- or -- tum est mi -- se -- ri -- cors mi -- se -- ra -- tor "&" iu -- stus Be -- a -- tus be -- a -- tus vir Be -- a -- tus vir qui ti -- met Do -- mi -- num
-Io -- cun -- dus ho -- mo qui mi -- se -- re -- tur dis -- po -- net ser -- mo -- nes su -- os Qui -- a in e -- ter -- num non com -- mo -- ve -- bi -- tur non com -- mo -- ve -- bi -- tur ab au -- di -- ti -- o -- ne ma -- la non ti -- me -- bit non ti -- me -- bit spe -- ra -- re spe -- ra -- re spe -- ra -- re in Do -- mi -- no cor e -- ius non com -- mo -- ve -- bi -- tur do -- nec des -- pi -- ci -- at i -- ni -- mi -- cos su -- os de -- dit de -- dit pau -- pe -- ri -- bus ius -- ti -- ti -- a e -- ius ma -- net ma -- net in se -- cu -- lum se -- cu -- li cor -- nu e -- ius ex -- al -- ta -- bi -- tus ex -- al -- ta -- bi -- tur in glo -- ri -- a ex -- al -- ta -- bi -- tur in glo -- ri -- a
-Be -- a -- tus be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num ir -- ra -- sce -- tur ir -- ra -- sce -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- be -- scet de -- si -- de -- ri -- um pec -- ca -- to -- rum de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit pe -- ri -- bit pe -- ri -- bit Be -- a -- tus vir qui ti -- met Do -- mi -- num
-Glo -- ri -- a pa -- tri glo -- ri -- a "&" fi -- li -- o glo -- ri -- a si -- cut e -- rat in prin -- ci -- pi -- o glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men.
-}
-verseTII= \lyricmode {
-Be -- a -- tus Be -- a -- tus vir in man -- da -- tis e -- ius vo -- let ni -- mis Be -- a -- tus Be -- a -- tus vir ge -- ne -- ra -- ti -- o rec -- to -- rum be -- ne -- di -- ce -- tur Be -- a -- tus Be -- a -- tus vir glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" di -- vi -- ti -- e in do -- mo e -- ius "&" iu -- sti -- ti -- a e -- ius ma -- net in se -- cu -- lum se -- cu -- li Be -- a -- tus be -- a -- tus vir mi -- se -- ri -- cors mi -- se -- ri -- cors Be -- a -- tus be -- a -- tus Be -- a -- tus vir qui ti -- met Do -- mi -- num
-Io -- cun -- dus ho -- mo qui mi -- se -- re -- tur dis -- po -- net ser -- mo -- nes su -- os qui -- a in e -- ter -- num non com -- mo -- ve -- bi -- tur non com -- mo -- ve -- bi -- tur ab au -- di -- ti -- o -- ne ma -- la non ti -- me -- bit spe -- ra -- re spe -- ra -- re spe -- ra -- re in Do -- mi -- no cor e -- ius non com -- mo -- ve -- bi -- tur do -- nec des -- pi -- ci -- at in -- ni -- mi -- cos su -- os de -- dit de -- dit pau -- pe -- ri -- bus ius -- ti -- ti -- a e -- ius ma -- net ma -- net in se -- cu -- lum se -- cu -- li cor -- nu e -- ius ex -- al -- ta -- bi -- tur ex -- al -- ta -- bi -- tur in glo -- ri -- a
-Be -- a -- tus Be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num pec -- ca -- tor vi -- de -- bit "&" i -- ra -- sce -- tur i -- ra -- sce -- tur i -- ra -- sce -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- be -- scet de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit Be -- a -- tus vir qui ti -- met Do -- mi -- num
-Glo -- ri -- a pa -- tri glo -- ri -- a "&" Fi -- li -- o Glo -- ri -- a "&" spi -- ri -- tu -- i San -- cto Glo -- ri -- a si -- cut e -- rat in prin -- ci -- pi -- o glo -- ri -- a "&" nunc "&" sem -- per glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men.
-}
-verseB= \lyricmode {
-Be -- a -- tus Be -- a -- tus vir Be -- a -- tus Be -- a -- tus vir po -- tens in ter -- ra e -- rit se -- men e -- ius be -- ne -- di -- ce -- tur Be -- a -- tus be -- a -- tus vir glo -- ri -- a glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" di -- vi -- ti -- e in do -- mo in do -- mo e -- ius "&" iu -- sti -- ti -- a e -- ius ma -- net in se -- cu -- lum se -- cu -- li Be -- a -- tus be -- a -- tus vir in te -- ne -- bris lu -- men lu -- men rec -- tis mi -- se -- ra -- tor mi -- se -- ra -- tor mi -- se -- ra -- tor mi -- se -- ra -- tor "&" iu -- stus Be -- a -- tus be -- a -- tus vir
-qui -- a in e -- ter -- num qui -- a in e -- ter -- num non com -- mo -- ve -- bi -- tur e -- rit iu -- stus e -- rit iu -- stus ab au -- di -- ti -- o -- ne ma -- la ma -- la non ti -- me -- bit non com -- mo -- ve -- bi -- tur do -- nec des -- pi -- ti -- at i -- ni -- mi -- cos i -- ni -- mi -- cos su -- os Iu -- sti -- ti -- a e -- ius ma -- net ma -- net in se -- cu -- lum se -- cu -- li ex -- al -- ta -- bi -- tur in glo -- ri -- a ex -- al -- ta -- bi -- tur in glo -- ri -- a ex -- al -- ta -- bi -- tur in glo -- ri -- a in -- glo -- ri -- a
-Be -- a -- tus Be -- a -- tus vir be -- a -- tus vir qui ti -- met Do -- mi -- num pec -- ca -- tor vi de -- bit "&" i -- ra -- sce -- tur i -- ra -- sce -- tur i -- ra -- sce -- tur den -- ti -- bus den -- ti -- bus su -- is fre -- met "&" ta -- be -- scet de -- si -- de -- ri -- am pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit de -- si -- de -- ri -- um pec -- ca -- to -- rum pe -- ri -- bit pe -- ri -- bit Be -- a -- tus vir qui ti -- met Do -- mi -- num.
-glo -- ri -- a "&" fi -- li -- o Glo -- ri -- a si -- cut e -- rat in prin -- ci -- pi -- o glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum glo -- ri -- a glo -- ri -- a glo -- ri -- a "&" in se -- cu -- la se -- cu -- lo -- rum A -- men.
-}
- 
-
 staffSopranoI = \new Staff  {
 	\time 4/4
 	\override Score.MetronomeMark #'stencil = ##f
@@ -69,7 +32,6 @@ staffSopranoI = \new Staff  {
 	\relative c'' { 	
 		\context Voice = "melodySopI" {
 			\dynamicUp
-			\autoBeamOff
 			r8 e e4 d8 d d8. d16 |
 			c8 c c4 c8 c c h |
 			c4 r8 e, f4 g |
@@ -245,7 +207,6 @@ staffSopranoII = \new Staff  {
 	\relative c'' { 	
 		\context Voice = "melodySopII" {
 			\dynamicUp
-			\autoBeamOff
 			R1 |
 			r8 e e4 d8 d d d |
 			c4 r8 g a4 e |
@@ -411,7 +372,6 @@ staffAlto = \new Staff  {
 	\relative c'' { 	
 		\context Voice = "melodyAlt" {
 			\dynamicUp
-			\autoBeamOff
 			R1 |
 			r8 g g4 f8 a g g |
 			g4 r r2 |
@@ -515,7 +475,6 @@ staffTenoreI = \new Staff  {
 	\relative c' { 	
 		\context Voice = "melodyTenI" {
 			\dynamicUp
-			\autoBeamOff
 			R1 |
 			r8 e e4 a,8 a d g, |
 			g4 r r2 |
@@ -707,7 +666,6 @@ staffTenoreII = \new Staff  {
 	\relative c' { 	
 		\context Voice = "melodyTenII" {
 			\dynamicUp
-			\autoBeamOff
 			R1 |
 			r8 c c4 d8 d d d |
 			e4 r r2 |
@@ -823,7 +781,6 @@ staffTenoreII = \new Staff  {
 			r1 r2 c d4 c d a |
 			h\breve\melismaEnd h1 |
 			\time 4/4
-			\tempo 4=120
 			a4 r r2 |
 			r8 g g4 a8 a d g, |
 			g4 r8 g c4 e |
@@ -897,7 +854,6 @@ staffBasso = \new Staff  {
 	\relative c { 	
 		\context Voice = "melodyBas" {
 			\dynamicUp
-			\autoBeamOff
 			R1 |
 			r8 c e4 f8 f g g |
 			c,4 r r2 |
@@ -1769,22 +1725,11 @@ staffBC = \new FiguredBass {
 \score {
 	<<
 		\staffSopranoI
-		\context Lyrics = "lmelodySopI" \lyricmode  { \lyricsto "melodySopI" \verseSI }
-		
 		\staffSopranoII
-		\context Lyrics = "lmelodySopII" \lyricmode  { \lyricsto "melodySopII" \verseSII }
-		
 		\staffAlto
-		\context Lyrics = "lmelodyAlt" \lyricmode  { \lyricsto "melodyAlt" \verseA }
-		
 		\staffTenoreI
-		\context Lyrics = "lmelodyTenI" \lyricmode  { \lyricsto "melodyTenI" \verseTI }
-		
 		\staffTenoreII
-		\context Lyrics = "lmelodyTenII" \lyricmode  { \lyricsto "melodyTenII" \verseTII }
-		
 		\staffBasso
-		\context Lyrics = "lmelodyBas" \lyricmode  { \lyricsto "melodyBas" \verseB }
 		
 		\staffViolinI
 		\staffViolinII
@@ -1793,9 +1738,6 @@ staffBC = \new FiguredBass {
 		
 	>>
 	
-	\midi {
-	}
-
 	\layout  {
 	}
 }
