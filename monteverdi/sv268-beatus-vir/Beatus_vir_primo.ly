@@ -41,18 +41,30 @@ staffSopranoI = \new Staff  {
 			r8 e e4 d8 d d d |
 			c c c4 c8 c c8. h16 |
 			c4 r r2 |
-			R1*3 |
+			% Merging Violin I
+		r8\startGroup g' g4 a16 g f e d e f d |
+		e4. e8 f e f16 e f g |
+		a4 r8 g a16 g f e d e f d\stopGroup |
 			e2. d8 c |
-			h a h c d16[ e] f[ e] d4 |
+			h a h c d16 e f e d4 |
 			c2 r |
-			R1*4 |
+			R1 |
+			% Merge Violin I
+		r4\startGroup e,8 e f e f g |
+		a4 r8 c c c c8. h16 |
+		c4 r r2\stopGroup |
 			r4 r8 e d d d4 |
 			c e,8 e f e f g |
 			a a r4 r2 |
 			r8 e' e4 d8 d d d |
 			c c c4 c8 c c8. h16 |
 			c4 r r2 |
-			R1*7 |
+			% Merge Violin I
+		r8\startGroup e e8. d16 c8 f16 e d8 g16 f |
+		e8 g16 f e d c h c8 e16 d c h a g |
+		a h c d e f g8 f e d4 |
+		c r r2\stopGroup |
+			R1*3 |
 			r2 f8 f16 f e8. e16 |
 			d8. d16 c8 c a c c8.\melisma h16\melismaEnd |
 			c8 e e4 d8 d d8. d16 |
@@ -64,13 +76,21 @@ staffSopranoI = \new Staff  {
 			r4 d d2~\melisma |
 			d8[ a h cis] d[ c h a]\melismaEnd |
 			g4 r r2 |
-			R1*5 |
-			r8 e' e e e e d8. c16 |
+			% Merge Violin I
+		r8\startGroup g' g4 a16 g f e d e f d |
+		e8. f16 e8. f16 e8. f16 d8. e16 |
+		f4 r8 g f e d8. d16 |
+		c4 r r2\stopGroup |
+			R1 |
+			r8 e='' e e e e d8. c16 |
 			h4 r r2 |
 			R1 |
 			r4 r8 e d c c8.\melisma h16\melismaEnd | %r4 added
 			c4 r r2 |
-			R1*3 |
+			% Merge Violin I
+		f=''8.\startGroup e16 e4 d8 c h4 |
+		c r r2\stopGroup |
+			R1 |
 			r8 e e4 d8 d d8. d16 |
 			c8 c c4 c8 c c8. h16 |
 			c4 r r2 |
@@ -82,14 +102,14 @@ staffSopranoI = \new Staff  {
 			h1. a2 gis1 |
 			a h a |
 			a\breve gis1 |
-			a a r |
-			R\breve.*10 |
-			a1 a a |
+			a a r1 | \barNumberCheck #67
+			R\breve.*10 | \barNumberCheck #77
+			a='1 a a |
 			a a a |
 			a\breve gis1 |
 			a\breve r1 |
 			R\breve.*5 |
-			a1 a a |
+			a='1 a a |
 			a\breve a1 |
 			a\breve gis1 |
 			a1. a2 a1 |
@@ -101,14 +121,32 @@ staffSopranoI = \new Staff  {
 			e\breve. |
 			d1 c d |
 			h\breve h1 |
-			a\breve r1 |
-			R\breve.*7 |
-			r1 c h |
+			a\breve c=''1\startGroup |
+			% Merge Violin I
+		h1. a2 gis1 |
+		a h a |
+		d1. c2 h1 |
+		a\breve. |
+		a2 h c d e1 |
+		f1. g2 a1 |
+		a\breve gis1 |
+			a1\stopGroup c,='' h |
 			h\melisma a\melismaEnd a |
 			a\breve gis1 |
 			a a r |
-			R\breve.*16 |
-			r1 r e' |
+			R\breve.*2 |
+			% Merge Violin I
+		r1\startGroup c='' h |
+		h a a |
+		a\breve gis1 |
+		a\breve r1\stopGroup |
+			R\breve.*6 |
+			% Merge Violin I
+		r1\startGroup r c |
+		h1. a2 gis1 |
+		a h a |
+		d1. c2 h1 |
+		a a\stopGroup e'='' |
 			d1. c2 h1 |
 			c d c |
 			h1. a2 gis1 |
@@ -132,8 +170,13 @@ staffSopranoI = \new Staff  {
 			R\breve.*13 |
 			e'1.\melisma f2 e f |
 			d e c1\melismaEnd h |
-			a a r |
-			R\breve.*9 |
+			a a r | \barNumberCheck #179
+			R\breve.*1 | \barNumberCheck #180
+			% Merge Violin I
+		r1\startGroup c e |
+		d2 c h a a2. gis4 |
+		a\breve r1\stopGroup | \barNumberCheck #183
+			R\breve.*5 | \barNumberCheck #188
 			e'2 e e e d d |
 			c\melisma d4 e c2 d4 c h2 c4 h |
 			a1.\melismaEnd a2 a1 |
@@ -144,17 +187,24 @@ staffSopranoI = \new Staff  {
 			c c c4 c8 c c h |
 			c4 r8 g a4 h |
 			c r8 e d f d8. d16 |
-			c4 r r2 |
-			R1*3 |
+			c4 r r2 | \barNumberCheck #203
+			% Merge Violin I
+		r8\startGroup g' g4 a16 g f e d e f d |
+		e4 r r2\stopGroup | \barNumberCheck #205
+			R1 |
 			r8 e16 e e e d c h4 h |
-			R1*3 |
+			R1 |
+			% Merge Violin I
+		e,8\startGroup e16 e e8 f16 g a4 r\stopGroup |
+			R1 |
 			g8 g16 g g8 a16 h c8 c r4 |
 			r1 |
 			e16[\melisma d c h] a8\melismaEnd a r2 |
-			r f'8 e d4 |
-			c r r2 |
-			R1 |
-			r4 f8 f e e16 e d8 d |
+			r f'8 e d4 | \barNumberCheck #214
+			% Merge Violin II(!)
+		c8 g'\startGroup g4 a16 g f e d e f d |
+		e f g f e d c h a8 c c8. h16 |
+		c4\stopGroup f8 f e e16 e d8 d |
 			d d r4 r2 |
 			r4 f8 f e e16 e d8 d |
 			d d r e c c r h |
@@ -175,12 +225,14 @@ staffSopranoI = \new Staff  {
 			h8. h16 h8 h a4 h |
 			cis2 cis |
 			R1 |
-			a8 a16 a a8 a16 a r2 |
+			% Merge Violin I
+		a='8 a16 a a8 a d8\startGroup d16 e d8 a |
+		cis2 r2 |
+		a'8 a16 a a8 a16 a fis8 fis16 fis fis8 fis16 fis\stopGroup |
 			R1 |
-			a8 a16 a a8 a16 a r2 |
-			R1 |
-			d8 d16 d d8 d16 d r2 |
-			R1 |
+			% Merge Violin II(!)
+		d8 d16 d d8 d16 d g8\startGroup a g h |
+		a4 d,\stopGroup r2 |
 			d8 d16 d d8 d16 d r2 |
 			d8 d16 d d8 d e e16 f e8 e |
 			d 4 d e8 e16 e e8 e16 e |
@@ -214,19 +266,31 @@ staffSopranoII = \new Staff  {
 			c4 r r2 |
 			R1*2 |
 			r8 e' e4 d8 d d d |
-			c4 r r2 |
-			R1*3 |
+                % Merging Violin II
+		c8 \startGroup g' g4 a16 g f e d e f d |
+		e f g f e d c h a8 c c8. h16 |
+		c4. c8 d c d16 c d e |
+		f4 r8 g f16 e d c h c d h\stopGroup |
 			c2. h8 a |
 			g f g g a c c8.\melisma h16\melismaEnd |
 			c2 r |
-			R1*4 |
+			R1 |
+			% Merge Violin II
+		r4\startGroup g8 g a g a h |
+		c4 r8 e d d d4 |
+		c r r2\stopGroup |
 			r4 r8 c c c c8.\melisma h16\melismaEnd |
 			c4 c,8 c c c d e |
 			f f r4 r2 |
 			R1 |
 			r8 e' e4 d8 d d8. d16 |
-			c4 r r2 |
-			R1*7 |
+			% Merge Violin II
+		c8\startGroup e e8. d16 c8 f16 e d8 g16 f |
+		e8 c c8. h16 a8 d16 c h8 e16 d |
+		c8 e16 d c h a g a8 c16 h a g f e |
+		f g a h c d e8 d c c8. h16 |
+		c4 r r2\stopGroup |
+		        R1*3 |
 			e8 e16 e d8. d16 c8. c16 h8 h |
 			a4 g8 g f e d4 |
 			c8 c' c4 c8 c c8. h16 |
@@ -236,14 +300,22 @@ staffSopranoII = \new Staff  {
 			c2 r4 d |
 			d2~ d8[\melisma a h c] |
 			d4. a8 h[ c d c]\melismaEnd |
-			h4 r r2 |
-			R1*5 |
+			% Merge Violin II
+		h8 g'\startGroup g4 a16 g f e d e f d |
+		e f g f e d c h a8 c c8. h16 |
+		c8. d16 c8. d16 c8. d16 h8. c16 |
+		a4  r8 e' d c c8. h16 |
+		c4 r r2\stopGroup |
+			R1 |
 			r8 c c c c c h8. a16 |
 			g4 r r2 |
 			R1 |
 			r4 r8 g' f e d4 | % r4 added
 			c r r2 |
-			R1*4 |
+			% Merge Violin II
+		a'8.\startGroup g16 g4 f8 e d4 |
+		c r r2\stopGroup |
+			R1*2 |
 			r8 e e4 d8 d8 d8. d16 |
 			c4 r r2 |
 			R1 |
@@ -254,8 +326,8 @@ staffSopranoII = \new Staff  {
 			d1. c2 h1 |
 			c d c |
 			h\breve h1 |
-			a a r |
-			R\breve.*10 |
+			a a r1 | \barNumberCheck #67
+			R\breve.*10 | \barNumberCheck #77
 			a1 a a |
 			a a h |
 			h\breve h1 |
@@ -265,13 +337,33 @@ staffSopranoII = \new Staff  {
 			a\breve h1 |
 			h\breve h1 |
 			a1. a2 a1 |
-			R\breve.*16 |
-			r1 e' d |
+			R\breve.*8 |
+			% Merge Violin II
+		r1\startGroup r e'='' |
+		d1. c2 h1 |
+		c d c |
+		h1. a2 gis1 |
+		a2 h c d e1 |
+		f\breve g1 |
+		a1. h2 c1 |
+		h\breve h1 |
+			a1\stopGroup e='' d |
 			d\melisma c\melismaEnd h |
 			h\breve h1 |
 			a a r |
-			R\breve.*16 |
-			r1 r c |
+			R\breve.*2 |
+			% Merge Violin II
+		r1\startGroup e'='' d |
+		d c h |
+		h\breve h1 |
+		a\breve r1\stopGroup |
+			R\breve.*6 |		
+			% Merge Violin II
+		r1\startGroup r e' |
+		d1. c2 h1 |
+		c d c |
+		h1. a2 gis1 |
+		a a\stopGroup c |
 			h1. a2 gis1 |
 			a h a |
 			d1. c2 h1 |
@@ -295,13 +387,18 @@ staffSopranoII = \new Staff  {
 			R\breve.*13 |
 			c1.\melisma d2 c d |
 			h c a1\melismaEnd gis |
-			a a r |
-			R\breve.*4 |
+			a a r | \barNumberCheck #179
+			R\breve.*1 | \barNumberCheck #180
+			% Merge Violin II
+		r1\startGroup e' e |
+		f2 e d c h2. h4 |
+		a\breve r1\stopGroup | \barNumberCheck #183
 			a2 a a a g g |
 			f\melisma g4 a f2 g4 f e2 f4 e |
-			d1.\melismaEnd d2 d1 |
-			R\breve.*2 |
-			c'2 c c c h h |
+			d1.\melismaEnd d2 d1 | \barNumberCheck #186
+		g'=''2\startGroup g g g f f |
+		e f4 g e2 f4 e d2 e4 d |
+			c=''2 c c c\stopGroup h h | \barNumberCheck #189
 			a\melisma h4 c a2 h4 a g2 a4 g |
 			f1.\melismaEnd g2 a1 |
 			R\breve.*7 |
@@ -310,18 +407,25 @@ staffSopranoII = \new Staff  {
 			R1 |
 			r8 e' e4 d8 d d d |
 			c4 r8 e, f4 g |
-			a r8 c a c c8. h16 |
-			c4 r r2 |
-			R1*3 |
+			a r8 c a c c8. h16 | \barNumberCheck #202
+			% Merge Violin II
+		c8 g'\startGroup g4 a16 g f e d e f d |
+		e f g f e d c h a8 c c8. h16 |
+		c4 r r2\stopGroup | \barNumberCheck #205
+			R1 | \barNumberCheck #206
 			r8 c16 c c c h a g4 g |
-			R1*3 |
+			R1 |
+			% Merge Violin II
+		g='8\startGroup g16 g g8 a16 h c4 r\stopGroup |
+			R1 |
 			g8 g16 g g8 a16 h c8 c r4 |
 			R1 |
 			c16[\melisma h a g] f8\melismaEnd f r2 |
 			r d'8 c c8.\melisma h16\melismaEnd |
 			c4 r r2 |
-			R1 |
-			r4 d8 d c c16 c c8 c |
+			% Merge Violin I(!)
+		r8\startGroup g' g4 a16 g f e d e f d |
+		e4\stopGroup d8 d c c16 c c8 c |
 			h h r4 r2 |
 			r4 d8 d c c16 c c8 c |
 			h h r c a a r g |
@@ -340,13 +444,15 @@ staffSopranoII = \new Staff  {
 			gis8. gis16 gis8 gis a4. gis8 |
 			a2 a |
 			R1 |
-			r2 a8 a16 a a8 a16 a |
-			R1 |
-			r2 a8 a16 a a8 a16 a |
-			R1 | %this bar and the following added (imitation of Soprano I)
-			r2 d8 d16 d d8 d16 d |
-			R1 |
-			r2 d8 d16 d d8 d16 d |
+			% Merge Violin II
+			e'=''8\startGroup e16 e e8 e\stopGroup a,='8 a16 a a8 a16 a |
+		e'=''4\startGroup e\stopGroup r2 |
+			e8\startGroup e16 e e8 e16 e\stopGroup a,='8 a16 a a8 a16 a |
+			R1 | \barNumberCheck #243
+			% Merge Violin I(!)
+		a8\startGroup a16 a d8 d d4. e8 |
+		fis2\stopGroup r | \barNumberCheck #245
+			a,8\startGroup a16 a a8 d\stopGroup d8 d16 d d8 d16 d |
 			h8 h16 h h8 h c c16 d c8 c |
 			c4 h c8 c16 c c8 c16 c |
 			g8 g16 g g8 g c8 c16 d c8 c |
@@ -380,7 +486,7 @@ staffAlto = \new Staff  {
 			g4 r r2 |
 			R1*5 |
 			g2. f8 e |
-			d c d e d16[ e] f[ e] d4 |
+			d c d e d16 e f e d4 |
 			c r r2 |
 			R1*4 |
 			r4 r8 g' f e d4 |
@@ -403,7 +509,61 @@ staffAlto = \new Staff  {
 			\time 3/2
 			\tempo 2=320
 			\set Score.measureLength = #(ly:make-moment 3 1)
-			R\breve.*136 |
+			R\breve.*4 | \barNumberCheck #66
+			% Merge Violin I
+                r1 r1 c1\startGroup |
+		h1. a2 gis1 |
+		a h a |
+		d1. c2 h1 |
+		a\breve. |
+		a2 h c d e1 |
+		f1. g2 a1 |
+		a\breve gis1 |
+		a\breve r1\stopGroup | \barNumberCheck #75
+			R\breve.*5 | \barNumberCheck #80
+			% Merge Violin I
+		c,=''1\startGroup c h |
+		h a a |
+		a\breve gis1 |
+		a\breve r1\stopGroup | \barNumberCheck #84
+			R\breve.*50 | \barNumberCheck #134
+			% Merge Violin I
+		r1\startGroup a a |
+		a\breve gis1 |
+		a\breve r1\stopGroup | \barNumberCheck #137
+			R\breve. | \barNumberCheck #138
+			% Merge Violin I
+		r1\startGroup r a |
+		a\breve gis1 | %instead of a\breve g1 |
+		a\breve r1\stopGroup | \barNumberCheck #141
+                        R\breve.*10 | \barNumberCheck #151
+                        % Merge Violin I
+		r1\startGroup r c |
+		h1. a2 gis1 |
+		a h a |
+		d1. c2 h1 |
+		a\breve. |
+		a2 h c d e1 |
+		f1. g2 a1 |
+		a\breve gis1 |
+		a\breve r1\stopGroup | \barNumberCheck #160		
+			R\breve.*5 | \barNumberCheck #165
+			% Merge Violin I
+		r1\startGroup c, c |
+		c h a |
+		a\breve gis1 |
+		a\breve r1\stopGroup | \barNumberCheck #169
+			R\breve.*5 | \barNumberCheck #174
+			% Merge Violin I
+		c1.\startGroup d2 c d |
+		h c a1 gis |
+		a a r\stopGroup | \barNumberCheck #177
+			R\breve.*9 | \barNumberCheck #186
+			% Merge Violin I
+		e'2\startGroup e e e h h |
+		c d4 e c2 d4 c h2 c4 h |
+		a1 a r\stopGroup | \barNumberCheck #189
+			R\breve.*9 | \barNumberCheck #198
 			\time 4/4
 			\tempo 4=100
 			R1 |
@@ -411,14 +571,18 @@ staffAlto = \new Staff  {
 			g4 r8 g f4 e |
 			a r8 g a a g8. f16 |
 			e4 r r2 |
-			R1*4 |
-			r2 r8 f16 f f f e d |
+			R1*3 | \barNumberCheck #206
+			% Merge Violin I
+		r2\startGroup r8 e'=''16 e e e d c |
+			h4\stopGroup r4 r8 f16 f f f e d |
 			e8 e r4 r2 |
-			R1 |
-			r2 c8 c16 c c8 d16 e |
+			% Merge Violin I
+		r2\startGroup f'16 e d c h8 h\stopGroup | \barNumberCheck #210
+			r2 c,='8 c16 c c8 d16 e |
 			f8 f r4 a16[\melisma g f e] d8\melismaEnd d |
-			R1 |
-			r2 a'8 a d,\melisma g\melismaEnd |
+			% Merge Violin I
+		r2 e'=''16\startGroup d c h a8 a\stopGroup |
+			r2 a='8 a d,\melisma g\melismaEnd |
 			g4 r r2 |
 			R1 |
 			r4 a8 a g g16 g f8 a |
@@ -630,10 +794,14 @@ staffTenoreI = \new Staff  {
 			c2 c |
 			c4. h8 a4 g |
 			fis4. fis8 fis2 |
-			R1*2 |
+			% Merge Violin I
+		fis8.\startGroup fis16 fis8 fis g g g fis |
+		g2 g\fermata\stopGroup |
 			h8 h16 h h8 h h h a a |
 			gis4. gis8 gis2 |
-			R1*2 |
+			% Merge Violin I
+		gis8.\startGroup gis16 gis8 gis a4. gis8 |
+		a2 a\fermata\stopGroup |
 			cis8 cis16 cis cis8 cis d d16 e d8 d |
 			d4\melisma cis\melismaEnd d2 |
 			cis8 cis16 cis cis8 cis d d16 e d8 d |
@@ -644,7 +812,9 @@ staffTenoreI = \new Staff  {
 			g4\melisma fis\melismaEnd g2 |
 			g8 g16 g g8 g c c16 d c8 c |
 			c4\melisma h\melismaEnd c2 |
-			R1*2 | %R1 added
+			% Merge Violin II
+		g8\startGroup g16 g g8 g g4 e |
+		g2 e\stopGroup |
 			g1\melisma |
 			a2. h4 |
 			c2. h4 |
@@ -792,10 +962,12 @@ staffTenoreII = \new Staff  {
 			c a d4 g, r |
 			r2 r8 d'16 d d d c h |
 			c8 c r4 r2 |
-			R1 |
+			% Mere Violin II
+		r2\startGroup a'16 g f e d8 d\stopGroup |
 			r2 e,8 e16 e e8 f16 g |
 			a8 a r4 f'16[\melisma e d c] h8\melismaEnd h |
-			R1 |
+			% Merge Violin II
+		r2 g'='16\startGroup f e d c8 c\stopGroup |
 			r2 a8 c g4 |
 			g r r2 |
 			R1 |
@@ -899,7 +1071,24 @@ staffBasso = \new Staff  {
 			\time 3/2
 			\tempo 2=320
 			\set Score.measureLength = #(ly:make-moment 3 1)
-			R\breve.*27 |
+			R\breve.*4 | \barNumberCheck #66
+			% Merge Violin II
+	        r1 r1 e1\startGroup | \barNumberCheck #67
+		d1. c2 h1 |
+		c d c |
+		h1. a2 gis1 |
+		a2 h c d e1 |
+		f\breve g1 |
+		a1. h2 c1 |
+		h\breve h1 |
+		a\breve r1\stopGroup | \barNumberCheck #75
+			R\breve.*5 | \barNumberCheck #80
+			% Merge Violin II
+		e1\startGroup e d |
+		d c h |
+		h\breve h1 |
+		a\breve r1\stopGroup |
+		        R\breve.*5
 			r1 a h |
 			c\breve d1 |
 			e e r |
@@ -923,8 +1112,18 @@ staffBasso = \new Staff  {
 			f\breve cis1 | %instead of f\breve c1 |
 			d\breve f1 |
 			e\breve. |
-			a,\breve r1 |
-			R\breve.*19 |
+			a,\breve r1 | \barNumberCheck #123
+			R\breve.*11 | \barNumberCheck #134
+			% Merge Violin II
+		r1\startGroup a a |
+		h\breve h1 |
+		a\breve r1\stopGroup | \barNumberCheck #137
+			R\breve. | \barNumberCheck #138
+			% Merge Violin II
+		r1\startGroup r a |
+		h\breve h1 |
+		a\breve r1\stopGroup | \barNumberCheck #141
+			R\breve. | \barNumberCheck #142
 			a'1 a g |
 			f1. f2 e1 |
 			d1. d2 cis1 |
@@ -933,17 +1132,33 @@ staffBasso = \new Staff  {
 			f\breve e1 |
 			d\breve e1 |
 			f\breve c1 |
-			d\melisma h e\melismaEnd |
-			a,\breve. |
-			R\breve.*16 |
-			a'1 a g2 g |
+			d\melisma h e\melismaEnd | \barNumberCheck #151
+			a,\breve e'1\startGroup |
+			% Merge Violin II
+		d1. c2 h1 |
+		c d c |
+		h1. a2 gis1 |
+		a2 h c d e1 |
+		f\breve g1 |
+		a1. h2 c1 |
+		h\breve h1 |
+		a\breve r1\stopGroup | \barNumberCheck #160
+			R\breve.*5 | \barNumberCheck #165
+			% Merge Violin II
+		r1\startGroup e e |
+		e d c |
+		h\breve h1 |
+			a=,1\stopGroup a'= g2 g | \barNumberCheck #169
 			f\breve e1 |
 			d\breve a'1 |
 			d,1. d2 e1 |
 			f c c |
-			d\breve e1 |
-			a,\breve r1 |
-			R\breve.*7 |
+			d\breve e1 | \barNumberCheck #174
+			a,1 e'2\startGroup f2 e f |
+			% Merge Violin II
+		d e c1 h |
+		a a r\stopGroup | \barNumberCheck #177
+			R\breve.*5 | \barNumberCheck #182
 			a'2 a a a g g |
 			f\melisma g4 a f2 g4 f e2 f4 e |
 			d1.\melismaEnd d2 d1 |
@@ -967,8 +1182,9 @@ staffBasso = \new Staff  {
 			R1 |
 			c4 d e r8 f |
 			g4 e8 e f d g4 |
-			c, r r2 |
-			r8 g'16 g g g f e f8 f r4 |
+			% Merge Violin II
+		        c,4 r4 r8 g'=16\startGroup g g g f e |
+			d8\stopGroup g=16 g g g f e f8 f r4 |
 			r2 c8 c16 c c8 d16 e |
 			f8 f r4 r2 |
 			R1*3 |
@@ -987,15 +1203,22 @@ staffBasso = \new Staff  {
 			f2 f |
 			g2. g4 |
 			c1\fermata |
-			R1*2 |
+			% Merge Violin II
+		c2.\startGroup c8 d |
+		e2 e\stopGroup |
 			f4. f8 f4 e |
 			d4. d8 d2 |
-			R1*2 |
+			% Merge Violin II
+		d8.\startGroup d16 d8 d d4 c8 a |
+		d2 d\stopGroup |
 			g8 g16 g g8 g g g f f |
 			e4. e8 e2 |
-			R1*2 |
+			% Merge Violin II
+		e8.\startGroup e16 e8 e e cis d h | %cis instead of c
+		e2 e\stopGroup |
 			a8 a16 a a8 g fis fis16 e fis8 d |
-			a'4 a r2 |
+			% Merge Violin II
+			a'4 a fis8\startGroup fis16 g fis8 fis\stopGroup |
 			a8 a16 a a8 g fis fis16 e fis8 d |
 			a'2 d, |
 			d8 d16 d d8 c h h16 a h8 g |
@@ -1003,7 +1226,8 @@ staffBasso = \new Staff  {
 			d'8 d16 d d8 c h h16 a h8 g |
 			d'2 g, |
 			g'8 g16 g g8 f e e16 d e8 c |
-			g'4 g c,8 c16 c c8 c16 c |
+			% Merge Violin I
+			g8\startGroup g16 a h8 h\stopGroup c=8 c16 c c8 c16 c |
 			g'8 g16 g g8 f e e16 d e8 c |
 			g'2 c, |
 			c2.\melisma h4 |
@@ -1014,362 +1238,6 @@ staffBasso = \new Staff  {
 			c'\longa |
 			}
 
-	\bar "|."
-	}
-
-}
-
-staffViolinI = \new Staff  {
-	\set Staff.instrumentName="Violino I"
-	\set Staff.midiInstrument="violin"
-	\key c \major
-	\clef treble
-	\relative c'' {
-		R1 |
-		r8 c c4 c8 c c8. h16 |
-		c4 r r2 |
-		R1*4 |
-		r8 c c4 c8 c c8. h16 |
-		c4 r r2 |
-		r8 g' g4 a16 g f e d e f d |
-		e4. e8 f e f16 e f g |
-		a4 r8 g a16 g f e d e f d |
-		e2 r |
-		R1*3 |
-		r4 e,8 e f e f g |
-		a4 r8 c c c c8. h16 |
-		c4 r r2 |
-		R1*4 |
-		r8 c c4 c8 c c8. h16 |
-		c4 r r2 |
-		r8 e e8. d16 c8 f16 e d8 g16 f |
-		e8 g16 f e d c h c8 e16 d c h a g |
-		a h c d e f g8 f e d4 |
-		c r r2 |
-		R1*10 |
-		r8 c c4 c8 c c8. h16 |
-		c2 r |
-		R1*3 |
-		r8 g' g4 a16 g f e d e f d |
-		e8. f16 e8. f16 e8. f16 d8. e16 |
-		f4 r8 g f e d8. d16 |
-		c4 r r2 |
-		R1*6 |
-		f8. e16 e4 d8 c h4 |
-		c r r2 |
-		R1*2 |
-		r8 c c4 c8 c c8. h16 |
-		c4 r r2 |
-		R1 |
-		\time 3/2
-		\tempo 2=320
-		\set Score.measureLength = #(ly:make-moment 3 1)
-		R\breve.*4 |
-		r1 r c |
-		h1. a2 gis1 |
-		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*5 |
-		c,1 c h |
-		h a a |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*14 |
-		r1 r c |
-		h1. a2 gis1 |
-		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*5 |
-		r1 c, h |
-		h a a |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*6 |
-		r1 r c |
-		h1. a2 gis1 |
-		a h a |
-		d1. c2 h1 |
-		a a r |
-		R\breve.*7 |
-		r1 a a |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve. |
-		r1 r a |
-		a\breve gis1 | %instead of a\breve g1 |
-		a\breve r1 |
-		R\breve.*10 |
-		r1 r c |
-		h1. a2 gis1 |
-		a h a |
-		d1. c2 h1 |
-		a\breve. |
-		a2 h c d e1 |
-		f1. g2 a1 |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*5 |
-		r1 c, c |
-		c h a |
-		a\breve gis1 |
-		a\breve r1 |
-		R\breve.*5 |
-		c1. d2 c d |
-		h c a1 gis |
-		a a r |
-		R\breve.*3 |
-		r1 c e |
-		d2 c h a a2. gis4 |
-		a\breve r1 |
-		R\breve.*3 |
-		e'2 e e e h h |
-		c d4 e c2 d4 c h2 c4 h |
-		a1 a r |
-		R\breve.*9 |
-		\time 4/4
-		\tempo 4=100
-		R1 |
-		r8 c c4 c8 c c8. h16 |
-		c4 r8 e, f4 g |
-		a r8 c a c c8. h16 |
-		c4 r r2 |
-		r8 g' g4 a16 g f e d e f d |
-		e4 r r2 |
-		R1 |
-		r2 r8 e16 e e e d c |
-		h4 r r2 |
-		e,8 e16 e e8 f16 g a4 r |
-		r2 f'16 e d c h8 h |
-		R1*2 |
-		r2 e16 d c h a8 a |
-		R1*2 |
-		r8 g' g4 a16 g f e d e f d |
-		e4 d8 d c c16 c c8 c |
-		h h r4 r2 |
-		r4 d8 d c c16 c c8 c |
-		h h r4 r2 |
-		R1*2 |
-		r2 r4 g |
-		f2 g |
-		a r4 c |
-		a2 c |
-		c2. h4 |
-		c1\fermata |
-		e2. e8 d |
-		c2 c\fermata |
-		R1*2 |
-		fis8. fis16 fis8 fis g g g fis |
-		g2 g\fermata |
-		R1*2 |
-		gis8. gis16 gis8 gis a4. gis8 |
-		a2 a\fermata |
-		R1 |
-		a,8 a16 a a8 a d8 d16 e d8 a |
-		cis2 r 
-		a'8 a16 a a8 a16 a fis8 fis16 fis fis8 fis16 fis |
-		R1 |
-		a,8 a16 a d8 d d4. e8 |
-		fis2 r |
-		a,8 a16 a a8 d h h16 h h8 h |
-		R1 |
-		g8 g16 a h8 h c c16 c c8 c16 c |
-		d2 c4 c~ |
-		c h c2 |
-		c1 |
-		e2 e |
-		f1 |
-		c |
-		\set Score.measureLength = #(ly:make-moment 4 1)
-		c\longa |
-	\bar "|."
-	}
-
-}
-
-staffViolinII = \new Staff  {
-	\set Staff.instrumentName="Violino II"
-	\set Staff.midiInstrument="violin"
-	\key c \major
-	\clef treble
-	\relative c'' {
-		R1 |
-		r8 e e4 d8 d d d |
-		c4 r r2 |
-		R1*4 |
-		r8 e e4 d8 d d d |
-		c g' g4 a16 g f e d e f d |
-		e f g f e d c h a8 c c8. h16 |
-		c4. c8 d c d16 c d e |
-		f4 r8 g f16 e d c h c d h |
-		c2 r |
-		R1*3 |
-		r4 g8 g a g a h |
-		c4 r8 e d d d4 |
-		c r r2 |
-		R1*4 |
-		r8 e e4 d8 d d d |
-		c e e8. d16 c8 f16 e d8 g16 f |
-		e8 c c8. h16 a8 d16 c h8 e16 d |
-		c8 e16 d c h a g a8 c16 h a g f e |
-		f g a h c d e8 d c c8. h16 |
-		c4 r r2 |
-		R1*10 |
-		r8 e e4 d8 d d d |
-		c2 r |
-		R1*2 |
-		r8 g' g4 a16 g f e d e f d |
-		e f g f e d c h a8 c c8. h16 |
-		c8. d16 c8. d16 c8. d16 h8. c16 |
-		a4  r8 e' d c c8. h16 |
-		c4 r r2 |
-		R1*6 |
-		a'8. g16 g4 f8 e d4 |
-		c r r2 |
-		R1*2 |
-		r8 e e4 d8 d d8. d16 |
-		c4 r r2 |
-		R1 |
-		\time 3/2
-		\tempo 2=320
-		\set Score.measureLength = #(ly:make-moment 3 1)
-		R\breve.*4 |
-		r1 r e |
-		d1. c2 h1 |
-		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*5 |
-		e1 e d |
-		d c h |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*14 |
-		r1 r e' |
-		d1. c2 h1 |
-		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*5 |
-		r1 e d |
-		d c h |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*6 |
-		r1 r e' |
-		d1. c2 h1 |
-		c d c |
-		h1. a2 gis1 |
-		a a r |
-		R\breve.*7 |
-		r1 a a |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve. |
-		r1 r a |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*10 |
-		r1 r e' |
-		d1. c2 h1 |
-		c d c |
-		h1. a2 gis1 |
-		a2 h c d e1 |
-		f\breve g1 |
-		a1. h2 c1 |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*5 |
-		r1 e e |
-		e d c |
-		h\breve h1 |
-		a\breve r1 |
-		R\breve.*5 |
-		e'1. f2 e f |
-		d e c1 h |
-		a a r |
-		R\breve.*3 |
-		r1 e' e |
-		f2 e d c h2. h4 |
-		a\breve r1 |
-		R\breve.*3 |
-		g'2 g g g f f |
-		e f4 g e2 f4 e d2 e4 d |
-		c1 c r |
-		R\breve.*9 |
-		\time 4/4
-		\tempo 4=100
-		R1 |
-		r8 e e4 d8 d d d |
-		c4 r8 g a4 h |
-		c r8 e d f d8. d16 |
-		c8 g' g4 a16 g f e d e f d |
-		e f g f e d c h a8 c c8. h16 |
-		c4 r r2 |
-		R1 |
-		r2 r8 g'16 g g g f e |
-		d4 r r2 |
-		g,8 g16 g g8 a16 h c4 r |
-		r2 a'16 g f e d8 d |
-		R1*2 |
-		r2 g16 f e d c8 c |
-		R1 |
-		r8 g' g4 a16 g f e d e f d |
-		e f g f e d c h a8 c c8. h16 |
-		c4 f8 f e e16 e d8 d |
-		d4 r r2 |
-		r4 f8 f e e16 e d8 d |
-		d4 r r2 |
-		R1*2 |
-		r2 r4 g, |
-		a2 h |
-		c r4 e |
-		d2 f |
-		d2. d4 |
-		c1\fermata |
-		c2. c8 d |
-		e2 e |
-		R1*2 |
-		d8. d16 d8 d d4 c8 a |
-		d2 d |
-		R1*2 |
-		e8. e16 e8 e e cis d h | %cis instead of c
-		e2 e |
-		R1 |
-		e8 e16 e e8 e fis fis16 g fis8 fis |
-		e4 e r2 |
-		e8 e16 e e8 e16 e d8 d16 d d8 d16 d |
-		R1 |
-		d8 d16 d d8 d g a g h |
-		a4 d, r2 |
-		a'8 a16 a a8 a g g16 g g8 g16 g |
-		R1 |
-		g8 g16 g g8 g g4 g |
-		g8 g16 g g8 g g4 e |
-		g2 e |
-		g1 
-		a2 e |
-		a2. g4 |
-		f1 |
-		\set Score.measureLength = #(ly:make-moment 4 1)
-		e\longa |
 	\bar "|."
 	}
 
@@ -1731,14 +1599,17 @@ staffBC = \new FiguredBass {
 		\staffTenoreII
 		\staffBasso
 		
-		\staffViolinI
-		\staffViolinII
 		\staffBassoContinuo
 		\staffBC
 		
 	>>
 	
 	\layout  {
+          \context {
+            \Voice
+            \consists "Horizontal_bracket_engraver"
+            \consists "Ambitus_engraver"
+          }
 	}
 }
 
