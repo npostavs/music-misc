@@ -30,7 +30,6 @@
 staffSopranoI = \new Staff  {
 	\time 4/4
 	\override Score.MetronomeMark #'stencil = ##f
-	\tempo 4 = 100 
 	\set Staff.instrumentName="Soprano I"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
@@ -102,7 +101,6 @@ staffSopranoI = \new Staff  {
 			c4 r r2 |
 			R1 |
 			\time 3/4
-			\tempo 4=160
 			r4 r c |
 			h4. a8 gis4 |
 			a h a |
@@ -169,7 +167,6 @@ staffSopranoI = \new Staff  {
 			a4.\melismaEnd a8 a4 |
 			R2.*7 |
 			\time 4/4
-			\tempo 4=100
 			r8 e' e4 d8 d d d |
 			c c c4 c8 c c h |
 			c4 r8 g a4 h |
@@ -307,7 +304,6 @@ staffSopranoII = \new Staff  {
 			c4 r r2 |
 			R1 |
 			\time 3/4
-			\tempo 4=160
 			r4 r e |
 			d4. c8 h4 |
 			c d c |
@@ -389,7 +385,6 @@ staffSopranoII = \new Staff  {
 			f4.\melismaEnd g8 a4 |
 			R2.*7 |
 			\time 4/4
-			\tempo 4=100
 			R1 |
 			r8 e' e4 d8 d d d |
 			c4 r8 e, f4 g |
@@ -493,7 +488,6 @@ staffAlto = \new Staff  {
 			g4 r r2 |
 			R1 |
 			\time 3/4
-			\tempo 4=160
 			R2.*4 | \barNumberCheck #66
 			% Merge Violin I
                 r4 r4 c4\startGroup |
@@ -574,7 +568,6 @@ staffAlto = \new Staff  {
 		a4 a r\stopGroup | \barNumberCheck #189
 			R2.*9 | \barNumberCheck #198
 			\time 4/4
-			\tempo 4=100
 			R1 |
 			r8 g e4 a8 a g g |
 			g4 r8 g f4 e |
@@ -690,7 +683,6 @@ staffTenoreI = \new Staff  {
 			e4 r8 g, a4 h |
 			c r8 e d d d8. d16 |
 			\time 3/4
-			\tempo 4=160
 			c2 r4 |
 			R2.*11 |
 			e4 e d |
@@ -772,7 +764,6 @@ staffTenoreI = \new Staff  {
 			c16 h c gis a2~ |
 			a\melismaEnd gis4 |
 			\time 4/4
-			\tempo 4=100
 			a4 r r2 |
 			r8 c c4 f8 f d d |
 			e4 r8 d c4 h |
@@ -882,7 +873,6 @@ staffTenoreII = \new Staff  {
 			g4 r8 e f4 g |
 			a r8 c c c c8.\melisma h16\melismaEnd |
 			\time 3/4
-			\tempo 4=160
 			c2 r4 |
 			R2.*11 |
 			c4 c h |
@@ -1076,7 +1066,6 @@ staffBasso = \new Staff  {
 			c,4 r r2 |
 			R1 |
 			\time 3/4
-			\tempo 4=160
 			R2.*4 | \barNumberCheck #66
 			% Merge Violin II
 	        r4 r4 e4\startGroup | \barNumberCheck #67
@@ -1179,7 +1168,6 @@ staffBasso = \new Staff  {
 			r4 r f |
 			e2 e4 |
 			\time 4/4
-			\tempo 4=100
 			a,4 r r2 |
 			r8 c e4 f8 f g g |
 			c,4 r8 h a4 g |
@@ -1317,7 +1305,6 @@ staffBassoContinuo = \new Staff  {
 		c, h a g |
 		f e f g |
 		\time 3/4
-		\tempo 4=160
 		c2 c4 d2 e4 |
 		a,2 c4 d2 e4 |
 		a,2 c4 d2 e4 |
@@ -1387,7 +1374,6 @@ staffBassoContinuo = \new Staff  {
 		e e |
 		e4 f2 e e4 |
 		\time 4/4
-		\tempo 4=100
 		a2 f4 g |
 		c, e f g |
 		c, h a g |
@@ -1461,7 +1447,6 @@ staffBC = \new FiguredBass {
 	\figuremode {
 		s1*61 |
 		\time 3/4
-		\tempo 4=160
 		s2. s2 <_+>4 |
 		s2. s2. |
 		s2. s2. |
@@ -1531,7 +1516,6 @@ staffBC = \new FiguredBass {
 		<_+>2. <_+>2. |
 		s2. <_+>2 s4 |
 		\time 4/4
-		\tempo 4=100
 		s1 |
 		s1 |
 		s1 |
