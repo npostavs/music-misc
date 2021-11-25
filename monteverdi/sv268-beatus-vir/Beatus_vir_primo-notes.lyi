@@ -126,32 +126,14 @@ staffSopranoI = \new Staff  {
 			e2. |
 			d4 c d |
 			h2 h4 |
-			a2 c=''4\startGroup |
-			% Merge Violin I
-		h4. a8 gis4 |
-		a h a |
-		d4. c8 h4 |
-		a2. |
-		a8 h c d e4 |
-		f4. g8 a4 |
-		a2 gis4 |
-			a4\stopGroup c,='' h |
+			a2 r4 |
+			R2.*7 | \barNumberCheck #106
+			r4 c='' h |
 			h\melisma a\melismaEnd a |
 			a2 gis4 |
 			a a r |
-			R2.*2 |
-			% Merge Violin I
-		r4\startGroup c='' h |
-		h a a |
-		a2 gis4 |
-		a2 r4\stopGroup |
-			R2.*6 |
-			% Merge Violin I
-		r4\startGroup r c |
-		h4. a8 gis4 |
-		a h a |
-		d4. c8 h4 |
-		a a\stopGroup e'='' |
+			R2.*16 | \barNumberCheck #126
+		        r2 e'=''4 | 
 			d4. c8 h4 |
 			c d c |
 			h4. a8 gis4 |
@@ -529,9 +511,33 @@ staffAlto = \new Staff  {
 		h a a |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #84
-			R2.*50 | \barNumberCheck #134
+			R2.*14 | \barNumberCheck #98
 			% Merge Violin I
-		r4\startGroup a a |
+		r2 c=''4\startGroup |
+		h4. a8 gis4 |
+		a h a |
+		d4. c8 h4 |
+		a2. |
+		a8 h c d e4 |
+		f4. g8 a4 |
+		a2 gis4 |
+		a4\stopGroup r2 | \barNumberCheck #107
+			R2.*5 | \barNumberCheck #112
+			% Merge Violin I
+		r4\startGroup c,='' h |
+		h a a |
+		a2 gis4 |
+		a2 r4\stopGroup | \barNumberCheck #116
+			R2.*6 | \barNumberCheck #122
+			% Merge Violin I
+		r4\startGroup r c='' |
+		h4. a8 gis4 |
+		a h a |
+		d4. c8 h4 |
+		a a\stopGroup r4 | \barNumberCheck #127
+			R2.*7 | \barNumberCheck #134
+			% Merge Violin I
+		r4\startGroup a=' a |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #137
 			R2. | \barNumberCheck #138
