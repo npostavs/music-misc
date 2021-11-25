@@ -1,5 +1,11 @@
 \version "2.12.2"
 
+\layout {
+    \context { \Score
+        skipBars = ##t
+    }
+}
+
 \header {
 	title = "Beatus vir primo"
 	subtitle = "a 6 voci con 5 instromenti"
@@ -1579,32 +1585,5 @@ staffBC = \new FiguredBass {
 		\set Score.measureLength = #(ly:make-moment 4 1)
 		s\longa |
 	}
-}
-
-
-\score {
-	<<
-		\staffSopranoI
-		\staffSopranoII
-		\staffAlto
-		\staffTenoreI
-		\staffTenoreII
-		\staffBasso
-		
-		\staffBassoContinuo
-		\staffBC
-		
-	>>
-	
-	\layout  {
-          \context {
-            \Voice
-            \consists "Horizontal_bracket_engraver"
-            \consists "Ambitus_engraver"
-          }
-	}
-}
-
-\paper {
 }
 
