@@ -456,7 +456,7 @@ staffAlto = \new Staff  {
 	\set Staff.midiInstrument="oboe"
 	\key c \major
 	\clef treble
-	\relative c'' { 	
+	\relative c''' { 	
 		\context Voice = "melodyAlt" {
 			\dynamicUp
 			R1 |
@@ -490,7 +490,7 @@ staffAlto = \new Staff  {
 			\time 3/4
 			R2.*4 | \barNumberCheck #66
 			% Merge Violin I
-                r4 r4 c4\startGroup |
+                r4 r4 c,=''4\startGroup |
 		h4. a8 gis4 |
 		a h a |
 		d4. c8 h4 |
@@ -569,22 +569,22 @@ staffAlto = \new Staff  {
 			R2.*9 | \barNumberCheck #198
 			\time 4/4
 			R1 |
-			r8 g e4 a8 a g g |
+			r8 g' e4 a8 a g g |
 			g4 r8 g f4 e |
 			a r8 g a a g8. f16 |
 			e4 r r2 |
 			R1*3 | \barNumberCheck #206
 			% Merge Violin I
-		r2\startGroup r8 e'=''16 e e e d c |
-			h4\stopGroup r4 r8 f16 f f f e d |
+		r2\startGroup r8 e=''16 e e e d c |
+			h4\stopGroup r4 r8 f'16 f f f e d |
 			e8 e r4 r2 |
 			% Merge Violin I
-		r2\startGroup f'16 e d c h8 h\stopGroup | \barNumberCheck #210
-			r2 c,='8 c16 c c8 d16 e |
+		r2\startGroup f=''16 e d c h8 h\stopGroup | \barNumberCheck #210
+			r2 c=''8 c16 c c8 d16 e |
 			f8 f r4 a16[\melisma g f e] d8\melismaEnd d |
 			% Merge Violin I
-		r2 e'=''16\startGroup d c h a8 a\stopGroup |
-			r2 a='8 a d,\melisma g\melismaEnd |
+		r2 e=''16\startGroup d c h a8 a\stopGroup |
+			r2 a'=''8 a d,\melisma g\melismaEnd |
 			g4 r r2 |
 			R1 |
 			r4 a8 a g g16 g f8 a |
