@@ -27,14 +27,14 @@
 
 \include "deutsch.ly"
 
-staffSopranoI = \new Staff  {
-	\time 4/4
-	\override Score.MetronomeMark #'stencil = ##f
-	\set Staff.instrumentName="Soprano I"
-	\set Staff.midiInstrument="oboe"
-	\key c \major
-	\clef treble
-	\relative c'' { 	
+sopILabel = { <>-\markup \tiny { "Sop1" } }
+sopIILabel = { <>-\markup \tiny { "Sop2" } }
+altoLabel = { <>-\markup \tiny { "Alto" } }
+tenILabel = { <>-\markup \tiny { "Tnr1" } }
+tenIILabel = { <>-\markup \tiny { "Tnr2" } }
+bassoLabel = { <>-\markup \tiny { "Bass" } }
+
+notesSopranoI = \relative c'' {
 		\context Voice = "melodySopI" {
 			\dynamicUp
 			r8 e e4 d8 d d8. d16 |
@@ -231,24 +231,31 @@ staffSopranoI = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
 
-staffSopranoII = \new Staff  {
-	\set Staff.instrumentName="Soprano II"
+staffSopranoI = \new Staff  {
+	\time 4/4
+	\override Score.MetronomeMark #'stencil = ##f
+	\set Staff.instrumentName="Soprano I"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
 	\clef treble
-	\relative c'' { 	
+	\notesSopranoI
+}
+
+
+\addQuote "sop1" { \notesSopranoI }
+
+notesSopranoII = \relative c'' {
 		\context Voice = "melodySopII" {
 			\dynamicUp
-			R1 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 e e4 d8 d d d |
 			c4 r8 g a4 e |
 			f r8 g f e d8. d16 |
 			c4 r r2 |
-			R1*2 |
+			R1 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 e' e4 d8 d d d |
                 % Merging Violin II
 		c8 \startGroup g' g4 a16 g f e d e f d |
@@ -319,9 +326,10 @@ staffSopranoII = \new Staff  {
 			a2 h4 |
 			h2 h4 |
 			a4. a8 a4 |
-			R2.*8 |
+			R2.*6 |
+			\sopILabel \cueDuring "sop1" #UP { R2.*2 |
 			% Merge Violin II
-		r4\startGroup r e'='' |
+		r4 r } e'=''\startGroup |
 		d4. c8 h4 |
 		c d c |
 		h4. a8 gis4 |
@@ -385,7 +393,7 @@ staffSopranoII = \new Staff  {
 			f4.\melismaEnd g8 a4 |
 			R2.*7 |
 			\time 4/4
-			R1 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 e' e4 d8 d d d |
 			c4 r8 e, f4 g |
 			a r8 c a c c8. h16 | \barNumberCheck #202
@@ -447,50 +455,59 @@ staffSopranoII = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
 
-staffAlto = \new Staff  {
-	\set Staff.instrumentName="Alto"
+\addQuote "sop2" { \notesSopranoII }
+
+staffSopranoII = \new Staff  {
+	\set Staff.instrumentName="Soprano II"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
 	\clef treble
-	\relative c''' { 	
+	\notesSopranoII
+}
+
+notesAlto = \relative c''' { 	
 		\context Voice = "melodyAlt" {
 			\dynamicUp
-			R1 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
+			r8 g g4 f8 a g g |
+			g4 r r2 |
+			R1*3 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 g g4 f8 a g g |
 			g4 r r2 |
 			R1*4 |
-			r8 g g4 f8 a g g |
-			g4 r r2 |
-			R1*5 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			g2. f8 e |
 			d c d e d16 e f e d4 |
 			c r r2 |
 			R1*4 |
 			r4 r8 g' f e d4 |
 			c r r2 |
-			R1*6 |
-			r4 g'8 g16 g f8 e d8. d16 |
+			R1*5 |
+			r2 \tenIILabel \cueDuringWithClef "ten2" #DOWN "treble_8" { r2 |
+			r4 } g'8 g16 g f8 e d8. d16 |
 			c4 r r2 |
-			R1*8 |
+			R1*7 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 g' g4 f8 a g g |
 			e2 r |
-			R1*6 |
+			R1*5 |
+			\sopILabel \cueDuring "sop1" #UP  { R1 } |
 			r8 e e e e[\melisma fis16 g] fis8.[ e16] |
 			d4\melismaEnd r r2 |
-			R1*7 |
+			R1*5 |
+			\sopILabel \cueDuring "sop1" #UP { R1*2 } |
 			a'8. g16 g4 f8 e d4 |
 			c r r2 |
 			r8 g' e4 a8 a g g |
 			g4 r r2 |
 			R1 |
 			\time 3/4
-			R2.*4 | \barNumberCheck #66
+			\sopILabel \cueDuring "sop1" #UP { R2.*4 |
 			% Merge Violin I
-                r4 r4 c,=''4\startGroup |
+                r4 r4  } c,=''4\startGroup |
 		h4. a8 gis4 |
 		a h a |
 		d4. c8 h4 |
@@ -499,15 +516,17 @@ staffAlto = \new Staff  {
 		f4. g8 a4 |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #75
-			R2.*5 | \barNumberCheck #80
+			R2.*2 |
+			\sopILabel \cueDuring "sop1" #UP { R2.*3 } |
 			% Merge Violin I
 		c,=''4\startGroup c h |
 		h a a |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #84
-			R2.*14 | \barNumberCheck #98
+			R2.*12 |
+			\sopILabel \cueDuring "sop1" #UP { R2.*2 | \barNumberCheck #98
 			% Merge Violin I
-		r2 c=''4\startGroup |
+		r2 } c=''4\startGroup |
 		h4. a8 gis4 |
 		a h a |
 		d4. c8 h4 |
@@ -516,20 +535,22 @@ staffAlto = \new Staff  {
 		f4. g8 a4 |
 		a2 gis4 |
 		a4\stopGroup r2 | \barNumberCheck #107
-			R2.*5 | \barNumberCheck #112
+			R2.*2 |
+			\bassoLabel \cueDuringWithClef "bass" #UP bass { R2.*3 |
 			% Merge Violin I
-		r4\startGroup c,='' h |
+		r4 } c,=''\startGroup h |
 		h a a |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #116
-			R2.*6 | \barNumberCheck #122
+			\tenIILabel \cueDuringWithClef "ten2" #DOWN "treble_8" { R2.*6 | \barNumberCheck #122
 			% Merge Violin I
-		r4\startGroup r c='' |
+		r4 r } c=''\startGroup  |
 		h4. a8 gis4 |
 		a h a |
 		d4. c8 h4 |
 		a a\stopGroup r4 | \barNumberCheck #127
-			R2.*7 | \barNumberCheck #134
+			R2.*3 |
+			\tenILabel \cueDuringWithClef "ten1" #UP "treble_8" { R2.*4 } |
 			% Merge Violin I
 		r4\startGroup a=' a |
 		a2 gis4 |
@@ -539,7 +560,8 @@ staffAlto = \new Staff  {
 		r4\startGroup r a |
 		a2 gis4 | %instead of a\breve g1 |
 		a2 r4\stopGroup | \barNumberCheck #141
-                        R2.*10 | \barNumberCheck #151
+                        R2.*2 |
+                        \tenIILabel \cueDuringWithClef "ten2" #DOWN "treble_8" { R2.*8 } |
                         % Merge Violin I
 		r4\startGroup r c |
 		h4. a8 gis4 |
@@ -550,32 +572,35 @@ staffAlto = \new Staff  {
 		f4. g8 a4 |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #160		
-			R2.*5 | \barNumberCheck #165
+			R2.*2 |
+			\tenILabel \cueDuringWithClef "ten1" #UP "treble_8" { R2.*3 |
 			% Merge Violin I
-		r4\startGroup c, c |
+		r4 } c,\startGroup c |
 		c h a |
 		a2 gis4 |
 		a2 r4\stopGroup | \barNumberCheck #169
-			R2.*5 | \barNumberCheck #174
+			R2.*2 |
+			\tenILabel \cueDuringWithClef "ten1" #UP "treble_8" { R2.*3 } |
 			% Merge Violin I
 		c4.\startGroup d8 c d |
 		h c a4 gis |
 		a a r\stopGroup | \barNumberCheck #177
-			R2.*9 | \barNumberCheck #186
+			R2.*6 |
+			\sopIILabel \cueDuring "sop2" #DOWN { R2.*3 } |
 			% Merge Violin I
 		e'8\startGroup e e e h h |
 		c d16 e c8 d16 c h8 c16 h |
 		a4 a r\stopGroup | \barNumberCheck #189
 			R2.*9 | \barNumberCheck #198
 			\time 4/4
-			R1 |
+			\sopILabel \cueDuring "sop1" #UP { R1 } |
 			r8 g' e4 a8 a g g |
 			g4 r8 g f4 e |
 			a r8 g a a g8. f16 |
 			e4 r r2 |
 			R1*3 | \barNumberCheck #206
 			% Merge Violin I
-		r2\startGroup r8 e=''16 e e e d c |
+		\sopILabel \cueDuring "sop1" #UP { r2 r8 } e=''16\startGroup e e e d c |
 			h4\stopGroup r4 r8 f'16 f f f e d |
 			e8 e r4 r2 |
 			% Merge Violin I
@@ -629,28 +654,32 @@ staffAlto = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
 
-staffTenoreI = \new Staff  {
-	\set Staff.instrumentName="Tenore I"
+\addQuote "alto" { \notesAlto }
+
+staffAlto = \new Staff  {
+	\set Staff.instrumentName="Alto"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
-	\clef "G_8"
-	\relative c' { 	
+	\clef treble
+	\notesAlto
+}
+
+notesTenoreI = \relative c' { 	
 		\context Voice = "melodyTenI" {
 			\dynamicUp
-			R1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			r8 e e4 a,8 a d g, |
 			g4 r r2 |
-			R1 |
-			r2 f8 e f g |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 |
+			r2 } f8 e f g |
 			a h c c c4\melisma h\melismaEnd |
 			c r r2 |
 			r8 e e4 a,8 a d g, |
 			g4 r r2 |
-			R1*5 |
+			R1*4 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			e'2. d8 c |
 			h a h c c c c8.\melisma h16\melismaEnd |
 			c4 r r2 |
@@ -660,21 +689,24 @@ staffTenoreI = \new Staff  {
 			R1 |
 			r4 r8 g a c g4 |
 			g r r2 |
-			R1*6 |
-			r4 e'8 e16 e d8 c c8. h16 |
+			R1*5 |
+			r2 \tenIILabel \cueDuringWithClef "ten2" #DOWN "treble_8" { r2 |
+			r4 } e'8 e16 e d8 c c8. h16 |
 			c4 r r2 |
-			R1*4 |
-			r2 a8 a a a16 a |
+			R1*3 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 |
+			r2 } a8 a a a16 a |
 			a4 a h c8 c |
 			d4 e8 e d4. d8 |
 			c4 r r2 |
 			r8 e e4 a,8 a d g, |
 			c2 r |
-			R1*6 |
+			R1*5 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			r8 c c c c[\melisma d16 e] d8.[ c16] |
 			h4\melismaEnd r r2 |
 			R1*2 |
-			r2 r8 e, f g |
+			\tenIILabel \cueDuring "ten2" #UP { r2 } r8 e, f g |
 			a4 r r2 |
 			R1*3 |
 			f'8. f16 e4 d8 c c8.\melisma h16\melismaEnd |
@@ -684,7 +716,8 @@ staffTenoreI = \new Staff  {
 			c r8 e d d d8. d16 |
 			\time 3/4
 			c2 r4 |
-			R2.*11 |
+			R2.*8 |
+			\altoLabel \cueDuringWithClef "alto" #UP treble { R2.*3 } |
 			e4 e d |
 			d c h |
 			h2 h4 |
@@ -703,7 +736,8 @@ staffTenoreI = \new Staff  {
 			h h a |
 			a2 gis4 |
 			a2 r4 |
-			R2.*15 |
+			R2.*13 |
+			\sopIILabel \cueDuringWithClef "sop2" #UP treble { R2.*2 } |
 			r4 e' d |
 			c2 h4 |
 			a2 a4 |
@@ -732,7 +766,8 @@ staffTenoreI = \new Staff  {
 			a\melisma h\melismaEnd c |
 			h2. |
 			a2 r4 |
-			R2.*10 |
+			R2.*7 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2.*3 } |
 			r4 e' e |
 			e d c |
 			h2 h4 |
@@ -754,7 +789,8 @@ staffTenoreI = \new Staff  {
 			d\melisma e16 f d8 e16 d c8 d16 c |
 			h8 c16 d h8 c16 h a8 h16 a |
 			g4.\melismaEnd g8 d'4 |
-			R2.*3 |
+			R2.*1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2.*2 } |
 			f8 f f f e e |
 			d\melisma e16 f d8 e16 d c8 d16 c |
 			h8 c16 d h8 c16 h a8 h16 a |
@@ -823,29 +859,32 @@ staffTenoreI = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
-
-staffTenoreII = \new Staff  {
-	\set Staff.instrumentName="Tenore II"
+staffTenoreI = \new Staff  {
+	\set Staff.instrumentName="Tenore I"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
 	\clef "G_8"
-	\relative c' { 	
+	\notesTenoreI
+}
+\addQuote "ten1" { \notesTenoreI }
+
+
+notesTenoreII = \relative c' { 	
 		\context Voice = "melodyTenII" {
 			\dynamicUp
-			R1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			r8 c c4 d8 d d d |
 			e4 r r2 |
-			R1 |
-			r2 a,8 g a h |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 |
+			r2 } a,8 g a h |
 			c d e f d2 |
 			c4 r r2 |
 			r8 c c4 d8 d d d |
 			e4 r r2 |
-			R1*9 |
-			r4 e,8 e f e f g |
+			R1*8 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 |
+			r4 } e,8 e f e f g |
 			a a r4 r2 |
 			R1 |
 			r4 r8 c c c c8.\melisma h16\melismaEnd |
@@ -853,19 +892,21 @@ staffTenoreII = \new Staff  {
 			r8 c c4 d8 d d d |
 			e4 r r2 |
 			R1*3 |
-			r2 g,8 g16 g a8 a16 a |
+			\bassoLabel \cueDuringWithClef "bass" #DOWN bass { r2 } g,8 g16 g a8 a16 a |
 			h8 h16 h r4 r2 |
 			r c8 c16 c h8. h16 |
 			a8. a16 g8 g a c c8.\melisma h16\melismaEnd |
 			c4 r r2 |
-			R1*2 | %instead of R1*3 | a8 a a a16 a a4 a | g a8 a h4 c8 c | c8. h16 c4 r2 |
-			r2 a8 a a a16 a |
+			R1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 |
+			r2 } a8 a a a16 a |
 			a4 a g a8 a |
 			h4 c8 c c4. h8 |
 			c4 r4 r2 |
 			r8 c c4 d8 d d d |
 			a4 r r2 |
-			R1*10 |
+			R1*9 |
+			\bassoLabel \cueDuringWithClef "bass" #UP bass { R1 } |
 			r8 e f g a g a h |
 			c4 r r2 |
 			R1*5 |
@@ -874,7 +915,8 @@ staffTenoreII = \new Staff  {
 			a r8 c c c c8.\melisma h16\melismaEnd |
 			\time 3/4
 			c2 r4 |
-			R2.*11 |
+			R2.*8 |
+			\altoLabel \cueDuringWithClef "alto" #UP treble { R2.*3 } |
 			c4 c h |
 			h a a |
 			a2 gis4 |
@@ -894,7 +936,8 @@ staffTenoreII = \new Staff  {
 			h h a |
 			a2 gis4 |
 			a2 r4 |
-			R2.*17 |
+			R2.*15 |
+			\tenILabel \cueDuring "ten1" #UP { R2.*2 } |
 			r4 a g |
 			f2 e4 |
 			f2 e4 |
@@ -921,7 +964,8 @@ staffTenoreII = \new Staff  {
 			f,\melisma g\melismaEnd a |
 			a2\melisma gis4\melismaEnd |
 			a2 r4 |
-			R2.*10 |
+			R2.*7 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2.*3 } |
 			r4 c c |
 			c h a |
 			a2 gis4 |
@@ -938,7 +982,8 @@ staffTenoreII = \new Staff  {
 			r4 c e |
 			d8 c h a a8. gis16 |
 			a2 r4 |
-			R2.*9 |
+			R2.*7 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2.*2 } |
 			d8 d d d c c |
 			h\melisma c16 d h8 c16 h a8 h16 a |
 			gis8 a16 h gis8 a16 gis fis8 gis16 fis |
@@ -1011,25 +1056,29 @@ staffTenoreII = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
 
-staffBasso = \new Staff  {
-	\set Staff.instrumentName="Basso"
+staffTenoreII = \new Staff  {
+	\set Staff.instrumentName="Tenore II"
 	\set Staff.midiInstrument="oboe"
 	\key c \major
-	\clef bass
-	\relative c { 	
+	\clef "G_8"
+	\notesTenoreII
+}
+\addQuote "ten2" { \notesTenoreII }
+
+notesBasso = \relative c { 	
 		\context Voice = "melodyBas" {
 			\dynamicUp
-			R1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
+			r8 c e4 f8 f g g |
+			c,4 r r2 |
+			R1*3 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			r8 c e4 f8 f g g |
 			c,4 r r2 |
 			R1*4 |
-			r8 c e4 f8 f g g |
-			c,4 r r2 |
-			R1*5 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			c'4 h8 a g fis g a |
 			h16[\melisma a g f] e[ f g e] f8\melismaEnd d g4 |
 			c, r r2 |
@@ -1038,13 +1087,15 @@ staffBasso = \new Staff  {
 			c, r r2 |
 			r8 c e4 f8 f g g |
 			c,4 r r2 |
-			R1*3 |
+			R1*2 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			c8 c16 c d8 d16 d e8 e16 e r4 |
 			R1 |
 			c'8 c16 c h8. h16 a8. a16 g8 g |
 			f4 e8 e f d g4 |
 			c, r r2 |
-			R1*2 |
+			R1*1 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R1 } |
 			a'8 a a a16 a a8.[\melisma g16] f8.[ e16] |
 			d4\melismaEnd c h a8 a |
 			g4 e8 e f4 g |
@@ -1066,9 +1117,9 @@ staffBasso = \new Staff  {
 			c,4 r r2 |
 			R1 |
 			\time 3/4
-			R2.*4 | \barNumberCheck #66
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2.*4 |
 			% Merge Violin II
-	        r4 r4 e4\startGroup | \barNumberCheck #67
+	        r4 r4 } e4\startGroup | \barNumberCheck #67
 		d4. c8 h4 |
 		c d c |
 		h4. a8 gis4 |
@@ -1094,8 +1145,9 @@ staffBasso = \new Staff  {
 			d,2. |
 			e |
 			a,2 r4 |
-			R2.*10 |
-			r4 c' h |
+			R2.*9 |
+			\sopILabel \cueDuringWithClef "sop1" #UP treble { R2. |
+			r4 } c' h |
 			a\melisma g\melismaEnd f |
 			e2 e4 |
 			a, a r |
@@ -1108,7 +1160,8 @@ staffBasso = \new Staff  {
 			d2 f4 |
 			e2. |
 			a,2 r4 | \barNumberCheck #123
-			R2.*11 | \barNumberCheck #134
+			R2.*7 |
+			\tenILabel \cueDuringWithClef "ten1" #UP "treble_8" { R2.*4 } |
 			% Merge Violin II
 		r4\startGroup a a |
 		h2 h4 |
@@ -1233,9 +1286,15 @@ staffBasso = \new Staff  {
 			}
 
 	\bar "|."
-	}
-
 }
+staffBasso = \new Staff  {
+	\set Staff.instrumentName="Basso"
+	\set Staff.midiInstrument="oboe"
+	\key c \major
+	\clef bass
+	\notesBasso
+}
+\addQuote "bass" { \notesBasso }
 
 staffBassoContinuo = \new Staff  {
 	\set Staff.instrumentName="Basso"
