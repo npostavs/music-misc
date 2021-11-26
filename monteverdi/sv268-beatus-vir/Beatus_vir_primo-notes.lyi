@@ -1404,22 +1404,16 @@ staffBassoContinuo = \new Staff  {
 		f f |
 		g1 |
 		c\fermata |
-		\clef tenor
 		c'2. c8 h |
 		a2 a\fermata |
-		\clef bass
 		f4. f8 f4 e |
 		d2 d \fermata |
-		\clef tenor
 		d'4. d8 h4 a |
 		g2 g\fermata |
-		\clef bass
 		g2 g4 f |
 		e2 e\fermata |
-		\clef tenor
 		e'2 cis4 h |
 		a2 a |
-		\clef bass
 		a4. g8 fis e fis d |
 		a'4. g8 fis e fis d |
 		a'4. g8 fis e fis d |
