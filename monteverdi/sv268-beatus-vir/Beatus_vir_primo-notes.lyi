@@ -1297,7 +1297,7 @@ staffBasso = \new Staff  {
 \addQuote "bass" { \notesBasso }
 
 staffBassoContinuo = \new Staff  {
-	\set Staff.instrumentName="Basso"
+	\set Staff.instrumentName= \markup { \column { \line{"Basso"}  \line {"Continuo"} } }
 	\set Staff.midiInstrument="harpsichord"
 	\key c \major
 	\clef bass
