@@ -35,9 +35,9 @@ scoreDBcMusic = \relative c {
   d2 r4 d4 | g4 fis8 e d4 cis |
   b4 e fis fis, | b8 d cis b fis' e d cis |
   b8 d cis b a' g fis e | dis8 fis e dis c' b a g |
-  fis8 e dis cis b a g fis | e'8 g fis e b' a g fis |
+  fis8 e dis cis b a g fis | \ottUp e'8 g fis e b' a g fis |
   e8 g fis e d' c b a | gis8 b a gis f' e d c |
-  b8 a gis fis e d c b | a8 cis b a e' d cis b |
+  \ottZ b8 a gis fis e d c b | a8 cis b a e' d cis b |
   a8 cis b a g' fis e d | cis8 e d cis bes' a g fis |
   e8 d cis b a g fis e | d'8 fis e d a' g fis e |
   d8 fis e d c' b a g | fis8 a g fis es' d c b |
@@ -60,14 +60,14 @@ scoreDBcMusic = \relative c {
   gis2 r | r4 e gis e |
   a8 b a g fis a g fis | e8 d e c d e fis d |
   g8 a b c d e d cis | b8 a b g a b cis a |
-  d8 e fis g a b a g | f8 e f d e f gis e |
+  \ottUp d8 e fis g a b a g | f8 e f d e f gis e |
   a8 b c d  e fis e d | c8 b c a  b cis dis b |
   e,8 fis g a b c b a | gis8 b a g fis a g fis |
-  e4 d e c | d4 c b a |
+  e4 d e \ottZ c | d4 c b a |
   g4 g' b g | r4 d fis d |
   r4 g, b g | d4 d'8 c b4 a |
   g4 fis e g | fis4 e d fis |
-  e4 g a a, | d4 d'8 c b4 a |
+  e4 g a \ottDown a, \ottZ | d4 d'8 c b4 a |
   g4 b8 a g4 b8 a | g4 fis g b |
   c2 r4 c | fis,2 r4 fis |
   b2 r4 b | e,2 r8 c' b a|
