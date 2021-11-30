@@ -285,41 +285,39 @@ oboeI = \relative c'' {
     e8 -! r16 c16 -! d8 -! r16 b16 -! | \barNumberCheck #202
     c4 r4 \bar "||"
     \time 2/4  | % 203
-    R2*3 | % 206
-    r8 g'8 -\f fs8 f8 | % 207
-    e8 c16. ( d32 ) e8 c8 | % 208
-    a8 d'4 -\sf c8 | % 209
-    \slurDotted
-    c16( b16 a16 g16) g8( a16 b16) | % 210
-    c8 r8 r4 | \barNumberCheck #211
+    e,32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 204
+    e32 ( g32 cs32 g32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 205
+    g32 (\f b32 d32 b32 ) g32 ( b32 d32 b32 ) g32 ( a32 e'32 a,32 ) fs32 ( a32 d32 a32 ) | % 206
+    g32 ( b32 d32 b32 ) g32 ( a32 b32 g32 a32 b32 c32 a32 b32 c32 d32 b32 ) | % 207
+    c32 ( g32 e32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 208
+    f32 ( a32 c32 a32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) ef32 ( a32 c32 a32 ) | \barNumberCheck #209
+    d,32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 210
+    e32 ( -\> g32 c32 g32 e32 g32 c32 g32 ) e8 -\! r8 | \barNumberCheck #211
     \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
-    R2 | % 212
-    r4 r8 d,8 | % 213
-    cs16( d16 e16 d16) cs16( d16 c16 a16) | % 214
-    b8 b'32( a32 b32 c32 d8) r8 | % 215
-    \slurSolid
-    d,8 b16. g32 e'8 g16. e32 | % 216
-    d4 b8 r8 | % 217
-    r4.       \afterGrace fs'8\trill( { e16 fs } | % 218
-    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 219
-    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 220
-    g8 ) -\< b4 -> d8 ~ -> | % 221
-    d16-\! c16 -! b16 -! a16 -! g16 -! f16 -! e16 -! d16 -! |
-    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
-    \barNumberCheck #222
-    c8 r8 r4 | % 223
-    f8 f16. ( g32 ) a8 -! f8 -! | % 224
-    d8 g4 -\sf f8 | % 225
-    f16 ( e16 d16 c16 ) b16 ( c16 e16 c16 ) | % 226
-    g8 g'4 -\sf f8 | % 227
-    f16 ( e16 d16 c16 b16 c16 e16 c16 ) | % 228
-    g8 g'4 f8 | % 229
-    e8 -\f r8 f8 r8 | % 230
-    g8 r8 a8 r8 | % 231
-    b8 r8 c8 r8 | \barNumberCheck #232
-    d4 ( -\fp b8 g8 | % 233
-    f2 ) ~ | \barNumberCheck #234
-    f4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
+    b'32 ( -\p g32 fs32 g32 ) a32 ( g32 fs32 g32 ) c32 ( g32 fs32 g32 ) a32 ( g32 fs32 g32 ) | % 212
+    b32 ( g32 fs32 g32 a32 g32 fs32 g32 ) a32 ( g32 fs32 g32 ) b32 ( g32 fs32 g32 ) | % 213
+    d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) | % 214
+    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) | % 215
+    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) e32 ( g32 c32 g32) e32 ( g32 c32 g32 ) | % 216
+    d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) d32 ( d'32 b32 g32 ) | % 217
+    fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 218
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | \barNumberCheck #219
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 220
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 g32 b32 d32 b32 ) g32 ( b32 d32 b32 ) | % 221
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32( g32 d'32 g,32 ) | % 222
+    e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 223
+    f32 ( a32 c32 a32 f32 a32 d32 a32 ) f32 ( a32 d32 a32 ) f32 ( a32 d32 a32 ) | % 224
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 225
+    e32 ( g32 c32 g32 e32 g32 e32 g32 ) e32 ( g32 c32 g32 e32 g32 e32 g32 ) | % 226
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 227
+    e32 ( g32 c32 g32 e32 g32 c32 g32 ) e32 ( g32 c32 g32 e32 g32 c32 g32 ) | % 228
+    f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) | \barNumberCheck #229
+    g8 -\f r8 c8 r8 | % 230
+    c8 r8 c8 r8 | % 231
+    g'8 r8 g8 r8 | % 232
+    g2 -\fp | % 233
+    d2 ~ | \barNumberCheck #234
+    d4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
     \time 6/8 \partial 8 r8 |
     R2.*7 | \barNumberCheck #243
     r4. r4 gs8 -! | % 244
@@ -587,39 +585,41 @@ oboeII = \relative c' {
         2,2        % beatStructure
         \thirtySecondBeamExceptions       % beamExceptions
     \time 2/4  | % 203
-    e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 204
-    e32 ( g32 cs32 g32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 205
-    g32 (\f b32 d32 b32 ) g32 ( b32 d32 b32 ) g32 ( a32 e'32 a,32 ) fs32 ( a32 d32 a32 ) | % 206
-    g32 ( b32 d32 b32 ) g32 ( a32 b32 g32 a32 b32 c32 a32 b32 c32 d32 b32 ) | % 207
-    c32 ( g32 e32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 208
-    f32 ( a32 c32 a32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) ef32 ( a32 c32 a32 ) | \barNumberCheck #209
-    d,32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 210
-    e32 ( -\> g32 c32 g32 e32 g32 c32 g32 ) e8 -\! r8 | \barNumberCheck #211
+    R2*3 | % 206
+    r8 g'8 -\f fs8 f8 | % 207
+    e8 c16. ( d32 ) e8 c8 | % 208
+    a8 d'4 -\sf c8 | % 209
+    \slurDotted
+    c16( b16 a16 g16) g8( a16 b16) | % 210
+    c8 r8 r4 | \barNumberCheck #211
     \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
-    b'32 ( -\p g32 fs32 g32 ) a32 ( g32 fs32 g32 ) c32 ( g32 fs32 g32 ) a32 ( g32 fs32 g32 ) | % 212
-    b32 ( g32 fs32 g32 a32 g32 fs32 g32 ) a32 ( g32 fs32 g32 ) b32 ( g32 fs32 g32 ) | % 213
-    d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) | % 214
-    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) | % 215
-    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) e32 ( g32 c32 g32) e32 ( g32 c32 g32 ) | % 216
-    d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) d32 ( d'32 b32 g32 ) | % 217
-    fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 218
-    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | \barNumberCheck #219
-    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 220
-    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 g32 b32 d32 b32 ) g32 ( b32 d32 b32 ) | % 221
-    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32( g32 d'32 g,32 ) | % 222
-    e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 223
-    f32 ( a32 c32 a32 f32 a32 d32 a32 ) f32 ( a32 d32 a32 ) f32 ( a32 d32 a32 ) | % 224
-    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 225
-    e32 ( g32 c32 g32 e32 g32 e32 g32 ) e32 ( g32 c32 g32 e32 g32 e32 g32 ) | % 226
-    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 227
-    e32 ( g32 c32 g32 e32 g32 c32 g32 ) e32 ( g32 c32 g32 e32 g32 c32 g32 ) | % 228
-    f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) | \barNumberCheck #229
-    g8 -\f r8 c8 r8 | % 230
-    c8 r8 c8 r8 | % 231
-    g'8 r8 g8 r8 | % 232
-    g2 -\fp | % 233
-    d2 ~ | \barNumberCheck #234
-    d4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
+    R2 | % 212
+    r4 r8 d,8 | % 213
+    cs16( d16 e16 d16) cs16( d16 c16 a16) | % 214
+    b8 b'32( a32 b32 c32 d8) r8 | % 215
+    \slurSolid
+    d,8 b16. g32 e'8 g16. e32 | % 216
+    d4 b8 r8 | % 217
+    r4.       \afterGrace fs'8\trill( { e16 fs } | % 218
+    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 219
+    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 220
+    g8 ) -\< b4 -> d8 ~ -> | % 221
+    d16-\! c16 -! b16 -! a16 -! g16 -! f16 -! e16 -! d16 -! |
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    \barNumberCheck #222
+    c8 r8 r4 | % 223
+    f8 f16. ( g32 ) a8 -! f8 -! | % 224
+    d8 g4 -\sf f8 | % 225
+    f16 ( e16 d16 c16 ) b16 ( c16 e16 c16 ) | % 226
+    g8 g'4 -\sf f8 | % 227
+    f16 ( e16 d16 c16 b16 c16 e16 c16 ) | % 228
+    g8 g'4 f8 | % 229
+    e8 -\f r8 f8 r8 | % 230
+    g8 r8 a8 r8 | % 231
+    b8 r8 c8 r8 | \barNumberCheck #232
+    d4 ( -\fp b8 g8 | % 233
+    f2 ) ~ | \barNumberCheck #234
+    f4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
     \time 6/8 \partial 8 r8 | \barNumberCheck #236
     R2.*3 | % 239
     r4. r4 c8 -. | % 240
