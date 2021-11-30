@@ -92,7 +92,7 @@ oboeI = \relative c'' {
     b16 ( d16 ) d16 -. d16 -. cs16 ( d16 c16 d16 ) | % 18
     b8. -\< g16 d'8. b16 -\! | % 19
     f'8. -\f \times 2/3 { g32 -\> f32 e32 }
-    d16 -! f16 -! e16 -! -\! d16 -! | \barNumberCheck #20
+    d16 -. f16 -. e16 -. -\! d16 -. | \barNumberCheck #20
     c8 -\p c16. d32 e8 c8 | % 21
     a8 d4 c8 | % 22
     c16 b16 a16 g16 g8 a16 b16 | % 23
@@ -192,7 +192,7 @@ oboeI = \relative c'' {
     a'8[ fs16. d32] d'8[ c16. a32] | % 113
     b8 c8 d8 r8 | % 114
     R2*2 | % 116
-    gs,16 ( a16 ) fs16 -! d16 -! cs'16 ( d16 ) c16 -! a16 -! | % 117
+    gs,16 ( a16 ) fs16 -. d16 -. cs'16 ( d16 ) c16 -. a16 -. | % 117
     b8 r8 \decresc a8 r8 | % 118
     g8 r8 f8 -\pp r8 \fermata | % 119
     c16 ( cs16 d16 ds16 ) e8 c8 | % 120
@@ -261,16 +261,16 @@ oboeI = \relative c'' {
     \partial 16 \time 2/4 \key c \major r16 |
     R2*3 | \barNumberCheck #180
     r4 r16 g'32[ ( f32] ) e16 -. e32 ( d32 ) | % 181
-    c8 -! r16 c16 -! e8 -! r16 c16 | % 182
-    a8 r16 a'16 -! d8 -! r16 c16 | % 183
-    b8 -! r16 a16 -! g8 -! r16 b16 -! | % 184
+    c8 -. r16 c16 -. e8 -. r16 c16 | % 182
+    a8 r16 a'16 -. d8 -. r16 c16 | % 183
+    b8 -. r16 a16 -. g8 -. r16 b16 -. | % 184
     c4 r4 | \barNumberCheck #185
     \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
-    d,8 -! r16 d16 -! e8 -! r16 e16 -! | % 186
+    d,8 -. r16 d16 -. e8 -. r16 e16 -. | % 186
     d8 b'16 ( a16 g16 fs16 e16 d16 ) | % 187
     d16 r16 d16 r16 d16 r16 d16 r16 | % 188
     d16 ( b16 c16 d16 e16 fs16 g16 e16 ) | % 189
-    d8-! r16 d16 e8 -! r16 e16 -! | % 190
+    d8-. r16 d16 e8 -. r16 e16 -. | % 190
     d8 b'16 ( a16 g16 fs16 e16 d16 ) | % 191
     d16 r16 d16 r16 d16 r16 d16 r16 | \barNumberCheck #192
     d16 r16 d'16 r16 cs16 r16 c16 r16 | % 193
@@ -278,11 +278,11 @@ oboeI = \relative c'' {
     d16 r16 g16 r16 g16 \cresc r16 g16 r16 | % 195
     g16 r16 g16\decresc r16 g16 r16 g16\pp r16 | % 196
     R2 \fermataMarkup | % 197
-    c,8 -! r16 c16 -! e8 r16 c16 | % 198
-    a8 r16 a'16 d8 -! r16 c16 -! | % 199
-    b8 -! r16 a16 -! g8 -! r16 b16 -! | % 200
-    c8 -! r16 e,16 -! g8 -! r16 f16 -! | % 201
-    e8 -! r16 c16 -! d8 -! r16 b16 -! | \barNumberCheck #202
+    c,8 -. r16 c16 -. e8 r16 c16 | % 198
+    a8 r16 a'16 d8 -. r16 c16 -. | % 199
+    b8 -. r16 a16 -. g8 -. r16 b16 -. | % 200
+    c8 -. r16 e,16 -. g8 -. r16 f16 -. | % 201
+    e8 -. r16 c16 -. d8 -. r16 b16 -. | \barNumberCheck #202
     c4 r4 \bar "||"
     \time 2/4  | % 203
     e,32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 204
@@ -320,11 +320,11 @@ oboeI = \relative c'' {
     d4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
     \time 6/8 \partial 8 r8 |
     R2.*7 | \barNumberCheck #243
-    r4. r4 gs8 -! | % 244
-    a4 -! b8 -! c4 -! a8 -! | % 245
+    r4. r4 gs8 -. | % 244
+    a4 -. b8 -. c4 -. a8 -. | % 245
     f4 b8 ~ -\sf b4 a8 -. | % 246
-    \acciaccatura a8 gs8 ( fs8 ) gs8 -! e8 -! fs8 -! gs8 -! | % 247
-    a8 -! a8 -! a8 -! a8 ( b8 ) gs8 -! | % 248
+    \acciaccatura a8 gs8 ( fs8 ) gs8 -. e8 -. fs8 -. gs8 -. | % 247
+    a8 -. a8 -. a8 -. a8 ( b8 ) gs8 -. | % 248
     a4 c,8 d4 e8 | % 249
     a,8 f'8 f8 f8 ( g?8 ) e8 | % 250
     f4 a,8 bf4 c8 | % 251
@@ -336,13 +336,13 @@ oboeI = \relative c'' {
     e4 r8 r8 fs8 fs8 | % 256
     g4 r8 r8 f?8 f8 | % 257
     e4 r8 r8 fs8 fs8 | % 258
-    g8 -! a8 -! g8 -! f?8 -! g8 -! f8 -! | % 259
+    g8 -. a8 -. g8 -. f?8 -. g8 -. f8 -. | % 259
     e8 f8 e8 d8 e8 d8 | % 260
     c8 d8 c8 b8 c8 b8 | % 261
     \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
     c8 -\f c8 d8 e8 e8 c8 | % 262
     a8 d8 e8 f8 f8 d8 | \barNumberCheck #263
-    b8 g'8 g8 g8 ( fs8 ) f8 -! | % 264
+    b8 g'8 g8 g8 ( fs8 ) f8 -. | % 264
     e8 f8 e8 d8 c8 b8 | % 265
     c8 c8 d8 e8 e8 c8 | % 266
     a8 f'8 d8 b8 g'8 e8 | % 267
@@ -551,19 +551,19 @@ oboeII = \relative c' {
     g8 r8 f8 r8 | % 175
     ef8 r8 r4 \bar "||" \barNumberCheck #176
     \key c \major \time 2/4 \partial 16 g16 | % 177
-    c8 -! r16 c16 -! e8 -! r16 c16 -! | % 178
-    a8 -! r16 a16 -! d8 -! r16 c16 -! | \barNumberCheck #179
-    b8 -! r16 d16 -! a8 -! r16 d16 -! | % 180
-    g,8 -! r8 r4 | % 181
-    e8 -! r16 e16 -! g8 -! r16 e16 -! | % 182
-    f8 -! r16 f'16 -! f8 -! r16 e16 -! | % 183
-    d8 -! r16 c16 -! b8 -! r16 d16 -! | % 184
+    c8 -. r16 c16 -. e8 -. r16 c16 -. | % 178
+    a8 -. r16 a16 -. d8 -. r16 c16 -. | \barNumberCheck #179
+    b8 -. r16 d16 -. a8 -. r16 d16 -. | % 180
+    g,8 -. r8 r4 | % 181
+    e8 -. r16 e16 -. g8 -. r16 e16 -. | % 182
+    f8 -. r16 f'16 -. f8 -. r16 e16 -. | % 183
+    d8 -. r16 c16 -. b8 -. r16 d16 -. | % 184
     e4 r4 | % 185
-    b8 -! -\f r16 b16 -! c8 -! r16 c16 -! | % 186
+    b8 -. -\f r16 b16 -. c8 -. r16 c16 -. | % 186
     b8 g'16 ( fs16 e16 d16 c16 b16 ) | % 187
     d16 r16 d16 r16 cs16 r16 c16 r16 | % 188
     b16 ( g16 a16 b16 c16 d16 e16 c16 ) | \barNumberCheck #189
-    b8 -! r16 b16 -! c8 -! r16 c16 -! | % 190
+    b8 -. r16 b16 -. c8 -. r16 c16 -. | % 190
     b8 g'16 ( fs16 e16 d16 c16 b16 ) | % 191
     d16 r16 d16 r16 cs16 r16 c16 r16 | % 192
     b16 r16 d16 r16 d16 r16 d16 r16 | % 193
@@ -572,12 +572,12 @@ oboeII = \relative c' {
     c16 r16 cs16 | % 195
     r16 d16 r16 e16\decresc r16 f16 r16 d16 -\pp | % 196
     R2\fermataMarkup | % 197
-    r16 e,32 ( f32 ) g8 -! r16 e32 ( f32 ) g8 -! | % 198
-    r16 a32 ( b32 ) c16 -! c16 -! f8 r16 e16 -! |
+    r16 e,32 ( f32 ) g8 -. r16 e32 ( f32 ) g8 -. | % 198
+    r16 a32 ( b32 ) c16 -. c16 -. f8 r16 e16 -. |
     \barNumberCheck #199
-    d8 -! r16 c16 -! b8 -! r16 d16-! | % 200
-    e8 -! r16 c16-! b8-! r16 b16-! | % 201
-    c8-! r16 e,16-! f8 -! r16 d16 -! | % 202
+    d8 -. r16 c16 -. b8 -. r16 d16-. | % 200
+    e8 -. r16 c16-. b8-. r16 b16-. | % 201
+    c8-. r16 e,16-. f8 -. r16 d16 -. | % 202
     e4 r4 \bar "||"
       \overrideTimeSignatureSettings
         2/4        % timeSignatureFraction
@@ -604,11 +604,11 @@ oboeII = \relative c' {
     g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 219
     g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 220
     g8 ) -\< b4 -> d8 ~ -> | % 221
-    d16-\! c16 -! b16 -! a16 -! g16 -! f16 -! e16 -! d16 -! |
+    d16-\! c16 -. b16 -. a16 -. g16 -. f16 -. e16 -. d16 -. |
     \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
     \barNumberCheck #222
     c8 r8 r4 | % 223
-    f8 f16. ( g32 ) a8 -! f8 -! | % 224
+    f8 f16. ( g32 ) a8 -. f8 -. | % 224
     d8 g4 -\sf f8 | % 225
     f16 ( e16 d16 c16 ) b16 ( c16 e16 c16 ) | % 226
     g8 g'4 -\sf f8 | % 227
@@ -831,8 +831,8 @@ englishHorn = \relative c'' {
     g4 r8 \bar "||" s8 | \barNumberCheck #101 % NOTE JDH count full bar here
     \time 2/4
     \partial 8 d8 | \barNumberCheck #102
-    g16 ( gs16 a16 as16 ) b8-! g8 -. | % 103
-    e8 -. a8-\sf  ~ a8 g8 -! | % 104
+    g16 ( gs16 a16 as16 ) b8-. g8 -. | % 103
+    e8 -. a8-\sf  ~ a8 g8 -. | % 104
     fs8 r16 fs16 g8 a8 | % 105
     d,8 g4 fs8 | % 106
     g4 r4 | % 107
@@ -843,7 +843,7 @@ englishHorn = \relative c'' {
     fs8 d8 r8 d'8 | % 112
     cs8 a8 r8 cs8 | % 113
     d8 e8 fs8 r8 | % 114
-    gs,16 ( a16 ) fs16 -. d16 -. cs'16 ( d16 ) b16 -! g16 -! | % 115
+    gs,16 ( a16 ) fs16 -. d16 -. cs'16 ( d16 ) b16 -. g16 -. | % 115
     fs8 d8 r8 d'8 | % 116
     cs8 a8 -\< r8 cs8 -\! | % 117
     d8 d,8 -\decresc r8 d8 |
@@ -851,7 +851,7 @@ englishHorn = \relative c'' {
     r8 d8 r8 d16 -\pp r16 \fermata | % 119
     R2*2 | % 121
     d4 ~ -\sf d16 ( e16 f16 fs16 | % 122
-    g16 gs16 a16 as16 ) b8 -! gs8 -. -! | % 123
+    g16 gs16 a16 as16 ) b8 -. gs8 -. | % 123
     d4 ~ -\sf d16 ( e16 f16 fs16 ) | % 124
     g16 ( fs16 g16 fs16 ) g8 -. \bar "||" s8 | \barNumberCheck #125 % NOTE: jdh counts full bar here.
     \time 2/4 \partial 8 r8 | \barNumberCheck #126
@@ -949,7 +949,7 @@ englishHorn = \relative c'' {
     gs16 ( a16 ) a16 a16 gs16 ( a16 g16 a16 ) | % 220
     fs8 r8 d8 fs8 ~ -\sf | % 221
     fs8 -\sf a8 ~ a16 d,16 e16 fs16 | % 222
-    g8[ g16. ( a32] ) b8 -! g8 -! | \barNumberCheck #223
+    g8[ g16. ( a32] ) b8 -. g8 -. | \barNumberCheck #223
     e8 a4-\sf  g8 | % 224
     g16 fs16 e16 d16 d8 e16 fs16 | % 225
     g8 g8 r8 g8 | % 226
@@ -962,10 +962,10 @@ englishHorn = \relative c'' {
     fs2 ~ -\fp | \barNumberCheck #233
     fs4 ( a8 d8 | \barNumberCheck #234
     fs4 ) \fermata r8  s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
-    \time 6/8 \partial 8 d,8 -! | % 236
-    g4 -! a8 -! b4 g8 -! | % 237
+    \time 6/8 \partial 8 d,8 -. | % 236
+    g4 -. a8 -. b4 g8 -. | % 237
     e4 a8-\sf  ~ a4 g8 | % 238
-    \acciaccatura g8 fs8 ( e8 ) fs8 -! d8 -! e8 -! fs8 -! | % 239
+    \acciaccatura g8 fs8 ( e8 ) fs8 -. d8 -. e8 -. fs8 -. | % 239
     g8 b8 c8 d8 e8 f8 | % 240
     e8 g8 e8 c8 d8 e8 | % 241
     f8 e8 f8 d8 e8 fs8 | % 242
