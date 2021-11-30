@@ -1,0 +1,1021 @@
+% -*- coding: utf-8 -*-
+\version "2.20.0"
+
+\language "english"
+
+
+\header {
+    title = "„Reich’ mir die Hand, mein Leben!“ aus Mozarts Don Juan."
+    encodingdate =  "2021-11-29"
+    source = "IMSLP408988-PMLP129027-BEETHOVEN_Trio_in_C_WoO_28_Oboes_Eng_Hrn_after_Hess.pdf"
+    encodingsoftware =  "Audiveris 5.2.4"
+    copyright = \markup {
+        \tiny { "John D. Howard after Hess 'urtext' ed., March 2002." }
+        \epsfile #Y #2 "../../by-sa.eps"
+        \small "Creative Commons Attribution-ShareAlike 4.0" }
+    }
+
+\layout {
+  \context { \Score
+    skipBars = ##t
+  }
+}
+
+thema   = { \mark "Thema" }
+varI    = { \mark "Var I" }
+varII   = { \mark "Var II" }
+varIII  = { \mark "Var III" }
+varIV   = { \mark "Var IV" }
+varV    = { \mark "Var V" }
+varVI   = { \mark "Var VI" }
+varVII  = { \mark "Var VII" }
+varVIII = { \mark "Var VIII" }
+varCoda = { \mark "Coda" }
+
+thirtySecondBeamExceptions = \beamExceptions {
+  c32[ c c c] c32[ c c c] c32[ c c c] c32[ c c c] |
+  c8[ 8 8 8] |
+  c16[ 16 16 16] c16[ 16 16 16] |
+  \tuplet 3/2 {g16[ b16 d16] g16[ b16 a16] } \tuplet 3/2 {g16[ fs16 e16] d16[ c16 b16] }
+}
+
+rit = \markup { \italic "rit." }
+atempo = \markup { \italic "a tempo" }
+
+%    \set Score.skipTypesetting = ##f
+
+markings = {
+    \thema \time 2/4 \tempo "Andante"
+    s2*25 \break | \barNumberCheck #26
+    \varI s2*25 \break | \barNumberCheck #51
+    \varII s2*25 \break | \barNumberCheck #76
+    \varIII s2*24 s4 s8 s8 \bar "||" \break| \barNumberCheck #101
+    \partial 8 s8
+    \varIV s2*23 \break | \barNumberCheck #125
+    \partial 8 s8
+    \varV s2*25 \break | \barNumberCheck #151
+    \varVI s2*5 s4 s4-\rit s2*2 s4-\atempo s4 s2*16 \break | \barNumberCheck #176
+    \varVII \partial 16 s16 s2*26 \break | \barNumberCheck #203
+    \varVIII s2*32 \break
+    \time 6/8 \partial 8 s8 | \barNumberCheck #236
+    \varCoda s2.*43 \break
+    \time 2/4
+    \tempo Andante
+    s2*13
+}
+
+oboeI = \relative c'' {
+      \overrideTimeSignatureSettings
+        2/4        % timeSignatureFraction
+        1/8        % baseMomentFraction
+        2,2        % beatStructure
+        \thirtySecondBeamExceptions
+  \override TupletBracket.bracket-visibility = #'if-no-beam
+    \clef "treble" \time 2/4 | % 1
+    \thema c8 -\p
+    c16 d16 e8 c8 | % 2
+    a8 d4 c8 | % 3
+    b8 b16 b16 c8 d8 | % 4
+    \acciaccatura d8 g,4 r4 | % 5
+    c8 c16 d16 e8 c8 | % 6
+    a8 d4 c8 | % 7
+    c16 ( b16 ) a16 g16 g8 \trill a16 b16 | % 8
+    c4 r4 | % 9
+    d8 b16 g16 e'8 g16 e16 | \barNumberCheck #10
+    d8. b16 d8 \breathe d8 | % 11
+    cs16 ( d16 e16 d16 cs16 d16 c16 a16 ) | % 12
+    b8 b32 ( c32 d32 c32 b8 ) r8 | % 13
+    d8 b16 g16 e'8 g16 e16 | % 14
+    d8. b16 d8\noBeam d8 | % 15
+    cs16 ( d16 e16 d16 cs16 d16 c16 d16 ) | % 16
+    b16 ( d16 ) d16 -. d16 -. cs16 ( d16 c16 d16 ) | % 17
+    b16 ( d16 ) d16 -. d16 -. cs16 ( d16 c16 d16 ) | % 18
+    b8. -\< g16 d'8. b16 -\! | % 19
+    f'8. -\f \times 2/3 { g32 -\> f32 e32 }
+    d16 -! f16 -! e16 -! -\! d16 -! | \barNumberCheck #20
+    c8 -\p c16. d32 e8 c8 | % 21
+    a8 d4 c8 | % 22
+    c16 b16 a16 g16 g8 a16 b16 | % 23
+    c16 e16 g4 d8 | % 24
+    f16 e16 d16 c16 c8 \trill e16 ( d16 ) | % 25
+    c4 r4 \bar "||" | % 26
+    \time 2/4 | % 26
+    c16[ r32 b32 ( c16 ) r32 d32] ( e16[ ) r32 d32 ( c16) r32 b32] ( | % 27
+    a16[ ) r32 b32 ( c16 ) r32 cs32] ( d16[ ) r32 e32 ( c16) r32 d32] ( | % 28
+    b16[ ) r32 d32 ( c16 ) r32 b32] ( a16[ ) r32 c32 ( b16 ) r32 a32] ( | % 29
+    g16[ ) r32 a32 ( b16 ) r32 \slurDown c32] (  \slurNeutral d16[ ) r32 e32 ( f16 ) r32 d32] ( | \barNumberCheck #30
+    c16[ ) r32 b32 ( c16 ) r32 d32] ( e16[ ) r32 d32 ( c16 ) r32 b32] ( | % 31
+    a16[ ) r32 b32 ( c16 ) r32 cs32] ( d16[ ) r32 e32 ( f16 ) r32 d32] ( | % 32
+    c16[ ) r32 b32 ( a16 ) r32 g32] ( fs16[ ) r32 g32 ( a16 ) r32 b32] ( | % 33
+    c16[ ) r32 e32 ( g16 ) r32 e32] ( c8 ) r16 g16 ( | \barNumberCheck #34
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d'16[ ) r32 cs32 ( d16 ) r32 b32] ( e16[ ) r32 ds32 ( e16 ) r32 c32] ( | % 35
+    d?16[ ) r32 g32 ( b16 ) r32 g32] ( d'16[ ) r32 b32 ( g16 ) r32 d32] ( | % 36
+    cs16[ ) r32 d32 ( e16 ) r32 d32] ( cs16[ ) r32 d32 ( c16 ) r32 d32] ( | % 37
+    b16[ ) r32 d32 ( g16 ) r32 b32] ( a16[ ) r32 g32 ( fs16 ) r32 e32 ( ] | % 38
+    d16[ ) r32 cs32 ( d16 ) r32 b32] ( e16[ ) r32 ds32 ( e16 ) r32 c32] ( | % 39
+    d?16[ ) r32 g32 ( b16 ) r32 g32] ( d'16[ ) r32 b32 ( g16 ) r32 d32] ( | \barNumberCheck #40
+    cs16[ ) r32 d32 ( e16 ) r32 d32] ( cs16[ ) r32 d32 ( c16 ) r32 d32] ( | % 41
+    b16[ ) r32 d32 ( e16 ) r32 d32] ( cs16[ ) r32 d32 ( c16 ) r32 d32] ( | % 42
+    b16[ ) r32 d32 ( e16 ) r32 d32] ( cs16[ ) r32 d32 ( c16 ) r32 d32] ( | % 43
+    b16[ ) r32 g32 ( b16 ) r32 \slurDown c32] ( d16[ ) \slurNeutral r32 b32 ( d16 ) r32 e32] ( | % 44
+    f16[ ) r32 e32 ( f16 ) r32 a32] ( g16[ ) r32 f32 ( e16 ) r32 d32] ( | % 45
+    c16[ ) r32 b32 ( c16 ) r32 d32] ( e16[ ) r32 d32 ( c16 ) r32 b32] ( | % 46
+    a16[ ) r32 b32 ( c16 ) r32 cs32] ( d16[ ) r32 e32 ( f16 ) r32 d32] ( | % 47
+    c?16[ ) r32 b32 ( a16 ) r32 g32] ( fs16[ ) r32 g32 ( a16 ) r32 b32] ( | % 48
+    c16[ ) r32 g'32 ( fs16 ) r32 f32] ( e16[ ) r32 ef32 ( d16 ) r32 cs32] ( | % 49
+    c?16[ ) r32 b32 ( a16 ) r32 g32] ( fs16[ ) r32 g32 ( a16 ) r32 b32] ( | % 50
+    c16[ ) r32 e32 ( g16 ) r32 e32] ( c8 ) r8 \bar "||"
+    \time 2/4 | \barNumberCheck #51
+    R2*4 | % 55
+    e8 c'8 r8 c8 | % 56
+    a8 d8 r8 d8 | % 57
+    c8 c8 b8 b8 | % 58
+    c4 r4 | \barNumberCheck #59
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d,4 e4 | % 60
+    d4 r8 g8 | \barNumberCheck #61
+    fs8 fs8 fs8 fs8 | % 62
+    g16 b16 as16 b16 a16 g16 fs16 e16 | % 63
+    \slurDotted
+    d4( e4 | % 64
+    d4) r8 g8 | % 65
+    \slurSolid
+    fs8 fs8 fs8 fs8 | % 66
+    \key c \major | % 66
+    g4 r8 fs8 | % 67
+    g4 r8 fs8 | % 68
+    g8 f8 r8 d8 | % 69
+    r8 b8 r8 f'8 | % 70
+    e8 r8 r4 | \barNumberCheck #71
+    r4 r8 f8 | % 72
+    e8 c'8 r8 b8 | % 73
+    c8 r8 r4 | % 74
+    r8 c8 r8 b8 | % 75
+    c8 r8 r4 \bar "||"
+    \time 2/4 | % 76
+    c,4 e8 r16 c16 | % 77
+    a4 d8 r16 c16 | % 78
+    b8[ r16 g'16 a,8 r16 fs'16] | % 79
+    g8[ r16 f?16 e8 r16 d16] | % 80
+    c4 e8 r16 c16 | \barNumberCheck #81
+    d4 f8 r16 d16 | % 82
+    b8[ r16 g'16 fs8 r16 f16] | % 83
+    e8[ r16 d16 c8] r8 | \barNumberCheck #84
+    g'8 g4 -\< g8 ~ -\! | % 85
+    g8.\turn -\> bs16 a16 -\! g16 fs16 e16 | % 86
+    d8 d4 d8 ~ | % 87
+    d16 d16 ( cs16 d16 ef16 e16 f16 fs16 | % 88
+    g8 ) g4 g8 ~ | % 89
+    \set subdivideBeams = ##t
+    g8\turn d'8 ~ d16 c32 ( b32 a32 g32 fs32 e32 | % 90
+    \set subdivideBeams = ##f
+    d8 ) d4 d8 | \barNumberCheck #91
+    d16 e16 d16 r16 r16 d16 r16 d16 | % 92
+    r16 d16 e16 d16 r16 d16 r16 d16 | % 93
+    r16 d16 ( cs16 d16 ef16 e16 f16 fs16 | % 94
+    g16 fs16 a16 g16 f16 e16 f16 d16 ) | % 95
+    c4 e8 r16 c16 | % 96
+    d4 f8 r16 d16 | % 97
+    b8[ r16 a16 g8 r16 b16] | % 98
+    c8[ r16 e16 g8 r16 d16] | % 99
+    e8[ r16 c16 g8 r16 b16] |  \barNumberCheck #100
+    c4 r8 \bar "||" s8 | % NOTE: JDH counts full bar here.
+    \time 2/4 \partial 8 r8 |
+    R2*4 | \barNumberCheck #106
+    c16 ( cs16 d16 ds16 ) e8 c8 | % 107
+    a8 ( d4 ) -\sf c8 ( ~ | % 108
+    c8 b8 ~ b16 ) d16 f16 b,16 | % 109
+    d4 c8 r8 | % 110
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    R2*2 | % 112
+    a'8[ fs16. d32] d'8[ c16. a32] | % 113
+    b8 c8 d8 r8 | % 114
+    R2*2 | % 116
+    gs,16 ( a16 ) fs16 -! d16 -! cs'16 ( d16 ) c16 -! a16 -! | % 117
+    b8 r8 \decresc a8 r8 | % 118
+    g8 r8 f8 -\pp r8 \fermata | % 119
+    c16 ( cs16 d16 ds16 ) e8 c8 | % 120
+    a8 d4 -\sf c8 | \barNumberCheck #121
+    c16 ( b16 a16 g16 ) g8 g8 | % 122
+    g8 g'4 -\sf f32 ( e32 d32 c32 ) | % 123
+    c16 ( b16 a16 g16 ) g8 g8 | \barNumberCheck #124
+    g8 e'8 c8 \bar "||" s8 | % NOTE JDH counts full bar here
+      \overrideTimeSignatureSettings
+        2/4        % timeSignatureFraction
+        1/8        % baseMomentFraction
+        2,2        % beatStructure
+        \thirtySecondBeamExceptions       % beamExceptions
+    \partial 8 \time 2/4 g8 |
+    c32 d32 c32 b32 c32 d32 e32 d32 f32 e32 g32 f32 e32 d32 c32 b32 | % 127
+    a32 b32 a32 gs32 a32 b32 c32 cs32 d32 e32 d32 cs32 d32 e32 c32 d32 | % 128
+    b32 c32 b32 a32 b32 d32 c32 b32 a32 b32 a32 gs32 a32 c32 b32 a32 | % 129
+    g?32 a32 g32 fs32 g32 a32 b32 c32 d32 e32 f?32 e32 g32 f32 e32 d32 | % 130
+    c32 d32 c32 b32 c32 d32 e32 d32 f32 e32 g32 f32 e32 d32 c32 b32 | \barNumberCheck #131
+    a32 b32 a32 gs32 a32 b32 c32 cs32 d32 e32 f32 fs32 g32 f32 e32 d32 | % 132
+    c?32 b32 a32 g32 fs32 g32 a32 b32 c32 d32 e32 f?32 g32 e32 f32 d32 | % 133
+    c32 e32 g32 e32 c32 e32 g32 e32 c8 r8 | \barNumberCheck #134
+    \once \override Score.BarNumber.break-visibility = ##(#t #t #t)
+    R2 | % 135
+    r32 g32 a32 b32 c32 d32 e32 fs32 g32 a32 b32 a32 g32 fs32 e32 d32 | % 136
+    c32 d,32 fs32 a32 c32 fs32 a32 fs32 c'32 b32 a32 g32 fs32 e32 d32 c32 | % 137
+    b32 c32 b32 a32 b32 c32 b32 c32 d8 r8 | % 138
+    R2 | % 139
+    r32 g,=' a b c32 d e fs g32 a b a g32 fs e d | % 140
+    \repeat unfold 3 { cs32 d e d } c32 d c d | % 141
+    \repeat unfold 2 { b32 d cs d cs32 d e d cs32 d e d c32 d c d | } \barNumberCheck #143
+    b32 g32 d'32 c32 b32 d32 f?32 e32 d32 f32 a32 g32 f32 e32 d32 c32 | \barNumberCheck #144
+    b32 a32 g32 fs32 g32 gs32 a?32 bf32 b32 c32 cs32 d32 ds32 e32 f?32 d32 | % 145
+    c?32 d32 c32 b32 c32 d32 e32 d32 f32 e32 g32 f32 e32 d32 c32 b32 | % 146
+    a32 d, e f g32 a b cs d32 e f g a32 f e d | % 147
+    c?32 b32 e32 d32 c32 b32 a32 g32 fs32 g32 a32 g32 fs32 g32 a32 b32 | % 148
+    c32 cs32 d32 ef32 e32 f32 fs32 g32 a32 g32 f32 e32 f32 e32 d32 c32 | % 149
+    b32 c32 b32 a32 g32 a32 b32 c32 d32 e32 f32 e32 g32 f32 e32 d32 | % 150
+    c32 e32 c32 g32 e32 c'32 g32 e32 c8 r8 \bar "||" | \barNumberCheck #151
+    \key c \minor \time 2/4
+    R2*2 | \barNumberCheck #153
+    r8 f'4 ( -\p ef8 ) | % 154
+    ef4 ( d8 ) r8 | % 155
+    R2 | % 156
+    r4 f4 ~ | % 157
+    f8 ( ef8 d8 b8 ) | % 158
+    d4 ( c8 ) r8 | % 159
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    bf?4 ( c8 d16 ef16 ) | % 160
+    ef8. ( d32 c32 bf8 ) \breathe bf8\noBeam | % 161
+    a16 ( bf16 c16 bf16 ) bf'16 ( a16 af16 f16 ) | \barNumberCheck #162
+    fs8 ( g8 ) r4 | % 163
+    bf,8. ( b16 c16 df16 d16 ef16 ) | % 165
+    ef8. ( d32 c32 bf?8 ) \breathe bf8\noBeam | % 166
+    a='16 ( bf16 c16 bf16 ) bf'16 ( a16 af16 f16 ) | % 166
+    fs8 ( g8 ) r16 c16 ( b16 bf16 ) | % 167
+    g8 ( af8 ) r16 d16 ( cs16 c16 ) | % 168
+    b4\turn ( d8. f,16 ) | % 169
+    af?4. ( b,8 ) | % 171
+    c4( ef8. c16) | % 172
+    af8 ( df4 -\sf c8 ) | \barNumberCheck #172
+    c8 r8 b8 r8 | % 173
+    c8 g'8 -\sf r8 d8 -\pp | % 174
+    ef8 r8 b8 r8 | \barNumberCheck #175
+    c8 r8 r4 \bar "||" | \barNumberCheck #176
+    \partial 16 \time 2/4 \key c \major r16 |
+    R2*3 | \barNumberCheck #180
+    r4 r16 g'32[ ( f32] ) e16 -. e32 ( d32 ) | % 181
+    c8 -! r16 c16 -! e8 -! r16 c16 | % 182
+    a8 r16 a'16 -! d8 -! r16 c16 | % 183
+    b8 -! r16 a16 -! g8 -! r16 b16 -! | % 184
+    c4 r4 | \barNumberCheck #185
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d,8 -! r16 d16 -! e8 -! r16 e16 -! | % 186
+    d8 b'16 ( a16 g16 fs16 e16 d16 ) | % 187
+    d16 r16 d16 r16 d16 r16 d16 r16 | % 188
+    d16 ( b16 c16 d16 e16 fs16 g16 e16 ) | % 189
+    d8-! r16 d16 e8 -! r16 e16 -! | % 190
+    d8 b'16 ( a16 g16 fs16 e16 d16 ) | % 191
+    d16 r16 d16 r16 d16 r16 d16 r16 | \barNumberCheck #192
+    d16 r16 d'16 r16 cs16 r16 c16 r16 | % 193
+    b16 r16 d,16 r16 d16 r16 d16 r16 | % 194
+    d16 r16 g16 r16 g16 \cresc r16 g16 r16 | % 195
+    g16 r16 g16\decresc r16 g16 r16 g16\pp r16 | % 196
+    R2 \fermataMarkup | % 197
+    c,8 -! r16 c16 -! e8 r16 c16 | % 198
+    a8 r16 a'16 d8 -! r16 c16 -! | % 199
+    b8 -! r16 a16 -! g8 -! r16 b16 -! | % 200
+    c8 -! r16 e,16 -! g8 -! r16 f16 -! | % 201
+    e8 -! r16 c16 -! d8 -! r16 b16 -! | \barNumberCheck #202
+    c4 r4 \bar "||"
+    \time 2/4  | % 203
+    R2*3 | % 206
+    r8 g'8 -\f fs8 f8 | % 207
+    e8 c16. ( d32 ) e8 c8 | % 208
+    a8 d'4 -\sf c8 | % 209
+    \slurDotted
+    c16( b16 a16 g16) g8( a16 b16) | % 210
+    c8 r8 r4 | \barNumberCheck #211
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    R2 | % 212
+    r4 r8 d,8 | % 213
+    cs16( d16 e16 d16) cs16( d16 c16 a16) | % 214
+    b8 b'32( a32 b32 c32 d8) r8 | % 215
+    \slurSolid
+    d,8 b16. g32 e'8 g16. e32 | % 216
+    d4 b8 r8 | % 217
+    r4.       \afterGrace fs'8\trill( { e16 fs } | % 218
+    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 219
+    g8) r8 r8 \afterGrace  fs8\trill( { e16 fs } | % 220
+    g8 ) -\< b4 -> d8 ~ -> | % 221
+    d16-\! c16 -! b16 -! a16 -! g16 -! f16 -! e16 -! d16 -! |
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    \barNumberCheck #222
+    c8 r8 r4 | % 223
+    f8 f16. ( g32 ) a8 -! f8 -! | % 224
+    d8 g4 -\sf f8 | % 225
+    f16 ( e16 d16 c16 ) b16 ( c16 e16 c16 ) | % 226
+    g8 g'4 -\sf f8 | % 227
+    f16 ( e16 d16 c16 b16 c16 e16 c16 ) | % 228
+    g8 g'4 f8 | % 229
+    e8 -\f r8 f8 r8 | % 230
+    g8 r8 a8 r8 | % 231
+    b8 r8 c8 r8 | \barNumberCheck #232
+    d4 ( -\fp b8 g8 | % 233
+    f2 ) ~ | \barNumberCheck #234
+    f4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
+    \time 6/8 \partial 8 r8 |
+    R2.*7 | \barNumberCheck #243
+    r4. r4 gs8 -! | % 244
+    a4 -! b8 -! c4 -! a8 -! | % 245
+    f4 b8 ~ -\sf b4 a8 -. | % 246
+    \acciaccatura a8 gs8 ( fs8 ) gs8 -! e8 -! fs8 -! gs8 -! | % 247
+    a8 -! a8 -! a8 -! a8 ( b8 ) gs8 -! | % 248
+    a4 c,8 d4 e8 | % 249
+    a,8 f'8 f8 f8 ( g?8 ) e8 | % 250
+    f4 a,8 bf4 c8 | % 251
+    a4 f'8 g4 a8 | % 252
+    f4 r8 f4 r8 | \barNumberCheck #253
+    e4 r8 fs4 r8 | % 254
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    g4 r8 r8 f?8 f8 | % 255
+    e4 r8 r8 fs8 fs8 | % 256
+    g4 r8 r8 f?8 f8 | % 257
+    e4 r8 r8 fs8 fs8 | % 258
+    g8 -! a8 -! g8 -! f?8 -! g8 -! f8 -! | % 259
+    e8 f8 e8 d8 e8 d8 | % 260
+    c8 d8 c8 b8 c8 b8 | % 261
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    c8 -\f c8 d8 e8 e8 c8 | % 262
+    a8 d8 e8 f8 f8 d8 | \barNumberCheck #263
+    b8 g'8 g8 g8 ( fs8 ) f8 -! | % 264
+    e8 f8 e8 d8 c8 b8 | % 265
+    c8 c8 d8 e8 e8 c8 | % 266
+    a8 f'8 d8 b8 g'8 e8 | % 267
+    c8 a'8 f8 d8 g8 g8 | % 268
+    g8 ( fs8 ) fs8 -. fs8 ( f8 ) f8 -. | % 269
+    f4. \fermata -\f f4 r8 | % 270
+    e4 r8 f4 r8 | % 271
+    e4 r8 f4 r8 | % 272
+    e4 r8 d4 r8 | \barNumberCheck #273
+    c4 r8 b4 r8 | % 274
+    c4 r8 f16 ( g16 fs16 g16 a16 g16 | % 275
+    e4 ) r8 f?16 ( g16 fs16 g16 a16 g16 | % 276
+    e16 g16 fs16 g16 a16 g16 f16 g16 fs16 g16 a16 g16 | % 277
+    e8 ) e,8 g8 c8 e8 g8 | % 278
+    c4. \fermata g4 \fermata r8 | % 279
+    \time 2/4 | % 279
+    e8[ -\p e16. f32] g8 e8 | % 280
+    c8 f4 ef8 | % 281
+    d8 r8 d8 r8 | % 282
+    e8 r8 r4 | \barNumberCheck #283
+    r4 f8 fs8 | % 284
+    g8 r8 b,8 r8 | % 285
+    c4 c8 cs8 | % 286
+    d8 r8 b8 r8 | % 287
+    c4 r8. b16 | % 288
+    c8[ r16 b16 c8 r16 b16] | % 289
+    c4 r4 | % 290
+    b'4 r4 | % 291
+    c4 r4 \fermata \bar "|."
+    }
+
+oboeII = \relative c' {
+    \clef "treble" \time 2/4 | % 1
+    e8 -\p r8 e8
+    r8 | % 2
+    f8 r8 a8 r8 | % 3
+    d,8 g8[ a8 fs8] | % 4
+    r8 g8[ f?8 d8] | % 5
+    e8 r8 e8 r8 | % 6
+    f8 r8 a8 r8 | % 7
+    d,8 r8 f8 r8 | % 8
+    e8 g8 e8 r8 | % 9
+    d8 g8[ g8 g8] | \barNumberCheck #10
+    g4. r8 | % 11
+    r8 a8[ a8 d,8] | % 12
+    d8 g32 ( a32 b32 a32 g8 ) r8 | % 13
+    d8 g8[ g8 g8] | % 14
+    g4. r8 | % 15
+    a4 r8 a8 | % 16
+    g8 r8 r8 a8 | % 17
+    g8 r8 r8 a8 | % 18
+    g8 r8 b8. g16 | % 19
+    r8 d'8[ ( b8 f8 )] | \barNumberCheck #20
+    e8 -\p r8 e8 r8 | % 21
+    f8 r8 a8 r8 | % 22
+    d,4 r8 d8 | % 23
+    g8 r8 d'8 g,8 | % 24
+    g8 a8 e8 g16 ( f16 ) | % 25
+    e8 -. g8 -. e8 -. r8 \bar "||"
+    \time 2/4  | % 26
+    e8 -\p r8 e8 r8 | % 27
+    f8 r8 r8 d8 | % 28
+    d8 r8 fs8 r8 | % 29
+    g8 r8 r4 | \barNumberCheck #30
+    e8 r8 e8 r8 | % 31
+    f8 r8 r8 d8 | % 32
+    f8 r8 f8 r8 | % 33
+    e8 r8 r4 | \barNumberCheck #34
+    R2*2 | % 36
+    r8 fs8 fs8 fs8 | % 37
+    g8 r8 r4 | % 38
+    R2*2 | % 40
+    r8 fs8[ fs8 fs8] | % 41
+    g8 r8 r8 fs8 | \barNumberCheck #42
+    g8 r8 r8 fs8 | % 43
+    g8 r8 r4 | % 44
+    R2 | % 45
+    e8 r8 e8 r8 | % 46
+    f8 r8 r8 d8 | % 47
+    f8 r8 f8 r8 | % 48
+    e8 r8 r4 | % 49
+    f8 r8 f8 r8 | % 50
+    e4 r4 \bar "||"
+    \time 2/4  | % 51
+    c'8 e8 r8 c8 | \barNumberCheck #52
+    a8 d8 r8 c8 | % 53
+    b8 g'8 a,8 fs'8 | % 54
+    g8 r8 r4 | % 55
+    c,8 e8 r8 e8 | % 56
+    f8 f8 r8 f8 | % 57
+    e8[ e8 d8 d8] | % 58
+    e4 r4 | % 59
+    b4 c4 | % 60
+    b4 r8 b8 | % 61
+    a8[ a8 a8 a8] | \barNumberCheck #62
+    b16 g'16 fs16 g16 fs16 e16 d16 c16 | % 63
+    b4( c4 | % 64
+    b4 ) r8 b8 | % 65
+    a8[ a8 a8 a8] | % 66
+    b4 r8 a8 | % 67
+    \clef "treble" | % 67
+    b4 r8 a8 | % 68
+    b8 b8 r8 b8 | % 69
+    r8 g8 r8 d'8 | % 70
+    c8 e8 r8 c8 | % 71
+    a8 d8 r8 d8 | \barNumberCheck #72
+    c8 e8 r8 d8 | % 73
+    e8 r8 r4 | % 74
+    r8 e8 r8 d8 | % 75
+    e8 r8 r4 \bar "||"
+    \time 2/4  | % 76
+    e,4 c8 r16 e16 | % 77
+    f4 d8 r16 fs16 | % 78
+    g8[ r16 e16 c8 r16 d16] | % 79
+    g8[ r16 d'16 c8 r16 b16] | % 80
+    g4 e8 r16 g16 | % 81
+    a4 f8 r16 a16 | \barNumberCheck #82
+    g8[ r16 b16 c8 r16 d16] | % 83
+    c8[ r16 f,16 e8] r8 | \barNumberCheck #84
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d'4 -\< e4 -\! | % 85
+    d8 -\> r8 r4  -\! | % 86
+    r8 a8[ b8 c8] | % 87
+    b8 r8 r4 | % 88
+    d4 -\< e4 -\> | % 89
+    d8 -\! r8 r4 | % 90
+    r8 a8[ b8 c8] | % 91
+    b8 a8[ b8 c8] | \barNumberCheck #92
+    b8 a8[ b8 c8] | % 93
+    b8 r8 r4 | % 94
+    R2 | % 95
+    g4 e8 r16 g16 | % 96
+    a4 f8 r16 a16 | % 97
+    f8[ r16 f16 f8 r16 f16] | % 98
+    g8 r8 r8. g16 | % 99
+    g8[ r16 e16 e8 r16 d16] | % 100
+    e4 r8 \bar "||" s8 | % NOTE: JDH counts full bar her
+    \time 2/4 \partial 8 r8 | % 101
+    R2 | \barNumberCheck #103
+    f16 ( fs16 g16 gs16 ) a8 fs8 | % 104
+    d8 g?4 -\sf f?8 | % 105
+    e8[ r16 e16 f8 g8] | % 106
+    e4 r4 | % 107
+    R2 | % 108
+    d16 ( e16 f16 fs16 ) g8 f8 | % 109
+    f4 ( e8 ) r8 | \barNumberCheck #110
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    R2 | % 111
+    d'8[ b16. g32] g'8[ d16. b32] | % 112
+    a8 fs8 r8 d'8 | % 113
+    d8 d8 d8 r8 | % 114
+    R2 | % 115
+    cs16 ( d16 ) b16 -. g16 -. fs'16 ( g16 ) d16 -. b16 -. | % 116
+    a8 fs8 r8 d'8 | % 117
+    d8 r8 c8\decresc r8 | % 118
+    b8 r8 d8 -\pp r8 \fermata | % 119
+    r4 c,16 ( d16 ef16 e16 | % 120
+    f16 fs16 g16 gs16 ) a8 fs8 | % 121
+    d8 f4 -\sf f8 | % 122
+    e16 -. e16 ( f16 fs16 ) g8 -. e8 -. | \barNumberCheck #123
+    d8 f?4 -\sf f8 | % 124
+    e8 g8 e8 \bar "||" s8 | \barNumberCheck #125 % NOTE: JDH counts full bar here
+    \time 2/4 \partial 8 r8 | % 126
+    R2*4 | % 130
+    r8 e8 g8 e8 | % 131
+    c8 a'8 r8 a8 | % 132
+    r8 d,8 r8 d8 | % 133
+    e8 r8 r4 | \barNumberCheck #134
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d8. -\markup{ \italic {espress.} } g16 e8. g16 | %135
+    d4 r4 | % 136
+    r8 fs8 fs8 fs8 | % 137
+    g8 r8 r16 d16 g16 b16 | % 138
+    d8. g16 e8. g16 | % 139
+    d8 r8 r4 | % 140
+    r8 a8 fs8 d8 | % 141
+    g8 a8 fs8 d8 | % 142
+    g8 a8 fs8 d8 | % 143
+    g8 r8 r4 | % 144
+    R2*5 | % 149
+    f8 d8 r8 f8 | % 150
+    e8 r8 r4 \bar "||"
+    \time 2/4 \key c \minor  | % 151
+    R2*2 | % 153
+    r8 d'4 ( -\p c8 ) | % 154
+    c4 ( b8 ) r8 | % 155
+    R2 | % 156
+    r4 af4 ~ | % 157
+    af8 ( g8 af8 f8 ) | % 158
+    f4 ( ef8 ) r8 | \barNumberCheck #159
+    g4 ( af4 ) | % 160
+    g4. r8 | % 161
+    r8 f8 f8 bf8 | % 162
+    bf4 r4 | % 163
+    g4 ( af4 ) | % 164
+    g4. r8 | % 165
+    r8 f8 f8 bf8 | % 166
+    bf4 ( g8 c8 ) | % 167
+    c4 ( a8 d8 ) | % 168
+    d4 r4 | \barNumberCheck #169
+    R2 | % 170
+    g,4 -\p g4 | % 171
+    f8 ( af4 -\sf a8 ) | % 172
+    ef8 r8 d8 r8 | % 173
+    ef8 d8 -\sf r8 g8 -\pp | % 174
+    g8 r8 f8 r8 | % 175
+    ef8 r8 r4 \bar "||" \barNumberCheck #176
+    \key c \major \time 2/4 \partial 16 g16 | % 177
+    c8 -! r16 c16 -! e8 -! r16 c16 -! | % 178
+    a8 -! r16 a16 -! d8 -! r16 c16 -! | \barNumberCheck #179
+    b8 -! r16 d16 -! a8 -! r16 d16 -! | % 180
+    g,8 -! r8 r4 | % 181
+    e8 -! r16 e16 -! g8 -! r16 e16 -! | % 182
+    f8 -! r16 f'16 -! f8 -! r16 e16 -! | % 183
+    d8 -! r16 c16 -! b8 -! r16 d16 -! | % 184
+    e4 r4 | % 185
+    b8 -! -\f r16 b16 -! c8 -! r16 c16 -! | % 186
+    b8 g'16 ( fs16 e16 d16 c16 b16 ) | % 187
+    d16 r16 d16 r16 cs16 r16 c16 r16 | % 188
+    b16 ( g16 a16 b16 c16 d16 e16 c16 ) | \barNumberCheck #189
+    b8 -! r16 b16 -! c8 -! r16 c16 -! | % 190
+    b8 g'16 ( fs16 e16 d16 c16 b16 ) | % 191
+    d16 r16 d16 r16 cs16 r16 c16 r16 | % 192
+    b16 r16 d16 r16 d16 r16 d16 r16 | % 193
+    d16 r16 d16 r16 cs16 r16 c16 r16 | % 194
+    b16 b16 r16 b16 r16 -\cresc
+    c16 r16 cs16 | % 195
+    r16 d16 r16 e16\decresc r16 f16 r16 d16 -\pp | % 196
+    R2\fermataMarkup | % 197
+    r16 e,32 ( f32 ) g8 -! r16 e32 ( f32 ) g8 -! | % 198
+    r16 a32 ( b32 ) c16 -! c16 -! f8 r16 e16 -! |
+    \barNumberCheck #199
+    d8 -! r16 c16 -! b8 -! r16 d16-! | % 200
+    e8 -! r16 c16-! b8-! r16 b16-! | % 201
+    c8-! r16 e,16-! f8 -! r16 d16 -! | % 202
+    e4 r4 \bar "||"
+      \overrideTimeSignatureSettings
+        2/4        % timeSignatureFraction
+        1/8        % baseMomentFraction
+        2,2        % beatStructure
+        \thirtySecondBeamExceptions       % beamExceptions
+    \time 2/4  | % 203
+    e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 204
+    e32 ( g32 cs32 g32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 205
+    g32 (\f b32 d32 b32 ) g32 ( b32 d32 b32 ) g32 ( a32 e'32 a,32 ) fs32 ( a32 d32 a32 ) | % 206
+    g32 ( b32 d32 b32 ) g32 ( a32 b32 g32 a32 b32 c32 a32 b32 c32 d32 b32 ) | % 207
+    c32 ( g32 e32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 208
+    f32 ( a32 c32 a32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) ef32 ( a32 c32 a32 ) | \barNumberCheck #209
+    d,32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 210
+    e32 ( -\> g32 c32 g32 e32 g32 c32 g32 ) e8 -\! r8 | \barNumberCheck #211
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    b'32 ( -\p g32 fs32 g32 ) a32 ( g32 fs32 g32 ) c32 ( g32 fs32 g32 ) a32 ( g32 fs32 g32 ) | % 212
+    b32 ( g32 fs32 g32 a32 g32 fs32 g32 ) a32 ( g32 fs32 g32 ) b32 ( g32 fs32 g32 ) | % 213
+    d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) d32 ( fs32 a32 fs32 ) | % 214
+    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) | % 215
+    d32 ( g32 b32 g32 ) d32 ( g32 b32 g32 ) e32 ( g32 c32 g32) e32 ( g32 c32 g32 ) | % 216
+    d32 ( g32 b32 g32 d32 g32 b32 g32 ) d32 ( g32 b32 g32 ) d32 ( d'32 b32 g32 ) | % 217
+    fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 218
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | \barNumberCheck #219
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 ) fs32 ( a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 220
+    g32 ( b32 d32 b32 ) g32 ( b32 d32 b32 g32 b32 d32 b32 ) g32 ( b32 d32 b32 ) | % 221
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32( g32 d'32 g,32 ) | % 222
+    e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 223
+    f32 ( a32 c32 a32 f32 a32 d32 a32 ) f32 ( a32 d32 a32 ) f32 ( a32 d32 a32 ) | % 224
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 225
+    e32 ( g32 c32 g32 e32 g32 e32 g32 ) e32 ( g32 c32 g32 e32 g32 e32 g32 ) | % 226
+    f32 ( g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 ) | % 227
+    e32 ( g32 c32 g32 e32 g32 c32 g32 ) e32 ( g32 c32 g32 e32 g32 c32 g32 ) | % 228
+    f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) f32 ( g32 d'32 g,32 f32 g32 d'32 g,32 ) | \barNumberCheck #229
+    g8 -\f r8 c8 r8 | % 230
+    c8 r8 c8 r8 | % 231
+    g'8 r8 g8 r8 | % 232
+    g2 -\fp | % 233
+    d2 ~ | \barNumberCheck #234
+    d4 \fermata r8 s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
+    \time 6/8 \partial 8 r8 | \barNumberCheck #236
+    R2.*3 | % 239
+    r4. r4 c8 -. | % 240
+    f4 -. g8 -. a4 -. f8 -. | % 241
+    d4 g8 ~ -\sf g4 f8 | \barNumberCheck #242
+    \acciaccatura f8 e8 ( d8 ) e8 -. c8 -. d8 -. e8 -. | % 243
+    f8 a8 g8 f8 e8 d8 | % 244
+    c8 e8 c8 a8 b8 c8 | % 245
+    d8 cs8 d8 b8 c8 d8 | % 246
+    e4 r8 d4 r8 | % 247
+    c4 c8 -. d4 -. e8 -. | % 248
+    a,8 -. a8 -. a8 -. a8 ( b8 ) gs8 -. | % 249
+    a4 c8 d4 bf8 | % 250
+    a8 f8 f8 f8 g8 e8 | % 251
+    f4 r8 r4 r8 | \barNumberCheck #252
+    r8 a8 a8 a8 ( b8 ) g8 | % 253
+    c4 r8 c4 r8 | % 254
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    b4 r8 r8 b8 b8 | % 255
+    c4 r8 r8 c8 c8 | % 256
+    b4 r8 r8 b8 b8 | % 257
+    c4 r8 r8 c8 c8 | % 258
+    b4 r8 c4 -. r8 | % 259
+    r4 r8 a8 b8 a8 | % 260
+    g8 a8 g8 f8 g8 f8 | % 261
+    e8 -\f g8 f8 e8 e8 g8 | \barNumberCheck #262
+    a8 a8 g8 f8 f8 a8 | % 263
+    b8 b8 b8 b8 c8 d8 | % 264
+    e8 d8 c8 a8 e8 f8 | % 265
+    e8 g8 f8 e8 e8 g8 | % 266
+    a8 f8 a8 b8 g8 b8 | % 267
+    c8 a8 c8 d8 b8 b8 | % 268
+    b8( c8) c8-. c8( d8) d8-. | % 269
+    d4. \fermata -\f d8 -\p g,8 g8 | % 270
+    c8 g8 g8 d'8 g,8 g8 | % 271
+    c8 g8 g8 d'8 g,8 g8 | \barNumberCheck #272
+    c8 g8 g8 a8 f8 f8 | % 273
+    e8 g8 g8 d8 g8 g8 | % 274
+    e8 g8 g8 d8 g8 g8 | % 275
+    e8 g8 g8 d8 g8 g8 | % 276
+    e8 g8 g8 d8 g8 g8 | % 277
+    e4 r8 r4. | % 278
+    R2. \bar "||"
+    \time 2/4  | % 279
+    c'8[ -\p c16. d32] e8 c8 | % 280
+    a8 d4 c8 | % 281
+    c8 r8 b8 r8 | \barNumberCheck #282
+    c8[ e,16. ( f32 )] g8 e8 | % 283
+    c8 f4 ef8 | % 284
+    d8 r8 f8 r8 | % 285
+    e8 a4 g8 | % 286
+    f8 r8 f8 r8 | % 287
+    e4 r8. f16 | % 288
+    e8[ r16 f16 e8 r16 f16] | % 289
+    e4 r4 | % 290
+    d'4 r4 | % 291
+    e4 r4 \fermata \bar "|."
+}
+
+englishHorn = \relative c'' {
+  \override TupletBracket.bracket-visibility = #'if-no-beam
+      \overrideTimeSignatureSettings
+        2/4        % timeSignatureFraction
+        1/8        % baseMomentFraction
+        2,2        % beatStructure
+        \thirtySecondBeamExceptions       % beamExceptions
+    \key g \major \time 2/4 | % 1
+    g8 -\p r8 g8 r8 | % 2
+    c,8 r8 cs8 r8 | % 3
+    d8 r8 a'8 r8 | % 4
+    d,8 b'8 a8 fs8 | % 5
+    g8 r8 g8 r8 | % 6
+    c,8 r8 cs8 r8 | % 7
+    d8 r8 d8 r8 | % 8
+    g8 b8 g8 r8 | % 9
+    fs8 d8 g8 d8 | % 10
+    fs8 d8 fs8 r8 | \barNumberCheck #11
+    r8 cs8 cs8 cs8 | % 12
+    d4 r4 | % 13
+    fs8 d8 g8 d8 | % 14
+    fs8 d8 fs8 r8 | % 15
+    cs4 r8 cs8 | % 16
+    d8 r8 r8 cs8 | % 17
+    d8 r8 r8 cs8 | % 18
+    d8 d8 -\< r8 d'8 -\! | % 19
+    r8 d8 -\f -\> r8 d,8 -\! | % 20
+    g8 -\p r8 g8 r8 | \barNumberCheck #21
+    c,8 r8 cs8 r8 | % 22
+    d4 r8 c?8 | % 23
+    b8 r8 fs'4 | % 24
+    g8 c,8 d8 d8 | % 25
+    g8 -. b8 -. g8 -. r8 \bar "||"
+    g8 r8 g8 r8 | % 27
+    c,8 r8 r8 cs8 | % 28
+    d8 r8 a'8 r8 | % 29
+    d,8 r8 r4 | % 30
+    g8 r8 g8 r8 | \barNumberCheck #31
+    c,8 r8 r8 c8 | % 32
+    d8 r8 d8 r8 | % 33
+    g8 r8 r4 | % 34
+    fs8 d'8 g,8 d'8 | % 35
+    fs,8 r8 r4 | % 36
+    R2*2 | % 38
+    fs8 d'8 g,8 d'8 | % 39
+    fs,8 r8 r4 | % 40
+    R2*5 | % 45
+    g8 r8 g8 r8 | \barNumberCheck #46
+    c,8 r8 r8 c8 | % 47
+    d8 r8 d8 r8 | % 48
+    g8 r8 r4 | % 49
+    d8 r8 d8 r8 | % 50
+    g4 r4 \bar "||"
+    \time 2/4  | \barNumberCheck #51
+    \tuplet 3/2 {g16 b16 d16} \tuplet 3/2 { g16 b16 a16 }
+    \tuplet 3/2 {g16 fs16 e16} \tuplet 3/2 { d16 c16 b16 } | % 52
+    \override TupletBracket.bracket-visibility = ##f
+    \omit TupletNumber
+    \tuplet 3/2 {c16 e16 d16 c16 b16 c16 }
+    \tuplet 3/2 {cs16 e16 d16 cs16 b16 cs16 }
+    | % 53
+    \tuplet 3/2 {d16 a'16 g16 fs16 e16 d16 }
+    \tuplet 3/2 {cs16 b16 a16 g16 fs16 e16 }
+    | % 54
+    \tuplet 3/2 {d16 fs16 a16 d16 a'16 g16 }
+    \tuplet 3/2 {fs16 e16 d16 c16 b16 a16 }
+    | % 55
+    \tuplet 3/2 {g16 b16 d16 g16 b16 a16 }
+    \tuplet 3/2 {g16 fs16 e16 d16 c16 b16 }
+    | \barNumberCheck #56
+    \tuplet 3/2 {c16 e16 d16 c16 b16 c16 }
+    \tuplet 3/2 {c,16 e'16 d16 c16 b16 a16 }
+    | % 57
+    \tuplet 3/2 {d,16 g16 b16 d16 g16 b16 }
+    \tuplet 3/2 {c16 a16 fs16 d16 c16 a16 }
+    | % 58
+    \tuplet 3/2 {g16 b16 d16 g16 d16 b16 }
+    g8 r8 | % 59
+    \tuplet 3/2 {d16 fs16 a16 d16 cs16 d16 }
+    \tuplet 3/2 {d,16 g16 b16 d16 cs16 d16 }
+    | % 60
+    \tuplet 3/2 {d,16 fs16 a16 d16 fs16 a16 }
+    \tuplet 3/2 {d16 cs16 b16 a16 g16 fs16 }
+    | % 61
+    \tuplet 3/2 {g16 fs16 e16 d16 cs16 b16 }
+    \tuplet 3/2 {a16 b16 a16 g16 fs16 e16 }
+    | % 62
+    d8 r8 r4 | % 63
+    \tuplet 3/2 {d16 fs16 a16 d16 cs16 d16 }
+    \tuplet 3/2 {d,16 g16 b16 d16 cs16 d16 }
+    | % 64
+    \tuplet 3/2 {d,16 fs16 a16 d16 fs16 a16 }
+    \tuplet 3/2 {d16 cs16 b16 a16 g16 fs16 }
+    | % 65
+    \tuplet 3/2 {g16 fs16 e16 d16 cs16 b16 }
+    \tuplet 3/2 {a16 b16 a16 g16 a16 g16 }
+    | \barNumberCheck #66
+    \tuplet 3/2 {fs16 a16 a16 a16 a16 a16 }
+    \tuplet 3/2 {gs16 a16 a16 g16 a16 a16 }
+    | % 67
+    \tuplet 3/2 {fs16 a16 a16 a16 a16 a16 }
+    \tuplet 3/2 {gs16 a16 a16 g16 a16 a16 }
+    | % 68
+    \tuplet 3/2 {fs16 a16 a16 a16 a16 a16 }
+    \tuplet 3/2 {a16 c16 c16 c16 c16 c16 }
+    | % 69
+    \tuplet 3/2 {c16 e16 d16 c16 b16 a16 }
+    \tuplet 3/2 {g16 fs16 e16 d16 e16 fs16 }
+    | % 70
+    \tuplet 3/2 {g16 b16 d16 g16 b16 a16 }
+    \tuplet 3/2 {g16 fs16 e16 d16 c16 b16 }
+    | % 71
+    \tuplet 3/2 {c16 e16 d16 c16 b16 c16 }
+    \tuplet 3/2 {c,16 e'16 d16 c16 b16 a16 }
+    | % 72
+    \tuplet 3/2 {d,16 g16 b16 d16 b16 g16 }
+    \tuplet 3/2 {d16 a'16 c16 d16 c16 a16 }
+    | % 73
+    \tuplet 3/2 {g16 a16 bf16 b16 c16 cs16 }
+    \tuplet 3/2 {d16 ef16 e16 f16 fs16 g16 }
+    | % 74
+    \tuplet 3/2 {d16 b'16 g16 d16 b16 g16 }
+    \tuplet 3/2 {d16 a'16 c16 d16 c16 a16 }
+    | % 75
+    \tuplet 3/2 {g16 b16 d16 g16 d16 b16 }
+    g8 r8 \bar "||"
+    \time 2/4 | \barNumberCheck #76
+    R2*3 | % 79
+    r4 r8 r16 d'16 | % 80
+    b4 g8[ r16 b16] | % 81
+    c4 a8[ r16 c16] | % 82
+    d8[ r16 d,16 e8 r16 fs16] | % 83
+    g8[ r16 d16] g8 r8 | % 84
+    fs'4 -\< g4 -\! | % 85
+    fs8 -\> r8 r4 -\! | % 86
+    r8 cs8 -\< d8 -\! e8 -\> | % 87
+    d8 -\! r8 r4 | \barNumberCheck #88
+    fs4 -\< g4 -\! -\> | % 89
+    fs8 -\! r8 r4 | % 90
+    r8 cs8 d8 e8 | % 91
+    d8 cs8[ d8 e8] | % 92
+    d8 cs8[ d8 e8] | % 93
+    d8 r8 r4 | % 94
+    R2 | % 95
+    b4 g8 r16 b16 | % 96
+    c4 a8 r16 c16 | % 97
+    a8[ r16 g16 fs8 r16 a16] | \barNumberCheck #98
+    b8 r8 r8. fs16 | % 99
+    g8[ r16 d16 d8 r16 d16] | % 100
+    g4 r8 \bar "||" s8 | \barNumberCheck #101 % NOTE JDH count full bar here
+    \time 2/4
+    \partial 8 d8 | \barNumberCheck #102
+    g16 ( gs16 a16 as16 ) b8-! g8 -. | % 103
+    e8 -. a8-\sf  ~ a8 g8 -! | % 104
+    fs8 r16 fs16 g8 a8 | % 105
+    d,8 g4 fs8 | % 106
+    g4 r4 | % 107
+    c,16 ( cs16 d16 ds16 ) e8 cs8 | \barNumberCheck #108
+    d4. d8 ~ | % 109
+    d16 ( e16 es16 fs16 g8 ) r8 | % 110
+    a8[ fs16. d32] d'8[ b16. g32] | % 111
+    fs8 d8 r8 d'8 | % 112
+    cs8 a8 r8 cs8 | % 113
+    d8 e8 fs8 r8 | % 114
+    gs,16 ( a16 ) fs16 -. d16 -. cs'16 ( d16 ) b16 -! g16 -! | % 115
+    fs8 d8 r8 d'8 | % 116
+    cs8 a8 -\< r8 cs8 -\! | % 117
+    d8 d,8 -\decresc r8 d8 |
+    \barNumberCheck #118
+    r8 d8 r8 d16 -\pp r16 \fermata | % 119
+    R2*2 | % 121
+    d4 ~ -\sf d16 ( e16 f16 fs16 | % 122
+    g16 gs16 a16 as16 ) b8 -! gs8 -. -! | % 123
+    d4 ~ -\sf d16 ( e16 f16 fs16 ) | % 124
+    g16 ( fs16 g16 fs16 ) g8 -. \bar "||" s8 | \barNumberCheck #125 % NOTE: jdh counts full bar here.
+    \time 2/4 \partial 8 r8 | \barNumberCheck #126
+    g8 d'8 b8 g8 | % 127
+    c,8 c'8 r8 cs8 | % 128
+    d8 a8 cs8 a8 | \barNumberCheck #129
+    fs8 d8 r4 | % 130
+    g8 d'8 b8 g8 | % 131
+    c,8 c'8 r8 c,8 | % 132
+    d8 c'8 d,8 c'8 | % 133
+    g8 r8 r4 | % 134
+    fs8 d8 g8 d8 | % 135
+    fs8 r8 r4 | % 136
+    r8 a8 a8 a8 | % 137
+    d,8 r8 r4 | % 138
+    fs8 d8 g8 d8 | \barNumberCheck #139
+    fs8 r8 r4 | % 140
+    R2*5 | % 145
+    g8 d'8 b8 g8 | % 146
+    c,8 c'8 r8 c8 | % 147
+    d,8 c'8 d,8 c'8 | % 148
+    b8 r8 r4 | % 149
+    d,8 c'8 r8 d,8 | % 150
+    g8 r8 r4 \bar "||"
+    \time 2/4 \key g \minor | % 151
+    g4 ( -\p bf8. g16 ) | \barNumberCheck #152
+    ef8 ( af4 -\sf g8 ) | % 153
+    fs4 ( g8 cs,8 ) | % 154
+    d8 cs'8 d8 r16 d,16 | % 155
+    g4 ( bf8. g16 ) | % 156
+    ef8 af4 -\sf g8 ( | % 157
+    fs8 g8 c,8 d8 ) | % 158
+    g4. r8 | % 159
+    bf2 | % 160
+    bf4. r8 | % 161
+    r8 a8 a8 a8 | \barNumberCheck #162
+    bf8. ( a16 ) bf16 ( d16 f16 d16 ) | % 163
+    bf2 | % 164
+    bf4. r8 | % 165
+    r8 a8 a8 a8 | % 166
+    bf4 ( b4 | % 167
+    c4 cs4 ) | % 168
+    d4 r4 | % 169
+    R2 | % 170
+    bf4 ( -\p g8. bf16 ) | % 171
+    c8 c,4 ( -\sf cs8 ) | \barNumberCheck #172
+    d8 r8 d8 r8 | % 173
+    g8 fs8 -\sf r8 fs8 -\pp | % 174
+    g8 r8 d8 r8 | % 175
+    g8 r8 r4 \bar "||" | \barNumberCheck #176
+    \key g \major \time 2/4 \partial 16 r16 | \barNumberCheck #177
+    r16 b32( c32) d8 -. r16 g,32 ( a32 ) b8 -. | % 178
+    r16 c32 ( d32 ) e8 -. r16 a,32 ( b32 ) cs8 -. | % 179
+    r16 d16 ( e16 ) fs16 -. r16 a,16 ( b16 ) cs16 -. | % 180
+    r16 a32 ( g32 ) fs16 -. fs32 ( e32 ) d8 -. r8 | % 181
+    r16 g32 a32 b8 -. r16 g32 ( a32 ) b8 -. | % 182
+    r16 c32 ( d32 ) e8 -. r16 a,32 ( b32 ) c8 -. | \barNumberCheck #183
+    r16 d32 ( cs32 ) d8 -. r16 d32 ( cs32 ) d8 -. | \barNumberCheck #184
+    r16 d32 ( c32 ) b16 -. b32 ( a32 ) g16 -. a16 ( b16 cs16 )| % 185
+    d16 -. d32 ( cs32 ) d16 -. r16 r16 d64 ( cs64 ) d16 -. r16 s32 | % 186
+    r16 d32 ( cs32 ) d8 -. r4 | % 187
+    r16 cs16 r16 a16 r16 b16 r16 cs16 | % 188
+    d8 r8 r4 | % 189
+    r16 d32 ( cs32 ) d8 -. r16 d32 ( cs32 ) d8 -. | % 190
+    r16 d32 ( cs32 ) d8 -. r4 | % 191
+    r16 cs16 r16 a16 r16 b16 r16 cs16 | % 192
+    r16 d16 r16 a16 r16 b16 r16 cs16 | \barNumberCheck #193
+    r16 d16 r16 a16 r16 b16 r16 cs16 | % 194
+    d16 d16 r16 d16 r16 e16\cresc r16 es16 | % 195
+    r16 fs16 r16 -\decresc g16 r16 a16 r16 d,16 -\pp | % 196
+    R2 | % 197
+    r16 g,32 ( a32 ) b8 -. r16 g32 ( a32 ) b8 -. | % 198
+    r16 c32 ( d32 e8 ) -. r16 a,32 ( b32 ) c8 -. | % 199
+    r16 d32 ( cs32 ) d8 -. r16 d32 ( cs32 ) d8 -. | % 200
+    r16 g,32 ( b32 ) d8 -. r16 d,32 ( fs32 ) a8 -. | % 201
+    r16 g32 ( b32 ) d8 -. r16 d32 ( cs32 ) d8 -. | % 202
+    r16 d32 ( c32 ) b16 -. b32 ( a32 ) g8 -. r8 \bar "||" | \barNumberCheck #203
+    \time 2/4
+    g8[ -\f g16. ( a32 )] b8 g8 | % 204
+    e8 -\sf a4 g8 | % 205
+    fs8[ fs16. fs32] g8 a8 | % 206
+    d,8 r8 r4 | % 207
+    r8 g8 r8 g8 | % 208
+    r8 c,4 -\sf cs8 | % 209
+    d8 d8 r8 d8 | % 210
+    g8 g8 g8 r8 | % 211
+    a8[ fs16. d32] b'8[ d16. b32] | % 212
+    a4 fs8 r8 | \barNumberCheck #213
+    r8 cs8 cs8 cs8 | % 214
+    d8 r8 r16 fs16 fs16 fs16 | % 215
+    fs8 d8 g8 d8 | % 216
+    fs8 d8 r8 a'8 | % 217
+    gs16 ( a16 ) a16 a16 gs16 ( a16 g16 a16 ) | % 218
+    gs16 ( a16 ) a16 a16 gs16 ( a16 g16 a16 ) | % 219
+    gs16 ( a16 ) a16 a16 gs16 ( a16 g16 a16 ) | % 220
+    fs8 r8 d8 fs8 ~ -\sf | % 221
+    fs8 -\sf a8 ~ a16 d,16 e16 fs16 | % 222
+    g8[ g16. ( a32] ) b8 -! g8 -! | \barNumberCheck #223
+    e8 a4-\sf  g8 | % 224
+    g16 fs16 e16 d16 d8 e16 fs16 | % 225
+    g8 g8 r8 g8 | % 226
+    g16 fs16 e16 d16 d8 e16 fs16 | % 227
+    g8 g8 r8 g8 | % 228
+    g16 fs16 e16 d16 d16 ( a'16 fs16 d16 ) | % 229
+    f8 -\f r8 e8 r8 | % 230
+    b8 r8 c8 r8 | % 231
+    c'8 r8 b8 r8 | % 232
+    fs2 ~ -\fp | \barNumberCheck #233
+    fs4 ( a8 d8 | \barNumberCheck #234
+    fs4 ) \fermata r8  s8 \bar "||" | \barNumberCheck #235 % NOTE: JDH counts full bar here
+    \time 6/8 \partial 8 d,8 -! | % 236
+    g4 -! a8 -! b4 g8 -! | % 237
+    e4 a8-\sf  ~ a4 g8 | % 238
+    \acciaccatura g8 fs8 ( e8 ) fs8 -! d8 -! e8 -! fs8 -! | % 239
+    g8 b8 c8 d8 e8 f8 | % 240
+    e8 g8 e8 c8 d8 e8 | % 241
+    f8 e8 f8 d8 e8 fs8 | % 242
+    g4 r8 f4 r8 | \barNumberCheck #243
+    e4 r8 r4. | % 244
+    R2.*5 | % 249
+    r4 e,8 f4 g8 | % 250
+    c,4 a'8 d,4 g8 | % 251
+    c,8 a'8[ a8] a8( b8) gs8 | % 252
+    a4 r8 d,4 r8 | % 253
+    g4 r8 a4 r8 | \barNumberCheck #254
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    d,8 d'8 d8 d,8 d'8 d8 | % 255
+    d,8 d'8 d8 d,8 d'8 d8 | % 256
+    d,8 d'8 d8 d,8 d'8 d8 | \barNumberCheck #257
+    d,8 d'8 d8 d,8 d'8 d8 | % 258
+    d,4 r8 e'8 fs8 e8 | % 259
+    d8 e8 d8 c8 d8 c8 | % 260
+    b8 c8 b8 a8 b8 a8 | \barNumberCheck #261
+    \once \override Score.BarNumber.break-visibility = ##(#f #t #t)
+    g8-\f b8 a8 g8 g8 b8 | % 262
+    c8 c8 b8 a8 a8 c8 | % 263
+    d8 d,8 d8 d8 e8 fs8 | % 264
+    g8 fs8 g8 c,8 d8 d8 | % 265
+    g8 b8 a8 g8 g8 b8 | % 266
+    c8 a8 c8 d8 b8 d8 | \barNumberCheck #267
+    e8 c8 e8 fs8 d8 d8 | % 268
+    d8 ( e8 ) e8 -. e8 ( fs8 ) fs8 -. | % 269
+    fs4.\fermata -\f fs,4 -\p r8 | % 270
+    g4 r8 fs4 r8 | % 271
+    g4 r8 fs4 r8 | % 272
+    g4 r8 c,4 r8 | % 273
+    d4 r8 d4 r8 | % 274
+    g4 r8 fs4 r8 | % 275
+    g4 r8 fs4 r8 | % 276
+    g4 r8 fs4 r8 | \barNumberCheck #277
+    g4 r8 r4. | % 278
+    R2. \bar "||"
+    \time 2/4 | % 279
+    R2 | % 280
+    r4 r8 cs8 -\p | % 281
+    d8 r8 d8 r8 | % 282
+    g,8[ g16. ( a32 )] b8 g8 | % 283
+    e8 a4 g8 | % 284
+    fs8 r8 d8 r8 | % 285
+    g8 c4 b8 | % 286
+    a8 r8 d,8 r8 | \barNumberCheck #287
+    g4 r8. d16 | % 288
+    g8[ r16 d16 g8 r16 d16] | % 289
+    g4 r4 | % 290
+    d4 r4 | % 291
+    g4 r4 \fermata \bar "|."
+}
