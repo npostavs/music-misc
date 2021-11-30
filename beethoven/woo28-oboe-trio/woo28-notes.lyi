@@ -6,14 +6,39 @@
 
 \header {
     title = "„Reich’ mir die Hand, mein Leben!“ aus Mozarts Don Juan."
+    stitle = "Don Juan variations, WoO 28"
+    composer = "Beethoven"
     encodingdate =  "2021-11-29"
+    instrument = \instrumentName
+    total-pages = \totalPages
     source = "IMSLP408988-PMLP129027-BEETHOVEN_Trio_in_C_WoO_28_Oboes_Eng_Hrn_after_Hess.pdf"
     encodingsoftware =  "Audiveris 5.2.4"
     copyright = \markup {
         \tiny { "John D. Howard after Hess 'urtext' ed., March 2002." }
         \epsfile #Y #2 "../../by-sa.eps"
         \small "Creative Commons Attribution-ShareAlike 4.0" }
-    }
+    tagline = ##f
+}
+
+\paper {
+  print-first-page-number = ##t
+  evenHeaderMarkup = \markup
+  \fill-line {
+    \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string
+                                                         \fromproperty #'header:total-pages }
+    \on-the-fly #not-part-first-page \concat { \small {
+                \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
+    ""
+  }
+  oddHeaderMarkup = \markup
+  \fill-line {
+    ""
+    \on-the-fly #not-part-first-page \concat { \small {
+                \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
+    \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string
+                                                         \fromproperty #'header:total-pages }
+  }
+}
 
 \layout {
   \context { \Score
@@ -32,6 +57,9 @@ rit = \markup { \italic "rit." }
 atempo = \markup { \italic "a tempo" }
 
 %    \set Score.skipTypesetting = ##f
+
+pPageBreak = { \tag #'part \pageBreak
+}
 
 markings = {
     \time 2/4 \tempo "Thema (Andante)"
@@ -214,7 +242,7 @@ oboeI = \relative c'' {
     R2 | % 139
     r32 g,=' a b c32 d e fs g32 a b a g32 fs e d | % 140
     \repeat unfold 3 { cs32 d e d } c32 d c d | % 141
-    \repeat unfold 2 { b32 d cs d cs32 d e d cs32 d e d c32 d c d | } \barNumberCheck #143
+    \repeat percent 2 { b32 d cs d cs32 d e d cs32 d e d c32 d c d | } \barNumberCheck #143
     b32 g32 d'32 c32 b32 d32 f?32 e32 d32 f32 a32 g32 f32 e32 d32 c32 | \barNumberCheck #144
     b32 a32 g32 fs32 g32 gs32 a?32 bf32 b32 c32 cs32 d32 ds32 e32 f?32 d32 | % 145
     c?32 d32 c32 b32 c32 d32 e32 d32 f32 e32 g32 f32 e32 d32 c32 b32 | % 146
@@ -223,6 +251,7 @@ oboeI = \relative c'' {
     c32 cs32 d32 ef32 e32 f32 fs32 g32 a32 g32 f32 e32 f32 e32 d32 c32 | % 149
     b32 c32 b32 a32 g32 a32 b32 c32 d32 e32 f32 e32 g32 f32 e32 d32 | % 150
     c32 e32 c32 g32 e32 c'32 g32 e32 c8 r8 \bar "||" | \barNumberCheck #151
+    \pPageBreak
     \key c \minor \time 2/4
     R2*2 | \barNumberCheck #153
     r8 f'4 ( -\p ef8 ) | % 154
@@ -278,7 +307,7 @@ oboeI = \relative c'' {
     \time 2/4  | % 203
     e,32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 204
     e32 ( g32 cs32 g32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) fs32 ( a32 d32 a32 ) | % 205
-    g32 (\f b32 d32 b32 ) g32 ( b32 d32 b32 ) g32 ( a32 e'32 a,32 ) fs32 ( a32 d32 a32 ) | % 206
+    g32 (\tweak X-offset #-2.7 \f b32 d32 b32 ) g32 ( b32 d32 b32 ) g32 ( a32 e'32 a,32 ) fs32 ( a32 d32 a32 ) | % 206
     g32 ( b32 d32 b32 ) g32 ( a32 b32 g32 a32 b32 c32 a32 b32 c32 d32 b32 ) | % 207
     c32 ( g32 e32 g32 ) e32 ( g32 e32 g32 ) e32 ( g32 c32 g32 ) e32 ( g32 e32 g32 ) | % 208
     f32 ( a32 c32 a32 ) f32 ( a32 d32 a32 f32 a32 d32 a32 ) ef32 ( a32 c32 a32 ) | \barNumberCheck #209
@@ -568,7 +597,7 @@ oboeII = \relative c' {
     d8 -. r16 c16 -. b8 -. r16 d16-. | % 200
     e8 -. r16 c16-. b8-. r16 b16-. | % 201
     c8-. r16 e,16-. f8 -. r16 d16 -. | % 202
-    e4 r4 \bar "||"
+    e4 r4 \bar "||" \pPageBreak
       \overrideTimeSignatureSettings
         2/4        % timeSignatureFraction
         1/8        % baseMomentFraction
