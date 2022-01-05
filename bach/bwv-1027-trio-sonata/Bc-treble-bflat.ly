@@ -15,10 +15,11 @@ ottZ = { \ottava #0 }
   }
   composer = "Johann Sebastian Bach (1685 - 1750)"
   tagline = ##f
-  instrument = "Basso Continuo"
+  instrument = \markup { "Basso Continuo (in B" \tiny \flat ")" }
 }
 
 scoreAGlobal = {
+  \override Score.OttavaBracket.style = #'none
   \key g \major
   \numericTimeSignature
   \time 12/8
@@ -27,15 +28,17 @@ scoreAGlobal = {
 
 \include "scoreABcMusic.ly"
 
-scoreABassoContinuoPart = \new Staff { \clef "alto_8" \scoreABcMusic }
+scoreABassoContinuoPart = \new Staff { \clef "treble" \transpose bes c''' \scoreABcMusic }
 
 \score {
   \scoreABassoContinuoPart
+  \layout { }
 }
 
 %\pageBreak
 
 scoreBGlobal = {
+  \override Score.OttavaBracket.style = #'none
   \key g \major
   \numericTimeSignature
   \time 3/4
@@ -44,7 +47,7 @@ scoreBGlobal = {
 
 \include "scoreBBcMusic.ly"
 
-scoreBBassoContinuoPart = \new Staff { \clef "alto_8" \scoreBBcMusic }
+scoreBBassoContinuoPart = \new Staff { \clef "treble" \transpose bes c''' \scoreBBcMusic }
 
 \score {
   \scoreBBassoContinuoPart
@@ -61,7 +64,7 @@ scoreCGlobal = {
 
 \include "scoreCBcMusic.ly"
 
-scoreCBassoContinuoPart = \new Staff { \clef "alto_8" \scoreCBcMusic }
+scoreCBassoContinuoPart = \new Staff { \clef "treble" \transpose bes c''' \scoreCBcMusic }
 
 \score {
   \scoreCBassoContinuoPart
@@ -78,7 +81,7 @@ scoreDGlobal = {
 
 \include "scoreDBcMusic.ly"
 
-scoreDBassoContinuoPart = \new Staff { \clef "alto_8" \scoreDBcMusic }
+scoreDBassoContinuoPart = \new Staff { \clef "treble" \transpose bes c''' \scoreDBcMusic }
 
 \score {
   \scoreDBassoContinuoPart
