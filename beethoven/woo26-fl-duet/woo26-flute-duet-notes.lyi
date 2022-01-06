@@ -15,7 +15,7 @@ MvtNameII = "Minuetto quasi Allegretto"
     composer =  "L. V. Beethoven, 1792"
     encodingsoftware =  "Audiveris 5.2.4"
 
-    copyright = \markup { \tiny "Creative Commons Attribution-NonCommercial-ShareAlike 4.0, tranposed from edition by John Howard" }
+    copyright = \markup { \tiny "Creative Commons Attribution-NonCommercial-ShareAlike 4.0, transposed from edition by John Howard" }
 
     tagline = ##f
 }
@@ -442,15 +442,21 @@ MvtIIFluteI =  \relative c'' {
 
 MvtIIFluteII =  \relative c'' {
     \repeat volta 2 {
-        \clef "treble" \key g \major \time 3/4 \partial 4 r4 b8 d8
-        b8 d8 b8 d8 b8 d8 b8 d8 b8 d8 c8 d8 c8 d8 c8 d8 c8 d8 c8 d8 c8 d8
-        b4 r4 g4 g'8 fs8 g8 a8 b8 g8 fs4 g4 a4 d,4 r4 r4
-        | % 9
+        \clef "treble" \key g \major \time 3/4 \partial 4 r4
+        b8 d8 b8 d8 b8 d8 |
+        b8 d8 b8 d8 b8 d8 |
+        c8 d8 c8 d8 c8 d8 |
+        c8 d8 c8 d8 c8 d8 |
+        b4 r4 g4 |
+        g'8 fs8 g8 a8 b8 g8 |
+        fs4 g4 a4 d,4 r4 r4 | % 9
         r8 d8 b8 d8 b8 d8 b8 d8 b8 d8 b8 d8 r8 b8 g8 b8 g8 b8
         g8 b8 g8 b8 g8 b8 ds4 r4 b8 ds8 e4 r4 b8 g'8 g4 -.
-        fs4 ds4 -. e4 r4
+        fs4 ds4 -. |
+        e4 r4
     } \repeat volta 2 {
-      r4 | d8 g,8 d'8 fs8 g8 fs8 e4 c4 r4 b8 e,8 b'8 d8 e8
+      r4 | d8 g,8 d'8 f8 g8 f8 |
+      e4 c4 r4 b8 e,8 b'8 d8 e8
       d8 c8 b8 a8 g8 fs8 e8 d4 d'4 c4 b4 g4 b4 c4 c4 cs4 d4 r8 d8 -.
       e8 fs8 -. | % 26
       g8 d8 b8 d8 b8 d8 b8 d8 b8 d8 b8 d8 c8 d8 c8 d8 c8 d8 c8 d8 c8 d8 c8
@@ -469,7 +475,7 @@ MvtIIFluteII =  \relative c'' {
       a4 d4 c4 |
       b4 r4 r4 
     } \repeat volta 2 { \barNumberCheck #41
-      \time 3/4 a'2 ( a,4 ) |
+      a'2 ( a,4 ) |
       a'2 a,4 |
       g'2. ( |
       fs4 ) r4 r4 | % 46

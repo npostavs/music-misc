@@ -13,6 +13,8 @@
     % \midi {\tempo 2 = 80 }
 }
 
+\pageBreak
+
 \score {
     \header { piece = \MvtNameII }
     <<
@@ -27,4 +29,9 @@
 \paper {
   indent = 5\mm
   page-count = #5
+
+  top-margin = 2\mm
+  bottom-margin = 2\mm
+  left-margin = 5\mm
+  right-margin = 5\mm
 }
