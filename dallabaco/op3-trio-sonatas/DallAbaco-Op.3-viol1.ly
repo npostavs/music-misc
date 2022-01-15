@@ -61,18 +61,12 @@
         \score {
             \header { piece = \MvIII_Name }
             \new Staff { \SonataIIMvIII_VOne }
-            \layout {\context {
-                \Score \override SpacingSpanner.common-shortest-duration =
-                  #(ly:make-moment 1/4)
-              }}
+            \layout {}
         }
         \score {
             \header { piece = \MvIV_Name }
             \new Staff { \SonataIIMvIV_VOne }
-            \layout {\context {
-                \Score \override SpacingSpanner.common-shortest-duration =
-                  #(ly:make-moment 3/8)
-              }}
+            \layout {}
             }
     }
     \bookpart {
@@ -93,10 +87,15 @@
             \layout {}
             }
 
+        \pageBreak
+
         \score {
             \header { piece = \SIII_MvIII_Name }
             \new Staff { \SIII_ViolI_MvIII }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/4)
+              }}
             }
 
         \score {
@@ -122,6 +121,8 @@
             \new Staff { \SIV_ViolI_MvII }
             \layout {}
             }
+
+        \pageBreak
 
         \score {
             \header { piece = \SIV_MvIII_Name }
@@ -354,7 +355,10 @@
         \score {
             \header { piece = \SXII_MvII_Name }
             \new Staff { \SXII_ViolI_MvII }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/4)
+              }}
             }
 
         \score {

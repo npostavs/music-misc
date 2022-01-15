@@ -380,13 +380,13 @@ SonataIIMvIV_VOne =  \relative c'' {
         f2. }
     }
 
-SIII_ViolI_MvI =  \relative b' {
+SIII_ViolI_MvI =  \relative c'' {
     \clef "treble" \key d \major \time 4/4 | % 1
-    b8 \rest b8 d8 e8 fs4. e8 ~ | % 2
+    r8 b8 d8 e8 fs4. e8 ~ | % 2
     e8 d8 ~ d8 cs16 b16 as8 as8 b8 cs8 | % 3
     fs,8 b'4 a8 g8 fs16 e16 e4 ~ | % 4
-    e8 d8 cs4 b4 b4 \rest | % 5
-    b8 \rest d8 e8 fs8 b,8 b'4 a8 ~ | % 6
+    e8 d8 cs4 b4 r4 | % 5
+    r8 d8 e8 fs8 b,8 b'4 a8 ~ | % 6
     a8 gs8 a8 b8 e,8 a4 g8 ~ | % 7
     g8 fs8 e4 d4 cs4 | % 8
     b4. b,8 cs8 d4 cs8 | % 9
@@ -410,7 +410,7 @@ SIII_ViolI_MvI =  \relative b' {
 }
 SIII_ViolI_MvII = \relative b' {
     \time 4/4  | % 1
-    b8 \rest b8 d8 b8 fs'8 b,8 d8 b8 | % 2
+    r8 b8 d8 b8 fs'8 b,8 d8 b8 | % 2
     b'8 b,8 d8 b8 fs'8 e16 d16 cs8 fs8 | % 3
     d4 fs2 fs,4 ~ | % 4
     fs4 b2 as4 | \barNumberCheck #5
@@ -421,8 +421,8 @@ SIII_ViolI_MvII = \relative b' {
     g8 d8 g2 g4 ~ | % 10
     g4 fs4 e2 | % 11
     d4 a'4 fs4 d4 | % 12
-    b4 \rest a'4 -\p fs4 d4 | % 13
-    b4 \rest a'4 -\f b4 g4 ~ | % 14
+    r4 a'4 -\p fs4 d4 | % 13
+    r4 a'4 -\f b4 g4 ~ | % 14
     g4 fs4 e2 | \barNumberCheck #15
     d8 a8 d8 fs8 d8 a8 d8 fs8 | % 16
     ds8 b8 ds8 fs8 ds8 b8 ds8 fs8 | % 17
@@ -433,12 +433,12 @@ SIII_ViolI_MvII = \relative b' {
     a'8 cs,8 a'8 cs,8 gs'8 cs,8 gs'8 cs,8 | % 22
     fs4 gs8 a8 gs4. fs8 | % 23
     es4 cs'4 a4 fs4 | % 24
-    b,4 \rest cs'4 -\p a4 fs4 | \barNumberCheck #25
-    b,4 \rest cs'4 -\f d4 b4 ~ | % 26
+    r4 cs'4 -\p a4 fs4 | \barNumberCheck #25
+    r4 cs'4 -\f d4 b4 ~ | % 26
     b4 a4 gs2 | % 27
-    fs4 b,4 \rest c2 \rest | % 28
+    fs4 r4 r2 | % 28
     R1 | % 29
-    b8 \rest fs8 a8 fs8 cs'8 fs,8 a8 fs8 | % 30
+    r8 fs,8 a8 fs8 cs'8 fs,8 a8 fs8 | % 30
     fs'8 fs,8 a8 fs8 cs'8 b16 a16 gs8 cs8 | % 31
     a8 fs8 a8 cs8 as8 fs8 as8 cs8 | % 32
     b8 fs'8 b4 ~ b8 a16 gs16 fs8 a8 | % 33
@@ -450,7 +450,7 @@ SIII_ViolI_MvII = \relative b' {
     d2 cs4 fs4 ~ | % 39
     fs4 e4 fs2 \fermata | % 40
     R1 | % 41
-    b,8 \rest fs'8 b4 b8 a16 g16 fs8 a8 | % 42
+    r8 fs8 b4 b8 a16 g16 fs8 a8 | % 42
     g8 e8 g8 b8 gs8 e8 gs8 b8 | % 43
     a8 e8 a4 ~ a8 g16 fs16 e8 g8 | % 44
     fs8 d8 fs8 a8 fs8 d8 fs8 a8 | \barNumberCheck #45
@@ -461,8 +461,8 @@ SIII_ViolI_MvII = \relative b' {
     d8 fs8 d8 fs8 cs8 fs8 cs8 fs8 | % 50
     b,4 cs8 d8 e8 d8 cs8 b8 | % 51
     as4 fs'4 d4 b4 | % 52
-    b4 \rest fs'4 -\p d4 b4 | % 53
-    b4 \rest fs'4 -\f g4 e4 ~ | % 54
+    r4 fs'4 -\p d4 b4 | % 53
+    r4 fs'4 -\f g4 e4 ~ | % 54
     e4 d4 cs2 | \barNumberCheck #55
     b4 fs'4 -\p g4 e4 ~ | % 56
     e4 d4 cs2 | % 57
@@ -470,15 +470,15 @@ SIII_ViolI_MvII = \relative b' {
 }
 SIII_ViolI_MvIII = \relative b' {
     \key a \major \time 3/4 | % 1
-    b4 \rest cs8. ( d16 ) cs8. ( d16 ) | % 2
+    r4 cs8. ( d16 ) cs8. ( d16 ) | % 2
     b8. ( cs16 ) b8. ( cs16 ) b8. ( cs16 ) | % 3
     a8. ( b16 ) a8. ( b16 ) a8. ( b16 ) | % 4
     gs4 cs,4 cs'4 | % 5
     cs2. ~ | % 6
     cs2. ~ | % 7
     cs4 b2 | \barNumberCheck #8
-    cs4 b4 \rest b4 \rest | % 9
-    b4 \rest gs'8. ( a16 ) gs8. ( a16 ) | % 10
+    cs4 r4 r4 | % 9
+    r4 gs'8. ( a16 ) gs8. ( a16 ) | % 10
     fs8. ( es16 ) fs2 ~ | % 11
     fs4 e2 ~ | % 12
     e4 d2 ~ | % 13
@@ -503,8 +503,8 @@ SIII_ViolI_MvIII = \relative b' {
     fs4 e4. e8 | % 32
     e8 fs16 ( g16 ) fs4. e8 | % 33
     d8 e8 cs2 | % 34
-    b4 b4 \rest b4 \rest | % 35
-    b4 \rest fs'8. ( g16 ) fs8. ( g16 ) | % 36
+    b4 r4 r4 | % 35
+    r4 fs'8. ( g16 ) fs8. ( g16 ) | % 36
     e8. ( fs16 ) e8. ( fs16 ) e8. ( fs16 ) | % 37
     d8. ( e16 ) d8. ( e16 ) d8. ( e16 ) | \barNumberCheck #38
     cs4 fs,4 fs'4 | % 39
@@ -513,9 +513,9 @@ SIII_ViolI_MvIII = \relative b' {
     fs4 e2 | % 42
     fs2. \bar "|."
 }
-SIII_ViolI_MvIV = \relative f'' {
+SIII_ViolI_MvIV = \relative f' {
     \key d \major \time 6/8 | % 1
-    b,8 \rest b8 b8 fs'8 fs8 fs8 | % 2
+    r8 b8 b8 fs'8 fs8 fs8 | % 2
     d16 cs16 d16 e16 d16 e16 cs16 b16 cs16 d16 cs16 d16 | % 3
     b16 a16 b16 cs16 b16 cs16 as8 b4 ~ | % 4
     b8 as4 b16 cs16 d16 cs16 b16 d16 | % 5
@@ -535,15 +535,15 @@ SIII_ViolI_MvIV = \relative f'' {
     a8 gs4 fs8 fs'4 ~ | % 19
     fs8 es4 fs8 a4 ~ | % 20
     a8 gs4 a4. | % 21
-    b,8 \rest e8 e8 e8 d4 | % 22
-    b8 \rest cs8 cs8 cs8 b4 ~ | % 23
+    r8 e8 e8 e8 d4 | % 22
+    r8 cs8 cs8 cs8 b4 ~ | % 23
     b8 a4 ~ a8 gs4 | % 24
-    a4. b4. \rest | % 25
-    e16 fs16 gs16 fs16 e16 gs16 fs16 gs16 a16 gs16 fs16 a16 |
+    a4. r4. | % 25
+    e'16 fs16 gs16 fs16 e16 gs16 fs16 gs16 a16 gs16 fs16 a16 |
     \barNumberCheck #26
     gs8 e4 e8 ds4 | % 27
-    e4. b8 \rest b'8 b8 | % 28
-    b8 a4 b,8 \rest gs'8 gs8 | % 29
+    e4. r8 b'8 b8 | % 28
+    b8 a4 r8 gs8 gs8 | % 29
     gs8 fs4 ~ fs8 e4 ~ | % 30
     e8 ds4 e16 fs16 gs16 fs16 e16 gs16 | % 31
     fs16 gs16 a16 gs16 fs16 a16 gs8 e4 ~ | % 32
@@ -565,7 +565,7 @@ SIII_ViolI_MvIV = \relative f'' {
     a8 g4 ~ g8 fs4 | % 48
     e8 e4 d8 d4 | % 49
     cs8 fs8 fs8 fs8 e4 | % 50
-    b4. \rest b8 \rest b'8 b8 | % 51
+    r4. r8 b'8 b8 | % 51
     a16 g16 a16 b16 a16 b16 g16 fs16 g16 a16 g16 a16 | % 52
     fs16 e16 fs16 g16 fs16 g16 e16 d16 e16 fs16 e16 fs16 | % 53
     d16 cs16 d16 e16 d16 e16 cs16 fs,16 as16 cs16 fs16 cs16 | % 54
@@ -573,18 +573,18 @@ SIII_ViolI_MvIV = \relative f'' {
     d16 cs16 b16 fs'16 b16 fs16 g16 fs16 e16 d16 cs16 b16 |
     \barNumberCheck #56
     as8 b4 ~ b8 as4 | % 57
-    b4. b8 \rest g'8 -\p g8 | % 58
+    b4. r8 g'8 -\p g8 | % 58
     as,8 b4 ~ b8 as4 | % 59
-    b4. b4. \rest \bar "|."
+    b4. r4. \bar "|."
 }
 
 SIV_ViolI_MvI = \relative c'' {
     \clef "treble" \key g \major \time 3/2 | % 1
-    c2 \rest - "" b2 c2 | % 2
+    r2 b2 c2 | % 2
     d1 e2 | % 3
     a,2. b4 c2 | % 4
-    b2 g2 c2 \rest | % 5
-    c2 \rest g2 g'2 ~ | % 6
+    b2 g2 r2 | % 5
+    r2 g2 g'2 ~ | % 6
     g2 fs1 | % 7
     g2 g,4 a4 b2 | % 8
     c2. b4 c4 d4 | % 9
@@ -602,8 +602,8 @@ SIV_ViolI_MvI = \relative c'' {
     cs2. d4 e2 ~ | % 21
     e2 d1 | % 22
     d2 cs1 | % 23
-    d2 c2 \rest c2 \rest | % 24
-    c2 \rest g2 g'2 ~ | % 25
+    d2 r2 r2 | % 24
+    r2 g,2 g'2 ~ | % 25
     g2 fs1 | % 26
     g2 b,2 -\p c2 | % 27
     d1 e2 | % 28
@@ -625,7 +625,7 @@ SIV_ViolI_MvI = \relative c'' {
 SIV_ViolI_MvII = \relative g'' {
     \key g \major \time 12/8 | % 1
     R1.*3 | % 4
-    c,2. \rest b8 \rest a'8 g8 a8 ( b8 ) a8 | % 5
+    r2. r8 a8 g8 a8 ( b8 ) a8 | % 5
     a8 ( g8 ) fs8 g8 ( a8 ) g8 g8 ( fs8 ) e8 fs8 ( g8 ) fs8 | % 6
     fs8 ( e8 ) d8 e8 ( b8 ) d8 cs8 ( b8 ) a8 d4. ~ | % 7
     d4. cs4 d4. b'4. s8 | % 8
@@ -665,25 +665,25 @@ SIV_ViolI_MvII = \relative g'' {
     e4. d2. c4. ~ | % 42
     c4. b2. a4. | % 43
     fs4. g2. fs4. | % 44
-    g4. b4. \rest c2. \rest | % 45
-    b8 \rest d8 c8 d8 ( e8 ) d8 d8 ( c8 ) b8 c8 ( d8 ) c8 | % 46
+    g4. r4. r2. | % 45
+    r8 d'8 c8 d8 ( e8 ) d8 d8 ( c8 ) b8 c8 ( d8 ) c8 | % 46
     c8 ( b8 ) a8 b8 ( c8 ) b8 b8 ( a8 ) g8 a8 ( e8 ) g8 | % 47
     fs8 -\p d'8 c8 d8 ( e8 ) d8 d8 ( c8 ) b8 c8 ( d8 ) c8 \bar "||"
     \time 4/4  | % 48
     c4 b8. a16 a2 \trill | % 49
     g1 \bar "|."
 }
-SIV_ViolI_MvIII = \relative g' {
+SIV_ViolI_MvIII = \relative d' {
     \time 3/2  | \barNumberCheck #1
     R1. | % 2
-    c2 \rest d,2 g2 | % 3
+    r2 d2 g2 | % 3
     fs1 b2 | % 4
     a2 d1 ~ | % 5
     d2 c1 ~ | % 6
     c2 b1 | % 7
     b2 a2 g2 | % 8
     g2 ( fs1 ) | % 9
-    c'2 \rest a2 d2 | % 10
+    r2 a2 d2 | % 10
     cs1 fs2 | \barNumberCheck #11
     e2 a1 ~ | % 12
     a2 g1 ~ | % 13
@@ -692,7 +692,7 @@ SIV_ViolI_MvIII = \relative g' {
     cs1 d2 ~ | % 16
     d2 cs1 | % 17
     d1. | % 18
-    c2 \rest d,2 g2 | % 19
+    r2 d,2 g2 | % 19
     fs1 b2 | % 20
     a1 g2 | \barNumberCheck #21
     fs1 b2 | % 22
@@ -709,7 +709,7 @@ SIV_ViolI_MvIII = \relative g' {
 }
 SIV_ViolI_MvIV = \relative g' {
     \time 3/4  | % 1
-    b4 \rest b4 b4 | % 2
+    r4 b4 b4 | % 2
     c4 d4 d4 | % 3
     g,2 g'4 ~ | % 4
     g4 fs8 e8 d8 c8 | % 5
@@ -743,26 +743,26 @@ SIV_ViolI_MvIV = \relative g' {
     g4 fs2 -. | % 33
     e8 b'8 g8 b8 fs8 b8 | % 34
     g4 b4 b,4 | % 35
-    b8 \rest e8 cs8 e8 b8 e8 | % 36
+    r8 e8 cs8 e8 b8 e8 | % 36
     cs4 e4 e,4 | % 37
-    b'8 \rest a'8 fs8 a8 e8 a8 | % 38
+    r8 a'8 fs8 a8 e8 a8 | % 38
     fs4 a4 a,4 | % 39
-    b8 \rest fs'8 d8 fs8 cs8 fs8 | \barNumberCheck #40
+    r8 fs'8 d8 fs8 cs8 fs8 | \barNumberCheck #40
     d4 fs4 fs,4 | % 41
-    b4 \rest fs'2 ~ | % 42
+    r4 fs'2 ~ | % 42
     fs4 e2 ~ | % 43
     e4 d2 ~ | % 44
     d4 cs2 ~ | % 45
     cs4 b2 ~ | % 46
     b4 as2 | % 47
     b4 fs'4 fs,4 | % 48
-    b8 \rest fs'8 d8 fs8 cs8 fs8 | % 49
+    r8 fs'8 d8 fs8 cs8 fs8 | % 49
     d4 b4 b,4 | \barNumberCheck #50
-    b'8 \rest b8 gs8 b8 fs8 b8 | % 51
+    r8 b'8 gs8 b8 fs8 b8 | % 51
     gs4 e'4 e,4 | % 52
-    b'8 \rest e8 cs8 e8 b8 e8 | % 53
+    r8 e'8 cs8 e8 b8 e8 | % 53
     cs4 a'4 a,4 | % 54
-    b8 \rest a'8 fs8 a8 e8 a8 | % 55
+    r8 a'8 fs8 a8 e8 a8 | % 55
     fs8 a,8 d8 cs8 b8 a8 | % 56
     b8 a8 b8 cs8 d8 e8 | % 57
     cs8 b8 cs8 d8 e8 fs8 | % 58
@@ -790,7 +790,7 @@ SIV_ViolI_MvIV = \relative g' {
     b4 a2 | \barNumberCheck #80
     g2. | % 81
     R2. | % 82
-    b,4 \rest b4 b4 | % 83
+    r4 b,4 b4 | % 83
     c4 d4 d4 | % 84
     g,2 g'4 ~ | % 85
     g4 fs8 e8 d8 c8 | % 86
@@ -815,23 +815,23 @@ SIV_ViolI_MvIV = \relative g' {
 
 SV_ViolI_MvI =  \relative b' {
     \clef "treble" \key d \major \time 4/4 | % 1
-    b4 \rest b8 \rest a'8 b8 a8 b8 g8 | % 2
+    r4. a'8 b8 a8 b8 g8 | % 2
     a4 d,8 e8 fs8 e8 fs8 d8 | % 3
     b'4. a8 a4. g8 | % 4
     g4. fs8 fs8 e16 fs16 g8 a16 b16 | % 5
     cs,4 d2 cs4 | % 6
     d16 e16 fs16 gs16 a8 a8 a4 a,8 b8 | % 7
     e8 cs8 e8 e8 e2 ~ | % 8
-    e16 e16 d16 cs16 b16 ( a16 ) b8 a16 \rest b16 a16 gs16 a16 ( gs16) a8 | % 9
-    a16 \rest a16 gs16 fs16 gs16 e'16 fs16 g16 fs8. e16 d4 ~ | \barNumberCheck #10
+    e16 e16 d16 cs16 b16 ( a16 ) b8 r16 b16 a16 gs16 a16 ( gs16) a8 | % 9
+    r16 a16 gs16 fs16 gs16 e'16 fs16 g16 fs8. e16 d4 ~ | \barNumberCheck #10
     d8 cs16 b16 cs16 d16 e16 fs16 b,16 b16 cs16 d16 b4 | % 11
     a16 a16 b16 cs16 d8 d8 d4. e8 | % 12
     fs8 d8 a'8 a8 a2 ~ | % 13
-    a16 a16 g16 fs16 e16 ( d ) e8 a,16 \rest e'16 d16 cs16 d16 ( cs) d8 | % 14
-    a16 \rest d16 cs16 b16 cs16 a'16 b16 c16 b8. a16 g4 ~ | % 15
+    a16 a16 g16 fs16 e16 ( d ) e8 r16 e16 d16 cs16 d16 ( cs) d8 | % 14
+    r16 d16 cs16 b16 cs16 a'16 b16 c16 b8. a16 g4 ~ | % 15
     g8 fs16 e fs16 g16 a16 b16 e,16 e16 fs16 g16 e4 | % 16
-    d4 b4 \rest g'4 ~ g16 g16 fs16 e16 | % 17
-    fs16 ( e16 ) fs8 a,16 \rest fs'16 e16 d16 e16 ( d16 ) e8 e8. e16 | % 18
+    d4 r4 g4 ~ g16 g16 fs16 e16 | % 17
+    fs16 ( e16 ) fs8 r16 fs16 e16 d16 e16 ( d16 ) e8 e8. e16 | % 18
     e8 d16 cs16 d16 e16 fs16 g16 cs,16 cs16 d16 e16 cs4 | % 19
     b16 b16 cs16 ds16 e8 gs,8 a8 gs8 a8 fs8 | \barNumberCheck #20
     gs4 e8 e'8 fs8 e8 fs8 d8 | % 21
@@ -839,19 +839,18 @@ SV_ViolI_MvI =  \relative b' {
     fs'4. e8 e4. d8 | % 23
     d4. cs8 cs8 b16 cs16 d8 e16 fs16 | % 24
     gs,4 a2 gs4 | % 25
-    a4 b4 \rest b'4. a8 | % 26
+    a4 r4 b'4. a8 | % 26
     a4. g8 g4. fs8 | % 27
     fs8 e16 fs16 g8 a16 b16 cs,4 d4 | % 28
     d4 cs4 d4. c8 -\p | % 29
-    b4 ~ b16 b16 a16 g16 a16 ( g16 ) a8 a16 \rest a16 g16 fs16 |
-    \barNumberCheck #30
+    b4 ~ b16 b16 a16 g16 a16 ( g16 ) a8 r16 a16 g16 fs16 | \barNumberCheck #30
     g16 ( fs16 ) g8 g8. g16 g8 fs16 e16 fs16 g16 a16 b16 | % 31
     e,16 e16 fs16 g16 e4 d2 \bar "|."
 }
 
-SV_ViolI_MvII = \relative d' {
+SV_ViolI_MvII = \relative d'' {
     \time 4/4  | % 1
-    b'8 \rest d8 e8 fs8 g4 fs4 | % 2
+    r8 d8 e8 fs8 g4 fs4 | % 2
     e8 e8 fs8 g8 a4 g4 | % 3
     fs8 b8 e,8 a8 d,8 g8 cs,8 fs8 | % 4
     b,8 cs8 d2 cs4 | % 5
@@ -868,24 +867,24 @@ SV_ViolI_MvII = \relative d' {
     cs8 cs8 d8 e8 a,8 a8 b8 cs8 | % 16
     d8 d8 e8 fs8 e4. d8 | % 17
     cs8 e8 fs8 gs8 a2 ~ | % 18
-    a4 gs4 a4 b,4 \rest | \barNumberCheck #19
-    b'4. e,8 a4. d,8 | % 20
+    a4 gs4 a4 r4 | \barNumberCheck #19
+    b4. e,8 a4. d,8 | % 20
     g4. cs,8 fs4. fs8 | % 21
     e2. d4 | % 22
     g2. fs4 | % 23
     b2 cs,4 d4 ~ | % 24
     d4 cs2 b4 ~ | % 25
-    b4 as4 b4 b8 \rest fs'8 | % 26
-    d8 b8 b8 \rest fs'8 d8 b8 b8 \rest fs'8 | % 27
-    d8 b8 cs8 fs8 d8 b8 b8 \rest b'8 | % 28
-    g8 e8 b8 \rest b'8 g8 e8 b8 \rest b'8 | \barNumberCheck #29
+    b4 as4 b4 r8 fs'8 | % 26
+    d8 b8 r8 fs'8 d8 b8 r8 fs'8 | % 27
+    d8 b8 cs8 fs8 d8 b8 r8 b'8 | % 28
+    g8 e8 r8 b'8 g8 e8 r8 b'8 | \barNumberCheck #29
     g8 e8 fs8 b8 g8 e8 g8 b8 | % 30
     c4. fs,8 b4. e,8 | % 31
     a4. b8 g2 | % 32
-    fs2 e4 b8 \rest b'8 | % 33
-    g8 e8 b8 \rest b'8 g8 e8 b8 \rest b'8 | % 34
-    g8 e8 fs8 b8 g8 e8 b8 \rest a'8 | % 35
-    fs8 d8 b8 \rest a'8 fs8 d8 b8 \rest a'8 | % 36
+    fs2 e4 r8 b'8 | % 33
+    g8 e8 r8 b'8 g8 e8 r8 b'8 | % 34
+    g8 e8 fs8 b8 g8 e8 r8 a8 | % 35
+    fs8 d8 r8 a'8 fs8 d8 r8 a'8 | % 36
     fs8 d8 e8 a8 fs8 d8 fs8 a8 | % 37
     b4. e,8 a4. d,8 | % 38
     g4. cs,8 fs4. a8 | \barNumberCheck #39
@@ -901,13 +900,13 @@ SV_ViolI_MvII = \relative d' {
     a8 e8 e8 d8 cs8 cs8 d8 e8 | \barNumberCheck #49
     fs8 d4 cs8 ~ cs8 b4 a8 ~ | % 50
     a8 g8 fs8 g8 e2 | % 51
-    d4 b'4 \rest b8 \rest fs'8 g8 a8 | % 52
-    d,2 b8 \rest gs'8 a8 b8 | % 53
+    d4 r4 r8 fs'8 g8 a8 | % 52
+    d,2 r8 gs8 a8 b8 | % 53
     e,8 a4 gs8 ~ gs8 fs4 e8 ~ | % 54
     e8 d8 cs8 b8 b2 | % 55
-    a4 b8 \rest d8 b8 g8 b8 e8 | % 56
-    cs8 a8 b8 \rest fs'8 d8 b8 d8 g8 | % 57
-    e8 cs8 b8 \rest a'8 fs8 d8 fs8 b8 | % 58
+    a4 r8 d8 b8 g8 b8 e8 | % 56
+    cs8 a8 r8 fs'8 d8 b8 d8 g8 | % 57
+    e8 cs8 r8 a'8 fs8 d8 fs8 b8 | % 58
     gs8 e8 a2 g4 ~ | \barNumberCheck #59
     g4 fs4 e2 | % 60
     d2 cs4. -\p fs8 | % 61
@@ -920,14 +919,14 @@ SV_ViolI_MvIII = \relative d' {
     fs'4 fs4. g8 | % 2
     fs4. e8 d4 ~ | % 3
     d4 cs4. d16 ( e16 ) | % 4
-    as,4 b4 \rest b4 \rest | % 5
-    b4 \rest b'4 fs4 | \barNumberCheck #6
+    as,4 r4 r4 | % 5
+    r4 b'4 fs4 | \barNumberCheck #6
     g4 gs2 | % 7
     a4 as2 | % 8
     b2 a4 | % 9
     g4 ( fs4 ) e4 | % 10
     d8 ( cs8 ) cs2 | % 11
-    b4 b4 \rest b4 \rest | % 12
+    b4 r4 r4 | % 12
     b'4 b4. c8 | % 13
     b4. a8 g4 ~ | % 14
     g4 fs4. g16 ( a16 ) | % 15
@@ -969,8 +968,8 @@ SV_ViolI_MvIV = \relative f'' {
         d4 d8 ( cs8 ) b8 ( d8 ) | % 5
         cs4 a4 a'4 | % 6
         g8 fs8 e2 | % 7
-        d4 b4 \rest b4 \rest | % 8
-        b4 \rest a'4 e4 | % 9
+        d4 r4 r4 | % 8
+        r4 a'4 e4 | % 9
         fs4 d4 a4 | % 10
         a'2. ~ | % 11
         a4 gs2 | % 12
@@ -1003,8 +1002,8 @@ SV_ViolI_MvIV = \relative f'' {
         cs4 fs,4 b4 ~ | % 37
         b4 a4 gs4 | % 38
         a4 gs2 | % 39
-        fs4 b,4 \rest b4 \rest | % 40
-        b'4 a8 gs8 fs8 a8 | % 41
+        fs4 r4 r4 | % 40
+        b4 a8 gs8 fs8 a8 | % 41
         gs2. \trill | % 42
         a4 g8 fs8 e8 g8 | % 43
         fs4. e8 d8 cs8 | \barNumberCheck #44
@@ -1032,11 +1031,11 @@ SV_ViolI_MvIV = \relative f'' {
     }
 }
 
-SVI_ViolI_MvI = \relative b' {
+SVI_ViolI_MvI = \relative f' {
     \repeat volta 2 {
-        \clef "treble" \key g \major \time 4/4 \partial 8 b8 \rest | % 1
+        \clef "treble" \key g \major \time 4/4 \partial 8 r8 | % 1
         R1*2 | % 3
-        c2 \rest b4 \rest b8 \rest fs'8 | % 4
+        r2 r4. fs'8 | % 4
         d8 fs8 cs8 fs8 d8 fs8 as,8 fs'8 | % 5
         b,8 fs'8 cs8 fs8 d8 e8 fs8 g8 | % 6
         d4 ( cs4 ) b8 b'8 fs8 b8 | % 7
@@ -1049,7 +1048,7 @@ SVI_ViolI_MvI = \relative b' {
         g,8 c8 g8 c8 fs,8 b8 fs8 b8 | % 14
         e,8 a8 e8 a8 d,8 g8 d8 g8 | % 15
         c,4 c'2 b4 | % 16
-        a2 g4 b,8 \rest d8 | % 17
+        a2 g4 r8 d8 | % 17
         b8 d8 a8 d8 b8 d8 fs,8 d'8 | % 18
         g,8 d'8 a8 d8 b8 c8 d8 e8 | % 19
         b4 ( a4 ) g4 b'4 | \barNumberCheck #20
@@ -1061,12 +1060,12 @@ SVI_ViolI_MvI = \relative b' {
         fs4 as,4 \trill b4 fs'4 | % 26
         fs2 ~ fs8 e8 d8 cs8 | % 27
         cs2 b2 | % 28
-        b4 \rest fs'4 -\p fs4 cs4 | % 29
+        r4 fs'4 -\p fs4 cs4 | % 29
         d4 fs4 fs4 cs4 | \barNumberCheck #30
         d8 ( cs8 ) b8 ( as8 ) b2 ~ | % 31
         b4 as4 b4 r4 | % 32
     } \repeat volta 2 {
-        b8 \rest b'8 fs8 b8 g8 e8 b8 e8 | % 33
+        r8 b'8 fs8 b8 g8 e8 b8 e8 | % 33
         c8 a'8 e8 a8 fs8 d8 a8 d8 | % 34
         b8 g'8 d8 g8 e8 c8 g8 c8 | % 35
         a8 d8 a8 d8 b8 e8 b8 e8 | % 36
@@ -1076,11 +1075,11 @@ SVI_ViolI_MvI = \relative b' {
         c,8 f8 c8 f8 b,8 e8 b8 e8 | \barNumberCheck #40
         a,8 d8 a8 d8 g,8 c8 g8 c8 | % 41
         f,4 f'4 ~ f8 g8 e8 d8 | % 42
-        e4 ( d4 ) c4 b8 \rest e8 | % 43
+        e4 ( d4 ) c4 r8 e8 | % 43
         c8 e8 b8 e8 c8 e8 b8 gs8 | % 44
-        e'4 e4 e4 b8 \rest gs8 | % 45
-        a4 b8 \rest b8 e,8 gs8 a4 ~ | % 46
-        a4 gs4 a4 b4 \rest | % 47
+        e'4 e4 e4 r8 gs,8 | % 45
+        a4 r8 b8 e,8 gs8 a4 ~ | % 46
+        a4 gs4 a4 r4 | % 47
         a'2. g4 | % 48
         c2 b2 | % 49
         a2 ~ a8 b8 g8 fs8 | \barNumberCheck #50
@@ -1098,7 +1097,7 @@ SVI_ViolI_MvI = \relative b' {
 SVI_ViolI_MvII = \relative e' {
     \time 3/4  | % 1
     R2. | \barNumberCheck #2
-    b'4 \rest g4 e4 | % 3
+    r4 g4 e4 | % 3
     c'2. ~ | % 4
     c4 d8 ( c8 ) d8 ( a8 ) | % 5
     b4. a8 b8 c8 | % 6
@@ -1110,8 +1109,8 @@ SVI_ViolI_MvII = \relative e' {
     c8 ( b8 ) c4. c8 | \barNumberCheck #12
     c4 b4 a4 | % 13
     b4 a2 | % 14
-    g4 b4 \rest b4 \rest | % 15
-    b4 \rest fs'4 d4 | % 16
+    g4 r4 r4 | % 15
+    r4 fs'4 d4 | % 16
     g4. a8 b4 ~ | % 17
     b4 a4. g8 | % 18
     fs4. g8 a4 ~ | % 19
@@ -1134,8 +1133,8 @@ SVI_ViolI_MvII = \relative e' {
     b4 a4. a8 | % 36
     a4. b8 g4 ~ | % 37
     g8 fs8 fs2 | % 38
-    e4 b4 \rest b4 \rest | % 39
-    b4 \rest g4 -\p e4 | % 40
+    e4 r4 r4 | % 39
+    r4 g,4 -\p e4 | % 40
     c'2. ~ | % 41
     c4 d8 ( c8 ) d8 ( a8 ) | \barNumberCheck #42
     b4 e2 ~ -\f | % 43
@@ -1153,19 +1152,19 @@ SVI_ViolI_MvII = \relative e' {
     g8 a8 fs2 | % 55
     e2. \bar "|."
 }
-SVI_ViolI_MvIII = \relative e' {
+SVI_ViolI_MvIII = \relative e'' {
     \repeat volta 2 {
         \key g \major \time 12/8 | % 1
-        b'2. \rest b4. e4. | % 2
+        r2. b4. e4. | % 2
         ds8 ( e8 ) fs8 g8 ( a8 ) g8 fs8 ( e8 ) ds8 e8 ( fs8 ) e8 | % 3
-        ds8 ( cs8 ) ds8 b4. b4. \rest b'4. ~ | % 4
+        ds8 ( cs8 ) ds8 b4. r4. b'4. ~ | % 4
         b8 g8 a8 b8 ( a8 ) b8 b8 ( a8 ) b8 g8 ( fs8 ) g8 | % 5
         a8 ( fs8 ) g8 a8 ( g8 ) a8 a8 ( g8 ) a8 fs8 ( e8 ) fs8 | % 6
         g8 ( e8 ) fs8 g8 ( fs8 ) g8 g8 ( fs8 ) g8 e8 ( ds8 ) e8 |
         \barNumberCheck #7
         fs8 ( ds8 ) e8 fs8 ( e8 ) fs8 fs8 ( e8 ) fs8 ds8 ( cs8 ) ds8 | % 8
         e8 fs8 g8 a4 a8 b8 a8 g8 ( a8 ) fs8 s8 | % 9
-        g8 ( fs8 ) e8 b8 ( e8 ) ds8 e4. b4 \rest e8 | % 10
+        g8 ( fs8 ) e8 b8 ( e8 ) ds8 e4. r4 e8 | % 10
         d8 e8 d8 c8 ( d8 ) c8 b8 ( a8 ) g8 b8 ( c8 ) d8 | % 11
         c8 ( d8 ) b8 a8 ( b8 ) g8 fs8 ( e8 ) d8 d'4. ~ | % 12
         d4. e2. fs4. ~ | % 13
@@ -1184,10 +1183,10 @@ SVI_ViolI_MvIII = \relative e' {
         cs8 ( d8 ) e8 fs8 ( g8 ) fs8 e8 ( fs8 ) e8 d8 ( e8 ) d8 | % 24
         cs8 ( d8 ) cs8 b8 ( cs8 ) b8 as8 ( gs8 ) fs8 fs'4. ~ | % 25
         fs4. e2. d4. | % 26
-        cs2. b4. b4. \rest | \barNumberCheck #27
-        c2. \rest e4. d4. | % 28
+        cs2. b4. r4. | \barNumberCheck #27
+        r2. e4. d4. | % 28
         c8 ( d8 ) c8 b8 ( c8 ) a8 gs8 ( fs8 ) e8 a4. ~ | % 29
-        a4. gs4. a4. b4. \rest | % 30
+        a4. gs4. a4. r4. | % 30
         d4. c4. b8 ( c8 ) b8 a8 ( b8 ) g8 | % 31
         fs8 ( e8 ) d8 g2. fs4. | % 32
         g'4. fs4. e8 ( fs8 ) g8 e8 ( fs8 ) g8 | % 33
@@ -1228,7 +1227,7 @@ SVII_ViolI_MvI = \relative g'' {
     a8 f8 bf16 ( a16 ) g16 ( f16 ) g16 ( f16 ) ef16 ( d16 ) c4 | % 8
     bf4 bf'4 ~ bf8 a16 ( g16 ) a8. a16 | % 9
     a8 g16 ( f16 ) g4 ~ g8 f8 ~ f8 e16 d16 | \barNumberCheck #10
-    cs8 d8 d8. cs16 d4 b4 \rest | % 11
+    cs8 d8 d8. cs16 d4 r4 | % 11
     d4 d4 d4 cs4 | % 12
     d4 fs4 g4 g4 | % 13
     g4 ~ g16 g16 a16 b16 a8. a16 a8 b16 c16 | % 14
@@ -1237,7 +1236,7 @@ SVII_ViolI_MvI = \relative g'' {
     g8 f16 ( e16 ) f8. f16 f8 ef16 ( -\p d16 ) ef4 ~ | % 17
     ef8 d16 ( c16 ) d8. d16 d8 c16 ( bf16 ) c4 | % 18
     c8 bf4 a16 g16 fs8 g8 g8. fs16 | % 19
-    g4 b4 \rest e4 ~ -\f e8 fs16 ( e16 ) | \barNumberCheck #20
+    g4 r4 e'4 ~ -\f e8 fs16 ( e16 ) | \barNumberCheck #20
     fs8 d8 g2 fs4 | % 21
     g1 \bar "|."
 }
@@ -1246,26 +1245,26 @@ SVII_ViolI_MvII = \relative g'' {
         \key f \major \time 4/4 \partial 8 d16 d16 | % 1
         bf8 g8 d'8. d16 d4 ~ d16 d16 e16 fs16 | % 2
         g8 a16 bf16 a8. g16 fs8 d4 g16 d16 | % 3
-        ef16 d16 c16 bf16 a4 g4 b8 \rest d16 a16 | % 4
-        bf8 g8 b8 \rest f'16 c16 d8 a8 b8 \rest a'16 e16 | % 5
+        ef16 d16 c16 bf16 a4 g4 r8 d'16 a16 | % 4
+        bf8 g8 r8 f'16 c16 d8 a8 r8 a'16 e16 | % 5
         f16 g16 a4 g8 ~ g8 f4 e16 d16 | % 6
         cs8 d d8. cs16 d4 c4 -\p | % 7
         bf4 a4 ~ a8 d,8 g4 ~ | \barNumberCheck #8
-        g8 f8 e4 d4 b'8 \rest
+        g8 f8 e4 d4 r8
     } \repeat volta 2 {
         f'16 f16 | % 9
         d8 bf8 f'8. f16 f4 ~ f16 g16 f16 ef16 | % 10
         d8 bf8 g'8. g16 g4. g16 g16 | % 11
         af8. g16 f16 ef16 d16 c16 b8 g8 g'8. g16 | % 12
-        f16 g16 ef16 d16 d4 c4 b8 \rest f'16 f16 | % 13
-        d8 bf8 b8 \rest bf'16 bf16 g8 a16 bf16 a8. g16 | % 14
+        f16 g16 ef16 d16 d4 c4 r8 f16 f16 | % 13
+        d8 bf8 r8 bf'16 bf16 g8 a16 bf16 a8. g16 | % 14
         fs8 d4 g16 d16 ef16 d16 c16 bf16 a4 | % 15
         g16 a16 bf16 c16 d16 e16 f16 d16 g8 bf8 a8. g16 | % 16
         fs8 d8 g16 f16 ef16 d16 ef16 d16 c16 b16 c4 | \barNumberCheck #17
-        c16 d16 bf16 a16 a4 g4 b8 \rest
+        c16 d16 bf16 a16 a4 g4 r8
     }
 }
-SVII_ViolI_MvIII = \relative g' {
+SVII_ViolI_MvIII = \relative g'' {
     \repeat volta 2 {
         \key f \major \time 3/4  | % 1
         d4 g4. a8 | % 2
@@ -1287,8 +1286,8 @@ SVII_ViolI_MvIII = \relative g' {
         a'4 a2 \trill | % 16
         bf4. a8 g4 | % 17
         f8 e8 e2 | % 18
-        d4 b4 \rest b4 \rest | % 19
-        g'4 g8 f8 ef8 d8 | \barNumberCheck #20
+        d4 r4 r4 | % 19
+        g4 g8 f8 ef8 d8 | \barNumberCheck #20
         ef2. | % 21
         f4 f8 ef8 d8 c8 | % 22
         d2. | % 23
@@ -1393,8 +1392,8 @@ SVIII_ViolI_MvI = \relative g'' {
         d4. e8 cs8 a8 a'8. bf16 | % 9
         g4. \trill f16 e16 f4. f8 | \barNumberCheck #10
         bf4. a16 ( bf16 ) cs,4 d4 ~ | % 11
-        d4 cs4 d4 b4 \rest | % 12
-        g'2 a2 ~ | % 13
+        d4 cs4 d4 r4 | % 12
+        g2 a2 ~ | % 13
         a8 g8 g8 a8 f2 \trill | % 14
         e4. f8 d4. c16 b16 | % 15
         c4. d16 c16 b4 c4 ~ | % 16
@@ -1403,7 +1402,7 @@ SVIII_ViolI_MvI = \relative g'' {
 }
 SVIII_ViolI_MvII = \relative c'' {
     \time 4/4  | % 1
-    b8 \rest c8 c8 c8 g'4. g8 | % 2
+    r8 c8 c8 c8 g'4. g8 | % 2
     e8 e8 e8 f16 e16 d8 g,8 g'4 ~ | % 3
     g8 c,8 f2 e4 | \barNumberCheck #4
     d2 c8 e8 e8 f16 e16 | % 5
@@ -1412,20 +1411,20 @@ SVIII_ViolI_MvII = \relative c'' {
     d8 c8 c8 c8 c8 b8 b8 b8 | % 8
     b8 a8 a8 g8 fs4 g4 ( | % 9
     g4 fs4 ) g8 d'8 d8 d8 | % 10
-    g2 b,8 \rest c8 c8 c8 | % 11
+    g2 r8 c,8 c8 c8 | % 11
     f2 ~ f8 e8 e8 e8 | % 12
     a4. a8 d,8 g8 g8 a16 g16 | % 13
     f2 e4. e8 | \barNumberCheck #14
     a8 a8 a8 b16 a16 gs4 a4 ~ | % 15
-    a4 gs4 a4 b,4 \rest | % 16
-    b8 \rest e8 e8 e8 c4 a4 -\p | % 17
-    b8 \rest e8 e8 e8 c4 a4 -\f | % 18
-    b8 \rest a'8 a8 a8 a4 g4 | % 19
+    a4 gs4 a4 r4 | % 16
+    r8 e8 e8 e8 c4 a4 -\p | % 17
+    r8 e'8 e8 e8 c4 a4 -\f | % 18
+    r8 a'8 a8 a8 a4 g4 | % 19
     c2 b2 | % 20
     c4 a4 ~ a8 b8 g8 fs8 | % 21
-    fs2 e4 b4 \rest | % 22
-    b8 \rest b'8 b8 b8 g4 e4 | % 23
-    b8 \rest b'8 b8 b8 g8 e8 b'4 ~ | \barNumberCheck #24
+    fs2 e4 r4 | % 22
+    r8 b'8 b8 b8 g4 e4 | % 23
+    r8 b'8 b8 b8 g8 e8 b'4 ~ | \barNumberCheck #24
     b4 a2 g4 ~ | % 25
     g4 fs8 e8 ds4 e4 ~ | % 26
     e4 ds4 e4 g4 ~ | % 27
@@ -1440,9 +1439,9 @@ SVIII_ViolI_MvII = \relative c'' {
     d8 c8 c8 c8 c8 b8 b8 a8 | % 36
     a2 g8 d'8 d8 d8 | % 37
     g8 g8 g8 f16 g16 e8 e8 e8 d16 e16 | % 38
-    c4 b4 \rest b8 \rest a8 a8 a8 | % 39
+    c4 r4 r8 a8 a8 a8 | % 39
     d8 d8 d8 c16 d16 b8 b8 b8 a16 b16 | % 40
-    g4 b4 \rest b8 \rest g'8 g8 g8 | % 41
+    g4 r4 r8 g'8 g8 g8 | % 41
     c8 c8 c8 bf16 c16 a8 a8 a8 g16 a16 | % 42
     f8 f8 f8 e16 f16 d8 d8 g4 ~ | % 43
     g4 f2 e4 ~ | \barNumberCheck #44
@@ -1568,8 +1567,8 @@ SIX_ViolI_MvI = \relative a' {
     e8 c8 a8 b16 c16 g4.
     g'8 | % 5
     a8 g8 f8 e8 d4 e8. f16 | % 6
-    d2 c4 b4 \rest | % 7
-    c2 \rest c4 ~ c16 e16 d16 c16 | % 8
+    d2 c4 r4 | % 7
+    r2 c4 ~ c16 e16 d16 c16 | % 8
     a'8. a16 g16 f16 e16 d16 e8 c8 c'4 ~ | % 9
     c8 b8 b8 a8 gs8 e8 a4 ~ | \barNumberCheck #10
     a8 g8 fs8 e8 ds8 b8 b'4 ~ | % 11
@@ -1580,7 +1579,7 @@ SIX_ViolI_MvI = \relative a' {
     e4 ds4 e8. d16 c16 b16 a16 g16 | % 16
     a4. b8 e,4. e'8 | % 17
     f8 e8 d8 c8 b4. c16 d16 | % 18
-    b2 a4 b4 \rest | % 19
+    b2 a4 r4 | % 19
     f'2 -\p gs,4 a4 ~ | \barNumberCheck #20
     a4 gs4 a2 \bar "|."
 }
@@ -1597,11 +1596,11 @@ SIX_ViolI_MvII = \relative a' {
         b8 g'8 d8 e8 b8 c8 d8 e8 | \barNumberCheck #9
         d1 ~ | % 10
         d8 e8 f4 ~ f8 g8 e8 d8 | % 11
-        e4 ( d4 ) c4 b8 \rest
+        e4 ( d4 ) c4 r8
     } \repeat volta 2 {
         e8 | % 12
         a8 g8 f8 e8 f4 ~ f16 g16 f16 e16 | % 13
-        d8 d8 e8 f8 cs4 b8 \rest a'8 | % 14
+        d8 d8 e8 f8 cs4 r8 a'8 | % 14
         bf4 a4 g4. \trill f8 | % 15
         g4 f4 ef4. \trill d8 | % 16
         ef4 d4 cs8 a8 d4 ~ | % 17
@@ -1609,7 +1608,7 @@ SIX_ViolI_MvII = \relative a' {
         f8 e8 e16 ( d16 ) c16 ( b16 ) c8 a8 c4 ~ |
         \barNumberCheck #19
         c8 b8 b16 ( a16 ) g16 ( fs16 ) g8 e8 g'4 ~ | % 20
-        g8 fs8 fs8 e8 ds4 b8 \rest b'8 | % 21
+        g8 fs8 fs8 e8 ds4 r8 b'8 | % 21
         c4 b4 a4. \trill g8 | % 22
         a4 g4 f4. \trill e8 | % 23
         f4 e4 ds8 b8 e4 ~ | % 24
@@ -1623,10 +1622,10 @@ SIX_ViolI_MvII = \relative a' {
         gs8 e'8 b8 c8 gs8 a8 b8 c8 | % 32
         b1 ~ | % 33
         b8 c8 d4 ~ d8 e8 c8 b8 | % 34
-        c4 ( b4 ) a4 b8 \rest e8 -\p | % 35
+        c4 ( b4 ) a4 r8 e'8 -\p | % 35
         b8 c8 gs8 a8 e8 fs8 gs8 a8 | % 36
         b8 c8 d4 ~ d8 e8 c8 b8 | % 37
-        c4 ( b4 ) a4 b8 \rest
+        c4 ( b4 ) a4 r8
     }
 }
 SIX_ViolI_MvIII = \relative a'' {
@@ -1640,23 +1639,23 @@ SIX_ViolI_MvIII = \relative a'' {
         f4. g8 e4 ~ | % 7
         e4 d4. c8 | % 8
         b4. a8 g4 | % 9
-        b4 \rest a'4 f4 | % 10
+        r4 a'4 f4 | % 10
         d4. d8 e4 ~ | % 11
         e8 f8 d2 | \barNumberCheck #12
         c2. | % 13
     } \repeat volta 2 {
-        b4 \rest e8 f8 g8 a8 | % 14
+        r4 e8 f8 g8 a8 | % 14
         f4. g8 a4 | % 15
         d,4 g4 e4 | % 16
         cs4. b8 a4 | % 17
-        b4 \rest bf'4 g4 | % 18
+        r4 bf'4 g4 | % 18
         e4. e8 f4 ~ | % 19
         f8 g8 e2 | % 20
         d8 e8 f2 ~ | % 21
         f4 e2 ~ | \barNumberCheck #22
         e4 d8 c8 b8 a8 | % 23
         gs4. fs8 e4 | % 24
-        b'4 \rest f'4 d4 | % 25
+        r4 f'4 d4 | % 25
         b4. b8 c4 ~ | % 26
         c8 d8 b2 | % 27
         a2.
@@ -1690,7 +1689,7 @@ SIX_ViolI_MvIV = \relative a' {
         e8 ( f8 e8 ) d8 ( c8 d8 ) | \barNumberCheck #24
         e4 g,8 c4. | % 25
         c4. b4. | % 26
-        c4. b4 \rest
+        c4. r4
     } \repeat volta 2 {
         e8 | % 27
         e8 ( f8 e8 ) e8 ( f8 e8 ) | % 28
@@ -1717,7 +1716,7 @@ SIX_ViolI_MvIV = \relative a' {
         e4. ~ -\p e4 d8 | % 49
         c4 ( b8 ) a4 ( g8 ) | % 50
         fs4. ~ fs4. | % 51
-        e4. b'4 \rest b8 -\f | % 52
+        e4. r4 b'8 -\f | % 52
         c8 ( d8 c8 b8 a8 b8 ) | % 53
         c8 d8 c8 b8 ( a8 b8 ) | \barNumberCheck #54
         c8 ( b8 a8 ) e'4 e8 | % 55
@@ -1733,7 +1732,7 @@ SIX_ViolI_MvIV = \relative a' {
         e2. ~ | % 65
         e4 d8 c4 ( b8 ) | % 66
         b2. | % 67
-        a4. b4 \rest
+        a4. r4
     }
 }
 
@@ -1749,18 +1748,18 @@ SX_ViolI_MvI = \relative c' {
     g4. f16 e16 d8 e16 f16 d4 | % 9
     c8 c'8 g8 a16 bf16 a8 g16 f16 e8 f16 g16 | \barNumberCheck#10
     f8 g16 a16 g8 a16 bf16 a8 g16 f16 e4 | % 11
-    f4. e16 d16 cs4 b4 \rest | % 12
-    b8 \rest a'8 e8 f16 g16 f8 e16 d16 cs8 d16 e16 | % 13
+    f4. e16 d16 cs4 r4 | % 12
+    r8 a'8 e8 f16 g16 f8 e16 d16 cs8 d16 e16 | % 13
     d8 e16 f16 e8 f16 g16 f8 g16 a16 g8 a16 bf16 | % 14
     a2 ~ a8 g16 f16 e4 | % 15
-    d4 b8 \rest g'16 f16 ef8 d16 c16 b4 | % 16
-    c4 b8 \rest f'16 ef16 d8 c16 bf16 a8 bf16 -\p c16 | % 17
+    d4 r8 g16 f16 ef8 d16 c16 b4 | % 16
+    c4 r8 f16 ef16 d8 c16 bf16 a8 bf16 -\p c16 | % 17
     bf8 c16 d16 c8 d16 ef16 d8 c16 bf16 a4 | % 18
     bf8 bf'4 -\f a8 g8 c4 bf8 | % 19
     a8 g16 f16 e8 f16 g16 f8 g16 a16 g8 a16 bf16 | \barNumberCheck #20
     a8 g16 f16 e4 f4. ef8 | % 21
-    d8. c16 bf16 a16 g16 f16 e8 c8 b'4 \rest | % 22
-    b8 \rest c8 -\p g8 a16 bf16 a8 g16 f16 e8 f16 g16 | % 23
+    d8. c16 bf16 a16 g16 f16 e8 c8 r4 | % 22
+    r8 c'8 -\p g8 a16 bf16 a8 g16 f16 e8 f16 g16 | % 23
     f8 g16 a16 g8 a16 bf16 a8 g16 f16 bf8 a16 g16 | % 24
     c4. bf16 a16 g8 a16 bf16 g4 | % 25
     f1 \bar "|."
@@ -1768,7 +1767,7 @@ SX_ViolI_MvI = \relative c' {
 SX_ViolI_MvII = \relative f' {
     \key f \major \time 4/4 | % 1
     R1*3 | % 4
-    b8 \rest f'8 f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) |
+    r8 f'8 f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) |
     \barNumberCheck #5
     d8 g,8 g'4 ~ g8 c,8 f4 ~ | % 6
     f8 e8 e8 d16 c16 d4. d8 | % 7
@@ -1783,23 +1782,23 @@ SX_ViolI_MvII = \relative f' {
     g8 d8 g4 ~ g8 c,8 f4 ~ | % 16
     f4 e2 d8 c8 | % 17
     b4 c2 b4 | % 18
-    c8 e8 f16 ( e16 ) d16 ( c16 ) f4 b,8 \rest f'8 | % 19
-    f8 f8 g16 ( f16 ) e16 ( d16 ) g4 b,8 \rest g'8 | % 20
-    g8 g8 a16 ( g16 ) f16 ( e16 ) a4 b,8 \rest a'8 | % 21
+    c8 e8 f16 ( e16 ) d16 ( c16 ) f4 r8 f8 | % 19
+    f8 f8 g16 ( f16 ) e16 ( d16 ) g4 r8 g8 | % 20
+    g8 g8 a16 ( g16 ) f16 ( e16 ) a4 r8 a8 | % 21
     a8 a8 bf16 ( a16 ) g16 ( f16 ) e8 a8 a8 a8 | % 22
     f8 f8 g16 ( f16 ) e16 ( d16 ) e8 a,8 a'4 ~ | % 23
     a8 d,8 g4 ~ g8 a8 f8 e8 | % 24
-    e2 d4 b4 \rest | \barNumberCheck #25
-    b8 \rest a'8 a16 ( g16 ) f16 ( e16 ) f4 d4 | % 26
-    b8 \rest a'8 -\p a16 ( g16 ) f16 ( e16 ) f4 d4 | % 27
-    b8 \rest c'8 c16 ( bf16 ) a16 ( g16 ) a8 bf8 c4 ~ | % 28
+    e2 d4 r4 | \barNumberCheck #25
+    r8 a'8 a16 ( g16 ) f16 ( e16 ) f4 d4 | % 26
+    r8 a'8 -\p a16 ( g16 ) f16 ( e16 ) f4 d4 | % 27
+    r8 c'8 c16 ( bf16 ) a16 ( g16 ) a8 bf8 c4 ~ | % 28
     c8 f,8 bf4 ~ bf8 a8 a4 ~ | % 29
     a8 g8 g8 f8 e8 c8 f4 ~ | % 30
     f4 e2 d4 ~ | % 31
     d4 c2 bf4 ~ | % 32
     bf4 a4 b4 c4 ~ | % 33
-    c4 b4 c4 b4 \rest | % 34
-    b8 \rest f'8 f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) | \barNumberCheck #35
+    c4 b4 c4 r4 | % 34
+    r8 f8 f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) | \barNumberCheck #35
     d8 e16 f16 g8 f8 e8 c8 c'4 ~ | % 36
     c8 f,8 bf2 a4 ~ | % 37
     a8 g8 bf16 ( a16 ) g16 ( f16 ) e8 c8 f4 ~ | % 38
@@ -1809,7 +1808,7 @@ SX_ViolI_MvII = \relative f' {
     d8 g,8 c4 ~ c8 f,8 bf4 ~ | % 42
     bf4 a4 ~ a8 g8 g8 f8 | % 43
     e8 c8 f2 e4 | % 44
-    f4 b8 \rest a8 -\p g8 g8 a16 ( g16 ) f16 ( e16 ) | \barNumberCheck #45
+    f4 r8 a8 -\p g8 g8 a16 ( g16 ) f16 ( e16 ) | \barNumberCheck #45
     f8 f8 g16 ( f16 ) e16 ( d16 ) e8 c4 f8 | % 46
     d8 b8 bf'2 a8 g8 | % 47
     g2 f2 \bar "|."
@@ -1855,7 +1854,7 @@ SX_ViolI_MvIV = \relative f' {
         g4. a8 | % 7
         f8. e16 f8. g16 | % 8
         e4 c4 | % 9
-        b8 \rest c8 f8. ef16 | % 10
+        r8 c8 f8. ef16 | % 10
         d8. f16 c8. f16 | % 11
         d8. f16 c8. f16 | % 12
         d8. f16 bf4 ~ | % 13
@@ -1892,13 +1891,13 @@ SX_ViolI_MvIV = \relative f' {
         a8 g16 f16 g4 ~ | % 43
         g8 a16 g16 f8. e16 | \barNumberCheck #44
         e2 | % 45
-        d4 a16 \rest d16 e16 f16 | % 46
+        d4 r16 d16 e16 f16 | % 46
         g8. g16 g8. f16 | % 47
         e8. e16 e8 f16 ( g16 ) | % 48
-        c,4 a16 \rest c16 d16 e16 | % 49
+        c,4 r16 c16 d16 e16 | % 49
         f8. f16 f8. ef16 | % 50
         d8. d16 d8 ef16 ( f16 ) | % 51
-        bf,4 a16 \rest f'16 g16 a16 | % 52
+        bf,4 r16 f'16 g16 a16 | % 52
         bf8. bf16 bf8. a16 | % 53
         g8. g16 g8. f16 | \barNumberCheck #54
         e8. c16 f4 ~ | % 55
@@ -1947,13 +1946,13 @@ SXI_ViolI_MvII = \relative g' {
         g4 ~ g16 d16 e16 f16 e16 d16 c16 b16 a16 b16 c16 d16 | % 2
         b8 e8 a,8 d8 g,8 c8 fs,8 b8 | % 3
         e,8 fs8 g2 fs4 | % 4
-        g4 a16 \rest b'16 a16 g16 a16 b16 a16 g16 fs16 a16 g16 fs16 | % 5
+        g4 r16 b'16 a16 g16 a16 b16 a16 g16 fs16 a16 g16 fs16 | % 5
         g16 a16 g16 fs16 e16 g16 fs16 e16 fs16 fs16 g16 a16 b16 fs16 b16 fs16 | % 6
         b16 e,16 fs16 g16 a16 e16 a16 e16 a16 d,16 e16 fs16 g16 d16 g16 d16 | % 7
         cs16 a16 b16 cs16 d16 e16 fs16 d16 g16 a16 g16 fs16 e16 fs16 g16 a16 | \barNumberCheck #8
         fs16 fs16 g16 a16 b16 fs16 b16 fs16 b16 e,16 fs16 g16 a16 e16 a16 e16 | % 9
         a16 d,16 e16 fs16 g16 d16 g16 d16 cs16 a16 b16 cs16 d4 ~ | % 10
-        d4 cs4 d4 b8. \rest }
+        d4 cs4 d4 r8. }
     \repeat volta 2 {
         d16 | % 11
         d4 ~ d16 a16 b16 c16 b16 a16 g16 fs16 e16 fs16 g16 a16 | % 12
@@ -1961,25 +1960,22 @@ SXI_ViolI_MvII = \relative g' {
         e16 d16 c16 b16 a16 b16 c16 d16 b8 g8 g'8. g16 | % 14
         g8 fs8 a16 g16 fs16 e16 ds8 b'8 c,8 a'8 | % 15
         b,8 g'8 a,8 fs'8 g,8 e'8 ~ e16 d16 c16 b16 | % 16
-        c16 e16 c16 e16 b16 e16 b16 e16 c16 e16 c16 e16 b16 e16 b16 e16
-        | % 17
-        c16 b16 a16 g16 fs4 e4 b'4 \rest | \barNumberCheck #18
-        b8 \rest a'8 e16 fs16 g16 a16 fs8 d8 fs4 | % 19
+        c16 e16 c16 e16 b16 e16 b16 e16 c16 e16 c16 e16 b16 e16 b16 e16 | % 17
+        c16 b16 a16 g16 fs4 e4 r4 | \barNumberCheck #18
+        r8 a'8 e16 fs16 g16 a16 fs8 d8 fs4 | % 19
         g8 g8 d16 e16 f16 g16 e8. d16 c16 b16 a16 g16 | % 20
         fs8 d8 d'8. d16 d16 g,16 a16 b16 c8. c16 | % 21
         c16 fs,16 g16 a16 b8. b16 b16 e,16 fs16 g16 a16 e16 a16 e16 | % 22
-        fs16 d16 e16 fs16 g16 a16 b16 g16 c16 d16 c16 b16 a16 b16 c16 d16
-        | % 23
-        b16 b16 c16 d16 e16 b16 e16 b16 e16 a,16 b16 c16 d16 a16 d16 a16
-        | % 24
+        fs16 d16 e16 fs16 g16 a16 b16 g16 c16 d16 c16 b16 a16 b16 c16 d16 | % 23
+        b16 b16 c16 d16 e16 b16 e16 b16 e16 a,16 b16 c16 d16 a16 d16 a16 | % 24
         d16 g,16 a16 b16 c16 g16 c16 g16 fs16 d16 e16 fs16 g4 ~ | % 25
-        g4 fs4 g4 b8. \rest
+        g4 fs4 g4 r8.
     }
 }
 
-SXI_ViolI_MvIII = \relative g' {
+SXI_ViolI_MvIII = \relative d'' {
     \time 3/4 \key g \major | % 1
-    b4 \rest d4. d8 | % 2
+    r4 d4. d8 | % 2
     d4. d8 e8 fs8 | \barNumberCheck #3
     g4 g2 \trill | % 4
     a4 a2 \trill | % 5
@@ -2044,13 +2040,13 @@ SXI_ViolI_MvIII = \relative g' {
     b4 b2 \trill | % 64
     a2 fs4 | % 65
     g8 d'8 b8 g8 d'4 | % 66
-    b8 \rest d8 a8 fs8 d'4 | % 67
-    b8 \rest d8 b8 g8 d'4 | % 68
-    b8 \rest e8 a,8 b8 c8 d8 | % 69
+    r8 d8 a8 fs8 d'4 | % 67
+    r8 d8 b8 g8 d'4 | % 68
+    r8 e8 a,8 b8 c8 d8 | % 69
     b8 d8 b8 g8 d'4 | % 70
-    b8 \rest d8 a8 fs8 d'4 | % 71
-    b8 \rest d8 b8 g8 d'4 | % 72
-    b8 \rest e8 a,8 b8 c8 d8 | \barNumberCheck #73
+    r8 d8 a8 fs8 d'4 | % 71
+    r8 d8 b8 g8 d'4 | % 72
+    r8 e8 a,8 b8 c8 d8 | \barNumberCheck #73
     b8 d8 b8 g8 d'8 b8 | % 74
     a8 d8 a8 fs8 d'8 a8 | % 75
     b4 d4 g,4 | % 76
@@ -2068,9 +2064,9 @@ SXI_ViolI_MvIII = \relative g' {
     d8 d8 a8 fs8 d'8 a8 | % 88
     b8 d8 b8 g8 d'8 b8 | % 89
     a8 d8 a8 fs8 d'8 a8 | % 90
-    b4 b8 \rest d8 b8 g8 | % 91
+    b4 r8 d8 b8 g8 | % 91
     d'8 a8 fs8 d'8 a8 fs8 | % 92
-    b8 \rest g'8 d8 b8 g'8 d8 | \barNumberCheck #93
+    r8 g'8 d8 b8 g'8 d8 | \barNumberCheck #93
     e8 g8 e8 c8 g'8 e8 | % 94
     d8 g8 d8 b8 g'8 d8 | % 95
     e8 d8 e8 fs8 g8 a8 | % 96
@@ -2083,12 +2079,12 @@ SXI_ViolI_MvIII = \relative g' {
     c4 ( a4 ) d4 | \barNumberCheck #103
     bf4 ( g4 ) c4 | % 104
     d8 ( ef8 ) a,2 | % 105
-    g4 b4 \rest b4 \rest | % 106
-    b4 \rest a'4 -\f f4 | % 107
+    g4 r4 r4 | % 106
+    r4 a'4 -\f f4 | % 107
     bf2 g4 ~ | % 108
     g4 f4. ef8 | % 109
-    d4 b4 \rest b4 \rest | % 110
-    b4 \rest a'8 ( g8 ) a8 ( f8 ) | % 111
+    d4 r4 r4 | % 110
+    r4 a'8 ( g8 ) a8 ( f8 ) | % 111
     bf4. a8 g4 ~ | % 112
     g4 f4. ef8 | \barNumberCheck #113
     d4 f4 f4 | % 114
@@ -2099,14 +2095,14 @@ SXI_ViolI_MvIII = \relative g' {
     f4 f4 f4 | % 119
     f2. ~ | % 120
     f4 e2 | % 121
-    f4 b,4 \rest b4 \rest | % 122
-    b4 \rest bf'4 af4 | \barNumberCheck #123
+    f4 r4 r4 | % 122
+    r4 bf4 af4 | \barNumberCheck #123
     g4 g4 f4 | % 124
     ef2. ~ | % 125
     ef4 d4 c4 | % 126
     d4 c2 | % 127
-    bf4 b4 \rest b4 \rest | % 128
-    b4 \rest bf'4 -\p af4 | % 129
+    bf4 r4 r4 | % 128
+    r4 bf'4 -\p af4 | % 129
     g4 g4 f4 | % 130
     ef2. ~ | % 131
     ef4 d4 c4 | % 132
@@ -2124,13 +2120,13 @@ SXI_ViolI_MvIII = \relative g' {
     c4 bf4. a8 | % 144
     bf8 c8 a4. g8 | % 145
     g4 ef8 ( d8 ) ef4 | % 146
-    b4 \rest d8 ( c8 ) d4 | % 147
-    b4 \rest c8 ( bf8 ) c4 | % 148
-    b4 \rest d8 a8 bf8 c8 | % 149
+    r4 d8 ( c8 ) d4 | % 147
+    r4 c8 ( bf8 ) c4 | % 148
+    r4 d8 a8 bf8 c8 | % 149
     bf4 ef8 ( d8 ) ef4 | % 150
-    b4 \rest d8 ( c8 ) d4 | % 151
-    b4 \rest c8 ( bf8 ) c4 | % 152
-    b4 \rest d8 a8 bf8 c8 | \barNumberCheck #153
+    r4 d8 ( c8 ) d4 | % 151
+    r4 c8 ( bf8 ) c4 | % 152
+    r4 d8 a8 bf8 c8 | \barNumberCheck #153
     bf4 d4 g4 | % 154
     e4 a4. g8 | % 155
     fs4 d4 bf'4 ~ | % 156
@@ -2200,10 +2196,10 @@ SXII_ViolI_MvI = \relative a'' {
 SXII_ViolI_MvII = \relative a' {
     \repeat volta 2 {
         \key a \major \time 4/4 | % 1
-        a4. g16 \rest a16 b4. g16 \rest b16 | % 2
+        a4. r16 a16 b4. r16 b16 | % 2
         cs8. cs16 b8. a16 gs8. e16 e'4 ~ | % 3
         e4 ds4 e8. b16 e4 ~ | % 4
-        e8 cs16 cs8. cs16 d4. g,16 \rest d'16 s16 | % 5
+        e8. cs16 cs8. cs16 d4. r16 d16 | % 5
         e8. e16 e8. fs16 b,4. r16 cs16 | % 6
         a8 b16 cs16 b8. a16 gs8. e'16 a4 ~ | % 7
         a4 gs4 a2 ~ | % 8
@@ -2215,7 +2211,7 @@ SXII_ViolI_MvII = \relative a' {
         a2. gs8. fs16 | % 14
         fs2 e2 | % 15
     } \repeat volta 2 {
-        b''4. -\f g,16 \rest b'16 gs8. g16 a8. b16 | % 16
+        b''4. -\f r16 b16 gs8. g16 a8. b16 | % 16
         e,8. e16 fs8. gs16 a2 ~ | % 17
         a4 gs8. fs16 es4 cs'4 ~ | % 18
         cs4 b2 a8. gs16 | % 19
@@ -2346,7 +2342,7 @@ SXII_ViolI_MvV = \relative a' {
 SXII_ViolI_MvVI = \relative a' {
     \repeat volta 2 {
         \key a \major \time 3/8 | % 1
-        g16 \rest e'16 cs16 a16 e'16 a16 | % 2
+        r16 e'16 cs16 a16 e'16 a16 | % 2
         gs8 e8 gs8 | % 3
         a16 e16 cs16 a16 e'16 a16 | % 4
         fs8 d8 fs8 | % 5
@@ -2381,7 +2377,7 @@ SXII_ViolI_MvVI = \relative a' {
         e4. | % 34
     } \repeat volta 2 {
         R4. | % 35
-        g16 \rest fs'16 ds16 b16 fs'16 b16 | % 36
+        r16 fs'16 ds16 b16 fs'16 b16 | % 36
         gs8 e8 gs8 | % 37
         a16 e16 cs16 a16 e'16 a16 | % 38
         fs8 ds4 | % 39
@@ -2400,9 +2396,9 @@ SXII_ViolI_MvVI = \relative a' {
         b8 a8 gs8 | % 52
         a8 gs4 | % 53
         fs8 r4 | % 54
-        g,16 \rest b'16 fs16 ds16 b'16 fs16 | % 55
+        r16 b16 fs16 ds16 b'16 fs16 | % 55
         gs8 r4 | % 56
-        g,16 \rest a'16 e16 cs16 a'16 e16 | % 57
+        r16 a16 e16 cs16 a'16 e16 | % 57
         fs16 a16 fs16 e16 d16 cs16 | % 58
         b8 e4 ~ | % 59
         e8 d4 ~ | \barNumberCheck #60
