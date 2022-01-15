@@ -1,0 +1,152 @@
+%% additional definitions required by the score:
+\language "english"
+
+\header {
+    copyright = \markup {
+        \tiny { "Fine PAK 26/11 2012" }
+        \epsfile #Y #2 "../../by-sa.eps"
+        \small "Creative Commons Attribution-ShareAlike 4.0" }
+    encodingdate =  "2021-11-23"
+    title =  "12 Sonatas - Opus 3"
+    stitle = "12 Sonatas by Dall'Abaco"
+    composer = "Evaristo Felice Dall'Abaco"
+    encodingsoftware =  "Audiveris 5.2.4"
+    source = "IMSLP581513-IMSLP581514"
+    tagline = ##f
+    }
+
+\paper {
+    print-first-page-number = ##t
+    indent = 5\mm
+    evenHeaderMarkup = \markup
+      \fill-line {
+        \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/24" }
+        % \on-the-fly #not-part-first-page
+        \concat { \small {
+                    \fromproperty #'header:subtitle " of "
+                    \smaller { \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }} }
+        ""
+      }
+    oddHeaderMarkup = \markup
+      \fill-line {
+        ""
+        % \on-the-fly #not-part-first-page
+        \concat { \small {
+                    \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
+        \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/24" }
+      }
+    oddFooterMarkup = \markup {
+      \column {
+        \fill-line {
+          %% Copyright header field only on first page
+          \on-the-fly #first-page \fromproperty #'header:copyright
+        }
+      }
+    }
+    bookTitleMarkup = \markup {
+      % \override #'(baseline-skip . 3.5)
+      \column {
+        % \fill-line { \fromproperty #'header:dedication }
+        % \override #'(baseline-skip . 3.5)
+        \column {
+          \on-the-fly #first-page \fill-line {
+            \huge \larger \larger \bold
+            \fromproperty #'header:title
+          }
+          \fill-line {
+            \large \bold
+            \fromproperty #'header:subtitle
+          }
+          \fill-line {
+            \smaller \bold
+            \fromproperty #'header:subsubtitle
+          }
+          \fill-line {
+            \fromproperty #'header:poet
+            "" % { \large \bold \fromproperty #'header:instrument }
+            \fromproperty #'header:composer
+          }
+          \fill-line {
+            \fromproperty #'header:meter
+            \fromproperty #'header:arranger
+          }
+        }
+      }
+    }
+}
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+        }
+    }
+
+% Same for Sonatas I & II.
+MvI_Name = \markup { \bold "Adagio" }
+MvII_Name = \markup { \bold "Allegro" }
+MvIII_Name = \markup { \bold "Largo" }
+MvIV_Name = \markup { \bold "Allegro" }
+
+SIII_MvI_Name = \markup { \bold "Largo" }
+SIII_MvII_Name = \MvII_Name
+SIII_MvIII_Name = \MvIII_Name
+SIII_MvIV_Name = \MvIV_Name
+
+SIV_MvI_Name = \SIII_MvI_Name
+SIV_MvII_Name = \markup { \bold "Allegro ma non presto" }
+SIV_MvIII_Name = \markup { \bold "Adagio" }
+SIV_MvIV_Name = \MvIV_Name
+
+SV_MvI_Name = \markup { \bold "Largo e cantabile" }
+SV_MvII_Name = \MvII_Name
+SV_MvIII_Name = \MvIII_Name
+SV_MvIV_Name = \MvIV_Name
+
+SVI_MvI_Name = \markup { \bold "Allegro" }
+SVI_MvII_Name = \markup { \bold "Adagio" }
+SVI_MvIII_Name = \markup { \bold "Allegro" }
+
+SVII_MvI_Name = \SIII_MvI_Name
+SVII_MvII_Name = \markup { \bold "Allemanda - Allegro" }
+SVII_MvIII_Name = \markup { \bold "Sarabanda - Largo" }
+SVII_MvIV_Name = \markup { \bold "Giga - Allegro" }
+
+SVIII_MvI_Name = \SVII_MvI_Name
+SVIII_MvII_Name = \MvII_Name
+SVIII_MvIII_Name = \markup { \bold "Sarabanda - Largo" }
+SVIII_MvIV_Name = \markup { \bold "Aria - Allegro" }
+
+SIX_MvI_Name = \SIII_MvI_Name
+SIX_MvII_Name = \SVII_MvII_Name
+SIX_MvIII_Name = \markup { \bold "Aria - Largo" }
+SIX_MvIV_Name = \SVII_MvIV_Name
+
+SX_MvI_Name = \markup { \bold "Adagio e cantabile" }
+SX_MvII_Name = \MvII_Name
+SX_MvIII_Name = \SVII_MvIII_Name
+SX_MvIV_Name = \markup { \bold "Gavotta - Allegro" }
+
+SXI_MvI_Name = \markup { \bold "Grave" }
+SXI_MvII_Name = \SVII_MvII_Name
+SXI_MvIII_Name = \markup { \bold "Ciaccona - Vivace" }
+
+SXI_Markings_MvIII = {
+    \time 3/4
+    s2. \mark \markup { \musicglyph "scripts.segno" } |
+    s2.*95 \bar "||" \barNumberCheck #97
+    s8\tweak Y-offset #5 \tweak X-offset #-2 _\markup{\italic "Fine"} s8 s2 |
+    s2.*75 \bar "||" | \barNumberCheck #173
+    s2. -\markup { "D.S." }
+}
+
+
+SXII_MvI_Name = \SIII_MvI_Name
+SXII_MvII_Name = \SVII_MvII_Name
+SXII_MvIII_Name = \markup { \bold "Aria - Adagio" }
+SXII_MvIV_Name = \markup { \bold "Gavotta I" }
+SXII_MvV_Name = \markup { \bold "Gavotta II" }
+SXII_Markings_MvV = {
+    \time 2/4
+    s2*23 | s4 \tweak X-offset #-5 _\markup { "D.C." \SXII_MvIV_Name } s4
+}
+SXII_MvVI_Name = \markup { \bold "Allegro Assai" }

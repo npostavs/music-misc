@@ -1,0 +1,1211 @@
+\version "2.20.0"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Sonatas 7-12
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+SVII_Bass_MvI = \relative g {
+    \clef "bass" \key f \major \time 4/4 | % 1
+    g4 f4 ef4 bf4 | % 2
+    c4 d4 g,4 g'4 | % 3
+    fs4 f4 ef2 | % 4
+    d4 b8. a16 g8 a8 b8 g8 | % 5
+    c4 a8. g16 f8 g8 a8 f8 | % 6
+    bf2 ef4 c4 | % 7
+    f4 d4 ef8 bf8 f'8 f,8 | % 8
+    bf4 g4 c4 f4 | % 9
+    bf4 e,4 a4 d,8 g8 | \barNumberCheck #10
+    a8 d,8 a'8 a,8 d'4 c4 | % 11
+    bf4 f4 g4 a4 | % 12
+    d,8 d'8 ~ d16 c16 bf16 a16 g4 f4 | % 13
+    ef4 bf4 c4 d4 | % 14
+    g,4 g'4 fs4 f4 | % 15
+    e4 ef4 d4 ef4 | % 16
+    c4 d4 b4 c4 -\p | % 17
+    a4 bf4 c4 a4 | % 18
+    d4 g,8 c8 d8 g,8 d'8 d,8 | % 19
+    g4 b4 -\f c4 a4 | \barNumberCheck #20
+    d4 bf8 c8 d8 g,8 d'8 d,8 | % 21
+    g1 \bar "|."
+}
+SVII_Bass_MvII = \relative g, {
+    \clef bass
+    \repeat volta 2 {
+        \key f \major \time 4/4 \partial 8 d'8 \rest  | % 1
+        d4 \rest d8 \rest g16 g16 fs8 d8 g8 g,8 | % 2
+        ef'4 c4 d4 bf4 | % 3
+        c8 a8 d8 d,8 g8 g'8 fs8 d8 | % 4
+        g,8 g'8 a8 f8 bf8 d8 cs8 a8 | % 5
+        d8 f,8 g8 bf8 a4 g4 | % 6
+        a8 d,8 a'8 a,8 d8 g8 -\p e8 f8 | % 7
+        g8 e8 cs8 d8 g,8 a8 bf8 g8 | \barNumberCheck #8
+        a8 d8 a'8 a,8 d4 d8 \rest
+    } \repeat volta 2 {
+        d8 \rest | % 9
+        d4 \rest d8 \rest bf'16 bf16 a8 f8 bf8. bf16 | % 10
+        bf4 d,8 \rest c'16 c16 b8 g8 c8 c,8 | % 11
+        f4. f8 g8 f8 ef8 c8 | % 12
+        d8 f8 g8 g,8 c8 e8 f8 a8 | % 13
+        bf8 d8 bf8 g8 c8 c,8 ef8 c8 | % 14
+        d8 d'16 d16 bf8 g8 c8 a8 d8 d,8 | % 15
+        g,8 g'4 f8 ef8 ef16 d16 ef8 c8 | % 16
+        d8 g16 f16 ef16 d16 c16 b16 c4. c8 | \barNumberCheck #17
+        d8 g,8 d'8 d,8 g4 d'8 \rest
+    }
+}
+SVII_Bass_MvIII = \relative g {
+    \repeat volta 2 {
+        \key f \major \clef bass \time 3/4  | % 1
+        g8 a8 bf8 a8 bf8 c8 | % 2
+        d8 ef8 d8 c8 bf8 g8 | % 3
+        c8 a8 d8 c8 d8 d,8 | % 4
+        g8 fs8 g8 a8 bf8 a8 | % 5
+        g8 f8 ef8 d8 c8 bf8 | % 6
+        a8 g8 a8 f8 bf8 d8 | % 7
+        ef8 d8 ef8 f8 g8 ef8 | % 8
+        f8 g8 f8 ef8 d8 bf8 | % 9
+        ef8 c8 f4 f,4 | \barNumberCheck #10
+        bf2.
+    } \repeat volta 2 {
+        bf'8 c8 d8 bf8 a8 g8 | % 12
+        f8 e8 d8 e8 f8 d8 | % 13
+        g8 f8 g8 a8 bf8 g8 | % 14
+        a8 bf8 a8 g8 f8 e8 | % 15
+        d8 e8 d8 c8 bf8 a8 | % 16
+        g4. a8 bf4 | % 17
+        g4 a2 | % 18
+        d8 a'8 d8 c8 b8 a8 | % 19
+        b8 a8 b8 g8 a8 b8 | \barNumberCheck #20
+        c8 d8 ef8 d8 c8 bf8 | % 21
+        a8 g8 a8 f8 g8 a8 | % 22
+        bf8 c8 d8 c8 bf8 a8 | % 23
+        g8 a8 g8 f8 ef8 d8 | % 24
+        ef8 d8 ef8 f8 ef8 d8 | % 25
+        c8 bf8 c8 d8 ef8 c8 | % 26
+        d8 a'8 d8 c8 bf8 a8 | % 27
+        bf4 b2 | % 28
+        c8 d8 c8 bf8 a8 g8 | % 29
+        c8 a8 d4 d,4 | \barNumberCheck #30
+        g2.
+    }
+}
+SVII_Bass_MvIV = \relative g {
+    \repeat volta 2 {
+        \clef bass \key f \major \time 6/8 | % 1
+        R2.*2 | % 3
+        g,4 bf8 d4 g8 | % 4
+        fs4 d8 e4 fs8 | % 5
+        g4. g,4. | % 6
+        a2. | % 7
+        bf2. | % 8
+        bf'4. bf,4. | % 9
+        c4. d4. \rest | \barNumberCheck #10
+        a'4. a,4. | % 11
+        bf4. d4. \rest | % 12
+        g4. f4. | % 13
+        ef4. e4. | % 14
+        f4 ef8 d8 c8 bf8 | % 15
+        f'4. f,4. | % 16
+        bf2. | % 17
+        bf'4. -\p bf,4. | % 18
+        c4. d4. \rest | % 19
+        a'4. a,4. | \barNumberCheck #20
+        bf4. d4. \rest | % 21
+        g4. f4. | % 22
+        ef4. e4. | % 23
+        f4 ef8 d8 c8 bf8 | % 24
+        f'4. f,4. | % 25
+        bf2. | % 26
+    } \repeat volta 2 {
+        R2.*2 | % 28
+        d4 f8 a4 d8 | % 29
+        cs4 a8 b4 cs8 | \barNumberCheck #30
+        d4. ~ d4 c8 | % 31
+        b4 a8 g8 a8 b8 | % 32
+        c4. c,4. | % 33
+        f4 ~ f8 g8 af8 s8 | % 34
+        g4. c,4. | % 35
+        g'4. g,4. | % 36
+        c4. d4 \rest c'8 | % 37
+        b8 ( a8 ) b8 g8 ( a8 ) b8 | % 38
+        c4 c,8 c4 c'8 | % 39
+        b8 ( a8 ) b8 g8 ( a8 ) b8 | \barNumberCheck #40
+        c4. d,4 \rest bf'8 | % 41
+        a8 ( g8 ) a8 f8 ( g8 ) a8 | % 42
+        bf4 bf,8 bf4 bf'8 | % 43
+        a8 ( g8 ) a8 f8 ( g8 ) a8 | % 44
+        bf4. g4. | % 45
+        fs8 ( e8 ) fs8 d8 ( e8 ) fs8 | % 46
+        g4. bf4. | % 47
+        c4 bf8 a8 bf8 c8 | % 48
+        d4 g,8 g4 f8 | % 49
+        ef4 d8 c8 bf8 a8 | \barNumberCheck #50
+        d4 d8 ef8 d8 c8 | % 51
+        d4. d,4. | % 52
+        g2. | % 53
+        g'4. g,4. | % 54
+        a4. d4. \rest | % 55
+        fs4. fs,4. | % 56
+        g4. d'4. \rest | % 57
+        ef4. d4. | % 58
+        c4. cs4. | % 59
+        d4 c8 bf8 a8 g8 | \barNumberCheck #60
+        d'4. d,4. | % 61
+        g2. | % 62
+        g'4. -\p g,4. | % 63
+        a4. d4. \rest | % 64
+        fs4. fs,4. | % 65
+        g4. d'4. \rest | % 66
+        ef4. d4. | % 67
+        c4. cs4. | % 68
+        d4 c8 bf8 a8 g8 | % 69
+        d'4. d,4. | \barNumberCheck #70
+        g2.
+    }
+}
+
+SVIII_Bass_MvI = \relative c {
+    \repeat volta 2 {
+        \clef "bass" \time 4/4 | % 1
+        c4 c'2 b4 | % 2
+        c4 a2 g4 ~ | % 3
+        g4 f2 e4 | % 4
+        d2 c4. c'8 | % 5
+        c4 b4 a4 d,4 | % 6
+        b4 c4 a4 b4 | % 7
+        c4 c,4 g'2 }
+    \repeat volta 2 {
+        | % 8
+        g4 g'2 f4 | % 9
+        e4 a4 d,8 c8 bf8 a8 | \barNumberCheck #10
+        g4. g'8 a8 a8 bf8 g8 | % 11
+        a4 a,4 d4. c8 | % 12
+        b4 c4 f4 fs4 | % 13
+        g4 e4 d4 g4 | % 14
+        c,4 f4 b,4 e4 | % 15
+        a,4 d4 g,8 g'8 a8 f8 | % 16
+        g4 g,4 c2 | % 17
+    }
+}
+SVIII_Bass_MvII = \relative c {
+    \clef bass \time 4/4  | % 1
+    R1 | % 2
+    d8 \rest c8 c8 c8 g'4. g8 | % 3
+    a8 a8 a8 b16 a16 g4 c,4 | \barNumberCheck #4
+    g'4 g,4 c8 c'8 c8 c8 | % 5
+    b8 g8 g8 g8 d'4. d,8 | % 6
+    e4. a,8 d8 g,8 g8 g8 | % 7
+    c8 a8 a8 a8 d8 g8 g8 g8 | % 8
+    c4. b16 a16 d8 d8 e8 c8 | % 9
+    d4 d,4 g4 d4 \rest | % 10
+    d8 \rest g8 g8 g8 c2 | % 11
+    d,8 \rest d8 d8 d8 g4 c,4 | % 12
+    f2. e4 | % 13
+    d2 c8 a'8 a8 a8 | \barNumberCheck #14
+    f8 f8 f8 g16 f16 e4 a,4 | % 15
+    e'4 e,4 a8 a'8 a8 a8 | % 16
+    gs4 e4 d8 \rest a'8 a8 a8 | % 17
+    gs4 e4 d8 \rest a'8 -\f a8 a8 | % 18
+    c8 c8 c8 d16 c16 b4. e,8 | % 19
+    a8 g8 fs8 e8 ds8 b8 e8 e,8 | % 20
+    a8 b8 c8 a8 b8 b'8 c8 a8 | % 21
+    b4 b,4 e8 e'8 e8 e8 | % 22
+    ds4 b4 d,8 \rest e'8 e8 e8 | % 23
+    ds4 b4 d,8 \rest e'8 e8 e8 | \barNumberCheck #24
+    c8 c8 c8 d16 c16 b4. c16 b16 | % 25
+    a8 b8 c8 a8 b4 e,4 | % 26
+    b'4 b,4 e4. e8 | % 27
+    a8 a,8 b8 cs8 d4. d8 | % 28
+    g8 g,8 a8 b8 c8 d8 e8 c8 | % 29
+    f8 g8 a8 f8 g2 | % 30
+    a4 d,4 g4 c,4 | % 31
+    f4 g4 e4 fs4 | % 32
+    g4 g,4 a4 b4 | % 33
+    c4. b16 a16 d2 ~ | \barNumberCheck #34
+    d1 ~ | % 35
+    d2. g,4 | % 36
+    d'4 d,4 g4 d'4 \rest | % 37
+    d2 \rest d8 \rest c8 c8 c8 | % 38
+    f8 f8 f8 e16 f16 d8 d8 d8 c16 d16 | % 39
+    b8 b8 b8 a16 b16 g4 d'4 \rest | % 40
+    d8 \rest g8 g8 g8 c8 c8 c8 bf16 c16 | % 41
+    a8 a8 a8 g16 a16 f8 f8 f8 e16 f16 | % 42
+    d8 e8 f8 d8 g4. e8 | % 43
+    a4. d,8 g8 c,8 c8 c8 | \barNumberCheck #44
+    f8 f,8 f8 f8 g2 ~ | % 45
+    g1 ~ | % 46
+    g1 ~ | % 47
+    g2 g8 g'8 a8 f8 | % 48
+    g4 g,4 c4 e4 -\p | % 49
+    a,4 d4 g,4 c4 | % 50
+    f4 d4 g2 ~ | % 51
+    g2 g4 c,4 | % 52
+    g'4 g,4 c2 \bar "|."
+}
+SVIII_Bass_MvIII = \relative c {
+    \clef bass \repeat volta 2 {
+        \time 3/4  | % 1
+        c'2 f,4 | \barNumberCheck #2
+        c'2. | % 3
+        c4 f,2 | % 4
+        g2 c,4 | % 5
+        c2. | % 6
+        g'2. | % 7
+        fs4 g4 c,4 | % 8
+        d2 g,4 | % 9
+    } \repeat volta 2 {
+        | % 9
+        g'2 c,4 | % 10
+        g'2. | % 11
+        g4 c,2 | \barNumberCheck #12
+        d2 g,4 | % 13
+        c2 f,4 | % 14
+        c'2. | % 15
+        c'4 f,2 | % 16
+        g4 e4 f4 | % 17
+        g2 a4 | % 18
+        g2 c,4 | % 19
+        b4 g4 a4 | % 20
+        f4 g2 | % 21
+        c2.
+    }
+}
+SVIII_Bass_MvIV = \relative c {
+    \clef bass \time 3/4  | \barNumberCheck #1
+    c2. | % 2
+    g2. | % 3
+    c4 b4. c8 | % 4
+    g'2. | % 5
+    c2. | % 6
+    g2. | % 7
+    c,4 b4. c8 | % 8
+    g'2. | % 9
+    c,2. | % 10
+    g2. | \barNumberCheck #11
+    c4 b4. c8 | % 12
+    g'2. | % 13
+    c2. | % 14
+    g2. | % 15
+    c,4 b4. c8 | % 16
+    g'2. | % 17
+    g,2. | % 18
+    c2. | % 19
+    c'4 f,2 | % 20
+    g2. | \barNumberCheck #21
+    e2. | % 22
+    b2. | % 23
+    c2. | % 24
+    g'2 a4 | % 25
+    f4 g2 | % 26
+    c,2. | % 27
+    g2. | % 28
+    c2. | % 29
+    c'4 f,2 | % 30
+    g2. | \barNumberCheck #31
+    e2. | % 32
+    b2. | % 33
+    c2. | % 34
+    g'2 a4 | % 35
+    f4 g2 | % 36
+    c,2. | % 37
+    c2. | % 38
+    g2. | % 39
+    c4 b4. c8 | % 40
+    g'2. | \barNumberCheck #41
+    c2. | % 42
+    g2. | % 43
+    c,4 b4. c8 | % 44
+    g'2. | % 45
+    c,2. | % 46
+    g2. | % 47
+    c4 b4. c8 | % 48
+    g'2. | % 49
+    c2. | % 50
+    g2. | \barNumberCheck #51
+    c,4 b4. c8 | % 52
+    g'2. | % 53
+    g,2. | % 54
+    c2. | % 55
+    c'4 f,2 | % 56
+    g2. | % 57
+    e2. | % 58
+    b2. | % 59
+    c2. | % 60
+    g'2 a4 | \barNumberCheck #61
+    f4 g2 | % 62
+    c,2. | % 63
+    g2. | % 64
+    c2. | % 65
+    c'4 f,2 | % 66
+    g2. | % 67
+    e2. | % 68
+    b2. | % 69
+    c2. | % 70
+    g'2 a4 | \barNumberCheck #71
+    f4 g2 | % 72
+    c,2. \bar "|."
+}
+
+SIX_Bass_MvI = \relative a, {
+    \clef "bass" \time 4/4 | % 1
+    a4 a'2 gs4 | % 2
+    a4 f4 d4 e4 | % 3
+    a,4 ~ a16 c16 b16 a16 f'8. f16 e16 d16 c16 b16 | % 4
+    c8 a8 d16 c16 b16 a16 b8 g8 c16 b16 a16 g16 | % 5
+    f8 g8 a8 f8 g8 g'8 e8 c8 | % 6
+    f8 d8 g8 g,8 c4 c'4 ~ | % 7
+    c4 b4 c4 a4 | % 8
+    f4 g4 c,4 ~ c16 e16 d16 c16 | % 9
+    d4 ~ d16 b16 c16 d16 e8 d8 c8 b8 | \barNumberCheck #10
+    a4. a'8 b8 a8 g8 fs8 | % 11
+    e8 fs16 g16 fs8 e8 ds8 b8 e8 d8 | % 12
+    c8 b8 c8 a8 b8 b'8 c8 a8 | % 13
+    b4 b,4 e4 e'4 ~ | % 14
+    e4 ds4 e4 g,4 | % 15
+    a4 b4 e,4 ~ e16 g16 fs16 e16 | % 16
+    fs4 ~ fs16 a16 gs16 fs16 gs8 e8 a16 g16 f16 e16 | % 17
+    d8 e8 f8 d8 e8 e,8 f8 f'8 | % 18
+    d8 b8 e8 e,8 a8 b8 -\p c8 a8 | % 19
+    d8 e8 f8 d8 e4 a,4 | \barNumberCheck #20
+    e'4 e,4 a2 \bar "|."
+}
+SIX_Bass_MvII = \relative a, {
+    \repeat volta 2 {
+        \clef bass \time 4/4 \partial 8 r8 | % 1
+        d2 \rest d4 \rest d8 \rest e8 | % 2
+        a8 b8 c8 b8 a8 a,8 c8 a8 | % 3
+        b4. b8 c8 c8 e8 c8 | % 4
+        f4 fs4 g8 f8 e8 c8 | % 5
+        f4. e16 d16 g8 g8 g8 f16 e16 | % 6
+        a4. a8 b8 b8 b8 a16 g16 | % 7
+        c8 c,8 f8 e8 d8 e8 f8 f,8 | % 8
+        g4 d'4 \rest g,4 d'4 \rest | \barNumberCheck #9
+        g,8 g'8 d8 e8 b8 c8 g8 a8 | % 10
+        b8 c8 d8 d,8 g8 g'8 a8 f8 | % 11
+        g4 g,4 c4 d8 \rest
+    } \repeat volta 2 {
+        d8 \rest | % 12
+        d2 \rest d4 \rest d8 \rest d8 | % 13
+        g8 f8 e8 d8 a'8 g8 f8 d8 | % 14
+        d'4 c4 bf4 a4 | % 15
+        bf4 a4 g4 f4 | % 16
+        g4 f4 e8 a8 f8 g8 | % 17
+        a4 a,4 d4. d'8 | % 18
+        gs,4. gs8 a8 g8 fs8 e8 | \barNumberCheck #19
+        ds4. ds'8 e8 d8 c8 b8 | % 20
+        a4. a8 b8 a8 g8 e8 | % 21
+        e'4 d4 c4 b4 | % 22
+        c4 b4 a4 g4 | % 23
+        a4 g4 fs8 b8 g8 a8 | % 24
+        b4 b,4 e8 e'4 ds8 | % 25
+        cs8 a8 b8 cs8 d4. c8 | % 26
+        b8 g8 a8 b8 c4. c,8 | % 27
+        d8 e8 f8 d8 e4 d8 \rest a8 | % 28
+        d8 d8 d8 c16 b16 e4. e8 | \barNumberCheck #29
+        fs8 fs8 fs8 fs8 gs8 gs8 gs8 fs16 e16 | % 30
+        a4. a,8 d8 e8 f8 d8 | % 31
+        e4 d4 \rest e4 d4 \rest | % 32
+        e8 e'8 b8 c8 gs8 a8 e8 fs8 | % 33
+        gs8 a8 b8 b,8 e8 e'8 f8 d8 | % 34
+        e4 e,4 a4 d,4 \rest | % 35
+        e4 -\p d4 \rest e8 e'8 b8 c8 | % 36
+        gs8 a8 b8 b,8 e8 c8 f8 d8 | % 37
+        e4 e,4 a4 d8 \rest
+    }
+}
+SIX_Bass_MvIII = \relative a, {
+    \repeat volta 2 {
+        \clef bass \time 3/4  | % 1
+        a4. b8 cs4 | \barNumberCheck #2
+        d2 c4 | % 3
+        b4 e4 e,4 | % 4
+        a2. | % 5
+        a'4 f4 e4 | % 6
+        d4 b4 c4 | % 7
+        f4 fs2 | % 8
+        g2. | % 9
+        a4 f4 d4 | % 10
+        g2 c,4 | % 11
+        f,4 g2 | \barNumberCheck #12
+        c2. | % 13
+    } \repeat volta 2 {
+        cs2. | % 14
+        d4. e8 f4 | % 15
+        g2. | % 16
+        a2. | % 17
+        bf4 g4 e4 | % 18
+        a2 d,4 | % 19
+        g,4 a2 | % 20
+        d2 d'4 | % 21
+        g,4 c8 b8 a8 g8 | \barNumberCheck #22
+        f2 d4 | % 23
+        e2. | % 24
+        f4 d4 b4 | % 25
+        e4. e8 a4 | % 26
+        d,4 e4 e,4 | % 27
+        a2.
+    }
+}
+SIX_Bass_MvIV = \relative a, {
+    \repeat volta 2 {
+        \clef bass \time 6/8 \partial 8 r8  | % 1
+        a4. d4. \rest | % 2
+        a4. d4. \rest | % 3
+        a4. d4. \rest | \barNumberCheck #4
+        a4. d4. \rest | % 5
+        a4 d8 e4 e,8 | % 6
+        a4. a'4 g8 | % 7
+        f4 c8 g'4 g,8 | % 8
+        c4. d4. | % 9
+        e4. f4. | % 10
+        g4. d4 \rest fs8 | % 11
+        g8 ( a8 g8 ) ( fs8 e8 fs8 ) | % 12
+        g8 ( a8 g8 ) fs8 ( e8 fs8 ) | % 13
+        g4 a8 b8 ( a8 b8 ) | \barNumberCheck #14
+        c8 ( d8 c8 ) b8 ( a8 b8 ) | % 15
+        c8 ( d8 c8 ) b8 ( a8 b8 ) | % 16
+        c4. d,4 \rest b'8 | % 17
+        c8 ( d8 c8 ) b8 ( a8 b8 ) | % 18
+        c8 ( d8 c8 ) b8 ( a8 b8 ) | % 19
+        c4. f,4. | % 20
+        g4. g,4. | % 21
+        c4. b4. -\p | % 22
+        c4. b4. | % 23
+        c4. b4. | \barNumberCheck #24
+        c4. f,4. | % 25
+        g2. | % 26
+        c,4. d'4 \rest
+    } \repeat volta 2 {
+        d8 \rest | % 27
+        cs4. d4. \rest | % 28
+        a4. d4. \rest | % 29
+        d4. g4. | % 30
+        a4 g8 f4 e8 | % 31
+        d4. g,4. | % 32
+        d'4. g,4. | % 33
+        d'4 g8 a4 a,8 | \barNumberCheck #34
+        d8 d'8 c8 b8 a8 g8 | % 35
+        c4. f,4. | % 36
+        g4. c,4. | % 37
+        g'4. g,4. | % 38
+        c4. d4. \rest | % 39
+        g4. g,4. | % 40
+        a4. d4. \rest | % 41
+        a'4. a,4. | % 42
+        b4. d4. \rest | % 43
+        e4. a4. ~ | \barNumberCheck #44
+        a4. g4 fs8 | % 45
+        e4. a,4. | % 46
+        e'4. a,4. | % 47
+        e'4 a8 b4 b,8 | % 48
+        e4 e8 -\p fs4 g8 | % 49
+        a4 b8 c4 a8 | % 50
+        b4. b,4. | % 51
+        e4. d4 \rest gs8 -\f | % 52
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | % 53
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | \barNumberCheck #54
+        a4. d,4 \rest gs8 | % 55
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | % 56
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | % 57
+        a4 b8 c4 d8 | % 58
+        e4. e,4. | % 59
+        a4 a8 -\p gs8 ( fs8 gs8 ) | % 60
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | % 61
+        a8 ( b8 a8 ) gs8 ( fs8 gs8 ) | % 62
+        a4. e4. | % 63
+        a,4. e'4. | \barNumberCheck #64
+        a4. gs4. | % 65
+        a4 e8 f8 ( e8 d8 ) | % 66
+        e4. e,4. | % 67
+        a4. d4 \rest
+    }
+}
+
+SX_Bass_MvI = \relative f {
+    \clef "bass" \key f \major \time 4/4 \partial 8 f8 | % 1
+    f4 c4 f,4 c'4 | % 2
+    f4 c'4 f,2 | % 3
+    f8 f,16 g16 a8 bf8 c8 f8 c'8 c,8 | % 4
+    f4 e4 -\p f4 c4 | % 5
+    f,4 c'4 f4 g4 -\f | % 6
+    a8 b16 c16 g8 g,8 c4 g'4 | % 7
+    c4 g4 c,2 ~ | % 8
+    c8 c16 d16 e8 f8 g8 c,8 g'8 g,8 | % 9
+    c4 e4 f8 a8 c8 c,8 | \barNumberCheck #10
+    f4 c4 f,4 c'4 | % 11
+    f4 g4 a8 a,8 cs8 a8 | % 12
+    d8 f8 a8 a,8 d4 a'4 | % 13
+    d,4 a4 d8 e16 f16 e8 f16 g16 | % 14
+    f8 e16 d16 cs4 d8 bf8 g8 a8 | % 15
+    d8 f8 g8 b,8 c8 f8 g8 g,8 | % 16
+    c4 f8 a8 bf8 a16 g16 f8 f,8 -\p | % 17
+    bf4 f'4 bf4 f4 | % 18
+    bf,8 bf8 -\f c8 d8 ef8 c8 d8 e8 | % 19
+    f8 a8 c8 c,8 f4 c4 | \barNumberCheck #20
+    f,4 c'4 f8 f8 g8 a8 | % 21
+    bf4 bf4 ~ bf8 a8 e8 f16 g16 | % 22
+    f8 a8 c8 c,8 f4 c4 | % 23
+    f,4 c'4 f2 ~ | % 24
+    f8 f,16 g16 a8 bf8 c8 f,8 c'8 c,8 | % 25
+    f1 \bar "|."
+}
+SX_Bass_MvII = \relative f, {
+    \clef bass \key f \major \time 4/4 | % 1
+    d'2 \rest d8 \rest f8 f8 f8 | % 2
+    e8 e8 f16 ( e16 ) d16 ( c16 ) d8 e16 f16 g8 g,8 | % 3
+    c8 d16 e16 f2 e4 | % 4
+    d2 c4 c'4 ~ | \barNumberCheck #5
+    c8 b8 b8 a16 g16 a4. g16 f16 | % 6
+    g8 c,8 c'2 b4 | % 7
+    c4 e,4 d4 g,4 | % 8
+    c8 c'8 a8 g8 f8 d8 g16 f16 e16 d16 | % 9
+    e8 c8 f8 f,8 g8 a8 bf8 g8 | % 10
+    c8 c8 d8 a8 bf8 g8 c8 c,8 | % 11
+    f8 g8 -\p a8 f8 bf8 c8 d8 bf8 | % 12
+    c8 c'8 d8 bf8 c4 c,4 | % 13
+    f2 -\f e2 | % 14
+    d4 g,4 c8 c'8 c8 c8 | \barNumberCheck #15
+    b8 b8 c16 ( b16 ) a16 ( g16 ) a8 b16 c16 d8 d,8 | % 16
+    g8 a16 b16 c8 c,8 f8 g8 a8 f8 | % 17
+    g4 c,4 g'4 g,4 | % 18
+    c4 d4 \rest d8 \rest a'8 bf16 ( a16 ) g16 ( f16 ) | % 19
+    bf4 d,8 \rest b'8 b8 b8 c16 ( b16 ) a16 ( g16 ) | % 20
+    c4 d,8 \rest cs'8 cs8 cs8 d16 ( cs16 ) b16 ( a16 ) | % 21
+    d4 g,4 a4 d,4 \rest | % 22
+    d8 \rest d'8 d8 d8 cs4 c4 | % 23
+    b4 bf4 a8 a8 bf8 f8 | % 24
+    g8 e8 a8 a,8 d4 d'4 ~ | \barNumberCheck #25
+    d4 cs4 d4 d,4 ~ -\p | % 26
+    d4 cs4 d2 -\f | % 27
+    e4. c8 f8 g8 a8 f8 | % 28
+    bf8 c8 d8 bf8 c4 d,8 \rest f8 | % 29
+    g8 a8 bf8 g8 c8 c8 d8 a8 | % 30
+    bf8 g8 c8 c,8 d8 e8 f8 d8 | % 31
+    g8 g8 a8 e8 f8 d8 g8 g,8 | % 32
+    c4 f,4 g2 ~ | % 33
+    g8 g'8 g8 g8 e8 e8 f16 ( e16 ) d16 ( c16 ) | % 34
+    f4 d4 c4 a4 | \barNumberCheck #35
+    bf4. g8 c4. a8 | % 36
+    d4 g,4 c4 f,4 | % 37
+    bf8 c8 d8 bf8 c8 c'8 a8 f8 | % 38
+    bf4. g8 c4. a8 | % 39
+    d4. bf8 c8 c8 d8 a8 | % 40
+    bf8 g8 c8 c,8 f8 f8 f8 f8 | % 41
+    e8 e8 f16 ( e16 ) d16 ( c16 ) d4. c16 bf16 | % 42
+    c8 d16 e16 f8 f,8 bf8 c8 d8 bf8 | % 43
+    c4 f,4 c'4 c,4 | % 44
+    f8 f'8 -\p f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) |
+    \barNumberCheck #45
+    d4. c16 bf16 c8 d16 e16 f8 f,8 | % 46
+    bf8 c8 d8 bf8 c4 f,4 | % 47
+    c'4 c,4 f2 \bar "|."
+}
+SX_Bass_MvIII = \relative f, {
+    \repeat volta 2 {
+        \clef bass \key f \major \time 3/4 | % 1
+        f'2 e4 | % 2
+        d2 a4 | % 3
+        bf2. | % 4
+        c2 bf4 | % 5
+        a4 d8 e8 f8 bf,8 | % 6
+        c2 f,4 | % 7
+        f'2. | \barNumberCheck #8
+        e2. | % 9
+        d2. | % 10
+        c4 e4 f4 | % 11
+        g2 c,4 }
+    \repeat volta 2 {
+        | % 12
+        R2. | % 13
+        bf4. c8 d4 | % 14
+        g,2. | % 15
+        a4 f'4 d4 | % 16
+        bf'2 g4 | % 17
+        a2 bf4 | \barNumberCheck #18
+        g4 a4 a,4 | % 19
+        bf4 b2 | % 20
+        c4 a2 | % 21
+        bf4 c4 e4 | % 22
+        f4 d4 c4 | % 23
+        bf4 g4 f4 | % 24
+        c'2 f,4 | % 25
+    }
+}
+
+SX_Bass_MvIV = \relative f, {
+    \repeat volta 2 {
+        \clef bass \key f \major \time 2/4 | % 1
+        f'8. g16 a8. f16 | % 2
+        bf8. a16 g8. f16 | % 3
+        e8. d16 e8. c16 | \barNumberCheck #4
+        f8. g16 a8. g16 | % 5
+        f8. e16 f8. f,16 | % 6
+        c'8. d16 e8. c16 | % 7
+        d8. c16 d8. g,16 | % 8
+        c8. d16 e8. c16 | % 9
+        f8. g16 a8. f16 | % 10
+        bf4 a4 | % 11
+        bf4 a4 | % 12
+        bf4. a8 | % 13
+        g8. f16 e8. d16 | \barNumberCheck #14
+        c8. c'16 a8. bf16 | % 15
+        c4 c,4 | % 16
+        f8. g16 a8. g16 | % 17
+        f4 f,4 | % 18
+        e4 e'4 | % 19
+        d4 g,4 | % 20
+        c4. c'8 | % 21
+        b4. b8 | % 22
+        a8. a16 a8 b16 a16 | % 23
+        g4. a16 g16 | \barNumberCheck #24
+        f8. f16 f8 g16 f16 | % 25
+        e4 f4 | % 26
+        g4 c,4 | % 27
+        g'4 g,4 | % 28
+        c2 | % 29
+    } \repeat volta 2 {
+        c8. d16 e8. c16 | % 30
+        f8. e16 d8. c16 | % 31
+        b8. a16 b8. g16 | % 32
+        c8. d16 e8. c16 | % 33
+        f8. g16 a8. f16 | \barNumberCheck #34
+        bf8. a16 g8. f16 | % 35
+        e8. d16 e8. c16 | % 36
+        f8. g16 a8. g16 | % 37
+        f8. g16 a8. f16 | % 38
+        g8. a16 bf8. a16 | % 39
+        g8. a16 bf8. g16 | % 40
+        a4 d,4 | % 41
+        cs4 c4 | % 42
+        b4 bf4 | % 43
+        a8. a'16 bf8. g16 | \barNumberCheck #44
+        a4 a,4 | % 45
+        d4 d4 \rest | % 46
+        d4 \rest c16 \rest g'16 a16 bf16 | % 47
+        c8. c16 c8. bf16 | % 48
+        a8. a16 a8 bf16 ( c16 ) | % 49
+        f,4 d16 \rest f16 g16 a16 | % 50
+        bf8. bf16 bf8. a16 | % 51
+        g8. g16 g8. f16 | % 52
+        e4. f8 | % 53
+        g4 g,4 | \barNumberCheck #54
+        c8. c'16 a8. f16 | % 55
+        bf4. a16 g16 | % 56
+        c4. bf16 a16 | % 57
+        d8. d16 d8 c16 bf16 | % 58
+        c4 f,4 | % 59
+        c'4 c,4 | % 60
+        f4. f8 | % 61
+        e4. e8 | % 62
+        d8. d16 d8 e16 d16 | % 63
+        c4. d16 c16 | \barNumberCheck #64
+        bf8. bf16 bf8 c16 bf16 | % 65
+        a4 bf4 | % 66
+        c4 f,4 | % 67
+        c'4 c,4 | % 68
+        f4 d'8 \rest f8 -\p | % 69
+        e4. e8 | % 70
+        d8. d16 d8 e16 d16 | % 71
+        c4. d16 c16 | % 72
+        bf8. bf16 bf8 c16 bf16 | % 73
+        a4 bf4 | \barNumberCheck #74
+        c4 f,4 | % 75
+        c'4 c,4 | % 76
+        f2
+    }
+}
+
+SXI_Bass_MvI = \relative g {
+    \clef "bass" \key g \major \time 4/4 | % 1
+    g1 ~ | % 2
+    g2. fs4 | % 3
+    g4 g2 fs4 | % 4
+    e2 d2 ~ | % 5
+    d1 ~ | % 6
+    d4 cs4 d4 b4 | % 7
+    a4 d4 g4 c4 | % 8
+    fs,4 b4 e,4 a4 | % 9
+    d,1 ~ | \barNumberCheck #10
+    d4 cs4 d2 | % 11
+    g,1 \bar "|."
+}
+SXI_Bass_MvII = \relative g, {
+    \repeat volta 2 {
+        \clef bass \time 4/4 \key g \major \partial 16 d'16 \rest | % 1
+        g,8 a8 b8 g8 c8 a8 d8 d,8 | % 2
+        g8 g'4 fs8 ~ fs8 e4 d8 ~ | % 3
+        d8 c8 b8 g8 c8 a8 d8 d,8 | % 4
+        g4. g'8 fs8 e8 d8 b8 | % 5
+        e8 g8 a8 a,8 d8 fs8 g8 g,8 | % 6
+        d'8 \rest cs8 fs8 fs,8 b8 d8 e8 e,8 | % 7
+        d'8 \rest a'8 fs8 d8 e8 g8 a8 a,8 | \barNumberCheck #8
+        d8 fs8 g8 g,8 d'8 \rest cs8 fs8 fs,8 | % 9
+        b8 d8 e8 e,8 d'8 \rest a'8 b8 fs8 | % 10
+        g8 e8 a8 a,8 d4 d8. \rest
+    } \repeat volta 2 {
+        c16 \rest | % 11
+        d8 e8 fs8 d8 g8 e8 a8 a,8 | % 12
+        d8 c8 b8 a8 g8 a8 b8 g8 | % 13
+        c8 a8 d8 d,8 g8 a8 b8 g8 | % 14
+        a8 b8 c8 a8 b8 g'4 fs8 | % 15
+        g8 e4 ds8 e8 fs8 g8 e8 | % 16
+        a4 gs4 a4 gs4 | % 17
+        a8 fs8 b8 b,8 e8 e8 gs8 e8 | \barNumberCheck #18
+        a4 d,4 \rest d4 d4 \rest | % 19
+        g,4 d'4 \rest c8 b8 a8 c8 | % 20
+        d8 c8 b8 g8 c8 c'8 a8 g8 | % 21
+        fs8 d8 g8 g,8 a8 a8 c8 a8 | % 22
+        d8 d'8 e8 e,8 a8 c8 d8 d,8 | % 23
+        g8 b8 c8 c,8 d8 \rest fs8 b8 b,8 | % 24
+        e8 g8 a8 a,8 d8 \rest d8 e8 b8 | % 25
+        c8 a8 d8 d,8 g4 d'8. \rest
+    }
+}
+SXI_Bass_MvIII = \relative g {
+    \clef bass \time 3/4 \key g \major | % 1
+    g2. | % 2
+    fs2. | \barNumberCheck #3
+    e2. | % 4
+    d2. | % 5
+    g,2. | % 6
+    fs2. | % 7
+    e2. | % 8
+    d2. | % 9
+    g4 g'2 | % 10
+    fs2 d4 | % 11
+    e4 e8 d8 e8 c8 | % 12
+    d4 d,2 | \barNumberCheck #13
+    g4 g'2 | % 14
+    fs2 d4 | % 15
+    e4 e8 d8 e8 c8 | % 16
+    d4 d,2 | % 17
+    g2 c'4 | % 18
+    fs,2 b4 | % 19
+    e,2 a4 | % 20
+    d,4 d,2 | % 21
+    g2 c4 | % 22
+    fs,2 b4 | \barNumberCheck #23
+    e,2 a4 | % 24
+    d,4 d2 | % 25
+    g4 g''4. -\p g8 | % 26
+    fs4 d4. fs8 | % 27
+    e4 c4. c8 | % 28
+    d4 d,2 | % 29
+    g4 g4. g8 | % 30
+    fs4 d4. fs8 | % 31
+    e4 c4. c8 | % 32
+    d4 d,2 | \barNumberCheck #33
+    g4 g'2 -\f | % 34
+    fs4 fs,2 | % 35
+    e4 e'2 | % 36
+    d4 d,2 | % 37
+    g4 g'2 | % 38
+    fs4 fs,2 | % 39
+    e4 e'2 | % 40
+    d4 d,2 | % 41
+    g2. | % 42
+    d'2. | \barNumberCheck #43
+    e2. | % 44
+    c4 d2 | % 45
+    g,2. | % 46
+    d'2. | % 47
+    e2. | % 48
+    c4 d2 | % 49
+    g,8 b'8 g8 b8 g8 a16 b16 | % 50
+    fs8 a8 fs8 a8 fs8 g16 a16 | % 51
+    e8 g8 e8 g8 e8 fs16 g16 | % 52
+    d4 d,2 | \barNumberCheck #53
+    g8 b'8 g8 b8 g8 a16 b16 | % 54
+    fs8 a8 fs8 a8 fs8 g16 a16 | % 55
+    e8 g8 e8 g8 e8 fs16 g16 | % 56
+    d4 d,2 | % 57
+    g8 d''8 b8 g8 d'8 g,8 | % 58
+    fs8 d'8 a8 fs8 d'8 fs,8 | % 59
+    g8 d'8 b8 g8 d'8 g,8 | % 60
+    fs8 d'8 a8 fs8 d8 b8 | % 61
+    g8 d''8 b8 g8 d'8 g,8 | % 62
+    fs8 d'8 a8 fs8 d'8 fs,8 | \barNumberCheck #63
+    g8 d'8 b8 g8 d'8 g,8 | % 64
+    fs8 d'8 a8 fs8 d8 b8 | % 65
+    g4 g'4 g4 | % 66
+    fs4 d4 d4 | % 67
+    b4 b4 b4 | % 68
+    c4 d4 d,4 | % 69
+    g4 g'4 g4 | % 70
+    fs4 d4 d4 | % 71
+    b4 b4 b4 | % 72
+    c4 d4 d,4 | \barNumberCheck #73
+    g4 d'4 \rest d4 \rest | % 74
+    d4 d4 \rest d4 \rest | % 75
+    g4 d4 \rest d4 \rest | % 76
+    d'4 d,4 \rest d4 \rest | % 77
+    g4 b,2 | % 78
+    c4 d4 \rest d4 \rest | % 79
+    g4 d4 \rest d4 \rest | % 80
+    c'4 d,4 \rest d4 \rest | % 81
+    g4 d4 \rest d4 \rest | % 82
+    c4 cs2 | \barNumberCheck #83
+    d4 d4 \rest d4 \rest | % 84
+    a'4 d,4 \rest d4 \rest | % 85
+    d'4 d,4 \rest d4 \rest | % 86
+    a'4 d,4 \rest d4 \rest | % 87
+    d4 fs2 | % 88
+    g4 d4 \rest d4 \rest | % 89
+    fs4 d4 \rest d4 \rest | % 90
+    g4 b4 g4 | % 91
+    fs4 d4 fs4 | % 92
+    g4 b,4 g4 | \barNumberCheck #93
+    c4 e4 c4 | % 94
+    b4 g4 b4 | % 95
+    c8 b8 c8 d8 e8 c8 | % 96
+    d4 d,2 \bar "||"
+    \key f \major g4\fermata g'4 \tweak X-offset #0.7 -\p c,4 | % 98
+    fs2 bf,4 | % 99
+    ef2 c4 | % 100
+    d4 d,2 | % 101
+    g4 g'4 c,4 | % 102
+    f2 bf,4 | \barNumberCheck #103
+    ef2 c4 | % 104
+    d4 d,2 | % 105
+    g4 bf'4 -\f bf4 | % 106
+    a4 a4 a4 | % 107
+    g4 g4 g4 | % 108
+    c,4 f4 f,4 | % 109
+    bf4 bf4 bf4 | % 110
+    a4 a4 a4 | % 111
+    g4 g4 g4 | % 112
+    c,4 f2 | \barNumberCheck #113
+    bf4 bf'4 bf4 | % 114
+    a4 a4 a4 | % 115
+    g4 a4 bf4 | % 116
+    c4 c,2 | % 117
+    f4 bf4 bf4 | % 118
+    a4 a4 a4 | % 119
+    g4 a4 bf4 | % 120
+    c4 c,2 | % 121
+    f8 e8 f8 g8 a8 f8 | % 122
+    bf8 a8 bf8 c8 d8 bf8 | \barNumberCheck #123
+    ef8 ef,8 g8 a8 bf8 bf,8 | % 124
+    c8 bf8 c8 d8 ef8 c8 | % 125
+    f4 g4 ef4 | % 126
+    f4 f,2 | % 127
+    bf8 bf'8 -\p a8 g8 a8 f8 | % 128
+    bf8 a8 bf8 c8 d8 bf8 | % 129
+    ef8 ef,8 g8 a8 bf8 bf,8 | % 130
+    c8 bf8 c8 d8 ef8 c8 | % 131
+    f4 g4 ef4 | % 132
+    f4 f,2 | \barNumberCheck #133
+    bf4 d4 \rest b4 -\f | % 134
+    c4 d4 \rest cs4 | % 135
+    d4 d4 \rest d4 | % 136
+    e4 d4 \rest e4 | % 137
+    fs4 d4 ef4 | % 138
+    c4 d4 d,4 | % 139
+    g4 d'4 \rest b4 | % 140
+    c4 d4 \rest cs4 | % 141
+    d4 d4 \rest d4 | % 142
+    e4 d4 \rest e4 | \barNumberCheck #143
+    fs4 d4 ef4 | % 144
+    c4 d4 d,4 | % 145
+    g8 g'8 g8 g8 g8 a16 g16 | % 146
+    fs8 f8 f8 f8 f8 g16 f16 | % 147
+    e8 ef8 ef8 ef8 ef8 f16 ef16 | % 148
+    d8 ef8 d8 c8 bf8 \trill a8 | % 149
+    g8 g'8 g8 g8 g8 a16 g16 | % 150
+    fs8 f8 f8 f8 f8 g16 f16 | % 151
+    e8 ef8 ef8 ef8 ef8 f16 ef16 | % 152
+    d8 ef8 d8 c8 bf8 a8 | \barNumberCheck #153
+    g8 fs8 g8 a8 bf8 g8 | % 154
+    c8 bf8 c8 d8 ef8 c8 | % 155
+    d4 g8 f8 ef8 d8 | % 156
+    c4 f8 ef8 d8 c8 | % 157
+    bf4 ef8 d8 c8 bf8 | % 158
+    a8 g8 d'4 d,4 | % 159
+    g8 c'8 ( -. c8 -. c8 -. c8 -. c8 ) -. | % 160
+    a8 ( -. a8 -. a8 -. a8 -. a8 -. a8 ) -. | % 161
+    bf8 ( -. bf8 -. bf8 -. bf8 -. bf8 -. bf8 ) -. | % 162
+    g8 ( -. g8 -. g8 -. g8 -. g8 -. g8 ) -. | \barNumberCheck #163
+    a8 ( -. a8 -. a8 -. a8 -. a8 -. a8 ) -. | % 164
+    fs8 d8 e8 fs8 g8 a8 | % 165
+    bf8 c8 d4 d,4 | % 166
+    g8 c8 -. -\p c8 -. c8 -. c8 -. c8 -. | % 167
+    a8 ( -. a8 -. a8 -. a8 -. a8 -. a8 ) -. | % 168
+    bf8 ( -. bf8 -. bf8 -. bf8 -. bf8 -. bf8 ) -. | % 169
+    g8 ( -. g8 -. g8 -. g8 -. g8 -. g8 ) -. | % 170
+    a8 ( -. a8 -. a8 -. a8 -. a8 -. a8 ) -. | % 171
+    fs4. d8 e8 fs8 | % 172
+    g8 c,8 d4 d,4 \bar "||"
+    \key g \major g4 g'2 \bar "|."
+}
+
+SXII_Bass_MvI = \relative a, {
+    \clef "bass" \key a \major \time 4/4 | % 1
+    a1 ~ | % 2
+    a1 ~ | % 3
+    a1 ~ | % 4
+    a1 ~ | % 5
+    a1 ~ | % 6
+    a1 ~ | % 7
+    a1 ~ | % 8
+    a1 ~ | % 9
+    a4 e'4 a4. gs8 | \barNumberCheck #10
+    fs2 e2 ~ -\p | % 11
+    e1 ~ | % 12
+    e1 ~ -\f | % 13
+    e2. ~ e8 fs8 | % 14
+    gs8 e8 fs8 d8 e4 e,4 | % 15
+    a8 fs'8 e8 ( d8 ) cs8 ( d8 ) cs8 ( b8 ) | % 16
+    a1 | % 17
+    a8 a8 b8 ( cs8 ) d8 ( cs8 ) d8 ( b8 ) | % 18
+    cs1 | % 19
+    cs1 | \barNumberCheck #20
+    cs8 cs'8 d8 b8 cs4 cs,4 | % 21
+    fs4 e8 ( d8 ) cs8 ( d8 ) cs8 ( b8 ) | % 22
+    a8 ( b8 ) a8 ( gs8 ) fs2 ~ | % 23
+    fs1 ~ | % 24
+    fs1 ~ | % 25
+    fs1 ~ | % 26
+    fs4 cs'4 fs4. e8 | % 27
+    ds8 b8 gs8 fs8 e4 e'4 | % 28
+    a4. gs8 fs8 ( gs8 ) fs8 ( e8 ) | % 29
+    d8 ( e8 ) d8 ( cs8 ) b2 ~ | \barNumberCheck #30
+    b2 e2 ~ | % 31
+    e2 b2 | % 32
+    fs8 fs'8 cs8 d8 e4 e,4 | % 33
+    a8 fs'8 e8 ( d8 ) cs8 ( d8 ) cs8 ( b8 ) | % 34
+    a1 | % 35
+    a1 | % 36
+    a8 a8 b8 ( cs8 ) d8 ( e8 ) fs8 ( d8 ) | % 37
+    e4 a,4 e'4 e,4 | % 38
+    a4 e'4 a4 e4 | % 39
+    a,2 a8 a'8 fs8 e16 ( d16 ) | \barNumberCheck #40
+    e4 e,4 a2 \bar "|."
+}
+SXII_Bass_MvII = \relative a, {
+    \repeat volta 2 {
+        \key a \major \clef bass \time 4/4  | % 1
+        R1*3 | % 4
+        a'4. b,16 \rest a'16 b4. b,16 \rest b'16 | % 5
+        cs8. cs16 b8. a16 gs8. e16 e'4 ~ | % 6
+        e4 d2 cs4 | % 7
+        b4. b,16 \rest b'16 a8 b16 cs16 b8. b,16 | % 8
+        cs8. b16 cs8. a16 b4. b16 \rest e16 | % 9
+        a8. gs16 fs8. e16 ds8. b16 e8. ds16 |
+        \barNumberCheck #10
+        cs8. b16 cs8. a16 b8. b'16 cs8. a16 | % 11
+        b4 b,4 e8. fs16 -\p gs8. e16 | % 12
+        a8. gs16 fs8. e16 ds8. b16 e8. ds16 | % 13
+        cs8. b16 cs8. a16 b8. b'16 cs8. a16 | % 14
+        b4 b,4 e2 }
+    \repeat volta 2 {
+        | % 15
+        R1 | % 16
+        a4. -\f b,16 \rest a'16 fs8. fs16 gs8. a16 \bar
+        "||"
+        b8. cs16 d8. b16 cs4. b,16 \rest a'16 | % 18
+        d4. b,16 \rest gs'16 cs8. cs16 d8. b16 | % 19
+        cs4 cs,4 fs4 r4 | \barNumberCheck #20
+        r2 e4 ~ e8. d16 | % 21
+        cs8. cs16 d8. e16 a,8. a16 b8. cs16 | % 22
+        d8. e16 fs8. d16 e4 r4 | % 23
+        gs4 r4 a4 r4 | % 24
+        cs,4 r4 d4 r4 | % 25
+        ds4 r4 e4 r4 | % 26
+        gs,4 r4 a4. b16 \rest a'16 | % 27
+        d8. cs16 b8. a16 gs8. e16 a8. gs16 | % 28
+        fs8. e16 fs8. d16 e8. cs16 fs8. d16 | % 29
+        e4 e,4 a8. b16 -\p cs8. a16 | \barNumberCheck #30
+        d8. cs16 b8. a16 gs8. e'16 a8. gs16 | % 31
+        fs8. e16 fs8. d16 e8. cs16 fs8. d16 | % 32
+        e4 e,4 a2
+    }
+}
+SXII_Bass_MvIII = \relative a, {
+    \repeat volta 2 {
+        \clef bass \key a \major \time 3/4  | % 1
+        r4 a'4 a,4 | % 2
+        e'2 cs4 | % 3
+        d4 e4 e,4 | % 4
+        a2. | % 5
+        r4 fs'4 fs4 | % 6
+        b2 cs4 | % 7
+        a4 b4 b,4 | \barNumberCheck #8
+        e2. | % 9
+    } \repeat volta 2 {
+        cs2. | % 10
+        d2 cs4 | % 11
+        b4 gs4 a4 | % 12
+        e'2 a,4 -\p | % 13
+        gs2 a4 | % 14
+        e'4 cs4 -\f b4 | % 15
+        as2. | % 16
+        b4 b'4 a4 | % 17
+        gs2. | \barNumberCheck #18
+        r4 a4 gs4 | % 19
+        fs4 gs4 fs4 | % 20
+        e4 fs4 d4 | % 21
+        e4 e,2 | % 22
+        a2.
+    }
+}
+SXII_Bass_MvIV = \relative a, {
+    \repeat volta 2 {
+        \clef bass \key a \major \time 2/4  | % 1
+        a8 b8 cs8 d8 | % 2
+        e4 cs4 | % 3
+        d4 e4 | % 4
+        a,4 a'4 ~ | % 5
+        a8 g8 fs8 e8 | \barNumberCheck #6
+        d2 ~ | % 7
+        d4 b4 | % 8
+        e8 d8 cs8 b8 | % 9
+        cs4 a4 | % 10
+        e'4 cs4 | % 11
+        d4 e4 | % 12
+        a,4 a'4 ~ | % 13
+        a4 gs4 | % 14
+        fs4 e4 | % 15
+        b'4 b,4 | \barNumberCheck #16
+        e2 | % 17
+    } \repeat volta 2 {
+        cs4 b4 | % 18
+        a4 cs4 | % 19
+        d4 b4 | % 20
+        cs8 d8 cs8 b8 | % 21
+        a8 a'8 gs8 fs8 | % 22
+        es4 fs4 | % 23
+        cs'4 cs,4 | % 24
+        fs8 gs8 a8 b8 | % 25
+        cs4 cs,4 | \barNumberCheck #26
+        fs8 gs8 a8 b8 | % 27
+        cs4 cs,4 | % 28
+        fs4 ds8 cs8 | % 29
+        b4 ds4 | % 30
+        e4 gs4 | % 31
+        a4 cs,4 | % 32
+        d4. cs8 | % 33
+        b4 d4 \bar "||"
+        e8 d8 cs8 b8 | % 35
+        cs4 a4 | \barNumberCheck #36
+        e'4 cs4 | % 37
+        d4 e4 | % 38
+        a,4 a'4 ~ | % 39
+        a8 g8 fs8 e8 | % 40
+        d4 cs8 d8 | % 41
+        e4 e,4 | % 42
+        a2
+    }
+}
+SXII_Bass_MvV = \relative a, {
+    \repeat volta 2 {
+        \clef bass \key c \major \time 2/4 | % 1
+        a'4 a4 | % 2
+        a4. a8 | % 3
+        gs8 e8 fs8 gs8 | \barNumberCheck #4
+        a8 a,8 c8 b8 | % 5
+        c8 a8 b8 c8 | % 6
+        d8 d,8 e8 e'8 | % 7
+        f2 | % 8
+        e2 | % 9
+    } \repeat volta 2 {
+        c'4 f,4 | % 10
+        c'4 c,4 | % 11
+        f8 g8 a8 f8 | % 12
+        g8 g8 f8 e8 | % 13
+        d8 c8 b8 a8 | \barNumberCheck #14
+        g8 g'8 a8 f8 | % 15
+        g4 g,4 | % 16
+        c8 d8 e8 d8 | % 17
+        cs2 | % 18
+        d2 | % 19
+        ds2 | % 20
+        e8 d8 c8 b8 | % 21
+        c8 a8 b8 c8 | % 22
+        d8 e8 f8 d8 | % 23
+        e4 e,4 | \barNumberCheck #24
+        a2
+    }
+}
+SXII_Bass_MvVI = \relative a, {
+    \repeat volta 2 {
+        \clef bass \key a \major \time 3/8 | % 1
+        a8 r4 | % 2
+        e'8 r4 | % 3
+        a8 r4 | % 4
+        d,8 r4 | % 5
+        e8 r4 | % 6
+        a,8 a'4 ~ | % 7
+        a8 gs4 ~ | % 8
+        gs8 fs4 ~ | % 9
+        fs8 e4 | \barNumberCheck #10
+        e8 d4 | % 11
+        d4 cs8 | % 12
+        d8 e8 e,8 | % 13
+        a8 a'4 ~ | % 14
+        a8 gs4 | % 15
+        a4 cs,8 | % 16
+        d8 e8 e,8 | % 17
+        a4 cs8 | % 18
+        a8 b4 | % 19
+        e4 gs8 | \barNumberCheck #20
+        a8 b8 b,8 | % 21
+        e8 e'4 ~ | % 22
+        e8 ds4 ~ | % 23
+        ds8 cs4 ~ | % 24
+        cs8 b4 ~ | % 25
+        b8 a4 | % 26
+        a4 gs8 | % 27
+        a8 b8 b,8 | % 28
+        e8 e'8 ds8 | % 29
+        e8 e,8 ds8 | \barNumberCheck #30
+        e8 e'8 ds8 | % 31
+        e8 e,8 ds8 | % 32
+        e16 a16 b8 b,8 | % 33
+        e4. | % 34
+    } \repeat volta 2 {
+        e8 r4 | % 35
+        b'8 r4 | % 36
+        e8 r4 | % 37
+        a,8 r4 | % 38
+        b8 b,4 | % 39
+        e16 gs16 e16 d16 cs16 b16 | \barNumberCheck #40
+        a8 r4 | % 41
+        e'8 r4 | % 42
+        a8 r4 | % 43
+        d,8 r4 | % 44
+        e8 e,4 | % 45
+        a8. a'16 cs16 a16 | % 46
+        b16 d16 b16 d16 e16 gs,16 | % 47
+        a16 cs16 a16 cs16 d16 fs,16 | % 48
+        gs16 b16 gs16 a16 b16 gs16 | % 49
+        cs8. a16 cs16 a16 | \barNumberCheck #50
+        d8. gs,16 b16 gs16 | % 51
+        cs8 d8 b8 | % 52
+        cs8 cs,4 | % 53
+        fs8 r4 | % 54
+        b,8 r4 | % 55
+        e8 r4 | % 56
+        a,8 r4 | % 57
+        d8. e16 fs16 d16 | % 58
+        e8 gs8 e8 | % 59
+        fs16 a16 fs16 a16 b16 d,16 | \barNumberCheck #60
+        e16 gs16 e16 gs16 a16 cs,16 | % 61
+        d16 fs16 d16 e16 fs16 d16 | % 62
+        e8 fs8 d8 | % 63
+        e8 e,4 | % 64
+        a8 a'4 ~ | % 65
+        a8 gs4 ~ | % 66
+        gs8 fs4 ~ | % 67
+        fs8 e4 ~ | % 68
+        e8 d4 | % 69
+        d4 cs8 | \barNumberCheck #70
+        d8 e8 e,8 | % 71
+        a8 a'8 gs8 | % 72
+        a8 a,8 gs8 | % 73
+        a8 a'8 gs8 | % 74
+        a8 a,8 gs8 | % 75
+        a16 d16 e8 e,8 | % 76
+        a4.
+    }
+}
+
