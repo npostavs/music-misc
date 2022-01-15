@@ -1,7 +1,6 @@
 \version "2.20.0"
 
 \include "DallAbaco-Op.3-defs.lyi"
-\include "DallAbaco-Op.3-notes.lyi"
 \include "DallAbaco-Op.3-notes-v1.lyi"
 
 \book {
@@ -58,15 +57,22 @@
             \new Staff { \SonataIIMvII_VOne }
             \layout {}
             }
+        \pageBreak
         \score {
             \header { piece = \MvIII_Name }
             \new Staff { \SonataIIMvIII_VOne }
-            \layout {}
-            }
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/4)
+              }}
+        }
         \score {
             \header { piece = \MvIV_Name }
             \new Staff { \SonataIIMvIV_VOne }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 3/8)
+              }}
             }
     }
     \bookpart {
@@ -201,6 +207,8 @@
             \layout {}
             }
 
+        \pageBreak
+
         \score {
             \header { piece = \SVII_MvIII_Name }
             \new Staff { \SVII_ViolI_MvIII }
@@ -231,6 +239,8 @@
             \layout {}
             }
 
+        \pageBreak
+
         \score {
             \header { piece = \SVIII_MvIII_Name }
             \new Staff { \SVIII_ViolI_MvIII }
@@ -260,6 +270,8 @@
             \new Staff { \SIX_ViolI_MvII }
             \layout {}
             }
+
+        \pageBreak
 
         \score {
             \header { piece = \SIX_MvIII_Name }

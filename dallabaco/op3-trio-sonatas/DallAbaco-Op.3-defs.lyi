@@ -18,6 +18,11 @@
 \paper {
     print-first-page-number = ##t
     indent = 5\mm
+    top-margin = 5\mm
+    bottom-margin = 5\mm
+    left-margin = 5\mm
+    right-margin = 5\mm
+
     evenHeaderMarkup = \markup
       \fill-line {
         \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/24" }
@@ -81,17 +86,24 @@
         }
     }
 
+
 % Same for Sonatas I & II.
 MvI_Name = \markup { \bold "Adagio" }
+Markings_MvI = { s1*17 | s4 \tempo "Grave" } % specific to Sonata I
 MvII_Name = \markup { \bold "Allegro" }
 MvIII_Name = \markup { \bold "Largo" }
 MvIV_Name = \markup { \bold "Allegro" }
+
 
 SIII_MvI_Name = \markup { \bold "Largo" }
 SIII_MvII_Name = \MvII_Name
 SIII_MvIII_Name = \MvIII_Name
 SIII_MvIV_Name = \MvIV_Name
 
+SIV_MarkingsMvII = {
+  \time 12/8 s1.*47 \bar "||" | \barNumberCheck #48
+  \time 4/4 \tempo "Adagio" s1*2
+}
 SIV_MvI_Name = \SIII_MvI_Name
 SIV_MvII_Name = \markup { \bold "Allegro ma non presto" }
 SIV_MvIII_Name = \markup { \bold "Adagio" }
