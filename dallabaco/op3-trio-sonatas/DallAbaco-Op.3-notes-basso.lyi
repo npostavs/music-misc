@@ -667,7 +667,7 @@ SIV_Bass_MvII = \relative g, {
     g1 \bar "|."
 }
 SIV_Bass_MvIII = \relative g, {
-    \clef bass \time 3/2  | \barNumberCheck #1
+    \clef bass \time 3/2 \key g \major | \barNumberCheck #1
     g1. | % 2
     d'1 g,2 | % 3
     d'1. ~ | % 4
@@ -701,7 +701,7 @@ SIV_Bass_MvIII = \relative g, {
     g1. \bar "|."
 }
 SIV_Bass_MvIV = \relative g, {
-    \clef bass \time 3/4  | % 1
+    \clef bass \time 3/4 \key g \major | % 1
     g2 g'4 ~ | % 2
     g4 fs2 | % 3
     e4 b4 b4 | % 4
@@ -841,7 +841,7 @@ SV_Bass_MvI = \relative d {
     a8 d,8 a'4 d2 \bar "|."
 }
 SV_Bass_MvII = \relative d {
-    \clef bass \time 4/4  | % 1
+    \clef bass \key d \major \time 4/4  | % 1
     R1*8 | \barNumberCheck #9
     d8 \rest d8 e8 fs8 g4 fs4 | % 10
     e8 e8 fs8 g8 a4 g4 | % 11
@@ -944,7 +944,7 @@ SV_Bass_MvIII = \relative d {
 }
 SV_Bass_MvIV = \relative f {
     \repeat volta 2 {
-        \clef bass \time 3/4  | % 1
+        \clef bass \time 3/4 \key d \major | % 1
         R2.*2 | % 3
         d'4 cs8 b8 a8 g8 | \barNumberCheck #4
         fs4 d4 e4 | % 5
@@ -1077,7 +1077,7 @@ SVI_Bass_MvI = \relative d {
     }
 }
 SVI_Bass_MvII = \relative e {
-    \clef bass \time 3/4  | % 1
+    \clef bass \time 3/4 \key d \minor | % 1
     e2. | \barNumberCheck #2
     e,2. | % 3
     d'4 \rest c4 a4 | % 4

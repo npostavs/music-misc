@@ -674,7 +674,7 @@ SIV_ViolI_MvII = \relative g'' {
     g1 \bar "|."
 }
 SIV_ViolI_MvIII = \relative d' {
-    \time 3/2  | \barNumberCheck #1
+    \time 3/2 \key g \major | \barNumberCheck #1
     R1. | % 2
     r2 d2 g2 | % 3
     fs1 b2 | % 4
@@ -708,7 +708,7 @@ SIV_ViolI_MvIII = \relative d' {
     g1. \bar "|."
 }
 SIV_ViolI_MvIV = \relative g' {
-    \time 3/4  | % 1
+    \time 3/4 \key g \major | % 1
     r4 b4 b4 | % 2
     c4 d4 d4 | % 3
     g,2 g'4 ~ | % 4
@@ -849,7 +849,7 @@ SV_ViolI_MvI =  \relative b' {
 }
 
 SV_ViolI_MvII = \relative d'' {
-    \time 4/4  | % 1
+    \time 4/4 \key d \major | % 1
     r8 d8 e8 fs8 g4 fs4 | % 2
     e8 e8 fs8 g8 a4 g4 | % 3
     fs8 b8 e,8 a8 d,8 g8 cs,8 fs8 | % 4
@@ -961,7 +961,7 @@ SV_ViolI_MvIII = \relative d' {
 }
 SV_ViolI_MvIV = \relative f'' {
     \repeat volta 2 {
-        \time 3/4  | % 1
+        \time 3/4 \key d \major | % 1
         d4 cs8 b8 a8 g8 | % 2
         fs4 e8 ( d8 ) e4 | % 3
         a,2 cs'4 | \barNumberCheck #4
@@ -1095,7 +1095,7 @@ SVI_ViolI_MvI = \relative f' {
     }
 }
 SVI_ViolI_MvII = \relative e' {
-    \time 3/4  | % 1
+    \time 3/4 \key d \minor | % 1
     R2. | \barNumberCheck #2
     r4 g4 e4 | % 3
     c'2. ~ | % 4
