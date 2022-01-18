@@ -16,7 +16,8 @@
     }
 
 \paper {
-    print-first-page-number = ##t
+    % print-first-page-number = ##t
+    print-page-number = ##f
     indent = 5\mm
     top-margin = 5\mm
     bottom-margin = 5\mm
