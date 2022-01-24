@@ -130,6 +130,10 @@
             \layout {}
             }
 
+        \markup {
+            \vspace #5
+        }
+
         \score {
             \header { piece = \SIV_MvIV_Name }
             \new Staff { \SIV_ViolII_MvIV }

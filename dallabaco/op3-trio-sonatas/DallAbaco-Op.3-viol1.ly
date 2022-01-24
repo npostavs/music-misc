@@ -101,7 +101,10 @@
         \score {
             \header { piece = \SIII_MvIV_Name }
             \new Staff { \SIII_ViolI_MvIV }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/8)
+              }}
             }
      }
     \bookpart {
@@ -133,7 +136,10 @@
         \score {
             \header { piece = \SIV_MvIV_Name }
             \new Staff { \SIV_ViolI_MvIV }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/8)
+              }}
             }
      }
     \bookpart {
