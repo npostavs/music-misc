@@ -28,8 +28,8 @@
       \fill-line {
         \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/24" }
         % \on-the-fly #not-part-first-page
-        \concat { \small {
-                    \fromproperty #'header:subtitle " of "
+        \concat { \bold { \fromproperty #'header:subtitle } \small {
+                    " of "
                     \smaller { \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }} }
         ""
       }

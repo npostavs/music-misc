@@ -874,6 +874,7 @@ SV_Bass_MvII = \relative d {
     g8 e8 a8 a,8 d4. e8 | % 41
     fs4 b,4 fs'4 fs,4 | % 42
     b4 r4 r2 | % 43
+    \pageBreak
     R1*3 | % 46
     r8 a=,8 b8 cs8 d4 cs4 | % 47
     b8 b8 cs8 d8 e4 d4 | % 48
@@ -1091,6 +1092,7 @@ SVI_Bass_MvII = \relative e {
     fs4 d4 b4 | % 16
     e4 fs4 g4 | % 17
     a4 a,2 | % 18
+    \pageBreak
     d8 cs8 d8 e8 fs8 d8 | % 19
     g8 fs8 g8 a8 b8 g8 | % 20
     a8 g8 a8 b8 a8 b8 | % 21
