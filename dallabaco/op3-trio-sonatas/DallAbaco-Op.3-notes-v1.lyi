@@ -259,7 +259,7 @@ SonataIIMvII_VOne =  \relative c'' {
     e8 e8 a2 g4 | % 23
     a4 a2 g4 ~ | % 24
     g4 f2 e8 d8 | % 25
-    c4 d2 c4 | % 26
+    cs4 d2 c4 ~ | % 26
     c4 bf4 a2 | % 27
     bf8 d8 c8 bf8 a2 ~ | % 28
     a4 g2 fs4 | \barNumberCheck #29
@@ -1798,6 +1798,7 @@ SX_ViolI_MvII = \relative f' {
     d4 c2 bf4 ~ | % 32
     bf4 a4 b4 c4 ~ | % 33
     c4 b4 c4 r4 | % 34
+    \pageBreak
     r8 f8 f8 f8 e8 e8 f16 ( e16 ) d16 ( c16 ) | \barNumberCheck #35
     d8 e16 f16 g8 f8 e8 c8 c'4 ~ | % 36
     c8 f,8 bf2 a4 ~ | % 37

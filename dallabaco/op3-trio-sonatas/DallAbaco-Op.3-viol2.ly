@@ -379,12 +379,18 @@
         \score {
             \header { piece = \SXII_MvIV_Name }
             \new Staff { \SXII_ViolII_MvIV }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/4)
+              }}
             }
         \score {
             \header { piece = \SXII_MvV_Name }
             \new Staff { \SXII_ViolII_MvV }
-            \layout {}
+            \layout {\context {
+                \Score \override SpacingSpanner.common-shortest-duration =
+                  #(ly:make-moment 1/4)
+              }}
             }
         \score {
             \header { piece = \SXII_MvVI_Name }
