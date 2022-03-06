@@ -1346,24 +1346,24 @@ SVII_ViolI_MvIV = \relative g' {
         g4 d8 g4 f8 | \barNumberCheck #40
         ef8 ( d8 ) c8 f4. ~ | % 41
         f4 c8 f4 ef8 | % 42
-        d8 ( c8 ) b8 f'4. ~ | % 43
+        d8 ( c8 ) bf8 f'4. ~ | % 43
         f4 c8 f4 ef8 | % 44
-        d8 ( c8 ) b8 d4. ~ | % 45
+        d8 ( c8 ) bf8 d4. ~ | % 45
         d4 a8 d4 c8 | % 46
-        b8 ( a8 ) g8 g'4 f8 | % 47
+        bf8 ( a8 ) g8 g'4 f8 | % 47
         e8 f8 g8 a4 g8 | % 48
-        fs8 e8 d8 b'4 a8 | % 49
-        g8 a8 b8 c4. ~ | \barNumberCheck #50
-        c4 d8 b4 a8 | % 51
-        b4. ( a4. ) | % 52
+        fs8 e8 d8 bf'4 a8 | % 49
+        g8 a8 bf8 c4. ~ | \barNumberCheck #50
+        c4 d8 bf4 a8 | % 51
+        bf4. ( a4. ) | % 52
         g4 d8 d8 ( ef8 ) d8 | % 53
         d8 ( ef8 ) d8 d8 ( ef8 ) d8 | % 54
         d4 \trill c8 c8 ( d8 ) c8 | % 55
         c8 ( d8 ) c8 c8 ( d8 ) c8 | % 56
-        c4 b8 b8 ( c8 ) b8 | % 57
-        b8 ( c8 ) b8 b8 ( c8 ) b8 | % 58
+        c4 bf8 bf8 ( c8 ) bf8 | % 57
+        bf8 ( c8 ) bf8 bf8 ( c8 ) bf8 | % 58
         ef4 a,8 a4 a8 | % 59
-        a4. b8 ( c8 ) d8 | \barNumberCheck #60
+        a4. bf8 ( c8 ) d8 | \barNumberCheck #60
         a2. | % 61
         g4 d'8 -\p d8 ( ef8 ) d8 | % 62
         d8 ( ef8 ) d8 d8 ( ef8 ) d8 | % 63

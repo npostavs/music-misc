@@ -1229,9 +1229,9 @@ SVII_ViolII_MvII = \relative b' {
         d8 c16 d16 ef16 d16 c16 bf16 a8 fs8 g4 ~ | % 3
         g4 fs4 g8 bf16 g16 a8 fs8 | % 4
         r8 d'=''16 bf16 c8 a8 r8 f'=''16 d16 e8 cs8 | % 5
-        r8 d16 a16 b16 c16 d8 c4 b4 | % 6
-        e,8 f16 g16 e4 d8 b'4 -\p a8 ~ | % 7
-        a8 g4 f8 b4. e,8 | \barNumberCheck #8
+        r8 d16 a16 bf16 c16 d8 c4 bf4 | % 6
+        e,8 f16 g16 e4 d8 bf'4 -\p a8 ~ | % 7
+        a8 g4 f8 bf4. e,8 | \barNumberCheck #8
         cs8 d8 d8. cs16 d4 r8
     } \repeat volta 2 {
         r8 | % 9
