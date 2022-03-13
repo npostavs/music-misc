@@ -1,7 +1,7 @@
 % \version "2.22.0"      % Boccherini-Trio-Op14-3
 
 \relative c' {
-\clef alto
+\cClef
 
 
 
@@ -20,10 +20,10 @@ d d d4~
 8 8 4
 cis8 a'4 gis8
 a4 r8 cis,16( e
-a e cis' a) \clef treble e'8[ \grace d16 cis b32 a]
+a e cis' a) \cClefTreble e'8[ \grace d16 cis b32 a]
 \grace a16 b8 8~ 16 gis( b e)
 e8([ dis32) e fis e] dis( e fis gis) fis16 a,
-a8\trill gis \clef alto \tupletSpan 8 \tuplet 3/2 {r16 e-.\p fis-. gis( a) gis-.}
+a8\trill gis \cClef \tupletSpan 8 \tuplet 3/2 {r16 e-.\p fis-. gis( a) gis-.}
 gis8 8~ \tuplet 3/2 {gis16 \slurDashed b( a) gis( fis e)} \slurSolid	
 fis16.([ gis64 a) gis8] \tuplet 3/2 {r16 e-. fis-. gis( a) gis-.}
 gis8 8~ \tuplet 3/2 {gis16 b a gis fis e}
@@ -80,10 +80,10 @@ e( b g' e b' g e' b)
 c8\trill b4 g,16( b)
 e( b g' e b' g e' b)
 \grace d c8\trill b r b16 a
-\grace a gis!8 \clef treble f'16-. e-. \grace e d8 b'16 a
+\grace a gis!8 \cClefTreble f'16-. e-. \grace e d8 b'16 a
 a gis! gis8~ 16 a a8\trill
 \addStacc {b16 a gis! f e d c b}
-\clef alto \grace d c( b32 a) \addStacc {a16 f e d c b}
+\cClef \grace d c( b32 a) \addStacc {a16 f e d c b}
 a8 f'( e f)
 e( d) c4~
 8 f( e f
@@ -97,9 +97,9 @@ f~ f16[ g32( a bes c d e)]
 f8 f, f f
 f4~ 16 c( f a)
 a( g) g8~ 16 g( a b!)
-c8.\trill[ b32 a] \clef treble g16( c e g)
+c8.\trill[ b32 a] \cClefTreble g16( c e g)
 f32( g? f e) d( e d c) b( c b a) g( a g f)
-\clef alto \addStacc {e16 c b a g f e d}
+\cClef \addStacc {e16 c b a g f e d}
 c8 f( e f)
 e d c4~
 8 f( e f)
@@ -143,11 +143,11 @@ a8 a( cis a)
 
 \repeat unfold 2 {e gis( b gis)}
 
-a \tuplet 3/2 { a16 \clef treble fis'' fis fis( e) e-. e( d) d-.
+a \tuplet 3/2 { a16 \cClefTreble fis'' fis fis( e) e-. e( d) d-.
 \repeat unfold 2 {d( cis) cis-. cis fis fis fis( e) e-. e( d) d-.}
 
 d( cis) cis-. } \grace e d cis32 b a8 gis
-\clef alto gis( \tuplet 3/2 { a16) fis-. fis-. fis( e) e-. e( d) d-.
+\cClef gis( \tuplet 3/2 { a16) fis-. fis-. fis( e) e-. e( d) d-.
 \repeat unfold 2 {d( cis) cis-. cis fis fis fis( e) e-. e( d) d-.} }
 
 \grace d cis b32 cis \grace e16 d cis32 b a8 gis

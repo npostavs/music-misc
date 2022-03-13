@@ -35,7 +35,8 @@
 
 \tag #'mvtIV {
 	\set Score.alternativeNumberingStyle = #'numbers-with-letters
-	\time 3/4 \key a \major
+	\tempo "Minuetto"
+    \time 3/4 \key a \major
 		\repeat volta 2 { s2.*8 }
 		\repeat volta 2 { s2.*32 }\break
 	\key d \major

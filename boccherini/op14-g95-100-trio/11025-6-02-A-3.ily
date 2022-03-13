@@ -1,7 +1,7 @@
 % \version "2.22.0"      % Boccherini-Trio-Op14-6
 
 \relative c' {
-\clef alto
+\cClef
 
 
 
