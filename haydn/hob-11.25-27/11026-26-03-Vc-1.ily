@@ -1,7 +1,7 @@
 % \version "2.22.0"      % HaydnJ - Trio H.XI:26
 
 \relative c {
-\clef bass
+\cClef
 
 
 
