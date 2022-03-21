@@ -18,11 +18,11 @@ bes!4~ 16 des( a bes)
 bes4~ 16 des( c bes)
 aes! aes r g r f r f'
 ees\rf ees r d r c r c\p
+\repeat percent 2 {
 c8 b16.\trill c32 b16( g' d b)
 c16\f 8 8 8 16
-8\p b16.\trill c32 b16( g' d b)
-c16\f 8 8 8 16
-4\p( b
+}
+c4\p( b
 bes!~ bes16) c d ees
 \grace d c8 bes~ bes16 c32( d ees f g aes)
 \addStacc {bes16 aes g f ees d c bes}
@@ -92,7 +92,7 @@ ges4~ 16 f ees ges
 f( bes a bes) des( bes f' des)
 c\rf( b) b8~ 16 aes!( g f)
 ees!-. ees32( f g f ees d) c8 r
-r16 g''\p g8\trill \repeat unfold 3 {r16 g g8\trill}
+\repeat percent 2 { r16 g''\p g8\trill r16 g g8\trill }
 
 \repeat unfold 3 {r16 g, g8\trill}
 	r8 c,
@@ -102,7 +102,7 @@ c \addStacc {b16 c d ees f d}
 g,8 r r4
 R2*3
 
- \tag #'partie \pageBreak		%---------------------------
+
 \repeat unfold 3 {g8 g~ g16 g g g}
 
 

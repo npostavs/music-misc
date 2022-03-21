@@ -1,6 +1,8 @@
 % -*- coding: utf-8 -*-
 % \version "2.22.0"
 
+#(set-default-paper-size "letter")
+
 cTitre   = "6 Trios, Op.14 (G.95-100)"
 cnI_Titre   = "Trio Op.14 n°1 (G.95)"
 cnII_Titre  = "Trio Op.14 n°2 (G.96)"
@@ -18,6 +20,11 @@ cSource = \markup {\fontsize #-2 "Source: Paris, De la Chevardière (1774). Gall
 cRefConcert = "11025"
 cCopyright = \markup {\fontsize #-6 \concat {
         \epsfile #X #2  #"cc.eps"  " 2021-" \italic {"Le Concert - "} \cRefConcert " / " \cCompositeur " - " \cTitre " - v.1" }}
+
+smallNotes = { \override NoteHead.font-size = #-4
+               \override Accidental.font-size = #-4 }
+normalNotes = { \revert NoteHead.font-size
+                \revert Accidental.font-size }
 
 %%% CONSTANTES ==============================================================
 nI_titreI = \markup {\bold \huge "I."}
@@ -118,6 +125,11 @@ addStacc = #(define-music-function (music)
 \paper {
     top-margin = 5\mm
     bottom-margin = 1\mm
+    print-first-page-number = ##t
+    two-sided = ##t
+    inner-margin = 9\mm
+    outer-margin = 7\mm
+
     % head-separation = 5\mm
     % foot-separation = 1\mm
     % markup-system-spacing = #'((basic-distance . 5)(padding . 3) (minimum-distance . 5) (stretchability . 10) )

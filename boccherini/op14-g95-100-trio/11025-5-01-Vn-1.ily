@@ -24,8 +24,7 @@ c4~ 16 e( g e bes'\p g e bes)
 \grace bes16 aes8 g16 f f4\pocof c'8.( bes16)
 4~ 16 \addStacc {c\p d ees f g aes aes,}
 aes4( g16-.) g( bes a) a-. a( c bes)
-bes-. bes( d c) c4~ 16 ees( a, c)
-bes-. bes( d c) c4~ 16 ees a, c
+\repeat percent 2 { bes-. bes( d c) c4~ 16 ees( a, c) }
 bes f g ees' c2\trill
 bes4 r    d8.( ees16)
 f4. ees16.( f32) \grace {ees16 f} g8 f
@@ -54,12 +53,10 @@ bes8 4 aes16.( bes32) \grace {aes16 bes} c8 bes
 \grace ees des8 c16 bes bes4 f'8.\pocof( ees16)
 4\p~ 16 \addStacc {f g aes bes c des ees}
 des4 c16-. c( ees d) d-. d( f ees)
-ees-. ees( g f) f4~ 16 aes( d, f)
-ees-. ees( g f) f4~ 16 aes d, f
+\repeat percent 2 { ees-. ees( g f) f4~ 16 aes( d, f) }
 ees bes c aes' f2\trill
 ees4 r r
-ees,16-.\p 16( g f) f4 ees8 d
-ees16-. 16( g f) f4 ees8 d
+\repeat percent 2 { ees,16-.\p 16( g f) f4 ees8 d }
 ees16( bes c aes') g4 f\trill
 ees2
 }

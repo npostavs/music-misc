@@ -4,7 +4,7 @@
 
 cInstrument = "Viola"
 cClef = \clef "treble_8"
-cClefTreble = {} % \clef treble
+cClefTreble = { \clef treble }
 
 \paper {    %% réglages généraux dans Global
     first-page-number = 2
@@ -204,7 +204,7 @@ cClefTreble = {} % \clef treble
 
 \score {		%% 3e mvt
   \new Staff
-  { \silencesMulti
+  { \silencesMulti \autoPageBreaksOff
     <<	\keepWithTag #'mvtIII {\include "11025-6-Boccherini-Trio-Op14-6-Trame.ily"}
         \keepWithTag #'partie \include "11025-6-02-A-3.ily"
     >>

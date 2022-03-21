@@ -61,7 +61,7 @@ ees f32([ g aes bes)] \grace d16 c bes32 aes
 bes8.( c16) g8 f\trill}
 
 
-ees4 r  \tag #'partie \pageBreak		%---------------------------
+ees4 r
 r \clef bass r8 ees,,\f
 aes4 g8\p( f)
 ees[ aes bes bes]

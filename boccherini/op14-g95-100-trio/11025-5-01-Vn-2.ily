@@ -16,7 +16,7 @@ g4 r8 bes-.
 g4 r8 bes'-.\f
 g8.\trill f32 g aes8 f
 ees16( d) c bes aes( g) f ees
-\repeat unfold 3 {d f ees g f aes g bes
+\repeat percent 3 {d f ees g f aes g bes
 aes( bes aes) f g( aes g) ees}
 
 
@@ -32,11 +32,10 @@ d4 r8 f\p
 d4 r8 bes'\f
 f8.\trill ees32 f g8 8
 f16 ees d c bes8 8
-a16 c bes d c ees d f
-ees( f ees) c-. d( ees d) bes-.
-a( c bes d c ees d f)
-ees( f ees) c-. d( ees d) bes-.
-a( c bes d c ees d f)
+\repeat percent 2 {
+a16( c bes d c ees d f)
+ees( f ees) c-. d( ees d) bes-. }
+a16( c bes d c ees d f)
 ees( g f a g bes a c)
 bes\trill a? bes c d8 d,
 d4\p( c8) \addStacc {d
@@ -136,11 +135,8 @@ g4 r8 bes,-.
 g4 r8 bes'-.\f
 g8.\trill f32 g aes8 f
 ees4 r8 ees,\p
-d16( f) ees( g) f( aes) g( bes)
-aes bes f bes g bes ees, bes'
-\repeat unfold 2 {d,( f) ees( g) f( aes) g( bes)
-aes bes f bes g bes ees, bes'}
-
+\repeat percent 3{ d16( f) ees( g) f( aes) g( bes)
+aes bes f bes g bes ees, bes' }
 
 aes bes f bes g bes ees, bes'
 d,( ees) f d bes8 8

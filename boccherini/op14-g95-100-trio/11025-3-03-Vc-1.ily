@@ -53,10 +53,10 @@ e16( b) b8~ 16 b-. b( a)
 
 \repeat unfold 2 {<b a' b>8 q <b a' dis> <b a' b>}
 
-<e, b' gis' e'>8\noBeam \clef bass e\p \repeat unfold 10 e
+<e, b' gis' e'>8\noBeam \clef bass e\p e e e2:8 e2:8
 
 
-e a, b b
+e8 a, b b
 \repeat unfold 3 {e, e' e e}
 
 
@@ -80,7 +80,7 @@ e e e, r
 e e e, r}
 
 
-R2 \tag #'partie \pageBreak		%---------------------------
+R2
 r8 e' e e
 d d e e
 a, \addStacc {c'16 d c b a gis!}

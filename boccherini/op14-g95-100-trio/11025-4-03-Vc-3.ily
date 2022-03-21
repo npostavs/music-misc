@@ -51,7 +51,7 @@ a \tuplet 3/2 {cis'8\p( d cis)} b4 e,,\f
 a \tuplet 3/2 {e''8\p( fis e)} d4 e,,\f
 a \tuplet 3/2 {cis'8\p( d cis)} b4 e,,\f
 a \tuplet 3/2 {e''8\p( fis e)} d4 e,,\f
-a <a e' a> q  \tag #'partie \pageBreak   r  	%---------------------------
+a <a e' a> q r
 R1
 r4 a'\p a, r
 R1

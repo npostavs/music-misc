@@ -54,11 +54,11 @@ gis'2
 fis
 fis,
 e8 \tuplet 3/2 { r16 e'\p e e( dis) dis-. dis( cis) cis-.
-\repeat unfold 2 {cis( b) \addStacc {b b e e} e( dis) dis-. dis( cis) cis-.} }
+\repeat percent 2 {cis( b) \addStacc {b b e e} e( dis) dis-. dis( cis) cis-.} }
 
 \grace cis16 b a32 b \grace d16 cis b32 a gis8 fis
 fis_( \tuplet 3/2 {gis16) e'-. e-. e( dis) dis-. dis( cis) cis-.
-\repeat unfold 2 {cis( b) \addStacc {b b e e} e( dis) dis-. dis( cis) cis-.} }
+\repeat percent 2 {cis( b) \addStacc {b b e e} e( dis) dis-. dis( cis) cis-.} }
 
 \grace cis16 b a32 b \grace d16 cis b32 a gis8 fis\trill
 b'\f[ \grace a16 gis fis32 e] cis'8 cis,
@@ -144,12 +144,10 @@ cis'2
 b
 b,
 a8 \tuplet 3/2 { r16 a'' a a( gis) gis-. gis( fis) fis-.
-fis( e) e-. e a a a( gis) gis-. gis( fis) fis-.
-fis( e) e-. e a a a( gis) gis-. gis( fis) fis-.
+\repeat percent 2 { fis( e) e-. e a a a( gis) gis-. gis( fis) fis-. }
 fis( e) e-. } \grace gis fis e32 d cis8 b
 b( \tuplet 3/2 { cis16) a-. a-. a( gis) gis-. gis( fis) fis-.
-fis( e) e-. e a-. a-. a( gis) gis-. gis( fis) fis-.
-fis( e) e-. e a-. a-. a( gis) gis-. gis( fis) fis-. }
+\repeat percent 2 { fis( e) e-. e a-. a-. a( gis) gis-. gis( fis) fis-. } }
 \grace fis e d32 e \grace gis16 fis e32 d cis8 b
 e'\f[ \grace d16 cis b32 a] fis'8 fis,
 e32[ e'16. \grace d16 cis b32 a] b4\trill

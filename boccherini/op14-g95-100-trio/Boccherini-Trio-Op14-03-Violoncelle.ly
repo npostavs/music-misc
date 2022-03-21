@@ -5,6 +5,7 @@
 cInstrument = "Violoncelle"
 
 \paper {    %% réglages généraux dans Global
+    print-first-page-number = ##t
     first-page-number = 2
     indent = 5\mm
     page-breaking = #ly:page-turn-breaking
@@ -200,6 +201,7 @@ cInstrument = "Violoncelle"
   }
 } %%	 fin score 2e mvt
 
+\pageBreak
 \score {		%% 3e mvt
   \new Staff
   { \silencesMulti

@@ -142,7 +142,7 @@ cInstrument = "Violon"
   }
   \layout {
     \context {\Score
-      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
     }
   }
 } %%   fin score 2e mvt
@@ -165,6 +165,11 @@ cInstrument = "Violon"
       \keepWithTag #'partie { \include "11025-5-01-Vn-1.ily" }
     >>
   }
+  \layout {
+    \context {\Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
+  }
 } %% fin score 1er mvt
 
 \score {    %% 2e mvt
@@ -173,6 +178,11 @@ cInstrument = "Violon"
     <<  \keepWithTag #'mvtII {\include "11025-5-Boccherini-Trio-Op14-5-Trame.ily"}
         \keepWithTag #'partie \include "11025-5-01-Vn-2.ily"
     >>
+  }
+  \layout {
+    \context {\Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+    }
   }
 } %%   fin score 2e mvt
 
@@ -194,7 +204,16 @@ cInstrument = "Violon"
       \keepWithTag #'partie { \include "11025-6-01-Vn-1.ily" }
     >>
   }
+  \layout {
+    \context {\Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/32)
+    }
+  }
 } %% fin score 1er mvt
+
+\markup { \vspace #10 }
+
+\pageBreak
 
 \score {		%% 2e mvt
   \new Staff
