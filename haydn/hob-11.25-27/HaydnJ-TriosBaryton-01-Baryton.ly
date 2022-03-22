@@ -105,6 +105,8 @@ cInstrument = "Baryton"
   }
 } %% fin score 1er mvt
 
+\pageBreak
+
 \score {    %%2e mvt
   \new Staff
   { \silencesMulti

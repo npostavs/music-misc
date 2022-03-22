@@ -1,5 +1,7 @@
 % -*- coding: utf-8 -*-
 
+#(set-default-paper-size "letter")
+
 cVersion = "2.22.0 "
 
 cTitre = "Trios n°25-27 pour baryton, alto, violoncelle"
@@ -8,14 +10,14 @@ cnII_Titre = "Trio n°26"
 cnIII_Titre = "Trio n°27"
 
 cSousTitre = "Hob.XI:25"
-cCompositeur =	"Josph HAYDN"
+cCompositeur = "Joseph HAYDN"
 cShortComposer = "J. Haydn"
 cDates = "(1732-1809)"
 cCompositeurDates = \markup {\concat{\cCompositeur " " \cDates}}
 cSource = \markup {\fontsize #-2 "Source: Manuscrit Johann Elssler, ca.1790 (Staatsbibliothek zu Berlin)"}
 cRefConcert = "11026"
 cCopyright = \markup {\abs-fontsize #5 \concat {
-				\epsfile #X #2  #"cc.eps"  " 2021-" \italic {"Le Concert - "} \cRefConcert " / " \cCompositeur " - " \cTitre " - v.1" }}
+        \epsfile #X #2  #"cc.eps"  " 2021-" \italic {"Le Concert - "} \cRefConcert " / " \cCompositeur " - " \cTitre " - v.1" }}
 
 %%% CONSTANTES ==============================================================
 
@@ -27,8 +29,8 @@ tpnOff = \override TupletNumber.stencil = ##f
 tpnOn = \revert TupletNumber #'stencil
 
 silencesMulti = { \compressEmptyMeasures 
-									\override MultiMeasureRest.expand-limit = #1 
-									\set restNumberThreshold = #0 }
+                  \override MultiMeasureRest.expand-limit = #1 
+                  \set restNumberThreshold = #0 }
 
 %%% FONCTIONS =======================================================================
 
@@ -50,8 +52,8 @@ silencesMulti = { \compressEmptyMeasures
                          (list (make-script x))))
                    m)
      (else #f)))
-	%% fin du code commun ....................
-	
+  %% fin du code commun ....................
+
 %%% \addStacc (staccato) ...................
 #(define (add-staccato m)
          (add-script m "staccato"))
@@ -59,10 +61,14 @@ silencesMulti = { \compressEmptyMeasures
 addStacc = #(define-music-function (music)
                  (ly:music?)
            (map-some-music add-staccato music))
-	%%% fin addStacc ...........................
+  %%% fin addStacc ...........................
 
-%%%% SECTION \PAPER pour les parties séparées	==============================
+%%%% SECTION \PAPER pour les parties séparées ==============================
 \paper {
+    print-first-page-number = ##t
+    two-sided = ##t
+    inner-margin = 7\mm
+    outer-margin = 6\mm
     top-margin = 5\mm
     bottom-margin = 1\mm
 
@@ -104,4 +110,4 @@ addStacc = #(define-music-function (music)
         }
       }
     }
-}	%% fin paper
+} %% fin paper

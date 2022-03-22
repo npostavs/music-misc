@@ -80,6 +80,7 @@ cClef = \clef "alto_8"
     >>
   }
 } %%   fin score 2e mvt
+\pageBreak
 
 \score {    %%3e mvt
   \new Staff
@@ -94,7 +95,6 @@ cClef = \clef "alto_8"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Trio 27
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\allowPageTurn
 
 \markup { \fill-line { \bold \large \cnIII_Titre } }
 
