@@ -115,6 +115,8 @@ cClefTreble = { \clef treble }
   }
 } %%   fin score 3e mvt
 
+\pageBreak
+
 \score {    %% 4e mvt
   \new Staff
   { \silencesMulti

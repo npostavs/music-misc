@@ -5,6 +5,7 @@
 cInstrument = "Violon"
 
 \paper {    %% réglages généraux dans Global
+    blank-after-score-page-penalty = #0.1 % default is 2
     first-page-number = 2
     indent = 5\mm
     page-breaking = #ly:page-turn-breaking
@@ -154,6 +155,11 @@ cInstrument = "Violon"
         \keepWithTag #'partie \include "11025-4-01-Vn-3.ily"
     >>
   }
+  \layout {
+    \context {\Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+    }
+  }
 } %%   fin score 3e mvt
 
 \markup { \fill-line { \large \bold \cnV_Titre } }
@@ -165,11 +171,6 @@ cInstrument = "Violon"
       \keepWithTag #'partie { \include "11025-5-01-Vn-1.ily" }
     >>
   }
-  \layout {
-    \context {\Score
-      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
-    }
-  }
 } %% fin score 1er mvt
 
 \score {    %% 2e mvt
@@ -178,11 +179,6 @@ cInstrument = "Violon"
     <<  \keepWithTag #'mvtII {\include "11025-5-Boccherini-Trio-Op14-5-Trame.ily"}
         \keepWithTag #'partie \include "11025-5-01-Vn-2.ily"
     >>
-  }
-  \layout {
-    \context {\Score
-      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
-    }
   }
 } %%   fin score 2e mvt
 
@@ -204,16 +200,7 @@ cInstrument = "Violon"
       \keepWithTag #'partie { \include "11025-6-01-Vn-1.ily" }
     >>
   }
-  \layout {
-    \context {\Score
-      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/32)
-    }
-  }
 } %% fin score 1er mvt
-
-\markup { \vspace #10 }
-
-\pageBreak
 
 \score {		%% 2e mvt
   \new Staff
