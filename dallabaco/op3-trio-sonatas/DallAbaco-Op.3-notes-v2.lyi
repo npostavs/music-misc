@@ -2136,7 +2136,7 @@ SXII_ViolII_MvI =  \relative a'' {
     R1 | % 2
     r2 a4 gs8\trill ( fs8 ) | % 3
     e4. d8 cs8 ( d8 ) cs8 ( b8 ) | % 4
-    a2 a4 b8 s8 | % 5
+    a2 ~ a4. b8 | % 5
     cs8 ( a8 ) d8 ( b8 ) cs8 ( a8 ) fs'8 ( d8 ) | % 6
     e8 ( cs8 ) fs8 ( gs8 ) a2 ~ | % 7
     a4 r8 e8 cs8 e8 fs8 e16 ( d16 ) | % 8
@@ -2278,7 +2278,7 @@ SXII_ViolII_MvIV = \relative a' {
         b,4 e8 d8 | % 31
         cs4 d8 e8 | % 32
         a,4 d8 e8 | % 33
-        fs8 e8 d8 cs8 \bar "||"
+        fs8 e8 d8 cs8 | % 34
         b4 cs8 d8 | % 35
         e4 cs4 | \barNumberCheck #36
         b4 cs4 | % 37

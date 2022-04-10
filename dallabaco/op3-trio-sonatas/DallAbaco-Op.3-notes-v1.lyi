@@ -2212,7 +2212,7 @@ SXII_ViolI_MvII = \relative a' {
         a2. gs8. fs16 | % 14
         fs2 e2 | % 15
     } \repeat volta 2 {
-        b''4. -\f r16 b16 gs8. g16 a8. b16 | % 16
+        b''4. -\f r16 b16 gs8. gs16 a8. b16 | % 16
         e,8. e16 fs8. gs16 a2 ~ | % 17
         a4 gs8. fs16 es4 cs'4 ~ | % 18
         cs4 b2 a8. gs16 | % 19
@@ -2268,7 +2268,7 @@ SXII_ViolI_MvIV = \relative a' {
         fs4 e8 d8 | % 4
         cs4. d8 | % 5
         e8 cs8 d8 e8 | \barNumberCheck #6
-        fs8 g8 fs8 e8 | % 7
+        fs8 gs8 fs8 e8 | % 7
         d8 e8 d8 cs8 | % 8
         b4 a4 | % 9
         a'4 a4 | % 10
@@ -2286,9 +2286,9 @@ SXII_ViolI_MvIV = \relative a' {
         es4 cs4 | % 21
         fs4 gs8 a8 | % 22
         b4 ( a4 ) | % 23
-        gs8 a8 b8 g8 | % 24
+        gs8 a8 b8 gs8 | % 24
         a4. a8 | % 25
-        gs8 a8 b8 g8 | \barNumberCheck #26
+        gs8 a8 b8 gs8 | \barNumberCheck #26
         a4. gs8 | % 27
         gs2 | % 28
         fs4 r4 | % 29
@@ -2360,7 +2360,7 @@ SXII_ViolI_MvVI = \relative a' {
         cs8 a4 ~ | % 16
         a8 gs4 | % 17
         a16 e'16 cs16 a16 a'16 e16 | % 18
-        fs16 a16 fs16 ds16 b'16 f16 | % 19
+        fs16 a16 fs16 ds16 b'16 fs16 | % 19
         gs8 e4 ~ | \barNumberCheck #20
         e8 ds4 | % 21
         e16 b'16 gs16 b16 cs16 e,16 | % 22
@@ -2391,7 +2391,7 @@ SXII_ViolI_MvVI = \relative a' {
         cs8 a8 a'8 ~ | % 46
         a8 gs4 ~ | % 47
         gs8 fs4 ~ | % 48
-        fs8 g8 fs8 | % 49
+        fs8 gs8 fs8 | % 49
         es8 cs'4 ~ | \barNumberCheck #50
         cs8 b4 ~ | % 51
         b8 a8 gs8 | % 52
