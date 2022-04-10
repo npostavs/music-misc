@@ -1,0 +1,1054 @@
+\version "2.20.0"
+% automatically converted by musicxml2ly from IMSLP274048-PMLP445167-Ut.mxl
+\pointAndClickOff
+
+%% additional definitions required by the score:
+\language "english"
+
+
+\header {
+    encodingdate =  "2022-02-21"
+    source = "IMSLP274048-PMLP445167-Ut.pdf"
+    composer =  "Valerie Buona"
+    encodingsoftware =  "Audiveris 5.2.5"
+}
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+        }
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for Ut
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ut_Canto =  \relative f' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    f1 f2 g2 | % 2
+    a2 f2 a2 bf2 | % 3
+    c4 bf4 a4 g4 f4 e4 d2 | % 4
+    c2 c'2 c2 bf4 a4 | % 5
+    g2 g2 r2 c2 | % 6
+    d2 d2 g,2 c2 ~ | % 7
+    c4 bf4 a2 g2 g2 | % 8
+    f1 r2 a2 | % 9
+    bf2 g2 a2. a4 | \barNumberCheck #10
+    g2. f4 e2 c'2 | % 11
+    c2 c2 f,2 f2 | % 12
+    g4 a4 bf4 g4 a2 f2 ~ | % 13
+    f4 e8 d8 e2 f1 | % 14
+    r2 d'2 c2 c2 ~ | % 15
+    c4 b4 b4 a8 b8 c2 g2 | % 16
+    g2. a4 g4 f4 f2 ~ | % 17
+    f2 e2 f1 | % 18
+    r2 e2. e4 d2 | % 19
+    e4 f4 g2 ~ g4 f4 fs2 | % 20
+    g1 r2 a2 ~ | % 21
+    a4 a4 c2 ~ c4 b4 b2 | % 22
+    c2 a2 g1 | % 23
+    r2 c2 bf2 a2 ~ | % 24
+    a4 a4 g2 a2. g8 f8 | % 25
+    g2 g2 a4 g4 c2 ~ | % 26
+    c2 bf2 a2 g2 | % 27
+    f2 e2 d1 | % 28
+    r2 f1 e4 d4 | \barNumberCheck #29
+    e2 f2 g2 g2 | % 30
+    c2. a4 bf2 bf2 ~ | % 31
+    bf2 a2 g2. f4 | % 32
+    e4 d4 c2 f2 f2 | % 33
+    g2 a2 f2 f2 | % 34
+    e4 d4 e4 f4 g4 a4 bf4 g4 | % 35
+    a2 c2 bf2 bf2 | % 36
+    a1 g1 | % 37
+    r2 f2 e2 e2 | % 38
+    d1 c2 f2 ~ | \barNumberCheck #39
+    f4 e8 d8 e2 f2 a2 | % 40
+    g\breve \bar "|."
+}
+
+Ut_Tenore =  \relative f' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve | % 2
+    f1 f2 g2 | % 3
+    a2 f2 a2 bf2 | % 4
+    c4 bf4 a4 g4 f4 e4 d2 | % 5
+    e2 e2 f4 g4 a4 g4 | % 6
+    f4 e4 f4 d4 e2. f4 | % 7
+    g2 f1 e2 | % 8
+    f1 r2 f2 | % 9
+    d2 e2 f2. f4 | \barNumberCheck #10
+    e2. f4 g2 g2 | % 11
+    a2. g4 f4 e4 d2 | % 12
+    d'2. c4 bf4 a4 a2 ~ | % 13
+    a4 g8 f8 g2 a4 g4 f4 e4 | % 14
+    f4 g4 a4 f4 g2 a2 | % 15
+    f1 e2. e4 | % 16
+    e2 e2 f2. g8 a8 | % 17
+    bf1 a1 | % 18
+    r2 g2. g4 g2 | % 19
+    g1 r2 c2 | % 20
+    c4 c4 b2 c2. bf4 | % 21
+    a2 a2 g1 | % 22
+    r2 f2 g2 bf2 | % 23
+    a4 g4 f4 g4 f4 d4 f2 ~ | % 24
+    f4 f4 e2 f2. e4 | % 25
+    d1 c2. c4 | % 26
+    d2 e2 f2 g2 | % 27
+    a4 bf4 c1 b2 | % 28
+    c2 bf4 a4 g1 | \barNumberCheck #29
+    r2 f1 e4 d4 | % 30
+    e2 f2 g2 g2 | % 31
+    c2 c1 bf2 | % 32
+    g2 g2 a2. a4 | % 33
+    g2 f2 ~ f4 g4 a4 bf4 | % 34
+    c2. bf8 a8 g1 | % 35
+    r2 fs2 g2 g2 | % 36
+    a2 c2 c2. c4 | % 37
+    bf2 bf2 g2. a4 | % 38
+    bf2 g2 a4 f4 g4 a4 | \barNumberCheck #39
+    g2 bf2 a4 g4 f2 ~ | % 40
+    f2 e4 d4 e1
+}
+
+Ut_Basso =  \relative f {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*2 | % 3
+    f1 f2 g2 | % 4
+    a2 f2 a2 bf2 | % 5
+    c2. bf4 a4 g4 f4 e4 | % 6
+    d2 d2 c1 ~ | % 7
+    c1 c1 | % 8
+    r2 f2 e2 f2 | % 9
+    g2. g4 f1 | \barNumberCheck #10
+    r2 c'2 c2 c2 | % 11
+    f,4 g4 a4 bf4 a2 d4 c4 | % 12
+    bf4 a4 g2 ~ g4 d4 f2 | % 13
+    g1 r2 d2 | % 14
+    d2 d2 e2 f2 | % 15
+    d1 c2 c'2 | % 16
+    c2 c2 bf2 a2 | % 17
+    g1 f1 | % 18
+    r2 c'2. c4 b2 | % 19
+    c2. bf4 a2 a2 | % 20
+    g1 r2 f2 | % 21
+    f2 f2 g2 g2 | % 22
+    a2 f2 ~ f4 f4 e2 | % 23
+    f2. e4 d2 d2 | % 24
+    c1 r2 c'2 ~ | % 25
+    c4 c4 b2 c2 a2 | % 26
+    g1 r2 e2 | % 27
+    f4 d4 e2 f2 g2 | % 28
+    a2 bf2 c1 ~ | \barNumberCheck #29
+    c1 c,1 | % 30
+    r2 f1 e4 d4 | % 31
+    e2 f2 g2 g2 | % 32
+    c2. bf4 a4 g4 f2 | % 33
+    e2 f2 d4 e4 f4 g4 | % 34
+    a4 bf4 c1 bf2 | % 35
+    a2 a2 g1 | % 36
+    r2 f2 e2 e2 | % 37
+    d1 c2 c'2 | % 38
+    bf2 bf2 a2 g4 f4 | \barNumberCheck #39
+    g1 f1 | % 40
+    c\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for Re
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Re_Canto = \relative d'' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    r1 d1 | % 2
+    d2 d2 d2 cs2 | % 3
+    d2 e2 f2 e4 d4 | % 4
+    e4 f4 g2 r2 g,2 | % 5
+    d'2 d2 d2 cs2 | % 6
+    d2 e2 f2 d2 | % 7
+    f2 e2. d4 g2 | % 8
+    c,2 d2. c4 bf4 a4 | % 9
+    g2. a4 bf2 a2 | \barNumberCheck #10
+    a2. a4 bf4 a4 f'2 | % 11
+    d2 e2 f2. e4 | % 12
+    d4 c4 bf4 a4 bf1 | % 13
+    a1 r1 | R\breve | % 15
+    r2 d1 cs2 | % 16
+    d2 a2. bf4 c4 a4 | % 17
+    bf2 bf2 a2 d2 ~ | % 18
+    d2 c2 d2 e2 | % 19
+    f4 e4 d4 c4 bf4 a4 bf2 | \barNumberCheck #20
+    ef2 c1 bf2 | % 21
+    a1 g2. a4 | % 22
+    bf4 c4 d2 ef2 c2 | % 23
+    bf2. a4 g2 a2 | % 24
+    bf2. a8 g8 f4 g4 a4 bf4 | % 25
+    c2 g2 bf2 a2 | % 26
+    g1 bf2. g4 | % 27
+    a2. bf4 g4 g'4 ef2 | % 28
+    d2. c4 bf2 c2 | % 29
+    a1 g1 | % 30
+    d'1 d2 d2 ~ | % 31
+    d2 d1 cs2 | % 32
+    d2 f1 e2 ~ | % 33
+    e4 d4 d1 cs2 | \barNumberCheck #34
+    d1 r2 g,2 ~ | % 35
+    g4 a4 bf2 a2. g4 | % 36
+    f4 e4 d4 e4 f4 g4 a2 ~ | % 37
+    a4 g4 g1 fs2 | % 38
+    g1 r2 d'2 ~ | % 39
+    d2 c2. bf4 bf4 a8 g8 | % 40
+    a2 a2 g2 bf2 | % 41
+    a1 d2. e4 | % 42
+    f2 e2. d4 d2 | % 43
+    f2 d2 bf2 c2 | \barNumberCheck #44
+    a1 g4 a4 bf4 c4 | % 45
+    d4 e4 f2 bf,2 c2 | % 46
+    f,2 bf1 a2 ~ | % 47
+    a4 g4 g1 fs2 | % 48
+    g\breve \bar "|."
+}
+
+Re_Tenore = \relative g' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*3 | % 4
+    g1 g2 g2 | % 5
+    g2 fs2 g2 a2 | % 6
+    bf2 a4 g4 a2 bf2 | % 7
+    a1 r2 g2 | % 8
+    a2 bf2. c4 d2 ~ | % 9
+    d2 cs2 d2. e4 | \barNumberCheck #10
+    f2 e2 d1 | % 11
+    r2 g,2 bf2 a2 | % 12
+    d2. c4 bf4 a4 g2 ~ | % 13
+    g2 fs2 g2. a4 | % 14
+    bf4 c4 d1 cs2 | % 15
+    d1 g,2 g'2 ~ | % 16
+    g2 f2 e4 d4 e4 f4 | % 17
+    d\breve | % 18
+    r1 r2 g,2 | % 19
+    a2 bf1 g2 ~ | \barNumberCheck #20
+    g2 a1 g2 ~ | % 21
+    g2 fs2 g1 | % 22
+    r2 bf2 g2 a2 | % 23
+    bf2 d2 c2 ef2 | % 24
+    d2. ef4 f2 c2 | % 25
+    ef1 d2 f2 | % 26
+    g2 ef2 d2. c8 bf8 | % 27
+    c2 d2 bf2 c2 | % 28
+    f,2 bf2 g2. a4 | % 29
+    fs4 g2 fs4 g1 | % 30
+    r2 bf1 bf2 | % 31
+    bf2 a2 bf2 g4 a4 | % 32
+    bf4 a4 d2. c4 bf4 a4 | % 33
+    g2 d'2 f2 e2 ~ | \barNumberCheck #34
+    e4 d4 d1 cs2 | % 35
+    d2 d,2 f2. e4 | % 36
+    d4 e4 f4 g4 a1 | % 37
+    r1. c2 ~ | % 38
+    c2 bf4 a4 bf4 c4 d2 ~ | % 39
+    d4 e4 f2 ef1 | % 40
+    d2. c4 bf4 g4 g'2 ~ | % 41
+    g2 fs2 g2 d2 ~ | % 42
+    d2 c2 bf4 g4 bf2 | % 43
+    a4 f4 a2. g4 g2 ~ | \barNumberCheck #44
+    g2 f2 bf1 | % 45
+    a2 d2 g2 ef2 | % 46
+    d1 c2 c2 ~ | % 47
+    c4 bf4 bf4 a8 g8 a2 a2 | % 48
+    b\breve
+}
+
+Re_Basso =  \relative g {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    g1 g2 g2 | % 2
+    g2 fs2 g2 a2 | % 3
+    bf2 a4 g4 f4 g4 a4 bf4 | % 4
+    c2. bf4 c4 d4 e2 | % 5
+    d2. c4 bf2 a2 | % 6
+    g1 d'2. d4 | % 7
+    d2 cs2 d2 e2 | % 8
+    f2 d2 g2. f4 | % 9
+    e1 d2 d2 ~ | \barNumberCheck #10
+    d2 cs2 d2. e4 | % 11
+    f2 e2 d2. c4 | % 12
+    bf4 a4 g2. a4 bf4 c4 | % 13
+    d1 g,2 g'2 ~ | % 14
+    g2 g2 g2 a2 | % 15
+    g2 f2 e1 | % 16
+    d1 r1 | % 17
+    r2 g,1 fs2 | % 18
+    g2 a2 bf2 g2 | % 19
+    d'1 ef1 | \barNumberCheck #20
+    c1 d1 | % 21
+    r2 d2 ef2 c2 | % 22
+    bf2 g2 c2 f,2 | % 23
+    r2 d'2 ef2 c2 | % 24
+    bf2. c4 d4 ef4 f2 | % 25
+    c1 g2 d'2 | % 26
+    b2 c2 g2 g'2 | % 27
+    f2 d2 ef2 c2 | % 28
+    bf2. c8 d8 ef2 c2 | % 29
+    d1 g,2 g'2 ~ | % 30
+    g2 g2 g1 ~ | % 31
+    g2 fs2 g2 e2 | % 32
+    d1 g,1 | % 33
+    bf1 a1 | \barNumberCheck #34
+    r2 d2 f2 e2 ~ | % 35
+    e4 d4 d1 cs2 | % 36
+    d2 d2. c4 c4 bf8 a8 | % 37
+    bf2 a4 g4 a2 a2 | % 38
+    g2 g'1 f4 e4 | % 39
+    f4 g4 a2. g4 g2 ~ | % 40
+    g2 fs2 g2 g,2 | % 41
+    d'2. c4 bf4 g4 bf2 | % 42
+    a1 g1 | % 43
+    d'1 ef2 c2 | \barNumberCheck #44
+    d1 g,2 g'2 | % 45
+    f2. d4 ef2 c2 | % 46
+    bf4 c4 d4 ef4 f2 c2 | % 47
+    ef1 d1 | % 48
+    g,\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for Mi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Mi_Canto =  \relative a' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*3 | % 4
+    a\breve | % 5
+    a2 b2 c2 a2 | % 6
+    d2. e4 f2 e2 ~ | % 7
+    e4 d4 d1 cs2 | % 8
+    d2. c4 bf4 g4 d'2 ~ | % 9
+    d2 c2 bf1 | \barNumberCheck #10
+    a1 r2 d2 ~ | % 11
+    d2 c2 f1 | % 12
+    e1 r2 d2 ~ | % 13
+    d2 c2 f2. g4 | % 14
+    a1 r2 d,2 d1 s1 | % 16
+    c1 bf2 a2 ~ | % 17
+    a2 g2 a2 c2 ~ | % 18
+    c2 bf2 a2 g2 | % 19
+    d'\breve | \barNumberCheck #20
+    r2 d2. c4 bf a | % 21
+    g2 a2 b2 c2 | % 22
+    g2 g'2 f2 ef2 | % 23
+    d1 r2 d2 ~ | % 24
+    d2 c2 d2 e2 | % 25
+    f2 a,2 b2 c2 ~ | % 26
+    c2 b2 c1 ~ | % 27
+    c1 r2 c2 | % 28
+    f2 f4 e4 d2 d2 | % 29
+    e2. d4 c2 c2 | \barNumberCheck #30
+    f2 f4 e4 d2 d2 | % 31
+    e4 d4 c4 bf4 a2 c2 | % 32
+    f,2 f2 bf2 bf4 a4 | % 33
+    g2 g2 a2 a2 | % 34
+    bf2. bf4 a4 g4 g2 ~ | % 35
+    g2 fs2 g2 d'2 | % 36
+    e2 e4 d4 cs2 cs2 | % 37
+    d2. e4 f2 e2 ~ | % 38
+    e4 d4 d2 ~ d4 cs8 b8 d4 cs4 | % 39
+    d1 r2 d2 | \barNumberCheck #40
+    f2 f2 e2 e4 d4 | % 41
+    c2 c2 d2 f2 | % 42
+    ef2 ef4 d4 c2 c2 ~ | % 43
+    c2 bf2 a2 a2 | % 44
+    g1 r2 g'2 | % 45
+    f2 f4 e4 d2 d2 | % 46
+    e2 f1 e2 | % 47
+    d2 c2. bf4 a2 | % 48
+    g1 c2 c2 ~ | % 49
+    c2 bf2 a2. a4 | \barNumberCheck #50
+    b\breve \bar "|."
+}
+
+Mi_Tenore = \relative a' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*1 | % 2
+    r1 a1 | % 3
+    a2 bf2 c2 a2 | % 4
+    d2. e4 f2 e2 ~ | % 5
+    e4 d4 d1 c2 | % 6
+    bf1 a1 | % 7
+    r2 d2 d2 e2 | % 8
+    f2 d2 g2. f4 | % 9
+    e4 d4 e2 d1 | \barNumberCheck #10
+    f2 e4 d4 c4 bf4 a4 g4 | % 11
+    f1 r2 d'2 ~ | % 12
+    d2 c2 f2. g4 | % 13
+    a2 a,2 bf2 bf2 | % 14
+    a\breve | % 15
+    r2 bf2 s1 | % 16
+    a2 g2 d'1 | % 17
+    r2 d2 f2 e2 | % 18
+    d1 r2 c2 ~ | % 19
+    c2 bf2 a2. a4 | \barNumberCheck #20
+    g2 bf4 a4 bf4 c4 d2 ~ | % 21
+    d2 c2 d2 e2 | % 22
+    d1 c1 | % 23
+    bf2 a2 d2. c4 | % 24
+    bf2 a2 g1 | % 25
+    r2 c2 d2 e2 | % 26
+    f1 e1 | % 27
+    e2. d4 c4 bf4 a2 ~ | % 28
+    a2 d2 b2 b2 | % 29
+    c2. bf4 a2 a2 | \barNumberCheck #30
+    r2 a2 b2 b2 | % 31
+    c2 e2 f2 f4 e4 | % 32
+    d2 d2 g2 g4 f4 | % 33
+    e2 e2 f2 c2 | % 34
+    d2. d4 c2 c4 bf4 | % 35
+    a2 a2 bf2 b4 a4 | % 36
+    g2 g2 a2 a4 g4 | % 37
+    f2 g2 a2. c4 | % 38
+    bf2 bf2 a1 | % 39
+    r2 a2 d2 d4 c4 | \barNumberCheck #40
+    b2 b2 c2 c2 | % 41
+    a2. g4 a2 b2 | % 42
+    c2 c4 d4 ef2 ef2 | % 43
+    d2 g1 fs2 | % 44
+    g2. f4 ef2 ef2 | % 45
+    d1 r2 d2 | % 46
+    g,2 a2 bf2 c2 | % 47
+    f,4 g4 a4 g4 a4 bf4 c4 a4 | % 48
+    bf2 g1 a2 ~ | % 49
+    a4 g4 g1 fs2 | \barNumberCheck #50
+    g\breve
+}
+
+Mi_Basso = \relative a {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    a1 a2 b2 | % 2
+    c2 a2 d2. e4 | % 3
+    fs2 g2 c,2 f2 ~ | % 4
+    f4 e4 d1 cs2 | % 5
+    d1 a1 | % 6
+    r2 d2 d2 c2 | % 7
+    f2. d4 f2 e2 | % 8
+    d4 c4 bf4 a4 g1 | % 9
+    a1 r2 d2 ~ | \barNumberCheck #10
+    d2 c2 f2. g4 | % 11
+    a1 d,1 | % 12
+    r2 a2 bf2 bf2 | % 13
+    a1 r2 d2 ~ | % 14
+    d2 c2 f2. g4 r2 d2 s1 | % 16
+    f2 e2 d2. c4 | % 17
+    bf2 bf2 a1 | % 18
+    r2 d2 f2 e2 | % 19
+    d2 g1 f2 | \barNumberCheck #20
+    e2 d2 g2 g,2 | % 21
+    bf2 a2 g2 c2 ~ | % 22
+    c2 bf2 a2 g2 ~ | % 23
+    g2 d'2 ~ d4 c4 bf4 a4 | % 24
+    g2 a2 b2 c2 | % 25
+    f,2 f'2 d2 c2 | % 26
+    d1 c1 | % 27
+    r2 c2 f2 f4 e4 | % 28
+    d2 d2 g1 | % 29
+    c,2 c2 f2 f4 e4 | \barNumberCheck #30
+    d2 d2 g,2 g2 | % 31
+    c1 f,2 f2 | % 32
+    bf2 bf4 a4 g2 g2 | % 33
+    c1 f,2 f'2 | % 34
+    bf,2. bf4 c2 c2 | % 35
+    d1 r2 g,2 | % 36
+    c2 c4 bf4 a2 a2 | % 37
+    bf1 a1 | % 38
+    r2 g2 a2 a4 g4 | % 39
+    fs2 fs2 g4 a4 bf4 c4 | \barNumberCheck #40
+    d2 d2 c1 | % 41
+    f2 f4 e4 d2 d2 | % 42
+    c\breve | % 43
+    d1 r2 d2 | % 44
+    ef2 ef4 d4 c2 c2 | % 45
+    d2 d4 c4 b2 b2 | % 46
+    c2 f,2 g2 a2 | % 47
+    bf2 c2 f,2 f'2 | % 48
+    ef2 ef4 d4 c2 c2 | % 49
+    d\breve | \barNumberCheck #50
+    g,\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for Fa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fa_Canto = \relative bf' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    bf1 bf2 bf2 | % 2
+    c1 c1 | % 3
+    d2 f2 ef2 ef2 | % 4
+    d2 d1 c4 bf4 | % 5
+    a4 g4 f2 g4 f4 g4 a4 | % 6
+    bf4 f4 g1 fs2 | % 7
+    g2 d'2 f2 f2 | % 8
+    e1 d1 | % 9
+    c2 a2 r2 g2 | \barNumberCheck #10
+    d'2 d2 c2 a2 | % 11
+    bf2 bf2 a2 d2 | % 12
+    f2 f2 e1 | % 13
+    d2 bf2 a2. bf4 | % 14
+    c1 r2 d2 | % 15
+    f2 f2 e2 d4 c4 | % 16
+    d2 d2 c1 | % 17
+    r2 f,2 g2 a2 | % 18
+    f2 g2 a2 e'2 | % 19
+    f2 f2 e1 | \barNumberCheck #20
+    d2 c4 bf4 a2 d2 | % 21
+    e2 f2 g1 | % 22
+    f2 d2 e4 d4 d2 ~ | % 23
+    d2 cs2 r2 d2 ~ | % 24
+    d2 c2 d2 e2 | % 26
+    f2 f2 e4 d4 c4 bf4 | % 26
+    a4 g4 f2 f'2 f2 | % 27
+    ef1 d1 | % 28
+    r1. f2 | % 29
+    d2 e2 f2 e4 d4 | \barNumberCheck #30
+    c2 d2 a2. bf4 | % 31
+    c2. bf4 a4 g4 f2 | % 32
+    f'2 e2 d2 c4 bf4 | % 33
+    a4 f4 f'1 e2 ~ | % 34
+    e4 d4 d2. cs4 cs4 b8 cs8 | % 35
+    d4 c4 bf4 a4 g2 a2 | % 36
+    bf2 a4 g4 f4 g4 a4 bf4 | % 37
+    c4 a4 d1 c2 | % 38
+    d2 e2 f2 c4 d4 | % 39
+    e4 f4 g2 g,2. a4 | \barNumberCheck #40
+    bf4 c4 d4 e4 f2 f2 | % 41
+    c2. d4 e4 d4 e4 f4 | % 42
+    g2 g,2 a2 a2 | % 43
+    bf2. c4 d2 d2 ~ | % 44
+    d2 c1 bf2 | % 45
+    a\breve \bar "|."
+}
+
+Fa_Tenore = \relative bf' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    r1 r2 bf2 ~ | % 2
+    bf2 a4 g4 a2 a2 | % 3
+    bf2 d1 c2 ~ | % 4
+    c2 bf1 a4 g4 | % 5
+    f2 f'2 ef2 ef2 | % 6
+    d2 c4 bf4 a2 a2 | % 7
+    g1 r2 a2 | % 8
+    c2 c2 bf1 | % 9
+    a2 d2 g2 g2 | \barNumberCheck #10
+    f1 e2 c2 | % 11
+    d1 r2 a2 | % 12
+    d2 d2 ~ d4 c4 cs2 | % 13
+    r2 d2 f2 f2 | % 14
+    e2 c2 d2. d4 | % 15
+    c2 a2 bf2 bf2 | % 16
+    a1 r2 g2 | % 17
+    bf4 a4 d2 e2 f2 ~ | % 18
+    f4 e4 d2 ~ d4 cs8 b8 cs2 | % 19
+    d1 r2 a2 ~ | \barNumberCheck #20
+    a2 g2 a2 bf2 | % 21
+    c2 a2 g2 c2 ~ | % 22
+    c2 b2 c2 d2 | % 23
+    e4 f4 g4 e4 f1 | % 24
+    e1 r1 | % 25
+    r2 d2 g,2 c2 ~ | % 26
+    c2 bf2 a2 a2 | % 27
+    g1 r2 g2 ~ | % 28
+    g2 fs2 g2 a2 | % 29
+    bf2 a1 g2 | \barNumberCheck #30
+    a2. bf4 c2 f,2 | % 31
+    f'2 e4 d4 c2 d2 | % 32
+    a1 f'2 e4 d4 | % 33
+    c1 b2 c2 | % 34
+    d2 g2 e2 e2 | % 35
+    f4 e4 d4 c4 bf4 c4 d2 ~ | % 36
+    d2 cs2 d2 c4 bf4 | % 37
+    a2 g2 d'2 f2 ~ | % 38
+    f2 e4 d4 c4 bf4 c2 | % 39
+    g2. a4 bf4 c4 d2 ~ | \barNumberCheck #40
+    d4 c4 bf4 a8 g8 f4 g4 a4 bf4 | % 41
+    c4 d4 e4 f4 e2. d4 | % 42
+    c2 bf2 a2 d2 ~ | % 43
+    d4 c4 bf4 a4 bf2 bf2 ~ | % 44
+    bf4 a4 a2. g4 g2 ~ | % 45
+    g2 fs4 e4 fs1
+}
+
+Fa_Basso = \relative bf {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    r1 bf1 | % 2
+    f'1 f,1 | % 3
+    bf2. bf4 c2 c2 | % 4
+    d\breve | % 5
+    r2 d2 c2 c2 | % 6
+    bf2 a4 g4 d'2 d2 | % 7
+    g,4 a4 bf4 c4 d2 d2 | % 8
+    c1 g2 d'2 | % 9
+    f2 f2 e1 | \barNumberCheck #10
+    d1 r2 f2 | % 11
+    d2 g2 f2. e4 | % 12
+    d4 e4 f4 g4 a2 a,2 | % 13
+    bf2 g2 d'1 | % 14
+    r2 a2 bf2 bf2 | % 15
+    a2 f2 g2 d'2 | % 16
+    f2 f2 e2 c2 | % 17
+    d2. d4 c2 a2 | % 18
+    bf2 bf2 a1 | % 19
+    r2 d1 c2 | \barNumberCheck #20
+    d2 e2 f2 d2 | % 21
+    c2 f1 e2 | % 22
+    f2 g2 c,2 f2 | % 23
+    e1 d2. c4 | % 24
+    a4 bf4 c2 bf2 g2 | % 25
+    a2 b2 c2 c2 | % 26
+    d1 r2 d2 | % 27
+    g,2 c1 bf2 | % 28
+    a2 a2 g2 d'2 ~ | % 29
+    d2 cs2 d2 e2 | \barNumberCheck #30
+    f2 e4 d4 c2 d2 | % 31
+    a1 r2 d2 ~ | % 32
+    d2 cs2 d2 e2 | % 33
+    f2. e4 d2 c2 | % 34
+    bf2 g2 a1 | % 35
+    r2 g1 fs2 | % 36
+    g2 a2 bf2 a4 g4 | % 37
+    f2 bf1 a2 | % 38
+    bf2 c2 f,4 g4 a4 bf4 | % 39
+    c4 d4 e4 f4 g2 g,2 ~ | \barNumberCheck #40
+    g4 a4 bf4 c4 d4 e4 f4 g4 | % 41
+    a2 a,2. bf4 c4 d4 | % 42
+    e4 f4 g2. fs8 e8 fs4 e8 fs8 | % 43
+    g2 g,2. a4 bf2 | % 44
+    f1 g1 | % 45
+    d'\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for Sol
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Sol_Canto = \relative c'' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*2 | % 3
+    r2 c2 c2 c2 | % 4
+    d2 a2 c4 bf4 a4 g4 | % 5
+    f4 g4 a2. g4 f4 e4 | % 6
+    d2 a'1 g2 | % 7
+    a4 bf4 c4 a4 bf1 | % 8
+    a1 r2 f2 | % 9
+    f2 f2 g2 d2 | \barNumberCheck #10
+    f2. e4 f4 g4 a4 e4 | % 11
+    g2 c,4 f4 ~ f4 e8 d8 e2 | % 12
+    f4 g4 f4 d4 e4 f4 g2 ~ | % 13
+    g2 fs2 g1 ~ | % 14
+    g1 r2 a2 | % 15
+    g2 a2 bf1 | % 16
+    a1 g2. e4 | % 17
+    fs2 fs2 g1 | % 18
+    a2 c2 b2. c4 | % 19
+    d2 c1 b2 | \barNumberCheck #20
+    c4 bf4 a4 g4 f4 g4 a2 ~ | % 21
+    a4 g4 f1 e2 | % 22
+    f2 a2. g8 f8 e4 f4 | % 23
+    g2 d2 f1 | % 24
+    g1 r2 c2 ~ | % 25
+    c4 bf8 a8 g4 a4 bf2 a2 ~ | % 26
+    a2 g2 a2 g4 f4 | % 27
+    e2 e2 f2 d4 e4 | % 28
+    f4 g4 a4 d4 ~ d4 cs8 b8 cs4 cs4 | % 29
+    d4 c4 bf4 a4 bf2 bf2 | % 30
+    a2 f4 g4 a2 a4 bf4 | % 31
+    c2 c2 g2. a4 | \barNumberCheck #32
+    bf4 c4 d2 bf2 a2 | % 33
+    d2 c2 bf4 a4 a2 ~ | % 34
+    a4 g8 f8 g4 f4 a2. g4 | % 35
+    a2 bf2 c2. c4 | % 36
+    bf2 bf2 a1 | % 37
+    g4 f4 e4 d4 c2 c'2 ~ | % 38
+    c4 bf4 a4 g4 f2 g2 | % 39
+    c,2 d1 e2 | % 40
+    f4 g4 a4 bf4 c2. bf8 a8 | % 41
+    g4 a4 bf2 a2 g2 ~ | \barNumberCheck #42
+    g4 f4 f1 e4 d4 | % 43
+    e\breve \bar "|."
+}
+
+Sol_Tenore = \relative c'' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*1 | % 2
+    r2 c2 c2 c2 | % 3
+    d2 a2 c4 bf4 a4 g4 | % 4
+    f4 e4 f2 e2 c'2 | % 5
+    c2 c2 bf2 a2 ~ | % 6
+    a4 g4 f4 d4 e4 f4 d2 | % 7
+    e4 d4 f1 e2 | % 8
+    f2. g4 a4 bf4 c4 a4 | % 9
+    bf1. bf2 | \barNumberCheck #10
+    a1 r2 c2 | % 11
+    bf2 a2 g2 bf2 | % 12
+    a4 g4 a4 bf4 c4 a4 bf2 ~ | % 13
+    bf2 a2 g2 e2 | % 14
+    d2 e2 f2. f4 | % 15
+    e2 fs2 g1 | % 16
+    c,2 c'2 b2 c2 | % 17
+    a2 a2 g2 e2 ~ | % 18
+    e2 fs2 g2. a4 | % 19
+    bf2 c2 d2 f2 | \barNumberCheck #20
+    e4 d4 c4 bf4 a4 g4 f4 e4 | % 21
+    f4 g4 a1 g2 | % 22
+    a2 c2. bf8 a8 g4 a4 | % 23
+    bf1 a2. g8 f8 | % 24
+    e4 f4 g1 f2 ~ | % 25
+    f2 e2 f1 | % 26
+    r2 d2 cs2 d2 ~ | % 27
+    d2 cs2 d4 e4 f4 g4 | % 28
+    a2 f2 e2 e2 | % 29
+    d2 g1 g2 | % 30
+    f2 d4 e4 f2 f2 | % 31
+    e2. d4 e4 f4 g2 ~ | \barNumberCheck #32
+    g2 g2 d2. e4 | % 33
+    f4 g4 a2 f2. e4 | % 34
+    f2 d2 f2 e2 | % 35
+    d1 e4 d4 e4 fs4 | % 36
+    g4 d4 g2. f4 fs2 | % 37
+    g2. f4 e4 d4 c2 | % 38
+    c'2. c4 bf2 bf2 | % 39
+    a4 g4 f4 e4 f2 g2 | % 40
+    a1 r2 g2 | % 41
+    e2 f1 g2 | \barNumberCheck #42
+    a1 g1 ~ | % 43
+    g\breve
+}
+
+Sol_Basso = \relative c' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    c1 c2 c2 | % 2
+    d2 a2 c4 bf4 a4 g4 | % 3
+    f2 a2. g4 f4 e4 | % 4
+    d2 d2 c2 f2 | % 5
+    f2 f2 g2 d2 | % 6
+    f4 g4 a4 bf4 c4 a4 bf2 | % 7
+    a1 g1 | % 8
+    f2. e4 f4 g4 a2 | % 9
+    d,2 d'2 bf2. c4 | \barNumberCheck #10
+    d2 c2 bf2 a2 | % 11
+    g2 f2 g1 | % 12
+    f2 f'2 c2 ef2 | % 13
+    d1 g,2 c2 | % 14
+    b2 c2 f,4 g4 a4 bf4 | % 15
+    c2 a2 g1 | % 16
+    f1 r2 c'2 | % 17
+    d2. c4 b2 c2 | % 18
+    a1 g1 ~ | % 19
+    g1 r2 d'2 | \barNumberCheck #20
+    e2 f2 ~ f4 e4 d4 c4 | % 21
+    bf2 a2 bf2 c2 | % 22
+    f,1 c'2. bf8 a8 | % 23
+    g4 a4 bf2 f2. e8 d8 | % 24
+    c4 d4 e2 f2. g4 | % 25
+    a4 bf4 c2 d2. c4 | % 26
+    bf2 bf2 a1 ~ | % 27
+    a1 d,2 d2 ~ | % 28
+    d4 e4 f4 g4 a2 a2 | % 29
+    bf4 a4 g4 f4 g2 g2 | % 30
+    d2 d'2 d2 d2 | % 31
+    c2 a4 bf4 c2 c2 | \barNumberCheck #32
+    g2. a4 bf4 c4 d2 | % 33
+    bf2 a2 d2. c4 | % 34
+    d2 bf2 a2 c2 ~ | % 35
+    c2 bf2 a1 | % 36
+    g1 r2 d'2 | % 37
+    b2 c2 ~ c4 b4 a4 g4 | % 38
+    f4 g4 a1 g2 | % 39
+    a2 f'1 e2 | % 40
+    d2. d4 c2 c,2 ~ | % 41
+    c2 d1 e2 | \barNumberCheck #42
+    f1 c1 ~ | % 43
+    c\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for SolII
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+SolII_Canto = \relative g'' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    R\breve*2 | % 3
+    r1 g1 | % 4
+    d2 g2 f2 d2 | % 5
+    f2 f2 e1 | % 6
+    r2 d2 a2 d2 | % 7
+    c2 a2 c2 c2 | % 8
+    g4 f4 g4 a4 bf2. a8 g8 | % 9
+    a2 a2 bf1 | \barNumberCheck #10
+    a2 b2 c4 a4 d2 ~ | % 11
+    d4 c4 cs2 d2. c4 | % 12
+    bf2 bf2 a2 b2 | % 13
+    c2 g2 r1 | % 14
+    r1 r2 d'2 | % 15
+    g,2 d'2 c2 bf2 | % 16
+    a4 d2 cs4 d2 d2 | % 17
+    g,2 g'2 d2 g2 | % 18
+    f2 d2 f2 f2 | % 19
+    e1 r2 d2 | \barNumberCheck #20
+    a2 c2 bf2 a2 | % 21
+    g2 f2 bf1 % 22
+    a1 r2 g2 ~ | % 23
+    g2 f2 bf1 | % 24
+    a\breve | % 25
+    r2 d1 c2 | % 26
+    f2 e4 d4 e2 e2 | % 27
+    d2 g,2 a2 bf2 | % 28
+    a1 r2 d2 ~ | % 29
+    d2 c2 f2 d2 ~ | % 30
+    d4 c4 bf2 a2 a2 | \barNumberCheck #31
+    g2 f2 bf2 a2 ~ | % 32
+    a2 f2 f'2 d2 | % 33
+    r2 d1 c2 | % 34
+    f2. f4 e2 e2 | % 35
+    d2. c4 bf4 a4 g2 | % 36
+    a2. g4 fs2 fs2 | % 37
+    g2 d'2 f2 f2 | % 38
+    e2 c2 d2 d2 | % 39
+    c2. c4 bf4 a4 bf4 c4 | % 40
+    d1 d2 d2 | \barNumberCheck #41
+    c2 g2 a2 a2 | % 42
+    b\breve \bar "|."
+}
+
+SolII_Tenore = \relative g'' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    g1 d2 g2 | % 2
+    f2 d2 f2 f2 | % 3
+    c4 bf4 c4 d4 e4 f4 g2 ~ | % 4
+    g2 d1 bf2 | % 5
+    c4 a4 d1 cs2 | % 6
+    d2. e4 f2 f2 | % 7
+    e2 f2. e4 c4 d4 | % 8
+    e4 f4 e2. d4 d2 ~ | % 9
+    d4 c4 cs2 d1 | \barNumberCheck #10
+    r2 d2 a2 bf2 ~ | % 11
+    bf4 a4 g4 a4 bf2 a2 | % 12
+    d1 r2 d2 | % 13
+    a2 d2 c2 a2 | % 14
+    bf2 bf2 a1 | % 15
+    r1 g2 d'2 ~ | % 16
+    d2 g,2 a2 b2 | % 17
+    c4 d4 e4 f4 g2 g,2 | % 18
+    d'2. bf4 a4 g4 a4 bf4 | % 19
+    c4 g4 c1 b2 | \barNumberCheck #20
+    c4 d4 e4 e4 d2. c4 | % 21
+    bf2 a2 g2 f4 g4 | % 22
+    a4 bf4 c4 a4 bf4 c4 d2 ~ | % 23
+    d4 c4 a4. a8 g2 d'2 | % 24
+    c2 f1 e4 d4 | % 25
+    c4 d4 g,2 r2 g2 | % 26
+    a2 b2 c1 | % 27
+    b2 c2 d2. e4 | % 28
+    f2 e4 d4 c2 d2 | % 29
+    e2 g2 f2. e4 | % 30
+    d1 r1 | \barNumberCheck #31
+    r2 d1 c2 | % 32
+    f2 d2. c4 bf2 | % 33
+    a2 a2 g1 | % 34
+    r2 d'1 c2 | % 35
+    f2. e4 f2 e2 ~ | % 36
+    e4 d4 d2. c4 a2 | % 37
+    bf2 g2 a2. f4 | % 38
+    g2 a2 bf1 | % 39
+    a2 a2 g2 d'2 ~ | % 40
+    d4 c4 bf4 a4 bf2 g2 | \barNumberCheck #41
+    a4 g4 g2. f4 fs2 | % 42
+    g\breve
+}
+
+SolII_Basso = \relative g' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    r1 g1 | % 2
+    d2 g2 f2 d2 | % 3
+    f2 f2 e4 d4 e4 f4 | % 4
+    g2 g2 d2 g2 | % 5
+    f2 d2 a'1 | % 6
+    d,1 r2 d2 | % 7
+    a2 d2 c2 a2 | % 8
+    c2 c2 bf1 | % 9
+    a1 r2 g'2 | \barNumberCheck #10
+    d2 g2 f2 d2 | % 11
+    e1 d1 | % 12
+    r2 g,2 d'2 g,2 | % 13
+    a2 b2 c2 d2 | % 14
+    g,2 g'2 d2 f2 | % 15
+    e2 d2 e2 g2 | % 16
+    f2 e2 d1 | % 17
+    c1 bf2. c4 | % 18
+    d4 e4 f4 g4 d1 | % 19
+    r1 g,1 | \barNumberCheck #20
+    c2 c2 g2 d'2 | % 21
+    g2 d2 bf4 c4 d4 bf4 | % 22
+    f'2 f,2 g4 a4 bf4 g4 | % 23
+    a2 d,2 g1 | % 24
+    r2 d'1 c2 | % 25
+    f2 e4 d4 e2 e2 | % 26
+    d1 r2 c2 | % 27
+    d2 e2 f2 d2 ~ | % 28
+    d2 c2 f1 | % 29
+    e1 d1 | % 30
+    r2 g,1 f2 | \barNumberCheck #31
+    bf2. a4 g2 a2 | % 32
+    d,2 d'1 g2 ~ | % 33
+    g2 f1 ef2 | % 34
+    d1 g,2 a2 | % 35
+    bf2 c2 d2. e4 | % 36
+    fs2 g2 d1 | % 37
+    r2 g,2 d'2 d2 | % 38
+    c1 bf4 c4 d4 e4 | % 39
+    f2 f,2 g2. a4 | % 40
+    bf4 c4 d1 bf2 | \barNumberCheck #41
+    c2 ef2 d1 | % 42
+    g,\breve
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes for La
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+La_Canto = \relative d'' {
+    \key f \major \numericTimeSignature\time 4/2 | % 1
+    d1 d2 d2 | % 2
+    c1 bf2. a4 | % 3
+    g4 a4 bf4 g4 a1 | % 4
+    f2 f'2 f2 f2 | % 5
+    e2. d4 c4 d4 e4 c4 | % 6
+    d1 d2 d2 | % 7
+    c1 bf2. a4 | % 8
+    g4 a4 bf4 g4 a2. g4 | % 9
+    f4 g4 a4 f4 g2. a4 | \barNumberCheck #10
+    bf2 a2 d2. c4 | % 11
+    bf2 a2. g4 g2 ~ | % 12
+    g2 fs2 g1 | % 13
+    a2. g4 a4 bf4 c2 | % 14
+    g2 g'2 f2 d4 e4 | % 15
+    f2 f2 e1 | % 16
+    d1 r2 a2 | % 17
+    bf2 g4 a4 bf2 bf2 | % 18
+    a1 g2. a4 | % 19
+    bf2 bf2 a4 bf4 c4 d4 | \barNumberCheck #20
+    c1 bf2 g2 | % 21
+    a2. f4 g2 a2 | % 22
+    bf1 a4 g4 a4 bf4 | % 23
+    c2 c2 bf2. a8 g8 | % 24
+    a2. f4 g2 a2 | % 25
+    bf1 a1 | % 26
+    g1 f1 | % 27
+    r2 c'2 d2. bf4 | % 28
+    c2 d2 ef1 | % 29
+    d2. c8 bf8 c2. bf8 a8 | \barNumberCheck #30
+    bf2. a8 g8 a2 a2 | % 31
+    g2 d'2 f2 f2 | % 32
+    e1 d1 | % 33
+    r2 d2 g,2 c2 | % 34
+    bf2 g2 a2 b2 | % 35
+    c1 bf2 a4 g4 | % 36
+    f2 g2 a2. bf4 | % 37
+    c2 bf2 a4 g4 g2 ~ | % 38
+    g2 fs2 g1 | % 39
+    f2. g4 a2 g2 ~ | \barNumberCheck #40
+    g4 g4 g1 fs2 | % 41
+    g\breve \bar "|."
+}
+
+La_Tenore = \relative d'' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*1 | % 2
+    r1 d1 | % 3
+    d2 d2 c1 | % 4
+    bf2. a8 g8 a4 g4 a4 bf4 | % 5
+    c2 g2. f4 g4 a4 | % 6
+    bf2 bf2. a4 g2 ~ | % 7
+    g2 fs2 g2. a4 | % 8
+    bf4 c4 d4 e4 f2 c2 | % 9
+    d2 d2. cs8 b8 cs2 | \barNumberCheck #10
+    d2. c4 bf4 a4 g2 | % 11
+    d'2 c2. bf8 a8 bf4 g4 | % 12
+    a4 bf4 c1 bf2 | % 13
+    a2 d2 c2 a4 bf4 | % 14
+    c2 g4 a4 bf4 c4 d2 ~ | % 15
+    d4 c4 bf4 a8 g8 a2 a2 | % 16
+    bf4 a4 d2. cs8 b8 cs2 | % 17
+    d4 c4 bf4 a4 g2 g'2 ~ | % 18
+    g4 f4 fs2 g1 | % 19
+    r2 g,2 a2. f4 | \barNumberCheck #20
+    g2 a2 bf1 | % 21
+    a2 d2 e2. c4 | % 22
+    d2 e2 f1 | % 23
+    e1 d2. e4 | % 24
+    f2 f2 e2. c4 | % 25
+    d2 d2 c1 | % 26
+    bf2 c2. bf4 bf2 ~ | % 27
+    bf4 a8 g8 a4 g8 a8 bf2 g2 | % 28
+    a2 f2 g2 a2 | % 29
+    bf1 a1 | \barNumberCheck #30
+    g1 r2 a2 | % 31
+    bf2. g4 a2 b2 | % 32
+    c1 bf1 | % 33
+    a2 d2 e2. c4 | % 34
+    d2 e2 f1 | % 35
+    e1 d2 c4 bf4 | % 36
+    a2 bf2 c2. bf8 a8 | % 37
+    g2 d'2 ef2. d4 | % 38
+    c2 c2 bf2 g2 | % 39
+    a2 bf2 c2 c2 ~ | \barNumberCheck #40
+    c4 bf4 bf4 a8 g8 a2 a2 | % 41
+    b\breve
+}
+
+La_Basso = \relative d' {
+    \key f \major \numericTimeSignature\time 4/2
+    R\breve*3 | % 4
+    d1 d2 d2 | % 5
+    c\breve | % 6
+    bf2. a4 g4 a4 bf4 g4 | % 7
+    a1 g2 g'2 | % 8
+    g2 g2 f2. e4 | % 9
+    d4 e4 f4 d4 e1 | \barNumberCheck #10
+    d2 d2. c4 bf4 c4 | % 11
+    d4 bf4 c1 bf2 | % 12
+    a1 g2 g'2 | % 13
+    f2 d4 e4 f2 f2 | % 14
+    e1 d2 bf2 ~ | % 15
+    bf4 c4 d2. cs8 b8 cs2 | % 16
+    d2 g,2 a1 | % 17
+    g1 r1 | % 18
+    r2 d'2 e2. c4 | % 19
+    d2 e2 f1 | \barNumberCheck #20
+    e2 d4 c4 d2 e2 | % 21
+    f2 d2 c2 a2 | % 22
+    g1 r2 d'2 | % 23
+    c2. a4 bf2 g2 | % 24
+    f1 c'1 | % 25
+    bf2. g4 a2 f2 | % 26
+    g2 a2 bf1 | % 27
+    f1 bf1 | % 28
+    r1. c2 | % 29
+    bf2 g2 a2 f2 | \barNumberCheck #30
+    g2 g'2. fs8 e8 fs2 | % 31
+    g2 g,2 d'1 | % 32
+    r2 a2 bf2. g4 | % 33
+    a2 b2 c2. a4 | % 34
+    bf2 c2 f,2 r4 d'4 | % 35
+    c2 a2 bf2 c2 | % 36
+    d2 c4 bf4 a2 f'2 | % 37
+    ef2 d2 c2. bf4 | % 38
+    a2 a2 g1 | % 39
+    d'1 c2. d4 | \barNumberCheck #40
+    ef2 ef2 d1 | % 41
+    g,\breve
+}
