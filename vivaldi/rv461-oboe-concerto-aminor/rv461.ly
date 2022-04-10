@@ -19,42 +19,45 @@
         skipBars = ##t
         }
     }
-PartPOneVoiceOne =  \relative a' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key c \major | % 1
-    a8 -\markup{ \tiny {Allegro non molto} } s8*7 \once \omit
-    TupletBracket
-    \times 2/3  {
-        c16*63/64 ( b16*129/128 a16*129/128 ) }
+
+DaCapo = \markup{ \bold\small {Da capo} }
+
+Markup_MvI = { \time 4/4 \partial 8 r8 | s1*61 | r2. r8 -\DaCapo }
+
+Solo_MvI = \relative a' {
+    \time 4/4 \key c \major
+    \partial 8 a8 | % 1
     \once \omit TupletBracket
-    \times 2/3  {
-        e'16*63/64 ( d16*129/128 c16*129/128 ) }
+    \times 2/3 { c16 ( b16 a16 ) }
+    \once \omit TupletBracket
+    \times 2/3  { e'16 ( d16 c16 ) }
     a'8 e8 f8 e8 r8 a,8 | % 2
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 ( b16*129/128 a16*129/128 ) }
+        c16 ( b16 a16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 ( d16*129/128 c16*129/128 ) }
+        e'16 ( d16 c16 ) }
     f8 a,8 gs8 a8 r8 e'8 | % 3
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 ( e16*129/128 d16*129/128 ) }
+        f16 ( e16 d16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 ( e16*129/128 d16*129/128 ) }
+        f16 ( e16 d16 ) }
     g8 d8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 ( d16*129/128 c16*129/128 ) }
+        e16 ( d16 c16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 ( d16*129/128 c16*129/128 ) }
+        e16 ( d16 c16 ) }
     f8 c8 | % 4
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 ( c16*129/128 b16*129/128 ) }
+        d16 ( c16 b16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 ( c16*129/128 b16*129/128 ) }
+        d16 ( c16 b16 ) }
     e8 b8 c8 a8 r8 e'8 -\p | % 5
     ds16 ( e16 fs16 g16 a16 fs16 e16 fs16 ) g16 ( e16 ds16 e16 fs16 g16
     a16 fs16 ) | % 6
@@ -64,88 +67,88 @@ PartPOneVoiceOne =  \relative a' {
     f16 ( d16 cs16 d16 e16 f16 g16 e16 ) f8 d8 r8 a8 -\f | % 9
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 ( a16*129/128 g16*129/128 ) }
+        b16 ( a16 g16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        d'16*63/64 ( c16*129/128 b16*129/128 ) }
+        d'16 ( c16 b16 ) }
     g'8 g,8 \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 ( g16*129/128 f16*129/128 ) }
+        a16 ( g16 f16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 ( b16*129/128 a16*129/128 ) }
+        c'16 ( b16 a16 ) }
     f'8 a,8 | \barNumberCheck #10
     \once \omit TupletBracket
     \times 2/3  {
-        gs16*63/64 ( fs16*129/128 e16*129/128 ) }
+        gs16 ( fs16 e16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        b'16*63/64 ( a16*129/128 gs16*129/128 ) }
+        b'16 ( a16 gs16 ) }
     e'8 b8 c16 c8 e16 c16 c8 e16 | % 11
     c16 c8 e16 c16 c8 e16 gs16 a16 b16 d,16 b16 c16 d16 gs,16 | % 12
     c8 a'8 b,8 gs'8 a4 \fermata -\markup{ \tiny {Fine} } r8 e8 -\markup{
         \tiny\italic {solo} } | % 13
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 b16*129/128 a16*129/128 }
+        c16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 d16*129/128 c16*129/128 }
+        e'16 d16 c16 }
     a'8 e8 \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 a16*129/128 g16*129/128 }
+        f16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 a16*129/128 g16*129/128 }
+        f16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     | % 14
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 g16*129/128 f16*129/128 }
+        e16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 g16*129/128 f16*129/128 }
+        e16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 f16*129/128 e16*129/128 }
+        d16 f16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 f16*129/128 e16*129/128 }
+        d16 f16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     | % 15
     c8 a8 r8 e'8 \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 b16*129/128 a16*129/128 }
+        c16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 d16*129/128 c16*129/128 }
+        e'16 d16 c16 }
     a'8 e8 | % 16
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 g16*129/128 a16*129/128 }
+        f16 g16 a16 }
     a8 r8 d,8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 f16*129/128 g16*129/128 }
+        e16 f16 g16 }
     g8 r8 c,8 | % 17
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 e16*129/128 f16*129/128 }
+        d16 e16 f16 }
     f8 r8 b,8 c16 a16 a'4. ( | % 18
     a16 ) g16 fs16 e16 fs16 e16 ds16 cs16 ds16 b16 b'4. ( | % 19
     b16 ) a16 g16 fs16 g16 fs16 e16 ds16 e16 g16 fs8 ( fs16 ) a16 g16 fs16
@@ -160,70 +163,70 @@ PartPOneVoiceOne =  \relative a' {
     a16 b16 cs16 d16 e16 cs16 b16 a16 f'16 e16 d8 r8 d8 | % 26
     \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     f'8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 cs16*129/128 }
+        e16 d16 cs16 }
     d8 \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     f'8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 cs16*129/128 }
+        e16 d16 cs16 }
     d8 | % 27
     \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     r8 r8 a'8 \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     | % 28
     \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     cs8. d16 d8 -\markup{ \tiny\italic {Tutti} } \once \omit
     TupletBracket
     \times 2/3  {
-        a'16*63/64 g16*129/128 f16*129/128 }
+        a'16 g16 f16 }
     d'8 a8 | % 29
     bf8 a8 r8 d,8 \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a'16*63/64 g16*129/128 f16*129/128 }
+        a'16 g16 f16 }
     bf8 d,8 | \barNumberCheck #30
     cs8 d8 r8 a'8 \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     c8 g8 | % 31
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     bf8 f8 \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     a8 e8 | % 32
     f16 f8 a16 f16 f8 a16 f16 f8 a16 f16 f8 a16 | % 33
     e16 f16 g16 cs,16 g'16 a16 bf16 e,16 f8 d8 e8 cs8 | % 34
@@ -234,136 +237,136 @@ PartPOneVoiceOne =  \relative a' {
     bf4 bf'4 ( bf16 ) a16 g16 f16 e16 d16 c16 bf16 | % 38
     a16 g16 f8 c'4 \once \omit TupletBracket
     \times 2/3  {
-        f,16*63/64 a16*129/128 bf16*129/128 }
+        f,16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 bf16*129/128 a16*129/128 }
+        c16 bf16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 a16*129/128 bf16*129/128 }
+        f16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 bf16*129/128 a16*129/128 }
+        c16 bf16 a16 }
     | % 39
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 bf16*129/128 c16*129/128 }
+        f16 bf16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 bf16*129/128 }
+        d16 c16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 bf16*129/128 c16*129/128 }
+        f16 bf16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 bf16*129/128 }
+        d16 c16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e,16*63/64 g16*129/128 a16*129/128 }
+        e,16 g16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 g16*129/128 a16*129/128 }
+        e16 g16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     | \barNumberCheck #40
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 a16*129/128 bf16*129/128 }
+        e16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 bf16*129/128 a16*129/128 }
+        c16 bf16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 a16*129/128 bf16*129/128 }
+        e16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 bf16*129/128 a16*129/128 }
+        c16 bf16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d,16*63/64 f16*129/128 g16*129/128 }
+        d,16 f16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 f16*129/128 g16*129/128 }
+        d16 f16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     | % 41
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 g16*129/128 a16*129/128 }
+        d16 g16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 g16*129/128 a16*129/128 }
+        d16 g16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c,16*63/64 d16*129/128 e16*129/128 }
+        c,16 d16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 f16*129/128 g16*129/128 }
+        e16 f16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 a16*129/128 bf16*129/128 }
+        g16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 c16*129/128 d16*129/128 }
+        bf16 c16 d16 }
     | % 42
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 f16*129/128 g16*129/128 }
+        e16 f16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 a16*129/128 bf16*129/128 }
+        g16 a16 bf16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     a8 f8 r8 c8 | % 43
     f32 g32 a8. ( a16 ) g32 f32 e32 d32 c32 bf32 a8. g32 f32 g4 | % 44
     f8 -\markup{ \tiny\italic {Tutti} } \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 bf16*129/128 a16*129/128 }
+        c'16 bf16 a16 }
     f'8 c8 d8 c8 r8 f,8 | % 45
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 bf16*129/128 a16*129/128 }
+        c'16 bf16 a16 }
     d8 f,8 e8 f8 r8 f'8 | % 46
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     g8 d8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     f8 c8 | % 47
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     e8 b8 c8 a8 r8 -\markup{ \tiny\italic {solo} } e'8 | % 48
     e32 a,32 b32 c32 d32 e32 fs32 gs32 a8 e8 f8 e8 r8 a,8 | % 49
     gs32 e32 fs32 gs32 a32 b32 c32 d32 e8 b8 c8 a8 r8 e'8 |
@@ -374,78 +377,76 @@ PartPOneVoiceOne =  \relative a' {
     c8 a8 r8 a'8 ds,2 | % 54
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 fs16*129/128 g16*129/128 }
+        e16 fs16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 a16*129/128 b16*129/128 }
+        g16 a16 b16 }
     b8 r8 cs,2 | % 55
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 e16*129/128 f16*129/128 }
+        d16 e16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 g16*129/128 a16*129/128 }
+        f16 g16 a16 }
     a8 r8 b,2 | % 56
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 d16*129/128 e16*129/128 }
+        c16 d16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 f16*129/128 g16*129/128 }
+        e16 f16 g16 }
     g8 r8 a,2 | % 57
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 c16*129/128 d16*129/128 }
+        b16 c16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 e16*129/128 f16*129/128 }
+        d16 e16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     c16 e8. d16 f8. | % 58
     e16 a8. gs16 b8. \once \omit TupletBracket
     \times 2/3  {
-        c,16*63/64 b16*129/128 a16*129/128 }
+        c,16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 b16*129/128 a16*129/128 }
+        c16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     | % 59
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 b16*129/128 a16*129/128 }
+        c16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     c8 ( b8 ) a4 r8 e'8 | \barNumberCheck #60
     ds16 ds16 e16 ds16 d16 d16 e16 d16 cs16 cs16 d16 cs16 c16 c16 d16 c16
     | % 61
     \once \omit TupletBracket
-    \times 2/3  {
-        b16*63/64 e,16*129/128 fs16*129/128 }
+    \times 2/3  { b16 e,16 fs16 }
     \once \omit TupletBracket
-    \times 2/3  {
-        gs16*63/64 fs16*129/128 e16*129/128 }
+    \times 2/3  { gs16 fs16 e16 }
     \once \omit TupletBracket
-    \times 2/3  {
-        d'16*63/64 b16*129/128 c16*129/128 }
+    \times 2/3  { d'16 b16 c16 }
     \once \omit TupletBracket
-    \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+    \times 2/3  { d16 c16 b16 }
     c32 a32 b32 c32 d32 e32 fs32 gs32 a32 a,32 b32 c32 d32 e32 fs32 gs32
-    s1 \bar "||"
-    a8 a,16 b16 b4 a4 \time 3/4 c8 -. -\markup{ \bold\small {Da Capo} }
-    -\markup{ \tiny {Larghetto} } g8 -. g8 -. c8 -. c8 -. e8 -. r8 d8 d8
-    b8 b8 f'8 r8 e8 e8 c8 c8 bf'8 r8 a8 a8 f8 f8 c'8 r8 \fermata d,,8
-    -\p d8 g8 g8 b8 r8 e,8 e8 g8 g8 c8 r8 d,8 d8 g8 g8 b8 r8 c8 -\f d4 b4
+    a8 a,16 b16 b4 a4 r8
+}
+
+Solo_MvII = \relative c'' {
+    \time 3/4 c8 -.  g8 -. g8 -. c8 -. c8 -. e8 -. r8 d8 d8
+    b8 b8 f'8 r8 e8 e8 c8 c8 bf'8 r8 a8 a8 f8 f8 c'8 b2. \fermata |
+    r8 d,,8 -\p d8 g8 g8 b8 r8 e,8 e8 g8 g8 c8 r8 d,8 d8 g8 g8 b8 r8 c8 -\f d4 b4
     c4 r8 g'16 f16 e4 d4 r8 f16 e16 d4 c4 r8 e16 d16 c4 b32 ( c32 d8. )
     f32 ( g32 a8. ) d,32 ( e32 f8. ) e8 c32 b32 c32 d32 e16 f16 g16 a16
     b16 c16 e,8 d8 ( d32 ) e32 fs32 g32 a16 g16 fs16 e16 d16 c16 b16 a16
@@ -459,34 +460,39 @@ PartPOneVoiceOne =  \relative a' {
     d16 e16 f16 e16 c16 c8 r16 c32 d32 e16 d32 c32 g'16 e16 d16 c16 d16
     b16 b8 r16 b32 c32 d16 c32 b32 g'16 d16 c16 b16 e16 c16 c8 g'16 c,16
     c8 g'16 bf,16 bf8 a4 \times 2/3 {
-        r16*63/64 a16*129/128 ( b16*129/128 }
+        r16 a16 ( b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 d16*129/128 e16*129/128 }
+        c16 d16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 g16*129/128 a16*129/128 ) }
+        f16 g16 a16 ) }
     a8 \once \omit TupletBracket
     \times 2/3  {
-        b,16*63/64 a16*129/128 g16*129/128 }
+        b,16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d'16*63/64 c16*129/128 b16*129/128 }
+        d'16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 a16*129/128 g16*129/128 }
+        b16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f'16*63/64 e16*129/128 d16*129/128 }
+        f'16 e16 d16 }
     e8 d8 c2 ( c32 ) d32 e32 f32 g16 c,16 d4. c8 c8 g8 g8 c8 c8 e8 r8 d8
     d8 b8 b8 f'8 e4 f4 d4 c2. \fermata \bar "|."
-    \time 4/4  a16 -\markup{ \tiny {Allegro} } b16 c16 b16 a8 r8 c16 d16
+}
+
+Markup_MvIII = { \time 4/4 s1*65 r2 r2-\DaCapo }
+
+Solo_MvIII = \relative a' {
+    \time 4/4  a16 b16 c16 b16 a8 r8 c16 d16
     e16 d16 c8 r8 a'8 c,8 a8 a'8 gs32 ( a32 b8. ) d,32 ( e32 f8. ) b,32
     ( c32 d8. ) gs,32 ( a32 b8. ) c8 e8 a4 r8 e8 a8 e8 f16 g16 f16 g16 f16
     a16 g16 f16 e16 f16 e16 f16 e16 g16 f16 e16 d16 e16 d16 e16 d16 f16
@@ -530,44 +536,45 @@ PartPOneVoiceOne =  \relative a' {
     a4 r8 e'8 f2 | % 64
     e2 ds2 | % 65
     e8 f8 \grace { e8 ( } {} d8 ) c16 b16 c8 b16 a16 b4 | % 66
-    a4 s8 \bar "||"
-    -\markup{ \bold\small {Da capo} } }
+    a4 r4 r2 \bar "||"
+}
 
-PartPTwoVoiceOne =  \relative a' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key c \major | % 1
-    a8 s8*7 \once \omit TupletBracket
-    \times 2/3  {
-        c16*63/64 ( b16*129/128 a16*129/128 ) }
+ViolinI_MvI =  \relative a' {
+    \time 4/4 \key c \major
+    \partial 8 a8 | % 1
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 ( d16*129/128 c16*129/128 ) }
+        c16 ( b16 a16 ) }
+    \once \omit TupletBracket
+    \times 2/3  {
+        e'16 ( d16 c16 ) }
     a'8 e8 f8 e8 r8 a,8 | % 2
     \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 ( b16*129/128 a16*129/128 ) }
+        c16 ( b16 a16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 ( d16*129/128 c16*129/128 ) }
+        e'16 ( d16 c16 ) }
     f8 a,8 gs8 a8 r8 e'8 | % 3
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 ( e16*129/128 d16*129/128 ) }
+        f16 ( e16 d16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 ( e16*129/128 d16*129/128 ) }
+        f16 ( e16 d16 ) }
     g8 d8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 ( d16*129/128 c16*129/128 ) }
+        e16 ( d16 c16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 ( d16*129/128 c16*129/128 ) }
+        e16 ( d16 c16 ) }
     f8 c8 | % 4
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 ( c16*129/128 b16*129/128 ) }
+        d16 ( c16 b16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 ( c16*129/128 b16*129/128 ) }
+        d16 ( c16 b16 ) }
     e8 b8 c8 a8 r8 e'8 -\p | % 5
     ds16 ( e16 fs16 g16 a16 fs16 e16 fs16 ) g16 ( e16 ds16 e16 fs16 g16
     a16 fs16 ) | % 6
@@ -577,23 +584,23 @@ PartPTwoVoiceOne =  \relative a' {
     f16 ( d16 cs16 d16 e16 f16 g16 e16 ) f8 d8 r8 a8 -\f | % 9
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 ( a16*129/128 g16*129/128 ) }
+        b16 ( a16 g16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        d'16*63/64 ( c16*129/128 b16*129/128 ) }
+        d'16 ( c16 b16 ) }
     g'8 g,8 \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 ( g16*129/128 f16*129/128 ) }
+        a16 ( g16 f16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 ( b16*129/128 a16*129/128 ) }
+        c'16 ( b16 a16 ) }
     f'8 a,8 | \barNumberCheck #10
     \once \omit TupletBracket
     \times 2/3  {
-        gs16*63/64 ( fs16*129/128 e16*129/128 ) }
+        gs16 ( fs16 e16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        b'16*63/64 ( a16*129/128 gs16*129/128 ) }
+        b'16 ( a16 gs16 ) }
     e'8 b8 c16 c8 e16 c16 c8 e16 | % 11
     c16 c8 e16 c16 c8 e16 gs16 a16 b16 d,16 b16 c16 d16 gs,16 | % 12
     c8 a'8 b,8 gs'8 a4 \fermata r4 | % 13
@@ -612,37 +619,37 @@ PartPTwoVoiceOne =  \relative a' {
     e4 r4 r2 | % 28
     r2 \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 ( e16*129/128 d16*129/128 ) }
+        f16 ( e16 d16 ) }
     \once \omit TupletBracket
     \times 2/3  {
-        a'16*63/64 ( g16*129/128 f16*129/128 ) }
+        a'16 ( g16 f16 ) }
     d'8 a8 | % 29
     bf8 a8 r8 d,8 \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a'16*63/64 g16*129/128 f16*129/128 }
+        a'16 g16 f16 }
     bf8 d,8 | \barNumberCheck #30
     cs8 d8 r8 a'8 \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        bf16*63/64 a16*129/128 g16*129/128 }
+        bf16 a16 g16 }
     c8 g8 | % 31
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     bf8 f8 \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     \once \omit TupletBracket
     \times 2/3  {
-        g16*63/64 f16*129/128 e16*129/128 }
+        g16 f16 e16 }
     a8 e8 | % 32
     f16 f8 a16 f16 f8 a16 f16 f8 a16 f16 f8 a16 | % 33
     e16 f16 g16 cs,16 g'16 a16 bf16 e,16 f8 d8 e8 cs8 | % 34
@@ -656,96 +663,98 @@ PartPTwoVoiceOne =  \relative a' {
     c4 r4 r2 | % 44
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 bf16*129/128 a16*129/128 }
+        c'16 bf16 a16 }
     f'8 c8 d8 c8 r8 f,8 | % 45
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 bf16*129/128 a16*129/128 }
+        c'16 bf16 a16 }
     d8 f,8 e8 f8 r8 f'8 | % 46
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     \once \omit TupletBracket
     \times 2/3  {
-        f16*63/64 e16*129/128 d16*129/128 }
+        f16 e16 d16 }
     g8 d8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 c16*129/128 }
+        e16 d16 c16 }
     f8 c8 | % 47
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     e8 b8 c8 a8 r4 | % 48
     R1*5 | % 53
     r2 \once \omit TupletBracket
     \times 2/3  {
-        fs'16*63/64 e16*129/128 ds16*129/128 }
+        fs'16 e16 ds16 }
     \once \omit TupletBracket
     \times 2/3  {
-        ds16*63/64 cs16*129/128 b16*129/128 }
+        ds16 cs16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        fs'16*63/64 e16*129/128 ds16*129/128 }
+        fs'16 e16 ds16 }
     \once \omit TupletBracket
     \times 2/3  {
-        ds16*63/64 cs16*129/128 b16*129/128 }
+        ds16 cs16 b16 }
     | % 54
     b'8 r8 r8 g8 \once \omit TupletBracket
     \times 2/3  {
-        e16*63/64 d16*129/128 cs16*129/128 }
+        e16 d16 cs16 }
     \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        e'16*63/64 d16*129/128 cs16*129/128 }
+        e'16 d16 cs16 }
     \once \omit TupletBracket
     \times 2/3  {
-        cs16*63/64 b16*129/128 a16*129/128 }
+        cs16 b16 a16 }
     | % 55
     a'8 r8 r8 f8 \once \omit TupletBracket
     \times 2/3  {
-        d16*63/64 c16*129/128 b16*129/128 }
+        d16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 a16*129/128 g16*129/128 }
+        b16 a16 g16 }
     \once \omit TupletBracket
     \times 2/3  {
-        d'16*63/64 c16*129/128 b16*129/128 }
+        d'16 c16 b16 }
     \once \omit TupletBracket
     \times 2/3  {
-        b16*63/64 a16*129/128 g16*129/128 }
+        b16 a16 g16 }
     | % 56
     g'8 r8 r8 e8 \once \omit TupletBracket
     \times 2/3  {
-        c16*63/64 b16*129/128 a16*129/128 }
+        c16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     \once \omit TupletBracket
     \times 2/3  {
-        c'16*63/64 b16*129/128 a16*129/128 }
+        c'16 b16 a16 }
     \once \omit TupletBracket
     \times 2/3  {
-        a16*63/64 g16*129/128 f16*129/128 }
+        a16 g16 f16 }
     | % 57
     f'8 r8 r4 c8 c8 d8 d8 | % 58
     e8 c8 d8 d8 c8 d8 c8 d8 | % 59
     c8 d8 c8 b8 c4 r4 | \barNumberCheck #60
-    R1*3 \bar "||"
-    \time 3/4  c8 -. g8 -. g8 -. c8 -. c8 -. e8 -. r8 d8 d8 b8 b8 f'8 r8
+    R1*2 | r2. r8 \bar "||"
+}
+ViolinI_MvII = \relative c'' {
+    \time 3/4 c8 -. g8 -. g8 -. c8 -. c8 -. e8 -. r8 d8 d8 b8 b8 f'8 r8
     e8 e8 c8 c8 bf'8 r8 a8 a8 f8 f8 c'8 b2. \fermata r8 -\p d,,8 d8 g8 g8
     b8 r8 e,8 e8 g8 g8 c8 r8 d,8 d8 g8 g8 b8 r8 c8 -\f d4 b4 c8 e8 e8 e8
     e8 e8 d8 d8 d8 d8 d8 d8 e8 g,8 g8 g8 g8 g8 b8 b8 b8 b8 b8 b8 g8 g8 g8
@@ -756,6 +765,8 @@ PartPTwoVoiceOne =  \relative a' {
     b8 g8 g8 g8 g8 g8 g8 a8 a8 a8 a8 a8 a8 b8 b8 b8 b8 b8 b8 g8 g8 g8 g8
     g8 g8 e'8 e8 d8 d8 d8 d8 c8 g8 g8 c8 c8 e8 r8 d8 d8 b8 b8 f'8 e4 f4
     d4 c2. \fermata \bar "|."
+}
+ViolinI_MvIII = \relative a' {
     \time 4/4  a16 b16 c16 b16 a8 r8 c16 d16 e16 d16 c8 r8 a'8 c,8 a8 a'8
     gs32 ( a32 b8. ) d,32 ( e32 f8. ) b,32 ( c32 d8. ) gs,32 ( a32 b8. )
     c8 e8 a4 r8 e8 a8 e8 f16 g16 f16 g16 f16 a16 g16 f16 e16 f16 e16 f16
@@ -785,12 +796,12 @@ PartPTwoVoiceOne =  \relative a' {
     r4 r8 e8 f8 f8 f8 f8 | % 64
     e8 e8 e8 e8 ds8 ds8 ds8 ds8 | % 65
     e8 e8 e8 e8 e8 c8 b8 b8 | % 66
-    c4 s2. \bar "||"
-    }
+    c4 r4 r2 \bar "||"
+}
 
-PartPThreeVoiceOne =  \relative e' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key c \major | % 1
-    e8 s8*7 a16 e16 c'16 a16 e'8 c8 d8 c8 r8 e,8 | % 2
+ViolinII_MvI =  \relative e' {
+    \time 4/4 \key c \major \partial 8 e8 | % 1
+    a16 e16 c'16 a16 e'8 c8 d8 c8 r8 e,8 | % 2
     a16 e16 c'16 a16 a8 fs8 e8 e8 r8 c'8 | % 3
     d2 c2 | % 4
     b2 a4 r8 b8 -\p | % 5
@@ -842,7 +853,10 @@ PartPThreeVoiceOne =  \relative e' {
     b8 r8 r4 e8 e8 gs8 b8 | % 58
     c8 a8 b8 gs8 e8 f8 e8 f8 | % 59
     e8 e16 a16 a8 gs8 e4 r4 | \barNumberCheck #60
-    R1*3 \bar "||"
+    R1*2 | r2. r8 \bar "||"
+}
+
+ViolinII_MvII = \relative g' {
     \time 3/4  g8 -. e8 -. e8 -. g8 -. g8 -. c8 -. r8 b8 b8 g8 g8 d'8 r8
     c8 c8 g8 g8 g'8 r8 f8 f8 c8 c8 f8 f2. \fermata r8 -\p b,,8 b8 d8 d8
     g8 r8 c,8 c8 e8 e8 g8 r8 b,8 b8 d8 d8 g8 r8 e'8 -\f f4 d4 c8 g8 g8 g8
@@ -854,6 +868,8 @@ PartPThreeVoiceOne =  \relative e' {
     e8 c'8 c8 b8 b8 b8 b8 g8 g8 e8 e8 e8 e8 e8 e8 c8 c8 c8 c8 c8 a'8 d,8
     d8 d8 d8 d8 b'8 e,8 e8 e8 e8 e8 e8 g8 g8 b8 b8 b8 b8 g8 e8 e8 g8 g8
     c8 r8 b8 b8 g8 g8 d'8 c4 d4 b4 c2. \fermata \bar "|."
+}
+ViolinII_MvIII = \relative a' {
     \time 4/4  r2 a16 b16 c16 b16 a8 r8 c16 d16 e16 d16 c8 r8 e32 ( fs32
     gs8. ) b,32 ( c32 d8. ) gs,32 ( a32 b8. ) e,32 ( fs32 gs8. ) a4 r8
     e'8 a4 r8 c,8 d16 e16 d16 e16 d16 f16 e16 d16 c16 d16 c16 d16 c16 e16
@@ -883,12 +899,12 @@ PartPThreeVoiceOne =  \relative e' {
     r4 r8 c8 d8 d8 d8 d8 | % 64
     c8 c8 c8 c8 b8 b8 b8 b8 | % 65
     b8 b8 b8 b8 c8 a8 a8 gs8 | % 66
-    a4 s2. \bar "||"
-    }
+    a4 r4 r2 \bar "||"
+}
 
-PartPFourVoiceOne =  \relative e' {
-    \clef "alto" \numericTimeSignature\time 4/4 \key c \major | % 1
-    e8 s8*7 e8 e8 c'8 a8 a8 a8 r8 e8 | % 2
+Viola_MvI = \relative e' {
+    \clef "alto" \time 4/4 \key c \major \partial 8 e8 | % 1
+    e8 e8 c'8 a8 a8 a8 r8 e8 | % 2
     e8 e8 d8 c8 b8 c8 r8 a'8 | % 3
     a8 a8 g8 g8 g8 g8 f8 f8 | % 4
     f8 f8 e8 e8 e4 r8 g8 -\p | % 5
@@ -939,8 +955,10 @@ PartPFourVoiceOne =  \relative e' {
     d8 d8 gs8 gs8 a8 c8 b8 d8 | % 58
     c8 a8 e'8 e,8 a8 gs8 a8 gs8 | % 59
     a8 d8 e8 e,8 a4 r4 | \barNumberCheck #60
-    R1*3 \bar "||"
-    \time 3/4  e'4 e8 f8 g8 e8 b4 b8 c8 d8 b8 g4 e'8 f8 g8 e8 c4 a8 b8 c8
+    R1*2 | r2. r8 \bar "||"
+}
+Viola_MvII = \relative e {
+    \clef alto \time 3/4 e'4 e8 f8 g8 e8 b4 b8 c8 d8 b8 g4 e'8 f8 g8 e8 c4 a8 b8 c8
     a8 d2. \fermata b4 -\p b8 c8 d8 b8 c4 e8 f8 g8 e8 b4 b8 c8 d8 b8 b8
     g'8 -\f a4 g4 e8 c8 c8 c8 c8 c8 g'8 g,8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8
     g8 g8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8 fs,8 fs8 fs8 fs8 fs8 fs8 g8 g8 g8
@@ -950,7 +968,9 @@ PartPFourVoiceOne =  \relative e' {
     g8 g8 g8 g8 g8 g8 g8 g8 g8 g8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8 f,8 f8 f8
     f8 f8 f8 g8 g8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8 c8 c8 g8 g8 g8 g8 e'4 e8
     f8 g8 e8 b4 b8 c8 d8 b8 g'4 a4 g4 e2. \fermata \bar "|."
-    \time 4/4  c8 e8 c8 c8 e8 a8 e8 e8 e8 a8 e8 e8 e8 e8 gs8 gs8 gs8 gs8
+}
+Viola_MvIII = \relative c' {
+    \clef alto \time 4/4  c8 e8 c8 c8 e8 a8 e8 e8 e8 a8 e8 e8 e8 e8 gs8 gs8 gs8 gs8
     gs8 gs8 e8 a8 c8 a8 c8 a8 c8 a8 a8 a8 a8 g8 g8 g8 g8 f8 f8 f8 f8 e8
     e8 a8 c8 b16 a16 e'8 e,8 gs8 fs16 e16 a8 a,8 c8 b16 a16 e'4 r4 b'8
     e,8 r4 gs8 e8 r4 e8 e8 r4 e8 e8 r4 f16 e16 d16 c16 d16 c16 b16 a16
@@ -974,12 +994,12 @@ PartPFourVoiceOne =  \relative e' {
     r4 r8 a'8 a8 a8 a8 a8 | % 64
     a8 a8 a8 a8 a8 a8 a8 a8 | % 65
     gs8 gs8 gs8 gs8 a8 a,8 e'8 e,8 | % 66
-    a4 s2. \bar "||"
-    }
+    a4 r4 r2 \bar "||"
+}
 
-PartPFiveVoiceOne =  \relative a, {
-    \clef "bass" \numericTimeSignature\time 4/4 \key c \major | % 1
-    a8 s8*7 a8 a8 a8 a8 d8 a8 c8 a8 | % 2
+Cello_MvI =  \relative a, {
+    \clef "bass" \time 4/4 \key c \major \partial 8 a8 | % 1
+    a8 a8 a8 a8 d8 a8 c8 a8 | % 2
     a8 a8 d8 ds8 e8 a,8 c8 a8 | % 3
     d8 d8 b8 b8 c8 c8 a8 a8 | % 4
     b8 b8 gs8 gs8 a8 a'8 g8 e8 -\p | % 5
@@ -1037,18 +1057,22 @@ PartPFiveVoiceOne =  \relative a, {
     r2 r8 a'8 c8 a8 | \barNumberCheck #60
     b4 gs4 a4 ds,4 | % 61
     e4 gs,4 a4 a4 | % 62
-    a8 f'8 e8 e,8 a4 s4 \bar "||"
-    \time 3/4  c4 c8 d8 e8 c8 g'4 g,8 a8 b8 g8 c4 c8 d8 e8 c8 f4 f8 g8 a8
+    a8 f'8 e8 e,8 a4 r8 \bar "||"
+}
+Cello_MvII = \relative c {
+    \clef bass \time 3/4 c4 c8 d8 e8 c8 g'4 g,8 a8 b8 g8 c4 c8 d8 e8 c8 f4 f8 g8 a8
     f8 g2. \fermata g,4 -\p g8 a8 b8 g8 g4 c8 d8 e8 g,8 g4 g8 a8 b8 g8 g8
-    c8 -\f f4 g4 c,4 r4 r4 R2.*21 \clef "treble" s4*9 \clef "bass" c4 c8
-    d8 e8 c8 g'4 g,8 a8 b8 g8 c4 f,4 g4 c,2. \fermata \bar "|."
-    \time 4/4  a'8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 e,8 e'8
+    c8 -\f f4 g4 c,4 r4 r4 R2.*24 % add 3 bars of queue?
+    c4 c8 d8 e8 c8 g'4 g,8 a8 b8 g8 c4 f,4 g4 c,2. \fermata \bar "|."
+}
+Cello_MvIII = \relative a, {
+    \clef bass \time 4/4 a8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 a,8 a'8 e,8 e'8
     e,8 e'8 e,8 e'8 e,8 e'8 a16 b16 c16 b16 a8 r8 a,16 b16 c16 b16 a8 r8
     d'8 d8 b8 b8 c8 c8 a8 a8 b8 b8 gs8 gs8 a,8 a'8 c8 b16 a16 e'8 e,8 gs8
     fs16 e16 a8 a,8 c8 b16 a16 e'4 r4 gs8 a8 r4 e8 a,8 r4 gs'8 a8 r4 e8
     a,8 r4 f''16 e16 d16 c16 d16 c16 b16 a16 f'16 e16 d16 c16 d16 c16 b16
-    a16 d,8 r8 e8 r8 a,4 \fermata r4 R1*6 \clef "treble" s1*2 \clef
-    "bass" r8 c8 c8 c,8 r2 R1*6 r2 c'8 c'8 c,8 c'8 c,8 c'8 c,8 c'8 c,8
+    a16 d,8 r8 e8 r8 a,4 \fermata r4 R1*8 % add 2 bars of queue?
+    r8 c8 c8 c,8 r2 R1*6 r2 c'8 c'8 c,8 c'8 c,8 c'8 c,8 c'8 c,8
     c'8 c,8 c'8 g,8 g'8 g,8 g'8 g,8 g'8 g,8 g'8 c16 d16 e16 d16 c8 r8 c,16
     d16 e16 d16 c8 r8 b8 c8 r4 g8 c8 r4 g8 c8 r4 g8 c8 r4 c'16 b16 a16 g16
     a16 g16 f16 e16 c'16 b16 a16 g16 a16 g16 f16 e16 f8 r8 g8 r8 c,4 r4
@@ -1063,68 +1087,50 @@ PartPFiveVoiceOne =  \relative a, {
     c8 a8 r8 d8 f,8 d8 r8 a'8 c8 a8 gs8 fs8 gs8 e8 a4 r8 e8 a,8 f'8 e8
     e,8 | % 63
     a4 r4 r2 | % 64
-    R1*2 | % 66
-    r4 s2. \bar "||"
-    }
+    R1*3 \bar "||" % 67
+}
 
 
-% The score definition
 \score {
-    <<
-        
-        \new Staff
-        <<
-            \set Staff.instrumentName = "Oboe"
-            
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
-                >>
-            >>
-        \new StaffGroup
-        <<
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Violin 1"
-                
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "PartPTwoVoiceOne" {  \PartPTwoVoiceOne }
-                    >>
-                >>
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Violin 2"
-                
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "PartPThreeVoiceOne" {  \PartPThreeVoiceOne }
-                    >>
-                >>
-            \new Staff
-            <<
-                \set Staff.instrumentName = "Viola"
-                
-                \context Staff << 
-                    \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                    \context Voice = "PartPFourVoiceOne" {  \PartPFourVoiceOne }
-                    >>
-                >>
-            
-            >>
-        \new Staff
-        <<
-            \set Staff.instrumentName = "Continuo"
-            
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPFiveVoiceOne" {  \PartPFiveVoiceOne }
-                >>
-            >>
-        
-        >>
-    \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 100 }
-    }
+    \header { piece = \markup { \bold "Allegro non molto" } }
 
+    \new StaffGroup <<
+        \new Staff \with { instrumentName = "Oboe" } { \Solo_MvI }
+        \new Staff \with { instrumentName = "Violin 1" } { \ViolinI_MvI }
+        \new Staff \with { instrumentName = "Violin 2" } { \ViolinII_MvI }
+        \new Staff \with { instrumentName = "Viola" } { \Viola_MvI }
+        \new Staff \with { instrumentName = "Cello" } { \Cello_MvI }
+        \new Dynamics { \Markup_MvI }
+    >>
+
+    \layout {}
+}
+
+\score {
+    \header { piece = \markup { \bold "Larghetto" } }
+
+    \new StaffGroup <<
+        \new Staff \with { instrumentName = "Oboe" } { \Solo_MvII }
+        \new Staff \with { instrumentName = "Violin 1" } { \ViolinI_MvII }
+        \new Staff \with { instrumentName = "Violin 2" } { \ViolinII_MvII }
+        \new Staff \with { instrumentName = "Viola" } { \Viola_MvII }
+        \new Staff \with { instrumentName = "Cello" } { \Cello_MvII }
+    >>
+
+    \layout {}
+}
+
+\score {
+    \header { piece = \markup { \bold  "Allegro" } }
+
+    \new StaffGroup <<
+        \new Staff \with { instrumentName = "Oboe" } { \Solo_MvIII }
+        \new Staff \with { instrumentName = "Violin 1" } { \ViolinI_MvIII }
+        \new Staff \with { instrumentName = "Violin 2" } { \ViolinII_MvIII }
+        \new Staff \with { instrumentName = "Viola" } { \Viola_MvIII }
+        \new Staff \with { instrumentName = "Cello" } { \Cello_MvIII }
+        \new Dynamics { \Markup_MvIII }
+    >>
+
+    \layout {}
+}
