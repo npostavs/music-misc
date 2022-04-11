@@ -1,21 +1,23 @@
 \version "2.22.2"
 
-ViolaClef = { \clef alto }
+ViolaClef = { \clef "treble_8" }
+
 \include "rv461-notes.lyi"
 
 \paper {
     page-count = #4
+    tagline = ##f
 }
 
-\header { instrument = "Cello" }
-
 #(set-global-staff-size 22)
+
+\header { instrument = "Viola" }
 
 \score {
     \header { piece = \markup { \bold "Allegro non molto" } }
 
     <<
-        \new Staff { \keepWithTag #'cues \Cello_MvI }
+        \new Staff { \Viola_MvI }
         \new Dynamics { \Markup_MvI }
     >>
 
@@ -31,7 +33,7 @@ ViolaClef = { \clef alto }
 \score {
     \header { piece = \markup { \bold "Larghetto" } }
 
-    \new Staff { \keepWithTag #'cues \Cello_MvII }
+    \new Staff { \Viola_MvII }
 
     \layout {
         \context {
@@ -44,7 +46,7 @@ ViolaClef = { \clef alto }
     \header { piece = \markup { \bold  "Allegro" } }
 
     <<
-        \new Staff { \keepWithTag #'cues \Cello_MvIII }
+        \new Staff { \Viola_MvIII }
         \new Dynamics { \Markup_MvIII }
     >>
 

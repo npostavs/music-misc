@@ -20,10 +20,11 @@
     inner-margin = 12\mm
     outer-margin = 10\mm
     indent = 5\mm
+    tagline = ##f
 
     evenHeaderMarkup = \markup
       \fill-line {
-        \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/4" }
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
         \on-the-fly #not-part-first-page \concat {
                     \smaller { \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
         ""
@@ -33,7 +34,7 @@
         ""
         \on-the-fly #not-part-first-page \concat {
                     \small {\fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
-        \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/4" }
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
       }
 }
 
@@ -669,7 +670,7 @@ ViolinII_MvIII = \relative a' {
 }
 
 Viola_MvI = \relative e' {
-    \clef "alto" \time 4/4 \key c \major \partial 8 e8 | % 1
+    \ViolaClef \time 4/4 \key c \major \partial 8 e8 | % 1
     e8 e8 c'8 a8 a8 a8 r8 e8 | % 2
     e8 e8 d8 c8 b8 c8 r8 a'8 | % 3
     a8 a8 g8 g8 g8 g8 f8 f8 | % 4
@@ -723,7 +724,7 @@ Viola_MvI = \relative e' {
     R1*2 | r2. r8 \bar "||"
 }
 Viola_MvII = \relative e {
-    \clef alto \time 3/4 e'4 e8 f8 g8 e8 b4 b8 c8 d8 b8 g4 e'8 f8 g8 e8 c4 a8 b8 c8
+    \ViolaClef \time 3/4 e'4 e8 f8 g8 e8 b4 b8 c8 d8 b8 g4 e'8 f8 g8 e8 c4 a8 b8 c8
     a8 d2. \fermata b4 -\p b8 c8 d8 b8 c4 e8 f8 g8 e8 b4 b8 c8 d8 b8 b8
     g'8 -\f a4 g4 e8 c8 c8 c8 c8 c8 g'8 g,8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8
     g8 g8 g8 g8 g8 g8 c8 c8 c8 c8 c8 c8 fs,8 fs8 fs8 fs8 fs8 fs8 g8 g8 g8
@@ -735,7 +736,7 @@ Viola_MvII = \relative e {
     f8 g8 e8 b4 b8 c8 d8 b8 g'4 a4 g4 e2. \fermata \bar "|."
 }
 Viola_MvIII = \relative c' {
-    \clef alto \time 4/4  c8 e8 c8 c8 e8 a8 e8 e8 e8 a8 e8 e8 e8 e8 gs8 gs8 gs8 gs8
+    \ViolaClef \time 4/4  c8 e8 c8 c8 e8 a8 e8 e8 e8 a8 e8 e8 e8 e8 gs8 gs8 gs8 gs8
     gs8 gs8 e8 a8 c8 a8 c8 a8 c8 a8 a8 a8 a8 g8 g8 g8 g8 f8 f8 f8 f8 e8
     e8 a8 c8 b16 a16 e'8 e,8 gs8 fs16 e16 a8 a,8 c8 b16 a16 e'4 r4 b'8
     e,8 r4 gs8 e8 r4 e8 e8 r4 e8 e8 r4 f16 e16 d16 c16 d16 c16 b16 a16
@@ -826,7 +827,8 @@ Cello_MvII = \relative c {
     \clef bass \time 3/4 c4 c8 d8 e8 c8 g'4 g,8 a8 b8 g8 c4 c8 d8 e8 c8 f4 f8 g8 a8
     f8 g2. \fermata g,4 -\p g8 a8 b8 g8 g4 c8 d8 e8 g,8 g4 g8 a8 b8 g8 g8
     c8 -\f f4 g4 c,4 r4 r4 |
-    R2.*21 | <>^\SoloLabel \cueDuringWithClef "solII" #UP treble { R2.*3 } |
+    R2.*21 | \tag #'cues { <>^\SoloLabel \cueDuringWithClef "solII" #UP treble { R2.*3 } }
+             \tag #'noCues { R2.*3 } |
     c4 c8 d8 e8 c8 g'4 g,8 a8 b8 g8 c4 f,4 g4 c,2. \fermata \bar "|."
 }
 Cello_MvIII = \relative a, {
@@ -836,7 +838,8 @@ Cello_MvIII = \relative a, {
     fs16 e16 a8 a,8 c8 b16 a16 e'4 r4 gs8 a8 r4 e8 a,8 r4 gs'8 a8 r4 e8
     a,8 r4 f''16 e16 d16 c16 d16 c16 b16 a16 f'16 e16 d16 c16 d16 c16 b16
     a16 d,8 r8 e8 r8 a,4 \fermata r4 |
-    R1*6 <>^\SoloLabel \cueDuringWithClef "solIII" #UP treble { R1*2 } | % add 2 bars of queue?
+    R1*6 | \tag #'cues { <>^\SoloLabel \cueDuringWithClef "solIII" #UP treble { R1*2 } }
+           \tag #'noCues { R1*2 } |
     r8 c8 c8 c,8 r2 R1*6 r2 c'8 c'8 c,8 c'8 c,8 c'8 c,8 c'8 c,8
     c'8 c,8 c'8 g,8 g'8 g,8 g'8 g,8 g'8 g,8 g'8 c16 d16 e16 d16 c8 r8 c,16
     d16 e16 d16 c8 r8 b8 c8 r4 g8 c8 r4 g8 c8 r4 g8 c8 r4 c'16 b16 a16 g16

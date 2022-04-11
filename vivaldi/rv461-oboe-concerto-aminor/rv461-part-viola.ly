@@ -1,10 +1,10 @@
 \version "2.22.2"
 
+ViolaClef = { \clef alto }
 \include "rv461-notes.lyi"
 
 \paper {
     page-count = #4
-    tagline = ##f
 }
 
 #(set-global-staff-size 22)
