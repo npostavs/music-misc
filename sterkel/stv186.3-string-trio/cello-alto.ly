@@ -11,7 +11,7 @@
   }
   \new Staff {
     \set Staff.instrumentName = "Cello"
-    { \clef "treble_15" \PartPThreeVoiceOne }
+    { \clef "alto_8" \PartPThreeVoiceOne }
   }
 }
 
@@ -23,7 +23,7 @@
   }
   \new Staff {
     \set Staff.instrumentName = "Cello"
-    { \clef "treble_15" \PartPThreeMvTwo }
+    { \clef "alto_8" \PartPThreeMvTwo }
   }
 }
 

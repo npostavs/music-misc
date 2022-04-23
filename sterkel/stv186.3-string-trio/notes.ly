@@ -7,6 +7,12 @@
 
 sempre = \markup {\italic {sempre}}
 
+\layout {
+    \context { \Score
+        skipBars = ##t
+        }
+    }
+
 \header {
   composer = "Johann Franz Xaver Sterkel (1750-1817)"
   title = "Trio für 2 Violinen und Violoncello StWV 1 86/3"
