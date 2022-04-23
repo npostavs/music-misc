@@ -1,5 +1,5 @@
 % -*- coding: utf-8 -*-
-\version "2.20.0"
+\version "2.22.0"
 
 \language "english"
 
@@ -297,7 +297,7 @@ oboeI = \relative c'' {
     b16 r16 d,16 r16 d16 r16 d16 r16 | % 194
     d16 r16 g16 r16 g16 -\< r16 g16 r16 | % 195
     g16 r16 g16-\> r16 g16 r16 g16\pp r16 | % 196
-    R2 \fermataMarkup | % 197
+    R2 \fermata | % 197
     c,8 -. r16 c16 -. e8 r16 c16 | % 198
     a8 r16 a'16 d8 -. r16 c16 -. | % 199
     b8 -. r16 a16 -. g8 -. r16 b16 -. | % 200
@@ -395,7 +395,7 @@ oboeI = \relative c'' {
     }
 
 oboeII = \relative c' {
-    \clef "treble" \time 2/4 | % 1
+    \time 2/4 | % 1
     e8 -\p r8 e8
     r8 | % 2
     f8 r8 a8 r8 | % 3
@@ -463,7 +463,6 @@ oboeII = \relative c' {
     b4 ) r8 b8 | % 65
     a8[ a8 a8 a8] | % 66
     b4 r8 a8 | % 67
-    \clef "treble" | % 67
     b4 r8 a8 | % 68
     b8 b8 r8 b8 | % 69
     r8 g8 r8 d'8 | % 70
@@ -590,7 +589,7 @@ oboeII = \relative c' {
     d16 r16 d16 r16 cs16 r16 c16 r16 | % 194
     b16 b16 r16 b16 r16 -\< c16 r16 cs16 | % 195
     r16 d16 r16 e16-\> r16 f16 r16 d16 -\pp | % 196
-    R2\fermataMarkup | % 197
+    R2\fermata | % 197
     r16 e,32 ( f32 ) g8 -. r16 e32 ( f32 ) g8 -. | % 198
     r16 a32 ( b32 ) c16 -. c16 -. f8 r16 e16 -. |
     \barNumberCheck #199
@@ -941,7 +940,7 @@ englishHorn = \relative c'' {
     r16 d16 r16 a16 r16 b16 r16 cs16 | % 194
     d16 d16 r16 d16 r16 e16-\< r16 es16 | % 195
     r16 fs16 r16 -\> g16 r16 a16 r16 d,16 -\pp | % 196
-    R2\fermataMarkup | % 197
+    R2-\fermata | % 197
     r16 g,32 ( a32 ) b8 -. r16 g32 ( a32 ) b8 -. | % 198
     r16 c32 ( d32 e8 ) -. r16 a,32 ( b32 ) c8 -. | % 199
     r16 d32 ( cs32 ) d8 -. r16 d32 ( cs32 ) d8 -. | % 200
