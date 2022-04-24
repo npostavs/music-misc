@@ -6,7 +6,7 @@
     <<
     \new Staff { \FantasiaI_ViolI }
     \new Staff { \FantasiaI_ViolII }
-    \new Staff { \FantasiaI_Bass }
+    \new Staff { \clef bass \FantasiaI_Bass }
     >>
     \layout {}
     \midi {\tempo 4 = 120 }
@@ -18,7 +18,7 @@
     <<
     \new Staff { \FantasiaII_ViolI }
     \new Staff { \FantasiaII_ViolII }
-    \new Staff { \FantasiaII_Bass }
+    \new Staff { \clef bass \FantasiaII_Bass }
     >>
     \layout {}
     \midi {\tempo 4 = 120 }

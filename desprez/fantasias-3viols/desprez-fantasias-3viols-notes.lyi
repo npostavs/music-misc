@@ -207,11 +207,11 @@ FantasiaII_ViolII =  \relative c' {
     f4 e8 d8 c4 bf4 ~ | % 34
     bf4 a8 g8 fs4 g4 ~ | % 35
     g4 fs8 e8 fs2 | % 36
+    R1*2 | % 42
     g2 bf2 ~ | % 37
     bf2 c2 | % 38
     e2. d8 c8 | % 39
     ef2 d2 | % 40
-    R1*2 | % 42
     c2. bf8 a8 | % 43
     bf4 a8 g8 f2 | \barNumberCheck #44
     r4 f'4 e4 f4 | % 45
