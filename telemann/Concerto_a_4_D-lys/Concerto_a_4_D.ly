@@ -11,6 +11,13 @@ ottZ = { \ottava #0 }
     print-page-number = ##f
 }
 
+\layout {
+  \context { \Score
+    skipBars = ##t
+  }
+}
+
+
 % Adagio %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 adagioGlobal = {
@@ -70,7 +77,6 @@ allegroGlobal = {
   \set Timing.baseMoment = #(ly:make-moment 1/2)
   \set Timing.beatStructure = #'(1 1)
   \set Timing.beamExceptions = #'((end . (((1 . 16) . (4 4 4)))))
-  \compressFullBarRests
 }
 
 allegroViolinI = \relative d'' {
@@ -137,8 +143,7 @@ allegroViolinII = \relative fis'' {
     gis8 a gis8. a16 a4 r
   }
   \repeat volta 2{
-    R1
-    R1
+    R1*2
 
     \barNumberCheck 15
     a,16 h a h cis d cis d h cis h cis d e d e
@@ -166,8 +171,7 @@ allegroViolinII = \relative fis'' {
 allegroViolinIII = \relative d'' {
   \allegroGlobal
   \repeat volta 2 {
-    R1
-    R1
+    R1*2
     d16 e d e fis g fis g e fis e fis g a g a
     fis8 d d d d d cis cis
 
@@ -417,8 +421,7 @@ graveViolinIII = \relative h' {
 
 graveViolinIV = \relative d' {
   \graveGlobal
-  R1.
-  R1.
+  R1.*2
   d1 d2
   e1 e2
 
@@ -432,8 +435,7 @@ graveViolinIV = \relative d' {
   \barNumberCheck 10
   d,2 a' a,
   d1 r2
-  R1.
-  R1.
+  R1.*2
   r2 a''4( g) fis( e)
 
   \barNumberCheck 15
@@ -475,7 +477,6 @@ allegroIIGlobal = {
   \set Timing.baseMoment = #(ly:make-moment 1/2)
   \set Timing.beatStructure = #'(1 1)
   \set Timing.beamExceptions = #'((end . (((1 . 16) . (4 4 4)))))
-  \compressFullBarRests
 }
 
 allegroIIViolinI = \relative a'' {
@@ -606,8 +607,7 @@ allegroIIViolinII = \relative d'' {
 
 allegroIIViolinIII = \relative a'' {
   \allegroIIGlobal
-  R1
-  R1
+  R1*2
   r2 r8 a a a
   fis8 a fis d e8 a, a' a
 
