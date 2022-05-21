@@ -2,6 +2,10 @@
 
 \include "B.301-dvorak-fugetta-notes.lyi"
 
+\header {
+    instrument = "Alto recorder"
+}
+
 \paper {
     page-count = #1
 }

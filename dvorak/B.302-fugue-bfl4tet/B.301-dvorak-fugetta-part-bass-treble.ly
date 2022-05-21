@@ -2,6 +2,10 @@
 
 \include "B.301-dvorak-fugetta-notes.lyi"
 
+\header {
+    instrument = "Bass recorder"
+}
+
 \paper {
     page-count = #1
 }

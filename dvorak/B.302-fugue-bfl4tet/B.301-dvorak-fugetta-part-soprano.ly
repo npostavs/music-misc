@@ -2,6 +2,10 @@
 
 \include "B.301-dvorak-fugetta-notes.lyi"
 
+\header {
+    instrument = "Soprano recorder"
+}
+
 \score {
     <<
     \new Staff { \MvI_Soprano }
