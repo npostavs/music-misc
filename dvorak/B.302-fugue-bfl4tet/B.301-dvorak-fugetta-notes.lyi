@@ -64,6 +64,7 @@ MvI_Soprano =  \relative d'' {
     d1 \bar "|."
 }
 MvII_Soprano = \relative d'' {
+    \key d \major
     R1*10 | % 11
     a2 ~ a8 gs8 fs8 e8 | % 12
     d'2 cs4 a4 | % 13
@@ -147,6 +148,7 @@ MvI_Alto = \relative a'' {
     fs1 \bar "|."
 }
 MvII_Alto = \relative a' {
+    \key d \major
     R1*7 | % 8
     d2 ~ d8 cs8 b8 a8 | % 9
     g'2 fs4 d4 | \barNumberCheck #10
@@ -234,6 +236,7 @@ MvI_Tenor = \relative d'' {
     d1 \bar "|."
 }
 MvII_Tenor = \relative d'' {
+    \key d \major
     R1*3 | % 4
     a2 ~ a8 gs8 fs8 e8 | % 5
     d'2 cs4 a4 | % 6
@@ -325,6 +328,7 @@ MvI_Bass = \relative d {
     d1 \bar "|."
 }
 MvII_Bass = \relative d {
+    \key d \major
     d2 ~ d8 cs8 b8 a8 | % 2
     g'2 fs4 d4 | % 3
     e4. fs8 g8 b8 a8 g8 | % 4
