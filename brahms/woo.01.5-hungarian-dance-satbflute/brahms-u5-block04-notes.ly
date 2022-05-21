@@ -2,14 +2,12 @@
 \header {
     composer = "Johannes Brahms (1833 - 1897)"
     arranger = "Arranged by Hans-Peter Beer (2007)"
-    crossRefNumber = "1"
-    footnotes = ""
-    tagline = "Lily was here 2.20.0 -- automatically converted from ABC"
+    tagline = ##f
     title = "Ungarischer Tanz Nr. 5 — Hungarian Dance Nr. 5"
+    copyright = \markup { \small "Creative Commons Attribution Non-commercial No Derivatives 3.0" }
 }
 voiceAII =  {
 
-\clef "treble"
  R2*16 \bar "||"
 \transpose c c'' { d8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
 g,8    r8   |   d8    r8   a,8    r8   |   %  21
@@ -62,7 +60,7 @@ bes''4    a''8    r8   |   bes''8    r8   a''8    r8   |   a''4.
 }
 voiceBIV =  {
 
-\clef "bass"
+
  % %MIDI program 1 74 % Blockfl�e
  % %MIDI program 2 74 % Blockfl�e
  % %MIDI program 3 74 % Blockfl�e
@@ -123,7 +121,6 @@ a,8    r8   |   cis8    r8   a,8    r8   |   %  89
 }
 voiceSI =  {
 
-\clef "treble"
  R2*8   |   a'4.    d''16    f''16
 |   a''4.    f''8    |   e''4.    f''16    g''16    |
 f''2    |   bes'16    c''16    d''16    bes'16    a'16    bes'16
@@ -174,7 +171,6 @@ d''4    | a''8    r8   r8.   a'16    |   b'8    r8   cis''8    r8
 }
 voiceTIII =  {
 
-\clef "treble"
  R2*16 \bar "||"   %  17
 
 r8   f'8    r8

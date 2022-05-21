@@ -3,6 +3,6 @@
 \include "brahms-u5-block04-notes.ly"
 
 \score {
-    \new Staff { \voicedefault \compressMMRests \voiceAII }
+    \new Staff { \voicedefault \clef "treble_15" \compressMMRests \voiceBIV }
     \layout {}
 }
