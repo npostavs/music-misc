@@ -8,15 +8,12 @@
 }
 voiceAII =  {
 
- R2*16 \bar "||"
-\transpose c c'' { d8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
-g,8    r8   |   d8    r8   a,8    r8   |   %  21
- d8    r8   g,8    r8   |   d8    r8   a,8    r8   |   cis8    r8
-  a,8    r8   |   d8    r8   a,8    r8   |   %  25
- d8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
-g,8    r8   |   c8    r8   a,8    r8   | }  %  29  
-
-   r8   d''8    r8   c''8    |   r8   bes'8    r8   a'8
+ R2*16 \bar "||"   f''4.    f''8    |   a''4.    f''8    |   e''4.
+   f''16    g''16    |   f''2    |   d''4.    e''16    f''16
+|   d''2    |   e''16    d''16    d''16    cis''16    cis''8.
+cis''16    |   d''2    |   a'4    a'16    d''16    f''16    a''16
+   |   f''4.    d''8    |   cis''4.    a'16    bes'16    |
+  a'2    |   r8   d''8    r8   c''8    |   r8   bes'8    r8   a'8
    |   r8   f'8    r8   g'8    |   f'4    a'8    r8
 \repeat volta 2 {   c'''4    c'''4    |   d'''4.    c'''8    |
 r8   bes''4    bes''8   ~    |   bes''4.    r8   |   bes''4
@@ -33,20 +30,12 @@ fis''8    fis''8    |   fis''8    fis''8    fis''8    fis''8    |
 cis''8    |   fis''8    fis''8    g''8    g''8    |   fis''8
 fis''8    fis''4    |   r8   d''8    r8   d''8    |   r8   g''8
  r8   fis''8    |   f''8    e''8    d''8    c''8    |   a'8
-d''8    r4   } \key f \major
-
-\transpose c c'' {
-d8    r8
-
-a,8    r8   |   d8    r8   a,8    r8   |   %  65
- d8    r8   g,8    r8   |   d8    r8   a,8    r8   |   d8    r8
-g,8    r8   |   d8    r8   a,8    r8   |   %  69
- cis8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
-  a,8    r8   |   d8    r8   a,8    r8   |   %  73
- d8    r8   g,8    r8   |   c8    r8   a,8    r8   |  }
-
-
-   r8   d''8    r8   c''8
+d''8    r4   } \key f \major f''4.    f''8    |   a''4.    f''8
+|   e''4.    f''16    g''16    |   f''2    |   d''4.
+e''16    f''16    |   d''2    |   e''16    d''16    d''16
+cis''16    cis''8.    cis''16    |   d''2    |   a'4    a'16
+d''16    f''16    a''16    |   f''4.    d''8    |   cis''4.
+a'16    bes'16    |   a'2    |   r8   d''8    r8   c''8
 |   r8   bes'8    r8   a'8    |   r8   f'8    r8   g'8
 |   f'4    a'8    r8   |   c'''4    c'''4    |   d'''4.
 c'''8    |   r8   bes''4    bes''8   ~    |   bes''4.    r8
@@ -66,19 +55,13 @@ voiceBIV =  {
  % %MIDI program 3 74 % Blockfl�e
  % %MIDI program 4 74 % Blockfl�e
  %  1
-\transpose c c, { a'4.    d''8    |   f''4.    d''8    |   cis''4.    d''16
-e''16    |   d''2 | bes'4.    c''16    d''16    |
-a'2 | g'16    f'16    f'16    e'16    e'8. a'16    |
-d'2    |  } \transpose c c,, {  a'4.    d''16    f''16    |   a''4.    f''8
-|   e''4.    f''16    g''16    |   f''2    |   R2*4 } \bar "||"
-
-\transpose c c,, { f''4.    f''8    |   a''4.    f''8    |   e''4.
-   f''16    g''16    |   f''2    |   d''4.    e''16    f''16
-|   d''2    |   e''16    d''16    d''16    cis''16    cis''8.
-cis''16    |   d''2    |   a'4    a'16    d''16    f''16    a''16
-   |   f''4.    d''8    |   cis''4.    a'16    bes'16    |
-  a'2    | }
-
+ R2*16 \bar "||"   %  17
+ d8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
+g,8    r8   |   d8    r8   a,8    r8   |   %  21
+ d8    r8   g,8    r8   |   d8    r8   a,8    r8   |   cis8    r8
+  a,8    r8   |   d8    r8   a,8    r8   |   %  25
+ d8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
+g,8    r8   |   c8    r8   a,8    r8   |   %  29
  d8    f8    c8    e8    |   bes,8    d8    a,8    c8    |   a,8
   cis8    r8   a,8    |   d4    f8    r8   \repeat volta 2 {   %  33
  fis8    r8   d8    r8   |   fis8    r8   d8    r8   |   g8    r8
@@ -95,17 +78,13 @@ c8    r8   |   f8    r8   c8    r8   |   %  41
   d8    r8   d8    r8   |   d8    r8   d8    r8   |   %  57
  d8    r8   b,8    r8   |   d8    r8   r4   |   d8    r8   d8
 r8   |   d8    r8   d8    r8   |   %  61
- d8    r8   a8    r8   |   d4    d8    r8   } \key f \major 
-
-\transpose c c,, {
- f''4.    f''8    |   a''4.    f''8
-|   e''4.    f''16    g''16    |   f''2    |   d''4.
-e''16    f''16    |   d''2    |   e''16    d''16    d''16
-cis''16    cis''8.    cis''16    |   d''2    |   a'4    a'16
-d''16    f''16    a''16    |   f''4.    d''8    |   cis''4.
-a'16    bes'16    |   a'2    | }
-
-  d8    f8
+ d8    r8   a8    r8   |   d4    d8    r8   } \key f \major d8    r8
+a,8    r8   |   d8    r8   a,8    r8   |   %  65
+ d8    r8   g,8    r8   |   d8    r8   a,8    r8   |   d8    r8
+g,8    r8   |   d8    r8   a,8    r8   |   %  69
+ cis8    r8   a,8    r8   |   d8    r8   a,8    r8   |   d8    r8
+  a,8    r8   |   d8    r8   a,8    r8   |   %  73
+ d8    r8   g,8    r8   |   c8    r8   a,8    r8   |   d8    f8
  c8    e8    |   bes,8    d8    a,8    c8    |   %  77
  a,8    cis8    r8   a,8    |   d4    f8    r8   |   fis8    r8
 d8    r8   |   fis8    r8   d8    r8   |   %  81
@@ -171,8 +150,11 @@ d''4    | a''8    r8   r8.   a'16    |   b'8    r8   cis''8    r8
 }
 voiceTIII =  {
 
- R2*16 \bar "||"   %  17
-
+ a'4.    d''8    |   f''4.    d''8    |   cis''4.    d''16
+e''16    |   d''2    |   bes'4.    c''16    d''16    |
+a'2    |   g'16    f'16    f'16    e'16    e'8.    a'16    |
+d'2    |   a'4.    d''16    f''16    |   a''4.    f''8
+|   e''4.    f''16    g''16    |   f''2    |   R2*4   \bar "||"
 r8   f'8    r8
 f'8    |   r8   f'8    r8   f'8    |   r8   g'8    r8   g'8
 |   r8   f'8    r8   f'8    |   r8   g'8    r8   g'8    |
@@ -187,7 +169,7 @@ g''8    |   r8   e''8    r8   e''8    |   r8   e''8    r8   e''8
   |   r8   f''8    r8   f''8    |   r8   f''8    r8   f''8
 |   r8   g''8    r8   g''8    |   r8   a''8    r8   a''8
 |   r8   f''8    r8   f''8    |   r8   f''8    r8   f''8
-|   e''8    r8   r4   |   R2   |   a''8    a''4    r8
+|   e''8    r8   r4   |   r2   |   a''8    a''4    r8
 |   g''4    f''8    r8   }  \repeat volta 2 {   \key d \major r8
 a'8    r8   a'8    |   r8   a'8    r8   a'8    |   r8   a'8    r8
   a'8    |   r8   a'8    r8   a'8    |   r8   a'8    r8   a'8
@@ -208,7 +190,7 @@ r8   g''8    |   r8   g''8    r8   g''8    |   r8   e''8    r8
 e''8    |   r8   e''8    r8   e''8    |   r8   f''8    r8   f''8
   |   r8   f''8    r8   f''8    |   r8   g''8    r8   g''8
 |   r8   a''8    r8   g''8    |   r8   f''8    r8   f''8
-|   r8   f''8    r8   f''8    |   e''8    r8   r4   |   R2
+|   r8   f''8    r8   f''8    |   e''8    r8   r4   |   r2
   |   a''8    a''4    r8   |   g''4    f''8    r8   |
 e''8    r8   e''8    r8   |   f''4.    r8   \bar "|."
 }
