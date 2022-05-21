@@ -395,7 +395,7 @@ oboeI = \relative c'' {
     }
 
 oboeII = \relative c' {
-    \time 2/4 | % 1
+    \key c \major \time 2/4 | % 1
     e8 -\p r8 e8
     r8 | % 2
     f8 r8 a8 r8 | % 3
