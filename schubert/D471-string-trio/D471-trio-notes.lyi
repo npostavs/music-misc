@@ -1,0 +1,1712 @@
+\version "2.22.2"
+\language "english"
+
+\header {
+    title = \markup { "String Trio in B" \smaller \flat " - D.581" }
+    encodingsoftware =  "Audiveris 5.2.5"
+    encodingdate =  "2022-05-23"
+    source = "IMSLP552832-PMLP9927-D_581,_String_Trio_in_B-flat_Major_(2nd_version).pdf"
+    composer = "Franz Schubert (published 1817)"
+}
+
+\paper {
+    indent = 3\mm
+    bottom-margin = 2\mm
+    top-margin = 2\mm
+    left-margin = 6\mm
+    right-margin = 5\mm
+    tagline = ##f
+}
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+    }
+}
+
+defaults = { \override DynamicTextSpanner.style = #'none }
+
+dolce = \markup { \italic "dolce" }
+simile = \markup { \small \italic "simile" }
+
+
+%%% Movement I
+
+MvI_Violin =  \relative f'' {
+    \defaults
+    \repeat volta 2 {
+        \clef "treble" \time 4/4 \key bf \major \partial 16 f16 ( | % 1
+        bf4. ) ( -\fp \> a16 g16 f8 ) d8 \p ( g8 ef8 ) | % 2
+        c4 ( -> d8 ) r8 r8 e,16 ( f16 g16 f16 c'16 bf16 ) | % 3
+        d4 ( -> ef8 ) r8 r8 e,16 ( f16 g16 f16 bf16 a16 ) | % 4
+        c4 ( -> d8 ) r8 r2 | % 5
+        r8 -\< a16 ( bf16 c16 bf16 f'16 fs16 ) a16 -\> ( g16 d16 ef16 f16
+        ef16 fs16\p g16 ) | % 6
+        bf,8 -! r8 r8 \tuplet 3/2 {
+            d16 ( c16 bf16 }
+        a16 ) r16 \tuplet 3/2 {
+            bf16 ( -\cresc a16 g16 }
+        fs16 ) -! r16 \tuplet 3/2 {
+            g16 ( f16 ef16 }
+        | % 7
+        d8 ) -\f ef'4 ( -> d8 ) g,,8 -. -\f af''4 ( -> g8 ) ~ | % 8
+        g8 ( -\pp df4 -> c8 ) c8 ( gf'4 -> f8 ) | % 9
+        f8 -. r8 fs32 ([ g32 a32 g32] f32 ef32 d32 c32 ) bf8-! r16 f16 ( ef'8
+        ) -. r16 f16 ( | \barNumberCheck #10
+        bf4. ) ( -\fp a16 g16 f8 ) d8 ( -\p g8 ef8 ) | % 11
+        c4 ( -> d8 ) r8 r8 cs16 ( d16 cs16 d16 bf16 g16 ) | \oBreak % 12
+        e4 ( -> f8 ) r8 r8 cs'16 ( d16 e16 d16 bf16 g16 ) | % 13
+        e4 ( -> f8 ) r8 r8 e'16 ( f16 g16 f16 c16 a16 ) | % 14
+        a8 ( -\p g8 ) r8. g16 -. -\cresc bf8 ( a8 ) r8. a16 ( -. | % 15
+        c8 bf16 ) r16 d2 ( -> df4 ) -\p | % 16
+        c16 ( a'16 e16 f16 ) cs16 ( d16 bf16 g16 ) f8 r8 \acciaccatura e8 c'8. ( e,16 ) | % 17
+        f8 r8 r4 r8 b16 ( -\p c16 b16 c16 f16. a,32 ) | % 18
+        c8 ( bf?8 ) r4 r8 a16 ( bf16 a16 bf16 g'16. bf,32 ) | % 19
+        gs8 ( a8 ) r4 r8 b16 ( c16 b16 c16 \tuplet 3/2 {
+            f16 c16 a16 ) }
+        | \barNumberCheck #20
+        c8 ( bf?8 ) r4 r8 a16 ( bf16 a16 bf16 \tuplet 3/2 {
+            g'16 e16 bf16 ) }
+        | % 21
+        gs8 ( a8 ) r4 r16 f16 ( -\< a16 c16 f16 a16 c16 f16 ) -\! | % 22
+        f8 ( -\f-> bf,8 ) r4 f8 ( -\p bf,8 ) r4 | % 23
+        e16 ( -> -\f bf'16 g16 e16 c16 bf16 g16 e16 ) f4.. ( g16 ) | % 24
+        a16 -.-\p \noBeam c16 ( a'16 g16 f16 e16 d16 c16 ) cs16 ( d16 bf16 a16 g16
+        f16 e16 g16 ) | % 25
+        f4 r4 fs8[ ( -. -\cresc fs8 -. fs8 -. ) \acciaccatura fs8 ef'16. ( -> d32 )] | % 26
+        d4 -> -\f \times 4/6 {
+            c16 ( -\p bf16 a16 c16 bf16 g16 ) }
+        f8[ ( -. f8 -. f8 ) -. \acciaccatura e8 a16. ( -> g32 )] | % 27
+        f4 r16 a16 ( c16 f16 ) fs16 ( -\cresc a16 c16 d16 ) ef16 ( -> d16 ) d16 -. d16 -. | % 28
+        d4 -> -\f \times 4/6 {
+            c16 ( -\p bf16 a16 c16 bf16 g16 ) }
+        f16 -. \acciaccatura d8 c16 ( b16 c16 ) bf'16 ( e,16 ) e16 -. e16 -. | % 29
+        f8. ( e16 \times 4/6 {
+            ef16 c16 a16 f16 a16 c16 ) }
+        ef8 -! -\f r8 r8. }
+    df16 ( | \barNumberCheck #30
+    bf'4.-> ) ( -\fp af16 gf16 f8 ) \acciaccatura af8 gf8 ( -\p f8 ef8 ) | % 31
+    df4 ( -> cf8 ) r8 r8 bf16 ( cf16 bf16 cf16 df16 ef16 ) | % 32
+    ef4 ( -> f,8 ) r8 r8 g16 ( af16 g16 af16 df16 cf16 ) | % 33
+    a?4 ( -> bf8 ) r8 r2 | % 34
+    df4. ( -> f16 ef16 ) df16 ( c16 df16 ef16 e16 f16 gf16 g16 ) | % 35
+    g4 ( -> af8 ) r8 r16 df,16 ( -. df16 -. df16 -. df16 -. df16 ) -. \acciaccatura f8 ef16
+    ( df16 ) | % 36
+    gf4. ( -> bf16 af16 ) gf16 ( f16 ef16 \prall df16 cf16 bf16 af16 \prall gf16 ) | \oBreak % 37
+    f4-> ( ef8) f8 ef'4( ff8) r8 | % 38
+    ef4.-> ( ff16 ef af g? bf af cf bf df cf) | % 39
+    ef2->-\f c,,='2->( | % 40
+    df16-!) gf16-\p([ cf bf] ef8-> df16) r16 r df16( c df ef8-> df16) r16
+    \key a \major \oBreak | % 41
+    r16 es,-\pp( gs es d'8-> cs16) r r16 b( gs'='' fs es16 d cs es) | % 42
+    <a, fs'>8->\f r8 r4 r16 cs-\p( cs'-\> gs a es-\! fs cs) | % 43
+    cs8.-\trill( bs32 cs) es8.->( fs32 gs) cs,16( d') d( cs) cs( b) \tuplet 3/2 { b a gs } | \oBreak % 44
+    <a, fs'>8->\f r8 r4 r16 cs-\p( cs'-\> gs a es-\! fs cs) | % 45
+    d8.\trill( cs32 d) a'8.->-\f( \tuplet 3/2 { g32 fs e) } d16( fs') fs(-\decresc e) e( d) d( cs) | % 46
+    cs16-\p( b) b( a) a-\decresc( g) g( fs) fs( e) e( f) f( e) e( d) | \oBreak % 47
+    cs16-!-\pp a([ cs e] gs?8-> a) r16 cs,( e g bf8-> a) | % 48
+    r16 a,( d f gs?8-> a) r16 d,( f a d8-> gs,) | % 49
+    a16-! a,,-\dim([ cs e] gs?8-> a) r16 cs,( e g bf8-> a) | % 50
+    r16 a,( d f gs?8-> a) r16 d,( f a d8-> gs,-\!) | \oBreak % 51
+    r16 a,( cs e gs a cs-\cresc e) gs( a cs e) a4- ~ | % 52
+    a16 f,-\f([ ef' c] a f e? ef c16) a([ f e] ef c a c | % 53
+    f8-!) r8 r8. f16-\pp( ef'8-!) r8 r8. f16 ( | \bar "||" \oBreak % 54
+
+    \key bf \major
+
+    bf4. -> -\fp a16 g16 f8 ) d8 ( -\p g8 ef8 ) | % 55
+    c4 ( -> - "‘" d8 ) r8 r8 e,16 ( f16 g16 f16 c'16 bf16 ) | % 56
+    d4 ( -> ef8 ) r8 r8 e,16 ( f16 g16 f16 bf16 a16 ) | \barNumberCheck #57
+    c4 ( -> d8 ) r8 r2 | % 58
+    r8 a?16 ( bf16 c16 -\< bf16 f'16 fs16) a16( -\> g16 d16 ef16 f16
+    ) ef16 fs16-\p g16 | % 59
+    bf,8 -! r8 r8 \tuplet 3/2 {
+        d16 ( c16 bf16 }
+    a16 ) -! r16 \tuplet 3/2 {
+        bf16 ( -\cresc a16 g16 }
+    fs16 ) -! r16 \tuplet 3/2 {
+        g16 ( f16 ef16 }
+    | % 60
+    d8 ) -! -\f ef'4 ( -> -\p d8 ) g,,8 -! -\f af''4 ( -> -\p g8 ) | \oBreak % 61
+    g8 ( -\pp df4 -> c8 ) c8 ( gf'4 -> f8 ) | % 62
+    f8 r8 fs32 ( g32 a32 g32 f32[ ef32 d32 c32] ) bf8 -! r16 f16 ( ef'8 ) -! r16 f16 ( | % 63
+    bf4. ) ( -> -\fp a16 g16 f8 ) d8 ( -\p g8 ef8 ) | % 64
+    c4 ( -> d8 ) r8 r8 e16 ( f16 e16 f16 d16 bf16 ) | % 65
+    a4 ( -> bf8 ) r8 r8 e16 ( f16 g16 f16 d16 bf16 ) | % 66
+    a4 ( -> bf8 ) r8 r8 a'16 ( bf16 c16 bf16 f16 d16 ) | \barNumberCheck #67
+    d8 ( c8 ) r8. c16 -. -\cresc ef8 ( d8 ) r8. d16 -. | % 68
+    f8 ( ef16 ) r16 g2 ( -> gf4 ) -\p | % 69
+    f16 ( d'16 a16 bf16 ) fs16 ( g16 ef16 c16 ) bf8 r8 \acciaccatura a f'8. ( -> a,16 ) | % 70
+    bf8 r8 r4 r8 e16 ( -\dolce f16 e16 f16 bf16 d,16 ) | % 71
+    f8 ( ef8 ) r4 r8 d16 ( ef16 d16 ef16 c'16 ef,16 ) | % 72
+    cs8 ( d8 ) r4 r8 e16 ( f16 e16 f16 \tuplet 3/2 {
+        bf16 f16 d16 ) } | % 73
+    f8 ( ef8 ) r4 r8 d16 ( ef16 d16 ef16 \tuplet 3/2 {
+        c'16 a16 ef16 ) }
+    | % 74
+    cs8 ( d8 ) r4 r16 bf,16 ( -\< d16 f16 bf16 d16 f16 bf16 ) -\! | % 75
+    bf8 ( -> -\f ef,8 ) r4 bf'8 ( -\p ef,8 ) r4 | % 76
+    a16 ( -> -\f ef'16 c16 a16 f16 ef16 c16 a16 ) bf4.. ( -> c16 ) |
+    \barNumberCheck #77
+    d16 -. -\p f16 ( d'16 c16 bf16 a16 g16 f16 ) fs16 ( g16 ef16 d16 c16
+    bf16 a16 c16 ) | % 78
+    bf4 r4 b8 ([ -. -\cresc b8 -. b8] ) -. \acciaccatura b af'16. ( -> g32 ) | % 79
+    g4 -> -\f \times 4/6 {
+        f16 ( -\p ef16 d16 f16 ef16 c16 ) }
+    bf8[ ( -. bf8 -. bf8 ) -. \acciaccatura a d16. ( -> c32 )] | % 80
+    bf4 r16 d,16 ( f16 bf16 ) b16 ( -\cresc d16
+    f16 g16 ) af16 ( -> g16 ) g16 -. g16 -. | % 81
+    g4 -> -\f \times 4/6 {
+        f16-\p ( ef16 d16 f16 ef16 c16 ) }
+    bf16 ( f16 ) f16 -. f16 -. \acciaccatura f ef'16 ( -\fp a,16 ) a16 -. a16 -. | % 82
+    bf8 r16 f16 ( -. -\pp f16 -. f16 -. f16 -. f16 ) -. f2 | % 83
+    r16 a16 ( c16 ef16 g16 gf16 f16 ef'16 ) d16 ( c16 ) c16 ( bf16 ) bf16
+    ( a16 g16 a16 ) | % 84
+    bf8 r16 f,16 ( -. -\dim f16 -. f16 -.
+    f16 -. f16 ) -. f2 | % 85
+    r16 a,16 ( c16 ef16 g16 gf16 f16 ef'16 ) d16 ( c16 ) c16 ( bf16 ) bf16
+    ( a16 g16 a16 ) | % 86
+    bf8 r8 <d, bf'>8 -\ppp r8 <d bf'>4 r4 \bar "|."
+    }
+
+MvI_Viola =  \relative bf {
+    \defaults
+    \repeat volta 2 {
+        \clef "alto" \time 4/4 \key bf \major \partial 16 r16 | % 1
+        <bf f' d'>4 -\f r4 r4 r8 g'8 ( -\p | % 2
+        a4 -> bf8 ) r8 r2 | % 3
+        f4. -> r8 r2 | % 4
+        a4 ( -> bf8 ) r8 r8 a,16 ( bf16 ef16 d16 g16 f16 ) | % 5
+        af2 ( g8 ) r8 r4 | % 6
+        d8\p -! r8 r8. f16 ( ef8 ) r16 d16 ( -\markup{ \tiny {cresc.} } c8
+        ) r16 bf16 | % 7
+        a2 -\fp-> b2 -\fp-> | % 8
+        bf2 ( -\pp a2 ) | % 9
+        bf8 r8 bf8 r8 d8 r8 a8 r8 | \barNumberCheck #10
+        <bf f' d'>4 -\f r4 r8 af'8 ( -\p g8 c8 ) | % 11
+        a4 ( -> bf8 ) r8 r2 | % 12
+        bf,4 ( a8 ) r8 r2 | % 13
+        bf4-> ( a8 ) r8 r4 r8 f'8 | % 14
+        f8. -> -\p f16 ( e16 f16 g16 f16 ) -\cresc f8. -> f16 ( e16 f16 g16 f16 ) | % 15
+        f8 r8 r4 bf2 -> | % 16
+        a4 -\p f8 ( d16 bf16 ) a8 r8 bf8 r8 | % 17
+        a8 -. <a f'>8 -\p <a f'>8 <a f'>8 r8 <a f'>8 <a f'>8 <a f'>8 | % 18
+        r8 <g e'>8 <g e'>8 <g e'>8 r8 <g e'>8 <g e'>8 <c e>8 | % 19
+        r8 <a f'>8 <a f'>8 <a f'>8 r8 <a f'>8 <a f'>8 <a f'>8 | \barNumberCheck #20
+        r8 <g e'>8 <g e'>8 <g e'>8 r8 <g e'>8 <g e'>8 <c e>8 | % 21
+        r8 <a f'>8 <a f'>8 <a f'>8 r8 <c f>8 <c f>8 <a f'>8 | % 22
+        <bf f'>8 e16 ( -\f f16 e16 f16 g16 f16 ) r8 e16 ( -\p f16 e16 f16
+        g16 f16 ) | % 23
+        <g bf>8 -\f r8 r4 r16 e,16 ( -> f16 g16 af16 a16 bf16 b16 ) | % 24
+        c8-\p r8 r4 bf?16 -. fs16 ( g16 a16 bf16 b16 c16 bf16 ) | % 25
+        a16 ( -\p c16 a16 c16 a16 c16 a16 c16 ) a16 ( -\cresc c16 a16 c16 a16 c16 a16 c16 ) | % 26
+        bf16 ( -> d16 bf16 d16 ) bf16 ( -\p cs16 d16 bf16 ) a16 ( c16 a16
+        c16 ) a16 ( c16 bf16 c16 ) | % 27
+        a16 ( c16 a16 c16 a16 c16 a16 c16 ) a16 ( -\cresc c16 a16 c16 a16 c16 a16 c16 ) | % 28
+        bf16-> ( d16 bf16 d16 ) bf16 ( -\p cs16 d16 bf16 ) a16 ( c16 a16 c16
+        ) g16 ( c16 bf16 c16 ) | % 29
+        a4 r4 <c a'>8 -. -\f r8 r8. }
+    r16 | \barNumberCheck #30
+    <bf gf'>4 -\f r4 r4 r8 ef8 ( -\p | % 31
+    ff4 -> ef8 ) r8 r2 | % 32
+    cf4. -> r8 r4 r8 df8 ~ | % 33
+    df4. r8 a?4 ( -> bf8 ) r8 | % 34
+    bf4 ( -> cf8 ) r8 r2 | % 35
+    df4. -> r8 bf4 ( -> cf8 ) r8 | % 36
+    c?4 ( -> df8 ) r8 r2 | % 37
+
+    r4 gf,=4( g2->) | % 38
+    af4( cf8) r r2 | % 39
+    cf4->-\f( ef8) r ef4->( gf8) r | % 40
+    <bf, gf'>8-! r r4 f'='4-\pp( g8) r | \bar "||" % 41
+    \key a \major
+    b,8 r r4 d4->( cs8) r | % 42
+    <fs, cs'>8-\f r fs'8->-\p( a) a,8-\f r fs'8->-\p( a) | % 43
+    \repeat unfold 2 { gs,8-\f r gs'8->-\p( b) } | % 44
+    \repeat unfold 2 { a,8-\f r fs'8->-\p( a) } | % 45
+    \repeat unfold 2 { <a, d>8-\f r fs'8->-\p( a) } | % 46
+    d,='4.( -\decresc ds8) e8( b4 e16 f) | % 47
+    e8-\pp r r8 e( g-> e) r8 e( | % 48
+    f8-> d) r8 f( a-> f) r8 f( | % 49
+    e8-> cs) r8 e,(-\dim g-> e) r8 e( | % 50
+    f8-> d) r8 f( a-> f) r8 f( | % 51
+    e8-> cs) r4 r r8 <cs' e>8-! | % 52
+    <c ef>2->-\f r16 a'( f e ef c a c | % 53
+    f8-!) r8 r4 r2 | \bar "||" % 54
+
+    \key bf \major
+
+    <bf, f' d'>4 -\f r4 r4 r8 g'8-\p ( | % 55
+    a4 -> bf8 ) r8 r2 | % 56
+    f4. -> r8 r2 | \barNumberCheck #57
+    a4 ( -> bf8 ) r8 r8 a,16 ( bf16 ef16 d16 g16 f16 ) | % 58
+    af2 ( -> g8 ) r8 r4 | % 59
+    d8 -! -\p r8 r8. f16 ( ef8 ) r16 d16 ( -\cresc c8 ) r16 bf16 ( | % 60
+    a2 ) -> -\fp b2 -> -\fp | % 61
+    bf2 ( -\pp a2 ) | % 62
+    bf8 r8 bf8 r8 d8 r8 a8 r8 | % 63
+    <bf f' d'>4 -\f r4 r8 af'8 ( -\p g8 c8 ) | % 64
+    a?4 ( -> bf8 ) r8 r2 | % 65
+    ef,4 ( -> d8 ) r8 r2 | % 66
+    ef4 ( -> d8 ) r8 r4 r8 bf'8 | \barNumberCheck #67
+    bf8. -> bf16 ( a16 bf16 c16 bf16 ) -\cresc bf8.
+    -> bf16 ( a16 bf16 c16 bf16 ) | % 68
+    bf8 r8 r4 ef,2 ( -> | % 69
+    d8 ) -\p r8 bf'8 ( g16 ef16 ) d8 r8 ef8 r8 | % 70
+    d8 -. <d bf'>8 -\p <d bf'>8 <d bf'>8 r8 <d bf'>8 <d bf'>8 <d bf'>8 | % 71
+    r8 <c a'>8 <c a'>8 <c a'>8 r8 <c a'>8 <c a'>8 <f a>8 | % 72
+    r8 <d bf'>8 <d bf'>8 <d bf'>8 r8 <d bf'>8 <d bf'>8 <d bf'>8 | % 73
+    r8 <c a'>8 <c a'>8 <c a'>8 r8 <c a'>8 <c a'>8 <f a>8 | % 74
+    \repeat unfold 2 { r8 <d bf'>8 q8 q8 } | % 75
+    <ef bf'>8 a16 ( -\f bf16 a16 bf16 c16 bf16 ) r8 a16 ( -\p bf16 a16
+    bf16 c16 bf16 ) | % 76
+    <ef, c'>8 -\f r8 r4 r16 a,16 ( -> bf16 c16 df16 d16 ef16 e16 ) | \barNumberCheck #77
+    f8 -\p r8 r4 ef?16 -. b16([ c16 d16] ef16 e16 f16 ef16 ) | % 78
+    d16 ( -\p f16 d16 f16 d16 f16 d16 f16 ) d16 ( -\cresc f16 d16 f16 d16 f16 d16 f16 ) | % 79
+    ef16 ( -> g16 ef16 g16 ) ef16 ( -\p fs16 g16 ef16 ) d16 ( f16 d16 f16
+    ) d16 ( f16 ef16 f16 ) | % 80
+    d16 f,16[ ( d16 f16] d16 f16 d16 f16 ) d16 ( -\cresc f16 d16 f16 d16 f16 d16 f16 ) | % 81
+    ef16 ( -> g16 ef16 g16 ) ef16 ( -\p -\p fs16 g16 ef16 ) d16 ( f16 d16
+    f16 ) c16 ( f16 ef16 f16 ) | % 82
+    d8 r8 r4 r16 d16 ( -\pp f16 bf16 d16 f16 bf16 d16 ) | % 83
+    ef1 ( -> | % 84
+    d8 ) r16 f,,16 ( -. f16 -. f16 -. f16 -. f16 ) -. f2 | % 85
+    f1 ( -> | % 86
+    bf8 ) r8 f8 -\ppp r8 f4 r4 \bar "|."
+    }
+
+MvI_Cello =  \relative bf, {
+    \defaults
+    \repeat volta 2 {
+        \clef "bass" \time 4/4 \key bf \major \partial 16 r16 | % 1
+        <bf f' bf>4 -\f r4 r4 r8 ef'8 ( -\p | % 2
+        f4 -> bf,8 ) r8 r2 | % 3
+        bf4 ( -> a8 ) r8 r2 | % 4
+        ef'4 ( -> d8 ) r8 r2 | % 5
+        d2 ( ef8 ) r8 r4 | % 6
+        f,8\p -! r8 r8. d'16 ( c8 ) r16 bf16 ( a8 ) r16 g16 ( | % 7
+        fs2 ) -\fp-> f2 -> -\fp | % 8
+        e2 ( -\pp ef2 ) | % 9
+        d8 r8 ef8 r8 f8 r8 f8 r8 | \barNumberCheck #10
+        <bf, f' bf>4 -\f r4 r8 bf'8 ( -\p b8 c8 ) | % 11
+        f4 ( -> bf,8 ) r8 r2 | % 12
+        c,4 ( -> f8 ) r8 r2 | % 13
+        c4 ( -> f8 ) r8 r4 r8 a8 | % 14
+        bf4 -\p r8. bf16 -. -\cresc c4 r8. c16 -. | % 15
+        d8 r8 r4 e2 -> | % 16
+        f4 ( -\p bf,4 ) c8 r8 c,8 r8 | % 17
+        f8 -. b16 ( -\p c16 b16 c16 a16 f16 ) c4 r4 | % 18
+        c8 -. b'16 ( c16 b16 c16 g16 e16 ) c4 r4 | % 19
+        f,8 -. b'16 ( c16 b16 c16 a16 f16 ) c4 r4 | \barNumberCheck #20
+        c,8 -. b''16 ( c16 b16 c16 g16 e16 ) c4 r4 | % 21
+        f,8 -. e'16 ( f16 e16 f16 a16 c16 ) ef2 -> | % 22
+        d4 -\f r4 df4 -\p r4 | % 23
+        c8 -\f r8 r4 df,2 ( -> | % 24
+        c8-\p ) r8 r4 c8 r8 r16 df16 ( c16 e16 ) | % 25
+        f8[ -. -\p f8 -. f8 -. ef16. ( -> d32 )] d2-\cresc | % 26
+        g8 -> r8 g,8[ -. -\p r16 bf16] -. c8 r8 c8 r8 | % 27
+        f,8[ -. f8 -. f8 -. ef16. ( -> d32 )] d2 -\cresc | % 28
+        g8 -> r8 g8[ -. -\p r16 bf16 -.] c8 r8 c,8 r8 | % 29
+        f4 r4 f'8 -. -\f r8 r8. }
+    r16 | \barNumberCheck #30
+    gf4 -\f r4 r4 r8 gf8 ( -\p | % 31
+    g4 -> af8 ) r8 r2 | % 32
+    df,4. -> r8 r4 r8 f8 ( | % 33
+    gf4. ) r8 f4 ( -> gf8 ) r8 | % 34
+    g?4 ( -> af8 ) r8 r2 | % 35
+    cf4. -> r8 g?4 ( -> af8 ) r8 | % 36
+    a?4 ( -> bf8 ) r8 r2 | % 37
+
+    r4 cf,( bf2->) | % 38
+    cf4( af'8) r r2 | % 39
+    af4->-\f( cf8) r gf4->( ef8) r | % 40
+    df8-! r r4 a'?4->-\pp( bf8) r | % 41
+    \key a \major
+    cs,8 r r4 es4->( b'8) r | % 42
+    \repeat unfold 2 { fs,16-!-\fp fs'([ a fs] d8-> cs) } | % 43
+    \repeat unfold 2 { es,16-!-\fp es'([ gs es] d'8-> cs) } | % 44
+    \repeat unfold 2 { fs,,16-!-\fp fs'([ a fs] d'8-> cs) } | % 45
+    \repeat unfold 2 { fs,,16-!-\fp fs'([ a fs] d'8-> fs,) } | % 46
+    g2-\p-\decresc g4( gs) | % 47
+    a8-.-\pp a([ e'-> cs]) r8 a( e' cs) | % 48
+    \repeat unfold 2 { r8 a( f'-> d) } | % 49
+    cs8-. a,([-\dim e'-> cs]) r8 a( e'-> cs) | % 50
+    \repeat unfold 2 { r8 a( f'-> d) } | % 51
+    cs8( a) r4 r4 r8 a'-! | % 52
+    f2->-\f r16 a( f e? ef c a c | % 53
+    f8-!) r8 r4 r2 | % 54
+
+    \key bf \major <bf, f' bf>4 -\f r4 r4 r8 c'8-\p ( | % 55
+    f4 -> bf,8 ) r8 r2 | % 56
+    bf4 ( -> a8 ) r8 r2 | \barNumberCheck #57
+    ef'4 ( -> d8 ) r8 r2 | % 58
+    d2 ( -> ef8 ) r8 r4 | % 59
+    f,8 -! -\p r8 r8. d'16 ( c8 ) r16 bf16-\cresc ( a8 ) r16 g16 ( | % 60
+    fs2 ) -> -\fp f2 -> -\fp | % 61
+    e2 ( -\pp ef2 ) | % 62
+    d8 r8 ef8 r8 f8 r8 f8 r8 | % 63
+    bf,4 -\f r4 r8 bf8 ( b8 c8 ) | % 64
+    f4 ( -> bf,?8 ) r8 r2 | % 65
+    f'4 ( -> bf8 ) r8 r2 | % 66
+    f4 ( -> bf8 ) r8 r4 r8 d8 | \barNumberCheck #67
+    ef4 r8. ef16-.-\cresc f4 r8. f16 -. | % 68
+    g8 r8 r4 a,2 -> | % 69
+    bf8 -\p r8 ef,8 r8 f8 r8 f,8 r8 | % 70
+    bf8 -. e16 ( -\p f16 e16 f16 d16 bf16 ) f4 r4 | % 71
+    f8 -. e'16 ( f16 e16 f16 c16 a16 ) f4 r4 | % 72
+    bf8 -. e16 ( f16 e16 f16 d16 bf16 ) f4 r4 | % 73
+    f8 -. e'16 ( f16 e16 f16 c16 a16 ) f4 r4 | % 74
+    bf8 -. a16 ( bf16 a16 bf16 d16 f16 ) af2 -> | % 75
+    g4 -\f r4 gf4 -\p r4 | % 76
+    f8 -\f r8 r4 gf,2 ( -> | \barNumberCheck #77
+    f8 ) -\p r8 r4 f8 r8 r16 gf'16 ( f16 a16 ) | % 78
+    bf8 -. -\p[ bf8 -. bf8 -. af16. ( -> g32 )] g2-\cresc | % 79
+    c8 -> r8 c,8[ -. -\p r16 ef16 -.] f8 r8 f,8 r8 | % 80
+    bf8[ -. bf8 -. bf8 -. af16. ( g32 )] g2-\cresc | % 81
+    c8 -> r8 c,8[ -. -\p r16 ef16 -.] f8 r8 f8 r8 | % 82
+    bf8 r16 f'16 ( -. -\pp f16 -. f16 -. f16 -. f16 ) -. f2 | % 83
+    f'1 ( -> | % 84
+    bf,8 ) r8 r4 r16 d,,16 ( f16 bf16 d16 f16 bf16 d16 ) | % 85
+    ef1 ( -> | % 86
+    d8 ) r8 bf,8 -\ppp r8 bf4 r4 \bar "|."
+    }
+
+
+%%% Movement II
+
+MvII_Violin =  \relative a'' {
+    \defaults
+    \clef "treble" \time 6/8 \key f \major | % 1
+    \appoggiatura { f16 g } a8 -. - "" -\p r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 \tuplet 3/2 { d16 ( e16 f16 ) } | % 2
+    f,8. ( g32 f32 ) \tuplet 3/2 { e16 ( d'16 c16 ) } gs8 ( \tuplet 6/4 4 { a16 ) c16 ( -. cs16 -. d16 -. ef16 -. e16 ) -. } | % 3
+    \appoggiatura { f16 g } a8 -. r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 d32 ( c32 a32 f32 ) | % 4
+    e8 ~ e32 ( d32 e32 fs32 ) g32[ ( a32 c32 bf32 )] a8 ( g16 ) r16 
+    \repeat volta 2 {
+        c8 | % 5
+        bf8 ( a16 ) r16 \acciaccatura a8 ef'16. ( -> d32 ) d8 ~ d32 ( bf32 a32 bf32 ) cs32[ ( d32 bf32 g32 )] | % 6
+        f8 ( e?16 ) r16 \acciaccatura e8 df'16. ( -> c32 ) c8 ~ c32 ( a32 c32 ef32 ) g16. ( f32 ) | \oBreak % 7
+        f4 fs32 ( g32 ef32 c32 ) bf8 ( a8 ) r8 | % 8
+        bf64 ( -\pp c64 df32 ) r16 df64 ( ef64 f32 ) r16 bf,64 ( c64 df32
+        ) r16 a?64 ( bf64 c32 ) r16 ef,64 ( f64 g32 ) r16 f64 ( g?64 a32
+        ) r16 | \barNumberCheck #9
+        bf64 ( c64 df32 ) r16 df64 ( ef64 f32 ) r16 bf,64 ( c64 df32 ) r16
+        gf,64 ( af64 bf32 ) r16 gf64 ( af64 bff32 ) r16 ef,64 ( f64 gf32 ) r16 | \oBreak % 10
+        df64 ( e64 f32 ) r16 df'64 ( -\cresc ef64
+        f32 ) r16 e64 ( f64 g32 ) r16 f64 ( g64 af32 ) r16 r8 r8 | % 11
+        \appoggiatura { df,32 ef } f8 -. -\pp r8 ef32 ( df32 c32 bf32 ) af8 ( f16 ) r16 \appoggiatura { gf32 af } bf8 -. |
+        af8 ( f16 ) r16 df'64 ( -\f ef64 f32 ) r16 c,8 ( -> b16 ) r16
+        f''64 ( -\sfz g?64 af32 ) r16 \fermata | % 13
+        c,8. ( -\p d?32 c32 ) bf32 [( g32 d32 e?32 )] f32 ( fs32 g32 gs32
+        a32[ bf32 b32 c32] cs32 d32 ef32 e32 ) | % 14
+        \appoggiatura { f32 g } a8 -. -\pp r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 \tuplet 3/2 {
+            d16 ( e16 f16 ) }
+        | % 15
+        f,8. ( g32 f32 ) \tuplet 3/2 {
+            e16 ( d'16 c16 ) }
+        gs8 ( a16 ) r16 \tuplet 3/2 {
+            a16 ( g'16 f16 ) }
+        | % 16
+        cs8 ( d16 ) r16 \tuplet 3/2 {
+            fs,16 e'16 d16 }
+        a8 ( bf16 ) r16 cs?32 ( d32 bf32 g32 ) | % 17
+        f8 ~ f32 ( e32 f32 fs32 ) g32 [( a32 bf32 e,32 )] f8 r8 }
+    r8 \bar "||"
+    \key af \major R2. | \barNumberCheck #19
+    r4 r16 g, ( -pp af16. bf32 c8. df16 ) | % 20
+    c8. ( bf16 af16 g16 ) af16. ( bf32 c8. d16 ) | % 21
+    ef16. -. ef32 ( ef'8. -\cresc ff16 ) ef8. ( df16 c16
+    bf16 ) | % 22
+    c16. ( df32 ef8. ff16 ) ef8. ( df16 c16 bf16 ) | % 23
+    c8 ( -\p ef8 -\< df8 f?8 ef8 gf8 ) -\! | % 24
+    f8 ( -> ef16 df16 c16 bf16 ) af4 g8 \trill | % 25
+    af8 r8 r8 c8 ( -. -\pp-\< c8 -. c8 ) -. -\! | % 26
+    f4 ( -> ef32 df32 c32 bf32 ) af4 ( bf8 ) | % 27
+    b8 ( c8 ) r8 c8 ( -. -\< c8 -. c8 ) -. -\! | % 28
+    f16 ( gf8 ) ( -> f16 ) ef32 ( df32 \tuplet 3/2 {
+        c32 bf32 f'32 ) }
+    af,4 \turn df16. ( g,32 ) | \barNumberCheck #29
+    af16 ( ef16 c'16 bf16 af16 g16 ) af16 ( ef16 c'16 bf16 af16 g16 ) | % 30
+    af16 ( c,16 -\markup{ \tiny {decresc.} } af'16 g16 f16 e16 ) f16 ( c16
+    af'16 g16 f16 e16 ) | % 31
+
+    f16-. af( f' ef df c) ef16( df) df( c) c( b) | % 32
+    c16-\pp r16 e64( f g32) r16 g64( af bf32) r16 bf64( c df32) r16 g,64( af bf32) r16 e,64( f g32) r16 | % 33
+    bf,64( c df32) r16 g,64(-\cresc af bf32) r16 e,64( f g32) r16 bf,64-\f( c df32) r16 r8 r8 | \oBreak % 34
+    c8-> ~ c32( e g bf) c32( e g a) bf4->( e,8) | \bar "||" % 35
+    \key f \major
+    \appoggiatura { f32 g } a8 -. - "" -\p r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 \tuplet 3/2 { d16 ( e16 f16 ) } | % 36
+    f,8. ( g32 f32 ) \tuplet 3/2 { e16 ( d'16 c16 ) } gs8 ( \tuplet 6/4 4 { a16 ) c16 ( -. cs16 -. d16 -. ef16 -. e16 ) -. } | % 37
+    \appoggiatura { f16 g } a8 -. r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 d32 ( c32 a32 f32 ) | % 38
+    e8 ~ e32 ( d32 e32 fs32 ) g32[ ( a32 c32 bf32 )] a8 ( g16 ) r16 c8 | % 39
+    bf8 ( a16 ) r16 \acciaccatura a8 ef'16. ( -> d32 ) d8 ~ d32 ( bf32 a32 bf32 ) cs32[ ( d32 bf32 g32 )] | \oBreak % 40
+    f?8 ( e?16 ) r16 \acciaccatura e8 df'16. ( -> c32 ) c8 ~ c32 ( a32 c32 ef32 ) g16.-> ( f32 ) | % 41
+    f8 r32 bf,( d f) gf16.-\pp( f32) f8 r r | % 42
+    bf64( c d32) r16 g,64( a bf32) r16 c,64( d ef32) r16 bf64(-\cresc c d32) r16 g,64( a bf32) r16 c,64( d ef32) r16 | \oBreak % 43
+    bf64(-\f c d32) r16 r8 r8 bf'64-\pp( c df32) r16 r8 r8 | % 44
+    bf64(      c df32) r16 bf64( c df32) r16 r8
+    bf64(-\dim c df32) r16 bf64( c df32) r16 r8 | % 45
+    \appoggiatura { af32 bf } c8-.-\p r bf32( af g f) ef8( c16) r df64( ef f32) r16 \oBreak | \barNumberCheck #46
+
+    
+    ef8 ( c16 ) r16 df64 ( ef64 f32 ) r16 ef8 -. r8 r8 | % 47
+    e?8 ( -\dim \times 4/6 {
+        bf'16 e,16 bf'16 f16 bf16 f16 ) }
+    e8 -. r8 r8 | % 48
+    e'8 ( \tuplet 6/4 { bf'16 e,16 d'16 f,16 bf16 f16 } ) e8 r8 r8 | \barNumberCheck #49
+    \appoggiatura { f32 g } a32 ( f32 ) -\pp f32 -. f32 -. c32[ ( f32 ) f32 -. f32 -.] g32 ( f32 )
+    e32 -. d32 -. c32 ( b32 c32 a32 f32[ a32 c32 f32] ) f32 ( d32 bf32 g32 ) | % 50
+    \acciaccatura g8 f32 ( e32 f32 g32 e32[ f32 g32 a32] bf32 b32 d32 c32 ) gs32 a32 ( bf32
+    a32 d32[ c32 f32 e32] g?32 f32 bf32 a32 ) | % 51
+    \appoggiatura { f32 g } a32 ( -\f f32 ) f32 -. f32 -. c32[ ( f32 ) f32 -. f32 -.] g32 ( f32 )
+    e32 -. d32 -. c32 ( c'32 gs32 a32 e32[ f32 a32 c,32] )
+    \tuplet 5/4 { d32 ( f32 d32 bf32 g?32 ) } | % 52
+    f32 ( c32 a32 c32 f32[ a32 c32 f32] ) e32 ( -\p bf'32 g32 e32 ) 
+    \acciaccatura g8 f32 ( e32 ) f32 -. f32 -. 
+    \acciaccatura g8 f32 ([ -\pp e32 ) f32 -. f32 -.] 
+    \acciaccatura g8 f32 ( e32 ) f32 -. f32 -. | % 53
+    f32 ( bf32 ) f32 -. f32 -. f32[ ( df'32 ) f,32 -. f32 -.] f32 ( f'32 ) f,32 -. f32 -. 
+    f,32 ( f'32 ) f,32 -. -\cresc f32-. a32[ ( a'32 ) a,32 -. a32 -.] c32 ( c'32 ) c,,32 -. c32 -. | % 54
+    c32 -. -\f e'32 ( -\> d'32 e,32 d'32[ df32 c32 -\! bf32] a32 g32 f32 e32 )
+    f32 ( -\pp f,32 ) f32 -. f32 -. \repeat unfold 2 { \acciaccatura g8 f32[ ( e32 ) f32 -. f32 -.] } | % 55
+    f32 ( bf32 ) f32 -. f32 -. f32[ ( d'32 ) f,32 -. f32 -.] f32 ( f'32 ) f,32 -. f32 -. 
+    f32 ( f'32 ) f,32 -. -\cresc f32-. a32[ ( a'32 ) a,32 -. a32 -.] c32 ( c'32 ) c,,32 -. c32 -. | % 56
+    c32 -. -\f e32 ( d'32 e,32 d'32[ df32 c32 bf32] a32 g32 bf32 g32 ) 
+    e32-. e'32-\p ( d'32 e,32 d'32[ df32 c32 bf32 )] a32 ( g32 f32 e32 ) | % 57
+    f8 r8 f,64 ( -\pp g64 a32 ) r16 f8 -. r8 r8 \bar "|."
+    }
+
+MvII_Viola =  \relative c'' {
+    \defaults
+    \clef "alto" \time 6/8 \key f \major | % 1
+    \appoggiatura { s16 s } c8 -. -\p r8 bf8 -. a8 -. r8 bf,8 -. | % 2
+    a8 -. r8 bf16. ( e,32 ) f8 -. r8 r8 | % 3
+    c''8 -. r8 bf8 -. a8 -. r8 f,8 ~ | % 4
+    f8[ ( d8 )] d'8 f8 ( e16 ) r16 
+    \repeat volta 2 {
+        r8 | % 5
+        fs8 r8 fs8 ( g8 ) r8 bf,8 | % 6
+        a8 ( g16 ) r16 e'8 ( f8 ) r8 a8 ( | % 7
+        bf8 ) r8 ef,8 -. d8 ( c8 ) r8 | % 8
+        r16 df16 -. -\pp r16 df16 -. r16 df16 -. r16 ef16 -. r16 ef16 -.
+        r16 ef16 -. | \barNumberCheck #9
+        r16 df16 -. r16 df16 -. r16 df16 -. r16 ef16 -. r16 ef16 -. r16 gf,16 -. | % 10
+        r16 af16 -. -\cresc r16 f'16-. r16 e?16 -. r16 f16 -. r8 r8 | % 11
+        af8 -. -\pp r8 gf8 -. f8 -. r8 gf8 -. | % 12
+        f8 -. r8 f,8 ~ -> -\fz f4 r8 \fermata | % 13
+        a4 ( -\p g16 bf16 ) a8 r8 r8 | % 14
+        c'8 -. -\pp r8 bf8 -. a8 -. r8 bf,8 -. | % 15
+        a8 -. r8 bf16 ( e,16 ) f8 r8 ef'16 ( a,16 ) | % 16
+        bf8 r8 c16 ( fs,16 ) g8 r8 g8 ( | % 17
+        a8 ) r8 bf8 -. a8 -. r8 }
+    r8 \bar "||"
+    \key af \major r4 r8 r4 r16 g'16 ( -\pp | \barNumberCheck #19
+    af16. bf32 c8. df16 ) c8. ( bf16 af16 g16 ) | % 20
+    af16. ( bf32 c8. df16 ) c8. ( bf16 af16 bf32 af32 ) | % 21
+    g8 ( af8 ) r16 bf,16 ( c16. -\cresc df32 ef8. ff16
+    ) | % 22
+    ef8. ( df16 c16 bf16 ) c16. ( df32 ef8. ff16 ) | % 23
+    ef16 ( -\p f?16 gf16 -\< f16 ) f16 ( g16 af16 g16 ) af16 ( c16 bf16 a16
+    ) -\! | % 24
+    a16 ( -> bf16 gf16 f16 ef16 df16 ) c16 ( b16 c16 f16 ef16 df16 ) | % 25
+    c16 ( -\pp df16 ef16 df16 c16 bf16 ) af16 ( bf16 c16 bf16 af16
+    -\cresc g16 ) | % 26
+    f16 ( ef16 df16 ef16 f16 g16 ) af16 ( df16 c16 ef16 df16 ef16 ) | % 27
+    df16 ( -\pp ef16 c16 ef16 c16 bf16 ) af16 ( bf16 c16 bf16 af16 -\cresc g16 ) | % 28
+    f16 ( ef16 df16 c16 df16 df'16 ) c16 ( -\p b16 c16 ef16 bf16 df16 )
+    | \barNumberCheck #29
+    c8 r16 df16 ( -\pp c16 b16 c16 ) r16 r16 df16 ( c16 b16 | % 30
+    c16 ) -\decresc r16 r16 bf?16 ( af16 g16 af16  ) r16 r16 bf16 ( af16 g16 | % 31
+
+    f8) r r r8 f'-. f-. | % 32
+    r16 e-\pp \repeat unfold 5 { r16 e } | % 33
+    r16 e,-\cresc r16 e r16 e r16 g-\f r8 r | % 34
+    g64(-\sfz a bf32) r16 r8 r8 g'8-.-\p r8 r8 | \bar "||" % 35
+    \key f \major
+
+    \appoggiatura { s32 s } c8 -. -\p r8 bf8 -. a8 -. r8 bf,8 -. |
+    a8 -. r8 bf16. ( e,32 ) f8 -. r8 r8 |
+    c''8 -. r8 bf8 -. a8 -. r8 f,8 ~ |
+    f8[ ( d8 )] d'8 f8 ( e16 ) r16  r8 |
+    fs8 r8 fs8 ( g8 ) r8 bf,16( d32 bf) | % 40
+    a8( g16) r16 e'8( f) r8 a8( | % 41
+    bf8) r a8-\pp( bf) r r | % 42
+    r16 g r d r fs r g r d r fs, | % 43
+    r16 g-\f r8 r8 r16 e'16-\pp r8 r | % 44
+    r16 e r e r8 r16 ef r ef r8 | % 45
+    ef8-.-\p r df-. c-. r8 df-. | \barNumberCheck # 46
+
+    c8 -. r8 df8 -. c8 -. r8 r8 | % 47
+    c8 r8 \appoggiatura { bf32 c } df8 -. c8 -. r8 r8 | % 48
+    c'8 r8 \appoggiatura { bf32 c } df8 -. c8 -. r8 r8 | \barNumberCheck #49
+    <a, f'>8 -\pp r8 bf8 -. a8 -. r8 d8 -. | % 50
+    a8( g16 ) r16 c8 -. c8 -. r8 r8 | % 51
+    <a f'>8 -\f r8 bf8 -. a8 -. r8 d8 -. | % 52
+    a8 -. r8 bf8 -. -\p a8 -. r8 c8 -. -\pp | % 53
+    df64 ( ef64 f32 ) r16 r8 df8 -. c64 ( bf64 a32 ) r16 r8 a8 -. | % 54
+    \appoggiatura { g32 a } bf4. ( -> a8 ) r8 c8 -. | % 55
+    df64 ( ef64 f32 ) r16 r8 df8 -. c64 ( bf64 a32 ) r16 r8 a8 -. | % 56
+    \appoggiatura { g32 a } bf2. ( -> | % 57
+    a8 ) r8 a64 ( -\pp bf64 c32 ) r16 a8 -. r8 r8 \bar "|."
+    }
+
+MvII_Cello =  \relative f' {
+    \defaults
+    \clef "bass" \time 6/8 \key f \major | % 1
+    \appoggiatura { s16 s } f8 -. -\p r8 f8 -. f8 -. r8 bf,,8 -. | % 2
+    c8 -. r8 c8 -. f8 -. r8 r8 | % 3
+    f'8 -. r8 f8 -. f8 -. r8 a,,8 | % 4
+    bf4 bf'8 c4
+    \repeat volta 2 {
+        r8 | % 5
+        d8 r8 c8 ( bf8 ) r8 bf,8 | % 6
+        c8. r16 bf'8 ( a8 ) r8 ef'8 ( | % 7
+        d8 ) r8 ef,8 -. f4 r8 | % 8
+        r16 bf16 -.-\pp r16 bf16 -. r16 bf16 -. r16 c16 -. r16 c16 -. r16 c16
+        -. | \barNumberCheck #9
+        r16 bf16 -. r16 bf16 -. r16 bf16 -. r16 c16 -. r16 c16 -. r16 c,16
+        -. | % 10
+        r16 df16 -.-\cresc r16 df'16 -. r16 df16 -. r16 df16 -. r8 r8 | % 11
+        df8 -. -\pp r8 df8 -. df8 -. r8 df8 -. | % 12
+        df8 -. r8 df,8 ~ -> -\fz df4 r8 \fermata | % 13
+        c4. ( -\p f8 ) r8 r8 | % 14
+        f'8 -. -\pp r8 f8 -. f8 -. r8 bf,,8 -. | % 15
+        c8 -. r8 c8 ( f8 ) r8 f8 ( | % 16
+        bf,8 ) r8 d8 ( g,8 ) r8 bf8 ( | % 17
+        c8 ) r8 c8 -. f,8 -. r8 }
+    r8 \bar "||"
+    \key af \major f16 ( -\pp c16 af'16 g16 f16 e16 ) f16 ( c16 af'16 g16
+    f16 e16 ) | \barNumberCheck #19
+    f16 ( c16 af'16 g16 f16 e16 ) f16 ( c16 af'16 g16 f16 e16 ) | % 20
+    f16 ( c16 af'16 g16 f16 e16 ) f16 ( c16 af'16 g16 f16 bf16 ) | % 21
+    ef,16 -. ef16 ( c'16-\cresc bf16 af16 g16 ) af16 ( ef16 c'16 bf16 af16 g16
+    ) | % 22
+    af16 ( ef16 c'16 bf16 af16 g16 ) af16 ( ef16 c'16 bf16 af16 g16 ) | % 23
+    af8 -\p a8 -\< bf8 df8 c8 ef8 -\! | % 24
+    df8. ( -> bf16 c16 df16 ) ef16 ( ff16 ef16 d16 ef16 ef,16 ) | % 25
+    af'16 ( -\pp bf16 c16 bf16 af16 g16 ) f16 ( g16 af16 g16 f16-\cresc ef16 ) | % 26
+    df16 ( c16 bf16 c16 df16 ef16 ) f16 ( ff16 ) ef8-. ( ef8 -.) | % 27
+    g8 ( -\pp af16 c16 af16 g16 ) f16 ( g16 af16 e16 f16 ) -\cresc c16 | % 28
+    df16 ( c16 bf16 a16 bf16 df16 ) ef16 ( -\p ff16 ) ef8( -. ef8 -.) | \barNumberCheck #29
+    af,8 r8 r16 ef'16 ( -\pp af,16 ) r16 r8 r16 ef'16 ( | % 30
+    af,16 ) r16 r8 r16 c16 ( f,16 ) r16 r8 r16 c'16 ( | % 31
+
+    df8) r r r8 df'-. df-. | % 32
+    r16 c-\pp \repeat unfold 5 { r16 c } % 33
+    r16 c,-\cresc r c r c r e-\f r8 r8 | % 34
+    e64-\sfz( f g32) r16 r8 r8 c-.-\p r r | \bar "||" % 35
+    \key f \major
+    \appoggiatura { s32 s } f8-.-\p r f-. f-. r bf,,-. | % 36
+    c8-. r c-. f-. r r | % 37
+    f'8-. r f-. f-. r a,, | % 38
+    bf8 r bf c4 r8 | % 39
+    d'4 c8( bf) r bf, | % 40
+    c4 bf'8( a) r ef'( | % 41
+    bf8) r ef-\pp( d) r r | % 42
+    r16 bf r bf r a r bf-\cresc r bf r a, | % 43
+    r16 bf-\f r8 r r16 bf'-\pp r8 r | % 44
+    r16 bf r bf r8 r16 g r g r8 | % 45
+    af-.-\p r af-. af-. r af-. | % 46
+
+    af8 -. r8 af8 -. af8 -. r8 r8 | % 47
+    g8 r8 g8 -. g8 -. r8 r8 | % 48
+    g'8 r8 g8 -. g8 -. r8 r8 | \barNumberCheck #49
+    f,8 -\pp r8 f8 -. f8 -. r8 bf,8 -. | % 50
+    c8 -. r8 e8 -. f8 -. r8 r8 | % 51
+    f8 -\f r8 f8 -. f8 -. r8 bf,8 -. | % 52
+    c8 -. r8 c8 -. -\p f8 -. r8 a8 -. -\pp | % 53
+    bf64( c64 df32 ) r16 r8 bf8 -. a64 ( g64 f32 ) r16 r8 f8 | % 54
+    \appoggiatura { e32 d } c4. ( -> f8 ) r8 a8 -. | % 55
+    bf64 ( c64 df32 ) r16 r8 bf8 -. a64 ( g64 f32 ) r16 r8 f8 | % 56
+    \appoggiatura { e32 d } c2. ( -> | % 57
+    f8 ) r8 f,8 -. -\pp f8 -. r8 r8 \bar "|."
+    }
+
+
+%%% Movement III
+
+MvIII_Markings = { \tempo "Allegretto"
+                   \time 3/4 \partial 4 s4 | s2.*67 |
+                   s4_\markup{"Menuetto da capo"} s4 \bar "||" }
+
+MvIII_Violin =  \relative d'' {
+    \defaults
+    \repeat volta 2 {
+        \repeat volta 2 {
+            \clef "treble" \time 3/4 \key bf \major \partial 4 d8 ( -\p ef8 | % 1
+            f2 ) -> bf,8 ( c8 | % 2
+            d2 ) g,8 ( a8 | % 3
+            c8 bf8 d8 c8 ef8 d8 ) | % 4
+            b4 ( c8 ) r8 d8 ( ef8 | % 5
+            g4 -> f4 ) bf,8 ( c8 | % 6
+            ef4 d4 ) g,8 ( a8 | % 7
+            c8 bf8 d8 c8 ef8 d8 ) | \oBreak % 8
+            c4 ( bf4 \trill a4 ) | % 9
+            a8 ( g8 ) g4 -. g4 -. | \barNumberCheck #10
+            f'8 ( d8 bf8 g8 bf8 d8 ) | % 11
+            f,2 \acciaccatura e8 a8 ( g8 ) | % 12
+            f4 r4 }
+        \repeat volta 2 {
+            f'8 ( -\mf fs8 ) | % 13
+            g8 ( ef8 c8 a8 c8 ef8 ) | % 14
+            g2. | % 15
+            gf8 ( -\pp ef8 c8 a8 c8 ef8 ) | \oBreak % 16
+            gf2. | % 17
+            f8 ( df8 af8 f8 af8 df8 ) | % 18
+            f4 ( -\cresc ef4 df4 ) | % 19
+            df4. ( af'8 ) bff8 ( c,8 ) | \barNumberCheck #20
+            df4 -. df'4. ( -> c16 bf16 ) | % 21
+            a2. ~ -> -\p | % 22
+            a2 \acciaccatura c8 bf8 ( a8 ) | % 23
+            a2. -> -\pp ~ | % 24
+            a2 \acciaccatura c8 bf8 ( a8 ) | % 25
+            a8-> ( ef'8 d8 c8 bf8 a8 ) | % 26
+            g8 ( f8 e8 ef8 ) d8 ( ef8 | % 27
+            g4 -> f4 ) bf,8 ( c8 | % 28
+            ef4 d4 ) g,8 ( a8 | % 29
+            c8 bf8 d8 c8 ef8 d8 ) | \barNumberCheck #30
+            b4 ( c8 ) r8 r4 | % 31
+            r4 r4 g'8 ( a8 | \oBreak % 32
+            bf4 -\cresc b4 c4 ) | % 33
+            \acciaccatura c8 ef4. ( -> c8 a8 ef8 ) | % 34
+            d8 ( f8 bf8 f8 ef8 d8 ) | % 35
+            d8 ( c8 ) c4 -. c4 -. | % 36
+            c8 ( bf'8 g8 ef8 c8 g'8 ) | % 37
+            bf,2 \acciaccatura a8 d8 ( c8 ) | % 38
+            bf4 -\! r4 }
+        r4 | \oBreak
+        \time 3/4  \key ef \major <g, ef'>4 -. -\pp <g ef'>4 -. <g ef'>4 -. | \barNumberCheck #40
+        \repeat volta 2 {
+            <af d>4 -. r4 r4 | % 41
+            af4 -. af4 -. af4 -. | % 42
+            g4 -. r4 r4 | % 43
+            <g ef'>4 -. <g ef'>4 -. <g ef'>4 -. | % 44
+            <af d>4 -. r4 r4 | % 45
+            af4 -. af4 -. af4 -. | % 46
+            g4 -. r4 r4 }
+        \alternative {
+          { <g ef'>4 -. -. <g ef'>4 -. <g ef'>4 -. }
+          { f'4 -. f4 -. f4 -. }
+        }
+        ef4 -. r4 r4 | \barNumberCheck #50
+        f4 -. f4 -. f4 -. | % 51
+        ef4 -. r4 r4 | % 52
+        ef4 -. ef4 -. ef4 -. | % 53
+        ef4 -. r4 ef4 ( -\cresc | % 54
+        f4 ) r4 f4 ( | % 55
+        c4 bf4 ) r4 | % 56
+        df4 -. -\pp df4 -. r4 | % 57
+        df4 -. df4 -. r4 | % 58
+        <af d>4 -.-\cresc <af d>4 -. r4 | % 59
+        <af d>4 -.-\! <af d>4 r4 \fermata | \barNumberCheck #60
+        <g ef'>4 -. -\pp <g ef'>4 -. <g ef'>4 -. | % 61
+        <af d>4 -. r4 r4 | % 62
+        af4 -. af4 -. af4 -. | % 63
+        g4 -. r4 r4 | % 64
+        df'4 df4 -. df4 | % 65
+        c4 -. r4 r4 | % 66
+        af4 af4 -. af4 -. }
+    \alternative {
+      { g4 -. r4 r4 }
+      { g4 -. r4 \key bf \major s8 }
+    }
+}
+
+MvIII_Viola =  \relative bf' {
+    \defaults
+    \repeat volta 2 {
+        \clef "alto" \time 3/4 \key bf \major \partial 4 bf4 ( -\p | % 1
+        c2 -> bf4 | % 2
+        a2 g4 ) | % 3
+        f2 ( bf4 ) | % 4
+        gs4 ( a8 ) r8 bf4 ( | % 5
+        c2 -> bf4 | % 6
+        a2 g4 ) | % 7
+        f2 f4 | % 8
+        d4 ( e4 f4 ) | % 9
+        <d f>4 <d f>4 <d f>4 | \barNumberCheck #10
+        <d f>4 r4 r4 | % 11
+        a2 ( bf4 ) | % 12
+        a4 r4 }
+    \repeat volta 2 {
+        r4 | % 13
+        ef'4 -\mf ef4 r4 | % 14
+        ef4 ef4 r4 | % 15
+        ef4 -\pp ef4 r4 | % 16
+        ef4 ef4 r4 | % 17
+        df2. | % 18
+        bf2 ( -\< e4 ) -\! | % 19
+        f2 ( -> gf4 ) | \barNumberCheck #20
+        f4 r4 r4 | % 21
+        gf8 ( -\pp ef8 c8 a8 c8 ef8 ) | % 22
+        gf4 -. gf4 r4 | % 23
+        f8 ( ef8 c8 a8 c8 ef8 ) | % 24
+        f4 -. f4 -. r4 | % 25
+        ef2 -> -\fp r4 | % 26
+        r4 r4 bf'4 ( -\p | % 27
+        c2 -> bf4 | % 28
+        a2 g4 ) | % 29
+        f2 ( bf4 ) | \barNumberCheck #30
+        gs4 ( a8 ) r8 ef8 ( f8 | % 31
+        g2. ) ~ -> | % 32
+        g4 ( -\cresc f4 ef4 ) | % 33
+        c4 -. f4 -. r4 | % 34
+        f4 -. d4 -. r4 | % 35
+        <g bf>4 <g bf>4 <g bf>4 | % 36
+        <g bf>4 r4 r4 | % 37
+        d2 ( ef4 ) | % 38
+        d4 -\! r4 }
+    r4 |
+    \time 3/4  \key ef \major r4 r4 -\markup{ \bold\tiny {Solo} } bf'4 ~ -> | \barNumberCheck #40
+    \repeat volta 2 {
+        bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 41
+        bf8 ( af8 ) d,4 -. d4 -. | % 42
+        ef8 ( bf8 g8 bf8 ef8 fs8 ) | % 43
+        g8 ( bf8 ef8 c8 ) bf4-> ~ | % 44
+        bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 45
+        bf8 ( af8 ) d,4 -. d4 -. | \oBreak % 46
+        ef8 -. g'8 ( f8 ef8 d8 c8 ) | % 47
+        bf4 r4 bf4 -> } |
+    \repeat volta 2 {
+        b2. ~ | % 49
+        b8 ( c8 ef8 d8 c4 ) | \barNumberCheck #50
+        b2. | % 51
+        bf8 ( c8 g'8 ef8 c4 ) | % 52
+        df2. ~ -> | % 53
+        df8 ( c8 b8 c8 ef8 -\cresc c8 ) | % 54
+        c8 ( bf?8 a8 bf8 df8 f8 ) | % 55
+        af,?4 ( g4 ) r4 | % 56
+        bf2 ( -\pp a8 bf8 ) | % 57
+        bf2 ( a8 bf8 ) | % 58
+        bf2 ( -> -\cresc \acciaccatura d?8 c8 bf8 ) | % 59
+        bf4-\! r4 r4 \fermata | \barNumberCheck #60
+        r4 r4 bf4 ~ -> | % 61
+        bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 62
+        bf8 ( af8 ) d,4 -. d4 -. | % 63
+        ef8 ( bf8 g8 bf8 ef8 fs8 ) | % 64
+        g8 ( bf8 f'8 ef8 ) ef4 ~ -> | % 65
+        ef8 ( b8 c8 g8 af8 c8 ) | % 66
+        ef,8 ( d8 ) d8 ( cf'8 bf8 d,8 ) | % 67
+        ef8 -. g'8 ( f8 ef8 d8 c8 ) }
+    | % 68
+    ef,4 r4 \key bf \major s8
+}
+
+MvIII_Cello =  \relative bf' {
+    \defaults
+    \repeat volta 2 {
+        \clef "tenor" \time 3/4 \key bf \major \partial 4 bf4 ( -\p | % 1
+        a2 -> g4 | % 2
+        f2 ef4 ) | % 3
+        d4 ( a4 bf4 ) | % 4
+        f4 r4 bf'4 ( | % 5
+        a2 -> g4 | % 6
+        f2 ef4 ) | % 7
+        d4 ( a4 bf4 ) | % 8
+        g4 ( cs4 d4 ) | % 9
+        bf4 bf4 bf4 | \barNumberCheck #10
+        bf4 r4 r4 \clef "bass" | % 11
+        c,2. ( | % 12
+        f4 ) r4 }
+    \repeat volta 2 {
+        r4 | % 13
+        f4 -\mf f4 r4 | % 14
+        f4 f4 r4 | % 15
+        f4 -\pp f4 r4 | % 16
+        f4 f4 r4 | % 17
+        f2. | % 18
+        gf2 ( -\< g4 ) -\! | % 19
+        af2. ( -> | \barNumberCheck #20
+        df,4 ) r4 r4 | % 21
+        ef'8 ( -\pp c8 a8 f8 a8 c8 ) | % 22
+        ef4 -. ef4 -. r4 | % 23
+        ef8 ( c8 a8 f8 a8 c8 ) | % 24
+        ef4 -. ef4 -. r4 | % 25
+        f,2 -> -\fp r4 | % 26
+        r4 r4 \clef "tenor" bf'4 ( -\p | % 27
+        a2 -> g4 | % 28
+        f2 ef4 ) | % 29
+        d4 ( a4 bf4 ) | \barNumberCheck #30
+        f4 r4 g8 ( bf8 | % 31
+        ef2. ) ~ -> | % 32
+        ef4 ( -\cresc d4 c4 ) | % 33
+        a4 -. a4 -. r4 \clef "bass" | % 34
+        bf4 -. bf4 -. r4 | % 35
+        ef4 ef4 ef4 | % 36
+        ef4 r4 r4 | % 37
+        f,2. ( | % 38
+        bf4 -\! ) r4 }
+    r4 |
+    \time 3/4  \key ef \major ef,4 -. -\pp ef4 -. ef4 -. | \barNumberCheck #40
+    \repeat volta 2 {
+        bf4 -. r4 r4 | % 41
+        bf4 -. bf4 -. bf4 -. | % 42
+        ef4 r4 r4 | % 43
+        ef4 -. ef4 -. ef4 -. | % 44
+        bf4 -. r4 r4 | % 45
+        bf4 -. bf4 -. bf4 -. | % 46
+        ef4 -. r4 r4 | % 47
+        ef4 -. ef4 -. ef4 -. } |
+    \repeat volta 2 {
+        g4 -. g4 -. g4 -. | % 49
+        g4 -. r4 r4 | \barNumberCheck #50
+        g4 -. g4 -. g4 | % 51
+        g4 -. r4 r4 | % 52
+        g4 -. g4 g4 | % 53
+        af4 -. r4 c4-\cresc ( | % 54
+        df4 ) r4 df,4 ( | % 55
+        ef2 ) r4 | % 56
+        ef4 -. -\pp ef4 -. r4 | % 57
+        e4 -. e4 -. r4 | % 58
+        f4 -.-\cresc f4 -. r4 | % 59
+        f4 -. f4 -.-\! r4 \fermata | \barNumberCheck #60
+        ef4 -. -\pp ef4 -. ef4 -. | % 61
+        bf4 -. r4 r4 | % 62
+        bf4 -. bf4 -. bf4 -. | % 63
+        ef4 -. r4 r4 | % 64
+        ef4 -. ef4 -. ef4 -. | % 65
+        af4 -. r4 r4 | % 66
+        bf,4 bf4 -. bf4 -. | % 67
+        ef4 -. r4 r4 }
+    | % 68
+    ef4 -. r4 \key bf \major s8
+}
+
+
+%%% Movement IV
+
+MvIV_Markings = { \tempo "Allegretto" \time 2/4
+                  s2*85 \tempo "Tempo I"
+                  s2*98 \tempo "Tempo I"
+                  s2*24 \tempo "Coda"
+}
+
+MvIV_Violin =  \relative d'' {
+    \defaults
+    \repeat volta 2 {
+        \clef "treble" \time 2/4 \key bf \major | % 1
+        d8 -. -\p d8 -. \acciaccatura f8 ef16 ( d16 ef16 c16 ) | % 2
+        d4 ( f8 ) r8 | % 3
+        d8 -. d8 -. \acciaccatura f8 ef16 ( d16 ef16 a,16 ) | % 4
+        bf4 ( f8 ) r8 | % 5
+        g'8 -. g8 -. \acciaccatura c8 bf16 ( a16 bf16 g16
+        ) | % 6
+        e4 ( f8 ) r8 | % 7
+        ef8 -. ef8 -. \acciaccatura ef8 d16 ( cs16 d16 f16 ) | % 8
+        c?4 ( f,8 ) r8 } \oBreak
+    | % 9
+    \repeat volta 2 {
+        c'8 -. c8 -. \acciaccatura d8 c16 ( -\< b16 c16 d16 ) -\! | \barNumberCheck #10
+        ef4. ( -> g8- ) | % 11
+        g16 ( b,16 b8 -. b16 c16 d16 ef16 ) | % 12
+        c4 ( g8 ) r8 | % 13
+        bf?8 -. bf8 -. \acciaccatura c8 bf16 ( -\< a16 bf16 c16 ) -\! | % 14
+        d4. ( -> f8 ) | % 15
+        f16 ( a,16 ) a8 -. a16 ( bf16 c16 d16 ) | % 16
+        bf4 ( f8 ) r8 | % 17
+        ef'8 -. ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 18
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 19
+        a8 -. a8 -. \acciaccatura a8 ef'8 ( c?16 a16 ) | \barNumberCheck #20
+        bf16 ( c16 d16 bf16 ) f8 r8 | % 21
+        ef'8 -. -\pp ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 22
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 23
+        a8 -. a8 -. \acciaccatura a8 ef'8 ( c?16 a16 ) | % 24
+        bf16 ( d16 c16 a16 ) bf8 r8 }
+    | % 25
+    ef16 ( -\p bf16 g16 bf16 ef16 f16 ef16 f16 ) | % 26
+    ef16 ( d16 af'16 f16 d16 f16 ef16 c16 ) | % 27
+    bf2 ~ | % 28
+    bf4. ( d8 ) | % 29
+    ef16 ( bf16 g16 bf16 ef16 f16 ef16 f16 ) | \barNumberCheck #30
+    ef16 ( d16 af'16 f16 d16 f16 ef16 c16 ) | \oBreak % 31
+    b2 ( -> | % 32
+    c4 ) r4 | % 33
+    R2 | % 34
+    c16 ( b16 d16 c16 ef16 d16 f16 ef16 ) | % 35
+    af16 ( -\< g16 fs16 g16 f16 -\! -\> ef16 d16 ef16 ) -\! | % 36
+    d16 ( c16 b16 c16 d16 ef16 fs16 g16 ) | % 37
+    bf,?8 r16 bf16 ( a16 bf16 ef16 d16 ) | % 38
+    c8 r16 c16 ( f16 e16 g16 f16 ) | % 39
+    bf,8 r8 r4 | \barNumberCheck #40
+    r4 r8 f'8 -! | % 41
+    a,4 ~ -> \times 4/6 {
+        a16 ( c16 bf16 a16 c16 ef16 ) }
+    | % 42
+    g8. ( -> a32 g32 \times 4/6 {
+        f16 ) a16 -. bf16 -. b16 -. c16 -. cs16 -. }
+    | % 43
+    d8 -. -\p f8 -. r4 | % 44
+    r4 \times 4/6 {
+        f,16 -. f16 -. f16 -. f16 -. df16 -. bf16 -. }
+    | % 45
+    a4 ~ -> \times 4/6 {
+        a16 ( c16 bf16 a16 c16 ef16 ) }
+    | % 46
+    gf8 ( -> f16 ) r16 \times 4/6 {
+        f16 -. a16 -. bf16 -. c16 -. a16 -. f16 -. }
+    | % 47
+    df'8 -. -\p f8 -. f,,16 ( e16 gf16 f16 | \oBreak % 48
+    bf16 a16 c16 bf16 ef16 df16 gf16 f16 ) | % 49
+    f4. ( -\p bf16 af16 ) | \barNumberCheck #50
+    af4. ( f16 df16 ) | % 51
+    df4 ( -> c16 df16 d16 ef16 ) | % 52
+    f16 ( ef16 ) ef16 ( df16 ) df16 ( c16 ) bf16 ( c16 ) | % 53
+    df4. ( bf'16 af16 ) | \oBreak % 54
+    af4. ( f16 df16 ) | % 55
+    c16 ( bf16 c16 d16 \tuplet 5/4 { ef16 f16 af16 gf16 ef16 } ) | % 56
+    df8.( ef16 c8-!) r | % 57
+    af16 ( g16 bf16 af16 ) gf'8. ( -> af,16 ) | % 58
+    af16 ( g16 bf16 af16 ) f'8. ( -> df16 ) | % 59
+    \tuplet 6/4 4 {
+        c16 ( -\< ef16 df16
+        c16 gf'16 ) f16
+        ef16 bf'16 -\! af16 -\>
+        gf16 f16 ef16 -\! } | \barNumberCheck #60
+    \tuplet 6/4 4 {
+        e16 ( f16 af16
+        c,16 df16 f16
+        g,16 af16 df16
+        f,16 bf16 g16 ) } | % 61
+    af16 ( g16 bf16 af16 ) gf'8. ( -> af,16 ) | % 62
+    af16 ( g16 bf16 af16 ) f'8. ( -> df16 ) | % 63
+    \tuplet 6/4 4 {
+        c16 ( -\< ef16 df16
+        c16 gf'16 f16
+        ef16 bf'16 af16 -\>
+        gf16 f16 e16 ) -\! } | % 64
+    \tuplet 6/4 4 {
+        f16 ( af16 c,16
+        df16 f16 g,16
+        af16 df16 e,16
+        f16 af16 f16 ) } | % 65
+    ef2 ( | % 66
+    df8 ) r8 r4 | % 67
+    \tuplet 6/4 4{
+        f16 ( -\< af16 gf16
+        f16 cf'16 bf16
+        af16 ef'16 -\! df16 -\>
+        cf16 bf16 a16 ) -\! } | % 68
+    \tuplet 6/4 4 {
+        a16 ( bf16 df16
+        f,16 gf16 bf16
+        a16 bf16 df16
+        f,16 gf16 bf16 ) }
+    | % 69
+    e,4 -> -\f e'8 ( df'8 ) | \barNumberCheck #70
+    e,,4 -> e'8 ( df'8 ) | % 71
+    e,,4 -\decresc e'8 ( df'8 ) | % 72
+    e,,4 -> e'8 ( df'8 ) | % 73
+    \tuplet 6/4 4 {
+        f,,16 ( bf16 df16
+        f16 bf16 c16 ) }
+    df4 ~ -> | % 74
+    df4 ( cf8 bf8 ) | % 75
+    a?4 ( \trill bf8 e,8 ) | % 76
+    \tuplet 6/4 4 {
+        f16 f,16 ( e16
+        f16 a?16 c16 ) }
+    df4 ~ -> -\pp | % 77
+    df4 ( cf8 bf8 ) | % 78
+    a?4 ( \trill bf8 e,8 ) | % 79
+    f4 \tuplet 6/4 4 {
+        a,?16 ( -\pp c16 bf16
+        a16 c16 ef?16 ) } | \barNumberCheck #80
+    gf4 \tuplet 6/4 {
+        a,16 ( c16 bf16
+        a16 c16 ef16 ) } | % 81
+    f4 \tuplet 6/4 4 {
+        a16 ( c16 bf16
+        a16 c16 ef16 ) } | % 82
+    gf4 \tuplet 6/4 4 {
+        a,16 ( c16 bf16
+        a16 c16 ef16 ) } | % 83
+    f4 c'8 ( -\dim f,16 ) r16 | % 84
+    e4 c'8 ( e,16 ) r16 | % 85
+    ef?4 c'8 ( ef,16-\! ) r16 \fermata | \oBreak % 86
+    \repeat volta 2 {
+        d8 -. -\p d8 -. \acciaccatura f8 ef16 ( d16 ef16 c16 ) | % 87
+        d4 ( f8 ) r8 | % 88
+        d8 -. d8 ( -. \acciaccatura f8 ef16 d16 ef16 a,16 ) | % 89
+        bf4 ( f8 ) r8 | \barNumberCheck #90
+        g'8 -. g8 ( -. \acciaccatura c8 bf16 ) ( a16 bf16 g16 ) | % 91
+        e4 ( f8 ) r8 | % 92
+        ef8 -. ef8 -. \acciaccatura ef8 d16 ( cs16 d16 f16 ) | % 93
+        c4 ( f,8 ) r8 \oBreak }
+    | % 94
+    \repeat volta 2 {
+        c'8 -. c8 -. \acciaccatura d8 c16 ( -\< b16 c16 d16 ) -\! | % 95
+        ef4.-> ( g8 ) | % 96
+        g16 ( b,16) b8 -. b16( c16 d16 ef16 ) | % 97
+        c4 ( g8 ) r8 | % 98
+        bf8 -. bf8 -. \acciaccatura c8 bf16 ( -\< a16 bf16 c16-\! ) | % 99
+        d4. ( -> f8 ) | \barNumberCheck #100
+        f16 ( a,16 ) a8 -. a16 ( bf16 c16 d16 ) | % 101
+        bf4 ( f8 ) r8 | % 102
+        ef'8 -. ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 103
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 104
+        a8 a8 -. \acciaccatura a8 ef'8 ( c?16 a16 ) | % 105
+        bf16 ( c16 d16 bf16 ) f8 r8 | % 106
+        ef'8 -. -\pp ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 107
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 108
+        a8 -. a8 -. \acciaccatura a8 ef'8 ( c?16 a16 ) | % 109
+        bf16 ( d16 c16 ) a16 bf8 r8 }
+    | \barNumberCheck #110
+    <d, d'>4 ~ -> ~ -\f <d d'>16 d16[ ( g16 bf16 )] | % 111
+    cs16 ( -\p d16 ) d16 -. d16 -. bf'16 ( d,16 ) d16 -. d16 -. | % 112
+    b16 ( c?16 ) c16 -. c16 -. a'16 ( c,16 ) c16 -. c16 -. | % 113
+    a16 ( bf?16 ) bf16 -. bf16 -. g'16 ( bf,16 ) bf16 -. bf16 -. | % 114
+    a16 ( d16 ) a16 -. fs16 -. d8 r8 | % 115
+    <d d'>4 ~ -> ~ -\f <d d'>16 d16[ ( g16 bf16 )] | % 116
+    cs16 ( -\p d16 ) d16 -. d16 -. bf'16 ( d,16 ) d16 -. d16 -. | % 117
+    b16 ( c?16 ) c16 -. c16 -. a'16 ( c,16 ) c16 -. c16 -. | % 118
+    a16 ( bf16 ) bf16 -. bf16 -. g'16 ( bf,16 ) bf16 -. bf16 -. | % 119
+    a16 ( bf16 ) bf16 -. bf16 -. af'16 ( bf,16 ) bf16 -. bf16 -. |
+    \barNumberCheck #120
+    a?16 ( bf16 ) bf16 -. bf16 -. g'16 ( bf,16 )
+    bf16 -. -\cresc bf16 -. | % 121
+    bf16 ( b16 ) b16 -. b16 -. af'16 ( b,16 ) b16 -. b16 -. | % 122
+    b16 (-\f c16 ) c16 -. c16 -. c16 ( -. -\cresc ef16 )
+    ef16 -. ef16 -. | % 123
+    ef16 ( g16 ) g16 -. g16 -. g16 ( c16 ) c16 -. c16 -. | % 124
+    <ef, c'>2 ~ -> ~ -\f \bar ""
+    <ef c'>2 | % 126
+    r8 c8 ( -\p ef8-> c8 ) | % 127
+    r8 bf8 ( ef8 -> b8 ) | % 128
+    r8 c8 ( ef8 c8 ) | % 129
+    r8 bf8 ( ef8 -> b8 ) | \barNumberCheck #130
+    b16 ( ->-\f c16 ) c16 -. c16 fs16 ( c16 ) c16 c16 -. | % 131
+    c'16( fs,16) fs16 -. fs16 -. ef'16 ( c16 ) c16 -. c16 -. | % 132
+    c16 ( -> g16 ) g16 -. g16
+    -. g16 ( ef16 ) ef16 -. ef16 -. | % 133
+    ef16 ( c16 ) c16 -. c16 -. c16 ( g16 ) g16 -. g16 -. | % 134
+    gf16 ( -> -\p ef16 ) ef16 -. ef16 -. ef16 ( c16 ) c16 -. c16 -. | % 135
+    c16 ( a?16 ) a16 -. a16 -. a16 ( c'16 ) c16 -. c16 -. | % 136
+    c16 ( -\pp bf?16 ) bf16 -. bf16 -. bf16 ( -. g'16 ) g16 -. g16 -. | % 137
+    bf16 ( af16 ) af16 -. af16 -. af16 ( d,16 ) d16 -. d16 -. | % 138
+    ef4 -\pp -\dolce g16 ( ef16 ) bf16 -. bf16 -. | % 139
+    bf8 r8 g'16 ( ef16 ) b16 -. b16 -. | \barNumberCheck #140
+    c8 r8 af'16 ( ef16 ) c16 -. c16 -. | % 141
+    bf?8 r8 g'16 ( ef16 ) bf16 -. bf16 -. | % 142
+    bf8 -! c'8. -! -> -\f bf16 ( af'8 ) ~ -> | % 143
+    af16 g16 ( -. -\p f16 -. ef16 -. d16 -. c16 -. bf16 -. af16 ) -. | % 144
+    g8 r8 g16 ( -\pp ef16 ) bf16 -. bf16 -. | % 145
+    bf4 -> g'16 ( ef16 ) b16 -. b16 -. | % 146
+    c4 -> af'16 ( ef16 ) c16 -. c16 -. | % 147
+    bf4 -> g'16 ( ef16 ) bf16 -. bf16 -. | % 148
+    bf8 -! c'8. -. -> -\f bf16 ( af'8 ) ~ -> | % 149
+    af16 g16 ( -. -\p f16 -. ef16 -. d16 -. c16 -. bf16 -. af16 ) -. |
+    \barNumberCheck #150
+    g2 ~ | % 151
+    g2 | % 152
+    g,8 -! bf'8. -> -! bf,16 ( bf'8 ) ~ -> | % 153
+    bf16 af16 ( -. g16 -. f16 -. ef16 -. df16 -. c16 -. b16 ) -. | % 154
+    c2 ~ | % 155
+    c2 | % 156
+    af8 af'8. -! -> af,16 ( af'8 ) ~ -> | % 157
+    af16 g16 ( -. f16 -. ef16 -. d?16 -. c16 -. bf16 -. af16 ) -. | % 158
+    g2 ~ | % 159
+    g2 | \barNumberCheck #160
+    g16 ( -\pp bf16 ) bf16 -. bf16 -. bf16 ( df16 ) df16 -. df16 -. | % 161
+    df16 ( e16 ) e16 -. e16 -. e16 ( g16 ) g16 -. g16 -. | % 162
+    g2 ~ | % 163
+    g4. ( -> af8 ) | \oBreak % 164
+    gs,16 ( -\pp b16 ) b16 -. b16 -. b16 ( d16 ) d16 -. d16 -. | % 165
+    d16 ( es16 ) es16 -. es16 -. es16 ( gs16 ) gs16 -. gs16 -. | % 166
+    gs2 ~ | % 167
+    gs4. ( -> a8 ) | % 168
+    a,16 ( -\pp c16 ) c16 -. c16 -. c16 ( ef?16 ) ef16 -. ef16 -. | \oBreak % 169
+    ef16 ( fs16 ) fs16 -. fs16 -. fs16 (
+    -\markup{ \bold\teeny {_____} } a16 ) a16 -. a16 -. |
+    \barNumberCheck #170
+    a2 ~ | % 171
+    a4. ( -> bf8 ) | % 172
+    bf16 ( g16 ) g16 -. g16 -. g16 ( cs,16 ) cs16 -. cs16 -. | % 173
+    cs16 ( d16 ) d16 -. d16 -. d16 ( a16 ) a16 -. a16 -. | \oBreak % 174
+    bf16 ( g16 ) g16 -. g16 -. g16 ( cs,16 ) cs16 -. cs16 -. | % 175
+    cs16 ( d16 ) d16 -. d16 -. r4 | % 176
+    bf16 ( -\pp a16 ) a16 -. a16 -. r4 | % 177
+    bf16 ( a16 ) a16 -. a16 -. r4 | % 178
+    cs16 ( d16 ) d16 -. d16 -. d16 ( fs16 ) fs16 -. fs16 -. | % 179
+    fs16 ( -\dim a16 ) a16 -. a16 -. a16 ( b16 ) b16 -. b16 -. | \barNumberCheck #180
+    b16 ( c16 ) c16 -. c16 -. r4 | % 181
+    b16 ( c16 ) c16 -. c16 -. r4 | % 182
+    b16 ( c16 ) c16 -. c16 -. r4 | % 183
+    c16 ( cs16 ) cs16 -. cs16 -.-\! r4 \fermata | % 184
+    \repeat volta 2 {
+        d8 -. -\p d8 -. \acciaccatura f8 ef16 ( d16 ef16 c16
+        ) | % 185
+        d4 ( f8 ) r8 | % 186
+        d8 -. d8 -. \acciaccatura f8 ef16 ( d16 ef16 a,16 ) | % 187
+        bf4 ( f8 ) r8 | % 188
+        g'8 -. g8 -. \acciaccatura c8 bf16 ( a16
+        bf16 g16 ) | % 189
+        e4 ( f8 ) r8 | \barNumberCheck #190
+        ef8 -. ef8 -. \acciaccatura ef8 d16 ( cs16 d16 f16 ) | % 191
+        c?4 ( f,8 ) r8 } \oBreak
+    | % 192
+    \repeat volta 2 {
+        c'8 -. c8 -. \acciaccatura d8 c16 ( -. -\< b16 c16 d16 ) -\! | % 193
+        ef4.-> ( g8 ) | % 194
+        g16 ( b,16 ) b8 -. b16 ( c16 d16 ef16 ) | % 195
+        c4 ( g8 ) r8 | % 196
+        bf?8 -. bf8 -. \acciaccatura c8 bf16 ( -\< a16 bf16 c16 ) -\! | % 197
+        d4. ( f8 ) | % 198
+        f16 ( a,16 ) a8 -. a16 ( bf16 c16 d16 ) | % 199
+        bf4 ( f8 ) r8 | \oBreak \barNumberCheck #200
+        ef'8 -. ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 201
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 202
+        a8 -. a8 -. \acciaccatura a8 ef'8 ( c?16 a16 ) | % 203
+        bf16 ( c16 d16 bf16 ) f8 r8 | % 204
+        ef'8 -. -\pp ef8 -. \acciaccatura ef8 g8 ( f16 ef16 ) | % 205
+        cs16 ( d16 f16 d16 ) bf8 r8 | % 206
+        a8 -. a8 -. \acciaccatura a8 ef'8 ( c16 a16 ) | % 207
+        bf16 ( d16 c16 a16 ) bf8 r8 } \oBreak
+    | % 208
+    e8 -. -\p e8 -. \acciaccatura e8 bf'8 ( -> g16 e16 ) | % 209
+    \acciaccatura e8 bf'8 ( -> g16 e16 ) ( bf'8 ) ( g16 ) e16 -. | \barNumberCheck #210
+    ef?8 -. ef8 -. \acciaccatura ef8 c'8 ( -> -\cresc a16 ef16 ) | % 211
+    \acciaccatura ef8 c'8 ( -> a16 ef16 ) \acciaccatura ef8 c'8 ( -> a16 ef16 ) | % 212
+    d16 (-\p f16 d'16 c16 bf16 a16 g16 -\dim fs16 ) | % 213
+    a16 ( g16 f16 ef16 d16 c16 ef16 g16 ) | % 214
+    bf,8 -. bf8 -. \acciaccatura bf8 f'8 ( d16 bf16 ) | % 215
+    a8 -. a8 -. \acciaccatura a8 ef'8 ( c16 a16 ) | % 216
+    bf2 ~ -\pp | % 217
+    bf2 | % 218
+    a8 -. a8 -.  \acciaccatura a8 ef'8 ( c16 a16 ) | % 219
+    \acciaccatura a8 ef'8 ( c16 a16 ) -. \acciaccatura a8 f'8 ( c16 a16 ) | \barNumberCheck #220
+    bf2 ~ | % 221
+    bf2 | % 222
+    a,8 -. -\dim a8 -. \acciaccatura a8 ef'8 ( c16 a) | % 223
+    \acciaccatura a8 ef'8 ( c16 a16 ) \acciaccatura a8 f'8 ( c16 a16 ) | % 224
+    bf8 -. bf8 -.-\! \acciaccatura d8 bf'8 ( f16 d16 ) | % 225
+    \acciaccatura f8 d'8-> ( -\cresc bf16 f16 ) \acciaccatura bf8 f'8 ( -> d16 bf16 ) | % 226
+    bf'8 -.-\f bf8 -. \acciaccatura d,8 bf'8 ( -> f16 d16 ) | % 227
+    \acciaccatura f8 d'8 ( -> -\cresc bf16 f16 ) \acciaccatura bf8 f'8 ( -> d16 bf16 ) | % 228
+    bf'8 -.-\ff bf8 -. r4 | % 229
+    d,,8-\p d8 r4 | \barNumberCheck #230
+    bf8 -\pp bf8 r4\fermata \bar "|."
+    }
+
+MvIV_Viola =  \relative d' {
+    \defaults
+    \repeat volta 2 {
+        \clef "alto" \time 2/4 \key bf \major | % 1
+        d8 -. -\p f8 -. c8 -. f8 -. | % 2
+        d8 -. f8 -. d8 -. f8 -. | % 3
+        bf,8 -. f'8 -. a,8 f'8 -. | % 4
+        <bf, d>8 -. f'8 -. d8 -. f8 -. | % 5
+        ef8-\simile g8 ef8 g8 | % 6
+        d8 f8 d8 f8 | % 7
+        c8 f8 bf,8 f'8 | % 8
+        a,8 f'8 f,8 f'8 }
+    | % 9
+    \repeat volta 2 {
+        a,8 -. f'8 -. -\< af,8 -. f'8 -. -\! | \barNumberCheck #10
+        g,8 -\>-\simile ef'8 g,8 -\! ef'8 | % 11
+        f,8 d'8 f,8 b8 | % 12
+        ef,8 c'8 ef,8 c'8 | % 13
+        g8 ef'8 gf,8 -\< ef'8 -\! | % 14
+        f,8 -\> d'8 f,8 -\! d'8 | % 15
+        ef,8 c'8 ef,8 a8 | % 16
+        d,8 bf'8 d8 bf8 | % 17
+        c8 f8 a,8 f'8 | % 18
+        bf,8 f'8 d8 f8 | % 19
+        ef8 f8 c8 f8 | \barNumberCheck #20
+        d8 f8 d8 f8 | % 21
+        c8 -\pp f8 a,8 f'8 | % 22
+        bf,8 f'8 d8 f8 | % 23
+        ef8 f8 c8 f8 | % 24
+        d8 -. ef8 -. d8 -. r8 }
+    | % 25
+    bf'2 ( -\p | % 26
+    af4. g8 ) | % 27
+    f16 ( -> e16 f16 g16 af16 bf16 af16 bf16 ) | % 28
+    af16 ( g16 ef'16 bf16 g16 bf16 af16 f16 ) | % 29
+    bf2 ( | \barNumberCheck #30
+    af4. g8 ) | % 31
+    f16 ( -> e16 f16 g16 af16 g16 af16 g16 ) | % 32
+    c16 ( g16 ef'16 c16 g16 ef16 c16 g16 ) | % 33
+    ef2 ~ | % 34
+    ef2 | % 35
+    ef8 r8 ef8 r8 | % 36
+    ef8 r8 ef8 r8 | % 37
+    f8 r8 r4 | % 38
+    f8 r8 r4 | % 39
+    d'16 ( -\p c16 ef16 ) d16 -. d8 -. f8 -. -\fp | \barNumberCheck #40
+    d16 ( c16 ef16 ) d16 -. d8 -. f8 -. -\fp | % 41
+    ef16 ( d16 f16 ) ef16 -. ef8 -. f8 -. -\fp | % 42
+    ef16 ( d16 f16 ) ef16 -. ef8 -. f8 -. -\fp | % 43
+    d16 ( c16 ef16 ) d16 -. d8 -. f8 -. -\fp | % 44
+    df16 ( c16 ef16 ) df16 -. df8 -. f8 -. -\fp | % 45
+    ef16 ( e16 f16 ) ef16 -. ef8 -. f8 -. -\fp | % 46
+    ef16 ( e16 f16 ) ef16 -. ef8 -. f8 -. -\fp | % 47
+    df16 ( c16 ef16 df16 ) r4 | % 48
+    R2 | % 49
+    r8 af'16 ( -\pp g16 bf16 af16 ) r8 | \barNumberCheck #50
+    r8 f16 ( ef16 gf16 f16 ) r8 | % 51
+    gf,2 ~ -> | % 52
+    gf4 r4 | % 53
+    r8 af'16 ( g16 bf16 af16 ) r8 | % 54
+    r8 f16 ( ef16 gf16 f16 ) df8 ~ | % 55
+    df8 ( bf4 ef16 gf16 ) | % 56
+    f8. ( gf16 ef8 ) -. r8 | % 57
+    af,8 ( c16 ) r16 <c ef>4 -> | % 58
+    f,8 ( af16 ) r16 <f df'>4 -> | % 59
+    gf'2 ( | \barNumberCheck #60
+    f8 ) r8 r4 | % 61
+    af,8 ( c16 ) r16 <c ef>4 -> | % 62
+    f,8 ( af16 ) r16 <f df'>4 -> | % 63
+    gf'2 ( | % 64
+    f8 ) r8 r4 | % 65
+    \tuplet 6/4 4 {
+        a16 ( -\< c16 bf16
+        a16 ef'16 df16
+        c16 gf'16 -\! -\> f16
+        ef16 df16 -\! c16 )
+        | % 66
+        c16 ( df16 f16
+        a,16 bf16 df16
+        e,16 f16 bf16
+        c,16 df16 f16 ) } | % 67
+    cf2 ( | % 68
+    bf8 ) r8 r4 | % 69
+    bf4 -> -\f \tuplet 6/4 4 {
+        gf16 -. bf16 -. df16 -.
+        gf16 -. bf16 -. c16 -. } | \barNumberCheck #70
+    df8 ( -> bf8 ) \tuplet 6/4 4 {
+        gf,16 -. bf16 -. df16 -.
+        gf16 -. bf16 -. c16 -. } | % 71
+    df8 ( -> bf8 ) \tuplet 6/4 4 {
+        gf,16 -. -\decresc bf16 -. df16 -.
+        gf16 -. bf16 -. c16 -. } | % 72
+    df8 ( -> bf8 ) \tuplet 6/4 4 {
+        gf,16 -. bf16 -. df16 -.
+        gf16 -. bf16 -. c16 -. } | % 73
+    df8 ( bf8 ) r8 a?8 ( -\p | % 74
+    bf8 gf4 ) gf16 ( f16 ) | % 75
+    ef4 ( df8 bf8 ) | % 76
+    a8 r8 a4 ( -> -\pp | % 77
+    bf8 gf4 ) gf16 ( f16 ) | % 78
+    ef4 ( f8 bf8 ) | % 79
+    a?8 -. -\pp a8 -. r4 | \barNumberCheck #80
+    ef8 -. ef8 -. r4 | % 81
+    ef8 -. ef8 -. r4 | % 82
+    ef'8 -. ef8 -. r4 | % 83
+    <ef a>8 -. <ef a>8 -. r4 | % 84
+    <g bf>8 -. <g bf>8 -. r4 | % 85
+    <c, a'>8 -. <c a'>8 -. r4 \fermata | % 86
+    \repeat volta 2 {
+        d8 -. -\p f8 -. c8 -. f8 -. | % 87
+        d8 -. f8 -. d8 -. f8 -. | % 88
+        bf,8 f'8 -. a,8 -. f'8 -. | % 89
+        <bf, d>8 -. f'8 -. d8 -. f8 -. | \barNumberCheck #90
+        ef8-\simile g8 ef8 g8 | % 91
+        d8 f8 d8 f8 | % 92
+        c8 f8 bf,8 f'8 | % 93
+        a,8 f'8 f,8 f'8 }
+    | % 94
+    \repeat volta 2 {
+        a,8 -. f'8 -. -\< af,8 -. f'8 -. -\! | % 95
+        g,8 -\>-\simile ef'8 g,8 -\! ef'8 | % 96
+        f,8 d'8 f,8 b8 | % 97
+        ef,8 c'8 ef,8 c'8 | % 98
+        g8 -\< ef'8 gf,8 ef'8 -\! | % 99
+        f,8 -\> d'8 f,8 -\! d'8 | \barNumberCheck #100
+        ef,8 c'8 ef,8 a8 | % 101
+        d,8 bf'8 d8 bf8 | % 102
+        c8 f8 a,8 f'8 | % 103
+        bf,8 f'8 d8 f8 | % 104
+        ef8 f8 c8 f8 | % 105
+        d8 f8 d8 f8 | % 106
+        c8 -\pp f8 a,8 f'8 | % 107
+        bf,8 f'8 d8 f8 | % 108
+        ef8 f8 c8 f8 | % 109
+        d8 -. ef8 -. d8 -. r8 }
+    | \barNumberCheck #110
+    <g bf>4 ~ -> ~ -\f <g bf>8 r8 | % 111
+    r8 bf8 ( -\p d8 -> bf8 ) | % 112
+    r8 a8 ( c8 -> fs,8 ) | % 113
+    r8 g8 ( bf8 -> g8 ) | % 114
+    fs4 r4 | % 115
+    <g bf>4 ~ -> ~ -\f <g bf>8 r8 | % 116
+    r8 bf8 ( -\p d8 -> bf8 ) | % 117
+    r8 a8 ( c8 -> fs,8 ) | % 118
+    r8 g8 ( bf8 -> g8 ) | % 119
+    r8 f?8 ( bf8 -> fs8 ) | \barNumberCheck #120
+    r8 g8 ( bf8 -> g8 ) -\cresc| % 121
+    r8 f8 ( b8 -> f8 ) | % 122
+    ef8 -\f -\f r8 r4 | % 123
+    R2 | % 124
+    <ef c'>2 ~ -> ~ -\f \bar ""
+    <ef c'>2 | % 126
+    d16 ( -\p ef16 ) ef16 -. ef16 -. c'16 ( ef,16 ) ef16 -. ef16 -. | % 127
+    d16 ( ef16 ) ef16 -. ef16 -. df'16 ( ef,16 ) ef16 -. ef16 -. | % 128
+    d16 ( ef16 ) ef16 -. ef16 -. c'16 ( ef,16 ) ef16 -. ef16 -. | % 129
+    d16 ( ef16 ) ef16 -. ef16 -. df'16 ( ef,16 ) ef16 -. ef16 -. |
+    \barNumberCheck #130
+    <c ef>2 -> ~ -\f | % 131
+    <c ef>2 | % 132
+    <c ef>2 ~ -> ~ | % 133
+    <c ef>2 | % 134
+    <gf ef'>2 ~ -> ~ -\p | % 135
+    <gf ef'>2 | % 136
+    <g? ef'>4 -\pp r4 | % 137
+    <af d>4 r4 | % 138
+    g16 ( -\pp ef'16 ) g16 -. g16 -. g8 r8 | % 139
+    g,16 ef'16 g16 -. g16 -. g8 r8 | \barNumberCheck #140
+    af,16 ( ef'16 ) af16 -. af16 -. af8 r8 | % 141
+    g,16 ( ef'16 ) g16 -. g16 -. g8 r8 | % 142
+    <f, d'>2 ~ -> ~ -\fp | % 143
+    <f d'>2 | % 144
+    g16 ( -\pp ef'16 ) g16 -. g16 -. g4 -> | % 145
+    g,16 ( ef'16 ) g16 -. g16 -. g4 -> | % 146
+    af,16 ( ef'16 ) af16 -. af16 -. af4 -> | % 147
+    g,16 ( ef'16 ) g16 -. g16 -. g4 -> | % 148
+    <f, d'>2 ~ -> -\fp | % 149
+    <f d'>2 | \barNumberCheck #150
+    <g ef'>8 -! ef''8. -! -> -\p ef,16 ( ef'8 ) ~ -> | % 151
+    ef16 d16 ( -. c16 -. bf16 -. af16 -. g16 -. f16 -. ef16 ) -. | % 152
+    df2 ~ | % 153
+    df2 | % 154
+    c8 -! af'8. -. -! -> af,16 ( af'8 ) ~ -> | % 155
+    af16 g16 ( -. af16 -. bf16 -. af16 -. g16 -. f16 -. ef16 ) -. | % 156
+    d2 ~ | % 157
+    d2 | % 158
+    ef2 ~ | % 159
+    ef2 | \barNumberCheck #160
+    e16 ( -\pp g16 ) g16 -. g16 -. g16 ( bf16 ) bf16 -. bf16 -. | % 161
+    bf16 ( df16 ) df16 -. df16 -. df16 ( e16 ) e16 -. e16 -. | % 162
+    e2 ~ | % 163
+    e4. ( -> f8 ) | % 164
+    es,16 ( -\pp gs16 ) gs16 -. gs16 -. gs16 ( b16 ) b16 -. b16 -. | % 165
+    b16 ( d16 ) d16 -. d16 -. d16 ( es16 ) es16 -. es16 -. | % 166
+    es2 ~ | % 167
+    es4. ( -> fs8 ) | % 168
+    fs,16 ( -\pp a16 ) a16 -. a16 -. -. a16 ( c?16 ) c16 -. c16 -. | % 169
+    c16 ( ef16 ) ef16 -. ef16 -. ef16 -. fs16 fs16 -. fs16 -. |
+    \barNumberCheck #170
+    fs2 ~ | % 171
+    fs4. ( -> g8 ) | % 172
+    g16 ( bf,16 ) bf16 -. bf16 -. bf16 ( g16 ) g16 -. g16 -. | % 173
+    g16 ( fs16 ) fs16 -. fs16 -. fs8 fs16 -. fs16 -. | % 174
+    g16 ( bf,16 ) bf16 -. bf16 -. bf16 ( g16 ) g16 -. g16 -. | % 175
+    g16 ( fs16 ) fs16 -. fs16 -. r4 | % 176
+    g16 ( -\pp fs16 ) fs16 -. fs16 -. r4 | % 177
+    g16 ( fs16 ) fs16 -. fs16 -. r4 | % 178
+    R2*2 | \barNumberCheck #180
+    r4 <a fs'>8 -\pp r8 | % 181
+    r4 <a fs'>8 r8 | % 182
+    r4 ef'?8 r8 | % 183
+    r4 <a, f'?>8 r8 \fermata | % 184
+    \repeat volta 2 {
+        d8 -. -\p f8 -. c8 -. f8 -. | % 185
+        d8 -. f8 -. d8 -. f8 -. | % 186
+        bf,8 -. f'8 -. a,8 -. f'8 -. | % 187
+        <bf, d>8 -. f'8 -. d8 -. f8 -. | % 188
+        ef8-\simile g8 ef8 g8 | % 189
+        d8 f8 d8 f8 | \barNumberCheck #190
+        c8 f8 bf,8 f'8 | % 191
+        a,8 f'8 f,8 f'8 }
+    | % 192
+    \repeat volta 2 {
+        a,8 -. f'8 -. -. -\< af,8 -. f'8 -. -\! | % 193
+        g,8 -\>-\simile ef'8 g,8 -\! ef'8 | % 194
+        f,8 d'8 f,8 b8 | % 195
+        ef,8 c'8 ef,8 c'8 | % 196
+        g8 ef'8 gf,8 -\< ef'8 -\! | % 197
+        f,8 -\> d'8 f,8 -\! d'8 | % 198
+        ef,8 c'8 ef,8 a8 | % 199
+        d,8 bf'8 d8 bf8 | \barNumberCheck #200
+        c8 f8 a,8 f'8 | % 201
+        bf,8 f'8 d8 f8 | % 202
+        ef8 f8 c8 f8 | % 203
+        d8 f8 d8 f8 | % 204
+        c8 -\pp f8 a,8 f'8 | % 205
+        bf,8 f'8 d8 f8 | % 206
+        ef8 f8 c8 f8 | % 207
+        d8 -. ef8 -. d8 -. r8 }
+    | % 208
+    bf2 ( -\pp | % 209
+    c4 df4 ) | \barNumberCheck #210
+    c2 (-\cresc | % 211
+    f4 gf4 ) | % 212
+    f4 r4 | % 213
+    g4 r4 | % 214
+    d8 -. -\pp d8 -. r4 | % 215
+    ef8 -. ef8 -. r4 | % 216
+    d2 ~ | % 217
+    d2 | % 218
+    gf2 | % 219
+    f4 ef4 | \barNumberCheck #220
+    d2 ~ \dim | % 221
+    d2 | % 222
+    gf,2 ( | % 223
+    f4 ef4 ) | % 224
+    d8 -. d8 -.-\! r4 | % 225
+    R2 | % 226
+    <f' d'>8 -\f <f d'>8 -. r4 | % 227
+    R2 | % 228
+    <f d'>8 -.-\ff <f d'>8 -. r4 | % 229
+    f8-\p f8 r4 | \barNumberCheck #230
+    d8 -\pp d8 r4\fermata \bar "|."
+    }
+
+
+MvIV_Cello =  \relative bf {
+    \defaults
+    \repeat volta 2 {
+        \clef "bass" \time 2/4 \key bf \major | % 1
+        bf8 -\p r8 a8 r8 | % 2
+        bf4 r4 | % 3
+        f8 r8 f8 r8 | % 4
+        bf4 r4 | % 5
+        bf8 r8 bf8 r8 | % 6
+        bf4 r4 | % 7
+        a8 r8 bf8 r8 | % 8
+        f4 r4 }
+    | % 9
+    \repeat volta 2 {
+        f8 r8 -\< f8 r8 -\! | \barNumberCheck #10
+        c4 -> r4 | % 11
+        g8 r8 g8 r8 | % 12
+        c4 r4 | % 13
+        ef8 r8 -\< ef8 r8 -\! | % 14
+        bf4 -> r4 | % 15
+        f8 r8 f8 r8 | % 16
+        bf4 r4 | % 17
+        f'8 r8 f8 r8 | % 18
+        bf4 r4 | % 19
+        f8 r8 f8 r8 | \barNumberCheck #20
+        bf,4 r4 | % 21
+        f'8 -\pp r8 f8 r8 | % 22
+        bf4 r4 | % 23
+        f8 r8 f8 r8 | % 24
+        bf,8 -. f'8 -. bf,8 -. r8 }
+    | % 25
+    g''2 ( -\p | % 26
+    f4. ef8 ) | % 27
+    d2 ( | % 28
+    ef4. f8 ) | % 29
+    g2 ( | \barNumberCheck #30
+    f4. ef8 ) | % 31
+    d2 ( | % 32
+    ef4 ) r4 | % 33
+    r16 g,16 ( -\p a16 b16 c16 -\< b16 d16 c16 ) | % 34
+    ef16 ( d16 f16 ef16 g16 f16 af16 g16 ) -\! | % 35
+    ef8 r8 c8 r8 | % 36
+    g8 r8 c8 ( ef8 ) | % 37
+    d8 r8 r4 | % 38
+    a8 r8 r4 | % 39
+    bf16 ( -\p a16 c16 ) bf16 -. bf8 -. f8 -. -\fp | \barNumberCheck #40
+    bf16 ( a16 c16 ) bf16 -. bf8 -. f8 -. -\fp | % 41
+    c'16 ( b16 d16 ) c16 -. c8 -. f,8 -. -\fp | % 42
+    c'16 ( b16 d16 ) c16 -. c8 -. f,8 -. -\fp | % 43
+    bf?16 ( a16 c16 ) bf16 -. bf8 -. f8 -. -\fp | % 44
+    bf16 ( a16 c16 ) bf16 -. bf8 -. f8 -. -\fp | % 45
+    c'8 ( df16 ) c16 -. c8 -. f,8 -. -\fp | % 46
+    c'8 ( df16 ) c16 -. c8 -. f,8 -. -\fp | % 47
+    bf16 ( a16 c16 bf16 ) r4 | % 48
+    R2 | % 49
+    r8 df4 -\pp r8 | \barNumberCheck #50
+    r8 df16 ( c16 ef16 df16 ) r8 | % 51
+    af,16 ( -> g16 bff16 af16 ) af4 ~ | % 52
+    af4 r4 | % 53
+    r8 f''16 ( e16 gf16 f16 ) r8 | % 54
+    r8 df16 ( c16 ef16 df16 ) f,8 ( | % 55
+    gf2 ) | % 56
+    af4. r8 | % 57
+    af,8-! r8 af'4 -> | % 58
+    af,8-! r8 af'4 ~ -> | % 59
+    af2 ( | \barNumberCheck #60
+    df8 ) r8 r4 | % 61
+    af,8 -! r8 af'4 -> | % 62
+    af,8 -! r8 af'4 ~ -> | % 63
+    af2 ( | % 64
+    df8 ) r8 r4 | % 65
+    f,2 ( | % 66
+    bf8 ) r8 r4 | % 67
+    df,2 ( | % 68
+    gf8 ) r8 r4 | % 69
+    \tuplet 6/4 4 {
+        gf,16 ( -\f bf16 ) df16 -.
+        gf16 -. bf16 -. c16 -. }
+    df8 ( -> bf8 ) | \barNumberCheck #70
+    \tuplet 6/4 4 {
+        gf,16 ( bf16 ) df16 -.
+        gf16 -. bf16 -. c16 -. }
+    df8 ( -> bf8 ) -. | % 71
+    \tuplet 6/4 4 {
+        gf,16 (-\decresc bf16 ) df16 -.
+        gf16 -. bf16 -. c16 -. }
+    df8 ( -> bf8 ) | % 72
+    \tuplet 6/4 4 {
+        gf,16 ( bf16 ) df16 -.
+        gf16 -. bf16 -. c16 -. }
+    df8 ( -> -. bf8 ) | % 73
+    f2 -\p | % 74
+    ff4 ( -> ef8 df8 ) | % 75
+    c?4 ( bf8 gf8 ) | % 76
+    f2 | % 77
+    ff4 ( -> -\pp ef8 df8 ) | % 78
+    c4 ( df8 gf8 ) | % 79
+    f8 -. -\pp f8 -. r4 | \barNumberCheck #80
+    f8 -. f8 -. r4 | % 81
+    f8 -. f8 -. r4 | % 82
+    f'8 -. f8 -. r4 | % 83
+    f8 -. f8 -. r4 | % 84
+    f8 -. f8 -. r4 | % 85
+    f8 -. f8 -. r4 \fermata | % 86
+    \repeat volta 2 {
+        bf8 -\p r8 a8 r8 | % 87
+        bf4 r4 | % 88
+        f8 r8 f8 r8 | % 89
+        bf4 r4 | \barNumberCheck #90
+        bf8 r8 bf8 r8 | % 91
+        bf4 r4 | % 92
+        a8 r8 bf8 r8 | % 93
+        f4 r4 }
+    | % 94
+    \repeat volta 2 {
+        f8 r8 -\< f8 r8 -\! | % 95
+        c4 -> r4 | % 96
+        g8 r8 g8 r8 | % 97
+        c4 r4 | % 98
+        ef8 r8 -\< ef8 r8 -\! | % 99
+        bf4 -> r4 | \barNumberCheck #100
+        f8 r8 f8 r8 | % 101
+        bf4 r4 | % 102
+        f'8 r8 f8 r8 | % 103
+        bf4 r4 | % 104
+        f8 r8 f8 r8 | % 105
+        bf,4 r4 | % 106
+        f'8 -\pp r8 f8 r8 | % 107
+        bf4 r4 | % 108
+        f8 r8 f8 r8 | % 109
+        bf,8 -. f'8 -. bf,8 -. r8 }
+    | \barNumberCheck #110
+    r16 g16-\f ( bf16 d16 ) g8 r8 | % 111
+    bf8 -\p r8 g8 r8 | % 112
+    a8 r8 d,8 r8 | % 113
+    ef8 r8 cs8 r8 | % 114
+    d4 d'16 ( c?16 ) bf16 -. a16 -. | % 115
+    g16 ( -\f g,16 ) bf16 -. d16 -. g8 r8 | % 116
+    bf8 -\p r8 g8 r8 | % 117
+    a8 r8 d,8 r8 | % 118
+    g8 r8 ef8 r8 | % 119
+    d8 r8 bf8 r8 | \barNumberCheck #120
+    ef8 r8 ef8 r8 | % 121
+    d8-\cresc r8 d8 r8 | % 122
+    c8 -\f r8 r4 | % 123
+    R2 | % 124
+    g16 ( -\f af16 ) af16 -. af16 -. af16 ( c16 ) c16 -. c16 -. \bar ""
+    c16 ( ef16 ) ef16 -. ef16 -. ef16 ( af16 ) af16 -. af16 -. | % 126
+    af,8 -\p r8 af'8 r8 | % 127
+    g8 r8 ef8 r8 | % 128
+    af,8 r8 af'8 r8 | % 129
+    g8 r8 ef8 r8 | \barNumberCheck #130
+    <g af>2 ~ -\f | % 131
+    af2 | % 132
+    g2 ~ -> | % 133
+    g2 | % 134
+    a,2 ~ -> -\p | % 135
+    a2 | % 136
+    bf4 -\pp r4 | % 137
+    bf4 r4 | % 138
+    ef16 ( -\pp g16 ) ef'16 -. ef16 -. ef8 r8 | % 139
+    ef,16 ( g16 ) ef'16 -. ef16 -. ef8 r8 | \barNumberCheck #140
+    ef,16 ( af16 ) ef'16 -. ef16 -. ef8 r8 | % 141
+    ef,16 ( g16 ) ef'16 -. ef16 -. ef8 r8 | % 142
+    bf,2 ~ -> | % 143
+    bf2 | % 144
+    ef16 ( -\pp g16 ) ef'16 -. ef16 -. ef4 -> | % 145
+    ef,16 ( g16 ) ef'16 -. ef16 -. ef4 -> | % 146
+    ef,16 ( af16 ) ef'16 -. ef16 -. ef4 -> | % 147
+    ef,16 ( g16 ) ef'16 -. ef16 -. ef4 -> | % 148
+    bf,2 ~ -> -\fp | % 149
+    bf2 | \barNumberCheck #150
+    ef2 ~ -\p | % 151
+    ef2 ~ | % 152
+    ef2 ~ | % 153
+    ef2 | % 154
+    ef2 ~ | % 155
+    ef2 ~ | % 156
+    ef2 ~ | % 157
+    ef2 ~ | % 158
+    ef8 df8. -> df,16 ( df'8 ) ~ | % 159
+    df16 c16 ( -. bf16 -. af16 -. g16 -. f16 -. ef16 -. df16 ) -. |
+    \barNumberCheck #160
+    c2 ~ -\pp | % 161
+    c2 | % 162
+    c16 ( df16 ) df16 -. -\< df16 -. df16 ( c16 ) c16 -. c16 -. -\! | % 163
+    c16 ( -\> df16 ) df16 -. df16 -. -\! df16 ( c16 ) c16 -. c16 -. | % 164
+    df2 ~ -\pp | % 165
+    df2 | % 166
+    cs16 ( d?16 ) d16 -. d16 -. d16 ( cs16 ) cs16 -. cs16 -. -\! | % 167
+    cs16 ( -\> d16 ) d16 -. d16 -. -\! d16 ( cs16 ) cs16 -. cs16 -. | % 168
+    d2 ~ -\pp | % 169
+    d2 | \barNumberCheck #170
+    d16 ( ef?16 ) ef16 -. -\< ef16 -. ef16 ( d16 ) d16 -. d16 -. -\! | % 171
+    d16 ( -\> ef16 ) ef16 -. ef16 -. -\! ef16 ( d16 ) d16 -. d16 -. | % 172
+    d2 ~ | % 173
+    d2 ~ | % 174
+    d2 ~ | % 175
+    d4 cs16 ( d16 ) d16 -. d16 -. | % 176
+    cs''16 ( -\pp d16 ) d16 -. d16 -. cs,,16 ( d16 ) d16 -. d16 -. | % 177
+    cs''16 ( d16 ) d16 -. d16 -. cs,,16 ( d16 ) d16 -. d16 -. | % 178
+    R2 | % 179
+    R2 | \barNumberCheck #180
+    r4 d'8 -\pp r8 | % 181
+    r4 d8 r8 | % 182
+    r4 f?8 r8 | % 183
+    r4 f8 r8 \fermata | % 184
+    \repeat volta 2 {
+        bf8 -\p r8 a8 r8 | % 185
+        bf4 r4 | % 186
+        f8 r8 f8 r8 | % 187
+        bf4 r4 | % 188
+        bf8 r8 bf8 r8 | % 189
+        bf4 r4 | \barNumberCheck #190
+        a8 r8 bf8 r8 | % 191
+        f4 r4 }
+    | % 192
+    \repeat volta 2 {
+        f8 r8 -\< f8 r8 -\! | % 193
+        c4 r4 | % 194
+        g8 r8 g8 r8 | % 195
+        c4 r4 | % 196
+        ef8 r8 -\< ef8 r8 -\! | % 197
+        bf4-> r4 | % 198
+        f8 r8 f8 r8 | % 199
+        bf4 r4 | \barNumberCheck #200
+        f'8 r8 f8 r8 | % 201
+        bf4 r4 | % 202
+        f8 r8 f8 r8 | % 203
+        bf,4 r4 | % 204
+        f'8-\pp r8 f8 r8 | % 205
+        bf4 r4 | % 206
+        f8 r8 f8 r8 | % 207
+        bf,8 -. f'8 -. bf,8 -. r8 }
+    | % 208
+    g'2-\pp ~ | % 209
+    g2 | \barNumberCheck #210
+    a2 ~ -\cresc | % 211
+    a2 | % 212
+    bf4 r4 | % 213
+    ef,4 r4 | % 214
+    f8 -. -\pp f8 -. r4 | % 215
+    f8 -. f8 -. r4 | % 216
+    bf,8 -. bf8 -. \acciaccatura bf8 f'8 ( d16 bf16 ) | % 217
+    \repeat unfold 2 { \acciaccatura bf8 f'8 ( d16 bf16 ) } | % 218
+    bf2 ~ | % 219
+    bf2 | \barNumberCheck #220
+    bf8 -. -\dim bf8 -. \acciaccatura bf8 f'8 ( d16 bf16 ) ( | % 221
+    f'8 ) ( d16 ) bf16 ( f'8 ) ( d16 bf16 ) | % 222
+    bf2 ~ | % 223
+    bf2 | % 224
+    bf8 -. bf8 -.-\! r4 | % 225
+    R2 | % 226
+    bf'8 -. -\f bf8 -. r4 | % 227
+    R2 | % 228
+    bf8 -.-\ff bf8 -. r4 | % 229
+    bf,8 -\p bf8 r4 | \barNumberCheck #230
+    bf8-\pp bf8 r4\fermata \bar "|."
+}
