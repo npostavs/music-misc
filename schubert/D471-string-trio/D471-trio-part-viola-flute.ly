@@ -3,16 +3,18 @@
 oBreak = { }
 \include "D471-trio-notes.lyi"
 
+#(set-global-staff-size 19.5)
+
 \paper {
     page-count = #4
 }
 
-\header { instrument = "Cello" }
+\header { instrument = "Viola/Flute" }
 
 \score {
     \header { piece = \markup { \bold { "Allegro moderato" } } }
     <<
-        \new Staff { \keepWithTag #'withFlute \MvI_Cello }
+        \new Staff { \clef "treble_8" \keepWithTag #'flute \MvI_Viola }
     >>
     \layout {
       \context {
@@ -24,9 +26,13 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Andante" } } }
     <<
-        \new Staff { \keepWithTag #'withFlute \MvII_Cello }
+        \new Staff { \clef "treble_8" \keepWithTag #'flute \MvII_Viola }
     >>
-    \layout {}
+    \layout {
+      \context {
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+      }
+    }
 }
 
 \pageBreak
@@ -34,7 +40,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Menuetto" } } }
     <<
-        \new Staff { \keepWithTag #'withFlute \MvIII_Cello }
+        \new Staff { \clef "treble_8" \keepWithTag #'flute \MvIII_Viola }
         \new Dynamics { \MvIII_Markings }
     >>
     \layout {}
@@ -43,7 +49,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Rondo" } } }
     <<
-        \new Staff { \keepWithTag #'withFlute \MvIV_Cello }
+        \new Staff { \clef "treble_8" \keepWithTag #'flute \MvIV_Viola }
         \new Dynamics { \MvIV_Markings }
     >>
     \layout {}
