@@ -12,7 +12,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Allegro moderato" } } }
     <<
-        \new Staff { \MvI_Viola }
+        \new Staff { \clef "alto" \MvI_Viola }
     >>
     \layout {
       \context {
@@ -24,7 +24,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Andante" } } }
     <<
-        \new Staff { \MvII_Viola }
+        \new Staff { \clef "alto" \MvII_Viola }
     >>
     \layout {
       \context {
@@ -38,7 +38,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Menuetto" } } }
     <<
-        \new Staff { \MvIII_Viola }
+        \new Staff { \clef "alto" \MvIII_Viola }
         \new Dynamics { \MvIII_Markings }
     >>
     \layout {}
@@ -47,7 +47,7 @@ oBreak = { }
 \score {
     \header { piece = \markup { \bold { "Rondo" } } }
     <<
-        \new Staff { \MvIV_Viola }
+        \new Staff { \clef "alto" \MvIV_Viola }
         \new Dynamics { \MvIV_Markings }
     >>
     \layout {}

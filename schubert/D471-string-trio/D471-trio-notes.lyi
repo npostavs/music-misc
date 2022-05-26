@@ -35,7 +35,7 @@ simile = \markup { \small \italic "simile" }
 MvI_Violin =  \relative f'' {
     \defaults
     \repeat volta 2 {
-        \clef "treble" \time 4/4 \key bf \major \partial 16 f16 ( | % 1
+        \time 4/4 \key bf \major \partial 16 f16 ( | % 1
         bf4. ) ( -\fp \> a16 g16 f8 ) d8 \p ( g8 ef8 ) | % 2
         c4 ( -> d8 ) r8 r8 e,16 ( f16 g16 f16 c'16 bf16 ) | % 3
         d4 ( -> ef8 ) r8 r8 e,16 ( f16 g16 f16 bf16 a16 ) | % 4
@@ -172,7 +172,7 @@ MvI_Violin =  \relative f'' {
 MvI_Viola =  \relative bf {
     \defaults
     \repeat volta 2 {
-        \clef "alto" \time 4/4 \key bf \major \partial 16 r16 | % 1
+        \time 4/4 \key bf \major \partial 16 r16 | % 1
         <bf f' d'>4 -\f r4 r4 r8 g'8 ( -\p | % 2
         a4 -> bf8 ) r8 r2 | % 3
         f4. -> r8 r2 | % 4
@@ -376,7 +376,7 @@ MvI_Cello =  \relative bf, {
 
 MvII_Violin =  \relative a'' {
     \defaults
-    \clef "treble" \time 6/8 \key f \major | % 1
+    \time 6/8 \key f \major | % 1
     \appoggiatura { f16 g } a8 -. - "" -\p r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 \tuplet 3/2 { d16 ( e16 f16 ) } | % 2
     f,8. ( g32 f32 ) \tuplet 3/2 { e16 ( d'16 c16 ) } gs8 ( \tuplet 6/4 4 { a16 ) c16 ( -. cs16 -. d16 -. ef16 -. e16 ) -. } | % 3
     \appoggiatura { f16 g } a8 -. r8 g32 ( f32 e32 d32 ) c8 ( a16 ) r16 d32 ( c32 a32 f32 ) | % 4
@@ -477,7 +477,7 @@ MvII_Violin =  \relative a'' {
 
 MvII_Viola =  \relative c'' {
     \defaults
-    \clef "alto" \time 6/8 \key f \major | % 1
+    \time 6/8 \key f \major | % 1
     \appoggiatura { s16 s } c8 -. -\p r8 bf8 -. a8 -. r8 bf,8 -. | % 2
     a8 -. r8 bf16. ( e,32 ) f8 -. r8 r8 | % 3
     c''8 -. r8 bf8 -. a8 -. r8 f,8 ~ | % 4
@@ -631,7 +631,7 @@ MvIII_Violin =  \relative d'' {
     \defaults
     \repeat volta 2 {
         \repeat volta 2 {
-            \clef "treble" \time 3/4 \key bf \major \partial 4 d8 ( -\p ef8 | % 1
+            \time 3/4 \key bf \major \partial 4 d8 ( -\p ef8 | % 1
             f2 ) -> bf,8 ( c8 | % 2
             d2 ) g,8 ( a8 | % 3
             c8 bf8 d8 c8 ef8 d8 ) | % 4
@@ -713,7 +713,7 @@ MvIII_Violin =  \relative d'' {
 MvIII_Viola =  \relative bf' {
     \defaults
     \repeat volta 2 {
-        \clef "alto" \time 3/4 \key bf \major \partial 4 bf4 ( -\p | % 1
+        \time 3/4 \key bf \major \partial 4 bf4 ( -\p | % 1
         c2 _> bf4 | % 2
         a2 g4 ) | % 3
         f2 ( bf4 ) | % 4
@@ -891,7 +891,7 @@ MvIV_Violin =  \relative d'' {
     \defaults
     % \omit TupletNumber
     \repeat volta 2 {
-        \clef "treble" \time 2/4 \key bf \major | % 1
+        \time 2/4 \key bf \major | % 1
         d8 -. -\p d8 -. \acciaccatura f8 ef16 ( d16 ef16 c16 ) | % 2
         d4 ( f8 ) r8 | % 3
         d8 -. d8 -. \acciaccatura f8 ef16 ( d16 ef16 a,16 ) | % 4
@@ -1201,7 +1201,7 @@ MvIV_Viola =  \relative d' {
     \defaults
     \omit TupletNumber
     \repeat volta 2 {
-        \clef "alto" \time 2/4 \key bf \major | % 1
+        \time 2/4 \key bf \major | % 1
         d8 -. -\p f8 -. c8 -. f8 -. | % 2
         d8 -. f8 -. d8 -. f8 -. | % 3
         bf,8 -. f'8 -. a,8 f'8 -. | % 4

@@ -12,7 +12,7 @@ oBreak = { \break }
     \header { piece = \markup { \bold { "Allegro moderato" } } }
     <<
         \new Staff { \MvI_Violin }
-        \new Staff { \MvI_Viola }
+        \new Staff { \clef "alto" \MvI_Viola }
         \new Staff { \MvI_Cello }
     >>
     \layout {}
@@ -23,7 +23,7 @@ oBreak = { \break }
     \header { piece = \markup { \bold { "Andante" } } }
     <<
         \new Staff { \MvII_Violin }
-        \new Staff { \MvII_Viola }
+        \new Staff { \clef "alto" \MvII_Viola }
         \new Staff { \MvII_Cello }
     >>
     \layout {}
@@ -34,7 +34,7 @@ oBreak = { \break }
     \header { piece = \markup { \bold { "Menuetto" } } }
     <<
         \new Staff { \MvIII_Violin }
-        \new Staff { \MvIII_Viola }
+        \new Staff { \clef "alto" \MvIII_Viola }
         \new Staff { \MvIII_Cello }
         \new Dynamics { \MvIII_Markings }
     >>
@@ -46,7 +46,7 @@ oBreak = { \break }
     \header { piece = \markup { \bold { "Rondo" } } }
     <<
         \new Staff { \MvIV_Violin }
-        \new Staff { \MvIV_Viola }
+        \new Staff { \clef "alto" \MvIV_Viola }
         \new Staff { \MvIV_Cello }
         \new Dynamics { \MvIV_Markings }
     >>
