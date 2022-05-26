@@ -3,19 +3,22 @@
 oBreak = { }
 \include "D471-trio-notes.lyi"
 
-#(set-global-staff-size 19)
-
 \paper {
     page-count = #4
 }
 
+\header { instrument = "Cello" }
 
 \score {
     \header { piece = \markup { \bold { "Allegro moderato" } } }
     <<
         \new Staff { \MvI_Cello }
     >>
-    \layout {}
+    \layout {
+      \context {
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+      }
+    }
 }
 
 \score {

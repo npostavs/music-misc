@@ -6,7 +6,7 @@ oBreak = { }
 #(set-global-staff-size 18)
 
 \paper {
-    % page-count = #8
+    page-count = #6
 }
 
 
