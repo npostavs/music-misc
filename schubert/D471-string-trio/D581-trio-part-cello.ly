@@ -1,11 +1,7 @@
 \version "2.22.2"
 
 oBreak = { }
-\include "D471-trio-notes.lyi"
-
-% 1 2
-% 3 4
-% 5 6
+\include "D581-trio-notes.lyi"
 
 \paper {
     % page-count = #4
