@@ -3,8 +3,12 @@
 oBreak = { }
 \include "D471-trio-notes.lyi"
 
+% 1 2
+% 3 4
+% 5 6
+
 \paper {
-    page-count = #4
+    % page-count = #4
 }
 
 \header { instrument = "Cello" }
@@ -16,20 +20,26 @@ oBreak = { }
     >>
     \layout {
       \context {
-          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
       }
     }
 }
+
+\pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Andante" } } }
     <<
         \new Staff { \keepWithTag #'withFlute \MvII_Cello }
     >>
-    \layout {}
+    \layout {
+      \context {
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+      }
+    }
 }
 
-\pageBreak
+% \pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Menuetto" } } }
@@ -39,6 +49,8 @@ oBreak = { }
     >>
     \layout {}
 }
+
+\pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Rondo" } } }

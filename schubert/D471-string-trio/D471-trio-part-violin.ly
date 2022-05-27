@@ -3,7 +3,13 @@
 oBreak = { }
 \include "D471-trio-notes.lyi"
 
+% 1 2
+% 3 4
+% 5 6
+
 #(set-global-staff-size 18)
+
+\header { instrument = "Violin" }
 
 \paper {
     page-count = #6

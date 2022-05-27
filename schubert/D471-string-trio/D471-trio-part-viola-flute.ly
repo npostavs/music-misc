@@ -3,10 +3,10 @@
 oBreak = { }
 \include "D471-trio-notes.lyi"
 
-#(set-global-staff-size 19.5)
-
 \paper {
-    page-count = #4
+    % auto-first-page-number = ##t
+    % page-breaking = #ly:page-turn-breaking
+    page-count = #6
 }
 
 \header { instrument = "Viola/Flute" }
@@ -18,10 +18,12 @@ oBreak = { }
     >>
     \layout {
       \context {
-          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
       }
     }
 }
+
+\pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Andante" } } }
@@ -29,13 +31,13 @@ oBreak = { }
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvII_Viola }
     >>
     \layout {
-      \context {
-          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
-      }
+      % \context {
+      %     \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+      % }
     }
 }
 
-\pageBreak
+% \pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Menuetto" } } }
@@ -46,11 +48,17 @@ oBreak = { }
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = \markup { \bold { "Rondo" } } }
     <<
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvIV_Viola }
         \new Dynamics { \MvIV_Markings }
     >>
-    \layout {}
+    \layout {
+      \context {
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+      }
+    }
 }
