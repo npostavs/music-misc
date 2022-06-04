@@ -64,14 +64,14 @@ d( fis e) d-. e-. fis-. e( g fis) e-. fis-. g-.} \appoggiatura g fis8 fis4 e8
 << {cis'4 d e16( fis e d) cis8 r} \\ e,1 >>
 << {e'16 fis e d cis b cis d e cis e cis e8 r} \\ e,1 >>
 << {\override TupletBracket #'bracket-visibility = ##f \override TupletNumber #'stencil = ##f \times 2/3 {b'16 d cis b cis d cis e d cis d e d fis e d e fis e gis fis e fis gis} } \\  e,1 >>
-\times 2/3 {fis16 a gis fis gis a gis b a gis a b} a8 a a16 a b gis \revert TupletNumber #'stencil \tag #'partie \pageTurn		%---------------------------
+\times 2/3 {fis16 a gis fis gis a gis b a gis a b} a8 a a16 a b gis \revert TupletNumber #'stencil
 a a\trill b gis a a\trill b gis a cis cis8~ cis16 cis d b 
 cis cis\trill d b cis cis\trill d b cis( e) e4 cis16( e)
 d fis cis e d fis b, d cis e b d cis e a, cis
 b d a cis b d gis, b a cis gis b a cis fis, a
 gis b e, gis fis a dis, fis fis( e) e8~ e16 e fis dis
 e e\trill fis dis e e\trill fis dis fis( e) e8~ e16 e fis dis
-e e\trill fis dis e e\trill fis dis \afterGrace e8\fermata {dis16[ e]} r8\fermata \clef tenor e4( 
+e e\trill fis dis e e\trill fis dis \afterGrace e8\fermata {dis16[ e]} r8\fermata \clef tenor e4( \tag #'partie \allowPageTurn
 fis gis) a \appoggiatura b16 a gis fis8
 \appoggiatura fis16 e8 d16. cis32 d8 d d\trill cis e4(
 fis gis) a8 a, b8.( cis32 d)

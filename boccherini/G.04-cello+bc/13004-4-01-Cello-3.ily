@@ -5,6 +5,7 @@
 
  \override TupletBracket #'bracket-visibility = ##f
 
+\repeat volta 2 {
 
 
 
@@ -43,7 +44,7 @@ gis2.
 cis4.\p( dis16 e) b8 r
 cis4.\f( dis16 e) b8 r \set tupletSpannerDuration = #(ly:make-moment 1 4)
 \times 2/3 {cis8 dis e dis cis b a gis fis}
-e4 \clef tenor e, r \bar ":|" \pageTurn		%---------------------------
+e4 \clef tenor e, r }
 b'4 b( e)
 \appoggiatura fis16 e8( dis) dis2
 <e, d'!>4.( e'16 fis) e8 d

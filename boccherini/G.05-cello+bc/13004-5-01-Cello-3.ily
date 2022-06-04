@@ -7,6 +7,7 @@
 %\set Timing.baseMoment = #(ly:make-moment 1 8) \set Staff.beatStructure = #'(3) 
 %\set Staff.beamExceptions = #'(( end . ( ((1 . 9) . (3 3 3)) ((1 . 16) . (4 4 4 4))  ((1 . 8) . (4 4)) )))	
 
+\repeat volta 2 {
 
 <b' d>8 <a c> <g b>
 q8. <a c>16 <g b>8
@@ -49,7 +50,8 @@ a'( d, g d fis d)
 \times 2/3 {g( fis e)} e4
 d8 \addStacc {<fis d'> <e cis'>
 <fis d'> <fis, d'> <e cis'>}
-<fis d'>4 r8 \bar ":|:" 
+<fis d'>4 r8
+} \repeat volta 2 {
 \clef bass << \voiceOne {\repeat unfold 2 {d'4. | cis8 c4 | 
 		b8 bes4 | \appoggiatura c16 bes8 a r}}
 	\\ \voiceTwo {\repeat unfold 6 d,4.~ 
@@ -87,6 +89,6 @@ d'( g, c g b g)
 \appoggiatura d' \times 2/3 {c( b a)} a4\trill
 g8 \addStacc {<b g'> <a fis'>
 <b g'> <g b> <fis a>}
-<g, d' b'>4 r8 \bar ":|"
+<g, d' b'>4 r8 }
 }
 

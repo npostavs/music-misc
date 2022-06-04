@@ -7,7 +7,7 @@
 \set Staff.beamExceptions = #'(( end . ( ((1 . 24) . (3 3 3 3 3 3 3 3)) ((1 . 16) . (4 4 4 4)) ((1 . 32) . (8 8 8 8))   )))	
 \override TupletBracket.bracket-visibility = ##f
                                         
-
+\repeat volta 2 {
 \repeat unfold 2 {<g, e' c'>8 \sb \repeat unfold 3 {c'32( b c d)} \usb e8 f4 e16 d}
 
 c4. b16 a g8 <e g> q q
@@ -25,7 +25,7 @@ a'16.\trill g32 fis16.\trill e32 \grace e16 d16.\trill c32 \grace c16 b16.\trill
 d8\trill e16 b c8\trill d16 a b16( g' fis f e ees d cis)
 d8\trill e16 b c8\trill d16 a \tuplet 3/2 8 {b16-. b( c) cis-. cis( d) dis-. dis( e) fis-. fis( g)}
 d,4 a'\trill \tuplet 3/2 8 {b16-. b( c) cis-. cis( d) dis-. dis( e) fis-. fis( g)}
-d,4 a'\trill g8 d <g, d' b'> r \bar ":|.|:"
+d,4 a'\trill g8 d <g, d' b'> r } \repeat volta 2 {
 \repeat unfold 2 {<g g'>8 \sb \repeat unfold 3 {g'32( fis g a)} \usb b8 c4 b16 a}
 
 << {g2. f!4 | ees f ees d}
@@ -48,6 +48,6 @@ d16 f, f g, e' g, d' g, e' c'( b bes a aes g fis)
 g8\trill a16 e f!8 g16 d e c'( b bes a aes g fis)
 g( b b d) d( f f d) \tuplet 3/2 8 {e16-. e( f) fis-. fis( g) gis-. gis( a) b-. b( c)}
 <g,, g'>4 d''\trill \tuplet 3/2 8 {e16-. e( f) fis-. fis( g) gis-. gis( a) b-. b( c)}
-<g,, g'>4 d''\trill  c8 g c,4 \bar ":|."
+<g,, g'>4 d''\trill  c8 g c,4 }
 }
 

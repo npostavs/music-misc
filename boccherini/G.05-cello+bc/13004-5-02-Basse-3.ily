@@ -7,7 +7,7 @@
 %\set Timing.baseMoment = #(ly:make-moment 1 8) \set Staff.beatStructure = #'(3) 
 %\set Staff.beamExceptions = #'(( end . ( ((1 . 9) . (3 3 3)) ((1 . 16) . (4 4 4 4))  ((1 . 8) . (4 4)) )))	
 
-
+\repeat volta 2 {
 \repeat unfold 3 g4.~
 
 
@@ -49,7 +49,7 @@ fis e d
 b'16. g32 a8 a,
 d \addStacc {fis a
 d a a,}
-d,4 r8 \bar ":|:" 
+d,4 r8 } \repeat volta 2 {
 d'8 fis d
 e fis d
 g g, g'
@@ -87,6 +87,6 @@ b a g
 e'16. c32 d8 d,
 g \addStacc {b d
 g d d,}
-g4 r8 \bar ":|"
+g4 r8 }
 }
 
