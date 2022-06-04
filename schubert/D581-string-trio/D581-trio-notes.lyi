@@ -215,8 +215,7 @@ MvI_Viola =  \relative bf {
         f4. -> r8 r2 | % 4
         a4 ( -> bf8 ) r8 r8 a,16 ( bf16 ef16 d16 g16 f16 ) | % 5
         af2 ( g8 ) r8 r4 | % 6
-        d8\p -! r8 r8. f16 ( ef8 ) r16 d16 ( -\markup{ \tiny {cresc.} } c8
-        ) r16 bf16 | % 7
+        d8\p -! r8 r8. f16 ( ef8 ) r16 d16 ( \cresc c8 ) r16 bf16 | % 7
         a2 -\fp-> b2 -\fp-> | % 8
         bf2 ( -\pp a2 ) | % 9
         bf8 r8 bf8 r8 d8 r8 a8 r8 | \barNumberCheck #10
@@ -256,7 +255,7 @@ MvI_Viola =  \relative bf {
         ) g16 ( c16 bf16 c16 ) | % 29
         a4 r4 \tag #'viola { <c a'>8 } \tag #'flute a'8 -. -\f r8 r8. }
     r16 | \barNumberCheck #30
-    \tag #'viola { <bf gf'>4 } \tag #'flute gf4 -\f r4 r4 r8 ef8 ( -\p | % 31
+    \tag #'viola { <bf, gf'>4 } \tag #'flute gf'4 -\f r4 r4 r8 ef8 ( -\p | % 31
     ff4 -> ef8 ) r8 r2 | % 32
     cf4. -> r8 r4 r8 df8 ~ | % 33
     df4. r8 a?4 ( -> bf8 ) r8 | % 34
@@ -291,7 +290,7 @@ MvI_Viola =  \relative bf {
     \tag #'viola { <bf, f' d'>4 } \tag #'flute d'4 -\f r4 r4 r8 g,8-\p ( | % 55
     a4 _> bf8 ) r8 r2 | % 56
     f4. -> r8 r2 | \barNumberCheck #57
-    a4 ( -> bf8 ) r8 \tag #'viola { r8 a,16 ( bf16 ef16 d16 g16 f16 ) } \tag #'flute { r2 } | % 58
+    a4 ( -> bf8 ) r8 \tag #'Oviola { r8 a,16 ( bf16 ef16 d16 g16 f16 ) } \tag #'(Eviola flute) { r2 } | % 58
     af2 ( -> g8 ) r8 r4 | % 59
     d8 -! -\p r8 r8. f16 ( ef8 ) r16 d16 ( -\cresc c8 ) r16 bf16 ( | % 60
     a2 ) ^> -\fp b2 ^> -\fp | % 61
@@ -1310,21 +1309,21 @@ MvIV_Viola =  \relative d' {
     | % 25
     bf'2 ( -\p | % 26
     af4. g8 ) | % 27
-    \tag #'viola {
+    \tag #'Oviola {
     f16 ( -> e16 f16 g16 af16 bf16 af16 bf16 ) | % 28
     af16 ( g16 ef'16 bf16 g16 bf16 af16 f16 ) | % 29
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     d2 ( | % 28
     ef4. f8 ) | % 29
     }
     bf2 ( | \barNumberCheck #30
     af4. g8 ) | % 31
-    \tag #'viola {
+    \tag #'Oviola {
     f16 ( -> e16 f16 g16 af16 g16 af16 g16 ) | % 32
     c16 ( g16 ef'16 c16 g16 ef16 c16 g16 ) | % 33
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     d2 ( | % 32
     ef4 ) r4 | % 33
     }
@@ -1360,7 +1359,7 @@ MvIV_Viola =  \relative d' {
     f,8 ( af16 ) r16 <f df'>4 -> | % 63
     gf'2 ( | % 64
     f8 ) r8 r4 | % 65
-    \tag #'viola {
+    \tag #'Oviola {
     \tuplet 6/4 4 {
         a16 ( -\< c16 bf16
         a16 ef'16 df16
@@ -1372,13 +1371,13 @@ MvIV_Viola =  \relative d' {
         e,16 f16 bf16
         c,16 df16 f16 ) } | % 67
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     f,2 ( | % 66
     bf8 ) r8 r4 | % 67
     }
     cf2 ( | % 68
     bf8 ) r8 r4 | % 69
-    \tag #'viola {
+    \tag #'Oviola {
     bf4 -> -\f \tuplet 6/4 4 {
         gf16 -. bf16 -. df16 -.
         gf16 -. bf16 -. c16 -. } | \barNumberCheck #70
@@ -1392,7 +1391,7 @@ MvIV_Viola =  \relative d' {
         gf,16 -. bf16 -. df16 -.
         gf16 -. bf16 -. c16 -. } | % 73
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     e,,4 -> -\f e'8 ( df'8 ) | \barNumberCheck #70
     e,,4 -> e'8 ( df'8 ) | % 71
     e,,4 -\decresc e'8 ( df'8 ) | % 72
@@ -1511,15 +1510,15 @@ MvIV_Viola =  \relative d' {
     g,16 ( ef'16 ) g16 -. g16 -. g4 -> | % 146
     af,16 ( ef'16 ) af16 -. af16 -. af4 -> | % 147
     g,16 ( ef'16 ) g16 -. g16 -. g4 -> | % 148
-    \tag #'viola {
+    \tag #'Oviola {
     <f, d'>2 ~ ^> -\fp | % 149
     <f d'>2 | \barNumberCheck #150
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     d'2 ( ^> -\fp | % 149
     f2 ) | \barNumberCheck #150
     }
-    \tag #'viola {
+    \tag #'Oviola {
     <g, ef'>8 -! ef''8. -! -> -\p ef,16 ( ef'8 ) ~ -> | % 151
     ef16 d16 ( -. c16 -. bf16 -. af16 -. g16 -. f16 -. ef16 ) -. | % 152
     df2 ~ | % 153
@@ -1527,7 +1526,7 @@ MvIV_Viola =  \relative d' {
     c8 -! af'8. -! -> af,16 ( af'8 ) ~ -> | % 155
     af16 g16 ( -. af16 -. bf16 -. af16 -. g16 -. f16 -. ef16 ) -. | % 156
     }
-    \tag #'flute {
+    \tag #'(Eviola flute) {
     ef2 ~ -\p | % 151
     ef2 ~ | % 152
     ef2 ~ | % 153

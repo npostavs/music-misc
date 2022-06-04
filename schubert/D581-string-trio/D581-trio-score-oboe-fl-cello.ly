@@ -13,6 +13,7 @@ oBreak = { \break }
     <<
         \new Staff { \keepWithTag #'oboe \MvI_Violin }
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvI_Viola }
+        \new Staff { \clef "alto" \keepWithTag #'(Eviola viola) \MvI_Viola }
         \new Staff { \keepWithTag #'withFlute \MvI_Cello }
     >>
     \layout {}
@@ -24,6 +25,7 @@ oBreak = { \break }
     <<
         \new Staff { \keepWithTag #'oboe \MvII_Violin }
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvII_Viola }
+        \new Staff { \clef "alto" \keepWithTag #'(Eviola viola) \MvII_Viola }
         \new Staff { \keepWithTag #'withFlute \MvII_Cello }
     >>
     \layout {}
@@ -35,6 +37,7 @@ oBreak = { \break }
     <<
         \new Staff { \keepWithTag #'oboe \MvIII_Violin }
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvIII_Viola }
+        \new Staff { \clef "alto" \keepWithTag #'(Eviola viola) \MvIII_Viola }
         \new Staff { \MvIII_Cello }
         \new Dynamics { \MvIII_Markings }
     >>
@@ -47,6 +50,7 @@ oBreak = { \break }
     <<
         \new Staff { \keepWithTag #'oboe \MvIV_Violin }
         \new Staff { \clef "treble_8" \keepWithTag #'flute \MvIV_Viola }
+        \new Staff { \clef "alto" \keepWithTag #'(Eviola viola) \MvIV_Viola }
         \new Staff { \keepWithTag #'withFlute \MvIV_Cello }
         \new Dynamics { \MvIV_Markings }
     >>
