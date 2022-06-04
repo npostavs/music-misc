@@ -1,6 +1,6 @@
 \version "2.18.0"      % Boccherini - Sonate n°6 G6 - basse 2ème mvt
 
-\relative c { \clef bass
+\relative c { \basseClef
 \time 4/4 \key f \major \tempo "Largo"
 
 

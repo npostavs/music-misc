@@ -54,8 +54,10 @@ usb = \unset subdivideBeams
     top-margin = 5\mm
     bottom-margin = 1\mm
     before-title-space = 5\mm
-    head-separation = 5\mm
-    foot-separation = 1\mm
+
+    % head-separation = 5\mm
+    % foot-separation = 1\mm
+
     % markup-system-spacing = #'((basic-distance . 10)(padding . 10) ) %(minimum-distance . 10) (stretchability . 5)
     % top-system-spacing = #'((basic-distance . 10) (padding . 5))  % (minimum-distance . 5) (stretchability . 5)
     % bottom-system-spacing = #'((basic-distance . 5) (padding . 10)) % (minimum-distance . 5) (stretchability . 5)

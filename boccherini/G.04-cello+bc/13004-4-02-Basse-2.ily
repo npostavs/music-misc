@@ -1,6 +1,6 @@
 \version "2.16.0"      % Boccherini - Sonate n°4 G4 - basse 2ème mvt
 
-\relative c { \clef bass
+\relative c { \basseClef
 \time 4/4 \key a \major \tempo "Allegro"
 
 \set tupletSpannerDuration = #(ly:make-moment 1 8) \override TupletBracket #'bracket-visibility = ##f

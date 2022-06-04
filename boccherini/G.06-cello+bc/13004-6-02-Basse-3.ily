@@ -1,6 +1,6 @@
 \version "2.18.0"      % Boccherini - Sonate n°6 G6 - basse 3ème mvt
 
-\relative c { \clef bass
+\relative c { \basseClef
 \time 2/4 \key c \major \tempo "Allegro moderato"
 
 
