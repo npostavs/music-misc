@@ -4,8 +4,10 @@ fragment='fragment.pdf'
 
 parts=(D581-trio-part-violin.pdf
        D581-trio-part-viola-flute.pdf
+       D581-trio-part-Eviola.pdf
        D581-trio-part-cello.pdf)
 covers=(Cover-violin.pdf
+        Cover-viola.pdf
         Cover-viola.pdf
         Cover-cello.pdf)
 

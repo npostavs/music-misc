@@ -4,7 +4,7 @@ oBreak = { }
 \include "D581-trio-notes.lyi"
 
 \paper {
-    % page-count = #4
+    page-count = #6
 }
 
 \header { instrument = "Viola" }
@@ -16,10 +16,12 @@ oBreak = { }
     >>
     \layout {
       \context {
-          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
       }
     }
 }
+
+\pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Andante" } } }
@@ -28,12 +30,10 @@ oBreak = { }
     >>
     \layout {
       \context {
-          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
       }
     }
 }
-
-\pageBreak
 
 \score {
     \header { piece = \markup { \bold { "Menuetto" } } }
@@ -44,11 +44,17 @@ oBreak = { }
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = \markup { \bold { "Rondo" } } }
     <<
         \new Staff { \clef "alto" \keepWithTag #'(Eviola viola) \MvIV_Viola }
         \new Dynamics { \MvIV_Markings }
     >>
-    \layout {}
+    \layout {
+      \context {
+          \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+      }
+    }
 }
