@@ -19,10 +19,10 @@ oIIPageBreak = {}
 \score {
   \header { piece = "Allegro moderato" }
   <<
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #1
     \magnifyStaff #(magstep 0) \DuoI_MvI_VlnI }
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #-1
     \magnifyStaff #(magstep 0) \DuoI_MvI_VlnII }
   >>
@@ -33,10 +33,10 @@ oIIPageBreak = {}
 \score {
   \header { piece = "Andante sostenuto e cantabile" }
   <<
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #1
     \magnifyStaff #(magstep 0) \DuoI_MvII_VlnI }
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #-1
     \magnifyStaff #(magstep 0) \DuoI_MvII_VlnII }
   >>
@@ -47,13 +47,30 @@ oIIPageBreak = {}
 \score {
   \header { piece = "Rondo" }
   <<
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #1
     \magnifyStaff #(magstep 0) \DuoI_MvIII_VlnI }
-  \new Staff \with \lessSpace { 
+  \new Staff \with \lessSpace {
     \set Staff.midiPanPosition = #-1
     \magnifyStaff #(magstep -6) \DuoI_MvIII_VlnII }
   >>
   \layout {}
   \midi { \tempo 4. = 80 }
+}
+
+
+%%% DuoII
+
+\score {
+  \header { piece = "Allegro" }
+  <<
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #1
+    \magnifyStaff #(magstep 0) \DuoII_MvI_VlnI }
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #-1
+    \magnifyStaff #(magstep 0) \DuoII_MvI_VlnII }
+  >>
+  \layout {}
+  \midi { \tempo 4 = 120 }
 }
