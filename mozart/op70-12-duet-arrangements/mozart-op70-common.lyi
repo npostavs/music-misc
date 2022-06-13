@@ -1,0 +1,15 @@
+\language "english"
+
+conEspress = \markup { \italic "con espressione" }
+calando = \markup { \italic "calando" }
+atempo = \markup { \italic "a tempo" }
+simile = \markup { \italic "simile" }
+fermataMark = \mark \markup { \musicglyph "scripts.ufermata" }
+
+lessSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 2)
+               (padding . 2)
+               (stretchability . 10))
+}
