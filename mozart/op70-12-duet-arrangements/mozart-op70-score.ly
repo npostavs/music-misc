@@ -74,3 +74,17 @@ oIIPageBreak = {}
   \layout {}
   \midi { \tempo 4 = 120 }
 }
+
+\score {
+  \header { piece = "Andante" }
+  <<
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #1
+    \magnifyStaff #(magstep 0) \DuoII_MvII_VlnI }
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #-1
+    \magnifyStaff #(magstep 0) \DuoII_MvII_VlnII }
+  >>
+  \layout {}
+  \midi { \tempo 4 = 80 }
+}

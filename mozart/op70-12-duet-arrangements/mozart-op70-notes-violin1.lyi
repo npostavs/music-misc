@@ -504,6 +504,9 @@ DuoI_MvIII_VlnI = \relative c' {
   q8 r r \bar "|."
 }
 
+
+%%% DuoII
+
 DuoII_MvI_VlnI = \relative c' {
   \key f \major \time 4/4
   \repeat volta 2 {
@@ -656,4 +659,101 @@ DuoII_MvI_VlnI = \relative c' {
   a16 c f a c16 a f c e16 g bf c e16 c bf g | % 119
   a16 c f c a16 c a f e16 g bf g e16 g e c | % 120
   g2-\> f4-\! r \bar "|."
+}
+
+DuoII_MvII_VlnI_PartA = \relative c' {
+  d'=''4.-\p ef32( d c d ef8) f32( ef d ef | % 2
+  g8. f16) f4.( ef16 d) | % 3
+  c4 \appoggiatura b16 c8-\<( \appoggiatura b16 c8 \appoggiatura cs16 d8 \appoggiatura cs16 d8) | % 4
+  f16(-\> ef d ef c4-\!) r | % 5
+  bf4.-\cresc bf16-\trill( a32 bf d8 c) | % 6
+  bf4. d16-\trill( c32 d f8 ef) | \break % 7
+  % line 2
+  d16-\mf( f) bf( a) a16( g) g( f) f16( ef) ef( d) | % 8
+  f8.-\>( d16 c16) bf( a g f16 ef d c) | % 9
+  % \mark "G"
+  bf16-\p( a bf f' bf,16 a bf f') c='16( b c f) | % 10
+  d16( cs d f d16 cs d f) ef16( d c bf) | \oIBreak % 11
+  % line 3
+  a16-\<( g a f' a,16 bf a f') bf,16( a bf f') | % 12
+  d16-\>( c b c a16-\!) e'='( f g f16 d ef c) | % 13
+  \tuplet 3/2 { << { s4. s8.-\cresc s8.-\! } \repeat unfold 5 { bf?16( d f) } >> a,16( c f) } | \oIBreak % 14
+  % line 4
+  \tuplet 3/2 { \repeat unfold 4 { bf,16( d f) } d16( f d) c16( a c) } | % 15
+  bf16( c d ef d16 f d bf) f'='16-\>( ef d ef) | % 16
+  % \mark "H"
+  d4-\! r16 bf''( d) c-. bf16-.\( a-. g-. fs-.\) | % 17
+  fs4-\fp( g16) g(-\turn bf) a-. g\(-. f-. ef-. d-.\) | \oIBreak % 18
+  % line 5
+  d4-\fp( ef16) ef(-\turn g) f-. ef\(-. d-. c-. bf-.\) | % 19
+  a16( f ef f-\cresc a16 f ef f) bf16( f d f) | % 20
+  f16( c' ef c fs,16 c' ef c) g16( d' g, d) | % 21
+  ef-\>( ef' d c) <f, bf>8\(-. r <f a>-.-\!\) r | \oIBreak % 22
+  % line 6
+  <f c'>4( bf) r8. <d, c'>16 | % 23
+  << { c'4( bf8) } \\ ef,4.-\fp >> r8 r8. <b af'>16 | % 24
+  << { af'4( g8) } \\ c,4.-\fp >> r8 r4 | % 25
+  c''4.-\cresc c16\((-\trill bf32 c d8) bf--\) | % 26
+  bf4( a) bf16( a bf f) | % 27
+  a16( g f-\> ef d8) r c8.(-\trill bf32 c) | % 28
+  % \mark "I"
+  bf4-\! r ef8( d) | \oIBreak % 29
+  % line 7
+  d8-\fp\( \afterGrace c-\trill ({ bf16 c)} bf4\) g'8( f) | % 30
+}
+
+DuoII_MvII_VlnI = \relative c' {
+  \key bf \major \time 3/4 % 1
+  << { s2.*8 \mark "G" |
+       s2.*7 \mark "H" |
+       s2.*12 \mark "I"
+     } { \DuoII_MvII_VlnI_PartA } >>
+  f'=''8-\fp\( \afterGrace ef-\trill ({ d16 ef)} d4\) g8-\<\(-. g-.\) | \barNumberCheck #31
+  g4.-\mf g16(-\trill f32 g a8 bf) | % 33
+  c8.( a16) c4( ~ c16 d32 c bf16 a) | % 34
+  a16( g) g4 a16( g) g16( f e f) | % 35
+  f16( e-\> d c) c8-\! r r4 | \oIBreak % 36
+  % line 8 (-5)
+  \mark "K"
+  f,='16-\p( e f c f16 e f c) g'16( fs g c,) | % 37
+  a'='16( gs a c, a'16 gs a c,) bf'16( a g f) | % 38
+  e16( d e c e16-\< d e c) f16( e f c) | % 39
+  a'16-\>( g fs g e16) f( g f a16-\! g f e) | \oIBreak % 40
+  % line 9 (-4)
+  f4 r <a, f'> | % 41
+  <bf f'>4 r q-\< | % 42
+  <a f'>8.-\>( bf16) <c a'>8( r <c e>) r | % 43
+  <c g'>4->-\>( f16) c'?-\<\(-. d-. e-. f16-. g-. a-. bf-.\) | % 44
+  \mark "L"
+  a4.-\mp bf32( a g a bf8) c32( bf a bf | % 45
+  d8. c16) c4( d16 c bf a) | \oIBreak % 46
+  % line 10 (-3)
+  g4 \appoggiatura fs16 g8-\<( \appoggiatura fs16 g8 \appoggiatura gs16 a8 \appoggiatura gs16 a8) | % 47
+  c16-\>( bf a bf g16) a( bf a-\! c16 bf a g) | % 48
+  a16( bf a g f16 e ef d f16 ef d cs) | % 49
+  d16( e f fs g16 a bf c cs16 d bf g) | \oIBreak % 50
+  % line 11 (-2)
+  c?4.( d8 e f) | % 51
+  \appoggiatura { f,16 g a } \afterGrace g2.-\trill ({ f16 g)} | % 52
+  f4 r8 f16-\cresc(-\trill e32 f c'8 a) | % 53
+  g4 r8 g16-(-\trill fs32 g d'8 bf) | % 54
+  a4. bf8\(-. c-. d-.\) | % 55
+  ef8.-\f\(( c16 ef4)-\fermata ~ ef32\)[-\calando-\> d\(-. c-. bf-.] a32-. g-. f-. ef-.\) | \oIBreak % 56
+  % line 12 (-1)
+  \mark "M"
+  << { s2.*8 \mark "N" |
+       s2.*7 \mark "O" |
+       s2.*12 \mark "P"
+     } { \DuoII_MvII_VlnI_PartA } >>
+  % line ?? (-2)
+  f8-\fp\( \afterGrace ef ({d16 ef)} d8\) bf'8-\<\(-- bf-- bf--\) |
+  bf8.-\f( g32 ef d8) r f16-\p( ef d ef) |
+  c8( cs) d16( c bf a) g16( bf) f( bf) |
+  ef,-\fp( a) a-. a-. d,16( bf'=') bf-. bf-. ef,16( bf') d,( bf') | \oIBreak
+  % line ?? (-1)
+  c,='16-\fp( f g a bf16 f) af(-\< bf g16 bf d, af') |
+  g16-\f( ef g c bf16-\> f d f) ef-\p( f a? f) |
+  \acciaccatura d bf'4 r8 d16\((-\trill c32 d f8) a=''-.\) |
+  bf4 r8 d,=''16\((-\trill-\pp c32 d f8) a,-.\) |
+  a4( bf8) r r4 \bar "|."
 }
