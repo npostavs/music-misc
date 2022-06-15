@@ -16,6 +16,9 @@ oIIPageBreak = {}
 \include "mozart-op70-notes-violin1.lyi"
 \include "mozart-op70-notes-violin2.lyi"
 
+
+%%% DuoI
+
 \score {
   \header { piece = "Allegro moderato" }
   <<
@@ -58,8 +61,8 @@ oIIPageBreak = {}
   \midi { \tempo 4. = 80 }
 }
 
-
-%%% DuoII
+% 
+% %%% DuoII
 
 \score {
   \header { piece = "Allegro" }
@@ -87,4 +90,50 @@ oIIPageBreak = {}
   >>
   \layout {}
   \midi { \tempo 4 = 80 }
+}
+
+\score {
+  \header { piece = "Rondo" }
+  <<
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #1
+    \magnifyStaff #(magstep 0) \DuoII_MvIII_VlnI }
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #-1
+    \magnifyStaff #(magstep 0) \DuoII_MvIII_VlnII }
+  >>
+  \layout {}
+  \midi { \tempo 4 = 180 }
+}
+
+
+%%% DuoIII
+
+\score {
+  \header { piece = "Adagio" }
+  <<
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #1
+    \magnifyStaff #(magstep 0) \DuoIII_MvI_VlnI }
+  % \new Staff \with \lessSpace {
+  %   \set Staff.midiPanPosition = #-1
+  %   \magnifyStaff #(magstep 0) \DuoIII_MvI_VlnII }
+  >>
+  \layout {}
+  \midi { \tempo 8 = 120 }
+}
+
+
+\score {
+  \header { piece = "Allegro molto" }
+  <<
+  \new Staff \with \lessSpace {
+    \set Staff.midiPanPosition = #1
+    \magnifyStaff #(magstep 0) \DuoIII_MvII_VlnI }
+  % \new Staff \with \lessSpace {
+  %   \set Staff.midiPanPosition = #-1
+  %   \magnifyStaff #(magstep 0) \DuoIII_MvI_VlnII }
+  >>
+  \layout {}
+  \midi { \tempo 4 = 180 }
 }

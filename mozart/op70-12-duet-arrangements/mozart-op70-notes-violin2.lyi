@@ -756,3 +756,171 @@ DuoII_MvII_VlnII = \relative c' {
   ef16( d c bf) bf-\>\(( a g f) f-\pp( ef d ef)\) |
   ef4( d8) r r4 \bar "|."
 }
+
+DuoII_MvIII_VlnII_themeA = \relative c' {
+  r4 % 1
+  f8( c' a c bf8 c bf c) | % 2
+  a8( c a c a4) r | % 3
+  <f a>4-. r q-. r | % 4
+  <e c'>-. q\(-. q-.\) r | % 5
+  f8-\mp( c' a c bf8 c bf c) | % 6
+  a8( c a c a4) r | % 7
+  % line 2
+  <f a>4 r <e c'>4 q | % 8
+  <f a>2 ~ q8 r	c'=''4( | % 9
+  f8) r f4( \acciaccatura a8 g8) r g8.( e16) |
+  f4.( a8 c) r c8.( a16) |
+  f8-. r c'8.( a16) f8-. r c'8.( a16) |
+  \acciaccatura fs8 g4 \acciaccatura fs8 g4\(-. \acciaccatura fs8 g4-.\) c,4( | \break
+  % line 2
+  f8) r f4( \acciaccatura a8 g) r g8.( e16) |
+  f4.( a8 c) r c8.( a16) |
+  f8-. r c'8.( a16) g8-. r g8.(-\turn a16) |
+}
+
+DuoII_MvIII_VlnII_themeB = \relative c' {
+  f'=''4 r r2 | % 17
+  r4 r16 f,='-\p-\cresc( g a bf8) bf8\(-. bf-. bf-.\) | % 18
+  a4.(-\trill g16 f e8) e\(-. e-. e-.\) | % 19
+  % line 4
+  e8( f) g-. a-. bf8-. a-. g-. f-. | % 20
+  e4 r8 c'8-\f( a'8) g( f) e( | % 21
+  d8) c( bf) a( g8) f\(( e) d-.\) | % 22
+  bf2( a) | % 23
+  r4 <bf g'>-- <c a'>-- <bf g'>-- | % 24
+  <a f'>4 r16 c16-\mp d e f16 g a bf c16 d e f | % 25
+  % line 5
+  c8.\(( a16 f8) f-.\) f4( a8 g) | % 26
+  f4 r16 c16-\mf d e f16 g a bf c16 d e f | % 27
+  <c,=' a'>2. <c bf'>4 | % 28
+}
+
+DuoII_MvIII_VlnII = \relative c' {
+  \key f \major \time 4/4 \partial 4
+  << {s4 | s1-\mp | s1*6 | s2. s4-\f | } { \DuoII_MvIII_VlnII_themeA } >> \barNumberCheck #16
+  % line 3, 4th bar
+  \mark "Q"
+  <<{} { \DuoII_MvIII_VlnII_themeB } >>
+  \mark "R"
+  <f a>4 r <a, g'>4-\f r | % 29
+  <d f> r8 d32( e f g a8) a,-. a-. a16( b32 cs | % 30
+  d4) r f4-\p( a | \break % 31
+  % line 6
+  g4 bf) a4.( g8) | % 32
+  f4 r <g, f'>-\f r | % 33
+  <c e>4 r8 c32( d e f g8) g,-. g-. g16( a32 b | % 34
+  c4) r e4-\p( g | % 35
+  f4-\< e8 d) e8-\>( f a f-\!) | % 36
+  e4( d) b8( g b g) | % 37
+  c8( g c g) f'8( g, g' g,) | \break % 38
+  % line 7
+  e'8( g, e' g,) b8-\cresc( g b g) | % 39
+  c8( g e' g,) f'8( g, d' g,) | % 40
+  \mark "S"
+  e'='4-\mf r c'8.-\sf\(( d32-\p e d8) c-.\) | % 41
+  c8( b) a-. g-. a4\(-. a-.\) | % 42
+  g2 f8.\((-\sf g32 a g8) f-.\) | % 43
+  f8( e) f-. d-. c4( e8 d) | \break % 44
+  % line 8 (-5)
+  c4 r a8-\sf( fs' a, fs') | % 45
+  g,8( g' b, g') cs,8( g' d f) | % 46
+  b,8( f' c e) a,8(-\sf e' bf d) | % 47
+  c8 r f r g r f r | % 48
+  << { s1-\mp | s1 \break | s1-\pp | s1 } \repeat unfold 2 {
+  e4.( f16 e d8) cs\(-. d-. e-.\) | % 49
+  f8.\(( d16 f8.) d16-.\) c?8\(-. r b-.\) r | % 50
+  } >> \barNumberCheck #52
+  % line 9 (-4), 3rd bar
+  c4 r c8\(( \tuplet 3/2 { d16-\cresc c b } c8) d-.\) | % 53
+  e8\(( \tuplet 3/2 { f16 e d } e8) f-.\) g8\(( \tuplet 3/2 { a16 g fs } g8) a-.\) | % 54
+  bf?2-\sf-\fermata ~ \tuplet 3/2 { bf8-\dim a\(-- g-- f8-- e-- d--\) } \break % 55
+  % line 10 (-3)
+  c4( bf a gs) | % 56
+  g8-\pp r r4 r-\fermata c4-\p( | % 57
+  \mark "T"
+  a8 c a c bf8 c bf c) | % 58
+  a8( c a c a8 c) a'( f | % 59
+  c8 a) a'( f c a) a'( f) | % 60
+  bf8( g) bf(-\< g) e8( c) bf( g) | % 61
+  a8-\f( c a c bf8 c bf c) | \break % 62
+  % line 11 (-2)
+  a8( c a c a8 c) a'( f | % 63
+  c8 a) a'( f e8 c) bf( c | % 64
+  a8-\> c a c 8a)-\! r c''='''8.(-\p a16) | % 65
+  f8-. r c'='''8.( a16) f8-. r c'8.( a16) | % 66
+  f4 f\(-. f-.\) ef8( c | % 67
+  a8 f) ef'( c a8 f) ef'( c | \break % 68
+  % line 12 (-1)
+  a4) a-. a-. r | \barNumberCheck #69
+  \mark "U"
+  bf2-\dolce( f) | % 70
+  g2 ef8( g bf) ef-- | % 71
+  d4( b) c4( a) | % 72
+  bf\(( g8) ef-.\) d8\((-\prall c) bf(-\prall a)\) | % 73
+  d'=''2( c) | % 74
+  bf8( c d) bf-- g'2 | % 75
+  f8.\((-\trill e32 f g8) ef-.\) d8.\((-\trill c32 d ef8) c-.\) | \break % 76
+  % page 11, line 1
+  \acciaccatura c8 bf4 bf-. bf-. r | % 77
+  d,='8->( c) a-. a-. a8-. a( bf) c-. | % 78
+  cs8->( d) d-. d-. g8->( f) ef-. d-. | % 79
+  d8->( c?) a-. a-. a8-. a( bf) c-. | % 80
+  cs8->( d) d-. d-. d8->( f) ef-. d-. | % 81
+  r8 ef( g bf) ef,4( bf') | \break % 82
+  % line 2
+  r8 d,( f bf) d,4-\cresc( bf'=') | % 83
+  r4 <ef, c'>-- <f d'>-- <ef a>-- | % 84
+  \mark "V"
+  <d bf'>4 r <d c'>4-\f r | % 85
+  <g, d' bf'>4 r8 g32( a bf c d8) d-. d-. d16( e32 fs | % 86
+  g4) r bf,-\p( d | % 87
+  c4 ef) d4.( c8) | % 88
+  bf4 r <c g'>4-\f 4 | \break % 89
+  % line 3
+  <f a>4 r8 f32( g a bf c8) c,-. c-. c16( d32 e | % 90
+  f4) r a,4-\p( c | % 91
+  bf4-\< a8 g) a8-\>( bf d bf)-\! | % 92
+  a4( g) e'8( c e c) | % 93
+  f8( c f c) bf8( c bf c) | % 94
+  a8( c a c) e8-\mf( c g' c,) | \break % 95
+  % line 4
+  f8( c a' c,) bf8-\>( c e c) | % 96
+  a4-\p r f'='8\(( \tuplet 3/2 { g16 f e } f8) g-.\) | % 97
+  a8\(( \tuplet 3/2 { bf16 a gs } a8) bf-.\) c8\(( \tuplet 3/2 { d16 c b } c8) d-.\) | % 98
+  \acciaccatura f,8 ef'2-\sf-\fermata ~ \tuplet 3/2 { ef8-\dim d\(-- c-- bf8-- a-- g--\) } % 99
+  f4( g f e) | % 100
+  ef8-\pp r r4 r2 | \break % 101
+  % line 5
+  df8 r r4 r2 | % 102
+  c8 r r4 r2 | % 103
+  b8 r r4 r2 | % 104
+  \acciaccatura c8 bf'2-\sf-\fermata ~ \tuplet 3/2 { bf8 a-\dim\(-- g f8-- e-- d--\) } % 105
+  c4( bf a gs) | % 106
+  g8-\pp r r4 r-\fermata % ~107 \partial 4 pickup-in-themeA
+  << {s4 | \mark "W" s1-\p | s1*6 | s2. s4-\f | } { \DuoII_MvIII_VlnII_themeA } >> \barNumberCheck #122
+  \mark "X"
+  <<{} { \DuoII_MvIII_VlnII_themeB } >> \barNumberCheck #134
+  % line ?? (-3)
+  \mark "Y"
+  <f'=' a>4 r <c bf'>-\f r | % 135
+  <f a>4 r8 f32( g a bf c8) c,-. c-. c16( d32 e | % 136
+  f4) r16 c' d e f16 e d c bf16 a g f | % 137
+  d'16 c bf a g16 f e d c16 d bf c a16 bf g c | \break % 138
+  % line ?? (-2)
+  a4 r <c g'> r | % 139
+  <f a>4 r <a, f'>2-\ff | % 140
+  <bf d>2 <c e> | % 141
+  <d f>2 <a f'> | % 142
+  <bf d>2 <c a'>8 g'( f) e | % 143
+  \mark "Z"
+  f8( c'-\p a c) g8( c g c) | % 144
+  f,8( c' a c) bf8( c bf c) | % 145
+  a8( c a c) g8(-\cresc c bf c) | \break % 146
+  % line ?? (-1)
+  f,8( c' a c) bf8( c g c) | % 147
+  a8-\mf r c'='''8.-\p( a16) f8-. r c'='''8.( a16) | % 148
+  f8-. r c'8.( a16) g8 r g8.(-\turn a16) | % 149
+  f8-. c-\pp( a f c8 a) a'( f | % 150
+  c8 a) a'( f e8 c) bf( c | % 151
+  a4.)-\> c8\( a-.\)-\! r r4 \bar "|."
+}
