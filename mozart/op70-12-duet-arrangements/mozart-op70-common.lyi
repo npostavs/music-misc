@@ -7,6 +7,8 @@ simile = \markup { \italic "simile" }
 dolce = \markup { \italic "dolce" }
 staccatto = \markup { \italic "staccatto" }
 rall = \markup { \italic "rall" }
+pocoDim = \markup { \italic "poco dim." }
+pocoMarc = \markup { \italic "poco marcato" }
 fermataMark = \mark \markup { \musicglyph "scripts.ufermata" }
 twice =
 #(define-music-function
@@ -14,6 +16,13 @@ twice =
      (ly:music?)
    #{
      \repeat unfold 2 { #notes }
+   #})
+triplet =
+#(define-music-function
+      (notes)
+     (ly:music?)
+   #{
+     \tuplet 3/2 { #notes }
    #})
 
 subdivSixtyFourths = {

@@ -8,29 +8,29 @@ DuoI_MvI_VlnI = \relative c' {
     ef16\(( f ef d c8) c-.\) c4.( d16 ef) | % 4
     f16( g f ef) d4 r2 | % 5
     f=''2 g4.(-\turn a8) | % 6
-    bf4.(-\turn d8) f,2 ~ | \oIBreak % 7
+    bf4.(-\turn d8) f,2 ~ | % 7
     % page 1, line 2
     f8 f\(( g) f--\) f(\< ef) d-- c-- | % 8
     bf16-\mf d c bf a16 bf g a f16-\> g ef f d16 ef c d | % 9
     bf8-\p( f' d f) bf,8( f' d f) | \barNumberCheck #10
-    \repeat unfold 3 { c8( f ef f) } a,8( f' ef f) | \oIBreak \barNumberCheck #12
+    \repeat unfold 3 { c8( f ef f) } a,8( f' ef f) | \barNumberCheck #12
     % page 1, line 3
     \repeat unfold 2{ d8( f bf, f') } | % 13
     d8( bf d bf) ef8( bf ef c) | % 14
     \repeat unfold 2{ d8( bf d bf) } | % 15
     d2 c4(-\> a) | % 16
     \mark "A"
-    bf16-\f f' ef d ef16 f g a bf16 c d ef f16 g a bf | \oIBreak \barNumberCheck #17
+    bf16-\f f' ef d ef16 f g a bf16 c d ef f16 g a bf | \barNumberCheck #17
     % page 1, line 4
     a16 g f e f16 g a bf c16 d c bf a16 g f ef | % 18
     d4 r r8 f8 d bf | % 19
     c2 r8 ef8-\> c a'-! | % 20
-    bf16-\mf( c d c bf16 a g fs) g16( a bf a g16 f ef d) | \oIBreak % 21
+    bf16-\mf( c d c bf16 a g fs) g16( a bf a g16 f ef d) | % 21
     % page 1, line 5
     ef16( f g f ef16 d c b) d16( c ef d f16 ef g f) | \barNumberCheck #22
     a8\(( g16) r f8( ef16)\) r d8( c4-\< \afterGrace bf8-\trill)( { a16 bf) } | % 23
     a8-.-\f c-. f-. a-. c4 \afterGrace ef,4-\trill-\cresc ({ d16 ef) } | % 24
-    d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | \oIBreak % 25
+    d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | % 25
     % page 1, line 6
     << { s4-\ff s4 s2 } \repeat unfold 2 { a16 c f a bf,16 d f bf } >> | \barNumberCheck #26
     \mark "B"
@@ -39,18 +39,18 @@ DuoI_MvI_VlnI = \relative c' {
     fs,='2-\p-\conEspress( a4 c) | % 29
     bf2( g4 f) | % 30
     e2( g4 bf) | % 31
-    a2( f4 e) | \oIBreak \barNumberCheck #32
+    a2( f4 e) | \barNumberCheck #32
     % page 1, line 7 (-4)
     d8 bf'='-\<([ d f]) bf8-\>( a-\!) r4 | % 33
     bf,,=8 g'-\<([ bf d]) g8-\>( f-\!) r4 | % 34
     g,4 f-\> e d | % 35
     e16-\f c' e d c16 e g f e16 g bf a g16 bf d c | % 36
-    bf16 c a bf g16 a f g e16 f d e c16 d bf c | \oIBreak % 37
+    bf16 c a bf g16 a f g e16 f d e c16 d bf c | % 37
     % page 1, line 8 (-3)
     a16 bf a g f16 a c bf a16 c f e g16 f a g | % 38
     f16 g e f d16 e c d b16 c a b g16 a f g | % 39
     e8 c'-.-\< bf-. c-. a8-. c-. a-. f-.-\! | % 40
-    e4-. c8.-\ff( c16-.) c4 r | \oIBreak % 41
+    e4-. c8.-\ff( c16-.) c4 r | % 41
     % page 1, line 9 (-2)
     \mark "C"
     c'=''4-\p( ~ c8. bf16)-. a8-.( r d-.) r | % 42
@@ -58,14 +58,14 @@ DuoI_MvI_VlnI = \relative c' {
     g4.( d'16 c) c8-.( r f,-.) r | % 44
     bf8.( c16) a8.( bf16) a4( g8) r | % 45
     c'='''4( ~ c8. bf16)-. a8-.( r d-.) r | % 46
-    g,-.( r c-.) r bf4( a) | \oIBreak % 47
+    g,-.( r c-.) r bf4( a) | % 47
     % page 1, line 10 (-1)
     bf8.-\<-\turn( c16) d8-- d-- d4.-\>( c16 bf-\!) | % 48
     a8-.( r d-.) r c4( bf8) r | % 49
     a8.-\<-\turn( bf16) c8-- c-- c4.-\>( bf16 a)-\!) | % 50
     g8-.( r c-.) r bf4( a8) r | % 51
     af4.->( bf16 af) g8-.( r c-.) r | \barNumberCheck #52
-    af4->( bf16 af g af) g4. \afterGrace a8-\trill ({ g16 a } | \oIPageBreak % 53
+    af4->( bf16 af g af) g4. \afterGrace a8-\trill ({ g16 a } | % 53
     % page 2, line 1
     bf8) r a-. r d4 c16( bf a g) | % 54
     c8.( a16) bf8.( g16) f4 \afterGrace g-\trill ({ f16 g) } | % 55
@@ -73,22 +73,22 @@ DuoI_MvI_VlnI = \relative c' {
     f8 r bf-\f-. a-. g-\prall( f) d'-. c-. | % 56
     f4 bf,8-. a-. g-\prall( f) d'-. c-. | % 57
     \repeat unfold 2 { f8( e) d-\prall( c) } \barNumberCheck #58
-    c8-\mf( b) bf2 a4( ~ | \oIPageBreak % 59
+    c8-\mf( b) bf2 a4( ~ | % 59
     % page 2, line 2
     a16 g bf a) c16( bf a g) f4 \afterGrace e4-\trill ({ d16 e)} | % 60
     f16 f,-\f( e f) d16-. f-. c-. f-. \repeat unfold 2 { bf,16-. f'-. a,-. f'-. } | % 61
-    a,16-. f'( e f) d16 f c f \repeat unfold 2 { bf,16 f' a, f' } | \oIBreak % 62
+    a,16-. f'( e f) d16 f c f \repeat unfold 2 { bf,16 f' a, f' } | % 62
     % page 2, line 3
     \repeat unfold 2 { d16 f c f bf,16 f' a, f' } | \barNumberCheck #63
     g,4 <d' b'> r d' | % 64
     e16( f g a bf?16 c d c) bf16( a g f e16 d c bf | % 65
-    a16) f-\>( e f g16 f e f) d4-\mp( bf) | \oIBreak % 66
+    a16) f-\>( e f g16 f e f) d4-\mp( bf) | % 66
     % page 2, line 4
     a8 r bf r c r e r | % 67
     r16 c''='''-\f( a f ef4 ~ ef16) c'( a f ef4 ~ | % 68
     ef16) d( f bf d4.) c16\(( bf) a16( g) f( e)\) | % 69
     f4.-\mf( c'8) a4.( c8) | % 70
-    bf4.( d8) bf,4.( bf8) | \oIBreak % 71
+    bf4.( d8) bf,4.( bf8) | % 71
     % page 2, line 5
     a8 r bf8.->-\p( e16) f8 r c4 | \barNumberCheck #72
   }
@@ -98,69 +98,69 @@ DuoI_MvI_VlnI = \relative c' {
   }
   c8-\!) r c2-\mp bf4 | \barNumberCheck #75
   \appoggiatura { af16 bf c } bf4( af) r8 af( c af) | % 76
-  af8( g) f2( e4) | \oIBreak % 77
+  af8( g) f2( e4) | % 77
   % page 2, line 6
   g4( f ~ f16)-\< c'='''( b c df16 c bf af) | % 78
   g8-\mf( df') c16( bf af g) f8\(( e bf') e,=''-.\) | % 79
   f8-. c-\p( af g) f8( c af' f) | % 80
   d?8( f b f) d8( c b d) | % 81
-  ef?8( g ef c) ef8( g b c) | \oIBreak % 82
+  ef?8( g ef c) ef8( g b c) | % 82
   % page 2, line 7
   c8( a? fs ef) d8( c bf? a) | % 83
   g8-.-\cresc d'( ef? d) cs8-. e( f e) | % 84
   d8( f d f) d8( bf d bf) | % 85
   \mark "E"
-  a16-\f e'='-\> e' d cs16-\mp e cs e \repeat unfold 4 { cs16 e } | \oIBreak % 86
+  a16-\f e'='-\> e' d cs16-\mp e cs e \repeat unfold 4 { cs16 e } | % 86
   % page 2, line 8 (-5)
   << { s4 s4-\f s2 } \repeat unfold 4 { cs16 e cs e } >> | % 87
   <d fs>8 r ef'='''->-\mp( d) ef->( d) ef->( d) | % 88
   c8 r ef,,='8->-\f( d) ef->( d) ef->( d) | % 89
-  g16-\> b d c bf16-\mp d bf d \repeat tremolo 4 { b16 d } | \oIBreak % 90
+  g16-\> b d c bf16-\mp d bf d \repeat tremolo 4 { b16 d } | % 90
   % page 3, line 9 (-4)
   \repeat tremolo 4 { b16 d-\f }   \repeat tremolo 4 { b16 d } | % 91
   <c e>8 r df'='''->-\mp( c) df->( c) df->( c) | % 92
   bf8 r df,,='->-\f( c) df->( c) df->( c) | % 93
   f16-\> a c bf a16-\mp c a c \repeat tremolo 4 { a16 c } | % 94
-  \repeat tremolo 4 { a16 c-\f } \repeat tremolo 4 { a16 c } \oIBreak | % 95
+  \repeat tremolo 4 { a16 c-\f } \repeat tremolo 4 { a16 c } | % 95
   % page 3, line 10 (-3)
   d?16   bf( c bf a16 bf c bf) d->-\cresc bf( cf bf a16 bf cf bf) | % 96
   ef16-> bf( c bf a16 bf c bf) e->        bf( cf bf a16 bf cf bf) | % 97
-  <a f'>8-\ff r r4 r16 bf'=''-\mf( a bf a16 bf c bf) | \oIBreak % 98
+  <a f'>8-\ff r r4 r16 bf'=''-\mf( a bf a16 bf c bf) | % 98
   % page 3, line 11 (-2)
   a8 r r4 r16 bf,16-\p( a bf a16 bf c bf) | % 99
   a8 r r4 r16 a( gs a bf16-\cresc a gs a) | % 100
   ef'8-\! r r4 r16 f( e f g16 f e f) | % 101
-  c16( d bf c a16 c bf d) c16( d bf c a16 c bf d) | \oIBreak % 102
+  c16( d bf c a16 c bf d) c16( d bf c a16 c bf d) | % 102
   % page 3, line 12 (-1)
   c8-.-\calando( bf-. a-. g-.) f8-.(-\> ef-. d-. c-.) | % 103 
   \mark "F"
   bf'='2-\p-\atempo d | % 104
   ef16( f ef d) c4 r2 | % 105
   ef16\(( f ef d c8) c-.\) c4.( d16 ef) | % 106
-  f16( g f ef) d4 r2 | \oIPageBreak % 107
+  f16( g f ef) d4 r2 | % 107
   % page 4, line 1
   f=''2 g4.(-\turn a8) | % 108
   bf4.(-\turn d8) f,2 ~ | % 109
   f8 f\(( g) f--\) f(\< ef?) d-- c---\! | % 110
   bf4 r r8 f-\f d bf | % 111
   c2 r8 f ef c | % 112
-  bf16 f' ef d ef16 f g a bf16 c d ef f16 g a bf | \oIBreak % 113
+  bf16 f' ef d ef16 f g a bf16 c d ef f16 g a bf | % 113
   % page 4, line 2
   c16 bf a g fs16 ef d cs c16 bf a g fs16 ef d c | % 114
   bf4 r r8 bf'-. g-. d-. | % 115
   <bf f'>4 r r8 d' bf-\> f' | % 116
-  ef16-\mf( f g f ef16 d c b) d16( c ef d f16 ef g f) | \oIBreak % 117
+  ef16-\mf( f g f ef16 d c b) d16( c ef d f16 ef g f) | % 117
   % page 4, line 3
   ef16-\p( f g f ef16 d c b) d16(-\< c ef d f16 ef g f) | % 118
   a8\(-\>( g16-\!) r f8( ef16)\) r d8-\<( c4 \afterGrace bf8)-\trill ({ a16 bf) } | % 119
   a8-.-\f c-. f-.-\cresc a-. c4 \afterGrace ef,=''-\trill ({ d16 ef) } | % 120
-  d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | \oIBreak % 121
+  d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | % 121
   % page 4, line 4
   << { s4-\ff s4 s2 } \repeat unfold 2 { a16 c f a bf,16 d f bf } >> | % 122
   \mark "G"
   a16 f c f a,16 c f a f16 f,-.-\p([ g-. a-.] bf16-. c-. d-. ef-. | % 123
   f8.--) d16( bf'8. f16 d'8.) a16( bf8. f16 | % 124
-  af8.-> g16) g4.-- g8(-. g-. g-.) | \oIBreak % 125
+  af8.-> g16) g4.-- g8(-. g-. g-.) | % 125
   % page 4, line 5
   g8.( c16) g4. ef8( f g) | % 126
   \appoggiatura { f16 g a } g8.->( f16) f4.-- f8(-. f-. f-.) | % 127
@@ -168,7 +168,7 @@ DuoI_MvI_VlnI = \relative c' {
   f8(-\> ef-\!) r4 f,8 d'([-\< f a]) | % 129
   d8(-\> c-\!) r4 d,,='8 bf'([-\< d f-\!]) | % 130
   bf8( a) a( g) g8-\<( f) f( e)-\! | % 131
-  f4 r r2 | \oIBreak % 132
+  f4 r r2 | % 132
   % page 4 line 6
   a,,=8-\f-. bf-. c-. d-. ef4 \afterGrace a,4-\trill ({ g16 a)}  | % 133
   bf4 r r2 | % 134
@@ -176,21 +176,21 @@ DuoI_MvI_VlnI = \relative c' {
   f16-\cresc g f e f16 c a' f bf16 c bf a bf16 f d' bf | % 136
   f'4-. <a,,= f'>8.-\ff( q16-.) q4 r | % 137
   \mark "H"
-  f'='4(-\p ~ f8. ef16) d8(-. r g-.) r | \oIBreak % 138
+  f'='4(-\p ~ f8. ef16) d8(-. r g-.) r | % 138
   % page 4, line 7
   c,='8-.( r f-.) r ef4( d) | % 139
   c4.( g'16 f) f8(-. r bf,-.) r | % 140
   ef8.( f16) d8.( ef16) d4( c8) r | % 141
   f'=''4( ~ f8. ef16-.) d8-.( r g-.) r | % 142
   c,=''8-.( r f8-.) r ef4( d) | % 143
-  ef8.(-\turn-\< f16) g8-- g-- g4.-\>( f16 ef)-\! | \oIBreak % 144
+  ef8.(-\turn-\< f16) g8-- g-- g4.-\>( f16 ef)-\! | % 144
   % page 4, line 8 (-5)
   d8-.( r g-.) r f4( ef8) r | % 145
   d8.(-\<-\turn ef16) f8-- f-- f4.-\>( ef16 d)-\! | % 146
   c8-.( r f-.) r ef4( d8) r | % 147
   df4.->( ef16 df) c8-.( r f-.) r | % 148
   df4(-> ef16 df c df) c4.-\< \afterGrace d8(-\trill { c16 d } | % 149
-  ef8) r d-. r g4-\! f16( ef d c) | \oIBreak % 150
+  ef8) r d-. r g4-\! f16( ef d c) | % 150
   % page 4, line 9 (-4)
   f8.-\>( d16) ef8.( c16) bf4-\! \afterGrace c-\trill ({ bf16 c)} | % 151
   \mark "I"
@@ -198,23 +198,23 @@ DuoI_MvI_VlnI = \relative c' {
   bf4   ef,8-.  d-. c8(-\prall bf) g'-. f-. | % 153
   \repeat unfold 2 { bf8( a) g(-\prall f) } | % 154
   f8-\dim( e) ef2 d4( ~ | % 155
-  d16 c ef d) f16( ef d c) bf4-\p \afterGrace a-\trill ({g16 a)} | \oIBreak % 156
+  d16 c ef d) f16( ef d c) bf4-\p \afterGrace a-\trill ({g16 a)} | % 156
   % page 4, line 10 (-3)
   bf16 bf-\f( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 157
   d,16 bf'  ( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 158
-  \repeat unfold 2 { g16 bf f bf ef,16 bf' d, bf' } | \oIBreak % 159
+  \repeat unfold 2 { g16 bf f bf ef,16 bf' d, bf' } | % 159
   % page 4, line 11 (-2)
   c,='4 <g' e'> r g' | % 160
   a16( bf c d ef16 d ef d) ef( d c bf a16 g f ef | % 161
   d16) bf(-\> a bf c16 bf a bf) g4-\mp( ef) | % 162
   d8 r ef r f r a r | % 163
-  bf4.-\f( f'8) d4.( f8) | \oIBreak % 164
+  bf4.-\f( f'8) d4.( f8) | % 164
   % page 4, line 12 (-1)
   ef4.( g8) c,4.( ef8 | % 165
   d16) f( d bf af4 ~ af16) f'( d bf af4 ~ | % 166
   af16) g( bf ef g4.) f16\(( ef) d16( c) bf( a)\) | % 167
   bf8 r c4-\p( d8) r ef8.->( a,16 | % 168
-  bf8) r c4( d8) r ef16( d ef a,) | \oIPageBreak % 169
+  bf8) r c4( d8) r ef16( d ef a,) | % 169
   % page 5, line 1
   bf16-. bf'-\f( d bf) f16-. bf-. d,-. f-. bf,( d) f-. d-. ef16( c) a'-. f-. | % 170
   bf4 ef,16( d c bf) f'8-. f-. f-. f-. | % 171
@@ -231,7 +231,7 @@ DuoI_MvII_VlnI = \relative c' {
     \appoggiatura { e16 f g } f4(-\> ef-\!) ef8.\(( d32 ef f16) ef-- d-- c--\) | % 4
     bf8.( g16) ef'8.( bf16) g'8.( ef16) bf8.( g16) | % 5
     bf8.->( g16 f4) \tuplet 3/2 
-    { r8 af( f d bf af) | \oIBreak % 6
+    { r8 af( f d bf af) | % 6
       % page 5, line 3
       g-. bf-. ef-. g,-. bf-. ef-. bf8-. ef-. g-. bf,-. d-. af'-. | % 7                                  
       b,8  d af' g ef c af8 c ef af, c ef | % 8
@@ -239,14 +239,14 @@ DuoI_MvII_VlnI = \relative c' {
     }
     af4( g)
   } \repeat volta 2 {
-    \tuplet 3/2 { bf=8-\<-. ef-. g-. bf-.( ef-. g-.) } | \oIBreak % 10
+    \tuplet 3/2 { bf=8-\<-. ef-. g-. bf-.( ef-. g-.) } | % 10
     % page 5, line 4
     bf4.-\f-\<( d,8) f16-\p( ef g f af16 g bf af) | % 11
     g4( f8) r \tuplet 3/2 { bf,,=-.-\< ef-. g-. bf-.( ef-. g-.) } | % 12
     bf4.-\f( d,8) ef8.-\p(-\turn f16 g8.-\turn af16) | % 13
     g4( f8) r r2 | % 14
     \tuplet 3/2 { 
-      g,,=8  bf ef g, bf ef bf8 ef g bf, d af' | \oIBreak % 15
+      g,,=8  bf ef g, bf ef bf8 ef g bf, d af' | % 15
       % page 5, line 5
       b,8 d af' g ef c af8 c ef af, c ef | % 16
       g,8 bf ef af,-\< c ef 
@@ -254,40 +254,40 @@ DuoI_MvII_VlnI = \relative c' {
     af4( g)
   } <g ef'>4-\f q8.-.( q16-.) | % 18
   << { f'='8.( d16) } \\ af4 >> <g ef'>4 <bf g'> q8.(-. q16-.) | % 19
-  << { af'8.( f16) } \\ bf,4 >> <bf g'>4-\> bf'='4-\mp ~ bf16 c( d ef) | \oIBreak % 20
+  << { af'8.( f16) } \\ bf,4 >> <bf g'>4-\> bf'='4-\mp ~ bf16 c( d ef) | % 20
   % page 5, line 6
   d16( c ef c) c16(-\dim bf ef bf) bf16( af c af) af16( g bf g) | % 21
   af16(-\p g f g f16) af(-\< g f-\!) r16 bf,=-\f bf bf r bf bf bf | % 22
-  \repeat unfold 2 { r16 bf bf bf } \repeat unfold 2 { r16 ef ef ef } | \oIBreak % 23
+  \repeat unfold 2 { r16 bf bf bf } \repeat unfold 2 { r16 ef ef ef } | % 23
   % page 5, line 7
   r16 <b d> q q r16 <c ef>-\> q q g16(-\mp bf ef bf) a16( c ef c) | % 24
   <bf d>16( ef f-\dim g) f16( ef d c) bf16( c cs d) d16( c bf a) | % 25
   a4-\pp( bf8) r8 bf'='8.(-\turn c32-\< df c16 bf af? g) | % 26
-  f8(-\f e) g'4.( f16 e) df16( c8 bf16) | \oIBreak % 27
+  f8(-\f e) g'4.( f16 e) df16( c8 bf16) | % 27
   % page 5, line 8 (-5)
   c8\( \afterGrace bf-\trill ({ af16 bf)}  af4-\> ~ af16\) af-\p(-\turn bf c bf16 af g f) | % 28
   ef16( d) c'=''(-\< bf) f16( ef) c'( bf) g16( f) c'( bf) af16( g) c( bf) | % 29
   af8-\>\( \afterGrace g-\trill ({f16 g)} f4.\) f'8-\<( ef16 d c bf) | % 30
-  a8.-\f( ef'16) ef4( ~ ef8.-\turn f16) g8.(-\turn a16) | \oIBreak % 31
+  a8.-\f( ef'16) ef4( ~ ef8.-\turn f16) g8.(-\turn a16) | % 31
   % page 5, line 9 (-4)
   a8( c16 bf) bf4-\fermata \mark "K" bf,='4-\p( \appoggiatura a8 bf4) | % 32
     bf4.(-\< g'8-\!) g4.( af16 f) | % 33
     \appoggiatura { e16 f g } f4(-\> ef-\!) ef8.\(( d32 ef f16) ef-- d-- c--\) | % 34
     bf8.( g16) ef'8.( bf16) g'8.( ef16) bf8.( g16) | % 35
     bf8.->( g16 f4) \tuplet 3/2 
-    { r8 af( f d bf af) | \oIBreak % 36
+    { r8 af( f d bf af) | % 36
       % page 5, line 10 (-3)
       g bf ef g, bf ef bf8 ef g bf, d af' | % 37 
       b,8  d af' g ef c af8 c ef af, c ef | % 38
       g,8 bf ef af,-\< c ef } <bf ef>8 <bf d>-\f r8 af-\p | % 39
     g4 r <g ef'>4-\f-- q-- | % 40
-    <bf f'>4-- r q-- q-- | \oIBreak % 41
+    <bf f'>4-- r q-- q-- | % 41
     % page 5, line 11 (-2)
     <bf g'>4 r g''=''8(-\p af16) r f8( d16) r | % 42
     d8( ef16) r ef8( c16) r bf8( g16) r f8( bf16) r | % 43
     af4( g8) r <g,= ef'>4-\f-- q-- | % 44
     <bf f'>4-- r q-- q-- | % 45
-    <bf g'>4-- r r16 g''=''-\p-. g( af) r16 f-. f( d) \oIBreak | % 46
+    <bf g'>4-- r r16 g''=''-\p-. g( af) r16 f-. f( d) | % 46
     % page 6, line 10 (-1)
     r16 d-. d( ef) r16 ef-. ef( c) r16 bf-. bf( g) r16 af-. af( f) | % 47
     g4\(-\< r8. ef'16\)-- d8(-\mf c' bf d,) | % 48
@@ -305,14 +305,14 @@ DuoI_MvIII_VlnI = \relative c' {
     a16-. f-. bf-. g-.-\< c-. a-. | % 6
     d16-. bf-. ef-. c-. f-. d-.-\! | % 7
     g16( f)-\> ef-. d-. c-. bf-.-\! | % 8
-    a16-. g-. f-. ef-. d-. c-. | \oIBreak % 9
+    a16-. g-. f-. ef-. d-. c-. | % 9
     % page 6, line 2
     bf16-.-\p d-. f-. d-. f-. d-.-\simile  | % 10
     \repeat unfold 3 { bf16 d f d f d | } \barNumberCheck #13
     f8( e ef) | % 14
     d8( c bf) | % 15
     ef16( g) f(-. ef-.) d-. c-. | % 16
-    d8 r r | \oIBreak % 17
+    d8 r r | % 17
   } % page 6, line 3
   d'=''16-\f ef f g a bf | % 18
   bf16( gs a) ef d c | % 19
@@ -320,7 +320,7 @@ DuoI_MvIII_VlnI = \relative c' {
   g16( e f) c bf af | % 21
   g16 af bf c d ef | % 22
   ef16( cs d) c bf a | % 23
-  c( a bf) a g f-\> | \oIBreak % 24
+  c( a bf) a g f-\> | % 24
   % page 6, line 4
   <e c'>4 r8-\! | % 25
   g'=''4(-\mf e16 c) | % 26
@@ -330,7 +330,7 @@ DuoI_MvIII_VlnI = \relative c' {
   d,16( e fs g a bf) | % 30
   c,16( d e f g a) | % 31
   a16( g) f8 e | % 32
-  f4.-\> | \oIBreak % 33
+  f4.-\> | % 33
   % page 6, line 5
   d'='''8-\p( c16 bf a g) | % 34
   c8( bf16 a g f) | % 35
@@ -338,7 +338,7 @@ DuoI_MvIII_VlnI = \relative c' {
   \mark "L"
   f4 r8 | % 37
   R4. | % 38
-  << { s4.-\mf | s4.*2 } \repeat unfold 3 { bf,,=16 d f d f d | } >> \oIBreak \barNumberCheck #41
+  << { s4.-\mf | s4.*2 } \repeat unfold 3 { bf,,=16 d f d f d | } >> \barNumberCheck #41
   % page 6, line 6
   f8( e ef) | % 42
   d8( c bf) | % 43
@@ -349,7 +349,7 @@ DuoI_MvIII_VlnI = \relative c' {
   d,4(-\turn f8) | % 48
   bf,4(-\turn d8) | % 49
   a16 f bf g c a | % 50
-  d16 bf ef c f d | \oIBreak % 51
+  d16 bf ef c f d | % 51
   % page 6, line 7
   g16( ef) d c bf a | % 52
   bf8 d-.(-\f fs,-.) | % 53
@@ -361,7 +361,7 @@ DuoI_MvIII_VlnI = \relative c' {
   <g bf>8 r r | % 58
   <ef c'>8 r r | % 59
   <d a'>8 r fs( | % 60
-  g8 cs, d) | \oIBreak % 61
+  g8 cs, d) | % 61
   % page 6, line 8 (-5)
   g,8 d''=''([-. d-.]) | % 62
   ef4( d8) % 63
@@ -373,7 +373,7 @@ DuoI_MvIII_VlnI = \relative c' {
   b4( c8) | % 69
   ef4.-\fp( | % 70
   d8) r r | % 71
-  <bf g'>4.(-\fp | \oIBreak % 72
+  <bf g'>4.(-\fp | % 72
   % page 6, line 9 (-4)
   <a fs'>8) r r | % 73
   <c? a'>4.(-\fp | % 74
@@ -385,7 +385,7 @@ DuoI_MvIII_VlnI = \relative c' {
   e4. ~ | e4. | % 82
   f4. ~ | \afterGrace f4. \stopTrillSpan ({e16 f)} | % 84
   \mark "N"
-  f8(-\f-. f-. f-.) | \oIBreak % 85
+  f8(-\f-. f-. f-.) | % 85
   % page 6, line 10 (-3)
   f4(-\turn bf8) | % 86
   d,4(-\turn f8) | % 87
@@ -394,14 +394,14 @@ DuoI_MvIII_VlnI = \relative c' {
   d16 bf ef c f d | % 90
   g16( f) ef d c bf | % 91
   a16-\> g f ef d c | % 92
-  bf16-\mf d f d f d | \oIBreak % 93
+  bf16-\mf d f d f d | % 93
   % page 6, line 11 (-2)
   \repeat unfold 3 { bf16 d f d f d | } \barNumberCheck #96
   f8( e ef) | % 97
   d8( c bf) | % 98
   ef16( g) f(-. ef-.) d-. c-. | % 99
   d8 r r | % 100
-  f'4(-\p d16 bf) | \oIBreak % 101
+  f'4(-\p d16 bf) | % 101
   % page 6, line 12 (-1)
   bf'8(-\cresc af g) | % 102
   g4( e16 c) | % 103
@@ -413,7 +413,7 @@ DuoI_MvIII_VlnI = \relative c' {
   \mark "O"
   r8 bf'-\p( e,) | % 109
   r8 g( f) | % 110
-  r8 bf(-\cresc e,) | \oIPageBreak % 111
+  r8 bf(-\cresc e,) | % 111
   % page 7, line 1
   r8 g( f) | % 112
   r8 d'(-\f e,) | \barNumberCheck #113
@@ -421,36 +421,36 @@ DuoI_MvIII_VlnI = \relative c' {
   f4.-\fp-\fermata\( | \bar "||" % 115
   \tempo "Allegro" \time 4/4
   \tuplet 3/2 { d8-.\)-\p d-. d-. d8-. ef-. f-. f8->( c) c-. c8-. c-. d-. | \barNumberCheck #116
-                ef8-. ef-. ef-. ef8-. f-. g-. g8->( f) ef-. } d4 | \oIBreak \barNumberCheck #117
+                ef8-. ef-. ef-. ef8-. f-. g-. g8->( f) ef-. } d4 | \barNumberCheck #117
   % page 7, line 2
   bf'8-. r a-. r g-. r f-. r | % 118
   \tuplet 3/2 { ef8 f ef d8 c bf a8 c bf a8 g f | % 119
                 d'=''8-\p d d d8 ef f f8( c) c c8 c d | % 120
-                ef8 ef ef ef8 f g g8( f) ef } d4 | \oIBreak \barNumberCheck #121
+                ef8 ef ef ef8 f g g8( f) ef } d4 | \barNumberCheck #121
   % page 7, line 3
   bf'8-. r a-. r g-. r f-. r | % 122
   \tuplet 3/2 { ef8 g f ef8 d c bf8-\< g f ef8 d c | % 123
                 \mark "P"
                 bf8-\f bf bf bf8 c d d8->( a) a a8 a bf | % 124
-                c8 c c c8 d ef ef( d) c } bf4 | \oIBreak % 125
+                c8 c c c8 d ef ef( d) c } bf4 | % 125
   % page 7, line 4
   \tuplet 3/2 { g'8 bf, g' f8 bf, f' ef8 bf ef d8 bf d | % 126
                 c8 d c bf8 c d c8-\> a bf c8 bf a | % 127
                 bf8-\mf bf bf bf8 c d d8->( a) a a8 a bf | % 128
-                c8 c c c8 d ef ef( d) c } bf4 | \oIBreak % 129
+                c8 c c c8 d ef ef( d) c } bf4 | % 129
   % page 7, line 5
   \tuplet 3/2 { g'8 bf, g' f8 bf, f' ef8 bf ef d8 bf d | \barNumberCheck #130
                 c8 ef d c8 bf a } bf8 r r4 | % 131
   \repeat volta 2 {
     r4 f''=''2-\f-> bf4 | % 132
     \tuplet 3/2 { f8 g a bf8 c d ef8 c f d8 c bf } | % 133
-    a8 r f2-> bf4 | \oIBreak % 134
+    a8 r f2-> bf4 | % 134
     % page 7, line 6
     \tuplet 3/2 { g8 f ef d8 c bf } a8 r r4 | % 135
 
     \tuplet 3/2 { d=''8-.-\p d-. d-. d8-. ef-. f-. f8( c) c-. c8-. c-. d-. | % 136
                   ef8-. ef-. ef-. ef8-. f-. g-. g8( f) ef-. } d4 | % 137
-    bf'8-. r a-. r g-. r f-. r | \oIBreak % 138
+    bf'8-. r a-. r g-. r f-. r | % 138
   }
   % page 7, line 7 (-6)
   \alternative {
@@ -459,7 +459,7 @@ DuoI_MvIII_VlnI = \relative c' {
   }
   \tuplet 3/2 { a8-.-\f c( b c8 f ef) } d8 r bf8 r | \barNumberCheck #141
   \tuplet 3/2 { c8-. ef( d ef8 a g) } f8-. d-. ef-. f-. | % 142
-  g8-.-\cresc a-. bf-. c-. d8-. f,-. g-. a-. | \oIBreak % 143
+  g8-.-\cresc a-. bf-. c-. d8-. f,-. g-. a-. | % 143
   % page 7, line 8 (-5)
   bf8-. c-. d-. ef-. f4-\ff r-\fermata | % 144
   r4 d8.-\fp( f16) ef8.( c16) bf8.(-\fp d16) | % 145
@@ -468,21 +468,21 @@ DuoI_MvIII_VlnI = \relative c' {
   f8-\f-.( f-. f-.) | \barNumberCheck #147
 
   f4(-\turn bf8) | % 148
-  d,4(-\turn f8) | \oIBreak % 149
+  d,4(-\turn f8) | % 149
   % page 7, line 9 (-4)
   bf,4(-\turn d8) | % 150
   a16 f bf g c a | % 151
   d16 bf ef c f d | % 152
   g16( f) ef d c bf | % 153
   a16-\> g f ef d c | % 154
-  << {s4.-\mf | s4. \oIBreak | s4.*2 } \repeat unfold 4 { bf16 d f d f d | } >> \barNumberCheck #158
+  << {s4.-\mf | s4. | s4.*2 } \repeat unfold 4 { bf16 d f d f d | } >> \barNumberCheck #158
   % page 7, line 10 (-3)
   f8( e ef) | % 159
   d8( c bf) | % 160
   ef16( g) f(-. ef-.) d-. c-. | % 161
   d8 r r | % 162
   r8 <ef' f>8-.(-\p q-.) | % 163
-  <d f>8.( g16 f8) | \oIBreak % 164
+  <d f>8.( g16 f8) | % 164
   % page 7, line 11 (-2)
   r8 <ef f>8-.( q-.) | % 165
   <d bf'>4-\cresc( f8) | % 166
@@ -491,7 +491,7 @@ DuoI_MvIII_VlnI = \relative c' {
   f16( ef) d8 \afterGrace c-\trill ({ bf16 c)} | % 169
   bf16-\f f d' bf f' d | % 170
   bf'16 f d' bf ef a, | % 171
-  bf16 d f, bf d, f | \oIBreak % 172
+  bf16 d f, bf d, f | % 172
   % page 7, line 12 (-1)
   bf,16 d f, d' ef a, | % 173
   bf8 r r | % 174
@@ -673,22 +673,22 @@ DuoII_MvII_VlnI_PartA = \relative c' {
   f8.-\>( d16 c16) bf( a g f16 ef d c) | % 9
   % \mark "G"
   bf16-\p( a bf f' bf,16 a bf f') c='16( b c f) | % 10
-  d16( cs d f d16 cs d f) ef16( d c bf) | \oIBreak % 11
+  d16( cs d f d16 cs d f) ef16( d c bf) | % 11
   % line 3
   a16-\<( g a f' a,16 bf a f') bf,16( a bf f') | % 12
   d16-\>( c b c a16-\!) e'='( f g f16 d ef c) | % 13
-  \tuplet 3/2 { << { s4. s8.-\cresc s8.-\! } \repeat unfold 5 { bf?16( d f) } >> a,16( c f) } | \oIBreak % 14
+  \tuplet 3/2 { << { s4. s8.-\cresc s8.-\! } \repeat unfold 5 { bf?16( d f) } >> a,16( c f) } | % 14
   % line 4
   \tuplet 3/2 { \repeat unfold 4 { bf,16( d f) } d16( f d) c16( a c) } | % 15
   bf16( c d ef d16 f d bf) f'='16-\>( ef d ef) | % 16
   % \mark "H"
   d4-\! r16 bf''( d) c-. bf16-.\( a-. g-. fs-.\) | % 17
-  fs4-\fp( g16) g(-\turn bf) a-. g\(-. f-. ef-. d-.\) | \oIBreak % 18
+  fs4-\fp( g16) g(-\turn bf) a-. g\(-. f-. ef-. d-.\) | % 18
   % line 5
   d4-\fp( ef16) ef(-\turn g) f-. ef\(-. d-. c-. bf-.\) | % 19
   a16( f ef f-\cresc a16 f ef f) bf16( f d f) | % 20
   f16( c' ef c fs,16 c' ef c) g16( d' g, d) | % 21
-  ef-\>( ef' d c) <f, bf>8\(-. r <f a>-.-\!\) r | \oIBreak % 22
+  ef-\>( ef' d c) <f, bf>8\(-. r <f a>-.-\!\) r | % 22
   % line 6
   <f c'>4( bf) r8. <d, c'>16 | % 23
   << { c'4( bf8) } \\ ef,4.-\fp >> r8 r8. <b af'>16 | % 24
@@ -697,7 +697,7 @@ DuoII_MvII_VlnI_PartA = \relative c' {
   bf4( a) bf16( a bf f) | % 27
   a16( g f-\> ef d8) r c8.(-\trill bf32 c) | % 28
   % \mark "I"
-  bf4-\! r ef8( d) | \oIBreak % 29
+  bf4-\! r ef8( d) | % 29
   % line 7
   d8-\fp\( \afterGrace c-\trill ({ bf16 c)} bf4\) g'8( f) | % 30
 }
@@ -712,13 +712,13 @@ DuoII_MvII_VlnI = \relative c' {
   g4.-\mf g16(-\trill f32 g a8 bf) | % 33
   c8.( a16) c4( ~ c16 d32 c bf16 a) | % 34
   a16( g) g4 a16( g) g16( f e f) | % 35
-  f16( e-\> d c) c8-\! r r4 | \oIBreak % 36
+  f16( e-\> d c) c8-\! r r4 | % 36
   % line 8 (-5)
   \mark "K"
   f,='16-\p( e f c f16 e f c) g'16( fs g c,) | % 37
   a'='16( gs a c, a'16 gs a c,) bf'16( a g f) | % 38
   e16( d e c e16-\< d e c) f16( e f c) | % 39
-  a'16-\>( g fs g e16) f( g f a16-\! g f e) | \oIBreak % 40
+  a'16-\>( g fs g e16) f( g f a16-\! g f e) | % 40
   % line 9 (-4)
   f4 r <a, f'> | % 41
   <bf f'>4 r q-\< | % 42
@@ -726,19 +726,19 @@ DuoII_MvII_VlnI = \relative c' {
   <c g'>4->-\>( f16) c'?-\<\(-. d-. e-. f16-. g-. a-. bf-.\) | % 44
   \mark "L"
   a4.-\mp bf32( a g a bf8) c32( bf a bf | % 45
-  d8. c16) c4( d16 c bf a) | \oIBreak % 46
+  d8. c16) c4( d16 c bf a) | % 46
   % line 10 (-3)
   g4 \appoggiatura fs16 g8-\<( \appoggiatura fs16 g8 \appoggiatura gs16 a8 \appoggiatura gs16 a8) | % 47
   c16-\>( bf a bf g16) a( bf a-\! c16 bf a g) | % 48
   a16( bf a g f16 e ef d f16 ef d cs) | % 49
-  d16( e f fs g16 a bf c cs16 d bf g) | \oIBreak % 50
+  d16( e f fs g16 a bf c cs16 d bf g) | % 50
   % line 11 (-2)
   c?4.( d8 e f) | % 51
   \appoggiatura { f,16 g a } \afterGrace g2.-\trill ({ f16 g)} | % 52
   f4 r8 f16-\cresc(-\trill e32 f c'8 a) | % 53
   g4 r8 g16-(-\trill fs32 g d'8 bf) | % 54
   a4. bf8\(-. c-. d-.\) | % 55
-  ef8.-\f\(( c16 ef4)-\fermata ~ ef32\)[-\calando-\> d\(-. c-. bf-.] a32-. g-. f-. ef-.\) | \oIBreak % 56
+  ef8.-\f\(( c16 ef4)-\fermata ~ ef32\)[-\calando-\> d\(-. c-. bf-.] a32-. g-. f-. ef-.\) | % 56
   % line 12 (-1)
   \mark "M"
   << { s2.*8 \mark "N" |
@@ -749,7 +749,7 @@ DuoII_MvII_VlnI = \relative c' {
   f8-\fp\( \afterGrace ef ({d16 ef)} d8\) bf'8-\<\(-- bf-- bf--\) |
   bf8.-\f( g32 ef d8) r f16-\p( ef d ef) |
   c8( cs) d16( c bf a) g16( bf) f( bf) |
-  ef,-\fp( a) a-. a-. d,16( bf'=') bf-. bf-. ef,16( bf') d,( bf') | \oIBreak
+  ef,-\fp( a) a-. a-. d,16( bf'=') bf-. bf-. ef,16( bf') d,( bf') |
   % line ?? (-1)
   c,='16-\fp( f g a bf16 f) af(-\< bf g16 bf d, af') |
   g16-\f( ef g c bf16-\> f d f) ef-\p( f a? f) |
@@ -933,12 +933,12 @@ DuoIII_MvI_VlnI = \relative c' {
     \key g \major \time 2/4
     <g'=' b>4-\f-\< q8-- q-- | % 2
     b16.-\!( a32) e'4(-\> d32 c b a-\>) | % 3
-    a16-\p( g) g8\( ~ g16. f32( b16 a)\) | % 4
+    a16-\p( g) g8\( ~ g16. fs32( b16 a)\) | % 4
     g16[( d) \appoggiatura { e32 d cs } d8] r16. d'32 d16.-\<(-\turn e32) | % 5
     d16.->-\>( c?32) c4( b8)-\< | % 6
     b16.->-\>( a32) a4-\!( b8) | \break % 7
     % line 2
-    c16.-\<( cs32 d16. ds32) f16\((-. fs-. g-.) r32 b,-.\)-\p | % 8
+    c16.-\<( cs32 d16. ds32) e16\((-. fs-. g-.) r32 b,-.\)-\p | % 8
     d8.( b16) a8 r | % 9
     \mark "A"
     <g, d'>4-\f-\< e'='8-- e-- | % 10
@@ -979,7 +979,7 @@ DuoIII_MvI_VlnI = \relative c' {
     \mark "C"
     \set subdivideBeams = ##t
     << s2-\p \twice { d32( a d fs a32 fs d fs) } >> | % 32
-    c32(-\cresc a c fs a32 fs c fs) b,32( a b fs' a32 fs b, fs') | % 33
+    c?32(-\cresc a c fs a32 fs c fs) b,32( a b fs' a32 fs b, fs') | % 33
     << { s2-\p | \break s8 s8-\< } \twice \twice { b,32( g b e g32 e b e) } >> | \barNumberCheck #35
     % line 9 (-4), 2nd bar
     \set subdivideBeams = ##f
@@ -999,15 +999,15 @@ DuoIII_MvI_VlnI = \relative c' {
     fs4-\! r | % 43
     \acciaccatura d8 d'8.-\mf( c16) c16(-\> bf a g) | % 44
     fs4-\p( g) | % 45
-    fs8 r16 c'=''32-\pp( bf a8) <d, a'>-.-\< | % 46
-    q2-\fermata-\> <>-\! | \bar "||"
+    fs8 r16 c'=''32-\pp( bf a8) <d, a'>-. | % 46
+    << q2-\fermata { s4-\< s4-\> <>-\! } >> | \bar "||"
 }
 
 DuoIII_MvII_VlnI_themeB = \relative c' {
   bf=8-\mf d-\staccatto g d bf d | % 60
   bf8 d g d bf d | % 61
   % line 2
-  a8 c f c a c | % 62
+  a8 c fs c a c | % 62
   bf8 d g d bf d | % 63
   a8 c fs c a c | % 64
   bf8 d-\p g bf d bf | % 65
@@ -1023,18 +1023,18 @@ DuoIII_MvII_VlnI = \relative c' {
     \key bf \major \time 3/4 \tempo "Allegro molto"
     g'='4-\turn r8 g g g | % 48
     d'4-\turn r8 d d d | % 49
-    e4 e\(-. e-.\) | % 50
+    ef4 ef\(-. ef-.\) | % 50
     d4-\turn r8 g, g g | % 51
-    e'4 e\(-. e-.\) | % 52
+    ef'4 ef\(-. ef-.\) | % 52
     d4-\turn r8 g8-\p-. g-. g-. | % 53
     g4( fs8-\cresc) g\(-. g-. g-.\) | \break % 54
     % page 13, line 1
-    g4( fs8) e8\(-. e-. e-.\) | % 55
-    e4(-\rall d8) e\(-. e-. e-.\) | % 56
-    e4( d8) c\(-. c-. c-.\) | % 57
+    g4( fs8) ef8\(-. ef-. ef-.\) | % 55
+    ef4(-\rall d8) ef\(-. ef-. ef-.\) | % 56
+    ef4( d8) c\(-. c-. c-.\) | % 57
     c4( a8) c\(-\f-. c-. c-.\) | % 58
     c4( a8) r r4-\fermata | % 59
-    << { s2.-\atempo } { \DuoIII_MvII_VlnI_themeB } >>
+    << { s2.^\atempo } { \DuoIII_MvII_VlnI_themeB } >>
     \mark "E"
     bf='4-\f-- a\(-- g--\) | % 72
     g4( f8) d-. f-. bf-. | % 73
@@ -1081,9 +1081,9 @@ DuoIII_MvII_VlnI = \relative c' {
     c8( b) f'4\(-. f-.\) | % 106
     f4( ef8) d( ef fs) | % 107
     g4.( a8-\< g a) | % 108
-    c8-\>( bf a g f e)-\> | % 109
+    c8-\>( bf a g f e)-\! | % 109
     d8( cs) g'4\(-. g-.\) | % 110
-    g4( fs8) d-\cresc( f a | % 111
+    g4( fs8) d-\cresc( fs a | % 111
     c4) c c | % 112
     c4( bf8) g( bf d | \break % 113
     % line 9 (-4)
@@ -1159,4 +1159,620 @@ DuoIII_MvII_VlnI = \relative c' {
     << s2.-\f \repeat unfold 3 \repeat tremolo 6 { g'=''16( bf) } | >> % 183
     \repeat tremolo 4 { g16( bf } fs16 a fs a) | % 184
     g4 r r \bar "|."
+}
+
+DuoIII_MvIII_VlnI_theme = \relative c' {
+  b'='8-.-\p \afterGrace b\(-\trill _({ a16 b)} d4\) | % 2
+  g,8-. \afterGrace g\(-\trill ({ fs16 g)} b4\) | % 3
+  a16-\<( b a b) c16( b a g) | % 4
+  g16-\>\(( fs) a( g)\) g16( fs e d)-\! | % 5
+  b'='8-. \afterGrace b\(-\trill _({ a16 b)} d4\) | % 6
+  g,8-. \afterGrace g\(-\trill ({ fs16 g)} b4\) | % 7
+  b16( a) a( g) g16( fs) fs( e) | % 8
+  % line 2
+  e8( d) d4 | % 9 :||:
+  <fs a>8-.-\f q( <gs b>) q( | % 10
+  <a c>8) e'-\p([ c a]) | % 11
+  <e g?>8-.-\f q( <fs a>) q( | % 12
+  <g b>8) d'-\p([ b g]) | % 13
+  e'8-\mf-. \afterGrace e\(-\trill _({ ds16 e)} g4\) | % 14
+  d8-. \afterGrace d\(-\trill _({ cs16 d)} g4\) | % 15
+  a,8 e'\(( d) fs,-.\) | % 16
+}
+
+DuoIII_MvIII_VlnI = \relative c' {
+  \key g \major \time 2/4 \tempo "Adantino cantabile"
+  << { \repeat volta 2 { s2*8 } \repeat volta 2 { s2*8} }
+     { \DuoIII_MvIII_VlnI_theme | a'='8( g) g r } >>
+  \repeat volta 2 {
+    % line 3
+    \time 2/4 \mark "VAR 1"
+    b'=''16-\mf-. d,( g b a16) cs( d) d,-. | % 18
+    g16-. b,( e g fs16) as( b) b,-. | % 19
+    e16-. gs,( a c e16) a8( g?16 ~ | % 20
+    g16) fs8( e16 ~ e16-\> d cs c) | % 21
+    b16-.-\p d,( g b a16) cs( d) d,-. | % 22
+    g16-. b,-\<( e fs g16) b( a g-\! ~ | % 23
+    % line 4
+    g16) fs8-\>( e d cs16)-\! | \barNumberCheck #24
+  } \alternative {
+    \twice { d16-. fs-. g-. <cs, e>-. d8 r | } % 25
+  } \repeat volta 2 {
+    <f a>8.-\f q16 <e a>8 <gs b> | \barNumberCheck #27
+    <a c>16 a-\p( e' d ~ d16 c b a) | % 28
+    <ef g?>8.-\f q16 <d g>8 <fs? a> | % 29
+    <g b>16 g-\p( d' c ~ c16 b a g) | % 30
+    e'8.-\f ds16( e16) ds'( e) e,( | % 31
+    % line 5
+    d?8.) cs16-\dim( d16) cs'( d) <b, d> ~ | % 32
+    q16 <a c?>( <c e>) <a c> ~ q16 <g b>8( <fs a>16) | \barNumberCheck #33
+  } \alternative {
+    \twice { <g b>16-.-\p g-. a-. fs-. g8 r | } % 34
+  } \repeat volta 2 {
+    \mark "VAR 2" \time 2/4
+    g4(-\p fs) | \barNumberCheck #36
+    e4( d) | % 37
+    c4.-\<( cs8 | % 38
+    d8) cs-\>( d fs)-\! | % 39
+    g4( fs)-\cresc | % 40
+    e8.( d16 cs8 e) | % 41
+    % line 6 (-1)
+    d8-\mf <g, g'> <a fs'> <a e'> | % 42
+    <a g'>4-\>( <d fs>8)-\! r | % 43
+  } \repeat volta 2 {
+    R2 | % 44
+    \tuplet 3/2 { r16 g'-\f( a ds,=''16 f e) b16( d c gs b a) } | % 45
+    R2 | % 46
+    \tuplet 3/2 { r16 fs'( g cs,16 e d) a16( c b fs16 a g) | % 46
+    e'=''16-\mf( fs) g-. g16-. g-. g-. } g8-\turn r | % 48
+    % page 17, line 1
+    \tuplet 3/2 { b16( a) g-. g16-. g-. g-. } g8-\turn r | % 49
+    \tuplet 3/2 { g16( ds e) g16-.-\> fs-. e-. d16-. e-. d-. \acciaccatura d8 c16-. b-. a-. } | % 50
+    a4-\mp(-\> g8)-\! r | % 51
+  } \repeat volta 2 {
+    \mark "VAR 3" \time 2/4
+    g8-.-\f b'( a d) | % 52
+    e,,='8-. g'( fs b) | % 53
+    c,,='8-\mf-. e'( a g) | % 54
+    % line 2
+    fs16( a32) r cs,16( e32) r d16-.-\< c( b a) | % 55
+    g8-.-\f b'( a d) | % 56
+    e,,='8 g' cs,,=' b'' | % 57
+    b16( a32) r a16-\>( g32) r g16( fs32) r fs16( e32) r | % 58
+    d8-\mf r r4 | % 59
+  } \repeat volta 2 {
+    <a, f' d'>8.-\f d'=''64( e f g a8) \afterGrace b\(-\trill ({ a16 b)} | % 60
+    c8-.\) d\(-. e-.\) r | % 61
+    <g,,,= ef' c'>8. c'64( d ef f g8) \afterGrace a\(-\trill ({g16 a)} | % 62
+    bf8-.\) c\(-. d-.\) r | % 63
+    c,,='8-\mf g''([ c e]) | % 64
+    b,,=8-. g''([ b d]) | % 65
+    d16-\dim( e,32) r c'16( a32) r a16( g32) r g16( fs32) r | % 66
+    g8-\! r r4 | % 67
+  } \repeat volta 2 {
+    % line 4
+    \key bf \major \time 2/4 \mark "VAR 4"
+    \tuplet 3/2 { g,='16-.-\p bf-. d-. g16-. bf-. g-. f,16-. a-. d-. f16-. a-. f-. } | % 68
+    \tuplet 3/2 { ef,16 g bf ef16 g ef d,16 f bf d16 f d } | % 69
+    \tuplet 3/2 { c,16 ef a c16 ef c ef,16 a c ef16 g ef } | % 70
+    \tuplet 3/2 { d,16 g bf d16 g d d,16 fs a d16 fs d } | % 71
+    % line 5
+    \tuplet 3/2 { g,16 bf d g16( bf g) f,?16 a d f?16( a f) } | % 72
+    \tuplet 3/2 { e,16 g cs e16( g e) d,16 f a d16( f d) } | % 73
+    \tuplet 3/2 { g,16( bf) g'-. gs,16( b) f'-. a,16( d) f-. gs,16( a) e'-. } | % 74
+    \tuplet 3/2 { d16( f,) a-. d16-. f-. a-. } d8 r | % 75
+  } \repeat volta 2 {
+    \tuplet 3/2 { d,,='16-\mf-- fs-- a-- d16-- cs-- d-- ef16-\simile f? ef d16 ef d } | % 76
+    % line 6
+    \tuplet 3/2 { c16 d c bf16 c bf a16 bf a g16 a g } | % 77
+    \tuplet 3/2 { fs16 a c ef16 f ef d16 ef d c16 d c } | % 78
+    \tuplet 3/2 { bf16 c bf a16 bf a g16 af-\>-. g-. f?16-. ef-. d-. } | % 79
+    \tuplet 3/2 { c16-\p-. ef-. g-. c16-. ef-. fs-. g16-. ef-. c-. g16-. ef-. c-. } | % 80
+    % line 7
+    \tuplet 3/2 { bf16-. d-. g-. bf16-. d-. fs-. g16-. d-. bf-. g16-. d-. bf-. } | % 81
+    \tuplet 3/2 { c16( ef) a-. ef16( a) c-. d,16( g) bf-. c,16( d) fs-. } | % 82
+    \tuplet 3/2 { g16( bf,) d-. g16-. bf-. d-. } g8 r | \barNumberCheck #83
+  }
+  \key g \major \time 2/4 \mark "VAR 5" \tempo "Allegretto"
+  \DuoIII_MvIII_VlnI_theme
+  \mark "N"
+  g,='8 r r <gs b>-\f | \barNumberCheck #99
+  a8 r r <fs a> | % 100
+  g?8 r r g16-\mf( f) | % 101
+  <c e>8 e16( c) c16(-\prall b) b(-\prall a) | % 102
+  % line ?? (-3)
+  \subdivThirtySeconds
+  \set subdivideBeams = ##t
+  b8-. \noBeam b''32-\f c a b g32 a fs g e32 fs d e | % 103
+  c8-. \noBeam a'32 b g a fs32 g e fs d32 e c d | % 104
+  b32(-\pocoDim d c b c32 d e fs) g32\(( a b c d16-\mf) d-.\) | % 105
+  \set subdivideBeams = ##f
+  d16( e,) c'( a) a16(-\prall g) g(-\prall fs) | % 106
+  % line ? (-2)
+  << {s2*2 | s2-\p | s4 s4-\< } \twice {
+  d'='''8.( e32 d) c8\([ r16 c-.]\) | % 107
+  as16( b) c( a) g16( b) a( fs) | % 108
+  }>> \barNumberCheck #110
+  \set subdivideBeams = ##t
+  g32-\f( a bf c d32 c b a) g32( a g fs g32 a f g) | % 111
+  % line ? (-!)
+  e32( f d e c32 d b-\dim d) c32( d e c a32 b c a) | % 112
+  b32( c d c b32 a g fs) g32( a g fs g32 a f g) | % 113
+  e32-\p( f d e c32 d b d) c32( d e c a32 b c a) | % 114
+  b8 r d-\pp r | % 115
+  b8 r r4 \bar "|."
+}
+
+
+%%% DuoIV
+
+DuoIV_MvI_VlnI_themeA = \relative c' {
+  c4-\f r r2 | % 2
+  r2 r8 c'=''-\p c c | % 3
+  \twice { d8(-\trill c) c-. c-.  } | % 4
+  cs8( d4 e8) g8-\<( f e d) | % 5
+  <g,,= e' c'?>8-\f( \tuplet 3/2 { d''16 c b) } c8\(-. e-.\) g,='8( \tuplet 3/2 { a16 g fs) } g8\(-. c-.\) | % 6
+  % line 2
+  e,='8( \tuplet 3/2 { f?16 e d) } e8\(-. g-.\) c,='4 r | % 7
+  f4-\p( e) f( e) | % 8
+  f4-- e-- d-\<-- g-- | % 9
+  e8-\f g c g e8 c e8.(-\trill d32 e | % 10
+  g8) e' c g e8 c'[ c c] | % 11
+}
+
+DuoIV_MvI_VlnI = \relative c' {
+  \key c \major
+  \repeat volta 2 {
+    { \DuoIV_MvI_VlnI_themeA } \barNumberCheck #11
+    % line 3
+    a'='8 f c' a f8 c f8.(-\trill e32 f | % 12
+    a8) f' c a f8 c'[ c c] | % 13
+    e,='8 g c g e8 c e8.(-\trill d32 e | % 14
+    g8) e' c g e8 c'-\>[ c c] | % 15
+    % line 4
+    <d, a'>4-\mf r r8 <g,= f'>8 q q | % 16
+    <a e'>4 r r8 <e' c'>8 q q | % 17
+    <f a>4 r <g, f'> r | % 18
+    <c e>8 g'='-. g-. g-. g8.( a32 b) c8-. \noBeam g'16( e | % 19
+    f16 g a g f16 e d c) b4. b'16( g | % 20
+    % line 5
+    c16 d c b c16 d e c) g=''4. f16\(( e | % 21
+    d16e d cs d8) a'-.\) g16\(( a g fs g8) b,-.\) | % 22
+    \mark "A"
+    c4-. c2-\p \acciaccatura e8 d8.( c16) | % 23
+    c4 \acciaccatura e8 d8.( c16) c4 \acciaccatura g'8 f8.( e16) | % 24
+    e4-. e2 \acciaccatura g8 f8.( e16) | % 25
+    % line 6
+    e4 \acciaccatura g8 f8.( e16) e4 \acciaccatura b'8 a8.( g16) | % 26
+    g4.( \tuplet 3/2 { a16 g fs } g8) a-. b-. c-. | % 27
+    e16\(( d8.) c16( b8.)\) a4\(( g8)[ r16 b]\) | % 28
+    d16\(( c8.) b16( a8.)\) g16\(( fs8.) e16( d8.)\) | % 29
+    % line 7 (A+2)
+    c2( b16)-\< d( e fs g16 a b c) | % 30
+    d16-\fp( b d b) g4.( a16 g) g16( f? e f) | % 31
+    ds8( e) e4. fs16-\<( gs a16 b c d?) | % 32
+    e16-\fp( c e c) a4.( b16-\< a) a16( g? fs g) | % 33
+    % line 8 (-4)
+    fs16-\f\(( e d cs d8) g-.\) fs16\(( e d cs d8) g8-.\) | % 34
+    fs8-. d16( e fs16 g a b c?8) a-\>\(-. fs-. c?\) | % 35
+    << {s1-\mf} \twice { b16\(( a g fs g8) c8-.\) } >> | % 36
+    % line 9 (-3)
+    b16( g a b c16 d e fs g8) b-\<-. d-. g,=''-.-\! | % 37
+    \twice { fs16( e d cs d16 fs e g) } % 38
+    fs16( e d e fs16 g a b) c?16( b a g fs16-\> e d c?) | % 39
+    % line 10 (-2)
+    << {s1-\mf} \twice { b16( a g fs g16 b a c) } >> | % 40
+    b16-\cresc( g a b c16 d e fs) g16( a b c d16 b a g) | % 41
+    fs4-\f g16-\cresc( fs e d) g4 c16( b a g) | % 42
+    % line 10 (-1)
+    d'='''4 d,,='-\ff d r | % 43
+    \mark "B"
+    r4 r8 b8-\turn-\> c8-. d-. e-. fs-. | % 44
+    g8-\mf a16 b c8 d16 c b8 a16 b c8 d16 c | % 45
+    b8 d16 c b8 a16 g fs8 e16 d c'8-\> b16 a | % 46
+    % page 19, line 1
+    << s1-\mp \twice { b8 a16 b c8 d16 c } >> | % 47
+    b8 d16 c b8 a16 g fs8-\< e16 d c'8 b16 a | % 48
+    g8-\mf fs16 g b8 a16 b d,8 e16 d d'8-\< c16 d | % 49
+    % line 2
+    g,='8-\f fs16 g c8 b16 c e,8 fs16-\> e e'8 d16 e | % 50
+    a,='4-\p( b) d8( c) b-. a-. | % 51
+    b4 r r2 | % 52
+    g'=''8-\mf r a8.(-\trill g32 a g8) r a8.(-\trill g32 a | % 53
+    g8-.) a-. b-. c-. d4 r | % 54
+    % line 3
+    g,=''8-\mf r a8.(-\trill g32 a g8) r a8.(-\trill g32 a | % 55
+    g8-.) a-. b-. c-. d4\( r8. d,16-.\)-\mf | % 56
+    d'2( b4) r8. g16-.-\f | % 57
+    e'2( c4) r8. a16-.-\p | % 58
+    fs4( g) b8( a) g-. fs-. | % 59
+    % line 4
+    \mark "C"
+    g8 r d-\< r b r g-\! r | % 60
+    fs16-\f d fs d a'16 d, a' d, c'16 d, c' d, a'16-\> d, fs d-\! | % 61
+    g8 d'-\p-\< d d d8 d\(-. d-. d-.\) | % 62
+    <d d'>2.-\f d'16-\>( c b a) | % 63
+    % line 5
+    << { s1-\mf | s1 | s1-\cresc | s1 } \twice { 
+    g8-\mf-. \tuplet 3/2 { a16( g fs } g8-.) a-. b4.( c8-.) |
+    a4. g8\(-. fs8-. g-. a-. fs-.\) |
+    } >> \barNumberCheck #67
+    \twice { g16 d b d g8 b } | % 68
+    % line 6
+    g4 <d,=' b' g'>-\ff q r | % 69
+  } % volta 2
+  b=8-\p( g b g) b8( g c g) | % 70
+  b8( g c g) b8( g e' g,) | % 71
+  d'='8( g, d' g,) d'8( g, e' g,) | % 72
+  d'8( g, e' d,) d'8( g, c g) | % 73
+  % line 7 (-5)
+  << s1-\mf \twice { b8( d g d) } >> | % 74
+  c8( d a' d,) c8( d fs d) | % 75
+  b8 r c'16( a8.) g16( b8.) a16( fs8.) | % 76
+  << s1-\p \twice { b8 ( g d g) } >> | % 77
+  fs8( d a' d,) c'8( d, fs a) |% 78
+  % line 8 (-4)
+  b8 r c16( a8.) g16( b8.) a16( fs8.) | % 79
+  \mark "D"
+  g4 r8 g'8-\f-\turn g8 <bf, g'> q q | % 80
+  bf'8( a) a2( \afterGrace g4)-\trill_({ f16 g)} | % 81
+  f4 r8 d-\turn d8 <f, d'> q q |% 82
+  f'8( e) e2( \afterGrace d4)-\trill ({ c16 d)} | % 82
+  % line 9 (-3)
+  c4 r8 a'-\turn a8 <c, a'> q q | % 83
+  c'8( b) b2( \afterGrace a4)-\trill _({ g16 a)} | % 84
+  g4 r8 e8-\turn e8 <g, e'> q q | % 85
+  g'8( fs) fs2( \afterGrace e4)-\trill _({ ds16 e)} | % 86
+  ds4.( c'?8) b4 r8 d,-\dim( | % 87
+  cs4. bf'8) a4 r8 c,( | % 88
+  % line 10 (-2)
+  b?4. af'8) g4 r8 bf,-\p( | % 89
+  a?8) a16-\cresc( c b16 d cs e d8-.) cs16( e d16 f e g | % 90
+  f8-.) e16( g f16 a g bf) a16 g f e d16 c? b? c | % 91
+  % line 11 (-1)
+  b8-.-\ff g-. a-. b-. c8-. d-. ef-. fs,-. | % 92
+  g8-. r r4 r2 | % 93
+  r8 b,8-\p-\cresc-. c-. d-. e8-. fs-. g-. as,-. | % 94
+  b8-. cs-. d-. e-. f?8-.  g-. a?-. b,-. | % 95
+  \mark "E"
+  % page 20, line 1..2
+  { \DuoIV_MvI_VlnI_themeA } \barNumberCheck #106
+  % line 2, 5th bar
+  bf'='8 c, g' c, e8 c e8.(-\trill d32 e | % 107
+  g8) bf g e bf8 \noBeam c' c c | % 108
+  % line 3
+  a8 f c a c8 f a8.(-\trill g32 a | % 109
+  c8) a f c a8 \noBeam c'8 c c | % 110
+  af8 ef c af af'8 ef c'8.(-\trill b32 c | % 111
+  ef8) \noBeam af,,= c ef af8 ef c af | % 112
+  \mark "F"
+  <g d' b'?>4 r r8 <g f'>-\mf q q | % 113
+  % line 4
+  <a e'>4 r r8 <e' c'> q q | % 114
+  <f a>4 r <g, f'> r | % 115
+  <c e>8 g'-. g-. g-. g8.( a32 b) c8-. g'16( e | % 116
+  f16 g a g f16 e d c) b4. b'16( g | % 117
+  c16 d c b c16 d e c) g4.( f16 e) | % 118
+  % line 5 (F+2)
+  d16( e d cs d16 e f g) a16-\<( g f e d16 c b c) | % 119
+  << s1-\f \twice { b16( a g fs g16 b a c) } >> | % 120
+  b16( a g a b16 c d e) f?16( e d e f16 a g f) | % 121
+  % line 6 (G-1)
+  \twice { e16( d c b c16 e d f) } | % 122
+  e16( c d e f16 g a b) c16( b a g c16 g e c) | % 123
+  g'4 c16( b a g) c4 f,16( e d c) | % 124
+  % line 7
+  g'4 <g,,= g'>4 q r | % 125
+  \mark "G"
+  r4 r8 e'='-\turn-\> f8-. d-. a-. b-. | % 126
+  c8-\mf d16 e f8 g16 f e8 d16 e f8 g16 f | % 127
+  e8 g16 f e8 d16 c b8 a16 g f'8-\> e16 d | % 128
+  e8-\mp d16 e f8 g16 f e8 d16 e f8 g16 f | % 129
+  % line 8 (-5)
+  e8 g16 f e8 d16 c b8 a16 g f'8-\< e16 d  | % 130
+  c8-\mf b16 c e8 d16 e g,8 a16 g g'8-\< f16 g | % 131
+  c,='8-\f  b16 c f8 e16 f a,8 b16 a a'8-\> g16 a | % 132
+  d,='4-\p( e) g8( f) e-. d-. | % 133
+  % line 9 (-4)
+  e4 r r2 | % 134
+  c'=''8-\mf r d8.(-\trill c32 d c8) r d8.(-\trill c32 d | % 135
+  c8-.) d-. e-. f-. g4 r | % 136
+  c,=''8-\mp r d8.(-\trill c32 d c8) r d8.(-\trill c32 d | % 137
+  c8-.) d-. e-. f-. g4\( r8. g,16-.\)-\mf | % 138
+  % line 10 (-3)
+  g'2( e4) r8. c16-\f | % 139
+  a'2( f4) r8. d16-\p | % 140
+  b4( c) e8( d) c-. b-. | % 141
+  e,='\((-\cresc g c e g8) c8-.\) c8.(-\trill b32 c) | % 142
+  f,,='8\((-\mf a c f a8) c-.\) c8.-\>(-\trill b32 c) | % 143
+  f,4-\p( e) g8( f) e-. d-. | % 144
+  % line 11 (-2)
+  \mark "H"
+  c8 r g-\p r e-\< r c-\! r | % 145
+  b16-\f g b g d'16 g, d' g, f'16 g, f' g, d'16 g, b g | % 146
+  c8 \noBeam g'-\p g g g8 g-\<\(-. g-. g-.\) | % 147
+  <g g'>2.-\f g'16-\>( f e d) | % 148
+  c8-.-\mf \tuplet 3/2 { d16( c b } c8) d-. e4.( f8-.) | % 149
+  % line 12 (-1)
+  d4. c8\(-. b8-. c-. d-. b-.\) | % 150
+  c8-.-\cresc \tuplet 3/2 { f16( e d } e8) f-. g4.( a8-.) |% 151
+  f4. e8\(-. f8-. e-. f-. d-.\) | % 152
+  \twice { e16 c g c e8 g } | % 153
+  e4 <g, e' c'>4-\ff q r \bar "|."
+}
+
+DuoIV_MvII_VlnI_theme = \relative c' {
+  r4 | % 1
+  \triplet {
+    a=8-\p-\<( c f a8 f c)-\! d8->( f bf) | % 2
+    a8-\>( f c a8 c f)-\! f8( c g') | % 3
+    a8-\<( f c a8 c f) a,8-\f( c f) | % 4
+    bf,8( c e c8 e g) } a8.-\p( bf16) | % 5
+  % line 2
+  c8.-\<( a16 c4)-\! f8.->( d16) | % 6
+  c8.-\>( a16 c4)-\! a'8.-\f( bf32 g) | % 7
+  f8.-\>( d32 bf a8)-\! r g8.-\p(-\trill f32 g) | % 8
+  g4( f) % 8 continues over repeat
+  r4 | % 9
+  \triplet {
+    r8 c( d e8-\< c e) f8( c f) | % 10
+    fs8-\>( c fs g8 c, g')-\! e8( c bf) | % 11
+    % line 3
+    r8 a( c f8-\< c f) d8( f d) | % 12
+    f8-\>( bf f } a4) f'8.-\mf( e16) | % 13
+  e8( d c4) d8.-\p( c16) | % 14
+  c8( bf a4) bf8.-\f( a16) | % 15
+  d=''4.-> c8-\p\(-. bf8-. a-.\) | % 16
+  c8.-.( a16 g4)-\fermata
+}
+
+DuoIV_MvII_VlnI = \relative c' {
+  \override BreathingSign.text = \markup {
+    \musicglyph "scripts.caesura.straight"
+  }
+  \key f \major \time 3/4 \tempo "Andante sostenuto" \partial 4
+  << { \repeat volta 2 {
+         s4 | s2.*7 | s2
+       } \repeat volta 2 {
+         s4 | s2.*7 | s2
+         s4 | s2.*5 | s2
+       }
+     } {
+       \DuoIV_MvII_VlnI_theme
+       \breathe r4 | \barNumberCheck #17
+       \triplet {
+         a=8( c f a8-\< f c)-\! d8->( f bf) | % 18
+         % line 4
+         a8-\>( f c a8-\! c f) f8(-\f c g') } | % 19
+       a8 r r4 a'8.-\p( bf32 g) | % 20
+       c8 r r4 a8.-\f( bf32 g) | % 21
+       f8.( d32 bf a8) r g8.-\p(-\trill f32 g) | % 22
+       g4( f) % 22 continues over repeat
+     }
+  >>
+  f8.-\p-\<(-\turn f'16) | % 23
+  \repeat volta 2 { 
+    % line 5
+    f=''2->-\> \triplet { d8-\p( bf f) } | % 24
+    f2 f8.-\<(-\turn f'16) | % 25
+    f2-\>-> d16-\p( bf a bf) | % 26
+    f2 f8.-\<(-\turn g'16) | % 27
+    g2-\f f16( e d c) | % 28
+    g'8-\>( f4) a8-\mf( g f) | % 29
+    f16( e f d c4) d8.(-\trill c32 d) | % 30
+    % line 6 (I,K-3)
+    d4-\>( c8)-\! r f,='8.-\p(-\turn f'16) | % 31
+  } % END repeat volta
+  f2 g,8.-\cresc(-\turn g'16) | % 32
+  g2 a,8.(-\turn a'16) | % 33
+  a2-\f bf,8.(-\turn bf'16) | % 34
+  <c, bf'>2-\>-\fermata \breathe % 34 continues into theme's pickup
+  \mark "I" \DuoIV_MvII_VlnI_theme \breathe r4 \mark "K" | \barNumberCheck #51
+  % line ? (-4)
+  \triplet {
+    a,=8-\<( c f a8 f c)-\! d8->( f bf,) | % 52
+    a8-\>( c f a8-\! f c) d8->-\<( f bf,) | % 53
+  }
+  bf16-\f( a) a4 bf16-\p-. c-. d16-. e-. f-. g-. | % 54
+  a8 r r4 ef'8.-\p( d16) | % 55
+  % line ? (-3)
+  d8 r r4 e8.-\<( f16) | % 56
+  f8-\! r r4 d8.-\f( c16) | % 57
+  c8.-\>( d32 bf a8)-\! r g8-\p r | % 58
+  bf8.( g16 a8) r \triplet { f8-\f( c g') } | % 59
+  a8 r r4 a'8.-\p( bf32 g) | % 60
+  c8 r r4 a8.-\f( bf32 g) | % 61
+  % line ? (-2)
+  f8.( d32 bf a8) r g8.-\>(-\trill f32 g) | % 62
+  \mark "L"
+  f8-\p r f'4-\cresc( e | % 63
+  d4-\f c bf) | % 64
+  a8( bf16 d,) \triplet { c8-\<( f c e8 c bf) | % 65
+  a8-\p f'-. f-. f8-.-\cresc f-. f\(-. f8-. f-. f-.\) | % 66
+  f8 f'-\f-. f-. f8( e) e-. e\(( d) d-.\) } | % 67
+  % line ? (-1)
+  d16( c d bf a4)-\> g8.( f32 g) | % 68
+  \triplet {
+    f8-\p( a c) c8\(-. c-. c-.\) bf8( g e | % 69
+    f8-\pp a c) c\(-. c-. c-.\) bf8( g e) | % 70
+    f8-. d-\ppp( c) c8-. d( c) c8-. d( c) | % 71
+  }
+  c2 r4 \bar "|."
+}
+
+DuoIV_MvIII_VlnI_theme = \relative c' {
+  e'=''2.-\p( \afterGrace f4)\trill _({ e16 f)} | % 2
+  g4.\(( e8 c4) r8 c\) | % 3
+  c'2.( a4) | % 4
+  a16\(( g8.) f16( e8.) d16( c8.)\) r4 | % 5
+  c4( f2) e4 | % 6
+  d4( a'2) g4 | % 7
+  g4(-\prall f8) r f4(-\prall e8) r | % 8
+  e8-\<( d cs d) c8( b a g) | % 9
+  % line 2
+  c8-\f( g) c,( g') c,8( g') d( g) | % 10
+  \twice { e8( g e g) } | % 11
+  \twice { f8( a f a) } | % 12
+  e8( g c g) e8( g e c) | % 13
+  a'2 f | % 14
+  e2 f4( a) | % 15
+  g8( c g e) f8( g b g) | % 16
+}
+
+DuoIV_MvIII_VlnI = \relative c' {
+  \time 2/2 \key c \major \tempo "Allegro" % 1
+  \DuoIV_MvIII_VlnI_theme \barNumberCheck #16
+  % line 3
+  e='8-\>( g a b) c8( cs d ds)-\! | % 17
+  \repeat volta 2 {
+    e=''8-\mf( f fs g) a8( g fs e) | % 18
+    cs8( d) fs( g) as8( b) cs( d) | % 19
+    d8( c? b a) g8( fs e d) | % 20
+    c8( b) e( d) a'8( g) c( b) | % 21
+    r8 d,=''-\f( d') c-. b8-. a-. g-. f?-. | % 22
+    % line 4
+    r8 e( e') d-. c8-. b-. a-. gs-. | % 23
+    r8 a8( e') d-. cs8-. b-. a-. g?-. | % 24
+    fs8-. \noBeam d,='( d') cs-. d8-\>( c b a) | % 25
+    \mark "M"
+    g8-\p( fs g d) b'8( a g a) | % 26
+    b8-. g-. d-. b'-. c8-. a-. d,-. a'-. | % 27
+    g8-. d-. g-. b-. a8-. d,-. fs-. a-. | % 28
+    % line 5 (M+1,N-1)
+    a8( d, g d fs8) g\(-. a-. fs-.\) | % 29
+    bf2 d8( c bf c) | % 30
+    d4 r8 g( fs4) r8 c'( | % 31
+    bf4) r8 g\(( fs4) r8 c-.\) | % 32
+    c4( \afterGrace bf)-\trill _({ a16 bf)} a4 r | % 33
+    d'='''2-\f c8( b? a g) | % 34
+    fs2-\>( e4)-\! r | % 35
+    c'2-\f b8( a g fs) | % 36
+    % line 6
+    e2-\>( d4)-\! r | % 37
+    d2-\mp ~ d8-\< e( fs g) | % 38
+    fs8( e-\! b' a) d-\f( c b a) | % 39
+    g2-\> b8( a g a)-\! | % 40
+    \mark "N"
+    g4 r r2 | % 41
+    b,='8-\mf-. d,-. g-. b-. g8-. d'-. b-. g-. | % 42
+    << s1-\> \twice { c8-. b-. c-. g-. } >> | % 43
+    a8-\mf-. c-. e-. c-. e8-. c-. a-. c-. | % 44
+    % line 7 (N+1, O-1)
+    fs,8-\>-. g-. fs-. a-. c8-. b-. c-. a-. | % 45
+    b8-\mp( a-\< g a) b8( c a b) | % 46
+    d8( c b c) gs8-\mf( a b c) | % 47
+    b8-\<( d b g?) g( fs e fs) | % 48
+    g8-\f( b d) g-. b8-. g-. c-. a-. | % 49
+    d8-. b-. c-. a-. b8-. g-. a-. fs-. | % 50
+    % line 8
+    g8-\mf-. d-. g-. a-. b8-. g-. c-. a-. | % 51
+    d8-. b-. c-. a-. b8-. g-. a-. fs-. | % 52
+    a8( g fs-\dim g fs8 g a g) | % 53
+    g8( f? e f e8 f g f) | \barNumberCheck #54
+    \mark "O"
+    \DuoIV_MvIII_VlnI_theme \barNumberCheck #69
+    e,='8-\>( g a b) c8( cs d ds)-\! | % 70
+  } \repeat volta 2 {
+    e=''4-\mf r8 a-\cresc( gs4) r8 b( | % 71
+    a4) r8 c( b4) r8 d( | % 72
+    % line -2
+    c4) r8 e d8 c b a | % 73
+    gs8 f e ds-\> e8 d c b | % 74
+    c8-\p( a) e'-. e-. d8( b)-\< e-. e-. | % 75
+    c8( a) e'-. e-. b8( gs) e'-. e-.-\! | % 76
+    e8 r <c,=' e>4-\> <d f> <d e>-\! | % 77
+    c8( e) a-\<( e) c'8( a) d( b)-\! | % 78
+  } \repeat volta 2 {
+    << s1-\f \twice { cs8-. d-. e-. d-. } >> | % 79
+    % line -1
+    \twice { f8-. g-. a-. g-. } | % 80
+    b,8-. c?-. d-. c-. b8-. c-. d-. b-. | % 81
+    e8-. f-. g-. f-. e-\>-. f-. g-. e-. | % 82
+    f4-\p r8 f( fs4) r8 fs8( | % 83
+    g4)-\< r8 g( gs4) r8 gs( | % 84
+    a8-\> e f d) c8( e d b)-\! | % 85
+    a8( gs a-\< b) c8-\prall( b c d) | % 86
+  }
+  % page 23, line 1
+  bf1-\fp | % 87
+  a8( gs a-\< b? c8-\prall b c d) | % 88
+  bf1-\fp | % 89
+  a8( bf c-\< d c8 d e f)-\! | % 90
+  cs8( d e d) c8( bf a g) | % 91
+  f2-\>( e8) bf'( a g) | % 92
+  a8-\mp( c a c) e8-\<( c e c) | % 93
+  % line 2
+  f8( c f c) g'8( c, g' c,)-\! | % 94
+  a'8( c, f c) g'8-\>( c, e c) | % 95
+  f8( c a c) e8( c bf c)-\! | % 96
+  \acciaccatura a8 f'2( g4)-\< \afterGrace g4\(-\trill _({ f16 g)} | % 97
+  a4\) \afterGrace a\(-\trill _({ g16 a)} bf4\) \afterGrace bf-\!-\trill _({ a16 bf)} | % 98
+  c4( a8)-\> r bf4( g8) r | % 99
+  g2->( f4)-\! r | % 100
+  % line 3
+  \mark "P"
+  a,='8-\p-. b?-. cs-. d-. e8-. f-. g-. a-. | % 101
+  g2( f4) r | % 102
+  g,='8-. a b-. c?-. d8-. e-. f-. g-. | % 103
+  f2( e4) r | % 104
+  r8 g,='-\f( g') f-. e8-. d-. c-. bf-. | % 105
+  r8 a( a') g-. f8-. e-. d-. cs-. | % 106
+  r8 d( a') g-. fs8-. e-. d-. c?-. | % 107
+  % line 4 (P+1, Q-2)
+  b8-. \noBeam g,=( g') fs-. g8-\>( f e d) | % 108
+  c8-\p( b c g) e'8( d c d) | % 109
+  e8-. c-. g-. e'-. f8-. d-. g,-. d'-. | % 110
+  c8-. g-. c-. e-. d8-. g,-. b-. d-. | % 111
+  d8( g, c g b8) c-. d-. b-. | % 112
+  ef2 g8( f ef f) | % 113
+  % line 5 (Q-1)
+  g4 r8 c8( b4) r8 f'( | % 114
+  ef4) r8 c'\(( b4) r8 f-.\) | % 115
+  f4( \afterGrace ef)-\trill _({ d16 ef} d4) r | % 116
+  g2-\f f8( e? d c) | % 117
+  b2-\>( a4)-\! r | % 118
+  f'2-\f e8( d c b) | % 119
+  a2-\>( g4) r | % 120
+  g2-\mp ~ g8-\< a( b c) | % 121
+  b8( a e' d) g8-\f( f e d) | % 122
+  % line 6
+  c2-\> e8( d c d)-\! | % 123
+  \mark "Q"
+  c4 r r2 | % 124
+  e,8-\mf-. c-. e-. g-. c8-. g-. e-. c-. | % 125
+  << s1-\> \twice { f8-. e-. f-. c-. } >> | % 126
+  d8-\mf-. f-. a-. f-. a8-. f-. d-. f-. | % 127
+  b,=8-\>-. c-. b-. d-. f8-. e-. f-. d-. | % 128
+  e8-\p( g c-\< d) e8( f d e) | % 129
+  % line 7
+  g8( f e f) b,-\mf( a g f) | % 130
+  e8( g e-\> c) c8( b a b) | % 131
+  c8-\f( e g) c-. e8-. c-. f-. d-. | % 132
+  g8-. e-. f-. d-. e8-. c-. d-. b-. | % 133
+  c8-\mf-. g-. c-. d-. e8-. c-. f-. d-. | % 134
+  g8-. e-. f-. d-. e8-. c-. d-. b-. | % 135
+  % line 8 (-5)
+  c8-. c'( b c) d8-\dim( c b a | % 136
+  g8) a( gs a b8 a g f) | % 137
+  \mark "R"
+  \DuoIV_MvIII_VlnI_theme \barNumberCheck #152
+  \mark "S"
+  % line 11 (-3), 3rd bar
+  e4 r r2 | % 153
+  bf='8-\mf( c bf-\cresc c) a8( c a c) | % 154
+  e,8( c' e, c') f,8( c' fs, ds') | % 155
+  \acciaccatura g,8 e'2-\p g8( f e d) | % 156
+  c8-. g-\<( a b c8 cs d ds) | % 157
+  % line 9 (-2)
+  e2-\mf( f4-\cresc fs) | % 158
+  g4( gs a c) | % 159
+  c,8-\p( g c g) e'8( d c b) | % 160
+  r4 g'32-\f( e c8.) r4 b'32( f d8.) | % 161
+  \triplet { c'8-. g( e) a8-. f( d) g8-. e( c) f8-. d( b) } | % 162
+  r4 g'32-\f( e c8.) r4 b'32( f d8.) | % 163
+  \triplet { c'8-. g( e a8) f( d g8) e( c f8) d( b) } | % 164
+  \triplet { r8 e( g c8 g e) r8 c( e g8 e c) } | % 165
+  \triplet { r8 g( c e8 c g) r8 e( g c8 g e) } | % 166
+  c4 <e c'>-\ff q q | % 167
+  q2 r \bar "|."
 }
