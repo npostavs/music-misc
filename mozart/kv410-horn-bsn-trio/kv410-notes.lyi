@@ -1,0 +1,129 @@
+\version "2.22.2"
+
+%% additional definitions required by the score:
+\language "english"
+
+\header {
+    title = "Adagio in C major"
+    subtitle = "(originally F major)"
+    subsubtitle = "for 2 Basset Horns & Bassoon"
+    opus =  "KV 410 (484d)"
+    % s/poet/copyright/, but this is the easiest way to get it in top left.
+    poet =  \markup { \tiny { "Hideo KAMIOKA"
+              \epsfile #Y #1.5 "../../by-nc-sa.eps"
+              "2021" } }
+    composer =  "Wolfgang Amadeus Mozart"
+    encodingsoftware =  "Audiveris 5.3-alpha"
+    source = "IMSLP750880-PMLP159791-Adagio_Fl_Alto_Bass.pdf"
+    tagline = ##f
+    }
+
+\paper {
+    indent = 3\mm
+}
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+    }
+    \context {\Score
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
+}
+settings = {
+  \override DynamicTextSpanner.style = #'none
+  \time 2/2 \partial 4
+}
+
+HornI = \relative c'' {
+    \settings \key c \major c4 ( -\p | % 1
+    b4 c4 d4 e4 ) | % 2
+    f4. g8 e4 e4 ( | % 3
+    f4 -\cresc e4 d4 c4 ) | % 4
+    b4. b8 c2 ~ | % 5
+    c1 ~ | % 6
+    c2. g'4 ( -\p | % 7
+    fs4 f4 -\cresc e4 ef4 ) | % 8
+    d4. ( -\p ef8 ) d4 r4 | % 9
+    r4 c4 c'2 ~ | \barNumberCheck #10
+    c2. ( a4 ) | % 11
+    g4 ( e4 f4 d4 ) | % 12
+    e8 ( -\cresc d8 c8 d8 ) b8 a8 g4 ~ | % 13
+    g4 c2 ( -\p b4 ) | % 14
+    c2. f8. ( g32 a32 ) | % 15
+    g8 ( f8 e8 d8 e4 f4 ) | % 16
+    b,4 ( -\fp c4 ) f2 | % 17
+    e8 ( f8 g8 a8 ) c,4 ( b4 ) | % 18
+    f'4 ( -\fp e4 ) a4. ( b16 c16 ) | % 19
+    c8 ( b8 a8 g8 f8 e8 d8 c8 ) | \barNumberCheck #20
+    b4 ( -\fp c4 ) d4 r4 | % 21
+    r4 g,8-\cresc ( a8 b8 c8 d8 e8 ) | % 22
+    f8 c8 ( -\p d8 e8 f8 g8 a8 b8 ) | % 23
+    c8 ( b8 a8 -\cresc g8 f8 e8 d4 ) ~ | % 24
+    d4 e4 -\p \afterGrace f2 \startTrillSpan { e32( \stopTrillSpan f) } | % 25
+    g4.-\cresc ( a8 f8 e8 d8 c8 ) | % 26
+    b4 ( -\p c2 b4 ) | % 27
+    c2 r4 \bar "|."
+}
+
+HornII = \transpose f c' \relative c'' {
+    \settings \key f \major r4 | % 1
+    R1 | % 2
+    r2 r4 c4 ( -\p | % 3
+    d4 c4 bf4 a4 ) | % 4
+    g4. g8 a4 a4 ( | % 5
+    g4-\cresc a4 bf4 c4 ) | % 6
+    d4. d8 c2 ~ | % 7
+    c1 ~ | % 8
+    c2. f,4 ( -\p | % 9
+    gf4 g4-\cresc af4 a4 ) | \barNumberCheck #10
+    bf4. ( -\p a8 ) bf4 r4 | % 11
+    r4 c4 c,2 ~ | % 12
+    c2. ( e4 ) | % 13
+    f4 ( a4 g4 bf4 ) | % 14
+    a8-\cresc ( bf8 c8 bf8 ) d8 ( e8 ) f4 ~ | % 15
+    f4 c2 ( -\p d4 ) | % 16
+    c2. g8. ( f32 e32 ) | % 17
+    f8 ( g8 a8 bf8 ) a4 ( g4 ) | % 18
+    d'4 ( -\fp c4 ) g2 | % 19
+    a8 ( g8 f8 e8 ) c'4 ( d4 ) | \barNumberCheck #20
+    g,4 ( -\fp a4 ) e4. ( d16 c16 ) | % 21
+    c8 ( d8 e8-\cresc f8 g8 a8 bf8 c8 ) | % 22
+    d4-\p ( c4 ) bf4 r4 | % 23
+    r4 f'8 ( -\cresc e8 d8 c8 bf8 a8 | % 24
+    g8 ) c8 ( -\p bf8 a8 g8 f8 e8 d8 ) | % 25
+    c8 ( d8-\cresc e8 f8 g8 a8 bf4 ) ~ | % 26
+    bf4 -\p a4 \afterGrace g2 \startTrillSpan { f32( \stopTrillSpan g) } | % 27
+    f2 r4 \bar "|."
+}
+
+Bassoon = \relative e' {
+    \settings \key c \major e8 -. -\p g,8 -. | % 1
+    f'8 -. g,8 -. e'8 -. g,8 -. b8 -. g8 -. c8 -. g8 -. | % 2
+    d'8 -. a8 -. b8 -. g8 -. c8 ( b8 a8 g8 ) | % 3
+    f8 ( e8 f8-\cresc g8 a8 b8 c8 fs,8 ) | % 4
+    g8-\f ( f?8 e8 d8 ) c8-\! -\p c'8 ( b8 c8 ) | % 5
+    f,8 -. c'8 -. g8 -. c8 -. a8 -. c8 -. e,8 -. c'8 -. | % 6
+    f,8 ( a8 c8 f8 ) e8 ( g,8 ef'8 g,8 ) | % 7
+    d'8 ( g,8 b8-\cresc g8 c8 g8 fs'8 g,8 ) | % 8
+    g'8-\! -\p g,8 ( b8 c8 ) b8 ( g8 ) e8 ( c8 ) | % 9
+    f?8 ( e8 f8 af8 g8 fs8 g8 bf8 ) | \barNumberCheck #10
+    a?8 ( f?8 c'8 bf8 a8 c8 ) f,8 -. f'8 -. | % 11
+    e8 ( d8 cs8 a8 ) d8 ( c8 b8 g8 ) | % 12
+    c8-\cresc ( d8 e8 f8 g4. f8 ) -\p | % 13
+    e8 ( g,8 ) c8 ( g8 ) f'8 ( g,8 ) d'8 ( g,8 ) | % 14
+    c8-\cresc ( d8 e8 d8 f8 g8 a8 f8 ) | % 15
+    e8 ( d8 c8 -\p b8 c8 b8 a8 f8 ) | % 16
+    f'8 ( d8 ) e8 ( c8 ) d8 ( a8 ) b8 ( g8 ) | % 17
+    c4 ( f,4 ) g8 -! e'8 ( f8 d8 ) | % 18
+    c8 ( b8 c8 a8 ) fs8 -! fs'8 ( e8 d8 ) | % 19
+    g4 g,4 c4 f,4 | \barNumberCheck #20
+    g8 ( f8 e8 c8 ) g'8 -! d'8 ( g8 f8 ) | % 21
+    e2-\cresc d4 c4 | % 22
+    f4 -\p e4 d8 ( e8 f8 g8 | % 23
+    a2 ) r4 d,8 ( -\f c8 ) | % 24
+    b4 ( -\p c4 d4 ) d,4 | % 25
+    e2-\cresc ( f2 ) | % 26
+    g4 -\p a4 f4 g4 | % 27
+    c,2 r4 \bar "|."
+}
