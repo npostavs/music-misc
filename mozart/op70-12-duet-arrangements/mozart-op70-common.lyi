@@ -1,0 +1,43 @@
+\language "english"
+
+conEspress = \markup { \italic "con espressione" }
+calando = \markup { \italic "calando" }
+atempo = \markup { \italic "a tempo" }
+simile = \markup { \italic "simile" }
+dolce = \markup { \italic "dolce" }
+staccatto = \markup { \italic "staccatto" }
+rall = \markup { \italic "rall" }
+pocoDim = \markup { \italic "poco dim." }
+pocoMarc = \markup { \italic "poco marcato" }
+fermataMark = \mark \markup { \musicglyph "scripts.ufermata" }
+twice =
+#(define-music-function
+     (notes)
+     (ly:music?)
+   #{
+     \repeat unfold 2 { #notes }
+   #})
+triplet =
+#(define-music-function
+      (notes)
+     (ly:music?)
+   #{
+     \tuplet 3/2 { #notes }
+   #})
+
+subdivSixtyFourths = {
+    \set baseMoment = #(ly:make-moment 1/16)
+    \set beatStructure = 2,2,2,2
+}
+subdivThirtySeconds = {
+    \set baseMoment = #(ly:make-moment 1/8)
+    \set beatStructure = 2,2
+}
+
+lessSpace = \with {
+            \override VerticalAxisGroup.staff-staff-spacing =
+            #'((basic-distance . 0)
+               (minimum-distance . 2)
+               (padding . 2)
+               (stretchability . 10))
+}
