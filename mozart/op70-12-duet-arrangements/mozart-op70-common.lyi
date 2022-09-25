@@ -1,5 +1,55 @@
 \language "english"
 
+\layout {
+    \context { \Score
+        \override DynamicTextSpanner.style = #'none
+        skipBars = ##t
+        \tupletSpan 4
+        \override TupletBracket.bracket-visibility = ##f
+    }
+}
+
+\header {
+    composer = "W.A. Mozart"
+    title = "12 Duos pour 2 Violons"
+    subtitle = "Cahier 1 (No.1 - 4)"
+    tagline = ##f
+}
+
+\paper {
+    oddHeaderMarkup = \markup \fill-line {
+        " " % \on-the-fly #first-page \teeny \box \pad-to-box #'(-1 . 7) #'(10 . 1.5) { \fromproperty #'header:instrument }
+        \on-the-fly #not-first-page \tiny \italic \concat {
+          \fromproperty #'header:duoNo ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string }
+    evenHeaderMarkup = \markup \fill-line {
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+        \on-the-fly #not-first-page \tiny \italic \concat {
+          \fromproperty #'header:title ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
+        " " }
+    bookTitleMarkup = \markup {
+        \fill-line { \large \bold \fromproperty #'header:duoNo }
+    }
+    ragged-last-bottom = ##f
+    ragged-bottom = ##f
+}
+
+pageOneBookTitleMarkup = \markup {
+  \column {
+    \column {
+      \fill-line { \teeny \box \pad-to-box #'(-1 . 7) #'(-0.5 . 1.5) { \fromproperty #'header:instrument }
+                   \large \bold \fromproperty #'header:title
+                   " " }
+      % \fill-line { \large \bold \fromproperty #'header:subtitle }
+      % \fill-line { \smaller \bold \fromproperty #'header:subsubtitle }
+      \fill-line {
+        \fromproperty #'header:poet
+        { \italic \fromproperty #'header:subtitle }
+        \fromproperty #'header:composer }
+    }
+  }
+}
+
 conEspress = \markup { \italic "con espressione" }
 calando = \markup { \italic "calando" }
 atempo = \markup { \italic "a tempo" }
@@ -10,6 +60,15 @@ rall = \markup { \italic "rall" }
 pocoDim = \markup { \italic "poco dim." }
 pocoMarc = \markup { \italic "poco marcato" }
 fermataMark = \mark \markup { \musicglyph "scripts.ufermata" }
+
+smolNote =
+#(define-music-function
+     (notes)
+     (ly:music?)
+   #{
+     \tweak font-size -2 #notes
+   #})
+
 twice =
 #(define-music-function
      (notes)

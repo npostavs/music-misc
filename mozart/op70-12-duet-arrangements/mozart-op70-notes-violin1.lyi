@@ -1,6 +1,8 @@
 \include "mozart-op70-common.lyi"
 
 DuoI_MvI_VlnI = \relative c' {
+  % Violin 2 doesn't have two endings, use alt numbering to keep numbers consistent.
+  \set Score.alternativeNumberingStyle = #'numbers-with-letters
   \repeat volta 2 {
     \key bf \major \time 4/4 % 1
     bf'='2-\p d | % 2
@@ -94,132 +96,132 @@ DuoI_MvI_VlnI = \relative c' {
   }
   \alternative {
     { bf2->( a16) g'( ef f d16 ef c d) | } % 73
-    { bf2->( a8-\<) c( f af | } % 74
+    { bf2->( a8-\<) c( f af | } % 73b
   }
-  c8-\!) r c2-\mp bf4 | \barNumberCheck #75
-  \appoggiatura { af16 bf c } bf4( af) r8 af( c af) | % 76
-  af8( g) f2( e4) | % 77
+  c8-\!) r c2-\mp bf4 | \barNumberCheck #74
+  \appoggiatura { af16 bf c } bf4( af) r8 af( c af) | % 75
+  af8( g) f2( e4) | % 76
   % page 2, line 6
-  g4( f ~ f16)-\< c'='''( b c df16 c bf af) | % 78
-  g8-\mf( df') c16( bf af g) f8\(( e bf') e,=''-.\) | % 79
-  f8-. c-\p( af g) f8( c af' f) | % 80
-  d?8( f b f) d8( c b d) | % 81
-  ef?8( g ef c) ef8( g b c) | % 82
+  g4( f ~ f16)-\< c'='''( b c df16 c bf af) | % 77
+  g8-\mf( df') c16( bf af g) f8\(( e bf') e,=''-.\) | % 78
+  f8-. c-\p( af g) f8( c af' f) | % 79
+  d?8( f b f) d8( c b d) | % 80
+  ef?8( g ef c) ef8( g b c) | % 81
   % page 2, line 7
-  c8( a? fs ef) d8( c bf? a) | % 83
-  g8-.-\cresc d'( ef? d) cs8-. e( f e) | % 84
-  d8( f d f) d8( bf d bf) | % 85
+  c8( a? fs ef) d8( c bf? a) | % 82
+  g8-.-\cresc d'( ef? d) cs8-. e( f e) | % 83
+  d8( f d f) d8( bf d bf) | % 84
   \mark "E"
-  a16-\f e'='-\> e' d cs16-\mp e cs e \repeat unfold 4 { cs16 e } | % 86
+  a16-\f e'='-\> e' d cs16-\mp e cs e \repeat unfold 4 { cs16 e } | % 85
   % page 2, line 8 (-5)
-  << { s4 s4-\f s2 } \repeat unfold 4 { cs16 e cs e } >> | % 87
-  <d fs>8 r ef'='''->-\mp( d) ef->( d) ef->( d) | % 88
-  c8 r ef,,='8->-\f( d) ef->( d) ef->( d) | % 89
-  g16-\> b d c bf16-\mp d bf d \repeat tremolo 4 { b16 d } | % 90
+  << { s4 s4-\f s2 } \repeat unfold 4 { cs16 e cs e } >> | % 86
+  <d fs>8 r ef'='''->-\mp( d) ef->( d) ef->( d) | % 87
+  c8 r ef,,='8->-\f( d) ef->( d) ef->( d) | % 88
+  g16-\> b d c bf16-\mp d bf d \repeat tremolo 4 { b16 d } | % 89
   % page 3, line 9 (-4)
-  \repeat tremolo 4 { b16 d-\f }   \repeat tremolo 4 { b16 d } | % 91
-  <c e>8 r df'='''->-\mp( c) df->( c) df->( c) | % 92
-  bf8 r df,,='->-\f( c) df->( c) df->( c) | % 93
-  f16-\> a c bf a16-\mp c a c \repeat tremolo 4 { a16 c } | % 94
-  \repeat tremolo 4 { a16 c-\f } \repeat tremolo 4 { a16 c } | % 95
+  \repeat tremolo 4 { b16 d-\f }   \repeat tremolo 4 { b16 d } | % 90
+  <c e>8 r df'='''->-\mp( c) df->( c) df->( c) | % 91
+  bf8 r df,,='->-\f( c) df->( c) df->( c) | % 92
+  f16-\> a c bf a16-\mp c a c \repeat tremolo 4 { a16 c } | % 93
+  \repeat tremolo 4 { a16 c-\f } \repeat tremolo 4 { a16 c } | % 94
   % page 3, line 10 (-3)
-  d?16   bf( c bf a16 bf c bf) d->-\cresc bf( cf bf a16 bf cf bf) | % 96
-  ef16-> bf( c bf a16 bf c bf) e->        bf( cf bf a16 bf cf bf) | % 97
-  <a f'>8-\ff r r4 r16 bf'=''-\mf( a bf a16 bf c bf) | % 98
+  d?16   bf( c bf a16 bf c bf) d->-\cresc bf( cf bf a16 bf cf bf) | % 95
+  ef16-> bf( c bf a16 bf c bf) e->        bf( cf bf a16 bf cf bf) | % 96
+  <a f'>8-\ff r r4 r16 bf'=''-\mf( a bf a16 bf c bf) | % 97
   % page 3, line 11 (-2)
-  a8 r r4 r16 bf,16-\p( a bf a16 bf c bf) | % 99
-  a8 r r4 r16 a( gs a bf16-\cresc a gs a) | % 100
-  ef'8-\! r r4 r16 f( e f g16 f e f) | % 101
-  c16( d bf c a16 c bf d) c16( d bf c a16 c bf d) | % 102
+  a8 r r4 r16 bf,16-\p( a bf a16 bf c bf) | % 98
+  a8 r r4 r16 a( gs a bf16-\cresc a gs a) | % 99
+  ef'8-\! r r4 r16 f( e f g16 f e f) | % 100
+  c16( d bf c a16 c bf d) c16( d bf c a16 c bf d) | % 101
   % page 3, line 12 (-1)
   c8-.-\calando( bf-. a-. g-.) f8-.(-\> ef-. d-. c-.) | % 103 
   \mark "F"
-  bf'='2-\p-\atempo d | % 104
-  ef16( f ef d) c4 r2 | % 105
-  ef16\(( f ef d c8) c-.\) c4.( d16 ef) | % 106
-  f16( g f ef) d4 r2 | % 107
+  bf'='2-\p-\atempo d | % 103
+  ef16( f ef d) c4 r2 | % 104
+  ef16\(( f ef d c8) c-.\) c4.( d16 ef) | % 105
+  f16( g f ef) d4 r2 | % 106
   % page 4, line 1
-  f=''2 g4.(-\turn a8) | % 108
-  bf4.(-\turn d8) f,2 ~ | % 109
-  f8 f\(( g) f--\) f(\< ef?) d-- c---\! | % 110
-  bf4 r r8 f-\f d bf | % 111
-  c2 r8 f ef c | % 112
-  bf16 f' ef d ef16 f g a bf16 c d ef f16 g a bf | % 113
+  f=''2 g4.(-\turn a8) | % 107
+  bf4.(-\turn d8) f,2 ~ | % 108
+  f8 f\(( g) f--\) f(\< ef?) d-- c---\! | % 109
+  bf4 r r8 f-\f d bf | % 110
+  c2 r8 f ef c | % 111
+  bf16 f' ef d ef16 f g a bf16 c d ef f16 g a bf | % 112
   % page 4, line 2
-  c16 bf a g fs16 ef d cs c16 bf a g fs16 ef d c | % 114
-  bf4 r r8 bf'-. g-. d-. | % 115
-  <bf f'>4 r r8 d' bf-\> f' | % 116
-  ef16-\mf( f g f ef16 d c b) d16( c ef d f16 ef g f) | % 117
+  c16 bf a g fs16 ef d cs c16 bf a g fs16 ef d c | % 113
+  bf4 r r8 bf'-. g-. d-. | % 114
+  <bf f'>4 r r8 d' bf-\> f' | % 115
+  ef16-\mf( f g f ef16 d c b) d16( c ef d f16 ef g f) | % 116
   % page 4, line 3
-  ef16-\p( f g f ef16 d c b) d16(-\< c ef d f16 ef g f) | % 118
-  a8\(-\>( g16-\!) r f8( ef16)\) r d8-\<( c4 \afterGrace bf8)-\trill ({ a16 bf) } | % 119
-  a8-.-\f c-. f-.-\cresc a-. c4 \afterGrace ef,=''-\trill ({ d16 ef) } | % 120
-  d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | % 121
+  ef16-\p( f g f ef16 d c b) d16(-\< c ef d f16 ef g f) | % 117
+  a8\(-\>( g16-\!) r f8( ef16)\) r d8-\<( c4 \afterGrace bf8)-\trill ({ a16 bf) } | % 118
+  a8-.-\f c-. f-.-\cresc a-. c4 \afterGrace ef,=''-\trill ({ d16 ef) } | % 119
+  d8-. f-. bf-. d-. f4 \afterGrace bf,,='-\trill ({ a16 bf) } | % 120
   % page 4, line 4
-  << { s4-\ff s4 s2 } \repeat unfold 2 { a16 c f a bf,16 d f bf } >> | % 122
+  << { s4-\ff s4 s2 } \repeat unfold 2 { a16 c f a bf,16 d f bf } >> | % 121
   \mark "G"
-  a16 f c f a,16 c f a f16 f,-.-\p([ g-. a-.] bf16-. c-. d-. ef-. | % 123
-  f8.--) d16( bf'8. f16 d'8.) a16( bf8. f16 | % 124
-  af8.-> g16) g4.-- g8(-. g-. g-.) | % 125
+  a16 f c f a,16 c f a f16 f,-.-\p([ g-. a-.] bf16-. c-. d-. ef-. | % 122
+  f8.--) d16( bf'8. f16 d'8.) a16( bf8. f16 | % 123
+  af8.-> g16) g4.-- g8(-. g-. g-.) | % 124
   % page 4, line 5
-  g8.( c16) g4. ef8( f g) | % 126
-  \appoggiatura { f16 g a } g8.->( f16) f4.-- f8(-. f-. f-.) | % 127
-  f8.(-\turn bf16 f4.) f,8(-\< bf d) | % 128
-  f8(-\> ef-\!) r4 f,8 d'([-\< f a]) | % 129
-  d8(-\> c-\!) r4 d,,='8 bf'([-\< d f-\!]) | % 130
-  bf8( a) a( g) g8-\<( f) f( e)-\! | % 131
-  f4 r r2 | % 132
+  g8.( c16) g4. ef8( f g) | % 125
+  \appoggiatura { f16 g a } g8.->( f16) f4.-- f8(-. f-. f-.) | % 126
+  f8.(-\turn bf16 f4.) f,8(-\< bf d) | % 127
+  f8(-\> ef-\!) r4 f,8 d'([-\< f a]) | % 128
+  d8(-\> c-\!) r4 d,,='8 bf'([-\< d f-\!]) | % 129
+  bf8( a) a( g) g8-\<( f) f( e)-\! | % 130
+  f4 r r2 | % 131
   % page 4 line 6
-  a,,=8-\f-. bf-. c-. d-. ef4 \afterGrace a,4-\trill ({ g16 a)}  | % 133
-  bf4 r r2 | % 134
-  e8-. f-. g-. a-. bf4 \afterGrace e, ({d8 e)} | % 135
-  f16-\cresc g f e f16 c a' f bf16 c bf a bf16 f d' bf | % 136
-  f'4-. <a,,= f'>8.-\ff( q16-.) q4 r | % 137
+  a,,=8-\f-. bf-. c-. d-. ef4 \afterGrace a,4-\trill ({ g16 a)}  | % 132
+  bf4 r r2 | % 133
+  e8-. f-. g-. a-. bf4 \afterGrace e, ({d8 e)} | % 134
+  f16-\cresc g f e f16 c a' f bf16 c bf a bf16 f d' bf | % 135
+  f'4-. <a,,= f'>8.-\ff( q16-.) q4 r | % 136
   \mark "H"
-  f'='4(-\p ~ f8. ef16) d8(-. r g-.) r | % 138
+  f'='4(-\p ~ f8. ef16) d8(-. r g-.) r | % 137
   % page 4, line 7
-  c,='8-.( r f-.) r ef4( d) | % 139
-  c4.( g'16 f) f8(-. r bf,-.) r | % 140
-  ef8.( f16) d8.( ef16) d4( c8) r | % 141
-  f'=''4( ~ f8. ef16-.) d8-.( r g-.) r | % 142
-  c,=''8-.( r f8-.) r ef4( d) | % 143
-  ef8.(-\turn-\< f16) g8-- g-- g4.-\>( f16 ef)-\! | % 144
+  c,='8-.( r f-.) r ef4( d) | % 138
+  c4.( g'16 f) f8(-. r bf,-.) r | % 139
+  ef8.( f16) d8.( ef16) d4( c8) r | % 140
+  f'=''4( ~ f8. ef16-.) d8-.( r g-.) r | % 141
+  c,=''8-.( r f8-.) r ef4( d) | % 142
+  ef8.(-\turn-\< f16) g8-- g-- g4.-\>( f16 ef)-\! | % 143
   % page 4, line 8 (-5)
-  d8-.( r g-.) r f4( ef8) r | % 145
-  d8.(-\<-\turn ef16) f8-- f-- f4.-\>( ef16 d)-\! | % 146
-  c8-.( r f-.) r ef4( d8) r | % 147
-  df4.->( ef16 df) c8-.( r f-.) r | % 148
-  df4(-> ef16 df c df) c4.-\< \afterGrace d8(-\trill { c16 d } | % 149
-  ef8) r d-. r g4-\! f16( ef d c) | % 150
+  d8-.( r g-.) r f4( ef8) r | % 144
+  d8.(-\<-\turn ef16) f8-- f-- f4.-\>( ef16 d)-\! | % 145
+  c8-.( r f-.) r ef4( d8) r | % 146
+  df4.->( ef16 df) c8-.( r f-.) r | % 147
+  df4(-> ef16 df c df) c4.-\< \afterGrace d8(-\trill { c16 d } | % 148
+  ef8) r d-. r g4-\! f16( ef d c) | % 149
   % page 4, line 9 (-4)
-  f8.-\>( d16) ef8.( c16) bf4-\! \afterGrace c-\trill ({ bf16 c)} | % 151
+  f8.-\>( d16) ef8.( c16) bf4-\! \afterGrace c-\trill ({ bf16 c)} | % 150
   \mark "I"
-  bf8 r ef-.-\f d-. c8(-\prall bf) g'-. f-. | % 152
-  bf4   ef,8-.  d-. c8(-\prall bf) g'-. f-. | % 153
-  \repeat unfold 2 { bf8( a) g(-\prall f) } | % 154
-  f8-\dim( e) ef2 d4( ~ | % 155
-  d16 c ef d) f16( ef d c) bf4-\p \afterGrace a-\trill ({g16 a)} | % 156
+  bf8 r ef-.-\f d-. c8(-\prall bf) g'-. f-. | % 151
+  bf4   ef,8-.  d-. c8(-\prall bf) g'-. f-. | % 152
+  \repeat unfold 2 { bf8( a) g(-\prall f) } | % 153
+  f8-\dim( e) ef2 d4( ~ | % 154
+  d16 c ef d) f16( ef d c) bf4-\p \afterGrace a-\trill ({g16 a)} | % 155
   % page 4, line 10 (-3)
-  bf16 bf-\f( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 157
-  d,16 bf'  ( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 158
-  \repeat unfold 2 { g16 bf f bf ef,16 bf' d, bf' } | % 159
+  bf16 bf-\f( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 156
+  d,16 bf'  ( a bf) g16 bf f bf \repeat unfold 2 { ef,16 bf' d, bf' } | % 157
+  \repeat unfold 2 { g16 bf f bf ef,16 bf' d, bf' } | % 158
   % page 4, line 11 (-2)
-  c,='4 <g' e'> r g' | % 160
-  a16( bf c d ef16 d ef d) ef( d c bf a16 g f ef | % 161
-  d16) bf(-\> a bf c16 bf a bf) g4-\mp( ef) | % 162
-  d8 r ef r f r a r | % 163
-  bf4.-\f( f'8) d4.( f8) | % 164
+  c,='4 <g' e'> r g' | % 159
+  a16( bf c d ef16 d ef d) ef( d c bf a16 g f ef | % 160
+  d16) bf(-\> a bf c16 bf a bf) g4-\mp( ef) | % 161
+  d8 r ef r f r a r | % 162
+  bf4.-\f( f'8) d4.( f8) | % 163
   % page 4, line 12 (-1)
-  ef4.( g8) c,4.( ef8 | % 165
-  d16) f( d bf af4 ~ af16) f'( d bf af4 ~ | % 166
-  af16) g( bf ef g4.) f16\(( ef) d16( c) bf( a)\) | % 167
-  bf8 r c4-\p( d8) r ef8.->( a,16 | % 168
-  bf8) r c4( d8) r ef16( d ef a,) | % 169
+  ef4.( g8) c,4.( ef8 | % 164
+  d16) f( d bf af4 ~ af16) f'( d bf af4 ~ | % 165
+  af16) g( bf ef g4.) f16\(( ef) d16( c) bf( a)\) | % 166
+  bf8 r c4-\p( d8) r ef8.->( a,16 | % 167
+  bf8) r c4( d8) r ef16( d ef a,) | % 168
   % page 5, line 1
-  bf16-. bf'-\f( d bf) f16-. bf-. d,-. f-. bf,( d) f-. d-. ef16( c) a'-. f-. | % 170
-  bf4 ef,16( d c bf) f'8-. f-. f-. f-. | % 171
-  bf16( f d f) bf8-.( d-.) bf16( f d f) bf8-.( d-.) | % 172
-  bf4 bf,,=8.( bf16-.) bf4 r \bar "|." \barNumberCheck #173
+  bf16-. bf'-\f( d bf) f16-. bf-. d,-. f-. bf,( d) f-. d-. ef16( c) a'-. f-. | % 169
+  bf4 ef,16( d c bf) f'8-. f-. f-. f-. | % 170
+  bf16( f d f) bf8-.( d-.) bf16( f d f) bf8-.( d-.) | % 171
+  bf4 bf,,=8.( bf16-.) bf4 r \bar "|." \barNumberCheck #172
 }
 
 DuoI_MvII_VlnI = \relative c' {
