@@ -88,6 +88,10 @@ DuoI_MvI_VlnII = \relative c' {
     ef16) d( f bf d4.) c16\(( bf) a16( g) f( e) | % 71
     f8\) r g4-\p( a8) r bf8.->( e,16) | % 72
     e2->( f8) r r4 | % 73
+    \tag #'score {
+        e2->( f8) r r4 | % 73b
+        \set Score.currentBarNumber = #73
+    }
   }
 
   \allowPageTurn
