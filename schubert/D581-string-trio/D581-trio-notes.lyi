@@ -685,8 +685,30 @@ MvII_Cello =  \relative f' {
 
 %%% Movement III
 
-MvIII_Markings = {\time 3/4 \partial 4 s4 | \tempo "Allegretto" s2.*38 \break \tempo "Trio" s2.*29 |
-                   s4_\markup{"Menuetto da capo"} s4 \bar "||" }
+MvIII_Markings = {
+    \time 3/4 \partial 4
+    \repeat volta 2 {
+        s4 | \tempo "Allegretto"
+        s2.*11 s2
+    } \repeat volta 2 {
+        s4 s2.*25 s2
+    }
+    s4
+    \break
+    \tempo "Trio" s2. |
+    \repeat volta 2 { \repeat volta 2 {
+        s2.*7
+    } \alternative {
+        { s2. }
+        { s2. }
+    }
+        s2.*18
+    } \alternative {
+        { s2. }
+        { s2_\markup{"Menuetto da capo"} \bar "||" }
+    }
+    s4
+}
 
 MvIII_Violin =  \relative d'' {
     \defaults
@@ -826,16 +848,19 @@ MvIII_Viola =  \relative bf' {
     r4 |
     \time 3/4  \key ef \major r4 r4 -\markup{ \bold\tiny {Solo} } bf'4 ~ -> | \barNumberCheck #40
     \repeat volta 2 {
-        bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 41
-        bf8 ( af8 ) d,4 -. d4 -. | % 42
-        ef8 ( bf8 g8 bf8 ef8 fs8 ) | % 43
-        g8 ( bf8 ef8 c8 ) bf4-> ~ | % 44
-        bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 45
-        bf8 ( af8 ) d,4 -. d4 -. | \oBreak % 46
-        ef8 -. g'8 ( f8 ef8 d8 c8 ) | % 47
-        bf4 r4 bf4 -> } |
-    \repeat volta 2 {
-        b2. ~ | % 49
+        \repeat volta 2 {
+            bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 41
+            bf8 ( af8 ) d,4 -. d4 -. | % 42
+            ef8 ( bf8 g8 bf8 ef8 fs8 ) | % 43
+            g8 ( bf8 ef8 c8 ) bf4-> ~ | % 44
+            bf8 ( c8 ) \acciaccatura g8 f8 ( e8 f8 g8 ) | % 45
+            bf8 ( af8 ) d,4 -. d4 -. | \oBreak % 46
+            ef8 -. g'8 ( f8 ef8 d8 c8 ) | % 47
+        }
+        \alternative {
+          { bf4 r4 bf4 -> | }
+          { b2. ~ | } % 49
+        }
         b8 ( c8 ef8 d8 c4 ) | \barNumberCheck #50
         b2. | % 51
         bf8 ( c8 g'8 ef8 c4 ) | % 52
@@ -854,9 +879,12 @@ MvIII_Viola =  \relative bf' {
         g8 ( bf8 f'8 ef8 ) ef4 ~ -> | % 65
         ef8 ( b8 c8 g8 af8 c8 ) | % 66
         ef,8 ( d8 ) d8 ( cf'8 bf8 d,8 ) | % 67
-        ef8 -. g'8 ( f8 ef8 d8 c8 ) }
-    | % 68
-    ef,4 r4 \key bf \major s8
+    }
+    \alternative {
+        { ef8 -. g'8 ( f8 ef8 d8 c8 ) | } % 68
+        { ef,4 r4 }
+    }
+    \key bf \major s8
 }
 
 MvIII_Cello =  \relative bf' {
