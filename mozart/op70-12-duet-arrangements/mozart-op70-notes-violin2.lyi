@@ -249,8 +249,8 @@ DuoI_MvII_VlnII = \relative c' {
     % page 4, line 4
     bf4.-\<-\turn( g'8-\!) g4.( af?16 f) | % 14
     \appoggiatura { e16 f g } f4(-\> ef-\!) 
-    \tuplet 3/2 { c8\(( ef d \acciaccatura {f} ef) d-. c-.\) | % 15
-                  bf8\(( c b \acciaccatura {d} c-\>) bf-. af-.\)
+    \tuplet 3/2 { c8( ef d \acciaccatura {f} ef) d-. c-. | % 15
+                  bf8( c b \acciaccatura {d} c-\>) bf-. af-.
     } g8 \appoggiatura bf af-\f r f-\p | % 16
     f4( ef)
   } r16 bf-\f bf bf r16 bf bf bf | % 17
@@ -280,8 +280,8 @@ DuoI_MvII_VlnII = \relative c' {
   % page 4, line 10 (-3)
   bf4.-\<-\turn( g'8-\!) g4.( af?16 f) | % 36
   \appoggiatura { e16 f g } f4(-\> ef-\!) 
-  \tuplet 3/2 { c8 \(( ef d \acciaccatura {f} ef) d-. c-.\) | % 37
-                bf8\(( c b \acciaccatura {d} c-\<) bf-. af-.\)
+  \tuplet 3/2 { c8 ( ef d \acciaccatura {f} ef) d-. c-. | % 37
+                bf8( c b \acciaccatura {d} c-\<) bf-. af-.
   } g8 \appoggiatura bf af-\f r f-\p | % 45
   ef4 r bf=---\f bf-- | % 46
   d4-- r d-- d-- | % 47

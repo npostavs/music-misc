@@ -180,282 +180,235 @@ DuoI_MvII_Vla = \relative c' {
     \key ef \major \time 4/4 % 1
   \repeat volta 2 {
     % page 5, line 2
-    \partial 2 bf'='4-\p( \appoggiatura a8 bf4) | % 2
-    bf4.(-\< g'8-\!) g4.( af16 f) | % 3
-    \appoggiatura { e16 f g } f4(-\> ef-\!) ef8.\(( d32 ef f16) ef-- d-- c--\) | % 4
-    bf8.( g16) ef'8.( bf16) g'8.( ef16) bf8.( g16) | % 5
-    bf8.->( g16 f4) \tuplet 3/2 
-    { r8 af( f d bf af) | % 6
-      % page 5, line 3
-      g-. bf-. ef-. g,-. bf-. ef-. bf8-. ef-. g-. bf,-. d-. af'-. | % 7                                  
-      b,8  d af' g ef c af8 c ef af, c ef | % 8
-      g,8 bf ef af, c ef bf8 ef bf d bf af | % 9
-    }
-    af4( g)
+    \partial 2 r2 | % 2
+    g'4.-\p( ef8) ef4.-\f( d16 af') |
+    \grace { g16( af bf } af4)( g4) r2 |
+    R1*2 |
+    g4.-\p( ef8) ef4.-\f( d16 af') |
+    \grace { g16( af bf } af4)( g4) r2 |
+    r2 bf,4-\p bf |
+    bf2
   } \repeat volta 2 {
-    \tuplet 3/2 { bf=8-\<-. ef-. g-. bf-.( ef-. g-.) } | % 10
-    % page 5, line 4
-    bf4.-\f-\<( d,8) f16-\p( ef g f af16 g bf af) | % 11
-    g4( f8) r \tuplet 3/2 { bf,,=-.-\< ef-. g-. bf-.( ef-. g-.) } | % 12
-    bf4.-\f( d,8) ef8.-\p(-\turn f16 g8.-\turn af16) | % 13
-    g4( f8) r r2 | % 14
-    \tuplet 3/2 { 
-      g,,=8  bf ef g, bf ef bf8 ef g bf, d af' | % 15
-      % page 5, line 5
-      b,8 d af' g ef c af8 c ef af, c ef | % 16
-      g,8 bf ef af,-\< c ef 
-    } <bf= ef>8 <bf d>-\f r af-\p | % 17
-    af4( g)
-  } <g ef'>4-\f q8.-.( q16-.) | % 18
-  << { f'='8.( d16) } \\ af4 >> <g ef'>4 <bf g'> q8.(-. q16-.) | % 19
-  << { af'8.( f16) } \\ bf,4 >> <bf g'>4-\> bf'='4-\mp ~ bf16 c( d ef) | % 20
-  % page 5, line 6
-  d16( c ef c) c16(-\dim bf ef bf) bf16( af c af) af16( g bf g) | % 21
-  af16(-\p g f g f16) af(-\< g f-\!) r16 bf,=-\f bf bf r bf bf bf | % 22
-  \repeat unfold 2 { r16 bf bf bf } \repeat unfold 2 { r16 ef ef ef } | % 23
-  % page 5, line 7
-  r16 <b d> q q r16 <c ef>-\> q q g16(-\mp bf ef bf) a16( c ef c) | % 24
-  <bf d>16( ef f-\dim g) f16( ef d c) bf16( c cs d) d16( c bf a) | % 25
-  a4-\pp( bf8) r8 bf'='8.(-\turn c32-\< df c16 bf af? g) | % 26
-  f8(-\f e) g'4.( f16 e) df16( c8 bf16) | % 27
-  % page 5, line 8 (-5)
-  c8\( \afterGrace bf-\trill ({ af16 bf)}  af4-\> ~ af16\) af-\p(-\turn bf c bf16 af g f) | % 28
-  ef16( d) c'=''(-\< bf) f16( ef) c'( bf) g16( f) c'( bf) af16( g) c( bf) | % 29
-  af8-\>\( \afterGrace g-\trill ({f16 g)} f4.\) f'8-\<( ef16 d c bf) | % 30
-  a8.-\f( ef'16) ef4( ~ ef8.-\turn f16) g8.(-\turn a16) | % 31
-  % page 5, line 9 (-4)
-  a8( c16 bf) bf4-\fermata \mark "K" bf,='4-\p( \appoggiatura a8 bf4) | % 32
-    bf4.(-\< g'8-\!) g4.( af16 f) | % 33
-    \appoggiatura { e16 f g } f4(-\> ef-\!) ef8.\(( d32 ef f16) ef-- d-- c--\) | % 34
-    bf8.( g16) ef'8.( bf16) g'8.( ef16) bf8.( g16) | % 35
-    bf8.->( g16 f4) \tuplet 3/2 
-    { r8 af( f d bf af) | % 36
-      % page 5, line 10 (-3)
-      g bf ef g, bf ef bf8 ef g bf, d af' | % 37 
-      b,8  d af' g ef c af8 c ef af, c ef | % 38
-      g,8 bf ef af,-\< c ef } <bf ef>8 <bf d>-\f r8 af-\p | % 39
-    g4 r <g ef'>4-\f-- q-- | % 40
-    <bf f'>4-- r q-- q-- | % 41
-    % page 5, line 11 (-2)
-    <bf g'>4 r g''=''8(-\p af16) r f8( d16) r | % 42
-    d8( ef16) r ef8( c16) r bf8( g16) r f8( bf16) r | % 43
-    af4( g8) r <g,= ef'>4-\f-- q-- | % 44
-    <bf f'>4-- r q-- q-- | % 45
-    <bf g'>4-- r r16 g''=''-\p-. g( af) r16 f-. f( d) | % 46
-    % page 6, line 10 (-1)
-    r16 d-. d( ef) r16 ef-. ef( c) r16 bf-. bf( g) r16 af-. af( f) | % 47
-    g4\(-\< r8. ef'16\)-- d8(-\mf c' bf d,) | % 48
-    f8\(( ef) r8. ef,16\)-\p d8( c' bf d,) | % 49
-    ef8 r g-\pp r ef r r4 \bar "|."
+    r2 |
+    bf'2-\f ~ bf4. r16 c-\p |
+    g4( f8) r r2 |
+    bf2-\f ~ bf4. r16 c-\p |
+    g4( f8) r r2 |
+    g4.-\p( ef8) ef4.-\f( d16 af') |
+    \grace { g16( af bf } af4)( g4) r2 |
+    r2 bf4-\f r8 bf-\p |
+    bf2
+  } ef4-\p ef |
+  bf4( ef) ef ef |
+  bf4( ef) g ef |
+  % page 164, line 1
+  af4 g f ef |
+  bf2 ef4-\f ef, |
+  bf'4 ef ef, ef' |
+  % line 2
+  bf4( ef) g,( a) |
+  bf4 ef f f, |
+  bf2 r 2 |
+  % line 3
+  c4 c' c c, |
+  f,4 f' f,( af) |
+  bf4 bf bf bf |
+  % line 4
+  bf4 bf bf-\cresc bf |
+  c4-\f c c c |
+  bf4( bf')\fermata \mark "K" r2 |
+  % jump to page 165, line 2
+  g,4.(-\p ef8) ef4.(-\f d16 af') |
+  % line 3
+  \grace { g16( af bf } af4)( g) r2 |
+  R1*2
+  % line 4 (-3)
+  g4.(-\p ef8) ef4.(-\f d16 af') |
+  \grace { g16( af bf } af4)( g) r2 |
+  r2 bf4-\f r8 bf-\p |
+  bf4 r ef-\f ef |
+  % line 5 (-2)
+  bf4 r bf bf | 
+  ef4 r ef,8-\p r f r |
+  g8 r af r bf r bf r | 
+  ef,2 ef'4-\f ef | 
+  bf4 r bf bf | ef4 r bf2-\p ~ |
+  % line 6 (-1)
+  bf4 af4( g f) |
+  ef4 ef' bf2 |
+  ef2 g, |
+  c8 r c-\pp r c r r4 \bar "|."  
 }
 
 DuoI_MvIII_Vla = \relative c' {
   \tempo "Allegretto" \key bf \major \time 3/8 % 1
   \repeat volta 2 {
-    f'=''8-.-\mf( f-. f-.) | % 2
-    f4(-\turn bf8) | % 3
-    d,4(-\turn f8) | % 4
-    bf,4(-\turn d8) | % 5
-    a16-. f-. bf-. g-.-\< c-. a-. | % 6
-    d16-. bf-. ef-. c-. f-. d-.-\! | % 7
-    g16( f)-\> ef-. d-. c-. bf-.-\! | % 8
-    a16-. g-. f-. ef-. d-. c-. | % 9
-    % page 6, line 2
-    bf16-.-\p d-. f-. d-. f-. d-.-\simile  | % 10
-    \repeat unfold 3 { bf16 d f d f d | } \barNumberCheck #13
-    f8( e ef) | % 14
-    d8( c bf) | % 15
-    ef16( g) f(-. ef-.) d-. c-. | % 16
-    d8 r r | % 17
+    % page 166
+    R4.*9 |
+    % line 2
+    \repeat unfold 3 { bf'4 r8 | } \barNumberCheck #13
+    f8 g a |
+    bf8 c d |
+    ef8 d16 c bf a |
+    bf8 r r
   } % page 6, line 3
-  d'=''16-\f ef f g a bf | % 18
-  bf16( gs a) ef d c | % 19
-  bf16 c d ef f g | % 20
-  g16( e f) c bf af | % 21
-  g16 af bf c d ef | % 22
-  ef16( cs d) c bf a | % 23
-  c( a bf) a g f-\> | % 24
-  % page 6, line 4
-  <e c'>4 r8-\! | % 25
-  g'=''4(-\mf e16 c) | % 26
-  c'8( bf a) | % 27
-  g4( e16 c) | % 28
-  c'8( bf a) | % 29
-  d,16( e fs g a bf) | % 30
-  c,16( d e f g a) | % 31
-  a16( g) f8 e | % 32
-  f4.-\> | % 33
-  % page 6, line 5
-  d'='''8-\p( c16 bf a g) | % 34
-  c8( bf16 a g f) | % 35
-  c'='''16( bf) a8(-. g-.) | % 36
-  \mark "L"
-  f4 r8 | % 37
-  R4. | % 38
-  << { s4.-\mf | s4.*2 } \repeat unfold 3 { bf,,=16 d f d f d | } >> \barNumberCheck #41
-  % page 6, line 6
-  f8( e ef) | % 42
-  d8( c bf) | % 43
-  ef8-. g-. e-. | % 44
-  f8 r r | % 45
-  f'(-.-\p f-. f-.) | % 46
-  f4(-\turn bf8) | % 47
-  d,4(-\turn f8) | % 48
-  bf,4(-\turn d8) | % 49
-  a16 f bf g c a | % 50
-  d16 bf ef c f d | % 51
-  % page 6, line 7
-  g16( ef) d c bf a | % 52
-  bf8 d-.(-\f fs,-.) | % 53
-  \mark "M"
-  <g,= g'>8 r r | % 54
-  r8 <fs'=' a>-\p q | % 55
-  <g bf>8 r r | % 56
-  r8 <a c> q | % 57
-  <g bf>8 r r | % 58
-  <ef c'>8 r r | % 59
-  <d a'>8 r fs( | % 60
-  g8 cs, d) | % 61
-  % page 6, line 8 (-5)
-  g,8 d''=''([-. d-.]) | % 62
-  ef4( d8) % 63
-  r8 d(-. bf'-.) | % 64
-  g4( fs8) | % 65
-  r8 d( g) | % 66
-  f?8( ef) d-. | % 67
-  d8\(( c) b-.\) | % 68
-  b4( c8) | % 69
-  ef4.-\fp( | % 70
-  d8) r r | % 71
-  <bf g'>4.(-\fp | % 72
-  % page 6, line 9 (-4)
-  <a fs'>8) r r | % 73
-  <c? a'>4.(-\fp | % 74
-  <bf bf'>8) r r | % 75
-  <ef,=' cs'>4.-\fp | % 76
-  \acciaccatura d='8 d'4. ~ \startTrillSpan | % 77
-  d4.-\cresc | % 78
-  ef4. ~ | ef4. | % 80
-  e4. ~ | e4. | % 82
-  f4. ~ | \afterGrace f4. \stopTrillSpan ({e16 f)} | % 84
+  bf4. |
+  f4. |
+  g4. |
+  d4. |
+  ef4. |
+  bf'4 c8 |
+  f4 e16 d |
+  c4 r8 |
+  bf4. |
+  a8( g f) |
+  e16 g bf4 |
+  a8( g f) | 
+  bf4 r8 |
+  a4 r8 |
+  bf8 c cs |
+  d16 e f e d c |
+  bf4. |
+  a4. |
+  bf8 c c, |
+  f4 r8 |
+  R4.*9 |
+  bf4 r8 |
+  bf4 r8 |
+  bf4 r8 |
+  f16 f' g, f' a, f' |
+  bf,16 f' c f d f |
+  ef8 f f, |
+  bf8 bf' fs |
+  g8 r8 r |
+  r8 a-\p c |
+  bf8 d r |
+  r8 a c |
+  bf8 r r |
+  c8 r r |
+  d8 r a ~ |
+  a8( g fs) |
+% page 6, line 8 (-5)
+  g8 r r |
+  r8 a a |
+  bf4 r8 |
+  r8 c c |
+  bf4( b8 |
+  c4 f,8) |
+  g4 g8 |
+  c,4. |
+  a4.( |
+  bf8) r r |
+  c4.( |
+  d8) r r |
+  fs4.( |
+  g8) r r |
+  ef4.(-\fp
+  d8) d fs |
+  d8 r r |
+  r8 c ef |
+  c8 r r |
+  r8 bf d |
+  bf8 r r |
+  r8 a bf |
+  c8 d ef |
   \mark "N"
-  f8(-\f-. f-. f-.) | % 85
-  % page 6, line 10 (-3)
-  f4(-\turn bf8) | % 86
-  d,4(-\turn f8) | % 87
-  bf,4(-\turn d8) | % 88
-  a16 f bf g c a | % 89
-  d16 bf ef c f d | % 90
-  g16( f) ef d c bf | % 91
-  a16-\> g f ef d c | % 92
-  bf16-\mf d f d f d | % 93
-  % page 6, line 11 (-2)
-  \repeat unfold 3 { bf16 d f d f d | } \barNumberCheck #96
-  f8( e ef) | % 97
-  d8( c bf) | % 98
-  ef16( g) f(-. ef-.) d-. c-. | % 99
-  d8 r r | % 100
-  f'4(-\p d16 bf) | % 101
-  % page 6, line 12 (-1)
-  bf'8(-\cresc af g) | % 102
-  g4( e16 c) | % 103
-  c'8( bf a) | % 104
-  c4( a16 f) | % 105
-  bf8( d) fs, | % 106
-  g8( bf)-\> ef, | % 107
-  d4( c8) | % 108
+  d8 r r |
+  R4.*8
+  bf4 r8 |
+  bf4 r8 |
+  bf4 r8 |
+  f16 f' g, f' a, f' |
+  bf,16 f' c f d f |
+  ef8 f f, |
+  bf4 r8 |
+  af'4. |
+  g8( f ef) |
+  bf'4. |
+  a8( g f) |
+  ef4. |
+  bf4 d8 |
+  ef4( g8) |
+  f4. |
   \mark "O"
-  r8 bf'-\p( e,) | % 109
-  r8 g( f) | % 110
-  r8 bf(-\cresc e,) | % 111
-  % page 7, line 1
-  r8 g( f) | % 112
-  r8 d'(-\f e,) | \barNumberCheck #113
-  r8 g( f) | % 114
-  f4.-\fp-\fermata\( | \bar "||" % 115
+  c8-\p r r |
+  f8 r r |
+  c8 r r |
+  f8 r r |
+  c8 r r |
+  f8 r r |
+  R4.\fermata \bar "||"
   \tempo "Allegro" \time 4/4
-  \tuplet 3/2 { d8-.\)-\p d-. d-. d8-. ef-. f-. f8->( c) c-. c8-. c-. d-. | \barNumberCheck #116
-                ef8-. ef-. ef-. ef8-. f-. g-. g8->( f) ef-. } d4 | \barNumberCheck #117
-  % page 7, line 2
-  bf'8-. r a-. r g-. r f-. r | % 118
-  \tuplet 3/2 { ef8 f ef d8 c bf a8 c bf a8 g f | % 119
-                d'=''8-\p d d d8 ef f f8( c) c c8 c d | % 120
-                ef8 ef ef ef8 f g g8( f) ef } d4 | \barNumberCheck #121
-  % page 7, line 3
-  bf'8-. r a-. r g-. r f-. r | % 122
-  \tuplet 3/2 { ef8 g f ef8 d c bf8-\< g f ef8 d c | % 123
-                \mark "P"
-                bf8-\f bf bf bf8 c d d8->( a) a a8 a bf | % 124
-                c8 c c c8 d ef ef( d) c } bf4 | % 125
-  % page 7, line 4
-  \tuplet 3/2 { g'8 bf, g' f8 bf, f' ef8 bf ef d8 bf d | % 126
-                c8 d c bf8 c d c8-\> a bf c8 bf a | % 127
-                bf8-\mf bf bf bf8 c d d8->( a) a a8 a bf | % 128
-                c8 c c c8 d ef ef( d) c } bf4 | % 129
-  % page 7, line 5
-  \tuplet 3/2 { g'8 bf, g' f8 bf, f' ef8 bf ef d8 bf d | \barNumberCheck #130
-                c8 ef d c8 bf a } bf8 r r4 | % 131
+  bf,='4-\p r f r |
+  a4 r bf r |
+  R1 |
+  a4 bf f r |
+  bf4 r f r |
+  a4 r bf r |
+  R1 |
+  ef4 f bf, r |  
+  \mark "P"
+  bf'4-\f r f r |
+  a4 r bf r |
+  R1 |
+  a4 bf f r |
+  bf4 r f r |
+  a4 r bf r |
+  R1 |
+  ef,4 f bf, r |
   \repeat volta 2 {
-    r4 f''=''2-\f-> bf4 | % 132
-    \tuplet 3/2 { f8 g a bf8 c d ef8 c f d8 c bf } | % 133
-    a8 r f2-> bf4 | % 134
-    % page 7, line 6
-    \tuplet 3/2 { g8 f ef d8 c bf } a8 r r4 | % 135
-
-    \tuplet 3/2 { d=''8-.-\p d-. d-. d8-. ef-. f-. f8( c) c-. c8-. c-. d-. | % 136
-                  ef8-. ef-. ef-. ef8-. f-. g-. g8( f) ef-. } d4 | % 137
-    bf'8-. r a-. r g-. r f-. r | % 138
+    r2 \tuplet 3/2 { f8 f' f f8 f f } |
+    f4 r \tuplet 3/2 { f,8 f' f f8 f f } |
+    f4 r \tuplet 3/2 { f,8 f' f f8 f f } |
+    ef4 e f r |
+    bf4 r f r |
+    a4 r bf r |
+    R1
   }
   % page 7, line 7 (-6)
   \alternative {
-    { \tuplet 3/2 { ef8 g f ef8 d c } bf8 r r4 | } % 139
-    { \tuplet 3/2 { ef8 g f ef8 d c } bf8 r r4 | } % 140
+    { ef,4 f bf, r }
+    { ef4 f bf, r }
   }
-  \tuplet 3/2 { a8-.-\f c( b c8 f ef) } d8 r bf8 r | \barNumberCheck #141
-  \tuplet 3/2 { c8-. ef( d ef8 a g) } f8-. d-. ef-. f-. | % 142
-  g8-.-\cresc a-. bf-. c-. d8-. f,-. g-. a-. | % 143
-  % page 7, line 8 (-5)
-  bf8-. c-. d-. ef-. f4-\ff r-\fermata | % 144
-  r4 d8.-\fp( f16) ef8.( c16) bf8.(-\fp d16) | % 145
-  c8.( a16) g8.(-\fp bf16) a8.( f16) ef8.(-\fp g16) | \bar "||" \fermataMark % 146
+  R1*3 |
+  r2 r4 r4\fermata
+  R1*2 | \bar "||" \fermataMark % 146
   \time 3/8 \tempo "Tempo I"
-  f8-\f-.( f-. f-.) | \barNumberCheck #147
-
-  f4(-\turn bf8) | % 148
-  d,4(-\turn f8) | % 149
-  % page 7, line 9 (-4)
-  bf,4(-\turn d8) | % 150
-  a16 f bf g c a | % 151
-  d16 bf ef c f d | % 152
-  g16( f) ef d c bf | % 153
-  a16-\> g f ef d c | % 154
-  << {s4.-\mf | s4. | s4.*2 } \repeat unfold 4 { bf16 d f d f d | } >> \barNumberCheck #158
-  % page 7, line 10 (-3)
-  f8( e ef) | % 159
-  d8( c bf) | % 160
-  ef16( g) f(-. ef-.) d-. c-. | % 161
-  d8 r r | % 162
-  r8 <ef' f>8-.(-\p q-.) | % 163
-  <d f>8.( g16 f8) | % 164
-  % page 7, line 11 (-2)
-  r8 <ef f>8-.( q-.) | % 165
-  <d bf'>4-\cresc( f8) | % 166
-  r8 <ef f>8-.( q-.) | % 167
-  <d f>4( g16 f) | % 168
-  f16( ef) d8 \afterGrace c-\trill ({ bf16 c)} | % 169
-  bf16-\f f d' bf f' d | % 170
-  bf'16 f d' bf ef a, | % 171
-  bf16 d f, bf d, f | % 172
-  % page 7, line 12 (-1)
-  bf,16 d f, d' ef a, | % 173
-  bf8 r r | % 174
-  r8 r f' | % 175
-  bf8 d8(-. bf-.) | % 176
-  f4 f8 | % 177
-  bf,16 bf, d bf-\< f' d | % 178
-  bf'16 f d' bf f' d | % 179
-  bf'8 <d,,=' bf'>-\ff q | % 180
-  q8 r r \bar "|."
+  R4. |
+  f'8-\f-. f-. f-. |
+  f4-\turn( bf8) |
+  d,4-\turn( f8) |
+  c8( bf a) |
+  f'8( ef d) |
+  c4( g8) |
+  c,8 r r |
+  R4. |
+  f'8-\f-. f-. f-. |
+  f4-\turn( bf8) |
+  d,4-\turn( f8) |
+  c4 a16 f |
+  f'4 d16 bf |
+  ef8 f f, |
+  bf8 r r 
+  ef4-. r8 |
+  d4-. r8 |
+  ef4-. r8 |
+  bf4-. r8 |
+  a4-. r8 |
+  bf4-. r8 |
+  ef8 f f, |
+  bf4 r8 |
+  r8 r a |
+  bf4 r8 |
+  r8 r a |
+  bf4 r8 |
+  r8 r a |
+  bf4 r8 |
+  r8 r ef |
+  d8 bf f |
+  bf8 d bf |
+  bf8 bf bf |
+  bf8 r r \bar "|."
 }
 
 
