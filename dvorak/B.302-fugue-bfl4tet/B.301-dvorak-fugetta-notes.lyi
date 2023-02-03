@@ -348,7 +348,7 @@ MvII_Bass = \relative d {
     d2 cs4 a4 | % 19
     b4. cs8 d8 fs8 e8 d8 | \barNumberCheck #20
     cs4 a4 a'2 | % 21
-    d,4 s2. | % 22
+    d,4 r4 r2 | % 22
     R1*6 | % 28
     b2 ~ b8 a8 g8 fs8 | % 29
     e'2 d4 b4 | \barNumberCheck #30
