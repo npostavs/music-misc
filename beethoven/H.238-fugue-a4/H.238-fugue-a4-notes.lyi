@@ -1,0 +1,371 @@
+\version "2.22.2"
+
+%% additional definitions required by the score:
+\language "english"
+
+
+\header {
+    title =  "Fuga a 4 (Hess 238-1)"
+    arranger = "Anton Hoger"
+    composer =  "Ludwig van Beethoven"
+    encodingsoftware =  "Audiveris 5.3-alpha"
+    encodingdate =  "2023-02-04"
+    source = "IMSLP350958-PMLP566915-Beethoven_-_Fuga_à4_Hess238-1.pdf"
+    tagline = ##f
+    }
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+        }
+    }
+PartPOneVoiceOne =  \relative gs' {
+    \time 4/4 \key e \major \partial 2 r2 - "" | % 1
+    R1*5 | % 6
+    r2 gs2 | % 7
+    cs4 e2 ds8 cs8 | % 8
+    bs4. as16 bs16 cs4 gs4 | % 9
+    a4 fs2 e8 ds8 | \barNumberCheck #10
+    cs4 gs'4 a8 b8 cs4 ~ | % 11
+    cs4 bs4 cs8 b8 a8 gs8 | % 12
+    a2 b8 a8 gs8 fs8 | % 13
+    gs2 r2 | % 14
+    R1 | % 15
+    r4 cs,4 fs4 a4 ~ | % 16
+    a4 gs8 fs8 es4. ds16 es16 | % 17
+    fs4 e4 ds4. cs16 ds16 | % 18
+    e4 r4 r2 | % 19
+    R1 | \barNumberCheck #20
+    r2 cs'2 | % 21
+    d4 cs4 bs4. as16 bs16 | % 22
+    cs4 b4 a4 r4 | % 23
+    R1 | % 24
+    r2 fs2 | % 25
+    b4 d2 cs8 b8 | % 26
+    as4. gs16 as16 b4 a4 | % 27
+    gs8 b8 e8 ds8 cs8 bs16 cs16 ds8 cs8 | % 28
+    bs4 cs4 ds2 | % 29
+    gs,2 a4 cs4 ~ | \barNumberCheck #30
+    cs8 e8 ds8 cs8 b4. cs16 b16 | % 31
+    a8 cs8 b8 a8 gs8 b8 a8 gs8 | % 32
+    fs8 gs8 fs8 e8 ds4 e4 ~ | % 33
+    e4 ds4 e2 | % 34
+    R1*2 | % 36
+    r4 gs4 cs4 e4 ~ | % 37
+    e4 ds8 cs8 bs4. as16 bs16 | % 38
+    cs2. b8 as8 | % 39
+    b2. a8 gs8 | \barNumberCheck #40
+    a2. gs8 fs8 | % 41
+    gs2. fs8 e8 | % 42
+    fs2. e8 ds8 | % 43
+    e4 fs4 gs4 r4 | % 44
+    R1 | % 45
+    gs2 cs4 e4 ~ | % 46
+    e4 ds8 cs8 bs4. as16 bs16 | % 47
+    cs4 gs4 a4 gs8 fs8 | % 48
+    es1 \fermata \bar "|." }
+
+PartPTwoVoiceOne =  \relative cs' {
+    \time 4/4 \key e \major \partial 2 r2 | % 1
+    R1*7 | % 8
+    r2 cs2 | % 9
+    fs4 a2 gs8 fs8 | \barNumberCheck #10
+    es4. ds16 es16 fs4 cs4 | % 11
+    ds2 cs2 | % 12
+    R1 | % 13
+    gs2 cs4 e4 ~ | % 14
+    e4 ds8 cs8 ds4. cs16 ds16 | % 15
+    cs4 gs4 a4 fs'8 e8 | % 16
+    ds2 gs,2 | % 17
+    cs2 fs,2 | % 18
+    b8 e,8 e'8 ds8 cs4. b16 cs16 | % 19
+    ds4 cs4 bs4. as16 bs16 | \barNumberCheck #20
+    cs4 b4 a4 r4 | % 21
+    fs'2 gs4 fs4 | % 22
+    es4. ds16 es16 fs4 a4 ~ | % 23
+    a4 gs8 fs8 es4. ds16 es16 | % 24
+    fs8 e8 d8 cs8 d2 ~ | % 25
+    d4 fs4 g8 fs8 e8 d8 | % 26
+    cs8 e8 d8 cs8 b8 cs8 ds8 cs16 ds16 | % 27
+    b4 r4 cs2 | % 28
+    fs4 a2 gs8 fs8 | % 29
+    es4. ds16 es16 fs4 a8 gs8 | \barNumberCheck #30
+    fss2 gs8 ds8 e4 ~ | % 31
+    e4 fs4 b,4 cs4 ~ | % 32
+    cs8 b8 a8 cs8 b2 | % 33
+    b2 b2 | % 34
+    r2 r4 cs4 | % 35
+    fs4 a2 gs8 fs8 | % 36
+    e8 fs8 e8 ds8 e8 fs8 gs4 | % 37
+    a4 fs2 gs8 as8 | % 38
+    gs4 fs8 e8 fs2 ~ | % 39
+    fs4 e8 ds8 e2 ~ | \barNumberCheck #40
+    e4 ds8 cs8 ds2 ~ | % 41
+    ds4 cs8 b8 cs2 ~ | % 42
+    cs2 bs4 cs8 ds8 | % 43
+    cs2 bs4 gs4 | % 44
+    cs4 e4 ds4 cs4 | % 45
+    bs4. cs16 ds16 gs,4 cs4 ~ | % 46
+    cs4 ds8 e8 ds2 | % 47
+    e2 ds2 | % 48
+    cs1 \fermata \bar "|." }
+
+PartPThreeVoiceOne =  \relative gs' {
+    \time 4/4 \key e \major \partial 2 gs2 | % 1
+    cs4 e2 ds8 cs8 | % 2
+    bs4 ~ bs8 as16 bs16 cs4 gs4 | % 3
+    a2 gs4 e'4 ~ | % 4
+    e4 ds8 cs8 bs4. as16 bs16 | % 5
+    cs4 b4 a4. gs8 | % 6
+    fs8 gs8 a8 gs16 fs16 e8 fs8 gs8 e8 | % 7
+    cs4 cs'2 bs8 as8 | % 8
+    gs8 fs8 e8 ds8 e8 fs8 gs8 e8 | % 9
+    cs4 cs'4 bs2 | \barNumberCheck #10
+    cs4 cs,4 fs4 a4 | % 11
+    gs4. fs8 e4 es4 | % 12
+    fs1 | % 13
+    e2 r2 | % 14
+    cs4 fs4 ~ fs8 a8 gs8 fs8 | % 15
+    e4. fs16 gs16 fs2 ~ | % 16
+    fs4 gs2 cs,4 | % 17
+    R1 | % 18
+    gs'2 a4 gs4 | % 19
+    fs4. e16 fs16 gs4 fs4 | \barNumberCheck #20
+    es4. ds16 es16 fs4 r4 | % 21
+    R1 | % 22
+    r2 fs2 | % 23
+    b4 ds2 cs8 b8 | % 24
+    as4. gs16 as16 b8 a16 g16 fs8 e8 | % 25
+    d8 cs8 b8 cs16 d16 e8 fs8 g4 ~ | % 26
+    g8 cs,8 fs8 e8 ds8 e8 fs8 e16 fs16 | % 27
+    gs4 b4 a4. gs8 | % 28
+    fs4 e4 ds4 gs4 ~ | % 29
+    gs8 cs,8 cs'8 b8 a8 gs8 fs8 gs8 | \barNumberCheck #30
+    as4. b16 cs16 ds8 b8 gs4 ~ | % 31
+    gs4 fs2 e4 | % 32
+    cs4 fs2 gs4 | % 33
+    fs2 gs2 | % 34
+    gs2 cs4 e4 ~ | % 35
+    e4 ds8 cs8 ( bs4. as16 ) bs16 | % 36
+    cs8 a8 gs8 fs8 gs4 fs8 e8 | % 37
+    fs4 a4 ds,2 | % 38
+    gs4 cs4 as4 b8 cs8 | % 39
+    ds4 r4 gs,4 a8 b8 | \barNumberCheck #40
+    cs2 fs,4 gs8 a8 | % 41
+    b2 e,4 fs8 gs8 | % 42
+    a2 gs4. bs,8 | % 43
+    cs8 e8 ds8 cs8 ds4 r4 | % 44
+    r4 cs4 fs4 a4 | % 45
+    gs4 fs4 e4 gs4 | % 46
+    as2 ds,4 ds'4 | % 47
+    gs,4 cs2 bs4 | % 48
+    gs1 \fermata \bar "|." }
+
+PartPFourVoiceOne =  \relative cs' {
+    \time 4/4 \key e \major \partial 2 r2 | % 1
+    R1*2 | % 3
+    r2 cs2 | % 4
+    fs4 a2 gs8 fs8 | % 5
+    es4. ds16 es16 fs4 cs4 | % 6
+    ds2 cs4 b4 | % 7
+    a4 gs4 fss2 | % 8
+    gs2 cs8 ds8 e8 cs8 | % 9
+    a4. fs'8 gs4 gs,4 | \barNumberCheck #10
+    cs2 r2 | % 11
+    R1 | % 12
+    fs8 e8 ds8 cs8 ds2 | % 13
+    e8 fs8 e8 ds8 cs8 b8 a8 gs8 | % 14
+    fs2 gs2 | % 15
+    cs4 e2 ds8 cs8 | % 16
+    bs4. as16 bs16 cs4 b4 | % 17
+    as2 b4 a4 | % 18
+    gs4 r4 r2 | % 19
+    R1 | \barNumberCheck #20
+    r2 r8 a'8 gs8 fs8 | % 21
+    b4 a4 gs2 | % 22
+    cs,2 fs4 r4 | % 23
+    R1*3 | % 26
+    r2 b,2 | % 27
+    e4 gs2 fs8 e8 | % 28
+    ds4 cs4 bs4. as16 bs16 | % 29
+    cs2 fs4. e8 | \barNumberCheck #30
+    ds2 gs,4 gs'4 | % 31
+    cs,4 ds4 e4 cs4 | % 32
+    a2 ~ a8 b16 a16 gs8 fs16 e16 | % 33
+    b'2 e,2 | % 34
+    R1 | % 35
+    r2 gs2 | % 36
+    cs4 e2 ds8 cs8 | % 37
+    fs4 a2 gs8 fs8 | % 38
+    e4 ds8 cs8 ds2 ~ | % 39
+    ds4 cs8 b8 cs2 ~ | \barNumberCheck #40
+    cs4 b8 a8 b2 ~ | % 41
+    b4 a8 gs8 a2 ~ | % 42
+    a4 gs8 fs8 gs2 ~ | % 43
+    gs4 a4 gs2 ~ | % 44
+    gs1 | % 45
+    gs1 | % 46
+    fss2 gs4 fs4 | % 47
+    e4. e8 fs4 gs4 | % 48
+    cs1 \fermata \bar "|." }
+
+MvII_PartPOneVoiceOne =  \relative fs' {
+    \time 2/2 \key d \major | % 1
+    R1*9 | \barNumberCheck #10
+    fs4. gs8 a8 fs8 a8 b8 | % 11
+    cs2 r4 b4 | % 12
+    as4 a4 g4. fs16 g16 | % 13
+    fs4. fs8 e2 | % 14
+    d4. e8 fs8 d8 fs8 g8 | % 15
+    cs,2 r2 | % 16
+    R1*2 | % 18
+    r2 b4. cs8 | % 19
+    d8 b8 d8 e8 fs2 | \barNumberCheck #20
+    r4 fs4 es4 e4 | % 21
+    ds4 d4 cs4. ds8 | % 22
+    e4 r4 r2 | % 23
+    r4 cs4 d4 e4 | % 24
+    fs4. fs8 e8 cs8 e8 fs8 | % 25
+    g4. g8 fs8 d8 fs8 gs8 | % 26
+    a4 r4 r2 | % 27
+    b4. b8 a8 fs8 a8 b8 | % 28
+    cs8 b16 a16 gs8 as8 b4 r4 | % 29
+    R1 | \barNumberCheck #30
+    r2 r4 a4 | % 31
+    gs4 g4 fs2 | % 32
+    e2 d2 | % 33
+    R1 | % 34
+    fs4. gs8 as8 fs8 gs8 as8 | % 35
+    b2 r4 b4 | % 36
+    as4 a4 gs4 g4 | % 37
+    fs4 fs8 gs8 a4 e8 fs8 | % 38
+    g4. a8 b4 fs8 gs8 | % 39
+    a4. b8 cs4 gs8 as8 | \barNumberCheck #40
+    b2. as4 | % 41
+    b4 d,4 cs2 | % 42
+    ds1 \fermata \bar "|."
+    }
+
+MvII_PartPTwoVoiceOne =  \relative b {
+    \time 2/2 \key d \major | % 1
+    R1*6 | % 7
+    b4. cs8 d8 b8 d8 e8 | % 8
+    fs2 r4 e4 | % 9
+    ds4 d4 cs4. b16 cs16 | \barNumberCheck #10
+    d4 a8 b8 cs8 fs8 e8 gs8 | % 11
+    a4 fs4 ds4 es4 | % 12
+    fs2. e4 ~ | % 13
+    e4 d2 cs4 ~ | % 14
+    cs4 b2 b4 ~ | % 15
+    b4 a4 r2 | % 16
+    r2 fs4. gs8 | % 17
+    a8 fs8 a8 b8 cs4 c4 | % 18
+    b4 a4 g2 | % 19
+    fs8 g8 fs8 e8 d4 r4 | \barNumberCheck #20
+    R1 | % 21
+    r4 b'4 as4 a4 | % 22
+    gs4 g4 fs4. gs8 | % 23
+    a2 b4 cs4 | % 24
+    d4. d8 cs8 a8 cs8 ds8 | % 25
+    e4. e8 d4. d8 | % 26
+    cs4 r4 e4. e8 | % 27
+    d8 cs8 b8 cs8 cs4 fs4 | % 28
+    es4 e4 d8 b8 d8 e8 | % 29
+    fs8 e16 d16 cs8 ds8 e4 r4 | \barNumberCheck #30
+    r2 r4 cs4 | % 31
+    b4 d8 e4 d16 cs16 d4 ~ | % 32
+    d4 cs4 a2 | % 33
+    R1*2 | % 35
+    b4. cs8 d8 b8 d8 e8 | % 36
+    fs4 cs8 ds8 e4 b8 cs8 | % 37
+    d8 a8 d4 cs4 c4 | % 38
+    b2 fs'4. b,8 | % 39
+    e4 cs2 cs4 | \barNumberCheck #40
+    fs2 e2 ~ | % 41
+    e8 d16 cs16 b2 as4 | % 42
+    b1 \fermata \bar "|."
+    }
+
+MvII_PartPThreeVoiceOne =  \relative fs {
+    \time 2/2 \key d \major | % 1
+    R1*3 | % 4
+    fs4. gs8 a8 fs8 a8 b8 | % 5
+    cs2 r4 b4 | % 6
+    as4 a4 gs4. fs16 gs16 | % 7
+    fs4 gs8 as8 b2 | % 8
+    cs4 d4 b4 cs4 | % 9
+    fs,4 b2 a8 g8 | \barNumberCheck #10
+    fs4 e8 d8 cs8 d8 cs8 b8 | % 11
+    a4 r4 r2 | % 12
+    r4 d'4 b4 cs4 | % 13
+    as4 b4 gs4 as4 | % 14
+    b4 b,8 cs8 d8 b8 d8 e8 | % 15
+    fs2 r4 fs4 | % 16
+    es4 e4 ds4 d4 | % 17
+    cs4 fs8 gs8 a4 gs4 ~ | % 18
+    gs4 fs4 r2 | % 19
+    r2. b4 | \barNumberCheck #20
+    as4 a4 gs4. as8 | % 21
+    b4 fs4 r2 | % 22
+    r4 b2 b4 | % 23
+    e,4 a4 gs4 g4 | % 24
+    fs8 d8 fs8 gs8 a4. a8 | % 25
+    g8 e8 g8 a8 b4. b8 | % 26
+    a4. a8 gs8 e8 gs8 as8 | % 27
+    b4 fs4 fs4 r4 | % 28
+    r2. b4 | % 29
+    as4 a4 gs8 e8 gs8 a8 | \barNumberCheck #30
+    b8 a16 gs16 fs8 gs8 a2 | % 31
+    e4 b'8 a8 a2 ~ | % 32
+    a4. g8 fs2 | % 33
+    r2 fs4. gs8 | % 34
+    a8 fs8 a8 b8 cs4 cs,4 | % 35
+    fs8 e8 d8 cs8 b2 | % 36
+    cs4 r4 r4 e4 | % 37
+    a4 d,4 e4 a4 | % 38
+    g2 fs4 b4 | % 39
+    e,4 a4 gs4 cs4 | \barNumberCheck #40
+    fs,2 g4 fs4 ~ | % 41
+    fs8 b,16 cs16 d8 e8 fs2 | % 42
+    fs1 \fermata \bar "|."
+    }
+
+MvII_PartPFourVoiceOne =  \relative b {
+    \time 2/2 \key d \major | % 1
+    b4. cs8 d8 b8 d8 e8 | % 2
+    fs2 r4 e4 | % 3
+    ds4 d4 cs4. b16 cs16 | % 4
+    b4 d2 cs8 b8 | % 5
+    a4 fs'4 ds4 es4 | % 6
+    fs8 cs8 fs2 e4 ~ | % 7
+    e4 d8 cs8 b2 | % 8
+    a4 r4 r2 | % 9
+    R1*6 | % 15
+    fs4. gs8 a8 fs8 a8 b8 | % 16
+    cs2 r4 b4 | % 17
+    a4 fs4 r8 fs'8 gs8 fs8 | % 18
+    es8 ds16 es16 fs2 e4 | % 19
+    d8 e8 d8 cs8 b8 cs8 d8 e8 | \barNumberCheck #20
+    fs4 fs,4 cs'2 | % 21
+    b2 fs'2 | % 22
+    e8 e,8 e'4 ds4 d4 | % 23
+    cs8 b8 a4 r2 | % 24
+    R1*2 | % 26
+    r8 fs8 a8 b8 cs2 | % 27
+    b2 fs4 r4 | % 28
+    R1 | % 29
+    r2 r4 e'4 | \barNumberCheck #30
+    ds4 d4 cs8 a8 cs8 d8 | % 31
+    e8 d16 cs16 b8 cs8 d8 e8 fs8 g8 | % 32
+    a4 a,4 d2 | % 33
+    b4. cs8 d8 b8 d8 e8 | % 34
+    fs2 r4 e4 | % 35
+    d8 cs8 b8 a8 g2 | % 36
+    fs4 fs'4 e2 | % 37
+    d4 b4 a2 | % 38
+    e'8 b8 e4 ds4 d4 | % 39
+    cs4 fs4 es4 e4 | \barNumberCheck #40
+    ds4 d4 cs4 fs,4 | % 41
+    b2 fs2 | % 42
+    b1 \fermata \bar "|."
+    }
