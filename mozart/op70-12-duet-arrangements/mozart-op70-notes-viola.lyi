@@ -236,8 +236,8 @@ DuoI_MvII_Vla = \relative c' {
   % line 6 (-1)
   bf4 af4( g f) |
   ef4 ef' bf2 |
-  ef2 g, |
-  c8 r c-\pp r c r r4 \bar "|."  
+  ef2 bf, |
+  ef8 r ef-\pp r ef  r r4 \bar "|."
 }
 
 DuoI_MvIII_Vla = \relative c' {
