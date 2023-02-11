@@ -810,11 +810,11 @@ MvII_PFour =  \relative e {
     a2. b8 cs8 | % 105
     d2 b2 ~ | % 106
     b2 a2 ~ | % 107
-    a2 s2 | % 108
-    fs4 a4 s2 | % 109
+    a2 g2 ~ | % 108
+    g2 fs4 a4 | % 109
     b4 a2 g8 fs8 | \barNumberCheck #110
     g1 | % 111
-    fs2 s2 | % 112
+    fs2 gs2 | % 112
     a2 r2 | % 113
     R1*6 | % 119
     d1 | \barNumberCheck #120
