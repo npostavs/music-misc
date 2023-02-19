@@ -18,6 +18,8 @@
         skipBars = ##t
         }
     }
+    
+dolce = \markup { \italic "dolce" }
 
 % Trio I is in Opus 3.
 TrioII_MvI_Violin =  \relative g {
@@ -32,263 +34,264 @@ TrioII_MvI_Violin =  \relative g {
         -. e16 -. c16 -. | % 5
         b4 r8. d,32-\pp g32 b16 -. as16 -. b16 -. c16 -. d16-.\cresc e16
         -. fs16 -. g16 -. | % 6
-        ds16-\p e16 b16 c16 gs16 a16 e16 c'32 a32 g4 ~ g16 fs16 b16
+        ds16-\p e16-\< b16 c16 gs16 a16 e16 c'32 a32 g4-\> ~ g16 fs16 b16
         a16 | % 7
-        g8 r8 r4 r8. b,32 d32 g4 ~ | % 8
-        g4 fs8 r16 fs32 a32 c8 -. r16 c,32 fs32 a4 ~ | % 9
-        a4 gs8 -. r16 gs32 b32 d8 -. r16 d,32 gs32 b4 ~ |
-        \barNumberCheck #10
-        b16 gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -. ds16
+        g8-\! r8 r4 r8. b,32-\pp d32 g4 ~ | % 8
+        g4 fs8 r16 fs32-\pp a32 c8 -. r16 c,32-\< fs32 a4 ~ | % 9
+        a4-\> gs8-.-\! r16 gs32-\pp b32 d8 -. r16 d,32-\< gs32 b4 ~ | \barNumberCheck #10
+        b16-\p gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -. ds16
         -. e8 -. fs8 -. g8 -. as8 -. | % 11
-        b8 -. -\! -\ff -\> r8 b,4. b8 -. -\! -\mp b8 -. b8 -. | % 12
-        b2 ~ b8 <d, b'>8 -. <d b'>8 -. <d b'>8 -. | % 13
-        <d c'>2 r16 gs16 -. -\mf a16 -. b16 -. c16 -. d16 -. e16
+        b8 -. -\! -\ff -\> r8 b,4. b8 -. -\! -\pp b8 -. b8 -. | % 12
+        << { s4-\< s4-\> s8-\! } \\ {b2 ~ b8 } >> <d, b'>8-.-\< <d b'>8-.-\> <d b'>8-.-\! | % 13
+        <d c'>2-\pp r16 gs16 -. -\mf a16 -. b16 -. c16 -. d16 -. e16
         -. c16 -. | % 14
-        a4 r4 r16 gs16 -. a16 -. b16 -. c16 -. ds16 -. e16 -. c16
-        -. | % 15
-        a4 r4 r16 gs16 -. a16 -. b16 -. c16 -. cs16
-        -. d16 -. ds16 -. \bar "||"
-        \tempo "Allegro" 4=150 \partial 4. ds8 e8 c8  | 
-        a4 -. r4 r8 b8 c8 a8 |
-        fs4 -. r4 r8 gs8 a8 fs8 d2 ~ d8 e8 a,8 d8 c4 b4 r16 g16
-        -\f a16 b16 c16 d16 e16 fs16 g4 -. b4 -. d4 -. g4 -. c,,2
-        -. e''2 -. d,,2 -. c''2 -. \acciaccatura { c8 } b16 a16
-        b16 c16 d4 -. r2 R1 r2 e,8. d16 c16 b16 a16 g16 fs8 -.
-        c''8 -. a8 -. fs8 -. d8 -. c8 -. b8 -. a8 -. g4 r4 r2
-        R1*3 | % 17
-        g'2. d8. b16 | % 18
-        g4 -. g4 -. g4. \trill fs16 g16 | % 19
-        a8 gs8 a8 gs8 a8 g8 fs8 -. e8 -. | \barNumberCheck #20
+        a4 r4 r16 gs16 -. a16 -. b16 -. c16 -. ds16 -. e16 -. c16-. | \barNumberCheck #15
+        a4 r4 r16 gs16-.-\pp a16 -. b16 -. c16 -. cs16 -. d16 -. ds16 -. \bar "||"
+        \tempo "Allegro" 4=150 \partial 4. ds8 e8 c8 | % 17
+        a4 -. r4 r8 b8 c8 a8 | % 18
+        fs4 -. r4 r8 gs8 a8 fs8 | % 19
+        d2 ~ d8 e8 a,8 d8 | % 20
+        c4 b4 r16 g16-\f a16 b16 c16 d16 e16 fs16 | % 21
+        g4 -. b4 -. d4 -. g4 -. | % 22
+        c,,2-. e''2 -. | % 23
+        d,,2 -. c''2 -. | % 24
+        \acciaccatura { c8 } b16 a16 b16 c16 d4 -. r2 | % 25
+        R1 | % 26
+        r2 e,8. d16 c16 b16 a16 g16 | % 27
+        fs8 -. c''8 -. a8 -. fs8 -. d8 -. c8 -. b8 -. a8 -. | % 28
+        g4 r4 r2 | % 29
+        R1*3 | % 32
+        << { <g, d' b'>4 } { g''2.-\f } >> d8. b16 | % 33
+        g4 -. g4 -. g4. \trill fs16 g16 | % 34
+        a8 gs8 a8 gs8 a8 g8 fs8 -. e8 -. | \barNumberCheck #35
         \acciaccatura { e8 } d8 cs8 \acciaccatura { e8 } d8 cs8
-        \acciaccatura { e8 } d8 c8 b8 -. a8 -. | % 21
-        g4 b'4. fs16 g16 a16 g16 fs16 g16 | % 22
-        d'4 c4 r8 fs,16 g16 a16 g16 fs16 g16 | % 23
-        e'4 d4 r8 fs,16 g16 a16 g16 fs16 g16 | % 24
-        ds'8 e4 d16 c16 b8 a8 b8 -. g8 -. | % 25
-        fs8 -. cs'16 d16 e16 d16 cs16 d16 fs4 r4 | % 26
-        r8 cs16 d16 e16 d16 cs16 d16 g4 r4 | % 27
-        r8 cs,16 d16 e16 d16 cs16 d16 a'4 r4 | % 28
-        r8 e16 fs16 g8 -. a8 -. b4 -. e4 -. | % 29
-        a,4 -. r4 r2 | \barNumberCheck #30
-        a,4 -. d'4 ~ d16 cs16 b16 a16 g16 fs16 e16 d16 | % 31
-        cs4 r4 r2 | % 32
+        \acciaccatura { e8 } d8 c8 b8 -. a8 -. | % 36
+        g4 b'4.-\p fs16( g16 a16 g16 fs16 g16) | % 37
+        d'4( c4) r8 fs,16 g16 a16 g16 fs16 g16 | % 38
+        e'4 d4 r8 fs,16 g16 a16 g16 fs16 g16 | % 39
+        ds'8 e4 d16 c16 b8 a8 b8 -. g8 -. | % 40
+        fs8 -. cs'16 d16 e16 d16 cs16 d16 fs4 r4 | % 41
+        r8 cs16 d16 e16 d16 cs16 d16 g4 r4 | % 42
+        r8 cs,16 d16 e16 d16 cs16 d16 a'4 r4 | % 43
+        r8 e16 fs16 g8 -. a8 -. b4 -. e4 -. | % 44
+        a,4 -. r4 r2 | \barNumberCheck #45
+        a,4 -. d'4 ~ d16 cs16 b16 a16 g16 fs16 e16 d16 | % 46
+        cs4 r4 r2 | % 47
         a16 -. a'16 b16 cs16 d16 cs16 d16 cs16 d16 cs16 b16 a16
-        g16 fs16 e16 d16 | % 33
-        cs16 -. -\< a,16 b16 cs16 d16 e16 fs16 gs16 a8 -. b16 cs16
-        d16 e16 fs16 gs16 | % 34
-        a4 -. -\! -\f a,4 -. r4 r8 a,8 -. -\mp | % 35
-        <a f'>4 -. r8 <a e'>8 -. <a f'>4 -. r8 <a e'>8 -. | % 36
-        <a f'>4 -. <c g'>4 -. <c a'>4 -. r4 | % 37
-        <c bf'>4 -. <c a'>4 -. <c g'>4 -. r4 | % 38
-        <c bf'>4 -. <c a'>4 -. <c g'>4 -. r4 | % 39
-        <c a'>4 -. r8 <c g'>8 -. <c a'>4 -. r8 <c g'>8 -. |
-        \barNumberCheck #40
-        <c a'>4 -. <c bf'>4 -. <c a'>4 -. r4 | % 41
-        <a g'>4 -. <a f'>4 -. <a e'>4 -. r4 | % 42
-        <a g'>4 -. <a f'>4 -. <a e'>4 -. r4 | % 43
-        r8 a'8 -\mf a'4. a,8 -. a'8 -. g8 -. | % 44
-        f8 -. d8 -. cs8 -. a8 -. d8 -. a8 -. f8 -. d8 -. | % 45
-        c8 b8 c8 b8 c8 -. e8 -. g8 -. b8 -. | % 46
-        c8 b8 c8 b8 c8 -. e8 -. g8 -. bf8 -. | % 47
-        a8 -. c,8 -. c'4. c,8 -. c'8 -. bf8 -. | % 48
-        a8 -. f8 -. e8 -. c8 -. f8 -. c8 -. a8 -. f8 -. | % 49
-        a,8 gs8 a8 gs8 a8 -. cs8 -. e8 -. gs8 -. |
-        \barNumberCheck #50
-        a8 gs8 a8 gs8 a8 -. cs8 -. e8 -. gs8 -. | % 51
-        a2. -\f fs8 \trill e16 fs16 | % 52
-        g8 -. e8 -. cs8 -. a8 -. g8 -. e8 -. cs8 -. a8 -. | % 53
-        d8 -. -\mf a8 -. fs'8 -. d8 -. a'8 -. fs8 -. d'4 -. | % 54
-        e,8 -. cs8 -. cs'8 -. g8 -. e'8 -. cs8 -. g'4 -. | % 55
-        fs8 -. a8 -. fs8 -. d8 -. a8 -. fs8 -. d8 -. a'8 -. | % 56
-        a,4 a'4. b16 cs16 d16 e16 fs16 g16 | % 57
-        a4. a,8 a'4 -. a4 -. | % 58
-        a4. b,8 a'4 -. a4 -. | % 59
-        a4. cs,8 a'4 -. a4 -. | \barNumberCheck #60
-        a4. d,8 a'4 -. a4 -. | % 61
-        a8 b16 a16 gs8 -. a8 -. cs8 b8 a8 -. g8 -. | % 62
-        fs8 g16 fs16 e8 -. fs8 -. g4 -. g4 -. | % 63
-        e8 fs16 e16 ds8 -. e8 -. a4 -. a4 -. | % 64
-        d,4 -. r4 r2 | % 65
-        r2 r8 as8 fs'4 ~ | % 66
-        fs2 ~ fs8 b,8 fs'4 ~ | % 67
-        fs2 ~ fs8 cs8 fs4 ~ | % 68
-        fs2 ~ fs8 d8 fs4 ~ | % 69
-        fs4 fs,4 -. fs4 -. fs4 -. | \barNumberCheck #70
-        e2 ~ e8 fs16 e16 ds8 -. e8 -. | % 71
-        a2 ~ a8 b16 a16 gs8 -. a8 -. | % 72
+        g16 fs16 e16 d16 | % 48
+        cs16 -.-\ff a,16 b16 cs16 d16 e16 fs16 gs16 a8 -. b16 cs16
+        d16 e16 fs16 gs16 | % 49
+        a4 -. a,4 -. r4 r8 a,8 -. -\pp | % 50
+        <a f'>4 -. r8 <a e'>8 -. <a f'>4 -. r8 <a e'>8 -. | % 51
+        <a f'>4 -. <c g'>4 -. <c a'>4 -. r4 | % 52
+        <c bf'>4-. <c a'>4 -. <c g'>4 -. r4 | % 53
+        <c bf'>4-\pp -. <c a'>4 -. <c g'>4 -. r4 | % 54
+        <c a'>4 -.-\cresc r8 <c g'>8 -. <c a'>4 -. r8 <c g'>8 -. |
+        \barNumberCheck #55
+        <c a'>4 -. <c bf'>4 -. <c a'>4 -. r4 | % 56
+        <a g'>4 -.-\p <a f'>4 -. <a e'>4 -. r4 | % 57
+        <a g'>4 -.-\pp <a f'>4 -. <a e'>4 -. r4 | % 58
+        r8 a'8 a'4. a,8 -. a'8 -. g8 -. | % 59
+        f8 -. d8 -. cs8 -. a8 -. d8 -. a8 -. f8 -. d8 -. | % 60
+        c8 b8 c8 b8 c8 -. e8 -. g8 -. b8 -. | % 61
+        c8-\pp b8 c8 b8 c8 -. e8 -. g8 -. bf8 -. | % 62
+        a8 -. c,8 -. c'4.-\cresc c,8 -. c'8 -. bf8 -. | % 63
+        a8 -. f8 -. e8 -. c8 -. f8 -. c8 -. a8 -. f8 -. | % 64
+        a,8-\p gs8 a8 gs8 a8 -. cs8 -. e8 -. gs8 -. |
+        \barNumberCheck #65
+        a8-\pp gs8 a8 gs8 a8 -. cs8 -. e8 -. gs8 -. | % 66
+        a2. -\dolce fs8 \trill e16 fs16 | % 67
+        g?8 -. e8 -. cs8 -. a8 -. g8 -. e8 -. cs8 -. a8 -. | % 68
+        d8 -. a8 -. fs'8 -. d8 -. a'8 -. fs8 -. d'4 -. | % 69
+        e,8 -. cs8 -. cs'8 -. g8 -. e'8 -. cs8 -. g'4 -. | % 70
+        fs8-\cresc -. a8 -. fs8 -. d8 -. a8 -. fs8 -. d8 -. a'8 -. | % 71
+        a,4 a'4.-\sf b16 cs16 d16 e16 fs16 g16 | % 72
+        a4.-\fp a,8 a'4 -. a4 -. | % 73
+        a4.-\sf b,8 a'4 -. a4 -. | % 74
+        a4.-\sf cs,8 a'4 -. a4 -. | \barNumberCheck #75
+        a4.-\sf d,8 a'4 -. a4 -. | % 76
+        a8-\pp b16 a16 gs8 -. a8 -. cs8 b8 a8 -. g8 -. | % 77
+        fs8 g16 fs16 e8 -. fs8 -. g4 -. g4 -. | % 78
+        e8-\> fs16 e16 ds8 -. e8 -. a4 -. a4-\! -. | % 79
+        d,?4 -. r4 r2 | % 80
+        r2 r8 as8-\pp fs'4 ~ | % 81
+        fs2-\cresc ~ fs8 b,8 fs'4-\sf ~ | % 82
+        fs2 ~ fs8 cs8 fs4-\sf ~ | % 83
+        fs2 ~ fs8 d8 fs4-\sf ~ | % 84
+        fs4 fs,4-\pp -. fs4 -. fs4 -. | \barNumberCheck #85
+        e2-\cresc ~ e8 fs16 e16 ds8 -. e8 -. | % 86
+        a2-\sfp ~ a8 b16 a16 gs8 -. a8 -. | % 87
         d,8 e16 fs16 g16 a16 b16 cs16 d16 e16 d16 cs16 d16 e16
-        fs16 g16 | % 73
-        a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16
-        cs16 a16 | % 74
-        d4 r4 r2 | % 75
-        fs,8 -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 76
-        <fs, d'>4 r4 r2 | % 77
-        fs8 -. fs'8 -. g,8 -. g'8 -. a,8 -. a'8 -. e,8 -. cs'8
-        -. | % 78
-        d,8 -. d'16 e16 fs8 -. g8 -. a8 -. a8 -. b8 -. cs8 -. | % 79
+        fs16 g16 | % 88
+        a16-\cresc b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16
+        cs16 a16 | % 89
+        d4-\f r4 r2 | % 90
+        fs,8-\p -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 91
+        <fs, d'>4 r4 r2 | % 92
+        fs8-\f -. fs'8 -. g,8 -. g'8 -. a,8 -. a'8 -. e,8 -. cs'8-. | % 93
+        d,8 -. d'16 e16 fs8 -. g8 -. a8 -. a8 -. b8 -. cs8 -. | % 94
         d4 -. r4 r8
-    } | \barNumberCheck #80
-    \repeat volta 2 {
-        d,8 -\mp ef8 c8 | % 81
-        a4 -. r4 r8 b8 c8 a8 | % 82
-        fs4 -. r4 r8 gs8 a8 fs8 | % 83
-        c4 -. r4 ef'4 -. -\ff r4 | % 84
-        a,4 -. r4 c4 -. r4 | % 85
-        f,2. -\mf f4 | % 86
-        f'2. f16 ef16 d16 c16 | % 87
-        bf4 r4 r4 bf4 | % 88
-        bf'2. bf16 a16 g16 f16 | % 89
-        ef4 r4 r4 ef4 | \barNumberCheck #90
-        c'2 ~ c8 a8 f8 ef8 | % 91
-        d8 -. -\f f,8 d8 f8 d8 f8 d8 f8 | % 92
-        d8 f8 d8 f8 d8 f8 d8 f8 | % 93
-        ef8 f8 ef8 f8 ef8 f8 ef8 f8 | % 94
-        c8 f8 c8 f8 c8 f8 f8 -. f8 -. | % 95
-        f'2.-\sf	 d8. c16 | % 96
-        b?4 -. b'?4 -. b4. \trill a16 b16 | % 97
-        c8 -. d8 ef8 d8 ef8 d8 c8 b8 | % 98
-        c8 b8 c8 b8 c8 bf8 a8 g8 | % 99
-        fs4 -. r4 c'2 ~ | \barNumberCheck #100
-        c4 fs,4 -. fs4. \trill e16 fs16 | % 101
-        g8 -. cs8 d8 cs8 d8 c8 bf8 a8 | % 102
-        bf8 a8 bf8 a8 bf8 a8 bf8 a8 | % 103
-        bf2.-\ff f8. d16 | % 104
-        bf4 -. bf4 -. bf4. \trill a16 bf16 | % 105
-        bf2. -\p bf4 | % 106
-        g'2. af16 g16 f16 ef16 | % 107
-        d4 r4 r4 bf4 | % 108
-        af'2. bf16 af16 g16 f16 | % 109
-        ef4 r4 r4 bf4 | \barNumberCheck #110
-        g'2. a16 g16 fs16 g16 | % 111
-        bf4 -. r4 r4 a16 g16 fs16 g16 | % 112
-        bf4 -. a16 g16 fs16 g16 bf4 -. a16 g16 fs16 g16 | % 113
-        fs4 -. r4 r4 d4 | % 114
-        d'2. d16 c16 bf16 a16 | % 115
-        bf4 r4 r4 d,4 | % 116
-        cs'2. cs4 | % 117
-        d4 r4 r4 d,4 | % 118
-        d'2. d16 c16 bf16 a16 | % 119
-        bf8 -. -\< cs8 d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #120
-        g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 121
-        d2. -\! -\ff a8. fs16 | % 122
-        d4 d4 d4. \trill cs16 d16 | % 123
-        e8 ds8 e8 ds8 e8 d8 cs8 b8 | % 124
-        a8 gs8 a8 gs8 a8 g8 fs8 e8 | % 125
-        d4 -. r4 r2 | % 126
-        d8 -. -\pp cs8 -. d8 -. e8 -. fs8 -. g8 -. a8 -. fs8 -. | % 127
-        e4 r4 r2 | % 128
-        e8 -. ds8 -. e8 -. fs8 -. g8 -. a8 -. b8 -. g8 -. | % 129
-        fs4 r4 r2 | \barNumberCheck #130
-        fs8 -. es8 -. fs8 -. g8 -. gs8 -. a8 -. bf8 -. b8 -. | % 131
-        c8 -. b8 -. c8 -. cs8 -. d8 -. ds8 e8 c8 | % 132
-        a4 -. r4 r8 b8 c8 a8 | % 133
-        fs4 -. r4 r8 gs8 a8 fs8 | % 134
-        d2 ~ d8 e8 a,8 d8 | % 135
-        c4 b4 r16 g16 -\f a16 b16 c16 d16 e16 fs16 | % 136
-        g4 -. b4 -. d4 -. g4 -. | % 137
-        c,,2 -. e''2 -. | % 138
-        d,,2 -. c''2 -. | % 139
+    } \repeat volta 2 {
+        d,8( -\pp ef8 c8 | \barNumberCheck #95
+        a4 -.) r4 r8 b8 c8 a8 | % 96
+        fs4 -. r4 r8 gs8 a8 fs8 | % 97
+        c4 -. r4 ef'4 -. -\ff r4 | % 98
+        a,4 -. r4 c4 -. r4 | % 99
+        f,2. f4\p | % 100
+        f'2. f16 ef16 d16 c16 | % 101
+        bf4 r4 r4 bf4 | % 102
+        bf'2. bf16 a16 g16 f16 | % 103
+        ef4 r4 r4 ef4 | \barNumberCheck #104
+        c'2 ~ c8( a8-\< f8 ef8-\!) | % 105
+        d8 -. -\f f,8 d8 f8 d8 f8 d8 f8 | % 106
+        d8 f8 d8 f8 d8 f8 d8 f8 | % 107
+        ef8 f8 ef8 f8 ef8 f8 ef8 f8 | % 108
+        c8 f8 c8 f8 c8 f8 f8 -. f8 -. | % 109
+        f'2.-\sf	 d8. c16 | % 110
+        b?4 -. b'?4 -. b4. \trill a16 b16 | % 111
+        c8 -. d8 ef8 d8 ef8 d8 c8 b8 | % 112
+        c8 b8 c8 b8 c8 bf8 a8 g8 | % 113
+        fs4 -. r4 c'2-\sf ~ | \barNumberCheck #114
+        c4 fs,4 -. fs4. \trill e16 fs16 | % 115
+        g8 -. cs8 d8 cs8 d8 c8 bf8 a8 | % 116
+        bf8 a8 bf8 a8 bf8 a8 bf8 a8 | % 117
+        bf2.-\ff f8. d16 | % 118
+        bf4 -. bf4 -. bf4. \trill a16 bf16 | % 119
+        bf2. -\p bf4 | % 120
+        g'2. af16 g16 f16 ef16 | % 121
+        d4 r4 r4 bf4 | % 122
+        af'2. bf16 af16 g16 f16 | % 123
+        ef4 r4 r4 bf4 | \barNumberCheck #124
+        g'2.-\cresc a16 g16 fs16 g16 | % 125
+        bf4 -. r4 r4 a16 g16 fs16 g16 | % 126
+        bf4 -. a16 g16 fs16 g16 bf4 -. a16 g16 fs16 g16 | % 127
+        fs4-\p -. r4 r4 d4 | % 128
+        d'2. d16 c16 bf16 a16 | % 129
+        bf4 r4 r4 d,4 | % 130
+        cs'2. cs4 | % 131
+        d4 r4 r4 d,4 | % 132
+        d'2. d16 c16 bf16 a16 | % 133
+        bf8 -. -\< cs8 d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #134
+        g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 135
+        d2. -\! -\ff a8. fs16 | % 136
+        d4 d4 d4. \trill cs16 d16 | % 137
+        e8-\sf ds8 e8 ds8 e8 d8 cs8 b8 | % 138
+        a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
+        d4 -. r4 r2 | % 140
+        d8 -. -\pp cs8 -. d8 -. e8 -. fs8 -. g8 -. a8 -. fs8 -. | % 141
+        e4 r4 r2 | % 142
+        e8 -. ds8 -. e8 -. fs8 -. g8 -. a8 -. b8 -. g8 -. | % 143
+        fs4 r4 r2 | \barNumberCheck #144
+        fs8-\pp -. es8 -. fs8 -. g8 -. gs8 -. a8 -. bf8 -. b8 -. | % 145
+        c8 -. b8 -. c8 -. cs8 -. d8 -. ds8 e8 c8 | % 146
+        a4 -. r4 r8 b8 c8 a8 | % 147
+        fs4 -. r4 r8 gs8-\p a8 fs8 | % 148
+        d2 ~ d8 e8 a,8 d8 | % 149
+        c4 b4 r16 g16 -\f a16 b16 c16 d16 e16 fs16 | % 150
+        g4 -. b4 -. d4 -. g4 -. | % 151
+        c,,2-\ff -. e''2-\sf -. | % 152
+        d,,2 -. c''2 -. | % 153
         \acciaccatura { c8 } b16 a16 b16 c16 d4 -. r2 |
-        \barNumberCheck #140
-        R1 | % 141
-        r2 r16 b,,16 -\ff c16 d16 e16 f16 g16 a16 | % 142
-        b4 -. d4 -. f4 -. <d b'>4 -. | % 143
-        <e c'>4 -. r4 r2 | % 144
-        as,2 as'2 | % 145
-        b4 -. gs8 \trill fs16 gs16 a4 -. fs8 \trill e16 fs16 | % 146
-        g4 -. r4 <e, cs'>4 -. r4 | % 147
-        d'1 ~ -\mf | % 148
-        d4 g4 ~ g16 fs16 e16 d16 c16 b16 a16 g16 | % 149
-        fs4 r4 r8 d'8 -. d8 -. d8 -. | \barNumberCheck #150
+        \barNumberCheck #154
+        R1 | % 155
+        r2 r16 b,,16 -\ff c16 d16 e16 f16 g16 a16 | % 156
+        b4 -. d4 -. f4 -. <d b'>4 -. | % 157
+        <e c'>4 -. r4 r2 | % 158
+        as,2-\ff as'2 | % 159
+        b4 -. gs8 \trill fs16 gs16 a4 -. fs8 \trill e16 fs16 | % 160
+        g?4 -. r4 <e, cs'>4 -. r4 | % 161
+        d'1 ~ -\fp | % 162
+        d4 g4 ~ g16 fs16 e16 d16 c16 b16 a16 g16 | % 163
+        fs?4 r4 r8 d'8-\f -. d8 -. d8 -. | \barNumberCheck #164
         d8 -. e16 fs16 g16 fs16 g16 fs16 g16 fs16 e16 d16 c16 b16 a16
-        g16 | % 151
-        d16 -. -\< d16 e16 fs16 g16 a16 b16 cs16 d8 -. e16 fs16 g16
-        a16 b16 cs16 | % 152
-        d4 -. -\! -\f d,4 -. r4 r8 d,8 -. -\mp | % 153
-        <d bf'>4 -. r8 <d a'>8 -. <d bf'>4 -. r8 <d a'>8 -. | % 154
-        <d bf'>4 -. <f c'>4 -. <f d'>4 -. r4 | % 155
-        <f ef'>4 -. <f d'>4 -. <f c'>4 -. r4 | % 156
-        <f ef'>4 -. <f d'>4 -. <f c'>4 -. r4 | % 157
-        <f d'>4 -. r8 <f c'>8 -. <f d'>4 -. r8 <f c'>8 -. | % 158
-        <f d'>4 -. <f ef'>4 -. <f d'>4 -. r4 | % 159
-        <d c'>4 -. <d bf'>4 -. <d a'>4 -. r4 | \barNumberCheck #160
-        <d c'>4 -. <d bf'>4 -. <d a'>4 -. r4 | % 161
-        r8 d'8 -\mf d'4. d,8 -. d'8 -. c8 -. | % 162
-        bf8 -. g8 -. fs8 -. d8 -. g8 -. d8 -. bf8 -. g8 -. | % 163
-        f8 e8 f8 e8 f8 -. a8 -. c8 -. e8 -. | % 164
-        f8 e8 f8 e8 f8 -. a8 -. c8 -. ef8 -. | % 165
-        d8 -. f,8 -. f'4. f,8 -. f'8 -. ef8 -. | % 166
-        d8 -. bf8 -. a8 -. f8 -. bf8 -. f8 -. d8 -. bf8 -. | % 167
-        d,8 cs8 d8 cs8 d8 -. fs8 -. a8 -. cs8 -. | % 168
-        d8 cs8 d8 cs8 d8 -. fs8 -. a8 -. cs8 -. | % 169
-        d2. -\f b8 \trill a16 b16 | \barNumberCheck #170
-        c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 171
-        g8 -. -\mf d8 -. b'8 -. g8 -. d'8 -. b8 -. g'4 -. | % 172
-        a,8 -. fs8 -. fs'8 -. c8 -. a'8 -. fs8 -. c'4 -. | % 173
-        b8 -. d8 -. b8 -. g8 -. d8 -. b8 -. g8 -. d'8 -. | % 174
+        g16 | % 165
+        d8 -.-\ff e16 fs16 g16 a16 b16 cs16 d8 -. e16 fs16 g16
+        a16 b16 cs16 | % 166
+        d4 -. -\f d,4 -. r4 r8 d,8 -. -\pp | % 167
+        <d bf'>4 -. r8 <d a'>8 -. <d bf'>4 -. r8 <d a'>8 -. | % 168
+        <d bf'>4 -. <f c'>4 -. <f d'>4 -. r4 | % 169
+        <f ef'>4 -. <f d'>4 -. <f c'>4 -. r4 | % 170
+        <f ef'>4-\pp -. <f d'>4 -. <f c'>4 -. r4 | % 171
+        <f d'>4 -. r8 <f c'>8-\cresc -. <f d'>4 -. r8 <f c'>8 -. | % 172
+        <f d'>4 -. <f ef'>4 -. <f d'>4 -. r4 | % 173
+        <d c'>4-\p -. <d bf'>4 -. <d a'>4 -. r4 | \barNumberCheck #174
+        <d c'>4-\pp -. <d bf'>4 -. <d a'>4 -. r4 | % 175
+        r8 d'8 d'4. d,8 -. d'8 -. c8 -. | % 176
+        bf8 -. g8 -. fs8 -. d8 -. g8 -. d8 -. bf8 -. g8 -. | % 177
+        f8 e8 f8 e8 f8 -. a8 -. c8 -. e8 -. | % 178
+        f8-\pp e8 f8 e8 f8 -. a8 -. c8 -. ef8 -. | % 179
+        d8 -. f,8 -. f'4.-\cresc f,8 -. f'8 -. ef8 -. | % 180
+        d8 -. bf8 -. a8 -. f8 -. bf8 -. f8 -. d8 -. bf8 -. | % 181
+        d,8-\p cs8 d8 cs8 d8 -. fs8 -. a8 -. cs8 -. | % 182
+        d8-\pp cs8 d8 cs8 d8 -. fs8 -. a8 -. cs8 -. | % 183
+        d2. -\dolce b8 \trill a16 b16 | \barNumberCheck #184
+        c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 185
+        g8 -. d8 -. b'8 -. g8 -. d'8 -. b8 -. g'4 -. | % 186
+        a,8 -. fs8 -. fs'8 -. c8 -. a'8 -. fs8 -. c'4 -. | % 187
+        b8-\cresc  -. d8 -. b8 -. g8 -. d8 -. b8 -. g8 -. d'8 -. | % 188
         d,8 -. e16 fs16 g16 a16 b16 c16 d8 -. e16 fs16 g16 a16 b16 c16
-        | % 175
-        d4. d,8 d'4 -. d4 -. | % 176
-        d4. e,8 d'4 -. d4 -. | % 177
-        d4. fs,8 d'4 -. d4 -. | % 178
-        d4. g,8 d'4 -. d4 -. | % 179
-        d8 e16 d16 cs8 -. d8 -. fs8 e8 d8 -. c8 -. | \barNumberCheck
-        #180
-        b8 c16 b16 a8 -. b8 -. c4 -. c4 -. | % 181
-        a8 b16 a16 af8 -. a8 -. d4 -. d4 -. | % 182
-        g,4 -. r4 r2 | % 183
-        r2 r8 ds8 b'4 ~ | % 184
-        b2 ~ b8 e,8 b'4 ~ | % 185
-        b2 ~ b8 fs8 b4 ~ | % 186
-        b2 ~ b8 g8 b4 ~ | % 187
-        b4 <e,, b'>4 -. <e b'>4 -. <e b'>4 -. | % 188
-        a2 ~ a8 b16 a16 gs8 -. a8 -. | % 189
-        d2 ~ d8 e16 d16 cs8 -. d8 -. | \barNumberCheck #190
-        g,8 a16 b16 c16 d16 e16 fs16 g16 a16 g16 fs16 g16 a16 b16 c16
-        | % 191
-        d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16
-        fs16 d16 | % 192
-        g4 -. r4 r2 | % 193
-        b,,8 -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 194
-        <b, g'>4 r4 r2 | % 195
-        b8 -. b'8 -. c,8 -. c'8 -. d,8 -. d'8 -. fs,8 -. fs'8 -. | % 196
-        b,8 -. g'8 -. c,8 -. a'8 -. cs,8 -. as'8 -. d,8 -. b'8 -. | % 197
-        e,8 c'8 e8 e8 \tempo 4=130 e8 e8 e8 e8 | % 198
-        \tempo 4=40 e4 -. d4. \tempo 4=150 ds8 -\mp e8 c8 | % 199
-        a4 -. r4 r8 b8 c8 a8 | \barNumberCheck #200
-        fs4 -. r4 r8 gs8 a8 fs8 | % 201
-        c8 -. ds8 e8 c8 a8 -. b8 c8 a8 | % 202
-        fs8 -. gs8 a8 fs8 ef8 -. -\sf gs8 a8 fs8 | % 203
-        ef8 -. -\sf gs8 a8 fs8 ef8 -. -\sf gs8 a8 fs8 | % 204
-        <g bf>1 ~ ~ -\mf | % 205
-        <g bf>1 | % 206
-        f'2. -\f \acciaccatura { ef8 } d8. c16 | % 207
-        bf4 -. bf4 -. bf4. \trill a16 bf16 | % 208
-        <g bf>1 ~ ~ -\mf | % 209
-        <g bf>1 | \barNumberCheck #210
-        af'8 -\f g8 af8 e8 f8 e8 f8 d8 | % 211
-        bf4 -. bf4 -. bf4. \trill a16 bf16 | % 212
-        bf1 -\mf | % 213
-        r4 a4 a4 a4 | % 214
-        a2.. \trill gs16 a16 | % 215
-        d2. d16 c16 b16 a16 | % 216
-        g4 -. r4 r2 | % 217
-        R1 | % 218
-        r2 r16 d16 e16 fs16 g16 a16 b16 cs16 | % 219
-        d4 -. fs4 -. a4 -. d4 -. | \barNumberCheck #220
-        b4 -. g'4 -. d4 -. b4 -. | % 221
-        g4 -. d4 -. b4 -. g4 -. | % 222
-        d4 -. r4 r16 d16 e16 fs16 g16 a16 b16 cs16 | % 223
-        d4 -. fs4 -. a4 -. d4 -. | % 224
-        b4 -. r4 r16 d,,16 e16 fs16 g16 a16 b16 c16 | % 225
-        d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16
-        cs16 | % 226
-        d4 r4 r16 d16 e16 fs16 g16 a16 b16 c16 | % 227
-        d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16
-        cs16 | % 228
-        d4 -\f r4 <g,, d' b'>4 r4 | % 229
-        <g, d' b' g'>4 r4 r8 \bar "|."
+        | % 189
+        d4.-\fp d,8 d'4 -. d4 -. | % 190
+        d4.-\sf e,8 d'4 -. d4 -. | % 191
+        d4.-\sf fs,8 d'4 -. d4 -. | % 192
+        d4.-\sf g,8 d'4 -. d4 -. | % 193
+        d8-\pp e16 d16 cs8 -. d8 -. fs8 e8 d8 -. c8 -. | \barNumberCheck #194
+        b8-\< c16 b16 a8 -. b8 -. c4 -. c4 -. | % 195
+        a8-\> b16 a16 af8 -. a8 -. d4 -. d4 -.-\! | % 196
+        g,4 -. r4 r2 | % 197
+        r2 r8 ds8 b'4-\sf ~ | % 198
+        b2-\cresc ~ b8 e,8 b'4-\sf ~ | % 199
+        b2 ~ b8 fs8 b4-\sf ~ | % 200
+        b2 ~ b8 g8 b4-\sf ~ | % 201
+        b4 <e,, b'>4-\pp -. q4 -. q4 -. | % 202
+        a2-\cresc ~ a8 b16 a16 gs8 -. a8 -. | % 203
+        d2-\sfp ~ d8 e16 d16 cs8 -. d8 -. | \barNumberCheck #204
+        g,8 a16 b16 c16 d16 e16 fs16 g16 a16 g16 fs16 g16 a16 b16 c16 | % 205
+        d16-\cresc e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16
+        fs16 d16 | % 206
+        g4-\f -. r4 r2 | % 207
+        b,,8-\p -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 208
+        <b, g'>4 r4 r2 | % 209
+        b8-\f -. b'8 -. c,8 -. c'8 -. d,8 -. d'8 -. fs,8 -. fs'8 -. | % 210
+    } \alternative {
+        { g8-. g16( a) b8-. c-. d8-. d-. e-. fs-. | g4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
+        { b,,8 -. g'8-\cresc -. c,8 -. a'8 -. cs,8 -. as'8 -. d,8 -. b'8 -. } % 211
     }
+    e,8-\ff c'8 e8 e8 e8 e8 e8 e8 | % 213
+    e4 -. d4.-\sf\fermata ds8 -\pp e8 c8 | % 214
+    a4 -. r4 r8 b8 c8 a8 | \barNumberCheck #215
+    fs4 -. r4 r8 gs8 a8 fs8 | % 216
+    c8 -. ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
+    fs8 -. gs8 a8 fs8 ef8 -. -\sf gs8 a8 fs8 | % 218
+    ef8 -. -\sf gs8 a8 fs8 ef8 -. -\sf gs8 a8 fs8 | % 219
+    <g bf>1 ~ ~ -\fp | % 220
+    <g bf>1 | % 221
+    f'2. -\p \acciaccatura { ef8 } d8. c16 | % 222
+    bf4 -. bf4 -. bf4. \trill a16 bf16 | % 223
+    <g bf>1 ~ -\fp  | % 224
+    <g bf>1 | \barNumberCheck #225
+    af'8 g8 af8 e8 f8 e8 f8 d8 | % 226
+    bf4 -. bf4 -. bf4. \trill a16 bf16 | % 227
+    bf1 | % 228
+    r4 a4 a4 a4 | % 229
+    a2..-\cresc \trill gs16 a16 | % 230
+    d2.-\sf d16 c16 b16 a16 | % 231
+    g?4 -. r4 r2 | % 232
+    R1 | % 233
+    r2 r16 d16 e16 fs16 g16 a16 b16 cs16 | % 234
+    d4 -. fs4 -. a4 -. d4 -. | \barNumberCheck #235
+    b4 -. g'4 -. d4 -. b4 -. | % 236
+    g4 -. d4 -. b4 -. g4 -. | % 237
+    d4 -. r4 r16 d16-\ff e16 fs16 g16 a16 b16 cs16 | % 238
+    d4 -. fs4 -. a4 -. d4 -. | % 239
+    b4 -. r4 r16 d,,16 e16 fs16 g16 a16 b16 c16 | % 240
+    d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16
+    cs16 | % 241
+    d4 r4 r16 d16 e16 fs16 g16 a16 b16 c16 | % 242
+    d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16
+    cs16 | % 243
+    d4 r4 <g,, d' b'>4-\ff r4 | % 244
+    <g, d' b' g'>4 r4 r8 \bar "|."
 }
 TrioII_MvII_Violin = \relative g {
     \time 3/4 \key e \major \tempo "Adagio, ma non tanto, e cantabile" 4=40
@@ -960,55 +963,55 @@ TrioII_MvIV_Violin = \relative g' {
     -. a'8 c8 b8 d8 c8 e8 d8 fs8 e8 g8 fs8 a8 fs8 g8 d8 -. b8 -. ds8 e8
     c8 -. a8 -. cs8 d8 b8 -. g8 -. b8 c8 a8 -. fs8 -. g4 r4 r2 r2 r4 bf,4
     -\mp ef2 g2 bf2. ef4 g2 a2 bf2. fs4 g2. df4 d2. b4 c2 fs,2 g4 r4 r4
-    bf,4 -\mf ef2 g2 bf2. ef4 g2 a2 | \barNumberCheck #230
-    bf2. fs4 | % 231
-    g2. cs,4 | % 232
-    d2. b'4 | % 233
-    c2 fs,2 | % 234
-    g8 -. d8 -. -\p -\< e8 -. c8 -. g'8 -. d8 -. e8 -. c8 -. | % 235
-    g'8 -. d8 -. e8 -. c8 -. g'8 -. d8 -. e8 -. c8 -. | % 236
-    fs8 -. d8 -. g8 -. d8 -. fs8 -. d8 -. g8 -. d8 -. | % 237
-    fs8 -. d8 -. g8 -. d8 -. fs8 -. d8 -. g8 -. d8 -. | % 238
-    g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. | % 239
+    bf,4 -\mf ef2 g2 bf2. ef4 g2 a2 | \barNumberCheck #245
+    bf2. fs4 | % 246
+    g2. cs,4 | % 247
+    d2. b'4 | % 248
+    c2 fs,2 | % 249
+    g8 -. d8 -. -\p -\< e8 -. c8 -. g'8 -. d8 -. e8 -. c8 -. | % 250
+    g'8 -. d8 -. e8 -. c8 -. g'8 -. d8 -. e8 -. c8 -. | % 251
+    fs8 -. d8 -. g8 -. d8 -. fs8 -. d8 -. g8 -. d8 -. | % 252
+    fs8 -. d8 -. g8 -. d8 -. fs8 -. d8 -. g8 -. d8 -. | % 253
+    g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. | % 254
     g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. g,8 -. g'8 -. |
-    \barNumberCheck #240
-    d'8 -. -! -\! -\f a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 241
-    d'8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 242
-    d'8 -. -\p -\< a8 -. b8 -. g8 -. c8 -. g8 -. a8 -. fs8 -. | % 243
-    b8 -. fs8 -. g8 -. e8 -. a8 -. e8 -. f8 -. d8 -. | % 244
-    g8 -. d8 -. e8 -. c8 -. fs8 -. cs8 -. d8 -. b8 -. | % 245
-    e8 -. b8 -. c8 -. a8 -. d8 -. a8 -. b8 -. g8 -. | % 246
-    g8 -. -\! -\f g'8 -. g,8 -. g'8 -. as,8 -. g'8 -. as,8 -. g'8 -. | % 247
-    b,8 -. g'8 -. b,8 -. g'8 -. a,8 -. fs'8 -. a,8 -. fs'8 -. | % 248
-    d'8 -. -\p -\< d8 -. b8 -. d8 -. b8 -. c8 -. a8 -. c8 -. | % 249
+    \barNumberCheck #255
+    d'8 -. -! -\! -\f a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 256
+    d'8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 257
+    d'8 -. -\p -\< a8 -. b8 -. g8 -. c8 -. g8 -. a8 -. fs8 -. | % 258
+    b8 -. fs8 -. g8 -. e8 -. a8 -. e8 -. f8 -. d8 -. | % 259
+    g8 -. d8 -. e8 -. c8 -. fs8 -. cs8 -. d8 -. b8 -. | % 260
+    e8 -. b8 -. c8 -. a8 -. d8 -. a8 -. b8 -. g8 -. | % 261
+    g8 -. -\! -\f g'8 -. g,8 -. g'8 -. as,8 -. g'8 -. as,8 -. g'8 -. | % 262
+    b,8 -. g'8 -. b,8 -. g'8 -. a,8 -. fs'8 -. a,8 -. fs'8 -. | % 263
+    d'8 -. -\p -\< d8 -. b8 -. d8 -. b8 -. c8 -. a8 -. c8 -. | % 264
     a8 -. b8 -. g8 -. b8 -. g8 -. a8 -. es8 -. a8 -. | \barNumberCheck
     #250
-    es8 -. g8 -. e8 -. g8 -. e8 -. fs8 -. d8 -. fs8 -. | % 251
-    d8 -. e8 -. c8 -. e8 -. c8 -. d8 -. b8 -. d8 -. | % 252
+    es8 -. g8 -. e8 -. g8 -. e8 -. fs8 -. d8 -. fs8 -. | % 266
+    d8 -. e8 -. c8 -. e8 -. c8 -. d8 -. b8 -. d8 -. | % 267
     g,8 -. -\! -\f -\< g'8 -. g,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8
-    -. | % 253
-    b,8 -. g'8 -. b,8 -. g'8 -. a,8 -. fs'8 -. a,8 -. fs'8 -. | % 254
-    g,8 -. g'8 -. g,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. | % 255
-    bf,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. | % 256
-    <a, fs'>4 -\! -\sf d,8 e8 fs8 g8 a8 b8 | % 257
-    c8 b8 a8 b8 c8 d8 e8 fs8 | % 258
-    g4 -. d4 -. b4 -. e4 -. | % 259
-    c4 -. a4 -. d4 -. a4 -. | \barNumberCheck #260
-    b4 -. g4 -. e4 -. a4 -. | % 261
-    fs4 -. d4 -. e4 -. fs4 -. | % 262
-    g4 -. a4 -. b4 -. c4 -. | % 263
-    d4 -. e4 -. fs4 -. g4 -. | % 264
-    a4 -. b4 -. c4 -. cs4 -. | % 265
-    d4 -. a4 -. fs4 -. d4 -. | % 266
-    g8 -. -\< g8 -. d8 -. d8 -. b8 -. b8 -. e8 -. e8 -. | % 267
-    c8 -. c8 -. a8 -. a8 -. d8 -. d8 -. a8 -. a8 -. | % 268
-    b8 -. b8 -. g8 -. g8 -. e8 -. e8 -. a8 -. a8 -. | % 269
+    -. | % 268
+    b,8 -. g'8 -. b,8 -. g'8 -. a,8 -. fs'8 -. a,8 -. fs'8 -. | % 269
+    g,8 -. g'8 -. g,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. | % 270
+    bf,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. bf,8 -. g'8 -. | % 271
+    <a, fs'>4 -\! -\sf d,8 e8 fs8 g8 a8 b8 | % 272
+    c8 b8 a8 b8 c8 d8 e8 fs8 | % 273
+    g4 -. d4 -. b4 -. e4 -. | % 274
+    c4 -. a4 -. d4 -. a4 -. | \barNumberCheck #275
+    b4 -. g4 -. e4 -. a4 -. | % 276
+    fs4 -. d4 -. e4 -. fs4 -. | % 277
+    g4 -. a4 -. b4 -. c4 -. | % 278
+    d4 -. e4 -. fs4 -. g4 -. | % 279
+    a4 -. b4 -. c4 -. cs4 -. | % 280
+    d4 -. a4 -. fs4 -. d4 -. | % 281
+    g8 -. -\< g8 -. d8 -. d8 -. b8 -. b8 -. e8 -. e8 -. | % 282
+    c8 -. c8 -. a8 -. a8 -. d8 -. d8 -. a8 -. a8 -. | % 283
+    b8 -. b8 -. g8 -. g8 -. e8 -. e8 -. a8 -. a8 -. | % 284
     fs8 -. fs8 -. d8 -. d8 -. e8 -. e8 -. fs8 -. fs8 -. |
-    \barNumberCheck #270
-    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. | % 271
-    e8 -. e8 -. fs8 -. fs8 -. g8 -. g8 -. a8 -. a8 -. | % 272
-    b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. e8 -. e8 -. | % 273
-    \tempo 4=220 cs4 -. -\! -\ff r4 <d, d'>4 -. r4 | % 274
+    \barNumberCheck #285
+    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. | % 286
+    e8 -. e8 -. fs8 -. fs8 -. g8 -. g8 -. a8 -. a8 -. | % 287
+    b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. e8 -. e8 -. | % 288
+    \tempo 4=220 cs4 -. -\! -\ff r4 <d, d'>4 -. r4 | % 289
     <g,, d' b' g'>4 r4 r2 \bar "|."
     }
 
@@ -1067,259 +1070,255 @@ TrioII_MvI_Viola =  \relative g {
         g4 -. -\! r4 r2 | % 4
         r8. fs32-\pp a32 d8 -. r8 r2 | % 5
         r8. g,32 b32 d8 -. r8 r2 | % 6
-        a4-\p e8 c'8 b4 c4 | % 7
-        b16 fs16 -. g16 -. a16 -. b16 -. c16 -. d16 -. b16 -. g8
-        -. r8 r4 | % 8
-        a16 -. gs16 -. a16 -. b16 -. c16 -. d16 -. e16 -. c16 -.
-        a8 -. r8 r4 | % 9
-        b16 -. as16 -. b16 -. c16 -. d16 -. e16 -. f16 -. d16 -.
-        b8 -. r8 r4 | \barNumberCheck #10
-        e,16 -. gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -.
-        ds16 -. e8 -. fs8 -. g8 -. e8 -. | % 11
-        ds2 ~ -\! -\ff -\> ds8 ds8 -. -\! -\mp ds8 -. ds8 -. | % 12
-        ds4 d4. d,8 -. d8 -. d8 -. | % 13
-        fs2 r2 | % 14
-        r8. fs32 -\mf a32 c8 -. r8 r2 | % 15
-        r8. a32 c32 fs8 -. r8 r2 \bar "||"
-        \partial 4. r8 r4 |
-        R1*2 | 
-        c4 a4 fs4 d4 d4 g4 r2 R1 g2 -. -\f <e g>2
-        -. a2 -. <fs a>2 -. <d b'>4 r4 r2 R1 c1 <d c'>1 b'8 d,8 -\p
-        b'8 d,8 b'8 d,8 b'8 d,8 b'8 d,8 b'8 d,8 b'8 d,8 b'8
-        d,8 c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 16
-        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 17
-        b'8 d,8 b'8 d,8 b'8 d,8 b'8 d,8 | % 18
-        b'8 d,8 b'8 d,8 b'8 d,8 b'8 d,8 | % 19
-        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | \barNumberCheck #20
-        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 21
-        <d b'>8 <b' d>8 <b d>8 <b d>8 <b d>4 r4 | % 22
-        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 23
-        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 24
-        r4 e'2 <a, e'>4 -. | % 25
-        a4 -. fs'4. cs16 d16 e16 d16 cs16 d16 | % 26
-        a'4 g4 r8 cs,16 d16 e16 d16 cs16 d16 | % 27
-        b'4 a4 r8 cs,16 d16 e16 d16 cs16 d16 | % 28
-        as'8 b4 a16 g16 fs8 e8 fs8 -. d8 -. | % 29
-        cs4 -. g'4 ~ g16 fs16 e16 d16 cs16 b16 a16 g16 |
-        \barNumberCheck #30
-        fs4 r4 r2 | % 31
-        a16 -. cs16 e16 fs16 g16 fs16 g16 fs16 g16 fs16 e16 d16
-        cs16 b16 a16 g16 | % 32
-        fs8 -. fs'8 -. g8 -. a,8 -. a'8 -. a,8 -. fs'8 -. a,8 -.
-        | % 33
-        e'4 -\< r8 <fs d'>8 -. <e cs'>4 -. r8 <fs d'>8 -. | % 34
-        <e cs'>4 -. -\! -\f a,4 -. r4 r8 a8 -. -\mp | % 35
-        d4 -. r8 cs8 -. d4 -. r8 cs8 -. | % 36
-        d4 -. e4 -. f4 -. r4 | % 37
-        g4 -. f4 -. e4 -. r4 | % 38
-        g4 -. f4 -. e4 -. r4 | % 39
-        f4 -. r8 e8 -. f4 -. r8 e8 -. | \barNumberCheck #40
-        f4 -. g4 -. f4 -. r4 | % 41
-        e4 -. d4 -. cs4 -. r4 | % 42
-        e4 -. d4 -. cs4 -. r8 a8 -. -\mf | % 43
-        f'4 -. r8 e8 -. f4 -. r8 e8 -. | % 44
-        f4 -. g4 -. a4 -. r4 | % 45
-        bf4 -. a4 -. g4 -. r4 | % 46
-        bf4 -. a4 -. g4 -. r4 | % 47
-        a4 -. r8 g8 -. a4 -. r8 g8 -. | % 48
-        a4 -. bf4 -. a4 -. r4 | % 49
-        g4 -. f4 -. e4 -. r4 | \barNumberCheck #50
-        g4 -. f4 -. e4 -. r4 | % 51
-        fs,8 a8 d8 a8 fs8 a8 d8 a8 | % 52
-        e8 g8 cs8 g8 e8 g8 cs8 g8 | % 53
-        a'2. -\f fs8 \trill e16 fs16 | % 54
-        g8 -. e8 -. cs8 -. a8 -. g8 -. e8 -. cs8 -. a'8 -. | % 55
-        d,8 -\mf fs8 a8 fs8 d8 fs8 a8 fs8 | % 56
-        cs8 e8 a8 e8 cs8 e8 a8 e8 | % 57
-        <d a'>1 -\mp | % 58
-        <d b'>1 | % 59
-        <d cs'>1 | \barNumberCheck #60
-        <d d'>1 | % 61
-        <a' e'>1 | % 62
-        a2 d2 ~ | % 63
-        d2 cs2 | % 64
-        <fs, d'>4 -. d'4 -\mf e4 es4 | % 65
-        fs8 -. as,8 fs'4 ~ fs2 ~ | % 66
-        fs8 b,8 fs'4 ~ fs2 ~ | % 67
-        fs8 cs8 fs4 ~ fs2 ~ | % 68
-        fs8 d8 d'2 <b, d>4 ~ ~ | % 69
-        <b d>4 <b d>4 -. <b d>4 -. <b d>4 -. | \barNumberCheck
-        #70
-        <b d>1 | % 71
-        cs1 | % 72
-        fs,4 r4 r2 | % 73
-        fs'8 -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 74
-        <fs, d'>16 -. d16 e16 fs16 g16 a16 b16 cs16 d16 e16 d16
-        cs16 d16 e16 fs16 g16 | % 75
-        a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16
-        cs16 a16 | % 76
-        d4 r4 r2 | % 77
-        d,8 -. a8 -. e'8 -. a,8 -. fs'8 -. a,8 -. g'8 -. a,8 -.
-        | % 78
-        <a fs'>4 r4 <a g'>4 r4 | % 79
+        a4-\p-\< e8 c'8-\! << { b4-\> c4 | b16-\! } \\ \tag #'doubleStops { d,2 ~ | d16 } >>
+        fs16-.-\pp g16 -. a16 -. b16 -. c16 -. d16 -. b16 -. g8 -. r8 r4 | % 8
+        a16 -. gs16 -. a16 -. b16 -. c16 -. d16 -. e16 -. c16 -. a8 -. r8 r4 | % 9
+        b16 -. as16 -. b16 -. c16 -. d16 -. e16 -. f16 -. d16 -. b8 -. r8 r4 | \barNumberCheck #10
+        e,16 -. gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -. ds16 -. e8 -. fs8 -. g8 -. e8 -. | % 11
+        ds2 ~ -\! -\ff -\> ds8 ds8 -. -\! -\pp ds8 -. ds8 -. | % 12
+        ds4(-\< d4.)-\sf d,8-.-\< d8-.-\> d8-.-\! | % 13
+        fs2-\pp r2 | % 14
+        r8. fs32 a32 c8 -. r8 r2 | \barNumberCheck #15
+        r8. a32-\pp c32 fs8 -. r8 r2 \bar "||"
+        \partial 4. r8 r4 | % 17
+        R1*2 | % 19
+        c='4 a4 fs4 d4 | \barNumberCheck #20
+        d4 g4 r2 | % 21
+        R1 | % 22
+        g2 -. -\f <e g>2-. | % 23
+        a2 -. <fs a>2-. | % 24
+        <d b'>4 r4 r2 | % 25
+        R1 | % 26
+        c1 | % 27
+        <d c'>1 | % 28
+        << { s1-\p | s1 } \repeat unfold 8 { b'8 d,8 } >> | % 30
+        \repeat unfold 8 { c'8 d,8 } | \barNumberCheck #32
+        << {s1-\f | s1 } \repeat unfold 8 { b'8 d,8 } >> | \barNumberCheck #34
+        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | \barNumberCheck #35
+        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 36
+        <d b'>8 <b' d>8-\p q8 q8 q4 r4 | % 37
+        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 38
+        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 39
+        r4 e'2 <a, e'>4 -. | % 40
+        a4 -. fs'4. cs16( d16 e16 d16 cs16 d16) | % 41
+        a'4( g4) r8 cs,16( d16 e16 d16 cs16 d16) | % 42
+        b'4( a4) r8 cs,16( d16 e16 d16 cs16 d16) | % 43
+        as'8( b4-\sf a16 g16) fs8( e8) fs8 -. d8 -. | % 44
+        cs4 -. g'4 ~ g16( fs16 e16 d16 cs16 b16 a16 g16) | \barNumberCheck #45
+        fs4 r4 r2 | % 46
+        a16 -. cs16( e16 fs16 g16 fs16 g16 fs16 g16 fs16 e16 d16 cs16 b16 a16 g16) | % 47
+        fs8 -. fs'8 -. g8 -. a,8 -. a'8 -. a,8 -. fs'8 -. a,8 -. | % 48
+        e'4 -\ff r8 <fs d'>8 -. <e cs'>4 -. r8 <fs d'>8 -. | % 49
+        <e cs'>4 -. a,4 -. r4 r8 a8 -. -\pp | % 50
+        d4 -. r8 cs8 -. d4 -. r8 cs8 -. | % 51
+        d4 -. e4 -. f4 -. r4 | % 52
+        g4 -. f4 -. e4 -. r4 | % 53
+        g4 -.-\pp f4 -. e4 -. r4 | % 54
+        f4 -.-\cresc r8 e8 -. f4 -. r8 e8 -. | \barNumberCheck #55
+        f4 -. g4 -. f4 -. r4 | % 56
+        e4 -.-\p d4 -. cs4 -. r4 | % 57
+        e4 -.-\pp d4 -. cs4 -. r8 a8 -. | % 58
+        f'4 -. r8 e8 -. f4 -. r8 e8 -. | % 59
+        f4 -. g4 -. a4 -. r4 | % 60
+        bf4 -. a4 -. g4 -. r4 | % 61
+        bf4-\pp -. a4 -. g4 -. r4 | % 62
+        a4 -. r8 g8-\cresc -. a4 -. r8 g8 -. | % 63
+        a4 -. bf4 -. a4 -. r4 | % 64
+        g4-\p -. f4 -. e4 -. r4 | \barNumberCheck #65
+        g4-\pp -. f4 -. e4 -. r4 | % 66
+        fs,8-\dolce a8 d8 a8 fs8 a8 d8 a8 | % 67
+        e8 g8 cs8 g8 e8 g8 cs8 g8 | % 68
+        a'2. fs8 \trill e16 fs16 | % 69
+        g8 -. e8 -. cs8 -. a8 -. g8 -. e8 -. cs8 -. a'8 -. | % 70
+        d,8 -\cresc fs8 a8 fs8 d8 fs8 a8 fs8 | % 71
+        cs8 e8 a8 e8 cs8 e8 a8 e8 | % 72
+        <d a'>1 -\sfp | % 73
+        <d b'>1-\sf | % 74
+        <d cs'>1-\sf | \barNumberCheck #75
+        <d d'>1-\sf | % 76
+        <a' e'>1-\pp | % 77
+        a2-\< d2 ~ | % 78
+        d2-\> cs2 | % 79
+        <fs, d'>4-\! -. d'4 -\pp e4 es4 | % 80
+        fs8 -. as,8( fs'4)-\cresc ~ fs2 ~ | % 81
+        fs8 b,8 fs'4-\sf ~ fs2 ~ | % 82
+        fs8 cs8 fs4-\sf ~ fs2 ~ | % 83
+        fs8 d8 d'2-\sf <b, d>4 ~ ~ | % 84
+        <b d>4 <b d>4-\pp -. <b d>4 -. <b d>4 -. | \barNumberCheck # 85
+        <b d>1-\cresc | % 86
+        cs1-\sfp | % 87
+        fs,4 r4 r2 | % 88
+        fs'8-\p -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 89
+        <fs, d'>16 -. \noBeam d16 e16 fs16 g16 a16 b16 cs16 d16-\cresc e16 d16
+        cs16 d16 e16 fs16 g16 | % 90
+        a16-\f b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16
+        cs16 a16 | % 91
+        d4 r4 r2 | % 92
+        d,8-\f -. a8 -. e'8 -. a,8 -. fs'8 -. a,8 -. g'8 -. a,8 -. | % 93
+        <a fs'>4 r4 <a g'>4 r4 | % 94
         <d, a' fs'>4 r4 r8
-        } | \barNumberCheck #80
-    \repeat volta 2 {
-        d'8 -\mp ef8 c8 | % 81
-        a4 -. r4 r8 b8 c8 a8 | % 82
-        fs4 -. r4 r8 gs8 a8 fs8 | % 83
-        c4 -. r4 ef'4 -. -\ff r4 | % 84
-        a,4 -. r4 c4 -. r4 | % 85
-        f,8 -. -\mf f8 ef'8 f,8 ef'8 f,8 ef'8 f,8 | % 86
-        ef'8 f,8 ef'8 f,8 ef'8 f,8 ef'8 f,8 | % 87
-        d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 88
-        d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 89
-        a8 f8 a8 f8 a8 f8 a8 f8 | \barNumberCheck #90
-        a8 f8 a8 f8 a8 f8 a8 f8 | % 91
-        bf4 r4 r2 | % 92
-        R1 | % 93
-        ef'2.-\f c8. bf16 | % 94
-        a4 -. a4 -. af4. \trill g16 af16 | % 95
-        g8 -. cs8 d8 cs8 d8 c8 b8 af8 | % 96
-        g8 fs8 g8 fs8 g8 f8 ef8 d8 | % 97
-        c8 -. fs8 g8 fs8 g8 f8 ef8 d8 | % 98
-        ef8 d'8 ef8 d8 ef8 d8 c8 bf8 | % 99
-        \acciaccatura { a8 } c2. a8. g16 | \barNumberCheck #100
-        fs4 -. a4 -. a4. \trill g16 a16 | % 101
-        bf4 r4 r2 | % 102
-        d,2. bf8. g16 | % 103
-        d8 -. e'8 f8 e8 f8 d8 bf8 f8 | % 104
-        d8 ef8 f8 g8 af8 bf8 c8 d8 | % 105
-        ef8 -\p a8 bf8 a8 bf8 af8 g8 fs8 | % 106
-        ef8 bf8 g8 bf8 ef8 g8 bf8 -. bf8 -. | % 107
-        bf8 a8 bf8 a8 bf8 af8 f8 ef8 | % 108
-        d8 c8 bf8 af8 g8 f8 ef8 d8 | % 109
-        ef8 -. a8 bf8 a8 bf8 af8 g8 f8 | \barNumberCheck #110
-        ef8 g8 bf8 ef8 g8 ef8 bf8 -. bf8 -. | % 111
-        d,8 g8 bf8 d8 g8 d8 bf8 -. bf8 -. | % 112
-        cs,8 g'8 bf8 e8 g8 e8 bf8 -. bf8 -. | % 113
-        a8 -. gs'8 a8 gs8 a8 g8 fs8 ef8 | % 114
-        d8 cs8 d8 cs8 d8 c8 a8 fs8 | % 115
-        g8 -. cs'8 d8 cs8 d8 c8 bf8 a8 | % 116
-        g8 fs8 g8 fs8 g8 a8 bf8 g8 | % 117
-        fs8 -. gs8 a8 gs8 a8 g8 fs8 ef8 | % 118
-        d8 cs8 d8 cs8 d8 c8 a8 fs8 | % 119
-        g8 -. -\< cs'8 d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #120
-        g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 121
-        d2. -\! -\ff a8. fs16 | % 122
-        d4 d4 d4. \trill cs16 d16 | % 123
-        e8 ds8 e8 ds8 e8 d8 cs8 b8 | % 124
-        a8 gs8 a8 gs8 a8 g8 fs8 e8 | % 125
-        d4 -. <d d'>4 -. -\mp <d d'>4 -. <d d'>4 -. | % 126
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 127
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 128
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 129
+    } \repeat volta 2 {
+        d'8 (-\pp ef8 c8 | \barNumberCheck #95
+        a4 -.) r4 r8 b8 c8 a8 | % 96
+        fs4 -. r4 r8 gs8 a8 fs8 | % 97
+        c4 -. r4 ef'4 -. -\ff r4 | % 98
+        a,4 -. r4 c4 -. r4 | % 99
+        f,8 -. -\fp f8( ef'8 f,8) ef'8( f,8 ef'8 f,8) | % 100
+        ef'8 f,8 ef'8 f,8 ef'8 f,8 ef'8 f,8 | % 101
+        d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 102
+        d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 103
+        a8-\< f8 a8 f8 a8 f8 a8 f8 | \barNumberCheck #104
+        a8-\> f8 a8 f8 a8 f8 a8 f8 | % 105
+        bf4-\! r4 r2 | % 106
+        R1 | % 107
+        ef'2.-\f c8. bf16 | % 108
+        a4 -. a4 -. af4. \trill g16 af16 | % 109
+        g8 -. cs8 d8 cs8 d8 c8 b8 af8 | % 110
+        g8 fs8 g8 fs8 g8 f8 ef8 d8 | % 111
+        c8 -. fs8 g8 fs8 g8 f8 ef8 d8 | % 112
+        ef8 d'8 ef8 d8 ef8 d8 c8 bf8 | % 113
+        \acciaccatura { a8 } c2.-\sf a8. g16 | \barNumberCheck #114
+        fs4 -. a4 -. a4. \trill g16 a16 | % 115
+        bf4 r4 r2 | % 116
+        d,2. bf8. g16 | % 117
+        d8 -. e'8 f8 e8 f8 d8 bf8 f8 | % 118
+        d8 ef8 f8 g8 af8 bf8 c8 d8 | % 119
+        ef8 -\p a8 bf8 a8 bf8 af8 g8 fs8 | % 120
+        ef8 bf8 g8 bf8 ef8 g8 bf8 -. bf8 -. | % 121
+        bf8 a8 bf8 a8 bf8 af8 f8 ef8 | % 122
+        d8 c8 bf8 af8 g8 f8 ef8 d8 | % 123
+        ef8 -. a8 bf8 a8 bf8 af8 g8 f8 | \barNumberCheck #124
+        ef8-\cresc g8 bf8 ef8 g8 ef8 bf8 -. bf8 -. | % 125
+        d,8 g8 bf8 d8 g8 d8 bf8 -. bf8 -. | % 126
+        cs,8 g'8 bf8 e8 g8 e8 bf8 -. bf8 -. | % 127
+        a8-. gs'8-\p a8 gs8 a8 g8 fs8 ef8 | % 128
+        d8 cs8 d8 cs8 d8 c8 a8 fs8 | % 129
+        g8 -. cs'8 d8 cs8 d8 c8 bf8 a8 | % 130
+        g8 fs8 g8 fs8 g8 a8 bf8 g8 | % 131
+        fs8 -. gs8 a8 gs8 a8 g8 fs8 ef8 | % 132
+        d8 cs8 d8 cs8 d8 c8 a8 fs8 | % 133
+        g8 -. -\< cs'8 d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #134
+        g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 135
+        d2. -\! -\ff a8. fs16 | % 136
+        d4 d4 d4. \trill cs16 d16 | % 137
+        e8-\sf ds8 e8 ds8 e8 d8 cs8 b8 | % 138
+        a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
+        d4 -. <d d'>4 -. -\pp <d d'>4 -. <d d'>4 -. | % 140
+        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 141
+        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 142
+        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 143
         <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. |
-        \barNumberCheck #130
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 131
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 132
-        <d d'>4 -. r4 r2 | % 133
-        R1 | % 134
-        c'4 a4 fs4 d4 | % 135
-        d4 g4 r2 | % 136
-        R1 | % 137
-        g2 -. -\f <e g>2 -. | % 138
-        a2 -. <fs a>2 -. | % 139
-        <g b>4 -. <b g'>4 -. r2 | \barNumberCheck #140
-        R1*2 | % 142
-        g2. -\ff g16 f16 e16 d16 | % 143
-        c4 -. r4 r2 | % 144
-        <c c'>1 | % 145
-        b'4 -. e,4 a4 -. d,4 | % 146
-        g4 -. r4 <a g'>4 -. r4 | % 147
-        <a fs'>4 -. -\mf c'4 ~ c16 b16 a16 g16 fs16 e16 d16 c16 | % 148
-        b4 r4 r2 | % 149
-        a8 -. c'16 b16 c16 b16 c16 b16 c16 b16 a16 g16 fs16 e16 d16
-        c16 | \barNumberCheck #150
-        b8 -. d,8 -. c'8 -. d,8 -. d'8 -. d,8 -. b'8 -. d,8 -. | % 151
-        <a' fs'>4 -. -\< r8 <g' b>8 -. <fs a>4 -. r8 <b, g'>8 -. | % 152
-        <a fs'>4 -. -\! -\f d,4 -. r4 r8 d'8 -. -\mp | % 153
-        g4 -. r8 fs8 -. g4 -. r8 fs8 -. | % 154
-        g4 -. a4 -. bf4 -. r4 | % 155
-        c4 -. bf4 -. a4 -. r4 | % 156
-        c4 -. bf4 -. a4 -. r4 | % 157
-        bf4 -. r8 a8 -. bf4 -. r8 a8 -. | % 158
-        bf4 -. c4 -. bf4 -. r4 | % 159
-        a4 -. g4 -. fs4 -. r4 | \barNumberCheck #160
-        a4 -. g4 -. fs4 -. r8 d8 -. -\mf | % 161
-        bf'4 -. r8 a8 -. bf4 -. r8 a8 -. | % 162
-        bf4 -. c4 -. d4 -. r4 | % 163
-        ef4 -. d4 -. c4 -. r4 | % 164
-        ef4 -. d4 -. c4 -. r4 | % 165
-        d4 -. r8 c8 -. d4 -. r8 c8 -. | % 166
-        d4 -. ef4 -. d4 -. r4 | % 167
-        c4 -. bf4 -. a4 -. r4 | % 168
-        c4 -. bf4 -. a4 -. r4 | % 169
-        b,8 d8 g8 d8 b8 d8 g8 d8 | \barNumberCheck #170
-        a8 c8 fs8 c8 a8 c8 fs8 c8 | % 171
-        d'2. -\f b8 \trill a16 b16 | % 172
-        c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 173
-        g8 -\mf b8 d8 b8 g8 b8 d8 b8 | % 174
-        fs8 a8 d8 a8 fs8 a8 d8 a8 | % 175
-        <g d'>1 -\mp | % 176
-        <g e'>1 | % 177
-        <g fs'>1 | % 178
-        <g g'>1 | % 179
-        <d' a'>1 | \barNumberCheck #180
-        d2 g2 ~ | % 181
-        g2 fs2 | % 182
-        <b, g'>4 -. g'4 -\mf a4 as4 | % 183
-        b8 -. ds,8 b'4 ~ b2 ~ | % 184
-        b8 e,8 b'4 ~ b2 ~ | % 185
-        b8 fs8 b4 ~ b2 ~ | % 186
-        b8 g8 ~ <g b>4 ~ ~ <g b>2 ~ ~ | % 187
-        <g b>4 <e g>4 -. <e g>4 -. <e g>4 -. | % 188
-        <e g>1 | % 189
-        <a, fs'>1 | \barNumberCheck #190
-        <b g'>4 r4 r2 | % 191
-        b'8 -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 192
-        <b, g'>16 -. \noBeam g16 a16 b16 c16 d16 e16 fs16 g16 a16 g16 fs16 g16
-        a16 b16 c16 | % 193
-        d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16
-        fs16 d16 | % 194
-        g4 r4 r2 | % 195
-        g,,8 -. g'8 -. a,8 -. a'8 -. b,8 -. b'8 -. c,8 -. b'8 -. | % 196
-        g16 a16 g16 fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16
-        d16 | % 197
-        c8 e8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 | % 198
-        <a c>2 ~ ~ <a c>8 r8 r4 | % 199
-        r8 ds8 -\mp e8 c8 a4 -. r4 | \barNumberCheck #200
-        r8 b8 c8 a8 fs4 -. r4 | % 201
-        r8 ds8 e8 c8 a8 -. b8 c8 a8 | % 202
-        fs8 -. gs8 a8 fs8 c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 | % 203
-        c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 c8 -. -\sf <fs a>8 <fs a>8
-        <fs a>8 | % 204
-        ef8 -. -\mf fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 205
-        bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 206
-        d8 -. g8 af8 f8 bf,8 -. f'8 af8 f8 | % 207
-        d8 -. f8 af8 f8 d8 -. f8 af8 d,8 | % 208
-        ef8 -. fs8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 209
-        bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | \barNumberCheck #210
-        bf8 f'8 af8 f8 bf,8 f'8 af8 f8 | % 211
-        d8 f8 af8 f8 d8 f8 d8 af8 | % 212
-        g8 fs'8 g8 ef8 g8 fs8 g8 ef8 | % 213
-        g8 fs8 g8 e8 g8 fs8 g8 e8 | % 214
-        g8 fs8 g8 d8 g8 fs8 g8 d8 | % 215
-        fs8 e8 fs8 c8 fs8 e8 fs8 c8 | % 216
-        b16 -\mp <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
-            d>16 <b d>2 :16 | % 217
-        <b d>2 :16 <b d>2 :16 | % 218
-        <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c
-            d>16 <c d>2 :16 | % 219
-        <c d>2 :16 <c d>2 :16 | \barNumberCheck #220
-        <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
-            d>16 <b d>2 :16 | % 221
-        <b d>2 :16 <b d>2 :16 | % 222
-        <c d>2 :16 <c d>2 :16 | % 223
-        <c d>2 :16 <c d>2 :16 | % 224
-        <b d>2 :16 <b d>2 :16 | % 225
-        <c fs>2 :16 <c fs>2 :16 | % 226
-        <b g'>2 :16 <b g'>16 <b g'>16 <b g'>16 <b g'>16 <g' b>16 <g
-            b>16 <g b>16 <g b>16 | % 227
-        <fs c'>2 :16 <fs c'>2 :16 | % 228
-        <g b>4 -\f r4 <g, d' b'>4 r4 | % 229
-        <d b' g'>4 r4 r8 \bar "|."
+        \barNumberCheck #144
+        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 145
+        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 146
+        <d d'>4 -. r4 r2 | % 147
+        R1 | % 148
+        c'4-\p a4 fs4 d4 | % 149
+        d4 g4 r2 | % 150
+        R1 | % 151
+        g2 -. -\ff <e g>2-\sf -. | % 152
+        a2 -. <fs a>2 -. | % 153
+        <g b>4 -. <b g'>4 -. r2 | \barNumberCheck #154
+        R1*2 | % 156
+        g2. -\ff g16 f16 e16 d16 | % 157
+        c4 -. r4 r2 | % 158
+        <c c'>1-\ff | % 159
+        b'4 -. e,4( a4 -.) d,4( | % 160
+        g4 -.) r4 <a g'>4 -. r4 | % 161
+        <a fs'>4 -. -\p c'4 ~ c16 b16 a16 g16 fs16 e16 d16 c16 | % 162
+        b4 r4 r2 | % 163
+        a8-\f -. c'16 b16 c16 b16 c16 b16 c16 b16 a16 g16 fs16 e16 d16
+        c16 | \barNumberCheck #164
+        b8 -. d,8 -. c'8 -. d,8 -. d'8 -. d,8 -. b'8 -. d,8 -. | % 165
+        <a' fs'>4-\ff -. r8 <g' b>8 -. <fs a>4 -. r8 <b, g'>8 -. | % 166
+        <a fs'>4 -. -\f d,4 -. r4 r8 d'8 -. -\pp | % 167
+        g4 -. r8 fs8 -. g4 -. r8 fs8 -. | % 168
+        g4 -. a4 -. bf4 -. r4 | % 169
+        c4 -. bf4 -. a4 -. r4 | % 170
+        c4-\pp -. bf4 -. a4 -. r4 | % 171
+        bf4 -. r8 a8-\cresc -. bf4 -. r8 a8 -. | % 172
+        bf4 -. c4 -. bf4 -. r4 | % 173
+        a4-\p -. g4 -. fs4 -. r4 | \barNumberCheck #174
+        a4-\pp -. g4 -. fs4 -. r8 d8 -. | % 175
+        bf'4 -. r8 a8 -. bf4 -. r8 a8 -. | % 176
+        bf4 -. c4 -. d4 -. r4 | % 177
+        ef4-\p -. d4 -. c4 -. r4 | % 178
+        ef4-\pp -. d4 -. c4 -. r4 | % 179
+        d4 -. r8 c8-\cresc -. d4 -. r8 c8 -. | % 180
+        d4 -. ef4 -. d4 -. r4 | % 181
+        c4-\p -. bf4 -. a4 -. r4 | % 182
+        c4-\pp -. bf4 -. a4 -. r4 | % 183
+        b,8-\dolce d8 g8 d8 b8 d8 g8 d8 | \barNumberCheck #184
+        a8 c8 fs8 c8 a8 c8 fs8 c8 | % 185
+        d'2. b8 \trill a16 b16 | % 186
+        c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 187
+        g8-\cresc b8 d8 b8 g8 b8 d8 b8 | % 188
+        fs8 a8 d8 a8 fs8 a8 d8 a8 | % 189
+        <g d'>1 -\fp | % 190
+        <g e'>1-\sf | % 191
+        <g fs'>1-\sf | % 192
+        <g g'>1-\sf | % 193
+        <d' a'>1(-\pp | \barNumberCheck #194
+        <d b'>2)-\< g2 ~ | % 195
+        g2-\> fs2-\! | % 196
+        <b, g'>4 -. g'4 -\pp a4 as4 | % 197
+        b8 -. ds,8 b'4-\sf ~ b2-\cresc ~ | % 198
+        b8 e,8 b'4-\sf ~ b2 ~ | % 199
+        b8 fs8 b4-\sf ~ b2 ~ | % 200
+        b8 g8 ~ <g b>4-\sf ~ <g b>2 ~ | % 201
+        <g b>4 g4-\pp -. g4 -. g4 -. | % 202
+        <e g>1-\cresc | % 203
+        <a, fs'>1-\sfp | \barNumberCheck #204
+        <b g'>4 r4 r2 | % 205
+        b'8-\p -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 206
+        <b, g'>16 -. \noBeam g16 a16 b16 c16-\cresc d16 e16 fs16 g16 a16 g16 fs16 g16
+        a16 b16 c16 | % 207
+        d16-\f e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16
+        fs16 d16 | % 208
+        g4 r4 r2 | % 209
+        g,,8-\f -. g'8 -. a,8 -. a'8 -. b,8 -. b'8 -. c,8 -. b'8 -. | % 210
+    } \alternative {
+        { <d, b'>4 r <a d c'> r | <g d' b'>4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
+        { g'16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
     }
+    c8-\ff e8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 | % 213
+    <a c>2-\sf ~ ~ <a c>8\fermata r8 r4 | % 214
+    r8 ds8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
+    r8 b8 c8 a8 fs4 -. r4 | % 216
+    r8 ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
+    fs8 -. gs8 a8 fs8 c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 | % 218
+    c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 c8 -. -\sf <fs a>8 <fs a>8
+    <fs a>8 | % 219
+    ef8 -. -\fp fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 220
+    bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 221
+    d8-.-\p g8 af8 f8 bf,8 -. f'8 af8 f8 | % 222
+    d8 -. f8 af8 f8 d8 -. f8 af8 d,8 | % 223
+    ef8-\fp -. fs8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 224
+    bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | \barNumberCheck #225
+    bf8 f'8 af8 f8 bf,8 f'8 af8 f8 | % 226
+    d8 f8 af8 f8 d8 f8 d8 af8 | % 227
+    g8 fs'8 g8 ef8 g8 fs8 g8 ef8 | % 228
+    g8 fs8 g8 e8 g8 fs8 g8 e8 | % 229
+    g8-\cresc fs8 g8 d8 g8 fs8 g8 d8 | % 230
+    fs8-\sf e8 fs8 c8 fs8 e8 fs8 c8 | % 231
+    b16 -\f <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
+        d>16 <b d>2 :16 | % 232
+    <b d>2 :16 <b d>2 :16 | % 233
+    <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c
+        d>16 <c d>2 :16 | % 234
+    <c d>2 :16 <c d>2 :16 | \barNumberCheck #235
+    <b d>16-\ff <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
+        d>16 <b d>2 :16 | % 236
+    <b d>2 :16 <b d>2 :16 | % 237
+    <c d>2 :16 <c d>2 :16 | % 238
+    <c d>2 :16 <c d>2 :16 | % 239
+    <b d>2 :16 <b d>2 :16 | % 240
+    <c fs>2 :16 <c fs>2 :16 | % 241
+    <b g'>2 :16 <b g'>16 <b g'>16 <b g'>16 <b g'>16 <g' b>16 <g
+        b>16 <g b>16 <g b>16 | % 242
+    <fs c'>2 :16 <fs c'>2 :16 | % 243
+    <g b>4 r4 <g, d' b'>4-\ff r4 | % 244
+    <d b' g'>4 r4 r8 \bar "|."
 }
 TrioII_MvII_Viola = \relative g {
             \time 3/4 \key e \major gs4 -\mp r4 <b gs'>4 <b a'>2 <b fs'>4 b4 cs4 ~ \once \omit TupletBracket
@@ -1886,56 +1885,56 @@ TrioII_MvIV_Viola = \relative g {
     <fs, a d>4 r4 r2 <a d a'>4 r4 r2 <a fs'>1 r4 d4 -. r4 e4 -. r4 d4 -.
     r4 c4 -. b4 g4 -. -\mp g4 -. g4 -. g4 -. g4 -. g4 -. g4 -. <ef g>1
     bf'2. ef4 g2 a2 bf2. fs4 g2. df4 d2. b4 c2 fs,2 g4 -. bf8 -\< a8 bf8
-    af8 g8 f8 ef2 -\! -\mf g2 bf2. ef4 g2 a2 | \barNumberCheck #230
-    bf2. fs4 | % 231
-    g2. cs,4 | % 232
-    d2. b'4 | % 233
-    c2 fs,2 | % 234
-    g8 -. b8 -. -\p -\< c8 -. g8 -. b8 -. g8 -. c8 -. g8 -. | % 235
-    b8 -. g8 -. c8 -. g8 -. b8 -. g8 -. c8 -. g8 -. | % 236
-    d8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 237
-    d'8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 238
-    b'8 -. d8 -. c8 -. e8 -. b8 -. d8 -. c8 -. e8 -. | % 239
+    af8 g8 f8 ef2 -\! -\mf g2 bf2. ef4 g2 a2 | \barNumberCheck #245
+    bf2. fs4 | % 246
+    g2. cs,4 | % 247
+    d2. b'4 | % 248
+    c2 fs,2 | % 249
+    g8 -. b8 -. -\p -\< c8 -. g8 -. b8 -. g8 -. c8 -. g8 -. | % 250
+    b8 -. g8 -. c8 -. g8 -. b8 -. g8 -. c8 -. g8 -. | % 251
+    d8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 252
+    d'8 -. a8 -. b8 -. g8 -. d'8 -. a8 -. b8 -. g8 -. | % 253
+    b'8 -. d8 -. c8 -. e8 -. b8 -. d8 -. c8 -. e8 -. | % 254
     b8 -. d8 -. c8 -. e8 -. b8 -. d8 -. c8 -. e8 -. | \barNumberCheck
     #240
-    d,8 -. -\! -\f d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 241
-    d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 242
-    d8 -. -\p -\< d8 -. b8 -. d8 -. b8 -. c8 -. a8 -. c8 -. | % 243
-    a8 -. b8 -. g8 -. b8 -. g8 -. a8 -. f8 -. a8 -. | % 244
-    es8 -. g8 -. e8 -. g8 -. e8 -. fs8 -. d8 -. fs8 -. | % 245
-    d8 -. e8 -. c8 -. e8 -. c8 -. d8 -. b8 -. d8 -. | % 246
-    c8 -. -\! -\f g'8 -. c,8 -. g'8 -. cs,8 -. g'8 -. cs,8 -. g'8 -. | % 247
-    d8 -. g8 -. b8 -. g8 -. d8 -. a'8 -. c8 -. a8 -. | % 248
-    d8 -. -\p -\< a8 -. b8 -. g8 -. c8 -. g8 -. a8 -. fs8 -. | % 249
+    d,8 -. -\! -\f d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 256
+    d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. d,8 -. d'8 -. | % 257
+    d8 -. -\p -\< d8 -. b8 -. d8 -. b8 -. c8 -. a8 -. c8 -. | % 258
+    a8 -. b8 -. g8 -. b8 -. g8 -. a8 -. f8 -. a8 -. | % 259
+    es8 -. g8 -. e8 -. g8 -. e8 -. fs8 -. d8 -. fs8 -. | % 260
+    d8 -. e8 -. c8 -. e8 -. c8 -. d8 -. b8 -. d8 -. | % 261
+    c8 -. -\! -\f g'8 -. c,8 -. g'8 -. cs,8 -. g'8 -. cs,8 -. g'8 -. | % 262
+    d8 -. g8 -. b8 -. g8 -. d8 -. a'8 -. c8 -. a8 -. | % 263
+    d8 -. -\p -\< a8 -. b8 -. g8 -. c8 -. g8 -. a8 -. fs8 -. | % 264
     b8 -. fs8 -. g8 -. e8 -. a8 -. e8 -. es8 -. d8 -. | \barNumberCheck
     #250
-    g8 -. d8 -. e8 -. c8 -. fs8 -. cs8 -. d8 -. b8 -. | % 251
-    e8 -. b8 -. c8 -. a8 -. d8 -. a8 -. b8 -. g8 -. | % 252
+    g8 -. d8 -. e8 -. c8 -. fs8 -. cs8 -. d8 -. b8 -. | % 266
+    e8 -. b8 -. c8 -. a8 -. d8 -. a8 -. b8 -. g8 -. | % 267
     c8 -. -\! -\f -\< g'8 -. c,8 -. g'8 -. cs,8 -. g'8 -. cs,8 -. g'8 -.
-    | % 253
-    d8 -. g8 -. b8 -. g8 -. d8 -. a'8 -. c8 -. a8 -. | % 254
-    c,8 -. g'8 -. c,8 -. g'8 -. cs,8 -. g'8 -. cs,8 -. g'8 -. | % 255
-    d8 -. g8 -. d8 -. g8 -. e8 -. g8 -. e8 -. g8 -. | % 256
-    <a, fs'>4 -\! -\sf r4 r2 | % 257
-    R1 | % 258
-    g8 -. -\f g8 -. b8 -. b8 -. gs8 -. gs8 -. b8 -. b8 -. | % 259
+    | % 268
+    d8 -. g8 -. b8 -. g8 -. d8 -. a'8 -. c8 -. a8 -. | % 269
+    c,8 -. g'8 -. c,8 -. g'8 -. cs,8 -. g'8 -. cs,8 -. g'8 -. | % 270
+    d8 -. g8 -. d8 -. g8 -. e8 -. g8 -. e8 -. g8 -. | % 271
+    <a, fs'>4 -\! -\sf r4 r2 | % 272
+    R1 | % 273
+    g8 -. -\f g8 -. b8 -. b8 -. gs8 -. gs8 -. b8 -. b8 -. | % 274
     a8 -. a8 -. c8 -. c8 -. e,8 -. e8 -. fs8 -. fs8 -. | \barNumberCheck
     #260
-    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. cs8 -. cs8 -. | % 261
-    d8 -. d8 -. e8 -. e8 -. d8 -. d8 -. c8 -. c8 -. | % 262
-    b8 -. b8 -. c8 -. c8 -. b8 -. b8 -. a8 -. a8 -. | % 263
-    g8 -. g8 -. c'8 -. c8 -. b8 -. b8 -. a8 -. a8 -. | % 264
-    g8 -. g8 -. fs8 -. fs8 -. e8 -. e8 -. a8 -. a8 -. | % 265
-    d,8 -. d8 -. c'8 -. c8 -. a8 -. a8 -. fs8 -. fs8 -. | % 266
-    g8 -. -\< g8 -. f8 -. f8 -. e8 -. e8 -. d8 -. d8 -. | % 267
-    c8 -. c8 -. e8 -. e8 -. d8 -. d8 -. c8 -. c8 -. | % 268
-    b8 -. b8 -. g8 -. g8 -. e8 -. e8 -. a8 -. a8 -. | % 269
+    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. cs8 -. cs8 -. | % 276
+    d8 -. d8 -. e8 -. e8 -. d8 -. d8 -. c8 -. c8 -. | % 277
+    b8 -. b8 -. c8 -. c8 -. b8 -. b8 -. a8 -. a8 -. | % 278
+    g8 -. g8 -. c'8 -. c8 -. b8 -. b8 -. a8 -. a8 -. | % 279
+    g8 -. g8 -. fs8 -. fs8 -. e8 -. e8 -. a8 -. a8 -. | % 280
+    d,8 -. d8 -. c'8 -. c8 -. a8 -. a8 -. fs8 -. fs8 -. | % 281
+    g8 -. -\< g8 -. f8 -. f8 -. e8 -. e8 -. d8 -. d8 -. | % 282
+    c8 -. c8 -. e8 -. e8 -. d8 -. d8 -. c8 -. c8 -. | % 283
+    b8 -. b8 -. g8 -. g8 -. e8 -. e8 -. a8 -. a8 -. | % 284
     fs8 -. fs8 -. d8 -. d8 -. e8 -. e8 -. fs8 -. fs8 -. |
-    \barNumberCheck #270
-    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. | % 271
-    e8 -. e8 -. fs8 -. fs8 -. g8 -. g8 -. a8 -. a8 -. | % 272
-    b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. e8 -. e8 -. | % 273
-    cs4 -. -\! -\ff r4 <d, d'>4 -. r4 | % 274
+    \barNumberCheck #285
+    g8 -. g8 -. b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. | % 286
+    e8 -. e8 -. fs8 -. fs8 -. g8 -. g8 -. a8 -. a8 -. | % 287
+    b8 -. b8 -. c8 -. c8 -. d8 -. d8 -. e8 -. e8 -. | % 288
+    cs4 -. -\! -\ff r4 <d, d'>4 -. r4 | % 289
     <g, g'>4 r4 r2 \bar "|."
     }
 
@@ -1989,258 +1988,261 @@ TrioII_MvI_Cello =  \relative g, {
             g4 -. -\! r4 r2 | % 4
             r8. fs32-\pp a32 d8 -. r8 r2 | % 5
             r8. g,32 b32 d8 -. r8 r2 | % 6
-            c2-\p d4 d,4 | % 7
-            g8 r8 r4 g16 -. fs16 -. g16 -. a16 -. b16 -. c16 -. d16
-            -. b16 -. | % 8
+            c2-\p-\< d4-\> d,4 | % 7
+            g8-\! r8 r4 g16-.-\pp fs16 -. g16 -. a16 -. b16 -. c16 -. d16-. b16 -. | % 8
             a8 -. r8 r4 a16 -. gs16 -. a16 -. b16 -. c16 -. d16 -. e16
             -. c16 -. | % 9
             b8 -. r8 r4 b16 -. as16 -. b16 -. c16 -. d16 -. e16 -. f16
             -. d16 -. | \barNumberCheck #10
             c2 ~ -\< c16 g'16 -. e16 -. c16 -. g16 -. e16 -. c16 -.
             c'16 -. | % 11
-            <b fs'>2 ~ ~ -\! -\ff -\> <b fs'>8 <b fs'>8 -. -\! -\mp
-            <b fs'>8 -. <b fs'>8 -. | % 12
-            <b fs'>2 ~ ~ <b fs'>8 <b fs'>8 -. <b fs'>8 -. <b fs'>8
-            -. | % 13
-            <a fs'>2 r2 | % 14
-            r4 r8. a32 fs32 d4. r8 | % 15
-            r4 r8. c'32 a32 d,4. r8 \bar "||"
-            \partial 4. r8 r4 |
-            R1*2 |
-            a'4 fs4 d4 fs4 g4 g4 r2 R1 e2 -. -\f c2
-            -. fs2 -. d2 -. g4 r4 r16 g16 a16 b16 c16 d16 e16 fs16 g4
-            -. b4 -. d4 -. g4 -. c,,,2 -. e''2 -. d,,2 -. fs''2 -.
-            <g,, b' g'>2.-\sf d''8. b16 g4 g4 g4. \trill fs16 g16 a2 ~ a8
-            g8 fs8 -. e8 -. | % 16
+            <b fs'>2 ~ -\! -\ff -\> q8 q8 -. -\! -\pp q8 -. q8 -. | % 12
+            << { s4-\< s4-\> s8-\! } \\ { <b fs'>2 ~ q8 } >> <b fs'>8-.-\< q8-.-\> q8-\!-. | % 13
+            <a fs'>2-\pp r2 | % 14
+            r4 r8. a32 fs32 d4.-\sfp r8 | % 15
+            r4 r8. c'32 a32 d,4.-\sfp r8 \bar "||"
+            \partial 4. r8 r4 | % 17
+            R1*2 | % 19
+            a'4 fs4 d4 fs4 | \barNumberCheck #20
+            g4 g4 r2 | % 21
+            R1 | % 22
+            e2 -. -\f c2-. | % 23
+            fs2 -. d2 -. | % 24
+            g4 r4 r16 g16 a16 b16 c16 d16 e16 fs16 | % 25
+            g4 -. b4 -. d4 -. g4 -. | % 26
+            c,,,2 -. e''2 -. | % 27
+            d,,2 -. fs''2 -. | % 28
+            <g,, b' g'>2.-\sf d''8. b16 | % 29
+            g4 g4 g4. \trill fs16 g16 | % 30
+            a2 ~ a8( g8) fs8 -. e8 -. | % 31
             \acciaccatura { e8 } d8 cs8 \acciaccatura { e8 } d8 cs8
-            \acciaccatura { e8 } d8 c8 b8 -. a8 -. | % 17
-            g4 -. -\f g4 -. b4 -. d4 -. | % 18
-            g4 -. b4 -. d4 -. g4 -. | % 19
-            fs4 -. d,,4 -. fs4 -. a4 -. | \barNumberCheck #20
-            d4 -. fs4 -. a4 -. d4 -. | % 21
-            g,,8 g'8 g8 g8 g4 r4 | % 22
-            r8 e8 e8 e8 e4 r4 | % 23
-            r8 b8 b8 b8 b4 r4 | % 24
-            c8 -. e8 -. c8 -. e8 -. c8 -. e8 -. cs8 -. e8 -. | % 25
-            d4 r4 d4 r4 | % 26
-            b4 r4 b4 r4 | % 27
-            fs4 r4 fs4 r4 | % 28
-            g8 -. b'8 -. g8 -. b8 -. g8 -. b8 -. gs8 -. b8 -. | % 29
+            \acciaccatura { e8 } d8 c8 b8 -. a8 -. | % 32
+            g4 -. -\f g4 -. b4 -. d4 -. | % 33
+            g4 -. b4 -. d4 -. g4 -. | % 34
+            fs4 -. d,,4 -. fs4 -. a4 -. | \barNumberCheck #35
+            d4 -. fs4 -. a4 -. d4 -. | % 36
+            g,,8 g'8 g8 g8 g4 r4 | % 37
+            r8 e8 e8 e8 e4 r4 | % 38
+            r8 b8 b8 b8 b4 r4 | % 39
+            c8 -. e8 -. c8 -. e8 -. c8 -. e8 -. cs8 -. e8 -. | % 40
+            d4 r4 d4 r4 | % 41
+            b4 r4 b4 r4 | % 42
+            fs4 r4 fs4 r4 | % 43
+            g8 -. b'8 -. g8 -. b8 -. g8 -. b8 -. gs8 -. b8 -. | % 44
             a,8 -. a'8 -. b,8 -. a'8 -. cs,8 -. a'8 -. a,8 -. a'8 -.
-            | \barNumberCheck #30
-            d,8 -. a'8 -. e8 -. a8 -. fs8 -. a8 -. d,8 -. a'8 -. | % 31
+            | \barNumberCheck #45
+            d,8 -. a'8 -. e8 -. a8 -. fs8 -. a8 -. d,8 -. a'8 -. | % 46
             a,8 -. a'8 -. b,8 -. a'8 -. cs,8 -. a'8 -. a,8 -. a'8 -.
-            | % 32
-            d,8 -. a'8 -. e8 -. a8 -. fs8 -. a8 -. d,8 -. a'8 -. | % 33
-            a,4 -\< r8 a'8 -. a4 -. r8 a8 -. | % 34
-            a4 -. -\! -\f a,4 -. r4 r8 a8 -. -\mp | % 35
-            d4 -. r8 a8 -. d4 -. r8 a8 -. | % 36
-            d4 -. c4 -. f4 -. r4 | % 37
-            e4 -. f4 -. c4 -. r4 | % 38
-            e4 -. f4 -. c4 -. r4 | % 39
-            f4 -. r8 c8 -. f4 -. r8 c8 -. | \barNumberCheck #40
-            f4 -. e4 -. f4 -. r4 | % 41
-            cs4 -. d4 -. a4 -. r4 | % 42
-            cs4 -. d4 -. a4 -. r8 a'8 -. -\mf | % 43
-            d4 -. r8 cs8 -. d4 -. r8 cs8 -. | % 44
-            d4 -. e4 -. f4 -. r4 | % 45
-            g4 -. f4 -. e4 -. r4 | % 46
-            g4 -. f4 -. e4 -. r4 | % 47
-            f4 -. r8 e8 -. f4 -. r8 e8 -. | % 48
-            f4 -. g4 -. f4 -. r4 | % 49
-            e4 -. d4 -. cs4 -. r4 | \barNumberCheck #50
-            e4 -. d4 -. cs4 -. r4 | % 51
-            d,1 ~ | % 52
-            d1 | % 53
-            d8 fs8 a8 fs8 d8 fs8 a8 fs8 | % 54
-            d8 e8 fs8 e8 d8 e8 fs8 e8 | % 55
-            a2. -\f fs8 \trill e16 fs16 | % 56
-            g8 -. e8 -. cs8 -. a8 -. gs8 -. a8 -. g8 -. a8 -. | % 57
-            fs1 -\mp | % 58
-            g1 | % 59
-            a1 | \barNumberCheck #60
-            b1 | % 61
-            cs1 | % 62
-            d2 b2 | % 63
-            gs2 a2 | % 64
-            d4 -. d4 -\mf e4 es4 | % 65
-            fs4. fs,8 fs'4 -. fs4 -. | % 66
-            fs4. gs,8 fs'4 -. fs4 -. | % 67
-            fs4. as,8 fs'4 -. fs4 -. | % 68
-            fs4. b,8 fs'4 -. fs4 -. | % 69
-            fs2 ~ fs8 g16 fs16 e8 -. fs8 -. | \barNumberCheck #70
-            g1 | % 71
-            <a, g'>1 | % 72
-            d4 r4 r2 | % 73
-            r2 r4 a4 | % 74
-            d4 r4 r2 | % 75
-            r2 r4 a4 | % 76
-            d16 -. d,16 e16 fs16 g16 a16 b16 cs16 d16 e16 d16 cs16 d16
-            e16 fs16 g16 | % 77
+            | % 47
+            d,8 -. a'8 -. e8 -. a8 -. fs8 -. a8 -. d,8 -. a'8 -. | % 48
+            a,4 -\ff r8 a'8 -. a4 -. r8 a8 -. | % 49
+            a4 -. a,4 -. r4 r8 a8 -. -\pp | % 50
+            d4 -. r8 a8 -. d4 -. r8 a8 -. | % 51
+            d4 -. c4 -. f4 -. r4 | % 52
+            e4 -. f4 -. c4 -. r4 | % 53
+            e4 -.-\pp f4 -. c4 -. r4 | % 54
+            f4 -.-\cresc r8 c8 -. f4 -. r8 c8 -. | \barNumberCheck #55
+            f4 -. e4 -. f4 -. r4 | % 56
+            cs4 -.-\p d4 -. a4 -. r4 | % 57
+            cs4 -.-\pp d4 -. a4 -. r8 a'8 -. | % 58
+            d4 -. r8 cs8 -. d4 -. r8 cs8 -. | % 59
+            d4 -. e4 -. f4 -. r4 | % 60
+            g4 -. f4 -. e4 -. r4 | % 61
+            g4-\pp -. f4 -. e4 -. r4 | % 62
+            f4 -. r8 e8-\cresc -. f4 -. r8 e8 -. | % 63
+            f4 -. g4 -. f4 -. r4 | % 64
+            e4-\p -. d4 -. cs4 -. r4 | \barNumberCheck #65
+            e4-\pp-. d4 -. cs4 -. r4 | % 66
+            d,1-\dolce ~ | % 67
+            d1 | % 68
+            d8 fs8 a8 fs8 d8 fs8 a8 fs8 | % 69
+            d8 e8 fs8 e8 d8 e8 fs8 e8 | % 70
+            a2. -\f fs8 \trill e16 fs16 | % 71
+            g8 -. e8 -. cs8 -. a8 -. gs8 -. a8 -. g8 -. a8 -. | % 72
+            fs1 -\sfp | % 73
+            g1-\sf | % 74
+            a1-\sf | \barNumberCheck #75
+            b1-\sf | % 76
+            cs1-\pp | % 77
+            d2-\< b2 | % 78
+            gs2-\> a2 | % 79
+            d4-\! -. d4 -\pp e4 es4 | % 80
+            fs4. fs,8( fs'4)-\cresc -. fs4 -. | % 81
+            fs4.-\sf gs,8 fs'4 -. fs4 -. | % 82
+            fs4.-\sf as,8 fs'4 -. fs4 -. | % 83
+            fs4.-\sf b,8 fs'4 -. fs4 -. | % 84
+            fs2-\pp ~ fs8 g16 fs16 e8 -. fs8 -. | \barNumberCheck #85
+            g1-\cresc | % 86
+            <a, g'>1-\sfp | % 87
+            d4 r4 r2 | % 88
+            r2 r4 a4-\p | % 89
+            d4 r4 r2 | % 90
+            r2 r4 a4 | % 91
+            d16-\f -. d,16 e16 fs16 g16 a16 b16 cs16 d16 e16 d16 cs16 d16
+            e16 fs16 g16 | % 92
             a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 g16
-            fs16 e16 | % 78
-            d4 r4 a4 r4 | % 79
-            d,4 r4 r8 } | \barNumberCheck #80
+            fs16 e16 | % 93
+            d4 r4 a4 r4 | % 94
+            d,4 r4 r8 }
             \repeat volta 2 {
-            d'8 -\mp ef8 c8 | % 81
-            a4 -. r4 r8 b8 c8 a8 | % 82
-            fs4 -. r4 r8 gs8 a8 fs8 | % 83
-            c4 -. r4 ef'4 -. -\ff r4 | % 84
-            a,4 -. r4 c4 -. r4 | % 85
-            f,8 -. -\mf b8 c8 a8 f4 -. r4 | % 86
-            r8 b'8 c8 a8 f4 -. r4 | % 87
-            r8 cs8 d8 bf8 f4 -. r4 | % 88
-            r8 cs''8 d8 bf8 f4 -. r4 | % 89
-            r8 d8 ef8 c8 f,4 -. r4 | \barNumberCheck #90
-            r8 d''8 ef8 c8 f,4 -. r4 | % 91
-            bf2. -\f f8. d16 | % 92
-            bf4 bf4 bf4. \trill a16 bf16 | % 93
-            c8 b8 c8 b8 c8 bf8 a8 g8 | % 94
-            f8 -. e'8 f8 e8 f8 ef8 d8 c8 | % 95
-            b4 r4 r2 | % 96
-            R1 | % 97
-            c'2. g8. ef16 | % 98
-            c4 c4 c4. \trill b16 c16 | % 99
-            d8 -. gs8 a8 gs8 a8 g8 fs8 ef8 | \barNumberCheck #100
-            d8 cs8 d8 cs8 d8 c8 bf8 a8 | % 101
-            \acciaccatura { g8 } g'2. d8. bf16 | % 102
-            g4 g4 g4. \trill fs16 g16 | % 103
-            af1-\ff ~ | % 104
-            af1 | % 105
-            g8 -. -\p fs'8 g8 ef8 bf4 -. r4 | % 106
-            r8 fs'8 g8 ef8 bf4 -. r4 | % 107
-            r8 g'8 af8 f8 bf,4 -. r4 | % 108
-            r8 g'8 af8 f8 bf,4 -. r4 | % 109
-            r8 fs'8 g8 ef8 bf4 -. r4 | \barNumberCheck #110
-            r8 a'8 bf8 g8 ef4 -. r4 | % 111
-            r8 a8 bf8 g8 d4 -. r4 | % 112
-            r8 a'8 bf8 g8 cs,4 -. r4 | % 113
-            r8 d8 a8 fs8 d4 -. r4 | % 114
-            r8 b''8 c8 a8 d,4 -. r4 | % 115
-            r8 a8 bf8 g8 d4 -. r4 | % 116
-            r8 a''8 bf8 g8 d4 -. r4 | % 117
-            r8 d8 a8 fs8 d4 -. r4 | % 118
-            r8 b''8 c8 a8 d,4 -. r4 | % 119
-            r8 -\< a8 bf8 g8 d4 -. r4 | \barNumberCheck #120
-            r8 a''8 bf8 g8 d4 -. r4 | % 121
-            d'2. -\! -\ff a8. fs16 | % 122
-            d4 d4 d4. \trill cs16 d16 | % 123
-            e8 ds8 e8 ds8 e8 d8 cs8 b8 | % 124
-            a8 gs8 a8 gs8 a8 g8 fs8 e8 | % 125
-            d8 -. cs8 -. -\pp d8 -. e8 -. fs8 -. g8 -. a8 -. fs8 -. | % 126
-            d4 r4 r2 | % 127
-            e8 -. ds8 -. e8 -. fs8 -. g8 -. a8 -. b8 -. g8 -. | % 128
-            e4 r4 r2 | % 129
+            d'8( -\pp ef8 c8 | \barNumberCheck #95
+            a4 -.) r4 r8 b8 c8 a8 | % 96
+            fs4 -. r4 r8 gs8 a8 fs8 | % 97
+            c4 -. r4 ef'4 -. -\ff r4 | % 98
+            a,4 -. r4 c4 -. r4 | % 99
+            f,8 -. -\fp b8( c8 a8 f4 -.) r4 | % 100
+            r8 b'8 c8 a8 f4 -. r4 | % 101
+            r8 cs8 d8 bf8 f4 -. r4 | % 102
+            r8 cs''8 d8 bf8 f4 -. r4 | % 103
+            r8 d8 ef8 c8 f,4 -. r4 | \barNumberCheck #104
+            r8 d''8-\< ef8 c8 f,4-\! -. r4 | % 105
+            bf2. -\f f8. d16 | % 106
+            bf4 bf4 bf4. \trill a16 bf16 | % 107
+            c8 b8 c8 b8 c8 bf8 a8 g8 | % 108
+            f8 -. e'8 f8 e8 f8 ef8 d8 c8 | % 109
+            b4 r4 r2 | % 110
+            R1 | % 111
+            c'2. g8. ef16 | % 112
+            c4 c4 c4. \trill b16 c16 | % 113
+            d8 -. gs8 a8 gs8 a8 g8 fs8 ef8 | \barNumberCheck #114
+            d8 cs8 d8 cs8 d8 c8 bf8 a8 | % 115
+            \acciaccatura { g8 } g'2.-\sf d8. bf16 | % 116
+            g4 g4 g4. \trill fs16 g16 | % 117
+            af1-\ff ~ | % 118
+            af1 | % 119
+            g8 -. -\p fs'8 g8 ef8 bf4 -. r4 | % 120
+            r8 fs'8 g8 ef8 bf4 -. r4 | % 121
+            r8 g'8 af8 f8 bf,4 -. r4 | % 122
+            r8 g'8 af8 f8 bf,4 -. r4 | % 123
+            r8 fs'8 g8 ef8 bf4 -. r4 | \barNumberCheck #124
+            r8 a'8-\cresc bf8 g8 ef4 -. r4 | % 125
+            r8 a8 bf8 g8 d4 -. r4 | % 126
+            r8 a'8 bf8 g8 cs,4 -. r4 | % 127
+            r8 d8-\p a8 fs8 d4 -. r4 | % 128
+            r8 b''8 c8 a8 d,4 -. r4 | % 129
+            r8 a8 bf8 g8 d4 -. r4 | % 130
+            r8 a''8 bf8 g8 d4 -. r4 | % 131
+            r8 d8 a8 fs8 d4 -. r4 | % 132
+            r8 b''8 c8 a8 d,4 -. r4 | % 133
+            r8 -\< a8 bf8 g8 d4 -. r4 | \barNumberCheck #134
+            r8 a''8 bf8 g8 d4 -. r4 | % 135
+            d'2. -\! -\ff a8. fs16 | % 136
+            d4 d4 d4. \trill cs16 d16 | % 137
+            e8-\sf ds8 e8 ds8 e8 d8 cs8 b8 | % 138
+            a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
+            d8 -. cs8 -. -\pp d8 -. e8 -. fs8 -. g8 -. a8 -. fs8 -. | % 140
+            d4 r4 r2 | % 141
+            e8 -. ds8 -. e8 -. fs8 -. g8 -. a8 -. b8 -. g8 -. | % 142
+            e4 r4 r2 | % 143
             fs8 -. es8 -. fs8 -. g8 -. a8 -. b8 -. c8 -. b8 -. |
-            \barNumberCheck #130
-            c4 -. r4 b4 -. r4 | % 131
-            a4 -. r4 g4 -. r4 | % 132
-            fs4 -. r4 r2 | % 133
-            R1 | % 134
-            a4 fs4 d4 fs4 | % 135
-            g4 g4 r2 | % 136
-            R1 | % 137
-            e2 -. -\f c2 -. | % 138
-            fs2 -. d2 -. | % 139
-            g4 -. g4 -. r16 g16 a16 b16 c16 d16 e16 fs16 |
-            \barNumberCheck #140
-            g4 -. b4 -. d4 -. g4 -. | % 141
-            d,,2 -. -\ff f''2 ~ | % 142
-            f1 | % 143
-            c,,2 -. e''2 ~ | % 144
-            e1 | % 145
-            ds4 -. d4 cs4 -. c4 | % 146
-            b4 -. r4 a,4 -. r4 | % 147
-            d,8 -. -\mf d'8 -. e,8 -. d'8 -. fs,8 -. d'8 -. d,8 -. d'8
-            -. | % 148
-            g,8 -. d'8 -. a8 -. d8 -. b8 -. d8 -. g,8 -. d'8 -. | % 149
-            d,8 -. d'8 -. e,8 -. d'8 -. fs,8 -. d'8 -. d,8 -. d'8 -. |
-            \barNumberCheck #150
-            g,8 -. d'8 -. a8 -. d8 -. b8 -. d8 -. g,8 -. d'8 -. | % 151
-            d,4 -. -\< r8 d'8 -. d4 -. r8 d8 -. | % 152
-            d4 -. -\! -\f d,4 -. r4 r8 d'8 -. -\mp | % 153
-            g4 -. r8 d8 -. g4 -. r8 d8 -. | % 154
-            g4 -. f4 -. bf4 -. r4 | % 155
-            a4 -. bf4 -. f4 -. r4 | % 156
-            a4 -. bf4 -. f4 -. r4 | % 157
-            bf4 -. r8 f8 -. bf4 -. r8 f8 -. | % 158
-            bf4 -. a4 -. bf4 -. r4 | % 159
-            fs4 -. g4 -. d4 -. r4 | \barNumberCheck #160
-            fs4 -. g4 -. d4 -. r8 \clef "treble" d'8 -. -\mf | % 161
-            g4 -. r8 fs8 -. g4 -. r8 fs8 -. | % 162
-            g4 -. a4 -. bf4 -. r4 | % 163
-            c4 -. bf4 -. a4 -. r4 | % 164
-            c4 -. bf4 -. a4 -. r4 | % 165
-            bf4 -. r8 a8 -. bf4 -. r8 a8 -. | % 166
-            bf4 -. c4 -. bf4 -. r4 | % 167
-            a4 -. g4 -. fs4 -. r4 | % 168
-            a4 -. g4 -. fs4 -. r4 | % 169
-            \clef "bass" g,1 ~ | \barNumberCheck #170
-            g1 | % 171
-            g8 b8 d8 b8 g8 b8 d8 b8 | % 172
-            g8 a8 c8 a8 g8 a8 c8 a8 | % 173
-            d2. -\f b8 \trill a16 b16 | % 174
-            c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. c8 -. | % 175
-            b'1 -\mp | % 176
-            c1 | % 177
-            d1 | % 178
-            e1 | % 179
-            fs1 | \barNumberCheck #180
-            g2 e2 | % 181
-            df2 d2 | % 182
-            g,4 -. g'4 -\mf a4 as4 | % 183
-            b4. b,8 b'4 -. b4 -. | % 184
-            b4. cs,8 b'4 -. b4 -. | % 185
-            b4. ds,8 b'4 -. b4 -. | % 186
-            b4. e,8 b'4 -. b4 -. | % 187
-            b2 ~ b8 c16 b16 a8 -. b8 -. | % 188
-            c1 | % 189
-            <d, c'>1 | \barNumberCheck #190
-            g,4 r4 r2 | % 191
-            r2 r4 d'4 | % 192
-            <g, g'>4 r4 r2 | % 193
-            r2 r4 d'4 | % 194
+            \barNumberCheck #144
+            c4 -. r4 b4 -. r4 | % 145
+            a4 -. r4 g4 -. r4 | % 146
+            fs4 -. r4 r2 | % 147
+            R1 | % 148
+            a4-\p fs4 d4 fs4 | % 149
+            g4 g4 r2 | % 150
+            R1 | % 151
+            e2 -. -\ff c2-\sf -. | % 152
+            fs2 -. d2 -. | % 153
+            g4 -. g4 -. r16 g16-\ff a16 b16 c16 d16 e16 fs16 |
+            \barNumberCheck #154
+            g4 -. b4 -. d4 -. g4 -. | % 155
+            d,,2 -. -\ff f''2-\sf ~ | % 156
+            f1 | % 157
+            c,,2-\ff -. e''2-\sf ~ | % 158
+            e1 | % 159
+            ds4 -. d4( cs4 -.) c4( | % 160
+            b4 -.) r4 a,4 -. r4 | % 161
+            d,8 -. -\p d'8 -. e,8 -. d'8 -. fs,8 -. d'8 -. d,8 -. d'8
+            -. | % 162
+            g,8 -. d'8 -. a8 -. d8 -. b8 -. d8 -. g,8 -. d'8 -. | % 163
+            d,8-\f -. d'8 -. e,8 -. d'8 -. fs,8 -. d'8 -. d,8 -. d'8 -. |
+            \barNumberCheck #164
+            g,8 -. d'8 -. a8 -. d8 -. b8 -. d8 -. g,8 -. d'8 -. | % 165
+            d,4-\ff -. r8 d'8 -. d4 -. r8 d8 -. | % 166
+            d4 -. -\f d,4 -. r4 r8 d'8 -. -\pp | % 167
+            g4 -. r8 d8 -. g4 -. r8 d8 -. | % 168
+            g4 -. f4 -. bf4 -. r4 | % 169
+            a4 -. bf4 -. f4 -. r4 | % 170
+            a4-\pp -. bf4 -. f4 -. r4 | % 171
+            bf4 -. r8 f8-\cresc -. bf4 -. r8 f8 -. | % 172
+            bf4 -. a4 -. bf4 -. r4 | % 173
+            fs4-\p -. g4 -. d4 -. r4 | \barNumberCheck #174
+            fs4-\pp -. g4 -. d4 -. r8 \clef "treble" d'8 -. | % 175
+            g4 -. r8 fs8 -. g4 -. r8 fs8 -. | % 176
+            g4 -. a4 -. bf4 -. r4 | % 177
+            c4-\p -. bf4 -. a4 -. r4 | % 178
+            c4-\pp -. bf4 -. a4 -. r4 | % 179
+            bf4 -. r8 a8-\cresc -. bf4 -. r8 a8 -. | % 180
+            bf4 -. c4 -. bf4 -. r4 | % 181
+            a4-\p -. g4 -. fs4 -. r4 | % 182
+            a4 -. g4 -. fs4 -. r4 | % 183
+            \clef "bass" g,1-\dolce ~ | \barNumberCheck #184
+            g1 | % 185
+            g8 b8 d8 b8 g8 b8 d8 b8 | % 186
+            g8 a8 c8 a8 g8 a8 c8 a8 | % 187
+            d2. -\f b8 \trill a16 b16 | % 188
+            c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. c8 -. | % 189
+            b'1 -\sfp | % 190
+            c1-\sf | % 191
+            d1-\sf | % 192
+            e1-\sf | % 193
+            fs1-\pp | \barNumberCheck #194
+            g2-\< e2 | % 195
+            df2-\> d2-\! | % 196
+            g,4 -. g'4 -\pp a4 as4 | % 197
+            b4. b,8-\sf b'4-\cresc -. b4 -. | % 198
+            b4.-\sf cs,8 b'4 -. b4 -. | % 199
+            b4.-\sf ds,8 b'4 -. b4 -. | % 200
+            b4.-\sf e,8 b'4 -. b4 -. | % 201
+            b2-\pp ~ b8 c16 b16 a8 -. b8 -. | % 202
+            c1-\cresc | % 203
+            <d, c'>1-\sfp | \barNumberCheck #204
+            g,4 r4 r2 | % 205
+            r2 r4 d'4-\p | % 206
+            <g, g'>4 r4 r2 | % 207
+            r2 r4 d'4 | % 208
             g,8-.-\f a16 b16 c16 d16 e16 fs16 g16 a16 g16 fs16 g16 a16 b16
-            c16 | % 195
-            d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 c16 b16
-            a16 | % 196
-            g16 a16 g16 fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16
-            d16 | % 197
-            c16 d16 c16 b16 c16 d16 c16 b16 c16 d16 c16 b16 c16 b16 a16
-            g16 | % 198
-            fs2 ~ fs8 r8 r4 | % 199
-            r8 ds''8 -\mp e8 c8 a4 -. r4 | \barNumberCheck #200
-            r8 b8 c8 a8 fs4 -. r4 | % 201
-            r8 ds8 e8 c8 a8 -. b8 c8 a8 | % 202
-            fs8 -. gs8 a8 fs8 c4 -\sf r4 | % 203
-            c4 -\sf r4 c4 -\sf r4 | % 204
-            \acciaccatura { bf'8 } bf'2. -\f g8. ef16 | % 205
-            bf4 -. bf4 -. bf4. \trill a16 b16 | % 206
-            bf2 -\mf d2 | % 207
-            f2 bf2 | % 208
-            bf8 -\f a8 bf8 fs8 g8 fs8 g8 ef8 | % 209
-            bf4 -. bf4 -. bf4. \trill a16 b16 | \barNumberCheck #210
-            bf2 -\mf d2 | % 211
-            f2 bf2 | % 212
-            ef,1 | % 213
-            cs1 | % 214
-            d1 | % 215
-            <d, d'>1 | % 216
-            g4 -. r4 r16 g16 a16 b16 c16 d16 e16 fs16 | % 217
-            g4 -. b4 -. d4 -. g4 -. | % 218
-            fs4 -. d4 -. a4 -. fs4 -. | % 219
-            d4 -. a4 -. fs4 -. d4 -. | \barNumberCheck #220
-            g2 r16 g16 a16 b16 c16 d16 e16 fs16 | % 221
-            g4 -. b4 -. d4 -. g4 -. | % 222
-            fs4 -. d4 -. a4 -. fs4 -. | % 223
-            d4 -. a4 -. fs4 -. d4 -. | % 224
-            g4 -. b4 -. d4 -. g4 -. | % 225
-            d4 r4 r2 | % 226
-            g,4 -. b4 -. d4 -. g4 -. | % 227
-            d4 r4 r2 | % 228
-            g,4 -\f r4 <g g'>4 r4 | % 229
-            <g g'>4 r4 r8 \bar "|."
-    }
+            c16 | % 209
+            d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 c16 b16 a16 | % 210
+        } \alternative {
+            { g4 r d4 r | g4 r4 r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
+            { g16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
+        }
+        c16-\ff d16 c16 b16 c16 d16 c16 b16 c16 d16 c16 b16 c16 b16 a16 g16 | % 213
+        fs2-\sf ~ fs8\fermata r8 r4 | % 214
+        r8 ds''8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
+        r8 b8 c8 a8 fs4 -. r4 | % 216
+        r8 ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
+        fs8 -. gs8 a8 fs8 c4 -\sf r4 | % 218
+        c4 -\sf r4 c4 -\sf r4 | % 219
+        \acciaccatura { bf'8 } bf'2. -\f g8. ef16 | % 220
+        bf4 -. bf4 -. bf4. \trill a16 b16 | % 221
+        bf2 -\p d2 | % 222
+        f2 bf2 | % 223
+        bf8 -\f a8 bf8 fs8 g8 fs8 g8 ef8 | % 224
+        bf4 -. bf4 -. bf4. \trill a16 b16 | \barNumberCheck #225
+        bf2 -\p d2 | % 226
+        f2 bf2 | % 227
+        ef,1-\pp | % 228
+        cs1 | % 229
+        d1-\cresc | % 230
+        <d, d'>1-\sf | % 231
+        g4-\f -. r4 r16 g16 a16 b16 c16 d16 e16 fs16 | % 232
+        g4 -. b4 -. d4 -. g4 -. | % 233
+        fs4 -. d4 -. a4 -. fs4 -. | % 234
+        d4 -. a4 -. fs4 -. d4 -. | \barNumberCheck #235
+        g2 r16 g16-\ff a16 b16 c16 d16 e16 fs16 | % 236
+        g4 -. b4 -. d4 -. g4 -. | % 237
+        fs4 -. d4 -. a4 -. fs4 -. | % 238
+        d4 -. a4 -. fs4 -. d4 -. | % 239
+        g4 -. b4 -. d4 -. g4 -. | % 240
+        d4 r4 r2 | % 241
+        g,4 -. b4 -. d4 -. g4 -. | % 242
+        d4 r4 r2 | % 243
+        g,4 r4 <g g'>4-\ff r4 | % 244
+        <g g'>4 r4 r8 \bar "|."
 }
 
 TrioII_MvII_Cello = \relative g, {
@@ -2909,7 +2911,7 @@ PartPThreeVoiceTwo =  \relative c, {
 \score {
     <<
         \new Staff { \TrioII_MvI_Violin }
-        \new Staff { \TrioII_MvI_Viola }
+        \new Staff { \removeWithTag #'doubleStops \TrioII_MvI_Viola }
         \new Staff { \TrioII_MvI_Cello }
     >>
     \layout {}
