@@ -27,14 +27,24 @@ smolNote =
    #{
      \tweak font-size -2 #notes
    #})
+fluteOctUp =
+#(define-music-function
+     (notes)
+     (ly:music?)
+   #{
+     \transpose c c' { #notes }
+   #})
+
+octDStr = \markup { \teeny "↓8" }
+octNStr = \markup { \teeny "=8" }
 
 % Trio I is in Opus 3.
 TrioII_MvI_Violin =  \relative g {
     \tempo "Adagio" 4=60 
     \repeat volta 2 {
         \time 4/4 \key g \major | % 1
-        \acciaccatura { g16 fs'16 b16 } b'2-\ff g2 | % 2
-        d2-\sf ~ -\> d16 cs16 d16 cs16 d16 b16 c16 a16 | % 3
+        \acciaccatura { g16 fs'16 b16 } b'2-\ff^\octDStr g2 | % 2
+        d2-\sf ~ -\> d16 cs16^\octNStr d16 cs16 d16 b16 c16 a16 | % 3
         g4 -. -\! r8. b,32-\pp d32 g16 -. fs16 -. g16 -. a16 -.
         b16 -. c16 -. d16 -. b16 -. | % 4
         a4 r8. d,32 fs32 a16 -. gs16 -. a16 -. b16 -. c16 -. d16
@@ -178,11 +188,11 @@ TrioII_MvI_Violin =  \relative g {
         cs'2. cs4 | % 131
         d4 r4 r4 d,4 | % 132
         d'2. d16 c16 bf16 a16 | % 133
-        bf8 -. -\< cs8 d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #134
+        bf8 -. -\< cs8^\octDStr d8 cs8 d8 c8 bf8 a8 | \barNumberCheck #134
         g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 135
         d2. -\! -\ff a8. fs16 | % 136
         d4 d4 d4. \trill cs16 d16 | % 137
-        e8-\sf ds8 e8 ds8 e8 d8 cs8 b8 | % 138
+        e8-\sf ds8^\octNStr e8 ds8 e8 d8 cs8 b8 | % 138
         a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
         d4 -. r4 r2 | % 140
         d8 -. -\pp cs8 -. d8 -. e8 -. fs8 -. g8 -. a8 -. fs8 -. | % 141
@@ -1073,16 +1083,16 @@ TrioII_MvI_Viola =  \relative g {
     \repeat volta 2 {
         \time 4/4 \key g \major | % 1
         \acciaccatura { s16 g16[ d'16] } b'2 -\ff g2 | % 2
-        d2-\sf ~ -\> d16 cs16 d16 cs16 d16 b16 c16 a16 | % 3
-        g4 -. -\! r4 r2 | % 4
-        r8. fs32-\pp a32 d8 -. r8 r2 | % 5
+        d2-\sf ~ -\> d16 \fluteOctUp \relative d' { cs16 d16 cs16 d16 b16 c16 a16 | % 3
+        g4 -. -\! } r4 r2 | % 4
+        r8. fs,=32-\pp a32 d8 -. r8 r2 | % 5
         r8. g,32 b32 d8 -. r8 r2 | % 6
         a4-\p-\< e8 c'8-\! << { b4-\> c4 | b16-\! } \\ \tag #'doubleStops { d,2 ~ | d16 } >>
         fs16-.-\pp g16 -. a16 -. b16 -. c16 -. d16 -. b16 -. g8 -. r8 r4 | % 8
         a16 -. gs16 -. a16 -. b16 -. c16 -. d16 -. e16 -. c16 -. a8 -. r8 r4 | % 9
         b16 -. as16 -. b16 -. c16 -. d16 -. e16 -. f16 -. d16 -. b8 -. r8 r4 | \barNumberCheck #10
-        e,16 -. gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -. ds16 -. e8 -. fs8 -. g8 -. e8 -. | % 11
-        ds2 ~ -\! -\ff -\> ds8 ds8 -. -\! -\pp ds8 -. ds8 -. | % 12
+        e,16 -. \fluteOctUp \relative e { gs16 -. -\< a16 -. b16 -. c16 -. cs16 -. d16 -. ds16 -. e8 -. fs8 -. g8 -. e8 -. | % 11
+        ds2 ~ -\! -\ff -\> ds8 } ds'='8 -. -\! -\pp ds8 -. ds8 -. | % 12
         ds4(-\< d4.)-\sf d,8-.-\< d8-.-\> d8-.-\! | % 13
         fs2-\pp r2 | % 14
         r8. fs32 a32 c8 -. r8 r2 | \barNumberCheck #15
@@ -1105,8 +1115,9 @@ TrioII_MvI_Viola =  \relative g {
         c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 36
         \tag #'doubleStops { <d b'>8 <b' d>8-\p q8 q8 q4 } \tag #'singleStop { b8 d-\p b d b4 } r4 | % 37
         \tag #'doubleStops { \repeat unfold 2 { r8 <g g'>8 q8 q8 q4 r4 | } } % 39
-        \tag #'singleStop { \repeat unfold 2 { r8 g g' g, g'4 r | } } % 39
-        r4 e2 \tag #'doubleStops { <a, e'>4 -. } \tag #'singleStop { a4-. } | % 40
+        \tag #'singleStop { r8 g g' g, g'4 r |
+                            r8 g g, g' g,4 r | } % 39
+        r4 e'='2 \tag #'doubleStops { <a, e'>4 -. } \tag #'singleStop { a4-. } | % 40
         a4 -. fs'4. cs16( d16 e16 d16 cs16 d16) | % 41
         a'4( g4) r8 cs,16( d16 e16 d16 cs16 d16) | % 42
         b'4( a4) r8 cs,16( d16 e16 d16 cs16 d16) | % 43
@@ -1115,8 +1126,9 @@ TrioII_MvI_Viola =  \relative g {
         fs4 r4 r2 | % 46
         a16 -. cs16( e16 fs16 g16 fs16 g16 fs16 g16 fs16 e16 d16 cs16 b16 a16 g16) | % 47
         fs8 -. fs'8 -. g8 -. a,8 -. a'8 -. a,8 -. fs'8 -. a,8 -. | % 48
-        e'4 -\ff r8 <fs d'>8 -. <e cs'>4 -. r8 <fs d'>8 -. | % 49
-        <e cs'>4 -. a,4 -. r4 r8 a8 -. -\pp | % 50
+        e'4 -\ff r8 \tag #'doubleStops { <fs d'>8 -. <e cs'>4 -. r8 <fs d'>8 -. | % 49
+        <e cs'>4 -. } \tag #'singleStop { d'8-. cs4-. r8 d8-. | % 49
+        cs4 -. } a,4 -. r4 r8 a8 -. -\pp | % 50
         d4 -. r8 cs8 -. d4 -. r8 cs8 -. | % 51
         d4 -. e4 -. f4 -. r4 | % 52
         g4 -. f4 -. e4 -. r4 | % 53
@@ -1139,20 +1151,31 @@ TrioII_MvI_Viola =  \relative g {
         g8 -. e8 -. cs8 -. a8 -. g8 -. e8 -. cs8 -. a'8 -. | % 70
         d,8 -\cresc fs8 a8 fs8 d8 fs8 a8 fs8 | % 71
         cs8 e8 a8 e8 cs8 e8 a8 e8 | % 72
-        <d a'>1 -\sfp | % 73
-        <d b'>1-\sf | % 74
-        <d cs'>1-\sf | \barNumberCheck #75
-        <d d'>1-\sf | % 76
-        <a' e'>1-\pp | % 77
-        a2-\< d2 ~ | % 78
+        \tag #'doubleStops { 
+            <d a'>1 -\sfp | % 73
+            <d b'>1-\sf | % 74
+            <d cs'>1-\sf | \barNumberCheck #75
+            <d d'>1-\sf | % 76
+            <a' e'>1-\pp | % 77
+        }
+        \tag #'singleStop { 
+            a1 -\sfp | % 73
+            b1-\sf | % 74
+            cs1-\sf | \barNumberCheck #75
+            d1-\sf | % 76
+            e1-\pp | % 77
+        }
+        a,=2-\< d2 ~ | % 78
         d2-\> cs2 | % 79
-        <fs, d'>4-\! -. d'4 -\pp e4 es4 | % 80
+        \tag #'doubleStops { <fs, d'>4-\! -. } \tag #'singleStop { fs-\!-. } d'4 -\pp e4 es4 | % 80
         fs8 -. as,8( fs'4)-\cresc ~ fs2 ~ | % 81
         fs8 b,8 fs'4-\sf ~ fs2 ~ | % 82
         fs8 cs8 fs4-\sf ~ fs2 ~ | % 83
-        fs8 d8 d'2-\sf <b, d>4 ~ ~ | % 84
-        <b d>4 <b d>4-\pp -. <b d>4 -. <b d>4 -. | \barNumberCheck # 85
-        <b d>1-\cresc | % 86
+        fs8 d8 d'2-\sf \tag #'doubleStops { <b, d>4 ~ | % 84
+        q4 q4-\pp -. q4 -. q4 -. | \barNumberCheck # 85
+        q1-\cresc } \tag #'singleStop { d4( | % 84
+                                        b4) d4-.-\pp b-. d-. | \barNumberCheck # 85
+                                        b1-\cresc }
         cs1-\sfp | % 87
         fs,4 r4 r2 | % 88
         fs'8-\p -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 89
@@ -1165,12 +1188,12 @@ TrioII_MvI_Viola =  \relative g {
         <a fs'>4 r4 <a g'>4 r4 | % 94
         <d, a' fs'>4 r4 r8
     } \repeat volta 2 {
-        d'8 (-\pp ef8 c8 | \barNumberCheck #95
+        \fluteOctUp \relative d { d'8 (-\pp ef8 c8 | \barNumberCheck #95
         a4 -.) r4 r8 b8 c8 a8 | % 96
         fs4 -. r4 r8 gs8 a8 fs8 | % 97
         c4 -. r4 ef'4 -. -\ff r4 | % 98
-        a,4 -. r4 c4 -. r4 | % 99
-        f,8 -. -\fp f8( ef'8 f,8) ef'8( f,8 ef'8 f,8) | % 100
+        a,4 -. r4 c4 -. } r4 | % 99
+        f=8 -. -\fp f8( ef'8 f,8) ef'8( f,8 ef'8 f,8) | % 100
         ef'8 f,8 ef'8 f,8 ef'8 f,8 ef'8 f,8 | % 101
         d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 102
         d'8 f,8 d'8 f,8 d'8 f,8 d'8 f,8 | % 103
@@ -1208,9 +1231,9 @@ TrioII_MvI_Viola =  \relative g {
         g8 fs8 g8 fs8 g8 a8 bf8 cs8 | % 135
         d2. -\! -\ff a8. fs16 | % 136
         d4 d4 d4. \trill cs16 d16 | % 137
-        e8-\sf ds8 e8 ds8 e8 d8 cs8 b8 | % 138
+        e8-\sf \fluteOctUp \relative e' { ds8 e8 ds8 e8 d8 cs8 b8 | % 138
         a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
-        d4 -. <d d'>4 -. -\pp <d d'>4 -. <d d'>4 -. | % 140
+        d4 -. } <d,= d'>4 -. -\pp <d d'>4 -. <d d'>4 -. | % 140
         <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 141
         <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 142
         <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 143
@@ -1223,22 +1246,24 @@ TrioII_MvI_Viola =  \relative g {
         c'4-\p a4 fs4 d4 | % 149
         d4 g4 r2 | % 150
         R1 | % 151
-        g2 -. -\ff <e g>2-\sf -. | % 152
+        g2 -. -\ff \tag #'doubleStops { <e g>2-\sf -. | % 152
         a2 -. <fs a>2 -. | % 153
-        <g b>4 -. <b g'>4 -. r2 | \barNumberCheck #154
+        <g b>4 -. <b g'>4 -. } \tag #'singleStop { e,=2-.-\sf | a2-. fs2-. | b4-. b-. }
+        r2 | \barNumberCheck #154
         R1*2 | % 156
         g2. -\ff g16 f16 e16 d16 | % 157
         c4 -. r4 r2 | % 158
         <c c'>1-\ff | % 159
         b'4 -. e,4( a4 -.) d,4( | % 160
-        g4 -.) r4 <a g'>4 -. r4 | % 161
-        <a fs'>4 -. -\p c'4 ~ c16 b16 a16 g16 fs16 e16 d16 c16 | % 162
+        g4 -.) r4 \tag #'doubleStops { <a g'>4 -. r4 | % 161
+        <a fs'>4 -. -\p } \tag #'singleStop { g'4-. r | fs4-.-\p } c'4 ~ c16 b16 a16 g16 fs16 e16 d16 c16 | % 162
         b4 r4 r2 | % 163
         a8-\f -. c'16 b16 c16 b16 c16 b16 c16 b16 a16 g16 fs16 e16 d16
         c16 | \barNumberCheck #164
         b8 -. d,8 -. c'8 -. d,8 -. d'8 -. d,8 -. b'8 -. d,8 -. | % 165
-        <a' fs'>4-\ff -. r8 <g' b>8 -. <fs a>4 -. r8 <b, g'>8 -. | % 166
-        <a fs'>4 -. -\f d,4 -. r4 r8 d'8 -. -\pp | % 167
+        \tag #'doubleStops { <a' fs'>4-\ff -. r8 <g' b>8 -. <fs a>4 -. r8 <b, g'>8 -. | % 166
+        <a fs'>4 -. -\f } \tag #'singleStop { fs'4-.-\ff r8 b8-. a4-. r8 g8-. | % 166 (again)
+        fs4-.-\f } d,4 -. r4 r8 d'8 -. -\pp | % 167
         g4 -. r8 fs8 -. g4 -. r8 fs8 -. | % 168
         g4 -. a4 -. bf4 -. r4 | % 169
         c4 -. bf4 -. a4 -. r4 | % 170
@@ -1261,22 +1286,33 @@ TrioII_MvI_Viola =  \relative g {
         c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 187
         g8-\cresc b8 d8 b8 g8 b8 d8 b8 | % 188
         fs8 a8 d8 a8 fs8 a8 d8 a8 | % 189
+        \tag #'doubleStops {
         <g d'>1 -\fp | % 190
         <g e'>1-\sf | % 191
         <g fs'>1-\sf | % 192
         <g g'>1-\sf | % 193
         <d' a'>1(-\pp | \barNumberCheck #194
-        <d b'>2)-\< g2 ~ | % 195
+        <d b'>2)-\< 
+        }
+        \tag #'singleStop {
+        d1 -\fp | % 190
+        e1-\sf | % 191
+        fs1-\sf | % 192
+        g1-\sf | % 193
+        a1(-\pp | \barNumberCheck #194
+        b2)-\< 
+        }
+        g2 ~ | % 195
         g2-\> fs2-\! | % 196
-        <b, g'>4 -. g'4 -\pp a4 as4 | % 197
+        \tag #'doubleStops { <b, g'>4 -. } \tag #'singleStop { b4-. } g'4 -\pp a4 as4 | % 197
         b8 -. ds,8 b'4-\sf ~ b2-\cresc ~ | % 198
         b8 e,8 b'4-\sf ~ b2 ~ | % 199
         b8 fs8 b4-\sf ~ b2 ~ | % 200
-        b8 g8 ~ <g b>4-\sf ~ <g b>2 ~ | % 201
-        <g b>4 g4-\pp -. g4 -. g4 -. | % 202
-        <e g>1-\cresc | % 203
+        b8 g8 ~ \tag #'doubleStops { <g b>4-\sf ~ q2 ~ | % 201
+        q4 } \tag #'singleStop { g4-\sf ~ g2 ~ | g4 } g4-\pp -. g4 -. g4 -. | % 202
+        \tag #'doubleStops { <e g>1-\cresc | % 203
         <a, fs'>1-\sfp | \barNumberCheck #204
-        <b g'>4 r4 r2 | % 205
+        <b g'>4 } \tag #'singleStop { e1-\cresc | a,1-\sfp | b4 } r4 r2 | % 205
         b'8-\p -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 206
         <b, g'>16 -. \noBeam g16 a16 b16 c16-\cresc d16 e16 fs16 g16 a16 g16 fs16 g16
         a16 b16 c16 | % 207
@@ -1288,15 +1324,20 @@ TrioII_MvI_Viola =  \relative g {
         { <d, b'>4 r <a d c'> r | <g d' b'>4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
         { g'16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
     }
-    c8-\ff e8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 <g c>8 | % 213
-    <a c>2-\sf ~ ~ <a c>8\fermata r8 r4 | % 214
+    c8-\ff e8 
+    \tag #'doubleStops { <g c>8 q q8 q q q | % 213
+                        <a c>2-\sf ~ <a c>8\fermata }
+    \tag #'singleStop  { g8 c g8 c g c | % 213
+                         c4-. a4.-\sf\fermata }
+    
+    r8 r4 | % 214
     r8 ds8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
     r8 b8 c8 a8 fs4 -. r4 | % 216
-    r8 ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
-    fs8 -. gs8 a8 fs8 c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 | % 218
-    c8 -. -\sf <fs a>8 <fs a>8 <fs a>8 c8 -. -\sf <fs a>8 <fs a>8
-    <fs a>8 | % 219
-    ef8 -. -\fp fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 220
+    r8 \fluteOctUp \relative d' { ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
+    fs8 -. gs8 a8 fs8 \repeat unfold 3 { c8 -. -\sf  
+                                         \tag #'doubleStops { <fs a>8 q8 q8 }
+                                         \tag #'singleStop  { fs8 a fs }} | % 219
+    ef8 -. -\fp } fs='8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 220
     bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 221
     d8-.-\p g8 af8 f8 bf,8 -. f'8 af8 f8 | % 222
     d8 -. f8 af8 f8 d8 -. f8 af8 d,8 | % 223
@@ -1308,22 +1349,33 @@ TrioII_MvI_Viola =  \relative g {
     g8 fs8 g8 e8 g8 fs8 g8 e8 | % 229
     g8-\cresc fs8 g8 d8 g8 fs8 g8 d8 | % 230
     fs8-\sf e8 fs8 c8 fs8 e8 fs8 c8 | % 231
-    b16 -\f <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
-        d>16 <b d>2 :16 | % 232
-    <b d>2 :16 <b d>2 :16 | % 233
-    <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c
-        d>16 <c d>2 :16 | % 234
-    <c d>2 :16 <c d>2 :16 | \barNumberCheck #235
-    <b d>16-\ff <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b
-        d>16 <b d>2 :16 | % 236
-    <b d>2 :16 <b d>2 :16 | % 237
-    <c d>2 :16 <c d>2 :16 | % 238
-    <c d>2 :16 <c d>2 :16 | % 239
-    <b d>2 :16 <b d>2 :16 | % 240
-    <c fs>2 :16 <c fs>2 :16 | % 241
-    <b g'>2 :16 <b g'>16 <b g'>16 <b g'>16 <b g'>16 <g' b>16 <g
-        b>16 <g b>16 <g b>16 | % 242
-    <fs c'>2 :16 <fs c'>2 :16 | % 243
+    \tag #'doubleStops {
+        b16 -\f <b d>16 q q q16 q q q q2:16 | % 232
+        <b d>2:16 <b d>2:16 | % 233
+        <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>16 <c d>2:16 | % 234
+        <c d>2:16 <c d>2:16 | \barNumberCheck #235
+        <b d>16-\ff <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>16 <b d>2:16 | % 236
+        <b d>2:16 <b d>2:16 | % 237
+        <c d>2:16 <c d>2:16 | % 238
+        <c d>2:16 <c d>2:16 | % 239
+        <b d>2:16 <b d>2:16 | % 240
+        <c fs>2:16 <c fs>2:16 | % 241
+        <b g'>2:16 <b g'>16 <b g'>16 <b g'>16 <b g'>16 <g' b>16 <g b>16 <g b>16 <g b>16 | % 242
+        <fs c'>2:16 <fs c'>2:16 | % 243
+    } \tag #'singleStop {
+        b,=16-\f( d b d) b16( d b d) \repeat tremolo 4 { b16( d) } | % 232
+        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 233
+        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 234
+        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 235
+        << s1-\ff \repeat unfold 2 \repeat tremolo 4 { b16 d } >> | % 236
+        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 237
+        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 238
+        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 239
+        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 240
+        \repeat unfold 2 \repeat tremolo 4 { c16 fs } | % 241
+        \repeat tremolo 4 { b,16 g' } b,16 g' b, g' g16 b g b | % 242
+        \repeat unfold 2 \repeat tremolo 4 { fs16 c' } | % 243
+    }
     <g b>4 r4 <g, d' b'>4-\ff r4 | % 244
     <d b' g'>4 r4 r8 \bar "|."
 }
@@ -2150,8 +2202,8 @@ TrioII_MvI_Cello =  \relative g, {
             a4-\p fs4 d4 fs4 | % 149
             g4 g4 r2 | % 150
             R1 | % 151
-            e2 -. -\ff c2-\sf -. | % 152
-            fs2 -. d2 -. | % 153
+            e2 -. -\ff <c \smolNote g'>2-\sf -. | % 152
+            fs2 -. <d \smolNote a'>2 -. | % 153
             g4 -. g4 -. r16 g16-\ff a16 b16 c16 d16 e16 fs16 |
             \barNumberCheck #154
             g4 -. b4 -. d4 -. g4 -. | % 155
@@ -2917,11 +2969,12 @@ PartPThreeVoiceTwo =  \relative c, {
 
 \score {
     <<
-        \new Staff { \TrioII_MvI_Violin }
-        \new Staff { \clef "treble_8"
-                     \removeWithTag #'doubleStops \TrioII_MvI_Viola }
-        %\new Staff { \clef alto \keepWithTag #'doubleStops \TrioII_MvI_Viola }
-        \new Staff { \TrioII_MvI_Cello }
+        \new Staff \with { midiPanPosition = #1 } { \TrioII_MvI_Violin }
+        \new Staff \with { midiPanPosition = #-1 } { %\clef alto 
+                     \clef "treble"
+                     \removeWithTag #'doubleStops \transpose c c' \TrioII_MvI_Viola }
+        %\new Staff { \keepWithTag #'doubleStops \TrioII_MvI_Viola }
+        \new Staff \with { midiPanPosition = #0 } { \TrioII_MvI_Cello }
     >>
     \layout {}
     \midi {\tempo 4 = 60 }
