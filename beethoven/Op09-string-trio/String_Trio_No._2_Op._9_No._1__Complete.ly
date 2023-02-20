@@ -18,8 +18,15 @@
         skipBars = ##t
         }
     }
-    
+
 dolce = \markup { \italic "dolce" }
+smolNote =
+#(define-music-function
+     (notes)
+     (ly:music?)
+   #{
+     \tweak font-size -2 #notes
+   #})
 
 % Trio I is in Opus 3.
 TrioII_MvI_Violin =  \relative g {
@@ -43,7 +50,7 @@ TrioII_MvI_Violin =  \relative g {
         -. e8 -. fs8 -. g8 -. as8 -. | % 11
         b8 -. -\! -\ff -\> r8 b,4. b8 -. -\! -\pp b8 -. b8 -. | % 12
         << { s4-\< s4-\> s8-\! } \\ {b2 ~ b8 } >> <d, b'>8-.-\< <d b'>8-.-\> <d b'>8-.-\! | % 13
-        <d c'>2-\pp r16 gs16 -. -\mf a16 -. b16 -. c16 -. d16 -. e16
+        <d c'>2-\pp r16 gs16 -. a16 -. b16 -. c16 -. d16 -. e16
         -. c16 -. | % 14
         a4 r4 r16 gs16 -. a16 -. b16 -. c16 -. ds16 -. e16 -. c16-. | \barNumberCheck #15
         a4 r4 r16 gs16-.-\pp a16 -. b16 -. c16 -. cs16 -. d16 -. ds16 -. \bar "||"
@@ -1064,7 +1071,7 @@ ViolinVoiceII =  \relative g {
 
 TrioII_MvI_Viola =  \relative g {
     \repeat volta 2 {
-        \clef "alto" \time 4/4 \key g \major | % 1
+        \time 4/4 \key g \major | % 1
         \acciaccatura { s16 g16[ d'16] } b'2 -\ff g2 | % 2
         d2-\sf ~ -\> d16 cs16 d16 cs16 d16 b16 c16 a16 | % 3
         g4 -. -\! r4 r2 | % 4
@@ -1085,21 +1092,21 @@ TrioII_MvI_Viola =  \relative g {
         c='4 a4 fs4 d4 | \barNumberCheck #20
         d4 g4 r2 | % 21
         R1 | % 22
-        g2 -. -\f <e g>2-. | % 23
-        a2 -. <fs a>2-. | % 24
-        <d b'>4 r4 r2 | % 25
+        g2 -. -\f \tag #'doubleStops { <e g>2-. } \tag #'singleStop { e2-. } | % 23
+        a2 -. \tag #'doubleStops { <fs a>2-. } \tag #'singleStop { fs2-. } | % 24
+        \tag #'doubleStops { <d b'>4 } \tag #'singleStop { b'4 } r4 r2 | % 25
         R1 | % 26
-        c1 | % 27
-        <d c'>1 | % 28
+        c,=1-\ff | % 27
+        \tag #'doubleStops { <d c'>1 } \tag #'singleStop { c'2 d,2 } | % 28
         << { s1-\p | s1 } \repeat unfold 8 { b'8 d,8 } >> | % 30
         \repeat unfold 8 { c'8 d,8 } | \barNumberCheck #32
         << {s1-\f | s1 } \repeat unfold 8 { b'8 d,8 } >> | \barNumberCheck #34
         c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | \barNumberCheck #35
         c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 36
-        <d b'>8 <b' d>8-\p q8 q8 q4 r4 | % 37
-        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 38
-        r8 <g g'>8 <g g'>8 <g g'>8 <g g'>4 r4 | % 39
-        r4 e'2 <a, e'>4 -. | % 40
+        \tag #'doubleStops { <d b'>8 <b' d>8-\p q8 q8 q4 } \tag #'singleStop { b8 d-\p b d b4 } r4 | % 37
+        \tag #'doubleStops { \repeat unfold 2 { r8 <g g'>8 q8 q8 q4 r4 | } } % 39
+        \tag #'singleStop { \repeat unfold 2 { r8 g g' g, g'4 r | } } % 39
+        r4 e2 \tag #'doubleStops { <a, e'>4 -. } \tag #'singleStop { a4-. } | % 40
         a4 -. fs'4. cs16( d16 e16 d16 cs16 d16) | % 41
         a'4( g4) r8 cs,16( d16 e16 d16 cs16 d16) | % 42
         b'4( a4) r8 cs,16( d16 e16 d16 cs16 d16) | % 43
@@ -2006,11 +2013,11 @@ TrioII_MvI_Cello =  \relative g, {
             a'4 fs4 d4 fs4 | \barNumberCheck #20
             g4 g4 r2 | % 21
             R1 | % 22
-            e2 -. -\f c2-. | % 23
-            fs2 -. d2 -. | % 24
-            g4 r4 r16 g16 a16 b16 c16 d16 e16 fs16 | % 25
+            e2 -. -\f <c \smolNote e>2-. | % 23
+            fs2 -. <d \smolNote fs>2 -. | % 24
+            <g \smolNote d>4 r4 r16 g16-\cresc a16 b16 c16 d16 e16 fs16 | % 25
             g4 -. b4 -. d4 -. g4 -. | % 26
-            c,,,2 -. e''2 -. | % 27
+            c,,,2-\ff -. e''2 -. | % 27
             d,,2 -. fs''2 -. | % 28
             <g,, b' g'>2.-\sf d''8. b16 | % 29
             g4 g4 g4. \trill fs16 g16 | % 30
@@ -2911,7 +2918,9 @@ PartPThreeVoiceTwo =  \relative c, {
 \score {
     <<
         \new Staff { \TrioII_MvI_Violin }
-        \new Staff { \removeWithTag #'doubleStops \TrioII_MvI_Viola }
+        \new Staff { \clef "treble_8"
+                     \removeWithTag #'doubleStops \TrioII_MvI_Viola }
+        %\new Staff { \clef alto \keepWithTag #'doubleStops \TrioII_MvI_Viola }
         \new Staff { \TrioII_MvI_Cello }
     >>
     \layout {}
