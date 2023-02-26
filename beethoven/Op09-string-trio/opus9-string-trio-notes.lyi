@@ -6,16 +6,41 @@
 
 
 \header {
-    title =  "3 String Trios"
-    composer =  "Beethoven, Ludwig van"
+    title = "1st Movement of String Trio No.2"
+    % opus = "Opus 9"
+    composer =  "Beethoven (Opus 9)"
     arranger =  "Transcription by Agustín I. Pace"
     encodingsoftware =  "MuseScore 3.4.2"
-    encodingdate =  "2020-06-13"
+    tagline = ##f
+    stitle = "String Trios No.2"
     }
+
+\paper {
+    page-count = #3
+
+    indent = 0
+    top-margin = 2\mm
+    bottom-margin = 2\mm
+    left-margin = 5\mm
+    right-margin = 2\mm
+
+    oddHeaderMarkup = \markup \fill-line {
+        " "
+        \on-the-fly #not-first-page \tiny \italic \concat {
+          \fromproperty #'header:stitle ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string }
+    evenHeaderMarkup = \markup \fill-line {
+        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
+        \on-the-fly #not-first-page \tiny \italic \concat {
+          \fromproperty #'header:stitle ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
+        " " }
+}
 
 \layout {
     \context { \Score
         skipBars = ##t
+        countPercentRepeats = ##t
+        \override DynamicTextSpanner.style = #'none
         }
     }
 
@@ -35,12 +60,22 @@ fluteOctUp =
      \transpose c c' { #notes }
    #})
 
+duTrem =
+#(define-music-function
+     (notes)
+     (ly:music?)
+   #{
+     \repeat tremolo 2 { #notes }
+   #})
+
+qViolin = { <>^\markup { \tiny "Vln" } }
+
 octDStr = \markup { \teeny "↓8" }
 octNStr = \markup { \teeny "=8" }
 
 % Trio I is in Opus 3.
 TrioII_MvI_Violin =  \relative g {
-    \tempo "Adagio" 4=60 
+    \tempo "Adagio" 4=60
     \repeat volta 2 {
         \time 4/4 \key g \major | % 1
         \acciaccatura { g16 fs'16 b16 } b'2-\ff^\octDStr g2 | % 2
@@ -272,7 +307,7 @@ TrioII_MvI_Violin =  \relative g {
         b8-\f -. b'8 -. c,8 -. c'8 -. d,8 -. d'8 -. fs,8 -. fs'8 -. | % 210
     } \alternative {
         { g8-. g16( a) b8-. c-. d8-. d-. e-. fs-. | g4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
-        { b,,8 -. g'8-\cresc -. c,8 -. a'8 -. cs,8 -. as'8 -. d,8 -. b'8 -. } % 211
+        { \break b,,8 -. g'8-\cresc -. c,8 -. a'8 -. cs,8 -. as'8 -. d,8 -. b'8 -. } % 211
     }
     e,8-\ff c'8 e8 e8 e8 e8 e8 e8 | % 213
     e4 -. d4.-\sf\fermata ds8 -\pp e8 c8 | % 214
@@ -310,6 +345,9 @@ TrioII_MvI_Violin =  \relative g {
     d4 r4 <g,, d' b'>4-\ff r4 | % 244
     <g, d' b' g'>4 r4 r8 \bar "|."
 }
+
+\addQuote "TrioII_MvI_Violin" { \TrioII_MvI_Violin }
+
 TrioII_MvII_Violin = \relative g {
     \time 3/4 \key e \major \tempo "Adagio, ma non tanto, e cantabile" 4=40
             \once \omit TupletBracket
@@ -1079,7 +1117,13 @@ ViolinVoiceII =  \relative g {
     s1*5 s1*3 \bar "|."
     }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Viola
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 TrioII_MvI_Viola =  \relative g {
+    \tempo "Adagio" 4=60
     \repeat volta 2 {
         \time 4/4 \key g \major | % 1
         \acciaccatura { s16 g16[ d'16] } b'2 -\ff g2 | % 2
@@ -1096,9 +1140,9 @@ TrioII_MvI_Viola =  \relative g {
         ds4(-\< d4.)-\sf d,8-.-\< d8-.-\> d8-.-\! | % 13
         fs2-\pp r2 | % 14
         r8. fs32 a32 c8 -. r8 r2 | \barNumberCheck #15
-        r8. a32-\pp c32 fs8 -. r8 r2 \bar "||"
-        \partial 4. r8 r4 | % 17
-        R1*2 | % 19
+        r8. a32-\pp c32 fs8 -. r8 \qViolin \cueDuringWithClef "TrioII_MvI_Violin" #UP treble { r2 \bar "||" \break
+        \tempo "Allegro" 4=150 \partial 4. r8 r4 | % 17
+        R1*2 } | % 19
         c='4 a4 fs4 d4 | \barNumberCheck #20
         d4 g4 r2 | % 21
         R1 | % 22
@@ -1108,11 +1152,11 @@ TrioII_MvI_Viola =  \relative g {
         R1 | % 26
         c,=1-\ff | % 27
         \tag #'doubleStops { <d c'>1 } \tag #'singleStop { c'2 d,2 } | % 28
-        << { s1-\p | s1 } \repeat unfold 8 { b'8 d,8 } >> | % 30
-        \repeat unfold 8 { c'8 d,8 } | \barNumberCheck #32
-        << {s1-\f | s1 } \repeat unfold 8 { b'8 d,8 } >> | \barNumberCheck #34
-        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | \barNumberCheck #35
-        c'8 d,8 c'8 d,8 c'8 d,8 c'8 d,8 | % 36
+        << { s1-\p } \repeat unfold 4 { b'8 d,8 } >> | % 29
+        \repeat unfold 2 \duTrem { b'8 d,8 } | \barNumberCheck #30
+        \repeat unfold 4 \duTrem { c'8 d,8 } | \barNumberCheck #32
+        << {s1-\f | s1 } \repeat unfold 4 \duTrem { b'8 d,8 } >> | \barNumberCheck #34
+        \repeat unfold 4 \duTrem { c'8 d,8 } | \barNumberCheck #36
         \tag #'doubleStops { <d b'>8 <b' d>8-\p q8 q8 q4 } \tag #'singleStop { b8 d-\p b d b4 } r4 | % 37
         \tag #'doubleStops { \repeat unfold 2 { r8 <g g'>8 q8 q8 q4 r4 | } } % 39
         \tag #'singleStop { r8 g g' g, g'4 r |
@@ -1179,7 +1223,7 @@ TrioII_MvI_Viola =  \relative g {
         cs1-\sfp | % 87
         fs,4 r4 r2 | % 88
         fs'8-\p -. a8 -. e8 -. g8 -. d8 -. fs8 -. g,8 -. e'8 -. | % 89
-        <fs, d'>16 -. \noBeam d16 e16 fs16 g16 a16 b16 cs16 d16-\cresc e16 d16
+        \tag #'doubleStops { <fs, d'>16 -. } \tag #'singleStop { fs16-. } \noBeam d16 e16 fs16 g16 a16 b16 cs16 d16-\cresc e16 d16
         cs16 d16 e16 fs16 g16 | % 90
         a16-\f b16 a16 gs16 a16 b16 a16 gs16 a16 b16 a16 gs16 a16 b16
         cs16 a16 | % 91
@@ -1233,17 +1277,15 @@ TrioII_MvI_Viola =  \relative g {
         d4 d4 d4. \trill cs16 d16 | % 137
         e8-\sf \fluteOctUp \relative e' { ds8 e8 ds8 e8 d8 cs8 b8 | % 138
         a8-\sf gs8 a8 gs8 a8 g8 fs8 e8 | % 139
-        d4 -. } <d,= d'>4 -. -\pp <d d'>4 -. <d d'>4 -. | % 140
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 141
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 142
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 143
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. |
-        \barNumberCheck #144
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 145
-        <d d'>4 -. <d d'>4 -. <d d'>4 -. <d d'>4 -. | % 146
-        <d d'>4 -. r4 r2 | % 147
+         } \tag #'doubleStops { d4 -. <d,= d'>4 -. -\pp q4 -. q4 -. | % 140
+        \repeat percent 6 { q4 -. q4 -. q4 -. q4 -. | } \barNumberCheck #146
+                q4 -. }
+        \tag #'singleStop {
+           << { s4 s4-\pp s2 s1*6 } \repeat percent 7 { d'4-. d,-. d'-. d,-. | } >> \barNumberCheck #146
+           d'4-. }
+        r4 r2 | % 147
         R1 | % 148
-        c'4-\p a4 fs4 d4 | % 149
+        c='4-\p a4 fs4 d4 | % 149
         d4 g4 r2 | % 150
         R1 | % 151
         g2 -. -\ff \tag #'doubleStops { <e g>2-\sf -. | % 152
@@ -1322,16 +1364,15 @@ TrioII_MvI_Viola =  \relative g {
         g,,8-\f -. g'8 -. a,8 -. a'8 -. b,8 -. b'8 -. c,8 -. b'8 -. | % 210
     } \alternative {
         { <d, b'>4 r <a d c'> r | <g d' b'>4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
-        { g'16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
+        { \break g'16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
     }
     c8-\ff e8 
     \tag #'doubleStops { <g c>8 q q8 q q q | % 213
                         <a c>2-\sf ~ <a c>8\fermata }
     \tag #'singleStop  { g8 c g8 c g c | % 213
                          c4-. a4.-\sf\fermata }
-    
-    r8 r4 | % 214
-    r8 ds8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
+    \qViolin \cueDuringWithClef "TrioII_MvI_Violin" #UP "treble^8" { r8 r4 | % 214
+    r8 } ds8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
     r8 b8 c8 a8 fs4 -. r4 | % 216
     r8 \fluteOctUp \relative d' { ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
     fs8 -. gs8 a8 fs8 \repeat unfold 3 { c8 -. -\sf  
@@ -2039,7 +2080,13 @@ PartPTwoVoiceTwo =  \relative d {
     "|."
     }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cello
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 TrioII_MvI_Cello =  \relative g, {
+        \tempo "Adagio" 4=60
         \repeat volta 2 {
             \clef "bass" \time 4/4 \key g \major | % 1
             \acciaccatura { s16 g16[ d'16] } b'2 -\ff g2 | % 2
@@ -2060,7 +2107,7 @@ TrioII_MvI_Cello =  \relative g, {
             <a fs'>2-\pp r2 | % 14
             r4 r8. a32 fs32 d4.-\sfp r8 | % 15
             r4 r8. c'32 a32 d,4.-\sfp r8 \bar "||"
-            \partial 4. r8 r4 | % 17
+            \tempo "Allegro" 4=150 \partial 4. r8 r4 | % 17
             R1*2 | % 19
             a'4 fs4 d4 fs4 | \barNumberCheck #20
             g4 g4 r2 | % 21
@@ -2126,10 +2173,8 @@ TrioII_MvI_Cello =  \relative g, {
             d2-\< b2 | % 78
             gs2-\> a2 | % 79
             d4-\! -. d4 -\pp e4 es4 | % 80
-            fs4. fs,8( fs'4)-\cresc -. fs4 -. | % 81
-            fs4.-\sf gs,8 fs'4 -. fs4 -. | % 82
-            fs4.-\sf as,8 fs'4 -. fs4 -. | % 83
-            fs4.-\sf b,8 fs'4 -. fs4 -. | % 84
+            << { s2 s2-\cresc | \repeat unfold 3 s1-\sf }
+               \repeat unfold 4 { fs4. fs,8( fs'4) -. fs4 -. } >> | % 84
             fs2-\pp ~ fs8 g16 fs16 e8 -. fs8 -. | \barNumberCheck #85
             g1-\cresc | % 86
             <a, g'>1-\sfp | % 87
@@ -2267,11 +2312,11 @@ TrioII_MvI_Cello =  \relative g, {
             d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 c16 b16 a16 | % 210
         } \alternative {
             { g4 r d4 r | g4 r4 r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
-            { g16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
+            { \break g16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
         }
         c16-\ff d16 c16 b16 c16 d16 c16 b16 c16 d16 c16 b16 c16 b16 a16 g16 | % 213
-        fs2-\sf ~ fs8\fermata r8 r4 | % 214
-        r8 ds''8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
+        fs2-\sf ~ fs8\fermata \qViolin \cueDuringWithClef "TrioII_MvI_Violin" #UP "treble^8" { r8 r4 | % 214
+        r8 } ds''8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
         r8 b8 c8 a8 fs4 -. r4 | % 216
         r8 ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
         fs8 -. gs8 a8 fs8 c4 -\sf r4 | % 218
