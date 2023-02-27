@@ -1,4 +1,4 @@
-\version "2.22.2"
+\version "2.24.0"
 
 %% additional definitions required by the score:
 \language "english"
@@ -30,8 +30,8 @@ TrioI_MvI_Violin =  \relative d' {
             d8 ( g8 ) g8 -. \appoggiatura a8 g8 ( -\f fs16 e16 d16 cs16 ) | % 8
         }
         \alternative {
-            { e8 ( -\p d8 ) d8 -. d8. b16 ( c16 a16 ) | } % 9
-            { e'8 ( -\p d8 ) d8 d4 g8 -\f | \barNumberCheck #10 }
+            \volta 1 { e8 ( -\p d8 ) d8 -. d8. b16 ( c16 a16 ) | } % 9
+            \volta 2 { e'8 ( -\p d8 ) d8 d4 g8 -\f | \barNumberCheck #10 }
         }
         \repeat volta 2 {
             g4 ( a8 ) g8 ( fs8 e8 ) | % 11
@@ -50,8 +50,8 @@ TrioI_MvI_Violin =  \relative d' {
             b8 c8 d8 ( d4 ) g,8 \turn | % 24
             a8 ( c8 ) b8 -. a8 ( \turn g8 ) fs8 -. }
         \alternative {
-            { a8 ( g8 ) g8 g4 g'8 }
-            { a,8 ( g8 ) g8 -. g4 d'8 -\p }
+            \volta 1 { a8 ( g8 ) g8 g4 g'8 }
+            \volta 2 { a,8 ( g8 ) g8 -. g4 d'8 -\p }
         } | % 26
         \key bf \major 
         \repeat volta 2 {
@@ -70,8 +70,8 @@ TrioI_MvI_Violin =  \relative d' {
             <ef' c'>4. ~ <ef c'>8 <d bf'>8 <d bf'>8 ~ | % 37
             bf'8 ( a8 ) a8 -. a8 ( g8 ) fs8 -. 
         } \alternative {
-            { fs4. ( -\p g8 ) r8 d8 }
-            { fs4. ( -\p g8 ) r8 g,8 }
+            \volta 1 { fs4. ( -\p g8 ) r8 d8 }
+            \volta 2 { fs4. ( -\p g8 ) r8 g,8 }
         }
         \key g \major 
         \repeat volta 2 {
@@ -83,8 +83,8 @@ TrioI_MvI_Violin =  \relative d' {
             b16 ( c16 b16 c16 b16 d16 ) c8 ( d8 e8 ) | % 46
             d8 ( g8 ) g8 -. g8 -\f fs16 e16 d16 cs16 | % 47
         } \alternative {
-            { e8 ( -\p d8 ) d8 d8. b16 c16 a16 }
-            { e'8 ( -\p d8 ) d8 d8 r8 g8 | } % 49
+            \volta 1 { e8 ( -\p d8 ) d8 d8. b16 c16 a16 }
+            \volta 2 { e'8 ( -\p d8 ) d8 d8 r8 g8 | } % 49
         } \repeat volta 2 {
             g4 ( -\f \appoggiatura b8 a8 g8 fs8 e8 ) | \barNumberCheck #50
             d8 d8 d8 d4 ( ds8 ) -\sf | % 51
@@ -106,8 +106,8 @@ TrioI_MvI_Violin =  \relative d' {
             b8 ( c8 d8 ) g,8 a8 b8 | % 63
             a8 b8 c8 ~ c8 a8 fs8 | % 64
         } \alternative {
-            { a4. ( g8 ) r8 g'8 | } % 65
-            { a,4. ( -. g8 ) r8 d'8 -\p | } % 66
+            \volta 1 { a4. ( g8 ) r8 g'8 | } % 65
+            \volta 2 { a,4. ( -. g8 ) r8 d'8 -\p | } % 66
         }
         \key bf \major
         \repeat volta 2 {
@@ -124,8 +124,8 @@ TrioI_MvI_Violin =  \relative d' {
             ef16 ef'16 d,16 d'16 c,16 c'16 ~ c16 ( bf16 a16 g16 fs16 g16 ) | % 76
             \grace f?16 ef8 ( d16 -\> c16 bf16 a16 ) g8. ( a16 ) fs8 -. -\! | % 77
         } \alternative {
-            { r8 r8 g8 -\pp g8 r8 d'8 | } % 78
-            { r8 r8 g,8 -\pp g8 r8 g8 | } % 79
+            \volta 1 { r8 r8 g8 -\pp g8 r8 d'8 | } % 78
+            \volta 2 { r8 r8 g,8 -\pp g8 r8 g8 | } % 79
         } \key g \major \repeat volta 2 {
             g4 ( a8 ) d,8 -. fs16 ( e16 ) g16 ( fs16 ) | \barNumberCheck #80
             a16 ( g16 ) c16 ( b16 ) d16 ( b16 ) g4 ( a8 ) | % 81
@@ -136,12 +136,12 @@ TrioI_MvI_Violin =  \relative d' {
             c8 b8 d8 d16 ( c16 ) c16 ( b16 ) b16 ( a16 ) | % 85
             a16 ( g16 ) g16 fs8 a8 g8 e8 cs16 | % 86
         } \alternative {
-            { cs16 ( d16 e16 d16 e16 d16 ) d8 r8 g,8 | } % 87
-            { cs16 ( d16 e16 d16 e16 d16 ) d8 r8 g8 -\p | } % 88
+            \volta 1 { cs16 ( d16 e16 d16 e16 d16 ) d8 r8 g,8 | } % 87
+            \volta 2 { cs16 ( d16 e16 d16 e16 d16 ) d8 r8 g8 -\p | } % 88
         }
         \repeat volta 2 {
             | \barNumberCheck #88
-            fs16 ( -\markup{ \tiny\italic {cresc.} } g16 ) a16 ( g16 ) a16
+            fs16 ( -\cresc g16 ) a16 ( g16 ) a16
             ( g16 ) a16 ( g16 ) g16 ( fs16 ) fs16 ( e16 ) | % 89
             e16 ( d16 ) d16 -. d16 -. d16 -. d16 -. -\f e16 ( ds16 ) ds16
             -. ds16 -. ds16 -. ds16 -. | % 90
@@ -163,14 +163,14 @@ TrioI_MvI_Violin =  \relative d' {
             g8 -. g8 -. g8 -. g4 <d a'>8 -. -\ff | % 101
             <d b'>8 -. r8 <d d'>8 -. <d c'>8 -. r8 <d b'>8 -. | % 102
             a'32 ( g32 a32 b32 cs32 d32 e32 fs32 g32 a32 b32 cs32 ) d8 r8 b,8 -. -\f | % 103
-            c8 ( -\markup{ \small\italic {dimin.} } d8 ) e8 -. e8 -. r8 a,8 -\f | % 104
-            b8 ( -\markup{ \tiny\italic {din/Lin.} } c8 ) d8 -. d8 -. r8 g,8 ( -\p | % 105
+            c8 ( -\dim d8 ) e8 -. e8 -. r8 a,8 -\f | % 104
+            b8 ( -\dim c8 ) d8 -. d8 -. r8 g,8 ( -\p | % 105
             a16 ) -. r16 b16 -! -\> r16 c16 -. r16 d,16 -. r16 e16 -. r16
             fs16 -. -\! r16
         } \alternative {
-            { r4 r8 <g, g'>8 -\f r8 g''8 -\p }
-            { r4 r8 <g,, d' b' g'>8 \arpeggio -\f r8 \fermata }
-        } \bar "|."
+            \volta 1 { r4 r8 <g, g'>8 -\f r8 g''8 -\p }
+            \volta 2 { r4 r8 <g,, d' b' g'>8 \arpeggio -\f r8 \fermata }
+        } \fine
 }
 
 TrioI_MvII_Violin = \relative g {
@@ -187,8 +187,8 @@ TrioI_MvII_Violin = \relative g {
         d16 e16 fs16 g16 a16 fs16 e16 d16 cs16 d16 e16 fs16 g16 e16 d16 cs16 | % 10
     }
     \alternative {
-        { d4  \grace cs'16 d4 -\ff r2 | }
-        { d,4 \grace cs'16 d4 -\ff r2 | \barNumberCheck #12 }
+        \volta 1 { d4  \grace cs'16 d4 -\ff r2 | }
+        \volta 2 { d,4 \grace cs'16 d4 -\ff r2 | \barNumberCheck #12 }
     } \repeat volta 2 {
         f,8. ( -\p d32 ef32 ) f8 r8 r8 a,8 -. a8 -. a8 -. | % 13
         bf8. -. bf32 ( c32 ) d8 r8 r8 fs,8 -. fs8 -. fs8 -. | % 14
@@ -265,7 +265,7 @@ TrioI_MvII_Violin = \relative g {
         g16 b16 g16 d16 b16 d16 b16 g16 fs16 d16 fs16 a16 c16 fs16 a16 fs16 | % 82
         g16 b16 g16 d16 b16 d16 b16 g16 fs16 d16 fs16 a16 c16 fs16 a16 fs16 | % 83
         g8 d16 b16 g8 d16 b16 g8 r8 r4
-    }
+    } \fine
 }
 
 TrioI_MvI_Viola = \relative b {
@@ -279,8 +279,8 @@ TrioI_MvI_Viola = \relative b {
         g4 ( f8 e8 d8 c8 ) | % 7
         b8 b'8 -. a8 -. g8 b,8 g'8 ~ -. | % 8
     } \alternative {
-        { g8 ( -\p fs8 ) fs8 -. fs4 r8 | } % 9
-        { g8 ( -\p fs8 ) fs8 -. fs4 d'8 -\f | \barNumberCheck #10 }
+        \volta 1 { g8 ( -\p fs8 ) fs8 -. fs4 r8 | } % 9
+        \volta 2 { g8 ( -\p fs8 ) fs8 -. fs4 d'8 -\f | \barNumberCheck #10 }
     }
     \repeat volta 2 {
         d4 ( e8 d8 c8 b8 ) | % 11
@@ -300,8 +300,8 @@ TrioI_MvI_Viola = \relative b {
         c8 e8 d8 c8 b8 a8 | % 25
     }
     \alternative {
-        { c8 ( b8 ) b8 b4 d'8 | } % 26
-        { c,8 ( b8 ) b8 -. b4 r8 | \barNumberCheck #27 }
+        \volta 1 { c8 ( b8 ) b8 b4 d'8 | } % 26
+        \volta 2 { c,8 ( b8 ) b8 -. b4 r8 | \barNumberCheck #27 }
     }
     \key bf \major \repeat volta 2 {
         r8 bf8 -\p r8 r8 c8 r8 | % 28
@@ -351,8 +351,8 @@ TrioI_MvI_Viola = \relative b {
         g8 ( a8 b8 ) b,8 c8 d8 | % 63
         r16 e8 d8 c8 c8 c8 c16 | % 64
     } \alternative {
-        { c4. ( b8 ) r8 b'16 ( d16 ) | } % 65
-        { c,4. ( b4 ) r8 | } % 66
+        \volta 1 { c4. ( b8 ) r8 b'16 ( d16 ) | } % 65
+        \volta 2 { c,4. ( b4 ) r8 | } % 66
     } \key bf \major \repeat volta 2 {
         r8 bf8 -\p r8 r8 c8 r8 | % 67
         r8 c8 r8 r8 bf8 r8 | % 68
@@ -367,8 +367,8 @@ TrioI_MvI_Viola = \relative b {
         c8 d8 ef8 d4. | % 76
         ef4. bf4 ( a8 ) | % 77
     } \alternative {
-        { r4 g8-\pp g8 r r | } % 78
-        { r4 g8-\pp g8 r r | \barNumberCheck #79 }
+        \volta 1 { r4 g8-\pp g8 r r | } % 78
+        \volta 2 { r4 g8-\pp g8 r r | \barNumberCheck #79 }
     } \key g \major \repeat volta 2 {
         b4 ( -\p c8 ) c4 -. c8 -. | % 80
         b8 b8 b8 c16 ( b16 ) e16 ( d16 ) cs16 ( d16 ) | % 81
@@ -377,12 +377,11 @@ TrioI_MvI_Viola = \relative b {
         a8 ( b8 c8 c4 a8 ) | % 84
         a8 g8 f8 e8 d8 c8 | % 85
         b8 a8 c8 b8 g'4 ~ | % 86
-        g8 fs8 fs8 fs8 r8 b,8 }
-    | % 87
-    g'8 fs8 fs8 fs8 r8 d8 -\p \bar ".|"
-    \repeat volta 2 {
-        | \barNumberCheck #88
-        d4 ( -\markup{ \tiny\italic {cresc.} } e8 d8 c8 b8 ) | % 89
+    } \alternative {
+        \volta 1 { g8 fs8 fs8 fs8 r8 b,8 | } % 87
+        \volta 2 { g'8 fs8 fs8 fs8 r8 d8 -\p | \barNumberCheck #88 }
+    } \repeat volta 2 {
+        d4 ( -\cresc e8 d8 c8 b8 ) | % 89
         cs16 ( d16 ) e16 ( d16 ) e16 ( d16 ) -\f b'16
         ( a16 ) a16 ( g16 ) g16 ( fs16 ) | % 90
         b4. -. e,4 ( g8 ) | % 91
@@ -398,15 +397,15 @@ TrioI_MvI_Viola = \relative b {
         b8 -. b8 -. b8 -. b8 r8 <d, a' fs'>8 -. -\ff | % 101
         <d b' g'>8 -. r8 <b' g'>8 -. <d a'>4 -. <b g'>8 -. | % 102
         <a fs'>4 -. r8 <a fs'>4 gs'8 -. -\f | % 103
-        a8 ( -\markup{ \teeny\italic {dz'mz'n.} } b8 ) c8 -. c8 -. r8
+        a8 ( -\dim b8 ) c8 -. c8 -. r8
         fs,8 -. -\f | % 104
-        g8 ( -\markup{ \small\italic {dimin.} } a8 ) b8 -. b8 -. r8
+        g8 ( -\dim a8 ) b8 -. b8 -. r8
         g,8 ( -\p | % 105
         e16 ) -. r16 e16 -. -\> r16 e16 -. r16 fs16 -. r16 g16 -. r16
         a16 -. -\! r16 | % 106
         r4 r8 g8 -\f r8 d'8 -\p }
     | % 107
-    r4 r8 <g, d' b'>8 \arpeggio -\f r8 \fermata \bar "|."
+    r4 r8 <g, d' b'>8 \arpeggio -\f r8 \fermata \fine
 }
 
 TrioI_MvII_Viola = \relative g {
@@ -422,8 +421,8 @@ TrioI_MvII_Viola = \relative g {
         fs2:8 g2:8 | % 9
         fs2:8 <a, g'>2:8 | % 10
     } \alternative {
-        { <a fs'>4 <d, a' fs'>4 r2 | \barNumberCheck #11 }
-        { <a' fs'>4 r4 d,4 -\ff r4 | } % 12
+        \volta 1 { <a fs'>4 <d, a' fs'>4 r2 | \barNumberCheck #11 }
+        \volta 2 { <a' fs'>4 r4 d,4 -\ff r4 | } % 12
     } \repeat volta 2 {
         d'4 -\p r8 d8 ef4 r8 ef8 | % 13
         f4 r8 d8 c4 r8 c8 | % 14
@@ -500,7 +499,7 @@ TrioI_MvII_Viola = \relative g {
         b8 b,8 b8 b8 c2:8 | % 82
         b2:8 c2:8 | % 83
         b8 r8 g'8 d16 b16 g8 r8 r4
-    }
+    } \fine
 }
 
 TrioI_MvI_Cello = \relative g {
@@ -514,8 +513,8 @@ TrioI_MvI_Cello = \relative g {
         g,2. ~ | % 7
         g8 g8 -. fs8 -. e4 ( a,8 ) | % 8
     } \alternative {
-        { d4. ~ -\p d4 r8 | } % 9
-        { d4. ~ -\p d4 b'8 -\f | \barNumberCheck #10 }
+        \volta 1 { d4. ~ -\p d4 r8 | } % 9
+        \volta 2 { d4. ~ -\p d4 b'8 -\f | \barNumberCheck #10 }
     } \repeat volta 2 {
         b4 ( c8 ) b8 ( a8 g8 ) | % 11
         fs8 -. fs8 -. fs8 -. fs4. ( | % 12
@@ -533,8 +532,8 @@ TrioI_MvI_Cello = \relative g {
         g,4. g,8 ( b8 e8 ) | % 24
         c4. d4. | % 25
     } \alternative {
-        { g,8 b8 d8 g8 r8 b8 | } % 26
-        { g,8 b8 d8 g4 r8 | \barNumberCheck #27 }
+        \volta 1 { g,8 b8 d8 g8 r8 b8 | } % 26
+        \volta 2 { g,8 b8 d8 g4 r8 | \barNumberCheck #27 }
     }
     \key bf \major \repeat volta 2 {
         r8 g8 -\p r8 r8 g8 r8 | % 28
@@ -561,8 +560,8 @@ TrioI_MvI_Cello = \relative g {
         g4 f8 e16 g16 d16 f16 c16 e16 | % 46
         b16 d16 g,16 b16 fs16 a16 e16 g16 a16 cs16 e16 g16 | % 47
     } \alternative {
-        { << { g8 ( fs8 ) fs8 -. fs4 } \\ { d,4 -\p d8 -. d4 } >> r8 }
-        { << { g'8 ( fs8 ) fs8 -. fs4 } \\ { d,4 -\p d8 -. d4 } >> r8 }
+        \volta 1 { << { g8 ( fs8 ) fs8 -. fs4 } \\ { d,4 -\p d8 -. d4 } >> r8 }
+        \volta 2 { << { g'8 ( fs8 ) fs8 -. fs4 } \\ { d,4 -\p d8 -. d4 } >> r8 }
     } | % 48
     \repeat volta 2 {
         | % 49
@@ -586,8 +585,8 @@ TrioI_MvI_Cello = \relative g {
         g16 ( fs16 e16 d16 ) c16 b16 e16 ( d16 c16 b16 a16 g16 ) | % 63
         c8 ( b8 a8 ) d4. | % 64
     } \alternative {
-        { g,16 fs'16 ( g16 fs16 g16 fs16 ) g4 -. r8 | } % 65
-        { g,16 fs'16 ( g16 fs16 g16 fs16 ) g4 -. r8 | } % 66
+        \volta 1 { g,16 fs'16 ( g16 fs16 g16 fs16 ) g4 -. r8 | } % 65
+        \volta 2 { g,16 fs'16 ( g16 fs16 g16 fs16 ) g4 -. r8 | } % 66
     } \key bf \major \repeat volta 2 {
         r8 g8 r8 r8 g8 r8 | % 67
         r8 g8 r8 r8 g8 r8 | % 68
@@ -603,8 +602,8 @@ TrioI_MvI_Cello = \relative g {
         fs4. g8 ( a8 bf8 ) | % 76
         c4. d4. | % 77
     } \alternative {
-        { r4 g,,8 -\pp g8 r r | } % 78
-        { r4 g8   -\pp g8 r r | \barNumberCheck #79 }
+        \volta 1 { r4 g,,8 -\pp g8 r r | } % 78
+        \volta 2 { r4 g8   -\pp g8 r r | \barNumberCheck #79 }
     } \key g \major \repeat volta 2 {
         g'4 -\p g8 g4 g8 | % 80
         g4 g8 g4 fs8 | % 81
@@ -618,7 +617,7 @@ TrioI_MvI_Cello = \relative g {
     d4. ~ d8 r8 b'8 -\p
     \repeat volta 2 {
         | \barNumberCheck #88
-        b4 ( -\markup{ \tiny\italic {cresc.} } c8 b8 a8 g8 ) | % 89
+        b4 ( -\cresc c8 b8 a8 g8 ) | % 89
         fs4 fs8 fs4 ~ -. -\f fs8 -. | % 90
         g4. a4 ( -. a,8 ) -. | % 91
         r8 d8 ( -\ff e8 ) -. r8 fs8 ( g8 ) -. | % 92
@@ -633,15 +632,15 @@ TrioI_MvI_Cello = \relative g {
         g8 -. g8 -. g8 -. g8 r8 d8 -. -\ff | % 101
         g,8 -. r8 b'8 -. fs4 -. g8 -. | % 102
         d4 -. r8 d,4 e''8 ( -\f | % 103
-        c8 -\markup{ \tiny\italic {din/Lin.} } b8 ) a8 -. a8 -. r8 d8
+        c8 -\dim b8 ) a8 -. a8 -. r8 d8
         -. -\f | % 104
-        b8 ( -\markup{ \small\italic {dimin.} } a8 ) g8 -. g8 -. r8
+        b8 ( -\dim a8 ) g8 -. g8 -. r8
         e8 ( -\p | % 105
         c16 ) -. r16 b16 -! r16 a16 -. r16 d4. ( -\> | % 106
         g16 ) -. r16 d16 -. r16 b16 -. -\! r16 g8 -\f r8 b'8 -\p }
     | % 107
     g16 -. r16 d16 -. r16 b16 -. r16 <g d' b'>8 \arpeggio -\f r8
-    \fermata \bar "|."
+    \fermata \fine
 }
 
 TrioI_MvII_Cello = \relative g, {
@@ -656,8 +655,8 @@ TrioI_MvII_Cello = \relative g, {
         g2:8 a8 a a,8 a | % 8
         \repeat unfold 2 { d2:8 d2:8 } | % 10
     } \alternative {
-        { d4 r4 d,4 -\ff r4 | \barNumberCheck #11 }
-        { d'4 r4 d,4 -\ff r4 | } % 12
+        \volta 1 { d4 r4 d,4 -\ff r4 | \barNumberCheck #11 }
+        \volta 2 { d'4 r4 d,4 -\ff r4 | } % 12
     } \repeat volta 2 {
         bf''4 -\p r8 bf8 c4 r8 c8 | % 13
         d4 r8 bf8 a4 r8 a8 | % 14
@@ -733,7 +732,7 @@ TrioI_MvII_Cello = \relative g, {
         g,2:8 g: | % 82
         g2:8 g: | % 83
         g4 g'8 d16 b16 g8 r8 r4
-    }
+    }\fine
 }
 
 \score {
