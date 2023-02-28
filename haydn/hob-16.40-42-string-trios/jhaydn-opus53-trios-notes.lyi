@@ -275,7 +275,7 @@ TrioI_MvII_Violin = \relative g {
 }
 
 TrioI_MvI_Viola = \relative b {
-    \clef "alto" \time 6/8 \key g \major \partial 8 b8 | % 1
+    \time 6/8 \key g \major \partial 8 b8 | % 1
     \repeat volta 2 {
         b4 ( -\p c8 ) c4 c8 | % 2
         b8 b8 b8 b4 d8 | % 3
@@ -509,7 +509,7 @@ TrioI_MvII_Viola = \relative g {
 }
 
 TrioI_MvI_Cello = \relative g {
-    \clef "bass" \time 6/8 \key g \major \partial 8 g8-\p | % 1
+    \time 6/8 \key g \major \partial 8 g8-\p | % 1
     \repeat volta 2 {
         g4 g8 g4 g8 | % 2
         g8 g8 g8 g4 fs8 | % 3
@@ -650,7 +650,7 @@ TrioI_MvI_Cello = \relative g {
 }
 
 TrioI_MvII_Cello = \relative g, {
-    \clef bass \time 4/4 \key g \major
+    \time 4/4 \key g \major
     \repeat volta 2 {
         g'8 -\p g8 g8 g8 g2:8 | % 2
         g4 ~ g8 r f'8-. f8 -. f8 -. f8 -. | % 3
@@ -1994,58 +1994,4 @@ TrioII_MvII_Cello = \relative f, {
     g8 f8 ef8 d8 | % 113
     ef4 -. f4 -. | % 114
     r8 bf8 -. bf,8 -. r8 \fine
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Scores, TrioI
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\score {
-    \header { piece = "Allegretto e innocente" }
-    <<
-        \new Staff { \TrioI_MvI_Violin }
-        \new Staff { \TrioI_MvI_Viola }
-        \new Staff { \TrioI_MvI_Cello }
-    >>
-    \layout {}
-    \midi {\tempo 4. = 100 }
-}
-
-\score {
-    \header { piece = "Presto" }
-    <<
-        \new Staff { \TrioI_MvII_Violin }
-        \new Staff { \clef alto \TrioI_MvII_Viola }
-        \new Staff { \TrioI_MvII_Cello }
-    >>
-    \layout {}
-    \midi {\tempo 4 = 120 }
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Scores, TrioII
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\score {
-    \header { piece = "Allegro" }
-    <<
-        \new Staff { \TrioII_MvI_Violin }
-        \new Staff { \clef alto \TrioII_MvI_Viola }
-        \new Staff { \clef bass \TrioII_MvI_Cello }
-    >>
-    \layout {}
-    \midi {\tempo 4 = 140 }
-}
-
-\score {
-    \header { piece = "Allegro di molto" }
-    <<
-        \new Staff { \TrioII_MvII_Violin }
-        \new Staff { \clef alto \TrioII_MvII_Viola }
-        \new Staff { \clef bass \TrioII_MvII_Cello }
-    >>
-    \layout {}
-    \midi {\tempo 4 = 150 }
 }
