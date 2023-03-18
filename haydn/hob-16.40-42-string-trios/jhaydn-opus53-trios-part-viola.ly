@@ -1,5 +1,16 @@
 \version "2.24.0"
 
+
+\header {
+    instrument = "Viola"
+}
+
+\paper {
+    page-count = #2
+}
+
+#(set-global-staff-size 19.50)
+
 \include "jhaydn-opus53-trios-notes.lyi"
 
 
@@ -23,23 +34,23 @@
     \layout {}
 }
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Scores, TrioII
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Scores, TrioII
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\score {
-    \header { piece = "Allegro" }
-    <<
-        \new Staff { \clef alto \TrioII_MvI_Viola }
-    >>
-    \layout {}
-}
+% \score {
+%     \header { piece = "Allegro" }
+%     <<
+%         \new Staff { \clef alto \TrioII_MvI_Viola }
+%     >>
+%     \layout {}
+% }
 
-\score {
-    \header { piece = "Allegro di molto" }
-    <<
-        \new Staff { \clef alto \TrioII_MvII_Viola }
-    >>
-    \layout {}
-}
+% \score {
+%     \header { piece = "Allegro di molto" }
+%     <<
+%         \new Staff { \clef alto \TrioII_MvII_Viola }
+%     >>
+%     \layout {}
+% }

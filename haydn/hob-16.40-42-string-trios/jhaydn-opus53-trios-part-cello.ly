@@ -1,5 +1,15 @@
 \version "2.24.0"
 
+\header {
+    instrument = "Cello"
+}
+
+\paper {
+    page-count = #2
+}
+
+#(set-global-staff-size 19.50)
+
 \include "jhaydn-opus53-trios-notes.lyi"
 
 
@@ -15,6 +25,8 @@
     \layout {}
 }
 
+\markup { \vspace #2.5 }
+
 \score {
     \header { piece = "Presto" }
     <<
@@ -23,23 +35,23 @@
     \layout {}
 }
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Scores, TrioII
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Scores, TrioII
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\score {
-    \header { piece = "Allegro" }
-    <<
-        \new Staff { \clef bass \TrioII_MvI_Cello }
-    >>
-    \layout {}
-}
+% \score {
+%     \header { piece = "Allegro" }
+%     <<
+%         \new Staff { \clef bass \TrioII_MvI_Cello }
+%     >>
+%     \layout {}
+% }
 
-\score {
-    \header { piece = "Allegro di molto" }
-    <<
-        \new Staff { \clef bass \TrioII_MvII_Cello }
-    >>
-    \layout {}
-}
+% \score {
+%     \header { piece = "Allegro di molto" }
+%     <<
+%         \new Staff { \clef bass \TrioII_MvII_Cello }
+%     >>
+%     \layout {}
+% }
