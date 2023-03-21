@@ -110,20 +110,20 @@ Violin =  \relative c' {
         \key c \major \time 2/2 | % 1
         r4 c4 ( -- e4 -- c4 ) -- | % 2
         r4 d4 ( -- d4 -- d4 ) -- | % 3
-        r4 f8 ( d8 ) b4 ( d4 ) | % 4
+        r4 \ottDown f8 ( d8 ) b4 ( d4 ) \ottZ | % 4
         r4 c4 ( e4 ) e4 | % 5
         r4 c4 ( -- c4 -- c4 ) -- | % 6
         r4 c4 ( -- c4 -- c4 ) -- | % 7
         r4 c4 ( -- c4 -- c4 ) -- | % 8
         r4 c4 ( -- f4 -- f4 ) -- | % 9
-        r4 d2 ( g4 ) | \barNumberCheck #10
+        r4 \ottDown d2 ( g4 ) | \barNumberCheck #10
         g4 e4 ( b4 c4 ) | % 11
         a4 ( c4 ) b8 ( a8 g8 d'8 ) | % 12
         e4 ( d4 ) b4 ( a4 ) | % 13
         d4 ~ d8. fs16 g4 ~ g8. ( e16 ) | % 14
         d2. ( cs4 ) | % 15
         c2 b4 -\> g'4 -\! | % 16
-        fs4 -. g4 -. r2 | % 17
+        fs4 -. g4 -. \ottZ r2 | % 17
         r4 d2 ~ -- d4 -- | % 18
         r4 d2 ~ -- d4 -- | % 19
         r4 d2 ~ -- d4 -- | \barNumberCheck #20
@@ -149,7 +149,7 @@ Violin =  \relative c' {
         e1 ( | % 39
         f4 ) c4 ( d4 ds4 ) ( | \barNumberCheck #40
         e4 ) r4 c4 ( d4 | % 41
-        e4 ) r4 r8 c8 ( d8 ds8 ) | % 42
+        e4 ) r4 r8 \ottDown c8 ( d8 ds8 ) | % 42
         e4-\> b2.-\!  \bar "||"
         r4 c4 ( -- e4 -- c4 ) -- | % 44
         r4 d4 g8 ( fs8 ) f4 | % 45
@@ -176,7 +176,7 @@ Violin =  \relative c' {
         r4 f4 ( g4 af4 ) | % 66
         g2 ~ g8 c,8 ( d8 ef8 ) | % 67
         e4 c2 ( b4 ) | % 68
-        c8 r8 c'2 ( cs4 ) | % 69
+        c8 \ottZ r8 c'2 ( cs4 ) | % 69
         cs8 ( d8 c8 b8 a8 g8 ) a8 b8 | \barNumberCheck #70
         c8 r8 e,2. | % 71
         e8 ( f8 ) f2. | % 72

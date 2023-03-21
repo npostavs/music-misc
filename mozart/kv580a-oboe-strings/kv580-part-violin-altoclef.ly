@@ -1,4 +1,10 @@
 \version "2.24.1"
+
+ottUp = {}
+ottDown = {}
+ottDDown = {}
+ottZ = {}
+
 \include "kv580-notes.lyi"
 
 \header { instrument = "Violin" }
