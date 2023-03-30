@@ -46,15 +46,15 @@ Oboe =  \relative d'' {
         g4 -. fs4 -. r8 a,8 ( d8 fs8 ) | % 17
         fs8 ( e8 ) e4. ( g8 cs,8 e8 ) | % 18
         d8. e16 fs4 -. r8 a,8 ( d8 fs8 ) | % 19
-        fs8 ( e8 ) e4 ~ e16 b'16 ( a16 g16 fs16 e16 d16 cs16 ) | \barNumberCheck #20
+        fs8 ( e8 ) e4 ~ e16 b'16 ( a16 g16 fs16[ e16 d16 cs16] ) | \barNumberCheck #20
         e8 ( d8 ) d4. d8 d8 d8 | % 21
         f8 ( ef8 ) ef4. ( f16 g16 f8 ef8 ) | % 22
         ef8 ( d8 ) d2 d4 ~ | % 23
         d8 fs4 a8 a8 ( g8 fs8 e8 ) | % 24
         d4 r4 r2 | % 25
-        r4 a'4. ( b16 a16 ) a16 ( g16 fs16 e16 ) | % 26
+        r4 a'4. ( b16 a16 ) a16[ ( g16 fs16 e16 )] | % 26
         e8 ( d8 ) d4 r2 | % 27
-        r4 a'4. ( b16 a16 ) a16 ( g16 fs16 e16 ) | % 28
+        r4 a'4. ( b16 a16 ) a16[ ( g16 fs16 e16 )] | % 28
         e2 ( d4 ) r4 }
     | % 29
     \repeat volta 2 {
@@ -66,7 +66,7 @@ Oboe =  \relative d'' {
         as4 ( b4 ) r2 | % 37
         b4 e2 ( ds4 ) | % 38
         e8. -. fs16 -. g2 fs4 | % 39
-        e4 e8 e8 fs16 ( e16 ds16 e16 ds16 e16 fs16 e16 ) |
+        e4 e8 e8 fs16 ([ e16 ds16 e16] ds16 e16 fs16 e16 ) |
         \barNumberCheck #40
         ds4 r4 e2 ( | % 41
         ds4 ) r4 e2 ( | % 42
@@ -91,13 +91,13 @@ Oboe =  \relative d'' {
         f4 ( e4 ) r8 g,8 ( c8 e8 ) | % 61
         e8 ( d8 ) d4. ( f8 b,8 d8 ) | % 62
         c8. d16 \turn e4. g,8 ( c8 e8 ) | % 63
-        e8 ( d8 ) d4 ~ d16 a'16 ( g16 f16 e16 d16 c16 b16 ) | % 64
+        e8 ( d8 ) d4 ~ d16 a'16 ( g16 f16 e16[ d16 c16 b16] ) | % 64
         d8 ( c8 ) c4. c8 c8 c8 | % 65
         c'8. ( a16 ) fs2 fs4 | % 66
         g8. a16 \turn bf2 cs,4 | % 67
-        d8 ( g8 ) b,4. e16 ( d16 ) c8 ( b16 a16 ) | % 68
+        d8 ( g8 ) b,4. e16 ( d16 ) c8[ ( b16 a16 )] | % 68
         g4 r4 r2 | % 69
-        r4 d'4. e16 ( d16 ) c8 ( b16 a16 ) | \barNumberCheck #70
+        r4 d'4. e16 [( d16 )] c8 ( b16 a16 ) | \barNumberCheck #70
         g8 r8 g'2 ( gs4 ) | % 71
         gs8 ( a8 g8 fs8 e8 d8 e8 fs8 ) | % 72
         fs2 ( g8 ) e8 ( -\> d8 c8 ) -\! | % 73

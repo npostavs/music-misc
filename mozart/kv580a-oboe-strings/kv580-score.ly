@@ -7,14 +7,17 @@ ottZ = {}
 \include "kv580-notes.lyi"
 
 \header { instrument = "Score" }
+\paper {
+    % page-count = #4
+}
 \score {
     \header { piece = \markup{ \bold {Adagio} } }
     <<
+        \new Dynamics { \Markings }
         \new Staff { \Oboe }
         \new Staff { \clef "alto" \transpose c g, \Violin }
         \new Staff { \clef "treble" \transpose c g \Viola }
         \new Staff { \clef bass \transpose c g \Cello }
-        \new Dynamics { \Markings }
     >>
     \layout {}
     \midi {\tempo 2 = 60 }
