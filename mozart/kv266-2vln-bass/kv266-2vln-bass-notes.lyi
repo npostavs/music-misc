@@ -1,0 +1,715 @@
+\version "2.24.1"
+
+%% additional definitions required by the score:
+\language "english"
+
+
+\header {
+    title =  \markup { "Trio in B" \smaller \flat " major, K.266/271f" }
+    composer = "W.A. Mozart"
+    encodingsoftware =  "Audiveris 5.3-beta"
+    encodingdate =  "2023-06-21"
+    source = "IMSLP366323-PMLP591619-Mozart_WA-_Adagio_&_Menuetto,_2Vln&B_-_EN198(2015).pdf"
+    tagline = ##f
+    }
+
+\paper { indent = 5\mm }
+
+mdc = { \jump "D.C. Menuetto" }
+
+\layout {
+    \context { \Score
+        skipBars = ##t
+        \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+        }
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Violin I
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MI_ViolinI =  \relative f' {
+    \tempo "Adagio" \time 3/4 \key bf \major \partial 4 f4 | % 1
+    <d bf'>8 <d bf'>8 <d bf'>8 <d bf'>8 <d bf'>8 <d bf'>8 | % 2
+    <ef bf'>8 <ef bf'>8 <ef bf'>8 <ef bf'>8 <ef bf'>8 <ef bf'>8 | % 3
+    <e bf'>8 <e bf'>8 <e bf'>8 <e bf'>8 <e bf'>8 <e bf'>8 | % 4
+    <f a>4 r4 \fermata
+    \repeat volta 2 {
+        bf4 | % 5
+        f'4. g16 f16 ef8 d8 | % 6
+        c16 ( d16 ef16 d16 ) c4 r8 bf8 | % 7
+        \grace { bf8 } g4 f16 ( g32 a32 bf16 ) a16 -! c16 ( bf16
+        ) a16 ( g16 ) | % 8
+        f4 ~ f16 ( ef16 d16 ef16 ) ef16 ( d16 ) g16 ( f16 ) | \barNumberCheck #9
+        f4. bf8 d8 f8 | % 10
+        f16 ( ef16 d16 c16 ) c8 f,8 a16 ( c16 ) ef16 ( g16 ) | % 11
+        g16 ( f16 ef16 d16 ) d4 ~ d16 ( c16 bf16 c16 ) | % 12
+        bf16 ( c16 d16 ef16 ) d16 ( ef16 f16 g16
+        ) bf,32 ( c32 d32 ef32 f32 g32 a32 bf32 ) | % 13
+        g8. \trill f32 ef32 d4 \grace { f8 } ef8 d16 c16 | % 14
+        \grace { c8 } bf2 f8 ( d8 ) | % 15
+        ef8 ( g8 ) bf8 ( g8 ) ef8 ( bf8 ) | % 16
+        g8 ( bf8 ef8 ) bf'8 ( g8 ef'8 ) | % 17
+        ef16 ( d16 cs16 d16 ) ( \grace { ef8 } d8 ) d,8 ( bf8 a8) | % 18
+        g8 ( bf8 ) g8 ( e'8 ) c8 ( e8 ) | \barNumberCheck #19
+        \grace { g8 } f4. ef8 ( d8 c8 ) | % 20
+        bf4. a8 ( d8 ) f16 ( bf16 ) | % 21
+        \grace { bf8 } a4. ( f8 ) c8 ( a8 ) | % 22
+        bf8 r8 \grace { a'8 } bf8 r8 \grace { c8 } bf8 r8 | % 23
+        g8. ( ef16 ) d16 ( f16 d16 f16 ) ef16 ( f16 ef16 f16 ) | % 24
+        d4 r4 c'4 | % 25
+        f8 ( e8 ) d8 ( c8 ) bf8 ( a8 ) | % 26
+        a16 ( g16 f16 g16 ) f8 a8 e8 ( f8 ) | % 27
+        f8 ( g8 a8 ) a8 ( g8 f8 ) | % 28
+        f4 \trill e4 r8 c'8 | \barNumberCheck #29
+        f8. \trill ef32 d32 c8 c8 ( bf8 a8 ) | % 30
+        g8 ( c,8 ) c8 c8 c8 c'8 | % 31
+        d8 ( f8 ) e8 ( d8 ) c8 ( bf8 ) | % 32
+        a4 r4 c16 bf16 a16 g16 | % 33
+        f4 r4 c16 bf16 a16 g16 | % 34
+        a4 r4 f'4 | % 35
+        f4 r4 }
+    r4 | % 36
+    a8 ( f8 a8 f8 a8 f8 ) | % 37
+    bf8 ( g8 bf8 g8 ) g'8. ( a16 ) | % 38
+    bf4. \grace { a8 } g8 e8 ( \grace { d8 } c8 ) |
+    \barNumberCheck #39
+    c4 bf4 \trill a4 | % 40
+    \grace { c8 } ds4 r16 ds16 ( -. e16 -. f16 -. g16 -. a16 -.
+    bf16 -. bf16 ) -. | % 41
+    c,4 r16 c16 ( -. d16 -. e16 -. f16 -. g16 -. a16 -. a16 ) -. | % 42
+    a16 ( g16 ) bf16 ( d16 ) f,4 \grace { a8 } g8 f16 e16 | % 43
+    f4. f,8 ( c'8 a8 ) | % 44
+    ef16 ( f16 ef16 f16 ) ef16 ( f16 ef16 f16 ) ef16 ( f16 ef16
+    f16 ) | % 45
+    d16 ( f16 d16 f16 ) d16 ( f16 d16 f16 ) bf,16 ( f'16 c16 f16) | % 46
+    d16 ( f16 d16 f16 ) a,16 ( f'16 a,16 f'16 ) c16 ( f16 bf,16 f'16 ) | % 47
+    bf8. \trill a32 bf32 -. a8 c8 ( ef8 g8 ) | % 48
+    f8 ( d8 bf8 ) a8 -. c8 -. ef8 -. | \barNumberCheck #49
+    d8 ( bf8 f8 ) d'8 -. f8 -. bf8 -. | % 50
+    \grace { a8 } g8 f16 ef16 d4 \grace { f8 } ef8 d16 c16 | % 51
+    bf4 r4 f4 | % 52
+    <f bf>2 ~  <f d'>4 | % 53
+    <f d'>8. b16 c4 f,4 | % 54
+    <f c'>2 ~ ( <f ef'>4 ) | % 55
+    <f ef'>8. ( cs'16 ) <f, d'>4 r4 | % 56
+    f'2. | % 57
+    bf2. | % 58
+    c,4 ( ef4 ) <f, a>8 r8 | \barNumberCheck #59
+    <f bf>8 r8 r4 f4 ( -\p | % 60
+    bf4 ) r4 f4 | % 61
+    c'4 r4 f,4 ( | % 62
+    d'4 ef4 e4 | % 63
+    f4 ) r4 r4 | % 64
+    f4 ( d8 ) r8 r4 | % 65
+    bf4 ( g8 ) r8 r4 | % 66
+    r4 r4 ef4 ( | % 67
+    d4 ) r4 r4 | % 68
+    <f c'>2. | \barNumberCheck #69
+    <f d'>2. | % 70
+    << { f2 } { ef'4 ( c4 ) } >> <f, a>4 | % 71
+    <f f'>4 r4 r4 | % 72
+    <f c'>2. | % 73
+    <f d'>2. | % 74
+    << {f2} {ef'4 ( c4 )} >> <f, a>4 | % 75
+    <f bf>4 r4 r4 | % 76
+    <f bf>4 -\pp r4 r4 | % 77
+    <f bf>4 r4 r4 \fine
+}
+MII_ViolinI = \relative f' {
+    \repeat volta 2 {
+        \tempo "Allegretto" \time 3/4  \key bf \major
+        \partial 2 r4 r4 | % 1
+        d2. -\f | \barNumberCheck #2
+        ef2. | % 3
+        a,4 ~ a8. bf16 bf8. a16 | % 4
+        a4 ( bf4 ) r4 | % 5
+        f'4 ( bf4 ) r4 | % 6
+        g4 c8. b16 c8. ef16 | % 7
+        d8. c16 bf4 <ef, a>4 | % 8
+        <d bf'>4 r4 r4 | % 9
+        a'2. ( -\p | % 10
+        bf4 ) r4 r4 | % 11
+        c4 -! c4 -! ef4 -! | \barNumberCheck #12
+        d4 r4 r4 | % 13
+        c2. ( | % 14
+        df4 ) r4 r4 | % 15
+        <ef, a>4 -! q-! q-! | % 16
+        bf'4
+    } \repeat volta 2 {
+        r4 r4 | % 17
+        a4 -\f c4 a4 | % 18
+        f4 ( d4 ) r4 | % 19
+        g,8. d'16 c8. bf16 a8. g16 | % 20
+        a4 r4 r4 | \barNumberCheck #21
+        f'4 ( -\p g4 a4 ) | % 22
+        bf4 r4 r4 | % 23
+        \grace { c8 } {} ds4 r4 r4 | % 24
+        \grace { ef8 } {} f4 r4 r4 | % 25
+        r4 \fermata r8. d,16 -\f ef8. c16 | % 26
+        d4 ~ d8. bf16 c8. d16 | % 27
+        c4 ~ c8. e16 f8. g16 | % 28
+        f4 ~ f8. c'16 bf8. a16 | % 29
+        a4 ( bf4 ) r4 | % 30
+        r8. bf,16 d8. f16 bf8. a16 | \barNumberCheck #31
+        g8. f16 ef8. d16 c8. a16 | % 32
+        bf8. c16 bf4 a4 | % 33
+        bf4 r4 r4 | % 34
+        a''2. ( -\p | % 35
+        bf4 ) r4 r4 | % 36
+        c,4 -! c4 -! ef4 -! | % 37
+        d4 r4 r4 | % 38
+        c2. ( | % 39
+        df4 ) r4 r4 | % 40
+        <ef, a>4-! q-! q-! | \barNumberCheck #41 }
+    \alternative {
+        \volta 1 { <d bf'>4 }
+        \volta 2 { <d bf'>4 r4 r4 \fine }
+    } | \barNumberCheck #42
+
+    \repeat volta 2 {
+        \tempo "Trio" \break \time 3/4  \key ef \major R2.*4 | % 46
+        ef'8 ( -\p d8 c8 d8 ef8 g8 ) | % 47
+        f8 ( g8 f8 ef8 d8 f8 ) | % 48
+        \grace { ef8 } {} ef4 d8 c8 bf8 a8 | % 49
+        bf4 r4 r4 | \barNumberCheck #50
+    } \repeat volta 2 {
+        f'8 ( -\f ef8 d8 ef8 f8 g8 ) | % 51
+        f8 ( g8 f8 ef8 d4 ) | % 52
+        d8 ( c8 bf8 c8 d8 ef8 ) | % 53
+        d8 ( ef8 d8 c8 bf4 ) | % 54
+        R2.*4 | % 58
+        g8 ( -\p f8 ef8 f8 g8 ef8 ) | % 59
+        af8 ( g8 f8 ef8 d4 ) | \barNumberCheck #60
+        bf8 ( c8 d8 ef8 f8 d8 ) }
+    \alternative {
+        \volta 1 {ef4 r4 r4 }
+        \volta 2 { ef4 \mdc}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Violin II
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+MI_ViolinII =  \relative f' {
+    \tempo "Adagio" \time 3/4 \key bf \major \partial 4 f4 | % 1
+    f8 f8 f8 f8 f8 f8 | % 2
+    g8 g8 g8 g8 g8 g8 | % 3
+    g8 g8 g8 g8 g8 g8 | % 4
+    <c, f>4 r4 \fermata
+    \repeat volta 2 {
+        r4 | % 5
+        d8 ( bf8 ) d8 ( bf8 ) f'8 ( bf,8 ) | % 6
+        f'8 ( ef8 f8 a,8 ) f'8 ( bf,8 ) | % 7
+        ef8 ( bf8 ) d8 ( bf8 ) d8 ( bf8 ) | % 8
+        g8 ( bf8 ) a8 ( c8 ) c16 ( bf16 ) ef16 ( d16 ) |
+        \barNumberCheck #9
+        d8 ( bf8 ) f'8 ( d8 ) f8 ( d8 ) | % 10
+        d16 ( c16 bf16 a16 ) f'16 ( ef16 d16 c16 ) f16 ( a16
+        ) c16 ( ef16 ) | % 11
+        ef16 ( d16 c16 bf16 ) bf8 ( f8 ) a8 ( ef8 ) | % 12
+        d8 r8 bf16 ( c16 d16 ef16 ) f8 ( d8 )
+        | % 13
+        c16 ( ef16 ) g16 ( c16 ) \grace { c8 } bf8 a16
+        bf16 ( \grace { d8 } c8 ) bf16 a16 | % 14
+        \grace { a8 } bf2 r8 bf8 | % 15
+        g'4. ef8 ( bf8 g8 ) | % 16
+        ef8 ( g8 bf8 ) g8 ( ef'8 g8 ) | % 17
+        g16 ( f16 e16 f16 )  \grace { g8 } f4 r8 a8 | % 18
+        bf4. \grace { a8 } g8 e8 ( \grace { d8 } c8 ) | \barNumberCheck #19
+        \grace { bf8 } a4. g8 ( f8 ef8 ) | % 20
+        \grace { ef8 } d4. f8 ( bf8 d8 ) | % 21
+        \grace { d8 } c4 f,4 a16 ( c16 ) ef16 ( g16 ) | % 22
+        f8 ( \grace { a8 } bf8 ) r8 g8 r8
+        \grace { f8 } ef8 | % 23
+        d16 ( c16 ) ef16 ( c16 ) bf4 c8. ( \trill bf32 c32 )
+        | % 24
+        bf8 ( f8 e8 d8 c8 bf8 ) | % 25
+        a8 ( c8 ) bf8 ( a8 ) d8 ( c8 ) | % 26
+        c16 ( bf16 a16 bf16 ) a4 r8 c'8 | % 27
+        d8 ( e8 f8 ) c8 ( bf8 a8 ) | % 28
+        a4 \trill g8 bf8 ( \grace { a8 } g8 ) ( e8 ) |
+        \barNumberCheck #29
+        f8 ( c8 ) r4 c'4 | % 30
+        bf'4. ( g8 ) a8 ( a,8 ) | % 31
+        bf8 ( d8 ) c8 ( bf8 ) a8 g8 | % 32
+        a4 r4 a16 g16 f16 e16 | % 33
+        f4 r4 a16 g16 f16 e16 | % 34
+        f4 r4 a,4 | % 35
+        a4 r4 }
+    f'8. ( a16 ) | % 36
+    c4. d8 e8 f8 | % 37
+    f4 \trill e4 e,8. ( f16 ) | % 38
+    g8 ( e8 ) g8 ( e8 ) c8 ( e8 ) | \barNumberCheck #39
+    g8 ( e8 g8 e8 f8 c8 ) | % 40
+    r4 \grace { f8 } gs4 r4 | % 41
+    r4 \grace { c8 } bf4 a16 ( -. g16 -. f16 -. f16 ) -. | % 42
+    d'16 ( bf16 d16 bf16 ) a16 ( c16 a16 c16 ) \grace { c8 } bf8 a16 g16 | % 43
+    a2 f'8. f16 | % 44
+    a4. f8 c8 a8 | % 45
+    c16 ( bf16 a16 bf16 ) bf4 d8. d16 | % 46
+    bf'8. ( a16 ) g8. ( f16 ) ef8. ( d16 ) | % 47
+    d8. ( \trill c32 d32 ) c8 a,4 ( a'8 ) | % 48
+    bf8 ( f8 ) r8 ef8 -. c8 -. a8 -. | \barNumberCheck #49
+    bf8 ( d8 ) r8 bf'8 -. d8 -. f8 -. | % 50
+    \grace { f8 } ef8 d16 c16 \grace { c8 } bf8 a16 bf16
+    \grace { d8 } c8 bf16 a16 | % 51
+    bf8 ef,8 ( d8 g8 ) f8 ( ef8 ) | % 52
+    d2 ( bf'4 ) | % 53
+    bf8. ( gs16 ) a4 a,4 | % 54
+    <f' a>2 ( c'4 ) | % 55
+    c8. ( a16 ) bf4 bf4 | % 56
+    d,2. | % 57
+    d'2. | % 58
+    g,4 ( ef4 ) <c ef>8 r8 | \barNumberCheck #59
+    <bf d>8 r8 r4 r4 | % 60
+    f'4 ( -\p d8 ) r8 r4 | % 61
+    f4 ( ef8 ) r8 r4 | % 62
+    r4 r4 bf'4 ( | % 63
+    a4 ) r4 a'4 ( | % 64
+    bf4 ) r4 fs4 | % 65
+    g4 r4 d4 ( | % 66
+    ef4 c4 a4 ) | % 67
+    bf4 r4 r4 | % 68
+    r16 f16 ( ef16 f16 ef16 f16 ef16 f16 ef16
+    f16 ef16 f16 ) | \barNumberCheck #69
+    r16 f16 ( d16 f16 d16 f16 d16 f16 d16 f16 d16 f16 ) | % 70
+    r16 f16 a,16 f'16 a,16 f'16 a,16 f'16 ef16 ( f16 ef16 f16
+    ) | % 71
+    r16 f16 ( d16 f16 d16 f16 d16 f16 ) bf,16 ( f'16 bf,16
+    f'16 ) | % 72
+    r16 f16 ( ef16 f16 ef16 f16 ef16 f16 ef16 f16 ef16 f16 )
+    | % 73
+    r16 f16 ( d16 f16 d16 f16 d16 f16 d16 f16 d16 f16 ) | % 74
+    r16 f16 ( bf,16 f'16 a,16 f'16 bf,16 f'16 ) ef16 ( c16
+    ef16 c16 ) | % 75
+    d4 r4 r4 | % 76
+    <bf d>4 -\pp r4 r4 | % 77
+    <bf d>4 r4 r4 \fine
+}
+MII_ViolinII = \relative b {
+    \repeat volta 2 {
+        \tempo "Allegretto" \time 3/4 \key bf \major
+        \partial 2 r8. f'16 -\f g8. a16 | % 1
+        bf8. \trill a16 bf8. d16 c8. bf16 | \barNumberCheck #2
+        a8. g16 f8. g16 a8. bf16 | % 3
+        c8. \trill bf16 c8. ef16 d8. c16 | % 4
+        c4 ( d8. ) bf16 d8. f16 | % 5
+        bf8. a16 bf8. a16 g8. f16 | % 6
+        ef8. d16 c8. d16 ef8. g16 | % 7
+        f8. ef16 d4 c4 \trill | % 8
+        bf4 r4 r4 | % 9
+        c2. -\p | % 10
+        f,4 r4 r4 | % 11
+        a,4 -! a4 -! c4 -! | \barNumberCheck #12
+        bf4 r4 r4 | % 13
+        a''2. ( | % 14
+        bf4 ) r4 r4 | % 15
+        c,4 -! c4 -! c4 \trill | % 16
+        bf4
+    } \repeat volta 2 {
+        r8. c16 -\f d8. e16 | % 17
+        f8. \trill e16 f8. e16 d8. c16 | % 18
+        bf8. a16 g8. a16 bf8. c16 | % 19
+        d8. bf16 a8. g16 f8. e16 | % 20
+        f4 r4 r4 | \barNumberCheck #21
+        f4 ( -\p e4 ef4 ) | % 22
+        d4 d4 d4 | % 23
+        r4 bf'4 bf4 | % 24
+        r4 a4 a4 | % 25
+        r4 r8. f16 -\f g8. a16 | % 26
+        bf8. \trill a16 bf8. d16 c8. bf16 | % 27
+        a8. g16 f8. g16 a8. bf16 | % 28
+        c8. \trill bf16 c8. ef16 d8. c16 | % 29
+        c4 ( d8. ) bf16 d8. f16 | % 30
+        bf8. a16 bf8. a16 g8. f16 | \barNumberCheck #31
+        ef8. d16 c8. d16 ef8. g16 | % 32
+        f8. ef16 d4 c4 \trill | % 33
+        bf4 r4 r4 | % 34
+        ef2. ( -\p | % 35
+        d4 ) r4 r4 | % 36
+        bf4 a8 \trill g8 a4 | % 37
+        bf4 r4 r4 | % 38
+        a'2. ( | % 39
+        bf4 ) r4 r4 | % 40
+        c,4 -! c4 -! c4 -! | \barNumberCheck #41
+    } \alternative {
+        \volta 1 { bf4 }
+        \volta 2 { bf4 r4 r4 | \fine } % 42
+    }
+    \repeat volta 2 {
+        \break \tempo "Trio" \time 3/4  \key ef \major
+        <g, ef'>2. -\p | % 43
+        <bf g'>2. | % 44
+        <g' bf>4 -\f <g bf>4 <g bf>4 | % 45
+        <g ef'>4 r4 r4 | % 46
+        g8 -\p b8 c4. ( a8 ) | % 47
+        f8 ( a8 ) bf4. ( d8 ) | % 48
+        g,4 f8 ef8 d8 c8 | % 49
+        d8 ( f8 ) bf8 ( a8 ) bf4 | \barNumberCheck #50
+    } \repeat volta 2 {
+        d,8 ( -\f c8 bf8 c8 d8 ef8 ) | % 51
+        d8 ( ef8 d8 c8 bf4 ) | % 52
+        f'8 ( ef8 d8 ef8 f8 g8 ) | % 53
+        f8 ( g8 f8 ef8 d4 ) | % 54
+        <g, ef'>2. -\p | % 55
+        <bf g'>2. | % 56
+        <g' bf>4 -\f <g bf>4 <g bf>4 | % 57
+        <g ef'>4 r4 r4 | % 58
+        <ef bf'>2. -\p | % 59
+        <d bf'>2. | \barNumberCheck #60
+        <af f'>4 -! <af f'>4 -! <af ef'>4 -! | % 61
+    } \alternative {
+        \volta 1 { <g ef'>4 ef'8 ( d8 ) ef4 | } % 62
+        \volta 2 { <bf ef>4 \mdc }
+    }
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Violin II (flute)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MI_FlViolinII =  \relative f' {
+    \tempo "Adagio" \time 3/4 \key bf \major \partial 4 f4 | % 1
+    f8 f8 f8 f8 f8 f8 | % 2
+    g8 g8 g8 g8 g8 g8 | % 3
+    g8 g8 g8 g8 g8 g8 | % 4
+    f4 r4 \fermata
+    \repeat volta 2 {
+        r4 | % 5
+        d'=''8 ( bf8 ) d8 ( bf8 ) f'8 ( bf,8 ) | % 6
+        f'8 ( ef8 f8 a,8 ) f'8 ( bf,8 ) | % 7
+        ef8 ( bf8 ) d8 ( bf8 ) d8 ( bf8 ) | % 8
+        g8 ( bf8 ) a8 ( c8 ) c16 ( bf16 ) ef16 ( d16 ) |
+        \barNumberCheck #9
+        d8 ( bf8 ) f'8 ( d8 ) f8 ( d8 ) | % 10
+        d16 ( c16 bf16 a16 ) f'16 ( ef16 d16 c16 ) f,='16 ( a16
+        ) c16 ( ef16 ) | % 11
+        ef16 ( d16 c16 bf16 ) bf8 ( f8 ) a8 ( ef8 ) | % 12
+        d8 r8 bf'='16 ( c16 d16 ef16 ) f8 ( d8 )
+        | % 13
+        c16 ( ef16 ) g16 ( c16 ) \grace { c8 } bf8 a16
+        bf16 ( \grace { d8 } c8 ) bf16 a16 | % 14
+        \grace { a8 } bf2 r8 bf,='8 | % 15
+        g'4. ef8 ( bf8 g8 ) | % 16
+        ef8 ( g8 bf8 ) g8 ( ef'8 g8 ) | % 17
+        g16 ( f16 e16 f16 )  \grace { g8 } f4 r8 a8 | % 18
+        bf4. \grace { a8 } g8 e8 ( \grace { d8 } c8 ) | \barNumberCheck #19
+        \grace { bf8 } a4. g8 ( f8 ef8 ) | % 20
+        \grace { ef8 } d4. f8 ( bf8 d8 ) | % 21
+        \grace { d8 } c4 f,4 a16 ( c16 ) ef16 ( g16 ) | % 22
+        f8 ( \grace { a8 } bf8 ) r8 g8 r8
+        \grace { f8 } ef8 | % 23
+        d16 ( c16 ) ef16 ( c16 ) bf4 c8. ( \trill bf32 c32 )
+        | % 24
+        bf8 ( f'=''8 e8 d8 c8 bf8 ) | % 25
+        a8 ( c8 ) bf8 ( a8 ) d8 ( c8 ) | % 26
+        c16 ( bf16 a16 bf16 ) a4 r8 c=''8 | % 27
+        d8 ( e8 f8 ) c8 ( bf8 a8 ) | % 28
+        a4 \trill g8 bf8 ( \grace { a8 } g8 ) ( e8 ) |
+        \barNumberCheck #29
+        f8 ( c8 ) r4 c'4 | % 30
+        bf'4. ( g8 ) a8 ( a,8 ) | % 31
+        bf8 ( d8 ) c8 ( bf8 ) a8 g8 | % 32
+        a4 r4 a16 g16 f16 e16 | % 33
+        f4 r4 a16 g16 f16 e16 | % 34
+        f4 r4 a='4 | % 35
+        a4 r4 }
+    f='8. ( a16 ) | % 36
+    c4. d8 e8 f8 | % 37
+    f4 \trill e4 e=''8. ( f16 ) | % 38
+    g8 ( e8 ) g8 ( e8 ) c8 ( e8 ) | \barNumberCheck #39
+    g8 ( e8 g8 e8 f8 c8 ) | % 40
+    r4 \grace { f,='8 } gs4 r4 | % 41
+    r4 \grace { c8 } bf4 a16 ( -. g16 -. f16 -. f16 ) -. | % 42
+    d'16 ( bf16 d16 bf16 ) a16 ( c16 a16 c16 ) \grace { c8 } bf8 a16 g16 | % 43
+    a2 f'8. f16 | % 44
+    a4. f8 c8 a8 | % 45
+    c16 ( bf16 a16 bf16 ) bf4 d8. d16 | % 46
+    bf'8. ( a16 ) g8. ( f16 ) ef8. ( d16 ) | % 47
+    d8. ( \trill c32 d32 ) c8 a='4 ( a'8 ) | % 48
+    bf8 ( f8 ) r8 ef8 -. c8 -. a8 -. | \barNumberCheck #49
+    bf8 ( d8 ) r8 bf='8 -. d8 -. f8 -. | % 50
+    \grace { f8 } ef8 d16 c16 \grace { c8 } bf8 a16 bf16
+    \grace { d8 } c8 bf16 a16 | % 51
+    bf8 ef,8 ( d8 g8 ) f8 ( ef8 ) | % 52
+    d2 ( bf'4 ) | % 53
+    bf8. ( gs16 ) a4 a='4 | % 54
+    a2 ( c=''4 ) | % 55
+    c8. ( a16 ) bf4 bf4 | % 56
+    d,2. | % 57
+    d'2. | % 58
+    g,4 ( ef4 ) ef8 r8 | \barNumberCheck #59
+    d8 r8 r4 r4 | % 60
+    f='4 ( -\p d8 ) r8 r4 | % 61
+    f4 ( ef8 ) r8 r4 | % 62
+    r4 r4 bf'4 ( | % 63
+    a4 ) r4 a'4 ( | % 64
+    bf4 ) r4 fs4 | % 65
+    g4 r4 d4 ( | % 66
+    ef4 c4 a4 ) | % 67
+    bf4 r4 r4 | % 68
+    r16 f'=''16 ( ef16 f16 ef16 f16 ef16 f16 ef16
+    f16 ef16 f16 ) | \barNumberCheck #69
+    r16 f16 ( d16 f16 d16 f16 d16 f16 d16 f16 d16 f16 ) | % 70
+    r16 f16 a,16 f'16 a,16 f'16 a,16 f'16 ef16 ( f16 ef16 f16
+    ) | % 71
+    r16 f16 ( d16 f16 d16 f16 d16 f16 ) bf,16 ( f'16 bf,16
+    f'16 ) | % 72
+    r16 f16 ( ef16 f16 ef16 f16 ef16 f16 ef16 f16 ef16 f16 )
+    | % 73
+    r16 f16 ( d16 f16 d16 f16 d16 f16 d16 f16 d16 f16 ) | % 74
+    r16 f16 ( bf,16 f'16 a,16 f'16 bf,16 f'16 ) ef16 ( c16
+    ef16 c16 ) | % 75
+    d4 r4 r4 | % 76
+    d4 -\pp r4 r4 | % 77
+    d4 r4 r4 \fine
+}
+MII_FlViolinII = \relative b {
+    \repeat volta 2 {
+        \tempo "Allegretto" \time 3/4 \key bf \major
+        \partial 2 r8. f'16 -\f g8. a16 | % 1
+        bf8. \trill a16 bf8. d16 c8. bf16 | \barNumberCheck #2
+        a8. g16 f8. g16 a8. bf16 | % 3
+        c8. \trill bf16 c8. ef16 d8. c16 | % 4
+        c4 ( d8. ) bf16 d8. f16 | % 5
+        bf8. a16 bf8. a16 g8. f16 | % 6
+        ef8. d16 c8. d16 ef8. g16 | % 7
+        f8. ef16 d4 c4 \trill | % 8
+        bf4 r4 r4 | % 9
+        c2. -\p | % 10
+        f,4 r4 r4 | % 11
+        a='4 -! a4 -! c4 -! | \barNumberCheck #12
+        bf4 r4 r4 | % 13
+        a'=''2. ( | % 14
+        bf4 ) r4 r4 | % 15
+        c,4 -! c4 -! c4 \trill | % 16
+        bf4
+    } \repeat volta 2 {
+        r8. c16 -\f d8. e16 | % 17
+        f8. \trill e16 f8. e16 d8. c16 | % 18
+        bf8. a16 g8. a16 bf8. c16 | % 19
+        d8. bf16 a8. g16 f8. e16 | % 20
+        f4 r4 r4 | \barNumberCheck #21
+        f4 ( -\p e4 ef4 ) | % 22
+        d4 d4 d4 | % 23
+        r4 bf'4 bf4 | % 24
+        r4 a4 a4 | % 25
+        r4 r8. f16 -\f g8. a16 | % 26
+        bf8. \trill a16 bf8. d16 c8. bf16 | % 27
+        a8. g16 f8. g16 a8. bf16 | % 28
+        c8. \trill bf16 c8. ef16 d8. c16 | % 29
+        c4 ( d8. ) bf16 d8. f16 | % 30
+        bf8. a16 bf8. a16 g8. f16 | \barNumberCheck #31
+        ef8. d16 c8. d16 ef8. g16 | % 32
+        f8. ef16 d4 c4 \trill | % 33
+        bf4 r4 r4 | % 34
+        ef2. ( -\p | % 35
+        d4 ) r4 r4 | % 36
+        bf4 a8 \trill g8 a4 | % 37
+        bf4 r4 r4 | % 38
+        a'2. ( | % 39
+        bf4 ) r4 r4 | % 40
+        c,4 -! c4 -! c4 -! | \barNumberCheck #41
+    } \alternative {
+        \volta 1 { bf4 }
+        \volta 2 { bf4 r4 r4 | \fine } % 42
+    }
+    \repeat volta 2 {
+        \break \tempo "Trio" \time 3/4  \key ef \major
+        ef,='2. -\p | % 43
+        g='2. | % 44
+        bf4 -\f 4 4 | % 45
+        ef=''4 r4 r4 | % 46
+        g,='8 -\p b8 c4. ( a8 ) | % 47
+        f8 ( a8 ) bf4. ( d8 ) | % 48
+        g,4 f8 ef8 d8 c8 | % 49
+        d8 ( f8 ) bf8 ( a8 ) bf4 | \barNumberCheck #50
+    } \repeat volta 2 {
+        d=''8 ( -\f c8 bf8 c8 d8 ef8 ) | % 51
+        d8 ( ef8 d8 c8 bf4 ) | % 52
+        f'8 ( ef8 d8 ef8 f8 g8 ) | % 53
+        f8 ( g8 f8 ef8 d4 ) | % 54
+        ef,='2. -\p | % 55
+        g='2. | % 56
+        bf4 -\f 4 4 | % 57
+        ef4 r4 r4 | % 58
+        bf='2. -\p | % 59
+        bf2. | \barNumberCheck #60
+        f='4 -! 4 -! 4 -! | % 61
+    } \alternative {
+        \volta 1 { ef='4 ef='8 ( d8 ) ef4 | } % 62
+        \volta 2 { ef='4 \mdc }
+    }
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cello
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MI_Cello =  \relative bf, {
+    \tempo "Adagio" \time 3/4 \key bf \major \partial 4 r4 | % 1
+    bf4 bf4 bf4 | % 2
+    ef4 ef4 ef4 | % 3
+    c4 c4 c4 | % 4
+    f4 r4 \fermata
+    \repeat volta 2 {
+        r4 | % 5
+        bf,8 r8 bf8 r8 bf8 r8 | % 6
+        a8 r8 ef'8 r8 d8 r8 | % 7
+        ef8 r8 bf'8 r8 bf,8 r8 | % 8
+        c8 r8 f,8 r8 bf8 r8 | \barNumberCheck #9
+        bf8 r8 bf'8 r8 bf,8 r8 | % 10
+        f'8 r8 f,8 r8 f'8 ( a,8 ) | % 11
+        bf8 r8 bf'8 r8 f8 r8 | % 12
+        g8 r8 r4 d8 ( bf8 ) | % 13
+        ef8 r8 f8 r8 f,8 r8 | % 14
+        r8 bf8 bf'8 f8 d8 bf8 | % 15
+        bf8 r8 bf8 r8 bf8 r8 | % 16
+        bf8 r8 bf8 r8 bf8 r8 | % 17
+        bf8 r8 bf8 bf'8 ( g8 f8 ) | % 18
+        e8 r8 c8 r8 c8 r8 | \barNumberCheck #19
+        f8 r8 f,8 r8 a8 r8 | % 20
+        r8 bf8 ( f'8 ef8 ) d8 ( bf8 ) | % 21
+        f'8 r8 f,8 r8 ef'8 r8 | % 22
+        d8 r8 ef8 r8 g8 r8 | % 23
+        ef8 ef8 f8 f8 f,8 f8 | % 24
+        bf8 ( d8 c8 bf8 a8 g8 ) | % 25
+        f8 r8 ef'8 r8 f8 r8 | % 26
+        c4 f,8 ( f'8 g8 a8 ) | % 27
+        bf4 ( a8 ) a,8 ( bf8 b8 ) | % 28
+        c8 c8 c'8 c8 bf8 bf8 | \barNumberCheck #29
+        a8 a8 a8 a8 ( g8 f8 ) | % 30
+        e8 e8 e8 e8 f8 f8 | % 31
+        bf,8 bf8 bf8 bf8 bf8 bf8 | % 32
+        c8 ( f8 a8 c8 ) c,8 c8 | % 33
+        c8 ( f8 a8 c8 ) c,8 c8 | % 34
+        f8 ( a8 ) c8 ( a8 ) c8 ( a8 ) | % 35
+        f4 r4 }
+    r4 | % 36
+    f8 r8 f,8 r8 r4 | % 37
+    c''8 r8 c,8 r8 r4 | % 38
+    c8 r8 c8 r8 c8 r8 | \barNumberCheck #39
+    e8 ( c8 e8 c8 ) f8 ( a8 ) | % 40
+    bf8 bf8 bf8 bf8 g8 g8 | % 41
+    e8 e8 c8 c8 d8 d8 | % 42
+    bf8 bf8 c8 c8 c8 c8 | % 43
+    f,8 f'8 c8 f8 a,8 ( c8 ) | % 44
+    f,8 f'8 f8 f8 f8 f8 | % 45
+    f8 f8 f8 f8 f8 f8 | % 46
+    f8 f8 f8 f8 f8 f8 | % 47
+    f8 f8 f8 f8 ef8 ef8 | % 48
+    d8 d8 d8 c8 -. a8 -. f8 -. | \barNumberCheck #49
+    bf8 bf8 bf8 bf8 bf8 d8 | % 50
+    ef8 ef8 f8 f8 f8 f8 | % 51
+    bf8 g8 ( f8 ef8 ) d8 ( c8 ) | % 52
+    bf8 -. f'8 -. bf8 -. f8 -. d8 -. bf8 -. | % 53
+    f4 r8 f'8 ( e8 f8 ) | % 54
+    f,8 -. f'8 -. ef'8 -. c8 -. a8 -. f8 -. | % 55
+    bf4 r8 bf,8 ( a8 bf8 ) | % 56
+    r8 bf'8 ( a8 bf8 a8 bf8 ) | % 57
+    r8 g8 ( fs8 g8 fs8 g8 ) | % 58
+    ef4 ( c4 ) f8 r8 | \barNumberCheck #59
+    bf,8 r8 r4 r4 | % 60
+    d4 -\p r4 r4 | % 61
+    a4 r4 r4 | % 62
+    r4 r4 g'4 ( | % 63
+    f4 ) r4 r4 | % 64
+    d4 r4 r4 | % 65
+    ef4 r4 r4 | % 66
+    r4 r4 f4 | % 67
+    bf,4 r4 r4 | % 68
+    a'4 ( f4 a4 ) | \barNumberCheck #69
+    bf4 ( f4 bf4 ) | % 70
+    c4 ( f,4 c'4 ) | % 71
+    d4 ( f,4 d'4 ) | % 72
+    a4 ( f4 a4 ) | % 73
+    bf4 ( f4 bf4 ) | % 74
+    c4 ( f,4 ) f,4 | % 75
+    bf4 r4 r4 | % 76
+    bf4 -\pp r4 r4 | % 77
+    bf4 r4 r4 \fine
+}
+MII_Cello =  \relative bf, {
+    \repeat volta 2 {
+        \tempo "Allegretto" \time 3/4  \key bf \major
+        \partial 2 r4 r4 | % 1
+        bf4 -\f r4 r4 | \barNumberCheck #2
+        f'4 r4 r4 | % 3
+        f,4 f4 f4 | % 4
+        bf2 r4 | % 5
+        d4 d4 d4 | % 6
+        ef4 ef8. d16 c8. a16 | % 7
+        bf8. ef16 f4 f,4 | % 8
+        bf4 r4 r4 | % 9
+        ef2. -\p | % 10
+        d4 r4 r4 | % 11
+        f4 -! f4 -! f4 -! | \barNumberCheck #12
+        bf,4 r4 r4 | % 13
+        f'2. ( | % 14
+        e4 ) r4 r4 | % 15
+        f4 -! f4 -! f4 -! | % 16
+        bf,4
+    } \repeat volta 2 {
+        r4 r4 | % 17
+        f'4 ( -\f a4 f4 ) | % 18
+        d4 ( bf4 ) r4 | % 19
+        bf4 c4 c4 | % 20
+        f,4 f'4 r4 | \barNumberCheck #21
+        R2. | % 22
+        r4 g4 -\p g4 | % 23
+        r4 g4 g4 | % 24
+        r4 f4 f4 | % 25
+        r4 \fermata r4 r4 | % 26
+        bf,4 -\f g'4 e4 | % 27
+        f4 f,4 r4 | % 28
+        a'4 a,4 f'4 | % 29
+        bf,2 r4 | % 30
+        d4 d4 d4 | \barNumberCheck #31
+        ef4 ef4 ef4 | % 32
+        d8. ef16 f4 f,4 | % 33
+        bf4 r4 r4 | % 34
+        fs'2. ( -\p | % 35
+        g4 ) r4 r4 | % 36
+        e4 f8 \trill e8 f4 | % 37
+        bf,4 r4 r4 | % 38
+        f'2. ( | % 39
+        e4 ) r4 r4 | % 40
+        f4 -! f4 -! f4 -! | \barNumberCheck #41
+    } \alternative {
+        { bf,4 }
+        { bf4 r4 r4 \fine | } % 42
+    }
+    \break
+    \repeat volta 2 {
+        \tempo "Trio" \time 3/4  \key ef \major
+        ef4 -\p g4 bf4 | % 43
+        ef4 bf4 g4 | % 44
+        ef4 -\f bf4 g4 | % 45
+        ef4 r4 r4 | % 46
+        ef'2. -\f | % 47
+        d2. | % 48
+        ef4 f4 f,4 | % 49
+        bf4 bf'8 a8 bf4 | \barNumberCheck #50
+    } \repeat volta 2 {
+        bf,4 -\f bf4 bf4 | % 51
+        bf4 bf4 bf4 | % 52
+        bf4 bf4 bf4 | % 53
+        bf4 bf4 bf4 | % 54
+        ef4 -\p g4 bf4 | % 55
+        ef4 bf4 g4 | % 56
+        ef4 -\f bf4 ef,4 | % 57
+        ef4 r4 r4 | % 58
+        ef'2. -\p | % 59
+        f2. | \barNumberCheck #60
+        bf,4 bf4 bf4 -! | % 61
+    } \alternative {
+        \volta 1 { ef,8 ( bf'8 ) ef8 ( d8 ) ef4 | } % 62
+        \volta 2 { ef,4 \mdc }
+    }
+}
