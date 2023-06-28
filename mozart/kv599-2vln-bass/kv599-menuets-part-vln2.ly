@@ -2,7 +2,7 @@
 
 \include "kv599-menuets-notes.lyi"
 
-\header { instrument = "ViolinII" }
+\header { instrument = "Violin II" }
 
 \score {
     \header { piece = "Menuet #1" }
@@ -28,6 +28,8 @@
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = "Menuet #4" }
     <<
@@ -52,6 +54,8 @@
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = "Menuet #7" }
     <<
@@ -75,6 +79,8 @@
     >>
     \layout {}
 }
+
+\pageBreak
 
 \score {
     \header { piece = "Menuet #10" }

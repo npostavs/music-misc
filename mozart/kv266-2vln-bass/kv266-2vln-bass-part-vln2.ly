@@ -4,6 +4,14 @@
 
 \header { instrument = "Violin II" }
 
+
+
+\layout {
+    \context { \Score
+        \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+    }
+}
+
 \score {
     <<
         \new Staff { \MI_ViolinII }
@@ -15,5 +23,9 @@
     <<
         \new Staff { \MII_ViolinII }
     >>
-    \layout{}
+    \layout{
+        \context { \Score
+            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+        }
+    }
 }

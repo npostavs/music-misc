@@ -4,6 +4,8 @@
 
 \header { instrument = "Violin I" }
 
+\paper { page-count = #2 }
+
 \score {
     <<
         \new Staff { \MI_ViolinI }

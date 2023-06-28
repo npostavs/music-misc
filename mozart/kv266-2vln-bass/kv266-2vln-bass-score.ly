@@ -6,6 +6,7 @@
     <<
         \new Staff { \MI_ViolinI }
         \new Staff { \MI_ViolinII }
+        \new Staff { \MI_FlViolinII }
         \new Staff { \clef bass \MI_Cello }
     >>
     \layout{}
@@ -15,6 +16,7 @@
     <<
         \new Staff { \MII_ViolinI }
         \new Staff { \MII_ViolinII }
+        \new Staff { \MII_FlViolinII }
         \new Staff { \clef bass \MII_Cello }
     >>
     \layout{}

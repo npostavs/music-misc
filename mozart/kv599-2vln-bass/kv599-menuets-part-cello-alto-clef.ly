@@ -28,6 +28,8 @@
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = "Menuet #4" }
     <<
@@ -52,6 +54,8 @@
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = "Menuet #7" }
     <<
@@ -75,6 +79,8 @@
     >>
     \layout {}
 }
+
+\pageBreak
 
 \score {
     \header { piece = "Menuet #10" }
