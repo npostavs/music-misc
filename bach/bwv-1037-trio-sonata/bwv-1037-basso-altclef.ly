@@ -15,17 +15,17 @@ secP = \markup { \italic { "(2ᵉ fois " \dynamic "p" ")" } }
 
   evenHeaderMarkup = \markup
   \fill-line {
-    \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/4" }
-    \on-the-fly #not-part-first-page \concat { \small {
+    \if \should-print-page-number \concat { \fromproperty #'page:page-number-string "/5" }
+    \unless \on-first-page-of-part \concat { \small {
                 \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
     ""
   }
   oddHeaderMarkup = \markup
   \fill-line {
     ""
-    \on-the-fly #not-part-first-page \concat { \small {
+    \unless \on-first-page-of-part \concat { \small {
                 \fromproperty #'header:stitle " - " \fromproperty #'header:instrument }}
-    \on-the-fly #print-page-number-check-first \concat { \fromproperty #'page:page-number-string "/4" }
+    \if \should-print-page-number \concat { \fromproperty #'page:page-number-string "/5" }
   }
 }
 
@@ -43,6 +43,7 @@ bassClef = { \clef "alto_8" }
   \context {
     \Score skipBars = ##t
     \override DynamicTextSpanner.style = #'none
+    alternativeNumberingStyle = #'numbers-with-letters
   }
 }
 
@@ -286,8 +287,8 @@ MvIVBc = \relative c {
         fs,4 r8 d4 r8 g4 r8 b,4 r8 |
         c4 r8 a4 r8 d4 r8 d,4 r8 |
     } \alternative {
-        { g2. ~ g8 b' d f?8 e d | }
-        { g,,2. ~ g8 b c d8 e fs | } % eop
+        \volta 1 { g2. ~ g8 b' d f?8 e d | }
+        \volta 2 { g,,2. ~ g8 b c d8 e fs | } % eop
     }
     \repeat volta 2 {
         << { s4.-\f s4. s2. | s1. | s1. | s1. |
