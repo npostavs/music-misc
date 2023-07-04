@@ -1,6 +1,6 @@
 \version "2.22.2"
 
-clefTreble = { \clef treble }
+clefTreble = { \clef "treble_8" }
 clefAlto = { \clef alto }
 clefBass = { \clef bass }
 
