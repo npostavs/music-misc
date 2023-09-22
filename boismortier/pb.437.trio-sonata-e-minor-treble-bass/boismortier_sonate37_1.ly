@@ -218,9 +218,9 @@ mIvoixIII =
   \override TextScript.padding = #2.0
   \override MultiMeasureRest.expand-limit = 1
   \once \override Staff.TimeSignature.style = #'numbered  
-        \clef bass  
-
-                       \key g \major
+        \clef bass
+        \key g \major
+        \time 3/4
         e2 e4 
         dis2 g4
         a4 b b,
@@ -314,6 +314,6 @@ mIvoixIII =
 	e,2. 
         
         
-  
+  \fine
   }
  %%%%%%%%%% fin de la musique 

@@ -130,6 +130,7 @@ mIIvoixIII =
   \once \override Staff.TimeSignature.style = #'numbered  
         \clef bass  
         \key g \major
+        \time 2/2
         
         g'2 c,
         g'4 g, b g
@@ -170,6 +171,6 @@ mIIvoixIII =
 	c1
 	b1
         
-  
+    \fine
   }
  %%%%%%%%%% fin de la musique 

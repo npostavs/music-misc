@@ -242,6 +242,7 @@ mIIIvoixIII =
      
                 \clef "bass"
                 \key g \major
+                \time 2/4
                 \partial 8
               
 	
@@ -341,5 +342,5 @@ mIIIvoixIII =
 	b4 b,
 	e2
 %% fin voix 3
-  
+    \fine
   }
