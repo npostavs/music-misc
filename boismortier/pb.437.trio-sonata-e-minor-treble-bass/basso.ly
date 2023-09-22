@@ -1,9 +1,9 @@
-\version "2.13.22"
+\version "2.24.0"
 
 
 global = { }
 globalTempo = {
-    \override Score.MetronomeMark #'transparent = ##t
+    \override Score.MetronomeMark.transparent = ##t
 }
 
 \paper {
@@ -30,7 +30,7 @@ resetBarnum = \context Score \applyContext % pour la numérotation des mesures
  \header {
       piece = \markup \bold \larger { " I - Allegro"   }
   }
-  \new Staff {  \compressFullBarRests \mIvoixII }
+  \new Staff {  \compressEmptyMeasures \mIvoixII }
   \layout { }
 }
 
@@ -51,7 +51,7 @@ resetBarnum = \context Score \applyContext % pour la numérotation des mesures
   \header {
       piece = \markup \bold \larger { " III - Allegro" }
   }
-  \new Staff  {\compressFullBarRests \mIIIvoixII }
+  \new Staff  {\compressEmptyMeasures \mIIIvoixII }
   \layout {
     \context {
       \Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)

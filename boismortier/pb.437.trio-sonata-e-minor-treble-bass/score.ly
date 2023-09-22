@@ -1,9 +1,9 @@
-\version "2.13.22"
+\version "2.24.0"
 
 
 global = { }
 globalTempo = {
-    \override Score.MetronomeMark #'transparent = ##t
+    \override Score.MetronomeMark.transparent = ##t
 }
 
 resetBarnum = \context Score \applyContext % pour la numérotation des mesures

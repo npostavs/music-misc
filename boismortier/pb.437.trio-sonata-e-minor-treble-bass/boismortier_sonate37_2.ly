@@ -1,4 +1,4 @@
-\version "2.13.22"
+\version "2.24.0"
 
 %% Identification
 mIIvoixI =
@@ -9,10 +9,10 @@ mIIvoixI =
 	 
 	 \set Staff.instrumentName = \markup { \column { "Hautbois" } }
          % \set Staff.midiInstrument = "Oboe"
-  \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
-  \override TextScript #'padding = #2.0
-  \override MultiMeasureRest #'expand-limit = 1
-  \once \override Staff.TimeSignature #'style = #'()
+  \override Staff.VerticalAxisGroup.minimum-Y-extent = #'(-6 . 6)
+  \override TextScript.padding = #2.0
+  \override MultiMeasureRest.expand-limit = 1
+  \once \override Staff.TimeSignature.style = #'numbered
 	\set Score.tempoHideNote = ##t
   	\tempo 2=50
   	\time 2/2
@@ -124,10 +124,10 @@ mIIvoixIII =
 \relative c { 
 	 \set Staff.instrumentName = \markup { \column { "Cello" } }
          % \set Staff.midiInstrument = "Cello"
-  \override Staff.VerticalAxisGroup #'minimum-Y-extent = #'(-6 . 6)
-  \override TextScript #'padding = #2.0
-  \override MultiMeasureRest #'expand-limit = 1
-  \once \override Staff.TimeSignature #'style = #'()  
+  \override Staff.VerticalAxisGroup.minimum-Y-extent = #'(-6 . 6)
+  \override TextScript.padding = #2.0
+  \override MultiMeasureRest.expand-limit = 1
+  \once \override Staff.TimeSignature.style = #'numbered  
         \clef bass  
         \key g \major
         
