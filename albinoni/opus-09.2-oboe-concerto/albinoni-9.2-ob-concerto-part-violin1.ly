@@ -11,7 +11,7 @@
 
     top-margin = 3\mm
     bottom-margin = 3\mm
-    left-margin = 5\mm
+    left-margin = 6\mm
     right-margin = 4\mm
 }
 
@@ -21,20 +21,20 @@
         \new Staff { \ViolinI_MvI }
     >>
     \layout {
-        \context {\Score
-            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
-        }
+        % \context {\Score
+        %     \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+        % }
         % #(layout-set-staff-size 19)
     }
 }
 \score {
     \header { piece = "Adagio" }
     <<
-        \new Staff { \ViolinI_MvII }
+        \new Staff { \ViolinI_MvII_Compressed }
     >>
     \layout {
         \context {\Score
-            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
         }
         #(layout-set-staff-size 19)
     }
@@ -46,7 +46,7 @@
     >>
     \layout {
         \context {\Score
-            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
+            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
         }
         #(layout-set-staff-size 19)
     }

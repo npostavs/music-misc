@@ -29,5 +29,9 @@
     <<
         \new Staff { \ViolinII_MvIII }
     >>
-    \layout {}
+    \layout {
+        \context {\Score
+            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+        }
+    }
 }
