@@ -10,7 +10,7 @@
         \new Staff { \Oboe_MvI }
         \new StaffGroup <<
             \new Staff { \ViolinI_MvI }
-            \new Staff { \ViolinII_MvI }
+            % Violin 1 & 2 are the same in this movement.
             \new Staff { \clef alto \Viola_MvI }
             \new Staff { \clef bass \Cello_MvI }
         >>
