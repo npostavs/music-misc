@@ -1,6 +1,6 @@
 \version "2.24.1"
 
-violaCueClef = "alto^8"
+violaCueClef = "treble"
 
 \include "albinoni-9.2-ob-concerto-notes.lyi"
 
@@ -16,7 +16,7 @@ violaCueClef = "alto^8"
 \score {
     \header { piece = "Allegro e non Presto" }
     <<
-        \new Staff { \clef alto \Viola_MvI }
+        \new Staff { \clef "treble" \Viola_MvI }
     >>
     \layout {
         \context { \Score
@@ -27,7 +27,7 @@ violaCueClef = "alto^8"
 \score {
     \header { piece = "Adagio" }
     <<
-        \new Staff { \clef alto \Viola_MvII }
+        \new Staff { \clef "treble" \Viola_MvII }
     >>
     \layout {
         \context { \Score
@@ -38,7 +38,7 @@ violaCueClef = "alto^8"
 \score {
     \header { piece = "Allegro" }
     <<
-        \new Staff { \clef alto \Viola_MvIII }
+        \new Staff { \clef "treble" \Viola_MvIII }
     >>
     \layout {
         \context { \Score

@@ -21,10 +21,10 @@
         \new Staff { \ViolinI_MvI }
     >>
     \layout {
-        % \context {\Score
-        %     \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)
-        % }
-        % #(layout-set-staff-size 19)
+        \context {\Score
+            \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+        }
+        #(layout-set-staff-size 19)
     }
 }
 \score {
