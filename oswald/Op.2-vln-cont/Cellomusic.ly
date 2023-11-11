@@ -1,6 +1,13 @@
 \version "2.18.2"
 \language "english"
 
+#(define celloClefOption
+  (or (ly:get-option 'celloClef) "bass"))
+
+ClefCello = \clef #celloClefOption
+ottUp = {} % \ottava #1
+ottZ = {} % \ottava #0
+
 \include "Global.ly"
 
 CelloNotesIA = \relative c {
@@ -30,9 +37,9 @@ CelloNotesIA = \relative c {
     bf[ bf c d] |
     ef4 r8 f |
     bf16 d, d4 ef8 d16 bf' d,4 ef8 |
-    d8 c16. bf32 \ottava #1 ef8 ef' |
+    d8 c16. bf32 \ottUp ef8 ef' |
     d[ ef f f,] |
-    \ottava #0 bf,4 r8
+    \ottZ bf,4 r8
   }
   \repeat volta 2 {
     r8 |
@@ -856,11 +863,11 @@ CelloNotesIIIB = \relative c {
     r8 |
     g4 r8 e' |
     d8.[ e16 fs8 g] |
-    a fs r \ottava #1 d |
+    a fs r \ottUp d |
     g g16 a b g b c |
     d8[ e fs fs,] |
     g8 g16 a b d b g |
-    c8[ \ottava #0 c, b g] |
+    c8[ \ottZ c, b g] |
     c[ g' ef b] |
     c c16 d ef8 f |
     g4 g16 f e? d |

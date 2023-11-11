@@ -2,12 +2,6 @@
 
 Instrument = "Violoncello"
 
-#(define celloClefOption
-  (or (ly:get-option 'celloClef) "bass"))
-
-ClefCello = \clef #celloClefOption
-
-
 \include "Global.ly"
 \include "Cellomusic.ly"
 
@@ -25,6 +19,7 @@ ClefCello = \clef #celloClefOption
   page-breaking = #ly:page-turn-breaking
   auto-first-page-number = ##t
   bookTitleMarkup = \bookTitleMarkupSansInstrument
+  ragged-last-bottom = ##f
 }
 
   \score {
