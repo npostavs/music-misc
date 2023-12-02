@@ -73,6 +73,11 @@ qViolin = { <>^\markup { \tiny "Vln" } }
 octDStr = \markup { \teeny "↓8" }
 octNStr = \markup { \teeny "=8" }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Violin
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Trio I is in Opus 3.
 TrioII_MvI_Violin =  \relative g {
     \tempo "Adagio" 4=60
@@ -2287,7 +2292,9 @@ TrioII_MvI_Cello =  \relative g, {
             g8 b8 d8 b8 g8 b8 d8 b8 | % 186
             g8 a8 c8 a8 g8 a8 c8 a8 | % 187
             d2. -\f b8 \trill a16 b16 | % 188
-            c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. c8 -. | % 189
+            % NOTE: IMSLP48673, IMSLP57968, & IMSLP311175 have c8 as last note in bar 188
+            % IMSLP68624 has d8, and it sounds correct.
+            c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 189
             b'1 -\sfp | % 190
             c1-\sf | % 191
             d1-\sf | % 192
@@ -2296,7 +2303,7 @@ TrioII_MvI_Cello =  \relative g, {
             g2-\< e2 | % 195
             df2-\> d2-\! | % 196
             g,4 -. g'4 -\pp a4 as4 | % 197
-            b4. b,8-\sf b'4-\cresc -. b4 -. | % 198
+            b4. b,8 b'4-\cresc -. b4 -. | % 198
             b4.-\sf cs,8 b'4 -. b4 -. | % 199
             b4.-\sf ds,8 b'4 -. b4 -. | % 200
             b4.-\sf e,8 b'4 -. b4 -. | % 201
