@@ -177,8 +177,8 @@ Oboe_MvI =  \relative f'' {
     a8 a,8 a'4 ~ | % 144
     a8 g16. f32 e4 | % 145
     d4 r4 | % 146
-    R2*2 | % 148
-    r8 r32 e32 ( f32 g32 ) a16. d,32 d16. ef32 | % 149
+    \cueVlnIMark \cueDuring "VnI_MvI" #UP { R2*2 } | % 148
+    r4 \grace { e32 ( f32 g32 ) } a16. d,32 d16. ef32 | % 149
     \subdivide_TwoFour
     ef16. d32 d32 ( e32 f32 g32 ) \default_TwoFour a16. d,32 d16. c'32 | % 150
     c16. bf32 bf16. a32 a16. gs32 gs16. a32 | % 151
@@ -188,7 +188,7 @@ Oboe_MvI =  \relative f'' {
     f16 d16 f16 g16 a8 bf8 | \barNumberCheck #155
     f4 e4 | % 156
     d4 r4 | % 157
-    R2*4 \fine
+    \cueVlnIMark \cueDuring "VnI_MvI" #UP { R2*4 } \fine
 }
 
 Oboe_MvII = \relative f'' {
@@ -254,7 +254,7 @@ Oboe_MvIII = \relative d' {
     a8 d8 cs8 d8 cs16 b16 a16 g16 | % 17
     f16 g16 a8 d,8 a'8 bf16 a16 g16 f16 | % 18
     e4 r8 r4. | % 19
-    R2.*3 | % 22
+    \cueVlnIMark \cueDuring "VnI_MvIII" #UP { R2.*3 } | % 22
     r4. d,8 f8 a8 | % 23
     d4 e8 f16 g16 a16 bf16 a16 g16 | % 24
     f16 e16 d8 a'8 a8 a8 a8 | % 25
@@ -268,7 +268,7 @@ Oboe_MvIII = \relative d' {
     a8 a8 bf8 c8 d16 c16 bf16 a16 | % 33
     bf8. g16 a8 ~ a16 bf16 g4 | % 34
     f4. r4. | % 35
-    R2.*3 | % 38
+    \cueVlnIMark \cueDuring "VnI_MvIII" #UP { R2.*3 } | % 38
     r4. r4 c8 | % 39
     f8 f8 f8 e16 d16 c16 d16 e16 f16 | % 40
     g8 g8 g8 f16 e16 d16 e16 f16 g16 | \barNumberCheck #41
@@ -285,7 +285,7 @@ Oboe_MvIII = \relative d' {
     e8 e8 e8 e8 e8 e8 | % 52
     e8. d16 c16 b16 c16 d16 b4 | % 53
     a4. r4. | % 54
-    R2.*5 | % 59
+    \cueVlnIMark \cueDuring "VnI_MvIII" #UP { R2.*5 } | % 59
     r4. r8. a16 b16 cs16 | % 60
     d16 e16 d16 a16 bf16 a16 e'16 f16 e16 a,16 bf16 a16 | % 61
     f'8 r16 d16 e16 fs16 g16 a16 g16 d16 ef16 d16 | \barNumberCheck #62
@@ -296,13 +296,13 @@ Oboe_MvIII = \relative d' {
     c4 bf8 ~ bf16 c16 a4 | % 67
     g8 d8 g8 c,16 a16 a4 | % 68
     g4. r4. | % 69
-    R2.*3 | % 72
+    \cueVlnIMark \cueDuring "VnI_MvIII" #UP { R2.*3 } | % 72
     r4 f16 g16 a8 a8 bf8 | \barNumberCheck #73
     c8 c8 d8 ef8 f16 ef16 d16 c16 | % 74
     d8 d8 ef8 f8 g16 f16 ef16 d16 | % 75
     ef8. c16 d8 ~ d16 ef16 c4 | % 76
     bf4. r4. | % 77
-    R2.*3 | % 80
+    \cueVlnIMark \cueDuring "VnI_MvIII" #UP { R2.*3 } | % 80
     r4. d,8 f8 a8 | % 81
     d4 e8 f16 g16 a16 bf16 a16 g16 | % 82
     f16 e16 d8 a'8 a8 a8 a8 | \barNumberCheck #83
@@ -444,7 +444,7 @@ ViolinI_MvI =  \relative f'' {
     e16. c32 c16. bf'32 bf16. a32 a16. g32 | % 114
     a8. g16 f16. e32 d16. cs32 | % 115
     d16. f32 bf16. a32 g16. f32 e16. d32 | % 116
-    \afterGrace cs4 ( { e32 f32 g32 ) } a16. d,32 d16. ef32 | % 117
+    \afterGrace cs4 ( { d32 e32 f32 g32 ) } a16. d,32 d16. ef32 | % 117
     \subdivide_TwoFour
     ef16. d32 \afterGrace d8 ( { e32 f32 g32 ) } \default_TwoFour a16. d,32 d16. c'32 | % 118
     c16. bf32 bf16. a32 a16. gs32 gs16. a32 | % 119

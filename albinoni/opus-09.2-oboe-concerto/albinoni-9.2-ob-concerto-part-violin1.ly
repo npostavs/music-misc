@@ -1,5 +1,7 @@
 \version "2.24.1"
 
+violaCueClef = "alto"
+
 \include "albinoni-9.2-ob-concerto-notes.lyi"
 
 \header { instrument = "Violin 1" }
