@@ -1,4 +1,3 @@
-\version "2.18.2"
 \language "english"
 
 DaCapo = \markup { \italic "D.C." }
@@ -29,6 +28,17 @@ opr = { } % \pageBreak
   page-breaking = #ly:minimal-breaking
   % page-breaking = #ly:page-turn-breaking
 }
+
+twice = #(define-music-function (music) (ly:music?)
+             #{ \repeat unfold 2 { #music } #})
+
+triplet = #(define-music-function (music) (ly:music?)
+             #{ \tuplet 3/2 4 { #music } #})
+
+repv = #(define-music-function (music) (ly:music?)
+             #{ \repeat volta 2 { #music } #})
+
+fz = \markup { \dynamic "fz" }
 
 RHandImIA = \relative c' {
   %% original line 1
@@ -207,8 +217,8 @@ RHandImIJ = \relative c' {
   a4 \ottava #0 r4 r2 | % 113
   R1*4
   \times 2/3  { r8 e=''8 e8 e8 e8 e8 r8 cs cs cs8 cs cs } | % 118
-  \once \override TupletBracket #'stencil = ##f
-  \once \override TupletNumber #'stencil = ##f
+  \once \override TupletBracket.stencil = ##f
+  \once \override TupletNumber.stencil = ##f
   \times 2/3  { r8 d8 d8 d8 d8 d8 r8 b b b8 b b } | % 119
 }
 RHandImIJJ = \relative c' {
@@ -432,22 +442,22 @@ LHandImIH = \relative c {
   R1*4
   \times 2/3  { \ottava #1 a'8 cs8 ( gs8 a8 e8 cs8 \ottava #0 a8 cs8 gs8 a8 g8 e8 ) } | % 113
   d4 d8 d8 d4 ( c8 ) r8 | % 114
-  \once \override TupletBracket #'stencil = ##f
-  \once \override TupletNumber #'stencil = ##f
+  \once \override TupletBracket.stencil = ##f
+  \once \override TupletNumber.stencil = ##f
   \times 2/3  {
     r8 b8 ( c8 }
-  \once \override TupletBracket #'stencil = ##f
-  \once \override TupletNumber #'stencil = ##f
+  \once \override TupletBracket.stencil = ##f
+  \once \override TupletNumber.stencil = ##f
   \times 2/3  {
     d8 c8 b8 ) }
   b4 ( a8 ) r8 | % 115
   <d, d'>4 <d d'>8 <d d'>8 <d d'>4 ( <c c'>8 ) r8 | % 116
-  \once \override TupletBracket #'stencil = ##f
-  \once \override TupletNumber #'stencil = ##f
+  \once \override TupletBracket.stencil = ##f
+  \once \override TupletNumber.stencil = ##f
   \times 2/3  {
     r8 bf'8 ( c8 }
-  \once \override TupletBracket #'stencil = ##f
-  \once \override TupletNumber #'stencil = ##f
+  \once \override TupletBracket.stencil = ##f
+  \once \override TupletNumber.stencil = ##f
   \times 2/3  {
     df8 c8 bf8 ) }
   bf4 ( a8 ) r8 | % 117
@@ -709,4 +719,277 @@ RHandII = \relative c' {
     \RHandIImIJ \RHandIImIJJ \RHandIImIJJJ
   }
   \RHandIImIZ
+}
+
+
+MI_Oboe = \relative c' {
+    \time 4/4
+%    \set Timing.beamExceptions = \beamExceptions { 
+%         \triplet { 8[ 8 8] 8[ 8 8] 8[ 8 8] 8[ 8 8] } |
+%         8.[ 16 8 8] 8.[ 16 8 8] | 
+%         2 8.[ 16 8 8] | 
+%         8.[ 16 8 8] 2 | 
+%         4. 8 8.[ 16 8 8] |
+%    }
+
+    \repv {
+        \key a \major \partial 4 cs'8. \p d16 | % 1
+        \repeat unfold 2 {
+            e2 d8. cs16 b8 cs |
+            e,2~ e8( fs gs a) |
+            b4. cs8 d8. fs16 b,8 e |
+            cs2 r4 cs8. d16 | % 5
+            \volta 1 {
+                e2 d8. cs16 b8 cs |
+                fs,2~ fs8( b cs d) |
+                d4( gs,8) r8 fs'8.( ds16 e8 gs,) | \barNumberCheck #8
+                a2 r4 a='8.(-\mf b16) |
+                cs2( \< cs8. d16 \> cs8 bs) \! |
+                cs8 gs'[ \pp gs gs] gs2->~ |
+                \obr %% original line 3
+                gs4 \mf cs, cs8.( d16 cs8 bs) |
+                cs8. d16 cs8 bs cs8. d16 cs8. d16 |
+            }
+        }
+        e2 \< d8. cs16 \! b8 fs |
+        e'2 \> d8. cs16 \! b8 fs' |
+        fs4( a,8) r8 fs'8.( ds16 e8 gs,) |
+        
+        a4 r r2 |
+    
+        \tuplet 3/2 4 { a='8 cs a e' cs a gs b gs e' b gs } |
+        \tuplet 3/2 4 { fs b fs ds' b fs e b' gs e' b gs } |
+        \tuplet 3/2 4 { a c a e' c a g b g e' b g } |
+        \tuplet 3/2 4 { f a f ds' a f e gs e b' gs e } | \barNumberCheck #25
+        gs4( b8) r b4( e8) r | 
+        R1 |
+        gs,4( b8) r e4( gs8) r | 
+        r2 \tuplet 3/2 4 { r8 gs, b d8 b gs } | \barNumberCheck #29
+        a2 r2 |
+        \tuplet 3/2 4 { r8 cs e cs'8 e, cs cs'8 gs cs, } as8 as |
+        \tuplet 3/2 { b'8 fs b, } gs8 gs \tuplet 3/2 { a'8 e a, } fs8 a |
+        b2. \tuplet 3/2 { a'8 b, ds } |
+        e8 r r4 r2 |
+        \triplet {
+            \twice { 
+                c8-. e c' e8 c e, b8-. e b' e8 b e, |
+                \volta 1 { b8-. a' b ds8 b a b,8-. g' b e8 b g | }
+            } b,8-. d b' d8 b d, g,8-. c g' c8 g c,
+            r8 fs fs fs8 fs fs r8 f f f8 f f |
+            \twice { r8 e e e8 e e } |
+        }
+        b4 \triplet { a8 b, ds e8 gs b e8 gs a } |
+        b4 \triplet { a8 b, ds e8 b gs' e8 b gs } |
+        e8 r r4 e4-\pp e8 e |
+        gs4 gs8 gs g4 g8 g |
+        gs4 \triplet { a8 b, ds e8-. \noBeam b' gs' e8 b gs } |
+        e8 r r4 r2 |
+        f'4-\ppp e8 e a4 a8 a |
+        b4 ~ \triplet { b8 cs ds } e8 r
+    }
+    gs,,8.(-\p a16) |
+    b2-> a8. gs16 fs8 gs |
+    es2( fs8) r fs8.( gs16) |
+    a2-> gs8.( fs16 e8 fs) |
+    ds2( e8) r e8.(-\mf fs16) | 
+    gs2 gs8.->( a16 gs8 fss) |
+    gs8 \noBeam ds'-\ppp ds ds ds2 ~ |
+    ds8 r gs,4-\mf gs8.->( a16 gs8 fss) |
+    \twice { gs8.( a16 gs8 fss )} |
+    gs2-\fz ds'-\fz |
+    \triplet { cs,8 ds e fs8 gs as bs8 cs ds } e8-! e-! |
+    e1 |
+    \triplet { g,8 a b cs8 d e fs8 g a } g8-! g-! |
+    g1 |
+    \triplet { fs,8 g a b8 cs d e8 fs g } fs8-! fs-! |
+    fs1 | % D 6
+    \triplet { f,8 g a b8 c d e8 f g } f8-! f-! |
+    f4 a, \triplet { gs8 a b } c8-! a-! |
+    e4-\fz e'8-\p e e4 e8 e |
+    e4 e8 e e4( b8) r8 |
+    gs4 gs8 gs gs4. r8 |
+    cs4( gs8) r a4( fs8) r |
+    cs'8.( d16 cs8 d) e2 |
+    b8.( cs16 b8 cs) d2 |
+    \twice { cs2 cs8.-> d16 cs8 bs } |
+    cs8.-> d16 cs8 bs cs8. d16 e4 |
+    r8 cs a a r8 gs gs d |
+    cs8 e gs cs e8 cs e d |
+    r8 e gs gs r8 
+}
+
+MI_Flute = \relative c' {
+    \repv {
+        \key a \major \partial 4 r4 | % 1
+        \repeat unfold 2 {
+            r8 a'-\p cs-. cs r8 e, gs-. gs | % 2
+            a8-- gs-. a-- gs-. a4 r | % 3
+            r8 gs' e e r8 b gs gs | % 4
+            a8 e' cs gs a4 r4 | % 5
+            \volta 1 {
+                r8 g as as r8 b fs' fs | % 6
+                e8 fs e fs d4 r4 | % 7
+                r8 b gs gs r8 gs e e | % 8
+                e8 cs' a e' a,4 r | % 9
+                r8 gs es es r8 fs a a | % 10
+                r8 es' es es r8 fs, fs fs | % 11
+                es4 r r8 a fs fs | % 12
+                r8 f a a gs4 e | % 13
+            }
+        }
+        r8 as cs cs r8 b d d | \barNumberCheck #18
+        r8 cs as as r8 b d d | % 19
+        r8 e cs cs r8 b gs gs | % 20
+        \tuplet 3/2 4 { a8 b cs d8 e fs gs8 a b cs8 d ds } | % 21
+        e4 e8 e e4( b8) r | % 22
+        \tuplet 3/2 4 { a8( b a) cs8( b a) } gs4( b8) r | % 23
+        e4 e8 e e4( b8) r | % 24
+        \tuplet 3/2 4 { a8( b a) c8( b a) } gs?4( b8) r | % 25
+        gs4( b8) r b4( e8) r | % 26
+        \tuplet 3/2 4 { r8 fs,( gs) a8( gs fs) } as4->( b8) r | % 27
+        gs4( b8) r e4( gs8) r | % 28
+        \tuplet 3/2 4 { r8 fs,( gs) a8( gs fs) } e2 | \barNumberCheck #29
+        \tuplet 3/2 4 { r8 cs( e) cs'8( e, cs) } e2 |
+        r2 gs,4 as'8 as |
+        fs,4 gs'8 gs e,4 fs'8 fs |
+        b2. r4 |
+        R1*3 |
+        a,4 a8 a a4( g8) r |
+        r2 f4( e8) r |
+        \triplet { r8 b'' b b8 b b r8 gs gs gs8 gs gs |
+                   r8 a a a8 a a r8 fs fs fs8 fs fs }
+        b4( a4 gs8) r r4 |
+        gs4( a gs8) r r4 |
+        R1 |
+        b,4-\pp b8 b as4 as8 as |
+        gs4( fs e8) r r4 |
+        r2 e4-\ppp  e8 e |
+        gs4 gs8 gs g4 g8 g |
+        gs4( fs gs8) r
+    }
+    r4 |
+    r8 gs-\p d' d r8 cs a cs |
+    r8 gs cs cs r8 cs a a |
+    r8 cs fs, fs r8 b gs gs |
+    r8 fs ds' ds r8 e b b |
+    r8 bs bs bs r8 e e e |
+    r8 bs-\ppp bs bs r8 cs cs cs |
+    bs8 bs-\mf  bs bs r8 e e e |
+    r8 bs bs bs r8 e cs cs |
+    cs'2-\fz fs2-\fz |
+    e4 r r2 |
+    \triplet { e,,8 fs gs as8 bs cs ds8 e fs } gs8-! gs-! |
+    a1 | % A 5,3
+    \triplet { a,8 b cs d8 e fs gs8 a b } a8-! a-! |
+    a1 | % D 6,4
+    \triplet { a,8 b cs d8 e fs gs8 a b } a8-! a-! |
+    c1 | % F 6,4
+    \triplet { a,8 b c ds8 e f gs8 a b } c8-! a-! |
+    e'4-\fz r r2 |
+    gs,4-\p gs8 gs gs'4 gs8 gs |
+    gs4( ds8) r e4( b8) r |
+    cs4( gs8) r a4( fs8) r |
+    r8 e, e a r8 cs a a |
+    r8 a gs a gs8. a16 b8 b |
+    r8 es es gs, r8 a fs fs |
+    r8 gs es es r8 a fs fs |
+    r8 a f f r4 cs'8.( d16) | % recap, theme in flute
+    e2 d8.( cs16 b8 cs) |
+    e,2 ~ e8( fs gs a) |
+    b4. cs8 d8. fs16 b,8 e |
+    cs2 r4 cs'8.( d16) |
+    e2 d8.( cs16 b8 cs) |
+    fs,2 ~ fs8 b( cs d) |
+    d4( gs,8) r fs'8. ds16 e8 gs, |
+    a2 r2
+}
+
+MI_Cello = \relative c {
+    \repv {
+        \key a \major \partial 4 r4 |
+        \repeat unfold 2 {
+            a=,8-\p cs e a b,8 d e gs |
+            cs, a' e cs a8 e' cs a |
+            gs-. b( e gs) e,-. b'( e gs) |
+            a, cs e a cs8 a e cs |
+            \volta 1 {
+                as8 e' g cs b,8 d fs b |
+                \obr %% original line 2
+                cs,8 fs as cs b8 fs d b |
+                e,8-. b'( e gs) e,-. e'( gs b) |
+                a, cs e a e cs a=,8 fs |
+                es cs' cs cs cs4 fs, |
+                es4 cs cs8.[( d16 cs8. bs16)] |
+                \obr %% original line 3
+                cs8 cs' cs es fs2 |
+                f2 e4 cs=4 |
+            }
+        }
+        as8 e' g cs b,8 d fs b |
+        cs,8 fs as cs d,8 fs b d |
+        e,,8-. cs'( e a) e,8-. e'( gs b) |
+    
+        a e r4 r2 |
+    
+        R1*4 |
+        \tuplet 3/2 4 { \twice { e8 b' gs e'8 b gs } |
+                        a8 b a ds8 b a gs8 b gs e'8 b gs |
+                        e8 b' gs e'8 b gs cs,8 gs' e cs'8 gs e |
+                        a,8 a' cs b,8 a' b } gs4 r |
+        r2 \tuplet 3/2 4 { r8 gs b d8 b gs } |
+        a2 es4 \tuplet 3/2 { e8 fs cs' } |
+        ds,4 \tuplet 3/2 { d8 e b' } cs,4 c8 e |
+        e2 f2 |
+        \tuplet 3/2 4 { e8 \noBeam e ds cs8 b gs e8-\cresc gs ds e8 d b } |
+        a4-\mf a8 a a4( g8) r |
+        \tuplet 3/2 4 { r8 fs g a8 g fs } e4( g8) r |
+        a4 a8 a a4( g8) r |
+        \tuplet 3/2 4 { r8 f' g af8 g f } f4( e8) r |
+        ds4-> ds'8 ds d,4-> d'8 d |
+        cs,4-> cs'8 cs c,4-> c'8 c |
+        e4( fs gs8) r r4 |
+        e,4( fs gs8) r r4 |
+        << { s1-\pp | s1*2 | s1-\ppp | s1 | s2. } \twice {
+            \twice { e4 e8 e } |
+            d'4-> d8 d cs4-> c8 c |
+            b4( a gs8) r \volta 1 { r4 | }
+        } >>
+    }
+    r4 |
+    es2(-\p fs8) r a8.( b16) |
+    cs2 b8.( a16 gs8 a) |
+    ds,2( e8) r gs8.( a16) |
+    b2 a8.( gs16 fs8 gs) |
+    bs,8 gs'-\mf gs gs gs2 ~ |
+    gs8 r gs,4-\ppp gs8.( a16 gs8. fss16) |
+    gs8 gs'-\mf gs gs cs2 |
+    bs2 b4 a |
+    gs2-\fz gs-\fz |
+    \triplet { cs,8 ds e fs8 gs as bs8 cs ds } e8-! e-! |
+    \triplet { e,8 fs gs as8 bs cs ds8 e fs } gs8-! gs-! |
+    \triplet { g,8 a b cs8 d e fs8 g a } g8-! g-! |
+    \triplet { a,8 b cs d8 e fs gs8 a b } a8-! a-! |
+    \triplet { fs,8 g a b8 cs d e8 fs g } fs8-! fs-! |
+    \triplet { a,8 b cs d8 e fs gs8 a b } a8-! a-! |
+    \triplet { f,8 g a b8 c d e8 f g } f8-! f-! |
+    \triplet { a,8 b c ds8 e f gs8 a b } c8-! a-! |
+    e,4-\fz r r2 |
+    e4-\p e8 e e4( b'8) r |    
+    bs4 bs8 bs cs4( d8) r |
+    e4( es8) r fs4( ds8) r |
+    e2 cs8. d16 cs8 d |
+    e2 b8. cs16 d8 fs, |
+    cs'4 cs8 cs cs2 |
+    cs4 cs8 cs fs,2 |
+    f2 e4 cs |
+    % recap (theme in flute)
+    a'=,8-\p cs e a b,8 d e gs |
+    cs, a' e cs a8 e' cs a |
+    gs-. b( e gs) e,-. b'( e gs) |
+    a, cs e a cs8 a e cs |
+    as8 e' g cs b,8 d fs b |
+    cs,8 fs as cs b8 fs d b |
+    e,8-. b'( e gs) e,-. e'( gs b) |
+    a, cs e a e cs a=,8 fs |
+
 }
