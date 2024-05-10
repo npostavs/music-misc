@@ -1,5 +1,5 @@
 % -*- coding: utf-8 -*-
-\version "2.22.2"
+\version "2.24.0"
 
 %% additional definitions required by the score:
 \language "english"
@@ -12,7 +12,7 @@
     arranger =  "Transcription by Agustín I. Pace"
     encodingsoftware =  "MuseScore 3.4.2"
     tagline = ##f
-    stitle = "String Trios No.2"
+    stitle = "String Trio No.2"
     }
 
 \paper {
@@ -26,12 +26,12 @@
 
     oddHeaderMarkup = \markup \fill-line {
         " "
-        \on-the-fly #not-first-page \tiny \italic \concat {
+        \unless \on-first-page \tiny \italic \concat {
           \fromproperty #'header:stitle ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
-        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string }
+        \if \should-print-page-number \fromproperty #'page:page-number-string }
     evenHeaderMarkup = \markup \fill-line {
-        \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
-        \on-the-fly #not-first-page \tiny \italic \concat {
+        \if \should-print-page-number \fromproperty #'page:page-number-string
+        \unless \on-first-page \tiny \italic \concat {
           \fromproperty #'header:stitle ", " \fromproperty #'header:composer " - " \fromproperty #'header:instrument }
         " " }
 }
@@ -1305,8 +1305,7 @@ TrioII_MvI_Viola =  \relative g {
         g4 -.) r4 \tag #'doubleStops { <a g'>4 -. r4 | % 161
         <a fs'>4 -. -\p } \tag #'singleStop { g'4-. r | fs4-.-\p } c'4 ~ c16 b16 a16 g16 fs16 e16 d16 c16 | % 162
         b4 r4 r2 | % 163
-        a8-\f -. c'16 b16 c16 b16 c16 b16 c16 b16 a16 g16 fs16 e16 d16
-        c16 | \barNumberCheck #164
+        a8-\f -. c'16( b16 c16 b16 c16 b16 c16 b16 a16 g16 fs16 e16 d16 c16) | \barNumberCheck #164
         b8 -. d,8 -. c'8 -. d,8 -. d'8 -. d,8 -. b'8 -. d,8 -. | % 165
         \tag #'doubleStops { <a' fs'>4-\ff -. r8 <g' b>8 -. <fs a>4 -. r8 <b, g'>8 -. | % 166
         <a fs'>4 -. -\f } \tag #'singleStop { fs'4-.-\ff r8 b8-. a4-. r8 g8-. | % 166 (again)
@@ -1327,12 +1326,12 @@ TrioII_MvI_Viola =  \relative g {
         d4 -. ef4 -. d4 -. r4 | % 181
         c4-\p -. bf4 -. a4 -. r4 | % 182
         c4-\pp -. bf4 -. a4 -. r4 | % 183
-        b,8-\dolce d8 g8 d8 b8 d8 g8 d8 | \barNumberCheck #184
-        a8 c8 fs8 c8 a8 c8 fs8 c8 | % 185
-        d'2. b8 \trill a16 b16 | % 186
+        b,8(-\dolce d8 g8 d8) b8( d8 g8 d8) | \barNumberCheck #184
+        a8( c8 fs8 c8) a8( c8 fs8 c8) | % 185
+        d'2. \afterGrace b4\trill { a16 b16 } | % 186
         c8 -. a8 -. fs8 -. d8 -. c8 -. a8 -. fs8 -. d8 -. | % 187
-        g8-\cresc b8 d8 b8 g8 b8 d8 b8 | % 188
-        fs8 a8 d8 a8 fs8 a8 d8 a8 | % 189
+        g8(-\cresc b8 d8 b8) g8( b8 d8 b8) | % 188
+        fs8( a8 d8 a8) fs8( a8 d8 a8) | % 189
         \tag #'doubleStops {
         <g d'>1 -\fp | % 190
         <g e'>1-\sf | % 191
@@ -1342,59 +1341,60 @@ TrioII_MvI_Viola =  \relative g {
         <d b'>2)-\< 
         }
         \tag #'singleStop {
-        d1 -\fp | % 190
-        e1-\sf | % 191
-        fs1-\sf | % 192
-        g1-\sf | % 193
+        d4. g,8 d'2 -\fp | % 190
+        e4.-\sf g,8 e'2 | % 191
+        fs4.-\sf g,8 fs'2 | % 192
+        g4.-\sf g,8 g'2 | % 193
         a1(-\pp | \barNumberCheck #194
         b2)-\< 
         }
         g2 ~ | % 195
-        g2-\> fs2-\! | % 196
-        \tag #'doubleStops { <b, g'>4 -. } \tag #'singleStop { b4-. } g'4 -\pp a4 as4 | % 197
-        b8 -. ds,8 b'4-\sf ~ b2-\cresc ~ | % 198
-        b8 e,8 b'4-\sf ~ b2 ~ | % 199
-        b8 fs8 b4-\sf ~ b2 ~ | % 200
+        g2-\> \tag #'doubleStops { <c, fs'>2-\! | % 196
+        <b g'>4 -. } \tag #'singleStop { fs'4 c4-. | % 196
+        b4-. } g'4( -\pp a4 as4) | % 197
+        b8 -. ds,8( b'4)-\sf ~ b2-\cresc ~ | % 198
+        b8 e,8( b'4)-\sf ~ b2 ~ | % 199
+        b8 fs8( b4)-\sf ~ b2 ~ | % 200
         b8 g8 ~ \tag #'doubleStops { <g b>4-\sf ~ q2 ~ | % 201
         q4 } \tag #'singleStop { g4-\sf ~ g2 ~ | g4 } g4-\pp -. g4 -. g4 -. | % 202
         \tag #'doubleStops { <e g>1-\cresc | % 203
         <a, fs'>1-\sfp | \barNumberCheck #204
         <b g'>4 } \tag #'singleStop { e1-\cresc | a,1-\sfp | b4 } r4 r2 | % 205
         b'8-\p -. d8 -. a8 -. c8 -. g8 -. b8 -. c,8 -. a'8 -. | % 206
-        <b, g'>16 -. \noBeam g16 a16 b16 c16-\cresc d16 e16 fs16 g16 a16 g16 fs16 g16
-        a16 b16 c16 | % 207
-        d16-\f e16 d16 cs16 d16 e16 d16 cs16 d16 e16 d16 cs16 d16 e16
-        fs16 d16 | % 208
+        <b, g'>16 -. \noBeam g16( a16 b16 c16-\cresc d16 e16 fs16 g16 a16 g16 fs16 g16 a16 b16 c16) | % 207
+        d16(-\f e16 d16 cs16) d16( e16 d16 cs16) d16( e16 d16 cs16 d16 e16 fs16 d16) | % 208
         g4 r4 r2 | % 209
         g,,8-\f -. g'8 -. a,8 -. a'8 -. b,8 -. b'8 -. c,8 -. b'8 -. | % 210
     } \alternative {
         { <d, b'>4 r <a d c'> r | <g d' b'>4 r r8 \set Timing.measurePosition = #(ly:make-moment 4/4) } % 211,212
-        { \break g'16 a16 g16-\cresc fs16 g16 a16 g16 fs16 g16 a16 g16 fs16 g16 f16 e16 d16 } % 211
+        { \break g'16( a16 g16-\cresc fs16) g16( a16 g16 fs16) g16( a16 g16 fs16) g16( f16 e16 d16) } % 211
     }
-    c8-\ff e8 
+    c8-\ff e8
     \tag #'doubleStops { <g c>8 q q8 q q q | % 213
                         <a c>2-\sf ~ <a c>8\fermata }
     \tag #'singleStop  { g8 c g8 c g c | % 213
                          c4-. a4.-\sf\fermata }
-    \qViolin \cueDuringWithClef "TrioII_MvI_Violin" #UP "treble^8" { r8 r4 | % 214
-    r8 } ds8 -\pp e8 c8 a4 -. r4 | \barNumberCheck #215
-    r8 b8 c8 a8 fs4 -. r4 | % 216
-    r8 \fluteOctUp \relative d' { ds8-\cresc e8 c8 a8 -. b8 c8 a8 | % 217
-    fs8 -. gs8 a8 fs8 \repeat unfold 3 { c8 -. -\sf  
+    \qViolin << \new CueVoice { \stemUp ds8 e c | a } { r8 r4 | % 214
+        r8 } >>
+             %\cueDuringWithClef "TrioII_MvI_Violin" #UP "treble^8" { r8 r4 | % 214
+    ds8( -\pp e8 c8 a4-.) r4 | \barNumberCheck #215
+    r8 b8( c8 a8 fs4-.) r4 | % 216
+    r8 \fluteOctUp \relative d' { ds8(-\cresc e8 c8 a8-.) b8( c8 a8 | % 217
+    fs8-.) gs8( a8 fs8 \repeat unfold 3 { c8-.) -\sf  
                                          \tag #'doubleStops { <fs a>8 q8 q8 }
-                                         \tag #'singleStop  { fs8 a fs }} | % 219
-    ef8 -. -\fp } fs='8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 220
-    bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 221
-    d8-.-\p g8 af8 f8 bf,8 -. f'8 af8 f8 | % 222
-    d8 -. f8 af8 f8 d8 -. f8 af8 d,8 | % 223
-    ef8-\fp -. fs8 g8 ef8 bf8 -. fs'8 g8 ef8 | % 224
-    bf8 -. fs'8 g8 ef8 bf8 -. fs'8 g8 ef8 | \barNumberCheck #225
-    bf8 f'8 af8 f8 bf,8 f'8 af8 f8 | % 226
-    d8 f8 af8 f8 d8 f8 d8 af8 | % 227
-    g8 fs'8 g8 ef8 g8 fs8 g8 ef8 | % 228
-    g8 fs8 g8 e8 g8 fs8 g8 e8 | % 229
-    g8-\cresc fs8 g8 d8 g8 fs8 g8 d8 | % 230
-    fs8-\sf e8 fs8 c8 fs8 e8 fs8 c8 | % 231
+                                         \tag #'singleStop  { fs8( a fs }} | % 219
+    ef8-.) -\fp } fs='8( g8 ef8 bf8-.) fs'8( g8 ef8 | % 220
+    bf8-.) fs'8( g8 ef8 bf8-.) fs'8( g8 ef8 | % 221
+    d8-.)-\p g8( af8 f8 bf,8-.) f'8( af8 f8 | % 222
+    d8-.) f8( af8 f8 d8-.) f8( af8 d,8 | % 223
+    ef8-.)-\fp fs8( g8 ef8 bf8-.) fs'8( g8 ef8 | % 224
+    bf8-.) fs'8( g8 ef8 bf8-.) fs'8( g8 ef8) | \barNumberCheck #225
+    bf8( f' af f bf,8 f' af f) | % 226
+    d8( f af f d8 f d af) | % 227
+    g8-.-\pp fs'8( g8 ef8) g8( fs8 g8 ef8) | % 228
+    g8( fs8 g8 e8) g8( fs8 g8 e8) | % 229
+    g8(-\cresc fs8 g8 d8) g8( fs8 g8 d8) | % 230
+    fs8(-\sf e8 fs8 c8) fs8( e8 fs8 c8) | % 231
     \tag #'doubleStops {
         b16 -\f <b d>16 q q q16 q q q q2:16 | % 232
         <b d>2:16 <b d>2:16 | % 233
@@ -1408,22 +1408,25 @@ TrioII_MvI_Viola =  \relative g {
         <c fs>2:16 <c fs>2:16 | % 241
         <b g'>2:16 <b g'>16 <b g'>16 <b g'>16 <b g'>16 <g' b>16 <g b>16 <g b>16 <g b>16 | % 242
         <fs c'>2:16 <fs c'>2:16 | % 243
+        <g b>4 r4 <g, d' b'>4-\ff r4 | % 244
+        <d b' g'>4 r4 r8
     } \tag #'singleStop {
-        b,=16-\f( d b d) b16( d b d) \repeat tremolo 4 { b16( d) } | % 232
-        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 233
-        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 234
-        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 235
-        << s1-\ff \repeat unfold 2 \repeat tremolo 4 { b16 d } >> | % 236
-        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 237
-        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 238
-        \repeat unfold 2 \repeat tremolo 4 { c16 d } | % 239
-        \repeat unfold 2 \repeat tremolo 4 { b16 d } | % 240
-        \repeat unfold 2 \repeat tremolo 4 { c16 fs } | % 241
-        \repeat tremolo 4 { b,16 g' } b,16 g' b, g' g16 b g b | % 242
-        \repeat unfold 2 \repeat tremolo 4 { fs16 c' } | % 243
+        b'=16-\f( g b g) b16( g b g) \repeat tremolo 4 { b16( g) } | % 232
+        \repeat unfold 2 \repeat tremolo 4 { b16( g) } | % 233
+        fs16( g a b) c8 d fs8 c8 d a | % 234
+        fs16( g a b) a8 c d8 c fs a | % 235
+        << { s1-\ff } \repeat unfold 2 \repeat tremolo 4 { b16( g) } >> | % 236
+        \repeat unfold 2 \repeat tremolo 4 { b16( g) } | % 237
+        fs16( g a b) a8 fs c'8 a d a | % 238
+        fs8 a c, d fs8 d c a | % 239
+        \repeat unfold 2 \repeat tremolo 4 { b16( g) } | % 240
+        a8 c d fs c8 fs d fs | % 241
+        g16( fs e d c16 b a g) b8 g' g b | % 242
+        c16( b a g) fs8 a d, c c16( d e fs) | % 243
+        \acciaccatura g8 b4 r d4-\ff r | % 244
+        b4 r r8
     }
-    <g b>4 r4 <g, d' b'>4-\ff r4 | % 244
-    <d b' g'>4 r4 r8 \bar "|."
+     \bar "|."
 }
 TrioII_MvII_Viola = \relative g {
             \time 3/4 \key e \major gs4 -\mp r4 <b gs'>4 <b a'>2 <b fs'>4 b4 cs4 ~ \once \omit TupletBracket
