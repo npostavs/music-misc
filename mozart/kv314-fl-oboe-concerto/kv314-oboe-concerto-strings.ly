@@ -13,6 +13,16 @@
         }
     }
 
+\paper {
+    %% \slashSeparator overlaps with the bar numbers a bit.
+    system-separator-markup = \markup {
+        \hspace #2 \slashSeparator
+    }
+    tagline = ##f
+    top-margin = 3\mm
+    bottom-margin = 3\mm
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Notes - 1st movement
@@ -3613,35 +3623,37 @@ MvIII_Cello =  \relative d' {
             \set Staff.shortInstrumentName = "Ob."
             \transpose d c \MvI_OboeSolo
         >>
-        \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin I"
-            \set Staff.shortInstrumentName = "V1"
-            \transpose d c \MvI_ViolinI_Simplified
-        >>
-        \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin II"
-            \set Staff.shortInstrumentName = "V2"
-            \transpose d c \MvI_ViolinII_Simplified
-        >>
-        \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Violin III"
-            \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
-            \transpose d c \MvI_ViolinIII
-        >>
-        \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Viola"
-            \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
-            \transpose d c \keepWithTag #'simplified { \MvI_Viola }
-        >>
-        \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
-        <<
-            \set Staff.instrumentName = "Cello"
-            \set Staff.shortInstrumentName = "Cl"
-            \transpose d c \MvI_Cello
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin I"
+                \set Staff.shortInstrumentName = "V1"
+                \transpose d c \MvI_ViolinI_Simplified
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin II"
+                \set Staff.shortInstrumentName = "V2"
+                \transpose d c \MvI_ViolinII_Simplified
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Violin III"
+                \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
+                \transpose d c \MvI_ViolinIII
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
+                \transpose d c \keepWithTag #'simplified { \MvI_Viola }
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \transpose d c \MvI_Cello
+            >>
         >>
     >>
     \layout {}
@@ -3656,35 +3668,37 @@ MvIII_Cello =  \relative d' {
             \set Staff.shortInstrumentName = "Ob."
             \MvII_OboeSolo
         >>
-        \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin I"
-            \set Staff.shortInstrumentName = "V1"
-            \MvII_ViolinI
-        >>
-        \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin II"
-            \set Staff.shortInstrumentName = "V2"
-            \MvII_ViolinII
-        >>
-        \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Viola I"
-            \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "1" } }
-            \MvII_ViolinIII
-        >>
-        \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Viola II"
-            \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "2" } }
-            \MvII_Viola
-        >>
-        \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Cello"
-            \set Staff.shortInstrumentName = "Cl"
-            \MvII_Cello
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin I"
+                \set Staff.shortInstrumentName = "V1"
+                \MvII_ViolinI
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin II"
+                \set Staff.shortInstrumentName = "V2"
+                \MvII_ViolinII
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola I"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "1" } }
+                \MvII_ViolinIII
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola II"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "2" } }
+                \MvII_Viola
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \MvII_Cello
+            >>
         >>
     >>
     \layout {}
@@ -3698,35 +3712,37 @@ MvIII_Cello =  \relative d' {
             \set Staff.shortInstrumentName = "Ob."
             \MvIII_OboeSolo
         >>
-        \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin I"
-            \set Staff.shortInstrumentName = "V1"
-            \MvIII_ViolinI
-        >>
-        \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Violin II"
-            \set Staff.shortInstrumentName = "V2"
-            \MvIII_ViolinII
-        >>
-        \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Viola I"
-            \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "1" } }
-            \MvIII_ViolinIII
-        >>
-        \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-        <<
-            \set Staff.instrumentName = "Viola II"
-            \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "2" } }
-            \MvIII_Viola
-        >>
-        \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
-        <<
-            \set Staff.instrumentName = "Cello"
-            \set Staff.shortInstrumentName = "Cl"
-            \MvIII_Cello
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin I"
+                \set Staff.shortInstrumentName = "V1"
+                \MvIII_ViolinI
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Violin II"
+                \set Staff.shortInstrumentName = "V2"
+                \MvIII_ViolinII
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola I"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "1" } }
+                \MvIII_ViolinIII
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola II"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" "2" } }
+                \MvIII_Viola
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \MvIII_Cello
+            >>
         >>
     >>
     \layout {}
