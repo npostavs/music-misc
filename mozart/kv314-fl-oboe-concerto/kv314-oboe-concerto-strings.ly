@@ -4,8 +4,9 @@
 \header {
     title =  "Oboe Concerto in C"
     composer = "Mozart"
-    arranger = "Arr: Ignacio Massun"
+    arranger = "Arr: Ignacio Massun, Noam Postavsky"
     source = "IMSLP670072-PMLP39822-Mozart_Concierto_K314_-_Score_.pdf"
+    copyright = "CC0 / Public Domain"
 }
 \layout {
     \context { \Score
@@ -473,10 +474,10 @@ MvI_ViolinI_Simplified =  \relative a {
     c8 c4 c4 c4 c8 | % 24
     b8 d8-. d8-. r8 g,8 b8-. b8 -. g8 -. | % 25
     fs8 a8 d,8 fs8 a,='4 <a, e' cs'>4 | % 26
-    <a fs' d'>4 d'8 -\p fs8 -.  a8 -. a8 -. a8 -. a8 -. | % 27
+    <a fs' d'>4 d'8 -\p fs8 a8 -. a8 -. a8 -. a8 -. | % 27
     a8 r8 d8 -\f a8 fs8. a16 g8 e | % 28
     d8 r8 d8 -\p fs8 a8 a8 a8 a8 | % 29
-    a8 r8 d8 a8 -\f fs8. a16 g8 fs | \barNumberCheck #30
+    a8 r8 d8 -\f a8 fs8. a16 g8 fs | \barNumberCheck #30
     fs8 a8 d8 a8 fs8 a8 g8 e | % 31
     d8 -. d8 -. d8. ( \trill cs32 d32 ) fs8 -. r8 r4 | % 32
     a2 ( -\p g2 ) | % 33
@@ -549,9 +550,9 @@ MvI_ViolinI_Simplified =  \relative a {
     fs8 a8 a8 r8 b8 d8 d8 b8 | % 99
     cs8 e8 a,8 cs8 e,=''4 <e, b' gs'>4 | \barNumberCheck #100
     <e cs' a'>4 a8 -\p cs8 -.  e8 -. e8 -. e8 -. e8 -. | % 101
-    e8 r8 a8 e8 -\f cs8. e16 d8 b | % 102
+    e8 r8 a8-\f e8 cs8. e16 d8 b | % 102
     a8 r8 a8 -\p cs8 e8 e8 e8 e8 | % 103
-    e8 r8 a8 e8 -\f cs8 e8 d8 cs | % 104
+    e8 r8 a8 -\f e8 cs8 e8 d8 cs | % 104
     cs8 e8 a8 e8 cs'8 e8 d8 b | % 105
     a8 a,8 a8. ( \trill gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 106
     a4 r4 r2 | % 107
@@ -628,11 +629,11 @@ MvI_ViolinI_Simplified =  \relative a {
     d'8 d,8 d8. ( \trill cs32 d32 ) fs8 -. d8 -. b8 -. gs8 -. | % 178
     <a, a'>2 r2 \fermata | % 179
     <fs' d'>8 -\f <fs d'>4 d'8 <d c'>8 <d c'>4 <d c'>8 | \barNumberCheck #180
-    b'8 d -. d8 r8 g,8 b b8 -. g8 -. | % 181
+    b'8 d d8 r8 g,8 b b8  g8  | % 181
     fs8 a d,=''8 fs a,='4 <a, e' cs'>4 | % 182
-    <a fs' d'>4 d'8 -\p fs -. a8 -. a8 -. a8 -. a8 -. | % 183
+    <a fs' d'>4 d'8 -\p fs a8 -. a8 -. a8 -. a8 -. | % 183
     a8 r8 d8 -\f a8 fs8. a16 g8 e | % 184
-    d8 r8 d8 -\p fs -. a8 a a a | % 185
+    d8 r8 d8 -\p fs a8 a a a | % 185
     a8 r8 d8 -\f a8 fs8 ( a ) g8 fs | % 186
     fs8 a d='''8 ( a ) fs8 ( a )g8 e | % 187
     d8 -. d8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. fs8 -. | % 188
@@ -903,7 +904,7 @@ MvI_ViolinII_Simplified =  \relative a {
     fs4 ( cs4 d4 g4 ) | % 46
     fs8 fs8 a8 a8 b8 b8 a8 g8 | % 47
     fs8 r8 fs8 -\f d8 d'8. fs16 e8 d | % 48
-    d8 fs -. a='' fs -. d8 fs e8 cs | % 49
+    d8 fs a='' fs d8 fs e8 cs | % 49
     d8 -. d8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. fs8 -. | \barNumberCheck #50
     d4 r4 r2 | % 51
     a'1 ~ | % 52
@@ -934,7 +935,7 @@ MvI_ViolinII_Simplified =  \relative a {
     cs8 -\f cs'=''8 cs8 e8 a8 gs a8 a8 | % 77
     gs4 <e, b' gs'>4 e4 r4 | % 78
     R1 | % 79
-    <cs e>1 | \barNumberCheck #80
+    <cs e>1-\p | \barNumberCheck #80
     d2 -\fp b4 ( e4 ) | % 81
     <cs e>1 | % 82
     d2 -\fp b4 ( e4 ) | % 83
@@ -957,8 +958,8 @@ MvI_ViolinII_Simplified =  \relative a {
     cs8 e8 a,='8 cs8 e=''8 cs d8 b | \barNumberCheck #100 a4 r4 r2 | % 101
     r4 cs,8 -\f a8 a'8. cs16 b8 gs | % 102
     a8 r8 r4 r2 | % 103
-    r4 cs,8 -\f a8 a'8 cs -. b8 gs | % 104
-    a8 cs e=''8 cs -. a'8 cs -. b8 gs | % 105
+    r4 cs,8 -\f a8 a'8 cs b8 gs | % 104
+    a8 cs e=''8 cs a'8 cs b8 gs | % 105
     a8 a,8 a8. ( \trill gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 106
     a4 r4 r2 | % 107
     R1 | % 108
@@ -1034,7 +1035,7 @@ MvI_ViolinII_Simplified =  \relative a {
     fs8 d8 d8. ( \trill cs32 d32 ) fs8 -. d8 -. b8 -. gs8 -. | % 178
     <a, a'>2 r2 \fermata | % 179
     <a fs'>8 -\f <a fs'>4 fs'8 <d' a'>8 <d a'>4 <d a'>8 | \barNumberCheck #180
-    g8 b -. b8 r8 e,8 g -. g8 -. e8 -. | % 181
+    g8 b b8 r8 e,8 g  g8  e8  | % 181
     d8 fs8 d8 fs a,='8 fs g8 e | % 182
     d4 r4 r2 | % 183
     r4 fs8 -\f d8 d'8. fs16 e8 cs | % 184
@@ -1097,7 +1098,7 @@ MvI_ViolinIII =  \relative d {
     r8 a'8 a8. ( \trill gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 53
     a4 r4 r2 | % 54
     r4 g'4 ( fs4 cs4 ) | % 55
-    r8 d8 d8. ( \trill cs32 d32 ) fs8 -. d8 a8 -. a -. | % 56
+    r8 d8 d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. a -. | % 56
     a4 r4 r2 | % 57
     R1*7 | \barNumberCheck #64
     r2. e'4 -\p | % 65
@@ -1115,7 +1116,7 @@ MvI_ViolinIII =  \relative d {
     e8 -\f e8 e8 e8 fs8 a8 a8 a8 | % 77
     b4 <e, b'>4 e4 r4 | % 78
     R1 | % 79
-    a,1 ~ | \barNumberCheck #80
+    a,1-\p ~ | \barNumberCheck #80
     a1 | % 81
     a'1 ~ | % 82
     a1 ~ | % 83
@@ -1198,9 +1199,8 @@ MvI_ViolinIII =  \relative d {
     a8 a -\< a a a8 a a a | % 174
     a8 ( fs8 ) -\f d8 -. d8 -. d8 a'4 a8 | % 175
     g8 ( b8 ) a8 a8 a8 a4 a8 | % 176
-    fs8 ( a8 ) g8 g4 g4 g8 | % 177
-    gs8 -. d'8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. b8 -. gs8 -.
-    | % 178
+    fs8[ ( a8 )] g8 g4 g4 g8 | % 177
+    gs8 -. d'8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. b8 -. gs8 -. | % 178
     <a, a'>2 r2 \fermata | % 179
     fs'8 -\f a8 fs8 a8 fs8 a8 fs8 a8 | \barNumberCheck #180
     d,8 d8 d8 d8 b'8 b8 b8 b8 | % 181
@@ -1261,7 +1261,7 @@ MvI_Viola =  \relative d {
     R1*9 | \barNumberCheck #47
     r4 d8 fs8 a8 a8 a8 a8 | % 48
     d4 fs8 fs8 fs8 a8 \orgSimple { a16 g16 fs16 e16 } {a8 fs} | % 49
-    d4 d8. ( \trill cs32 -. -. d32 ) fs8 -. d8 a8 -. fs8 -. | \barNumberCheck #50
+    d4 d8. ( \trill cs32 d32 ) fs8 -. d8-. a8 -. fs8 -. | \barNumberCheck #50
     d4 r4 r2 | % 51
     r4 fs'4 ( e4 -\p d4 ) | % 52
     r8 a'8 a8. ( \trill gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 53
@@ -1282,7 +1282,7 @@ MvI_Viola =  \relative d {
     e4 r4 d4 r4 | % 74
     cs'8 r8 a8 r8 d8 r8 d8 r8 | % 75
     e,8 e8 e8 e8 e8 e8 e8 e8 | % 76
-    e'4. e8 a2 | % 77
+    e'4.-\f e8 a2 | % 77
     gs4 e4 e,4 r4 | % 78
     R1*3 | % 81
     a1 ~ | % 82
@@ -1293,11 +1293,11 @@ MvI_Viola =  \relative d {
     r8 d8 d8 d8 d4 r4 | % 95
     e1 ~ | % 96
     e1 | % 97
-    e4 e8. e16 e4 e4 | % 98
+    e4-\f e8. e16 e4 e4 | % 98
     <d fs>2 <d fs>4 <d fs>8 <d fs>8 | % 99
     e4 e8 e8 e4 e4 | \barNumberCheck #100
     <a, e'>4 r4 r2 | % 101
-    r4 a8 e'8 e8 e8 e8 e8 | % 102
+    r4 a8-\f e'8 e8 e8 e8 e8 | % 102
     <a, e'>8 r8 r4 r2 | % 103
     r4 a8 -\f a8 e'8 e8 e8 e8 | % 104
     e4 a8 a8 e8 e8 e8 e8 | % 105
@@ -1321,7 +1321,7 @@ MvI_Viola =  \relative d {
     a1 ~ | % 118
     a1 ~ | % 119
     a1 | \barNumberCheck #120
-    d1 ~ | % 121
+    d1-\f ~ | % 121
     d4 d4 d4 d4 | % 122
     d1 ~ -\p | % 123
     d4 d4 d4 d4 | % 124
@@ -1390,7 +1390,7 @@ MvI_Viola =  \relative d {
     <fs d'>4 r4 r2 | % 183
     r4 d'8 -\f fs8 a8 a8 a8 a8 | % 184
     d8 r8 r4 r2 | % 185
-    r4 d,,8 fs8 a8 a8 a8 a8 | % 186
+    r4 d,,8-\f fs8 a8 a8 a8 a8 | % 186
     d4 fs8 fs8 fs4 \tag #'original { a16 g16 fs16 e16 } \tag #'simplified { a8 fs } | % 187
     d4 r4 r8 d8 d4 | % 188
     fs8 d8 a8 fs8 d4 r4 \bar "|."
@@ -1441,7 +1441,7 @@ MvI_Cello =  \relative d {
     d8 d8 fs8 fs8 g8 g8 a8 a8 | % 47
     d8 r8 d,8 -\f fs8 a8 a8 a8 a8 | % 48
     d8 a8 fs8 d8 a8 a8 a'8 a8 | % 49
-    d,8 -. d'8 -. d8. ( \trill cs32 ) ( d32 ) fs8 -. d8 -. a8 -. fs8 -. | \barNumberCheck #50
+    d,8 -. d'8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. fs8 -. | \barNumberCheck #50
     d4 r4 r2 | % 51
     R1 | % 52
     r8 a'8 a8. ( \trill -\p gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 53
@@ -1450,7 +1450,7 @@ MvI_Cello =  \relative d {
     r8 d'8 d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. fs8 -. | % 56
     d4 r4 r2 | % 57
     R1*7 | \barNumberCheck #64
-    r8 e'8 ( -\p ds8 e8 ) e,8 gs8 -. b8 -. gs8 -. | % 65
+    r8 e'8 ( -\p ds8 e8 ) e,8 -. gs8 -. b8 -. gs8 -. | % 65
     e8 e8 e8 e8 e4 r4 | % 66
     e8 e8 e8 e8 e4 r4 | % 67
     e8 r8 e8 r8 e8 r8 e8 r8 | % 68
@@ -1467,7 +1467,7 @@ MvI_Cello =  \relative d {
     R1 | % 79
     a8 -\p a8 a8 a8 a8 a8 a8 a8 | \barNumberCheck #80
     a8 -\fp a8 a8 a8 a8 a8 a8 a8 | % 81
-    a8 -\p a8 a8 a8 a8 a8 a8 a8 | % 82
+    a8 a8 a8 a8 a8 a8 a8 a8 | % 82
     a8 -\fp a8 a8 a8 a8 a8 a8 a8 | % 83
     a4 r4 r2 | % 84
     R1*6 | \barNumberCheck #90
@@ -1672,7 +1672,7 @@ MvII_ViolinI =  \relative g' {
     cs8 ( c8 ) as16 ( -\< b16 c16 cs16 d16 -\f ds16 e16 c16 ) |
     \barNumberCheck #10
     b4 ( a4 ) r4 | % 11
-    b8 -\p b8 b8 b8 d8 d8 | % 12
+    b8 -\fp b8 b8 b8 d8 d8 | % 12
     r8 d8 d8 d8 d8 d8 | % 13
     r8 fs,8 fs8 fs8 fs8 fs8 | % 14
     r8 g8 g8 g8 g8 g8 | % 15
@@ -1696,7 +1696,7 @@ MvII_ViolinI =  \relative g' {
     b8 b8 cs8 cs8 d8 d8 | % 33
     b8. g16 fs16 ( a16 g16 fs16 ) g16 ( a16 b16 cs16 ) | % 34
     cs8 ( d8 ) d8 d'8 ( -\f cs8 c8 ) | % 35
-    b8 d,8 e8 e8 a,8 a8 | % 36
+    b8 d,8-\p e8 e8 a,8 a8 | % 36
     a8 a8 a8 a8 a8 a8 | % 37
     r8 b8 b8 b8 b8 b8 | % 38
     r8 d8 d8 d8 d8 d8 | % 39
@@ -1769,7 +1769,7 @@ MvII_ViolinII =  \relative g' {
     b8 ( -\p c8 ) b8 b,8 c8 gs'8 | % 9
     a8 ef8 ( d8 ) r8 r8 c16 ( a'16 ) | \barNumberCheck #10
     g4 ( fs4 ) r4 | % 11
-    g8 g8 g8 g8 g8 g8 | % 12
+    g8 -\fp g8 g8 g8 g8 g8 | % 12
     r8 fs8 fs8 fs8 fs8 fs8 | % 13
     r8 d8 d8 d8 d8 d8 | % 14
     r8 d'8 d8 d8 d8 d8 | % 15
@@ -1899,10 +1899,10 @@ MvII_ViolinIII =  \relative g' {
     e4 r4 r4 | \barNumberCheck #20
     R2.*6 | % 26
     % NOTE: swapping with Massun's violaII here.
-    a,2. ~ | a2. ~ | a2. ~ | a2. |
+    a,2. -\p ~ | a2. ~ | a2. ~ | a2. |
     a4 r r | \barNumberCheck #31
     R2.*3 | % 34
-    r4 r8 fs'8 ( -\f g8 a8 ) | % 35
+    r4. fs'8 ( -\f g8 a8 ) | % 35
     g4 r4 r4 | % 36
     R2. | % 37
     r8 g8 -\p g8 g8 g8 g8 | % 38
@@ -1910,7 +1910,7 @@ MvII_ViolinIII =  \relative g' {
     r8 a8 -\< a8 a8 a8 a8 | \barNumberCheck #40
     a8 -\f a4 a4 d8 | % 41
     cs8 cs4 cs4 cs8 | % 42
-    c8 c4 c4 c8 | % 43
+    c?8 c4 c4 c8 | % 43
     b8 b4 b4 b8 | % 44
     bf8 ef,8 ef8 ef8 ef8 ef8 | % 45
     d2.:8 | % 46
@@ -1919,13 +1919,13 @@ MvII_ViolinIII =  \relative g' {
     r16 fs16 ( es16 fs16 ) r16 fs16 -. fs16 ( a16 ) r16 g16 -. g16 ( b16) | % 49
     a8 r8 fs8 r8 c8 r8 | \barNumberCheck #50
     b4 -\f d4 b4 | % 51
-    g'4 ( -\f c4 e4 ) | % 52
+    g'4 ( c4 e4 ) | % 52
     g,8 g8 g8 g8 d8 d8 | % 53
     c4 ( b4 ) r4 | % 54
     R2.*2 | % 56
     <d d'>2. -\fp | % 57
     R2.*8 | \barNumberCheck #65
-    r4 fs8 r8 d8 r8 | % 66
+    r4 fs8-\p r8 d8 r8 | % 66
     d8 r8 b8 r8 g'8 r8 | % 67
     d4 r4 r4 | % 68
     R2.*4 | % 72
@@ -1953,13 +1953,13 @@ MvII_ViolinIII =  \relative g' {
 
 MvII_Viola =  \relative g' {
     \clef "alto" \time 3/4 \key g \major | % 1
-    g4 d4 b4 | % 2
+    g4-\f d4 b4 | % 2
     g2. | % 3
     d2. | % 4
     r8 d'8 g8 d8 b8 g8 | % 5
     R2.*2 | % 7
     e'2. | % 8
-    r4 g,4 ~ g8 r8 | % 9
+    r4 g,4 -\p ~ g8 r8 | % 9
     a'8 ( fs8 ) g8 r8 b,8 c8 | \barNumberCheck #10
     d16 ( cs16 d16 cs16 ) d8 -\f c8 b8 a8 | % 11
     g4 r4 r4 | % 12
@@ -1992,7 +1992,7 @@ MvII_Viola =  \relative g' {
     g8 g8 g8 g8 d8 d8 | % 53
     r8 d8 -. g8 -. d8 -. b8 -. g8 -. | % 54
     R2.*2 | % 56
-    <g g'>2. | % 57
+    <g g'>2.-\fp | % 57
     R2.*7 | \barNumberCheck #64
     d2. ~ | % 65
     d2. ~ | % 66
@@ -2036,8 +2036,7 @@ MvII_Cello =  \relative g {
     a8 ( fs8 ) g8 r8 b,8 c8 | \barNumberCheck #10
     d16 ( cs16 d16 cs16 ) d8 -\f c8 b8 a8 | % 11
     g4 r4 r4 | % 12
-    R2. | % 13
-    R2.*5 | % 18
+    R2.*6 | % 18
     r8 g'8 -\f g8. ( \trill fs32 g32 ) b8 ds,8 | % 19
     e4 r4 r4 | \barNumberCheck #20
     R2.*6 | % 26
@@ -2063,7 +2062,7 @@ MvII_Cello =  \relative g {
     d8 r8 d8 r8 d8 r8 | % 48
     d8 r8 d8 r8 d8 r8 | % 49
     d8 r8 d8 r8 d8 r8 | \barNumberCheck #50
-    g8 g8 -\f d8 d8 b8 b8 | % 51
+    g8-\f g8 d8 d8 b8 b8 | % 51
     c8 c8 c8 c8 c8 c8 | % 52
     d8 d8 d8 d8 d8 d8 | % 53
     r8 d8 -. g8 -. d8 -. b8 -. g8 -. | % 54
@@ -2365,7 +2364,7 @@ MvIII_ViolinI =  \relative a' {
     ds16 ( e16 ) g16 -. b16 -. a16 ( fs16 ) g16 -. e16 -. | % 24
     } \tag #'simplified {
     g=''8 | % 23
-    ds8 g -. a8 g -. | % 24
+    ds8 g a8 g | % 24
     }
     d=''4 d8 -. d8 -. | % 25
     e8 ( \trill d8 ) e8 -. e8 -. | % 26
@@ -2375,10 +2374,10 @@ MvIII_ViolinI =  \relative a' {
     e8 ( \trill d8 ) e8 -. e8 -. | \barNumberCheck #30
     fs8 ( \trill e8 ) g8 -. g8 -. | % 31
     fs4 \orgSimple { g=''16 ( fs16 e16 d16 ) } { g=''8( e) } | % 32
-    cs=''8 \orgSimple { e16 -. -\f fs16 -. } { e8-. } g8 r8 | % 33
-    r8 \orgSimple { e16 -. fs16 -. } {e8-.} g8 r8 | % 34
-    r8 \orgSimple {cs16 -. d16 -. } {cs8-.} e8 r8 | % 35
-    r8 \orgSimple {cs16 -. d16 -.} {cs8-.} e8 r8 | % 36
+    cs=''8 \orgSimple { e16 -. -\f fs16 -. } { e8-\f } g8 r8 | % 33
+    r8 \orgSimple { e16 -. fs16 -. } {e8} g8 r8 | % 34
+    r8 \orgSimple {cs16 -. d16 -. } {cs8} e8 r8 | % 35
+    r8 \orgSimple {cs16 -. d16 -.} {cs8} e8 r8 | % 36
     R2 | % 37
     r8 a,8 -. -\p a8 -. a8 -. | % 38
     a8. ( fs16 ) g8. ( e16 ) | % 39
@@ -2390,10 +2389,10 @@ MvIII_ViolinI =  \relative a' {
     d4 -\f d'8 d8 | % 45
     e,4 \orgSimple { g16 ( a16 ) g16 ( a16 ) } {g8( a) } | % 46
     fs4 d'8 d8 | % 47
-    e,4 \orgSimple { g16 ( fs16 ) g16 -. e16 -.} {fs8 e-.} | % 48
-    d8 \orgSimple { d,='16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } { d8-. fs g-. } | % 49
+    e,4 \orgSimple { g16 ( fs16 ) g16 -. e16 -.} {fs8 e} | % 48
+    d8 \orgSimple { d,='16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } { d8 fs g } | % 49
     a='8 fs'8 -. g8 -. e8 -. | \barNumberCheck #50
-    a8 \orgSimple { d,,='16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-. } | % 51
+    a8 \orgSimple { d,,='16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g } | % 51
     a='8 -. fs'8 -. g8 -. e8 -. | % 52
     d8 -. fs8 -. g8 -. e8 -. | % 53
     d8 -. fs8 -. g8 -. e8 -. | % 54
@@ -2431,7 +2430,7 @@ MvIII_ViolinI =  \relative a' {
     gs4. \orgSimple { b16 ( a16 ) } {b8} | % 86
     gs8 gs8 a8 e'8 | % 87
     e4 r4 | % 88
-    r4 r8 a,8 | % 89
+    r4. a,8 | % 89
     a4 gs8 e8 -\f | \barNumberCheck #90
     \orgSimple {e'16 ( ds16 ) e16 ( ds16 )} {e8( ds)} e8 r8 | % 91
     d=''8 -\p d4 d8 ~ | % 92
@@ -2484,16 +2483,16 @@ MvIII_ViolinI =  \relative a' {
     a4 \tOrigGrace { b8 } a8 \orgSimple { g16 -. fs16 -. | \barNumberCheck #140
     e16 ( \trill ds16 ) e16 -. fs16 -. g16 ( e16 ) fs16 -. d16 -. | % 141
     e16 ( cs16 ) b16 -. a16 -. a'16 ( fs16 ) g16 ( e16 ) | } % 142
-    { g=''8 -. | \barNumberCheck #140
-    e8 fs -. g fs-. | % 141
-    e8 a,-. a'( g) | } % 142
+    { g=''8  | \barNumberCheck #140
+    e8 fs g fs | % 141
+    e8 a, a'( g) | } % 142
     d=''8 r8 e8. ( \trill d32 e32 ) | % 143
     fs8 r8 fs8 -. g8 -. | % 144
     a8 -. b8 -. cs8 -. d8 -. | % 145
     a4 \tOrigGrace { b8 } a8 \orgSimple { g16 -. fs16 -. | % 146
     ds16 ( e16 ) g16 -. b16 -. a16 ( fs16 ) g16 -. e16 -. | } % 147
-    { g=''8 -. | % 146
-    g8 b -. a g -. | } % 147
+    { g=''8  | % 146
+    g8 b a g | } % 147
     d=''8 \orgSimple {fs16 -. g16 -.} {fs8} a8 r8 | % 148
     r8 \orgSimple { fs16 -. g16 -.} {fs8} a8 r8 | % 149
     r8 \orgSimple { a16 -. b16 -.} {a8} c8 r8 | \barNumberCheck #150
@@ -2512,7 +2511,7 @@ MvIII_ViolinI =  \relative a' {
     \orgSimple { b16 ( g16 ) b16 -. g16 -. } {b8 g-.} d'4 | % 164
     R2 | % 165
     r8 d,8 -. d8 -. d8 -. | % 166
-    \orgSimple {d16 ( b16 ) d16 -. b16 -. c16 ( a16 ) c16 -. a16-. } {d8 b-. c a-.} | % 167
+    \orgSimple {d16 ( b16 ) d16 -. b16 -. c16 ( a16 ) c16 -. a16-. } {d8 b c a} | % 167
     b8 b8 b8 b8 | % 168
     b8 b8 b8 b8 | % 169
     c8 c8 c8 c8 | \barNumberCheck #170
@@ -2599,12 +2598,12 @@ MvIII_ViolinI =  \relative a' {
     g2 ~ -\fp | % 255
     g8 r8 r4 | % 256
     R2 | % 257
-    \orgSimple {a16 ( fs16 ) a16 -. fs16 -. g16 ( e16 ) g16 -. e16 -.} {a8 fs-. g8 e-.} | % 258
+    \orgSimple {a16 ( fs16 ) a16 -. fs16 -. g16 ( e16 ) g16 -. e16 -.} {a8 fs g8 e} | % 258
     fs8 r8 fs8 -. g8 -. | % 259
     a8 -. b8 -. cs8 -. d8 -. | \barNumberCheck #260
     a4 r8 a8 | % 261
     a4. a8 | % 262
-    a8 ( cs8 ) \orgSimple { a'16 ( -\f fs16 ) g16 -. e16 -.} {a8-\f g-.} | % 263
+    a8 ( cs8 ) \orgSimple { a'16 ( -\f fs16 ) g16 -. e16 -.} {a8-\f g} | % 263
     d8 r8 e8. ( \trill d32 e32 ) | % 264
     fs8 r8 fs8 -. g8 -. | % 265
     a8 -. b8 -. cs8 -. d8 -. | % 266
@@ -2612,8 +2611,8 @@ MvIII_ViolinI =  \relative a' {
     a8 a8 \orgSimple { cs16 ( d16 ) cs16 ( d16 ) } {cs8( d)} | % 268
     a4 \tOrigGrace { b8 } a8 \orgSimple {g16 -. -\f fs16 -. | % 269
     ds16 ( e16 ) g16 -. b16 -. a16 ( fs16 ) g16 -. e16 -. | \barNumberCheck #270
-    } { g8-.-\f | % 269
-    g8 b-. a g -. | \barNumberCheck #270 }
+    } { g8-\f | % 269
+    g8 b a g | \barNumberCheck #270 }
     d=''4 r4 | % 271
     b8 -\p b8 d8 d8 | % 272
     cs8 cs8 cs8 d8 | % 273
@@ -2622,9 +2621,9 @@ MvIII_ViolinI =  \relative a' {
     e,8 e8 g8 g8 | % 276
     fs8 fs8 fs8 g8 | % 277
     fs8 g8 fs8 g8 | % 278
-    fs8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-.-\f fs g-.} | % 279
+    fs8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-\f fs g} | % 279
     a8 -. fs'8 -. g8 -. e8 -. | \barNumberCheck #280
-    a8 \orgSimple { d,,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 281
+    a8 \orgSimple { d,,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 281
     a8 -. fs'8 -. g8 -. e8 -. | % 282
     d8 -. fs8 -. g8 -. e8 -. | % 283
     d8 -. fs8 -. g8 -. e8 -. | % 284
@@ -2661,7 +2660,7 @@ MvIII_ViolinII =  \relative fs' {
     <a fs' d'>8 r8 d8 -. e8 -. | % 21
     fs8 -. g8 -. a8 -. g8 -. | % 22
     fs4 \tOrigGrace { g'8 } fs8 \orgSimple { e16 d16 } {e8} | % 23
-    b8 \orgSimple { e16 -. g16 -. fs16 ( d16 ) e16 -. cs16 -. } {e8-. d cs-.} | % 24
+    b8 \orgSimple { e16 -. g16 -. fs16 ( d16 ) e16 -. cs16 -. } {e8 d cs} | % 24
     d4 a8 a8 -. -. | % 25
     cs8 ( \trill d8 ) cs8 -. cs8 -. | % 26
     d8 ( \trill cs8 ) e,8 -. -\p e8 -. | % 27
@@ -2670,10 +2669,10 @@ MvIII_ViolinII =  \relative fs' {
     cs8 ( \trill d8 ) cs8 -. cs8 -. | \barNumberCheck #30
     d8 ( \trill cs8 ) e,8 -. e8 -. | % 31
     fs4 ( d8 ) a'8 | % 32
-    a8 \orgSimple { cs16 -. -\f d16 -. } {cs8-. -\f} e8 r8 | % 33
+    a8 \orgSimple { cs16 -. -\f d16 -. } {cs8 -\f} e8 r8 | % 33
     r8 \orgSimple { cs16-. d16-. } {cs8} e8 r8 | % 34
-    r8 \orgSimple { e16 -. fs16 -. } {e8-.} g8 r8 | % 35
-    r8 \orgSimple { e16 -. fs16 -. } {e8-.} g8 r8 | % 36
+    r8 \orgSimple { e16 -. fs16 -. } {e8} g8 r8 | % 35
+    r8 \orgSimple { e16 -. fs16 -. } {e8} g8 r8 | % 36
     R2*2 | % 38
     r8 a,8 -. -\p a8 -. a8 -. | % 39
     a8. ( fs16 ) g8. ( e16 ) | \barNumberCheck #40
@@ -2692,9 +2691,9 @@ MvIII_ViolinII =  \relative fs' {
     d8 d a a | % 47
     b8 b cs cs | % 48
     }
-    d8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 } { d8-. fs g-.} | % 49
+    d8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 } { d8 fs g} | % 49
     a8 d8 -. e8 -. cs8 -. | \barNumberCheck #50
-    fs8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 51
+    fs8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 51
     a8 -. d8 -. e8 -. cs8 | % 52
     d8 -. -. fs8 -. g8 -. e8 -. | % 53
     d8 -. fs8 -. g8 -. e8 -. | % 54
@@ -2732,7 +2731,7 @@ MvIII_ViolinII =  \relative fs' {
     d2 ~ | % 86
     d8 e,8 fs8 gs8 | % 87
     a4 r4 | % 88
-    r4 r8 a,8 | % 89
+    r4. a,8 | % 89
     \orgSimple { e'16 ( ds16 ) e16 ( ds16 ) } {e8( ds)} e8 e8 -\f | \barNumberCheck #90
     \orgSimple { e'16 ( ds16 ) e16 ( ds16 ) } {e8( ds)} e8 r8 | % 91
     <gs, b>8 -\p <gs b>4 <gs b>8 ~ ~ | % 92
@@ -2783,7 +2782,7 @@ MvIII_ViolinII =  \relative fs' {
     <a,,= fs' d'>8 -\f r8 <a e' cs'>8 r8 | % 137
     <a fs' d'>8 r8 d'8 -. e8 -. | % 138
     fs8 -. g8 -. a8 -. g8 -. | % 139
-    fs4 \tOrigGrace { g8 } fs8 \orgSimple { e16 -. d16 -.} {e8-.} | \barNumberCheck #140
+    fs4 \tOrigGrace { g8 } fs8 \orgSimple { e16 -. d16 -.} {e8} | \barNumberCheck #140
     a=''8 a4 a8 | % 141
     cs,8 ( e8 ) \orgSimple {fs16 ( d16 ) e16 ( cs16 )} {fs8( e)} | % 142
     d8 r8 \orgSimple { g,16 ( a16 ) g16 ( a16 ) } {g8( a)} | % 143
@@ -2791,8 +2790,8 @@ MvIII_ViolinII =  \relative fs' {
     d8 -. d8 -. d8 -. d8 -. | % 145
     d4 \tOrigGrace { b''8 } a8 \orgSimple {g16 -. fs16 -. | % 146
     ds16 ( e16 ) e16 -. g16 -. fs16 ( d16 ) e16 -. cs16 | } % 147
-    {g'=''8 -. | % 146
-    e8 g -. fs e -. | } % 147
+    {g'=''8 | % 146
+    e8 g fs e | } % 147
     d8 \orgSimple { d16 -. e16 -. } {d8-.} fs8 r8 | % 148
     r8 \orgSimple { d16 -. e16 -. } {d8-.} fs8 r8 | % 149
     r8 \orgSimple { fs16 -. g16 -.} {fs8-.} a8 r8 | \barNumberCheck #150
@@ -2823,7 +2822,7 @@ MvIII_ViolinII =  \relative fs' {
     fs8 fs8 fs8 fs8 | % 177
     g8 g8 g8 g8 | % 178
     g8 g8 g8 gs8 | % 179
-    \orgSimple { a16 ( gs16 ) a16 -. gs16 -. } {a8 gs-.} a8 a,8 -\f | \barNumberCheck #180
+    \orgSimple { a16 ( gs16 ) a16 -. gs16 -. } {a8 gs} a8 a,8 -\f | \barNumberCheck #180
     \orgSimple {a'16 ( gs16 ) a16 ( gs16 ) } {a8( gs)} a8 r8 | % 181
     <cs, e>8 -\p <cs e>4 <cs e>8 ~ ~ | % 182
     <cs e>8 <cs e>4 <cs e>8 | % 183
@@ -2835,7 +2834,7 @@ MvIII_ViolinII =  \relative fs' {
     d8 d4 d8 | % 189
     g8 fs8 e8 a8 | \barNumberCheck #190
     g4 r8 g8 | % 191
-    fs8 e8 d8 -. g8 | % 192
+    fs8 e8 d8 g8 | % 192
     fs4 r8 fs8 | % 193
     e4 r8 gs8 | % 194
     a4 r8 cs,8 | % 195
@@ -2902,12 +2901,12 @@ MvIII_ViolinII =  \relative fs' {
     cs2 ~ -\fp | % 255
     cs8 r8 r4 | % 256
     R2 | % 257
-    \orgSimple {fs16 ( d16 ) fs16 -. d16 -. e16 ( cs16 ) e16 -. cs16 -. } {fs8 d-. e cs-.} | % 258
+    \orgSimple {fs16 ( d16 ) fs16 -. d16 -. e16 ( cs16 ) e16 -. cs16 -. } {fs8 d e cs} | % 258
     d8 r8 d8 -. e8 -. | % 259
     fs8 -. g8 -. a8 -. g8 -. | \barNumberCheck #260
     fs4 r8 fs8 | % 261
     g4 ( e8 ) d8 | % 262
-    e8 ( cs8 ) \orgSimple { fs'16 ( -\f d16 ) e16 -. cs16 } {fs8-\f e-.} | % 263
+    e8 ( cs8 ) \orgSimple { fs'16 ( -\f d16 ) e16 -. cs16 } {fs8-\f e} | % 263
     d8 r8 cs8. ( \trill b32 cs32 ) | % 264
     \orgSimple {d16 ( cs16 ) d16 -. cs16 -. } {d8 cs-.} d8 -. d8 -. | % 265
     d8 -. d8 -. d8 -. d8 -. | % 266
@@ -2915,8 +2914,8 @@ MvIII_ViolinII =  \relative fs' {
     d8 d8 d8 d8 | % 268
     d4 \tOrigGrace { b'8 } a8 \orgSimple { g16 -. -\f fs16 -. | % 269
     ds16 ( e16 ) e16 -. g16 -. fs16 ( d16 ) e16 -. cs16 -. | \barNumberCheck #270 }
-    { g'=''8-. -\f | % 269
-    e8 g-. fs e-. | \barNumberCheck #270 }
+    { g'=''8 -\f | % 269
+    e8 g fs e | \barNumberCheck #270 }
     d4 r4 | % 271
     fs,8 -\p fs8 b8 b8 | % 272
     a8 a8 a8 <gs b>8 | % 273
@@ -2926,9 +2925,9 @@ MvIII_ViolinII =  \relative fs' {
     d8 d8 d8 <cs e>8 | % 277
     d8 <cs e>8 d8 <cs e>8 | % 278
     d8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 -. g16 -. | } % 279
-    { d8 -. -\f fs g-. | } % 279
+    { d8 -\f fs g | } % 279
     a8 -. d8 -. e8 -. cs8 -. | \barNumberCheck #280
-    fs8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 281
+    fs8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 281
     a8 -. d8 -. e8 -. cs8 -. | % 282
     d8 -. fs8 -. g8 -. e8 -. | % 283
     d8 -. fs8 -. g8 -. e8 -. | % 284
@@ -2940,7 +2939,7 @@ MvIII_ViolinIII =  \relative d' {
     \time 2/4 \key d \major \partial 4 r4 | % 1
     d8 -\p r8 a8 r8 | % 2
     \orgSimple {d,8} {a'8} r8 d='8 -. d8 -. | % 3
-    d8 d8 d8 d8 | % 4
+    d8-. d8-. d8-. d8-. | % 4
     d4 r8 d8 | % 5
     cs4. ( d8 ) | % 6
     a4 r4 | % 7
@@ -2970,9 +2969,9 @@ MvIII_ViolinIII =  \relative d' {
     fs8 ( \trill e8 ) cs8-. cs-. | % 31 (Massun had b8 b8 in latter half)
     d4 ( a4 ) | % 32
     a4 r8 \orgSimple { e'16 -. d16 -. -\f } {e8-. -\f} | % 33
-    cs8 r8 r8 \orgSimple { e16 -. d16 -.} {e8-.} | % 34
-    cs8 r8 r8 \orgSimple { g'16 -. fs16 -. } {g8-.} | % 35
-    e8 r8 r8 \orgSimple { g16 -. fs16 -.} {g8-.} | % 36
+    cs8 r8 r8 \orgSimple { e16 -. d16 -.} {e8} | % 34
+    cs8 r8 r8 \orgSimple { g'16 -. fs16 -. } {g8} | % 35
+    e8 r8 r8 \orgSimple { g16 -. fs16 -.} {g8} | % 36
     e8 a8 a8 a8 | % 37
     a4 r4 | % 38
     R2 | % 39
@@ -2985,9 +2984,9 @@ MvIII_ViolinIII =  \relative d' {
     g8 g8 a8 a8 | % 46
     b8 b8 fs8 fs8 | % 47
     g8 g8 a8 a8 | % 48
-    d,8 \orgSimple { d16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 49
+    d,8 \orgSimple { d16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 49
     a8 a8 -. a8 -. a8 -. | \barNumberCheck #50
-    a8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 51
+    a8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 51
     a8 a8 a8 a8 | % 52
     d,8 -. fs8 -. g8 -. e8 -. | % 53
     d8 -. fs8 -. g8 -. e8 -. | % 54
@@ -3176,9 +3175,9 @@ MvIII_ViolinIII =  \relative d' {
     \orgSimple { g,8 g8 } {b b}  a8 a8 | % 276
     a2:8 | % 277
     a2:8 | % 278
-    a8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-.-\f fs g-.} | % 279
+    a8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-\f fs g} | % 279
     a8 a8 a8 a8 | \barNumberCheck #280
-    a8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 281
+    a8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 281
     a8 a8 a8 a8 | % 282
     d,8 -. fs8 -. g8 -. e8 -. | % 283
     d8 -. fs8 -. g8 -. e8 -. | % 284
@@ -3190,19 +3189,19 @@ MvIII_Viola =  \relative d' {
     \clef "alto" \time 2/4 \key d \major \partial 4 r4 | % 1
     d8 -\p r8 a8 r8 | % 2
     d,8 r8 d'8 -. d8 -. | % 3
-    d8 d8 d8 d8 | % 4
+    d8-. d8-. d8-. d8-. | % 4
     d4 r8 d8 | % 5
     cs4. ( d8 ) | % 6
     a4 r4 | % 7
     d8 r8 a8 r8 | % 8
-    d,8 r8 d'8 d8 | % 9
-    d8 d8 d8 d8 | \barNumberCheck #10
+    d,8 r8 d'8-. d8-. | % 9
+    d8-. d8-. d8-. d8-. | \barNumberCheck #10
     d4 r8 fs,8 | % 11
     g4 a8 a8 | % 12
     d,4 r4 | % 13
     <d' fs>8 -\f r8 <a e'>8 r8 | % 14
-    fs'8 r8 d8 d8 | % 15
-    d8 d8 d8 d8 | % 16
+    fs'8 r8 d8-. d8-. | % 15
+    d8-. d8-. d8-. d8-. | % 16
     d4 r4 | % 17
     g4. fs8 | % 18
     e4 r4 | % 19
@@ -3443,14 +3442,14 @@ MvIII_Cello =  \relative d' {
     \clef "bass" \time 2/4 \key d \major \partial 4 r4 | % 1
     R2*12 | % 13
     d8 -\f r8 a8 r8 | % 14
-    d,8 r8 d8 d8 | % 15
-    d8 d8 d8 d8 | % 16
+    d,8 r8 d8-. d8-. | % 15
+    d8-. d8-. d8-. d8-. | % 16
     d4 r8 d'8 | % 17
     cs4. d8 | % 18
     a4 r4 | % 19
     d8 r8 a8 r8 | \barNumberCheck #20
     d,8 r8 d8 -. d8 -. | % 21
-    d8 d8 -. -. d8 -. d8 -. | % 22
+    d8-. d8 -. -. d8 -. d8 -. | % 22
     d4 -. r8 d'8 | % 23
     g,4 a8 a,8 | % 24
     d4 r4 | % 25
@@ -3459,10 +3458,10 @@ MvIII_Cello =  \relative d' {
     a4 r4 | % 29
     R2*2 | % 31
     r8 d,8 -. d'8 -. fs,8 -. | % 32
-    a4 r8 \orgSimple { cs16 -. b16 -. -\f } {cs8-. -\f} | % 33
-    a8 r8 r8 \orgSimple { cs16 -. b16 -. } {cs8-.} | % 34
-    a8 r8 r8 \orgSimple { e'16 -. d16 -. } {e8-.} | % 35
-    cs8 r8 r8 \orgSimple { e16 -. d16 -. } {e8-.} | % 36
+    a4 r8 \orgSimple { cs16 -. b16 -. -\f } {cs8 -\f} | % 33
+    a8 r8 r8 \orgSimple { cs16 -. b16 -. } {cs8} | % 34
+    a8 r8 r8 \orgSimple { e'16 -. d16 -. } {e8} | % 35
+    cs8 r8 r8 \orgSimple { e16 -. d16 -. } {e8} | % 36
     cs8 r8 r4 | % 37
     R2 | % 38
     r4 cs4 ( | % 39
@@ -3476,12 +3475,12 @@ MvIII_Cello =  \relative d' {
     g8 g8 a8 a8 | % 46
     b8 b8 fs8 fs8 | % 47
     g8 g8 a8 a8 | % 48
-    d,8 \orgSimple { d16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 49
+    d,8 \orgSimple { d16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 49
     a4 r4 | \barNumberCheck #50
-    r8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-. fs g-.} | % 51
+    r8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 51
     a4 r4 | % 52
-    d,8 fs8 -. -. g8 -. e8 -. | % 53
-    d8 -. -. fs8 g8 -. e8 -. | % 54
+    d,8 -. fs8 -. g8 -. e8 -. | % 53
+    d8 -. fs8-. g8 -. e8 -. | % 54
     d4 d'4 | % 55
     d,4 r4 | % 56
     R2*17 | % 73
@@ -3520,7 +3519,7 @@ MvIII_Cello =  \relative d' {
     a4 r4 | % 142
     d,8 r8 a'8 r8 | % 143
     d8 r8 d,8 -. e8 -. | % 144
-    fs8 g8 -. a8 -. g8 -. | % 145
+    fs8-. g8 -. a8 -. g8 -. | % 145
     fs4 r8 fs8 | % 146
     g4 a8 a,8 | % 147
     d4 r8 \orgSimple { fs16 -. e16 -. } {fs8-.} | % 148
@@ -3606,9 +3605,9 @@ MvIII_Cello =  \relative d' {
     g8 r8 a8 r8 | % 276
     d,4. a'8 | % 277
     d,8 a'8 d,8 a'8 | % 278
-    d,8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 g16 -. } {d8-.-\f fs g-.} | % 279
+    d,8 \orgSimple { d16 -. -\f e16 -. fs16 ( e16 ) fs16 g16 -. } {d8-\f fs g} | % 279
     a4 r4 | \barNumberCheck #280
-    r8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8-.fs g-.} | % 281
+    r8 \orgSimple { d,16 -. e16 -. fs16 ( e16 ) fs16 -. g16 -. } {d8 fs g} | % 281
     a4 r4 | % 282
     d,8 -. fs8 -. g8 -. e8 -. | % 283
     d8 -. fs8 -. g8 -. e8 -. | % 284
@@ -3621,6 +3620,8 @@ MvIII_Cello =  \relative d' {
 %% Score
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
+
 \book {
 
     \paper {
@@ -3628,34 +3629,34 @@ MvIII_Cello =  \relative d' {
         system-separator-markup = \markup {
             \hspace #2 \slashSeparator
         }
+        left-margin = 8\mm
+        indent = 5\mm
     }
 
 
 \score {
     \header { piece = "Allegro" }
     <<
-        \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe" }
-        <<
-            \set Staff.instrumentName = "Solo Oboe"
-            \set Staff.shortInstrumentName = "Ob."
-            \transpose d c \MvI_OboeSolo
-        >>
+        \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe"
+                           instrumentName = \oboeNameMkup
+                           shortInstrumentName = "Ob."}
+        { \transpose d c \MvI_OboeSolo }
         \new StaffGroup <<
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin I"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
                 \transpose d c \MvI_ViolinI_Simplified
             >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin II"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
                 \set Staff.shortInstrumentName = "V2"
                 \transpose d c \MvI_ViolinII_Simplified
             >>
             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
             <<
-                \set Staff.instrumentName = "Violin III"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
                 \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
                 \transpose d c \MvI_ViolinIII
             >>
@@ -3673,47 +3674,48 @@ MvIII_Cello =  \relative d' {
             >>
         >>
     >>
-    \layout {}
+    \layout {  #(layout-set-staff-size 14) }
     \midi { \tempo 4 = 120 }
 }
 
 \score {
     \header { piece = "Andante ma non troppo" }
     <<
-        \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe" }
+        \new Staff
+             \with { midiPanPosition = #0 midiInstrument = "oboe"
+                     instrumentName = \oboeNameMkup }
         <<
-            \set Staff.instrumentName = "Solo Oboe"
             \set Staff.shortInstrumentName = "Ob."
             \transpose d c \MvII_OboeSolo
         >>
         \new StaffGroup <<
             % \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
             % <<
-            %     \set Staff.instrumentName = "Violin I"
+            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
             %     \set Staff.shortInstrumentName = "V1"
             %     \keepWithTag #'original { \transpose d c \MvII_ViolinI }
             % >>
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin I"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
                 \keepWithTag #'simplified { \transpose d c \MvII_ViolinI }
             >>
             % \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
             % <<
-            %     \set Staff.instrumentName = "Violin II"
+            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
             %     \set Staff.shortInstrumentName = "V2"
             %     \keepWithTag #'original { \transpose d c \MvII_ViolinII }
             % >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin II"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
                 \set Staff.shortInstrumentName = "V2"
                 \keepWithTag #'simplified { \transpose d c \MvII_ViolinII }
             >>
             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
             <<
-                \set Staff.instrumentName = "Violin III"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
                 \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
                 \transpose d c \MvII_ViolinIII
             >>
@@ -3731,7 +3733,7 @@ MvIII_Cello =  \relative d' {
             >>
         >>
     >>
-    \layout {}
+    \layout {  #(layout-set-staff-size 14) }
     \midi { \tempo 4 = 60 }
 }
 
@@ -3740,38 +3742,38 @@ MvIII_Cello =  \relative d' {
     <<
         \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe" }
         <<
-            \set Staff.instrumentName = "Solo Oboe"
+            \set Staff.instrumentName = \oboeNameMkup
             \set Staff.shortInstrumentName = "Ob."
             \transpose d c \MvIII_OboeSolo
         >>
         \new StaffGroup <<
             % \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
             % <<
-            %     \set Staff.instrumentName = "Violin I"
+            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
             %     \set Staff.shortInstrumentName = "V1"
             %     \keepWithTag #'original { \transpose d c \MvIII_ViolinI }
             % >>
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin I"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
                 \keepWithTag #'simplified { \transpose d c \MvIII_ViolinI }
             >>
             % \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
             % <<
-            %     \set Staff.instrumentName = "Violin II"
+            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
             %     \set Staff.shortInstrumentName = "V2"
             %     \keepWithTag #'original { \transpose d c \MvIII_ViolinII }
             % >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
-                \set Staff.instrumentName = "Violin II"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
                 \set Staff.shortInstrumentName = "V2"
                 \keepWithTag #'simplified { \transpose d c \MvIII_ViolinII }
             >>
             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
             <<
-                \set Staff.instrumentName = "Violin III"
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
                 \set Staff.shortInstrumentName = \markup { "V3" }
                 \keepWithTag #'simplified { \transpose d c \MvIII_ViolinIII }
             >>
@@ -3789,7 +3791,7 @@ MvIII_Cello =  \relative d' {
             >>
         >>
     >>
-    \layout {}
+    \layout {  #(layout-set-staff-size 14) }
     \midi { \tempo 4 = 120 }
 }
 
@@ -3810,11 +3812,13 @@ MvIII_Cello =  \relative d' {
         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_OboeSolo } }
         \layout {}
     }
+    \pageBreak
     \score {
         \header { piece = "Andante ma non troppo" }
         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_OboeSolo } }
         \layout {}
     }
+    \pageBreak
     \score {
         \header { piece = "Rondeau" }
         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_OboeSolo } }
@@ -3897,7 +3901,9 @@ MvIII_Cello =  \relative d' {
 
 \book {
     \header { instrument = "Viola" }
-    \paper { output-suffix = "part-viola" }
+    \paper { output-suffix = "part-viola"
+        page-count = #4
+    }
     \score {
         \header { piece = "Allegro" }
         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_Viola } }
