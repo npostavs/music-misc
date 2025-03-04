@@ -3842,192 +3842,192 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
 
 }
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %% Score (non-simplified parts)
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Score (non-simplified parts)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% \book {
+\book {
 
-%     \paper {
-%         output-suffix = "-score-original"
+    \paper {
+        output-suffix = "-score-original"
 
-%         %% \slashSeparator overlaps with the bar numbers a bit.
-%         system-separator-markup = \markup {
-%             \hspace #2 \slashSeparator
-%         }
-%         left-margin = 8\mm
-%         indent = 5\mm
-%     }
-
-
-% \score {
-%     \header { piece = "Allegro" }
-%     <<
-%         \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe"
-%                            instrumentName = \oboeNameMkup
-%                            shortInstrumentName = "Ob."}
-%         { \transpose d c \MvI_OboeSolo }
-%         \new StaffGroup <<
-%             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
-%                 \set Staff.shortInstrumentName = "V1"
-%                 \transpose d c \MvI_ViolinI
-%             >>
-%             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
-%                 \set Staff.shortInstrumentName = "V2"
-%                 \transpose d c \MvI_ViolinII
-%             >>
-%             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
-%                 \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
-%                 \transpose d c \keepWithTag #'original { \MvI_ViolinIII }
-%             >>
-%             \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = "Viola"
-%                 \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
-%                 \transpose d c \keepWithTag #'original { \MvI_Viola }
-%             >>
-%             \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
-%             <<
-%                 \set Staff.instrumentName = "Cello"
-%                 \set Staff.shortInstrumentName = "Cl"
-%                 \transpose d c \MvI_Cello
-%             >>
-%         >>
-%     >>
-%     \layout {  #(layout-set-staff-size 14) }
-%     \midi { \tempo 4 = 120 }
-% }
-
-% \score {
-%     \header { piece = "Andante ma non troppo" }
-%     <<
-%         \new Staff
-%              \with { midiPanPosition = #0 midiInstrument = "oboe"
-%                      instrumentName = \oboeNameMkup }
-%         <<
-%             \set Staff.shortInstrumentName = "Ob."
-%             \transpose d c \MvII_OboeSolo
-%         >>
-%         \new StaffGroup <<
-%             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
-%                 \set Staff.shortInstrumentName = "V1"
-%                 \keepWithTag #'original { \transpose d c \MvII_ViolinI }
-%             >>
-%             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
-%                 \set Staff.shortInstrumentName = "V2"
-%                 \keepWithTag #'original { \transpose d c \MvII_ViolinII }
-%             >>
-%             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
-%                 \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
-%                 \transpose d c \MvII_ViolinIII
-%             >>
-%             \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = "Viola"
-%                 \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
-%                 \transpose d c \MvII_Viola
-%             >>
-%             \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = "Cello"
-%                 \set Staff.shortInstrumentName = "Cl"
-%                 \transpose d c \MvII_Cello
-%             >>
-%         >>
-%     >>
-%     \layout {  #(layout-set-staff-size 14) }
-%     \midi { \tempo 4 = 60 }
-% }
-
-% \score {
-%     \header { piece = "Rondeau" }
-%     <<
-%         \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe" }
-%         <<
-%             \set Staff.instrumentName = \oboeNameMkup
-%             \set Staff.shortInstrumentName = "Ob."
-%             \transpose d c \MvIII_OboeSolo
-%         >>
-%         \new StaffGroup <<
-%             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
-%                 \set Staff.shortInstrumentName = "V1"
-%                 \keepWithTag #'original { \transpose d c \MvIII_ViolinI }
-%             >>
-%             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
-%                 \set Staff.shortInstrumentName = "V2"
-%                 \keepWithTag #'original { \transpose d c \MvIII_ViolinII }
-%             >>
-%             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
-%                 \set Staff.shortInstrumentName = \markup { "V3" }
-%                 \keepWithTag #'original { \transpose d c \MvIII_ViolinIII }
-%             >>
-%             \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
-%             <<
-%                 \set Staff.instrumentName = "Viola"
-%                 \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
-%                 \keepWithTag #'original { \transpose d c \MvIII_Viola }
-%             >>
-%             \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
-%             <<
-%                 \set Staff.instrumentName = "Cello"
-%                 \set Staff.shortInstrumentName = "Cl"
-%                 \keepWithTag #'original { \transpose d c \MvIII_Cello }
-%             >>
-%         >>
-%     >>
-%     \layout {  #(layout-set-staff-size 14) }
-%     \midi { \tempo 4 = 120 }
-% }
-
-% }
+        %% \slashSeparator overlaps with the bar numbers a bit.
+        system-separator-markup = \markup {
+            \hspace #2 \slashSeparator
+        }
+        left-margin = 8\mm
+        indent = 5\mm
+    }
 
 
+\score {
+    \header { piece = "Allegro" }
+    <<
+        \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe"
+                           instrumentName = \oboeNameMkup
+                           shortInstrumentName = "Ob."}
+        { \transpose d c \MvI_OboeSolo }
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
+                \set Staff.shortInstrumentName = "V1"
+                \transpose d c \removeWithTag #'solo-part \MvI_ViolinI
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
+                \set Staff.shortInstrumentName = "V2"
+                \transpose d c \MvI_ViolinII
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
+                \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
+                \transpose d c \keepWithTag #'original { \MvI_ViolinIII }
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
+                \transpose d c \keepWithTag #'original { \MvI_Viola }
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \transpose d c \MvI_Cello
+            >>
+        >>
+    >>
+    \layout {  #(layout-set-staff-size 14) }
+    \midi { \tempo 4 = 120 }
+}
 
-% 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %% Parts
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\score {
+    \header { piece = "Andante ma non troppo" }
+    <<
+        \new Staff
+             \with { midiPanPosition = #0 midiInstrument = "oboe"
+                     instrumentName = \oboeNameMkup }
+        <<
+            \set Staff.shortInstrumentName = "Ob."
+            \transpose d c \MvII_OboeSolo
+        >>
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
+                \set Staff.shortInstrumentName = "V1"
+                \keepWithTag #'original { \transpose d c \MvII_ViolinI }
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
+                \set Staff.shortInstrumentName = "V2"
+                \keepWithTag #'original { \transpose d c \MvII_ViolinII }
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
+                \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
+                \transpose d c \MvII_ViolinIII
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
+                \transpose d c \MvII_Viola
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \transpose d c \MvII_Cello
+            >>
+        >>
+    >>
+    \layout {  #(layout-set-staff-size 14) }
+    \midi { \tempo 4 = 60 }
+}
 
-% \book {
-%     \header { instrument = "Oboe Solo" }
-%     \paper { output-suffix = "part-oboe-solo" }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_OboeSolo } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_OboeSolo } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_OboeSolo } }
-%         \layout {}
-%     }
-% }
+\score {
+    \header { piece = "Rondeau" }
+    <<
+        \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe" }
+        <<
+            \set Staff.instrumentName = \oboeNameMkup
+            \set Staff.shortInstrumentName = "Ob."
+            \transpose d c \MvIII_OboeSolo
+        >>
+        \new StaffGroup <<
+            \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
+                \set Staff.shortInstrumentName = "V1"
+                \keepWithTag #'original { \transpose d c \MvIII_ViolinI }
+            >>
+            \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
+                \set Staff.shortInstrumentName = "V2"
+                \keepWithTag #'original { \transpose d c \MvIII_ViolinII }
+            >>
+            \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
+                \set Staff.shortInstrumentName = \markup { "V3" }
+                \keepWithTag #'original { \transpose d c \MvIII_ViolinIII }
+            >>
+            \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
+            <<
+                \set Staff.instrumentName = "Viola"
+                \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
+                \keepWithTag #'original { \transpose d c \MvIII_Viola }
+            >>
+            \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
+            <<
+                \set Staff.instrumentName = "Cello"
+                \set Staff.shortInstrumentName = "Cl"
+                \keepWithTag #'original { \transpose d c \MvIII_Cello }
+            >>
+        >>
+    >>
+    \layout {  #(layout-set-staff-size 14) }
+    \midi { \tempo 4 = 120 }
+}
+
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Parts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\book {
+    \header { instrument = "Oboe Solo" }
+    \paper { output-suffix = "part-oboe-solo" }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff { \keepWithTag #'solo-part { \transpose d c \MvI_OboeSolo } }
+        \layout {}
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'solo-part { \transpose d c \MvII_OboeSolo } }
+        \layout {}
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'solo-part { \transpose d c \MvIII_OboeSolo } }
+        \layout {}
+    }
+}
 
 % \book {
 %     \header { instrument = "Violin 1" }
