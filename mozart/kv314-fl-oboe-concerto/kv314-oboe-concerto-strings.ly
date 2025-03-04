@@ -56,6 +56,16 @@ rep =
 
 sTrill = { \tag #'original { <>-\trill } }
 
+CadenzaSpacer = {
+    \tag #'solo-part {
+        \cadenzaOn
+        \set Score.proportionalNotationDuration = #(ly:make-moment 1/4)
+        \rep 20 s4
+        \unset Score.proportionalNotationDuration
+        \cadenzaOff
+    }
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Notes - 1st movement
@@ -63,7 +73,7 @@ sTrill = { \tag #'original { <>-\trill } }
 
 MvI_OboeSolo =  \relative d'' {
     \time 4/4 \key d \major | % 1
-    R1*31 | \barNumberCheck #32
+    \cueDuring "m1V1" #DOWN { R1*31 | } \barNumberCheck #32
     r8 d8 d8. ( \trill cs32 d32 ) cs16 ( d16 ) e16 -. fs16 -. g16 ( a16) b16 -. cs16 -. | % 33
     d1 ~ | % 34
     d1 ~ | % 35
@@ -84,7 +94,7 @@ MvI_OboeSolo =  \relative d'' {
     ) d'16 -. a,16 -. g16 ( a16 ) e''16 -. a,,16 -. | % 46
     fs16 ( a16 ) d16 -. fs16 -. a8 r16 d,16 e2 \trill | % 47
     d4 r4 r2 | % 48
-    R1*2 | \barNumberCheck #50
+    \cueDuring "m1V1" #DOWN { R1*2 } | \barNumberCheck #50
     r8 a'8 a8. ( \trill gs32 a32 ) d8 -. a8 -. fs8 -. d8 -. | % 51
     a4 -. d4 ( e4 fs4 ) | % 52
     ds4. ( e8 ) e4 r4 | % 53
@@ -120,8 +130,8 @@ MvI_OboeSolo =  \relative d'' {
     a8 \trill gs8 r8 gs8 gs8 \trill fs8 r8 fs8 | % 74
     fs8 \trill e8 cs'8. ( a16 ) a8. ( fs16 ) fs8. ( d16 ) | % 75
     cs16 ( e16 ) fs16 -. e16 -. d16 ( cs16 ) b16 -. a16 -. b2 \trill | % 76
-    a4 r4 r2 | % 77
-    R1 | % 78
+    a4 \cueDuring "m1V1" #DOWN { r4 r2 | % 77
+    R1 } | % 78
     e'2 \grace { fs8 } e2 | % 79
     \grace { fs8 } e4 r4 r2 | \barNumberCheck #80
     a8 ( -\fp fs8 ) d4. e16 ( d16 ) cs8 -. d8 -. | % 81
@@ -143,11 +153,11 @@ MvI_OboeSolo =  \relative d'' {
     -. a16 ( gs16 ) fs16 -. e16 -. | % 94
     fs8 fs,16 ( b16 ) d16 -. fs16 -. b16 -. d16 -. d16 ( cs16 ) b16 -. a16
     -. gs16 ( fs16 ) e16 -. d16 -. | % 95
-    cs16 ( e16 ) d16 cs16 d16 ( e16 ) fs16 -. gs16 -. a16 ( b16 ) cs16
-    -. d16 -. ds16 ( e16 ) cs16 -. a16 -. | % 96
+    cs16 ( e16 ) d16 cs16 d16 ( e16 ) fs16 -. gs16 -. a16 ( b16 ) cs16 -. d16 -. ds16 ( e16 ) cs16 -. a16 -. | % 96
     e4. a16 b16 b2 \trill | % 97
-    a4 r4 r2 | % 98
-    R1*8 | \barNumberCheck #106
+    \tag #'solo-part { \pageBreak }
+    a4 \cueDuring "m1V1" #DOWN { r4 r2 | % 98
+    R1*8 } | \barNumberCheck #106
     r8 a8 a8. ( \trill gs32 a32 ) cs8 -. a8 -. e8 -. cs8 -. | % 107
     a4 e''4 \grace { d8 } cs4 \grace { b8 } a4 | % 108
     a4. ( gs8 ) gs4 r4 | % 109
@@ -167,8 +177,8 @@ MvI_OboeSolo =  \relative d'' {
     e16 -. ds16 -. e16 ( g16 ) fs16 -. a16 -. | % 119
     g16 ( fs16 ) e16 -. d16 -. cs16 ( d16 ) e16 -. fs16 -. g16 ( fs16 )
     e16 -. fs16 -. g16 ( a16 ) b16 -. cs16 -. | \barNumberCheck #120
-    d4 r4 r2 | % 121
-    R1 | % 122
+    d4 \cueDuring "m1V1" #DOWN { r4 r2 | % 121
+    R1 } | % 122
     \grace { d,8 } d'1 ( | % 123
     d1 ) ( | % 124
     d8 ) ( c8 ) c2 c4 | % 125
@@ -211,8 +221,8 @@ MvI_OboeSolo =  \relative d'' {
     b8 ( a8 ) d8. ( as16 ) b8. ( fs16 ) g8. ( e16 ) |
     \barNumberCheck #150
     gs16 ( a16 ) b16 -. a16 -. g16 ( fs16 ) e16 -. d16 -. e2 \trill | % 151
-    d4 r4 r2 | % 152
-    R1 | % 153
+    d4 \cueDuring "m1V1" #DOWN { r4 r2 | % 152
+    R1 } | % 153
     a'2 \grace { b8 } a2 | % 154
     \grace { b8 } a4 r4 r2 | % 155
     d8 ( -\fp b8 ) g4. a16 ( g16 ) fs8 -. g8 -. | % 156
@@ -239,12 +249,15 @@ MvI_OboeSolo =  \relative d'' {
     b'8 e,,16 ( g16 ) b16 -. e16 -. g16 -. b16 -. b16 ( a16 ) g16 -. fs16 -. e16 ( d16 ) cs16 -. b16 -. | % 172
     a8 b16 -. cs16 -. d16 -. e16 -. fs16 -. g16 -. a16 -. b16 -. cs16 -. d16 -. cs16 ( d16 ) cs16 ( d16 ) | % 173
     a8 ( gs8 g8 fs8 ) e2 \trill | % 174
-    d4 r4 r2 | % 175
-    R1*3 | % 178
-    a'2 \fermata a2 | % 179
-    \grace { b8 } a2 \grace { b8 } a2 | \barNumberCheck #180
-    R1*9 \bar "|."
-    }
+    d4 \cueDuring "m1V1" #DOWN { r4 r2 | % 175
+    R1*3 } | % 178
+    \tag #'solo-part \break
+    % orig had wrong notes in and extra bar of music after cadenza.
+    a'4. \fermata \CadenzaSpacer d,8 e2\trill | % 179
+    \tag #'solo-part \break
+    d4 \cueDuring "m1V1" #DOWN { r4 r2 | \barNumberCheck #180
+    R1*9 } \fine
+}
 
 MvI_ViolinI =  \relative a {
     \time 4/4 \key d \major | % 1
@@ -452,19 +465,14 @@ MvI_ViolinI =  \relative a {
     g4 fs2 cs16 ( d16 ) cs16 ( d16 ) | % 176
     c'4 b2 cs,16 ( d16 ) cs16 ( d16 ) | % 177
     d'8 d,8 d8. ( \trill cs32 d32 ) fs8 -. d8 -. b8 -. gs8 -. | % 178
-    <a, a'>2 r2 \fermata | % 179
-    <fs' d'>8 -\f <fs d'>4 d'8 <d c'>8 <d c'>4 <d c'>8 | \barNumberCheck
-    #180
-    b'16 ( cs16 ) d16 -. cs16 -. d8 r8 g,16 ( a16 ) b16 -. a16 -. b8 -.
-    g8 -. | % 181
+    <a, a'>2 r2 \fermata \CadenzaSpacer | % 179
+    <fs' d'>8 -\f <fs d'>4 d'8 <d c'>8 <d c'>4 <d c'>8 | \barNumberCheck #180
+    b'16 ( cs16 ) d16 -. cs16 -. d8 r8 g,16 ( a16 ) b16 -. a16 -. b8 -. g8 -. | % 181
     fs8 a16 fs16 d8 fs16 d16 a4 <a, e' cs'>4 | % 182
-    <a fs' d'>4 d'16 ( -\p e16 ) fs16 -. g16 -. a8 -. a8 -. a8 -. a8 -.
-    | % 183
+    <a fs' d'>4 d'16 ( -\p e16 ) fs16 -. g16 -. a8 -. a8 -. a8 -. a8 -. | % 183
     a8 r8 d8 -\f a8 fs8. a16 \tOrigGrace { a8 } g8 fs16 e16 | % 184
-    d8 r8 d16 ( -\p e16 ) fs16 -. g16 -. a16 a16 a16 a16 a16 a16 a16 a16
-    | % 185
-    a8 r8 d8 -\f a8 fs16 ( a16 ) fs16 -. a16 -. \tOrigGrace { a8 } g8 fs16 e16
-    | % 186
+    d8 r8 d16 ( -\p e16 ) fs16 -. g16 -. a16 a16 a16 a16 a16 a16 a16 a16 | % 185
+    a8 r8 d8 -\f a8 fs16 ( a16 ) fs16 -. a16 -. \tOrigGrace { a8 } g8 fs16 e16 | % 186
     fs16 ( d16 ) a'16 -. fs16 -. d'16 ( a16 ) d16 -. a16 -. fs16 ( a16 )
     fs16 -. a16 -. \tOrigGrace { a8 } g8 fs16 e16 | % 187
     d8 -. d8 -. d8. ( \trill cs32 d32 ) fs8 -. d8 -. a8 -. fs8 -. | % 188
@@ -1601,7 +1609,7 @@ MvI_Cello =  \relative d {
 
 MvII_OboeSolo =  \relative g'' {
     \time 3/4 \key g \major | % 1
-    R2.*10 | % 11
+    \cueDuring "m2V1" #DOWN { R2.*10 } | % 11
     g4 d4 b'4 | % 12
     gs16 ( a16 b16 a16 ) a4 r4 | % 13
     gs16 ( a16 b16 a16 ) a4. c8 | % 14
@@ -1613,14 +1621,13 @@ MvII_OboeSolo =  \relative g'' {
     b4 a8 ( g8 fs8 e8 ) | \barNumberCheck #20
     ds4 ( ~ ds8. e32 fs32 ) e8 r8 | % 21
     a4 a16 ( g16 ) g16 ( fs16 ) fs16 ( e16 ) e16 ( d16 ) | % 22
-    cs4 ~ \times 4/6 {
-        cs16 ( e16 d16 ) cs16 ( d16 e16 ) }
+    cs4 ~ \times 4/6 {cs16 ( e16 d16 ) cs16 ( d16 e16 ) }
     d8 ( d'8 ) | % 23
     cs8 ( b8 ) r8 a8 a8 ( gs8 ) | % 24
     r8 gs8 a8 ( g8 ) r8 fs8 | % 25
     ds8 ( e8 ) ~ e16 ( fs16 g16 a16 ) as16 ( b16 g16 e16 ) | % 26
-    d4 \trill cs4 r4 | % 27
-    R2. | % 28
+    d4 \trill cs4 \cueDuring "m2V1" #DOWN { r4 | % 27
+    R2. } | % 28
     d'4 ~ d16 ( cs16 ) b16 ( \trill a16 ) g16 ( \trill fs16 ) e16 (
     \trill d16 ) | % 29
     cs16 ( e16 ) a16 ( g16 ) g4 r8 a8 | \barNumberCheck
@@ -1635,8 +1642,9 @@ MvII_OboeSolo =  \relative g'' {
     as8 ( b4 ) a16 ( g16 ) fs16 ( e16 ds16 e16 ) | % 38
     fs16 ( d16 ) a'16 -. a16 -. a4. fs16 ( d16 ) | % 39
     e2. \trill | \barNumberCheck #40
-    d4 r4 r4 | % 41
-    R2. | % 42
+    \tag #'solo-part { \pageBreak }
+    d4 \cueDuring "m2V1" #DOWN { r4 r4 | % 41
+    R2. } | % 42
     d'2. ~ | % 43
     d2. ~ | % 44
     d8 cs4 bf8 a8 g8 | % 45
@@ -1644,14 +1652,13 @@ MvII_OboeSolo =  \relative g'' {
     cs8 bf4 a4 g8 | % 47
     fs8. ( d'16 ) d2 ~ | % 48
     d8. d'16 d2 ~ | % 49
-    d4 ~ d16 ( c16 a16 fs16 ) d'16 ( c16 a16 fs16 ) | \barNumberCheck
-    #50
-    g4 r4 r4 | % 51
+    d4 ~ d16 ( c16 a16 fs16 ) d'16 ( c16 a16 fs16 ) | \barNumberCheck #50
+    g4 \cueDuring "m2V1" #DOWN { r4 r4 | % 51
     R2.*2 | % 53
-    r4 d8 ( g8 b8 d8 ) | % 54
+    r4 } d8 ( g8 b8 d8 ) | % 54
     c4 ~ c8. ( a16 ) fs8 r8 | % 55
     d'4 ~ d8. ( b16 ) g8 r8 | % 56
-    R2. | % 57
+    \cueDuring "m2V1" #DOWN { R2. } | % 57
     e4 d8 ( c8 ) b8 ( a8 ) | % 58
     gs4 ~ gs8. ( a32 b32 ) a8 r8 | % 59
     d'4 ~ d16 ( c16 ) c16 ( b16 ) b16 ( a16 ) a16 ( g16 ) |
@@ -1662,8 +1669,8 @@ MvII_OboeSolo =  \relative g'' {
     fs8 ( e8 ) r8 d8 d8 ( cs8 ) | % 62
     r8 cs'8 d8 ( c8 ) r8 b8 | % 63
     gs8 ( a8 ) ~ a16 ( b16 c16 d16 ) ds16 ( e16 ) c16 ( a16 ) | % 64
-    g4 \trill fs4 r4 | % 65
-    R2. | % 66
+    g4 \trill fs4 \cueDuring "m2V1" #DOWN { r4 | % 65
+    R2. } | % 66
     g4 ~ g16 fs16 e16 ( \trill d16 ) c16 ( \trill b16 ) a16 ( \trill g16
     ) | % 67
     fs16 ( a16 ) d16 ( c16 ) c4 r8 d8 | % 68
@@ -1671,19 +1678,18 @@ MvII_OboeSolo =  \relative g'' {
     e4 ( e'4 d4 ) ~ | \barNumberCheck #70
     d8 cs4 c4 b8 ~ | % 71
     b16 ( a16 c16 a16 ) g4 fs4 \trill | % 72
-    \times 2/3  {
-        fs8 ( a8 g8 ) }
-    g4 r4 \fermata | % 73
+    \times 2/3  {fs8 ( a8 g8 ) } g4 r4 \fermata | % 73
     e4 e'4 d4 ~ | % 74
     d8 cs4 c4 b8 | % 75
     gs8 ( a8 ) ~ a16 ( b16 c16 b16 ) a16 ( g16 fs16 e16 ) | % 76
     d4 d'4. b16 ( g16 ) | % 77
     a2. \trill | % 78
-    g4 r4 r4 | % 79
+    g4 \cueDuring "m2V1" #DOWN { r4 r4 | % 79
     R2.*6 | \barNumberCheck #85
-    d,2 r4 \fermata | % 86
-    R2. \fermata | % 87
-    R2.*5 \bar "|."
+    % Mozart has solo play with VlnI, Massun has just last note.
+    r2 } r4 \fermata \CadenzaSpacer | % 86
+    \cueDuring "m2V1" #DOWN { s2. \fermata | % 87
+    R2.*5 } \fine
     }
 
 MvII_ViolinI =  \relative g' {
@@ -1775,7 +1781,7 @@ MvII_ViolinI =  \relative g' {
     e4. -\f d16 ( c16 ) \tag #'original { b16 ( a16 ) e16 ( a16 ) } \tag #'simplified { b8 e, } |
     g=''8 ( fs8 ) g8 ( -\p f8 ) e8 ( d8 ) |
     cs8 c8 as16 ( b16 c16 cs16 ) d16 ( ds16 e16 c16 ) | % 85
-    b2 r4 \fermata | % 86
+    b2 r4 \fermata \CadenzaSpacer | % 86
     R2. \fermata | % 87
     g4 -\f d4 b4 | % 88
     c8. g''16 \tOrigGrace { a8 } g4 \tOrigGrace { a8 } g8 ( fs16 e16 ) | % 89
@@ -2143,17 +2149,17 @@ MvIII_OboeSolo =  \relative a'' {
     a8 -. b8 -. cs8 -. d8 -. | \barNumberCheck #10
     a4 \grace { b8 } a8 g16 fs16 | % 11
     ds16 ( e16 ) g16 -. b16 -. a16 ( fs16 ) g16 -. e16 -. | % 12
-    d4 r4 | % 13
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 13
     R2*13 | \barNumberCheck #26
-    r4 a'8 -. a8 -. | % 27
+    r4 } a'8 -. a8 -. | % 27
     a4 b16 ( a16 g16 fs16 ) | % 28
-    fs8 ( e8 ) r4 | % 29
+    fs8 ( e8 ) \cueDuring "m3V1" #DOWN { r4 | % 29
     R2 | \barNumberCheck #30
-    r4 a8 -. a8 -. | % 31
+    r4 } a8 -. a8 -. | % 31
     a4 b16 ( a16 ) g16 ( fs16 ) | % 32
-    e4 r4 | % 33
+    e4 \cueDuring "m3V1" #DOWN { r4 | % 33
     R2*22 | \barNumberCheck #55
-    r4 a16 ( fs16 ) g16 -. e16 -. | % 56
+    r4 } a16 ( fs16 ) g16 -. e16 -. | % 56
     d2 | % 57
     d'2 | % 58
     d8 ( cs8 ) cs4 | % 59
@@ -2169,13 +2175,13 @@ MvIII_OboeSolo =  \relative a'' {
     e16 ( \trill ds16 ) e16 -. fs16 -. g16 ( a16 ) b16 -. g16 -. | % 69
     fs16 ( a16 ) d,16 -. fs16 -. e16 ( g16 ) cs,16 -. e16 -. |
     \barNumberCheck #70
-    d4 r4 | % 71
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 71
     R2 | % 72
-    r4 a'8 -. a8 -. | % 73
+    r4 } a'8 -. a8 -. | % 73
     a4 b16 ( a16 ) g16 -. fs16 -. | % 74
-    fs8 ( e8 ) r4 | % 75
+    fs8 ( e8 ) \cueDuring "m3V1" #DOWN { r4 | % 75
     R2 | % 76
-    r4 a8 -. a8 -. | % 77
+    r4 } a8 -. a8 -. | % 77
     a4 b16 ( a16 ) g16 -. fs16 -. | % 78
     fs8 ( e8 ) r8 e8 \trill | % 79
     fs16 ( e16 ) d16 -. e16 -. d16 ( fs16 ) e16 -. g16 -. | \barNumberCheck #80
@@ -2189,6 +2195,7 @@ MvIII_OboeSolo =  \relative a'' {
     cs16 ( e16 ) d16 -. cs16 -. d16 ( e16 ) fs16 -. gs16 -. | % 88
     a16 ( b16 ) cs16 -. d16 -. e8 cs,8 | % 89
     cs4 \trill b4 | \barNumberCheck #90
+    \tag #'solo-part { \pageBreak }
     r4. e8 | % 91
     gs16 ( b16 ) d16 -. b16 -. gs16 ( e16 ) d16 -. b16 -. | % 92
     gs'16 ( b16 ) d16 -. b16 -. gs16 ( e16 ) d16 -. b16 -. | % 93
@@ -2219,8 +2226,8 @@ MvIII_OboeSolo =  \relative a'' {
     b,4 d16 ( e16 ) d16 ( e16 ) | % 117
     cs4 a'8 -. a8 -. | % 118
     b,4 d16 ( cs16 ) d16 -. b16 -. | % 119
-    a4 r4 | \barNumberCheck #120
-    R2*3 | % 123
+    a4 \cueDuring "m3V1" #DOWN { r4 | \barNumberCheck #120
+    R2*3 } | % 123
     a4 \fermata a'16 ( fs16 ) g16 -. e16 -. | % 124
     d8 r8 e8. ( \trill d32 e32 ) | % 125
     fs8 r8 fs8 -. g8 -. | % 126
@@ -2234,8 +2241,8 @@ MvIII_OboeSolo =  \relative a'' {
     a8 -. b8 -. cs8 -. d8 -. | % 133
     a4 \grace { b8 } a8 g16 fs16 | % 134
     ds16 ( e16 ) g16 b16 a16 ( -. fs16 ) g16 -. e16 -. | % 135
-    d4 r4 | % 136
-    R2*16 | \barNumberCheck #152
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 136
+    R2*16 } | \barNumberCheck #152
     r8 d'8 -. d8 -. d8 -. |
     d8. ( b16 ) c8. ( a16 ) | % 154
     g4 a8. ( \trill g32 a32 ) | % 155
@@ -2244,7 +2251,7 @@ MvIII_OboeSolo =  \relative a'' {
     d8. ( b16 ) c8. ( a16 ) | % 158
     g4 ( c4 ) | % 159
     b4 ( a4 ) | \barNumberCheck #160
-    R2 | % 161
+    \cueDuring "m3V1" #DOWN { R2 } | % 161
     d,2 ~ | % 162
     d2 ~ | % 163
     d2 ~ | % 164
@@ -2265,6 +2272,7 @@ MvIII_OboeSolo =  \relative a'' {
     e16 ( fs16 ) e16 -. ds16 -. e16 ( fs16 ) g16 -. a16 -. | % 178
     b16 ( cs16 ) d16 -. cs16 -. d8 fs,8 | % 179
     fs4 \trill e4 | \barNumberCheck #180
+    \tag #'solo-part { \pageBreak }
     r4. a,8 | % 181
     g'16 ( e16 ) cs16 -. a16 -. g16 ( a16 ) g16 ( a16 ) | % 182
     g'16 ( e16 ) cs16 -. a16 -. g16 ( a16 ) g16 ( a16 ) | % 183
@@ -2299,8 +2307,8 @@ MvIII_OboeSolo =  \relative a'' {
     a2 ~ | % 211
     a2 ~ | % 212
     a2 | % 213
-    a,4 r4 | % 214
-    R2*4 | % 218
+    a,4 \cueDuring "m3V1" #DOWN { r4 | % 214
+    R2*4 } | % 218
     r8 a'8 a8 a8 | % 219
     a8. ( fs16 ) g8. ( e16 ) | \barNumberCheck #220
     a16 ( fs16 ) g16 ( e16 ) a16 ( fs16 ) g16 ( e16 ) | % 221
@@ -2315,9 +2323,9 @@ MvIII_OboeSolo =  \relative a'' {
     a8 -. b8 -. cs8 -. d8 -. | \barNumberCheck #230
     a4 \grace { b8 } a8 g16 fs16 | % 231
     ds16 ( e16 ) g16 -. b16 -. a16 ( fs16 ) g16 -. e16 -. | % 232
-    d4 r4 | % 233
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 233
     R2*3 | % 236
-    r4 d'8 -. d8 -. | % 237
+    r4 } d'8 -. d8 -. | % 237
     fs,4 b16 ( a16 ) b16 -. gs16 -. | % 238
     a4 ~ a16 ( cs16 ) b16 -. gs16 -. | % 239
     a16 ( cs16 ) b16 -. gs16 -. a16 ( cs16 ) b16 -. gs16 -. | \barNumberCheck #240
@@ -2325,9 +2333,9 @@ MvIII_OboeSolo =  \relative a'' {
     b8 -. e8 -. \grace { d8 } cs8 \trill b16 ( cs16 ) | % 242
     d4 d16 ( fs16 ) e16 -. cs16 -. | % 243
     d16 ( fs16 ) e16 -. cs16 -. d16 ( fs16 ) e16 -. cs16 -. | % 244
-    d4 r4 | % 245
-    R2*5 | \barNumberCheck #250
-    \grace { a8 } a'4 ( -. e8. ) \trill d32 e32 | % 251
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 245
+    R2*5 } | \barNumberCheck #250
+    \grace { a8 } a'4\fermata \CadenzaSpacer e8. \trill d32 e32 | % 251
     d2 | % 252
     \grace { ds8 } e2 | % 253
     \grace { es8 } fs2 | % 254
@@ -2339,9 +2347,9 @@ MvIII_OboeSolo =  \relative a'' {
     a8 -. b8 -. cs8 -. d8 -. | \barNumberCheck #260
     a4 \grace { b8 } a8 g16 fs16 | % 261
     e16 ( \trill ds16 ) e16 -. fs16 -. g16 ( e16 ) fs16 -. d16 -. | % 262
-    cs8 ( e8 ) r4 | % 263
+    cs8 ( e8 ) \cueDuring "m3V1" #DOWN { r4 | % 263
     R2*7 | \barNumberCheck #270
-    r4 d'8 d8 | % 271
+    r4 } d'8 d8 | % 271
     fs,4 b16 ( a16 ) b16 -. gs16 -. | % 272
     a4 ~ a16 ( cs16 ) b16 -. gs16 -. | % 273
     a16 ( cs16 ) b16 -. gs16 -. a16 ( cs16 ) b16 -. gs16 -. | % 274
@@ -2349,9 +2357,9 @@ MvIII_OboeSolo =  \relative a'' {
     b8 e8 \grace { d8 } cs8 \trill -. b16 ( cs16 ) | % 276
     d4 d16 ( fs16 ) e16 -. cs16 -. | % 277
     d16 ( fs16 ) e16 -. cs16 -. d16 ( fs16 ) e16 -. cs16 -. | % 278
-    d4 r4 | % 279
-    R2*7 \bar "|."
-    }
+    d4 \cueDuring "m3V1" #DOWN { r4 | % 279
+    R2*7 } \fine
+}
 
 MvIII_ViolinI =  \relative a' {
     \time 2/4 \key d \major \partial 4 r4 | % 1
@@ -2618,7 +2626,7 @@ MvIII_ViolinI =  \relative a' {
     r8 \orgSimple { b16 -. cs16 -.} {b8-.} d8 r8 | % 248
     r8 d8 -. fs8 -. b,8 -. | % 249
     d8 -. d,8 -. fs8 -. gs,8 -. | \barNumberCheck #250
-    <a, a'>4 r4 \fermata | % 251
+    <a, a'>4 \CadenzaSpacer r4 \fermata | % 251
     r8 fs'8 -\p fs8 fs8 | % 252
     r8 g8 g8 g8 | % 253
     r8 fs8 fs8 fs8 | % 254
@@ -3646,6 +3654,10 @@ MvIII_Cello =  \relative d' {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Score
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addQuote "m1V1" { \keepWithTag #'(original solo-part) \transpose d c \MvI_ViolinI }
+\addQuote "m2V1" { \keepWithTag #'(original solo-part) \transpose d c \MvII_ViolinI }
+\addQuote "m3V1" { \keepWithTag #'(original solo-part) \transpose d c \MvIII_ViolinI }
 
 oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
 
