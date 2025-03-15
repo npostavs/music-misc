@@ -61,6 +61,8 @@ CadenzaSpacer = {
         \cadenzaOn
         \set Score.proportionalNotationDuration = #(ly:make-moment 1/4)
         \rep 20 s4
+        \break
+        \rep 20 s4
         \unset Score.proportionalNotationDuration
         \cadenzaOff
     }
@@ -121,9 +123,9 @@ MvI_OboeSolo =  \relative d'' {
     gs16 -. fs16 -. e16 ( d16 ) cs16 d16 | % 68
     cs16 ( e16 ) d16 fs16 -. e4 r16 a16 -. gs16 ( a16 ) b16 ( a16 ) gs16
     -. a16 -. | % 69
-    d,16 ( fs16 ) e16 -. g16 -. fs4 r16 a16 -. gs16 ( a16 ) b16 ( a16 )
+    d,16 ( fs16 ) e16 -. g?16 -. fs4 r16 a16 -. gs16 ( a16 ) b16 ( a16 )
     gs16 -. a16 -. | \barNumberCheck #70
-    e16 ( g16 ) fs16 -. a16 -. g4 r16 a16 -. gs16 ( a16 ) b16 ( a16 ) gs16
+    e16 ( g?16 ) fs16 -. a16 -. g4 r16 a16 -. gs16 ( a16 ) b16 ( a16 ) gs16
     a16 | % 71
     a1 ( | % 72
     a16 ) ( b16 c16 b16 ) c4 ~ -\fp c8 b4 a8 | % 73
