@@ -12,6 +12,34 @@
     tagline = ##f
 }
 
+\paper {
+  page-breaking = #ly:page-turn-breaking
+  auto-first-page-number = ##t
+  print-page-number = ##f
+  indent = 5\mm
+  top-margin = 3\mm
+  bottom-margin = 3\mm
+  left-margin = 6\mm
+  right-margin = 3\mm
+  ragged-last-bottom = ##f
+
+  oddHeaderMarkup = \markup
+  \fill-line {
+    ""
+    \unless \on-first-page-of-part \concat \small { \fromproperty #'header:title " - " \fromproperty #'header:instrument }
+    \if \should-print-page-number \fromproperty #'page:page-number-string
+  }
+
+  %% evenHeaderMarkup would inherit the value of
+  %% oddHeaderMarkup if it were not defined here
+  evenHeaderMarkup = \markup
+  \fill-line {
+    \if \should-print-page-number \fromproperty #'page:page-number-string
+    \unless \on-first-page-of-part \concat \small { \fromproperty #'header:title " - " \fromproperty #'header:instrument }
+    ""
+  }
+}
+
 \layout {
     \context { \Score
         skipBars = ##t
@@ -37,6 +65,89 @@ altsOC = #(define-music-function (mOrig mComplex) (ly:music? ly:music?)
                            #mComplex
                            \revert NoteHead.color
                          } #})
+
+simplifyPairs =
+#(define-music-function (short-dur triples? music)
+                        ((ly:duration? (ly:make-duration 4 0)) (boolean? #f) ly:music?)
+   ;; triples? indicates a 6/8, 9/8, or 12/8 type of rhythm.
+   (define long-dur (ly:make-duration (- (ly:duration-log short-dur) 1) (if triples? 1 0)))
+   (define long-dot-dur (ly:make-duration (ly:duration-log long-dur) (if triples? 0 1)))
+   (define short-triple (ly:make-duration (ly:duration-log short-dur) 0 (if triples? 1 2/3)))
+   (define (same-pitch? a b)
+      (equal? (ly:music-property a 'pitch)
+              (ly:music-property b 'pitch)))
+   (define (pair->eighth music)
+     (if (music-is-of-type? music 'sequential-music)
+         (let loop ((elts (ly:music-property music 'elements)) (acc '()))
+           (cond
+            ((null? elts)
+             (set! (ly:music-property music 'elements) (reverse! acc))
+             music)
+            ;; Skip over short pitches completing a dotted pattern:
+            ;; (otherwise we might take pairs starting on off-beats)
+            ;; A8. B16 -> A8. B16
+            ;; A8 B16 -> A8 B16 %% triples? rhythm case
+            ((and (pair? elts)
+                  (music-is-of-type? (car elts) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) long-dot-dur)
+                  (pair? (cdr elts))
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur))
+             (let* ((first (car elts))
+                    (second (cadr elts)))
+               (loop (cddr elts) (cons second (cons first acc)))))
+            ;; \tuplet 3/2 { A B C } -> A
+            ;; A8 B C -> A4 %% triples? rhythm case
+            ((and (>= (length elts) 3)
+                  (music-is-of-type? (list-ref elts 0) 'note-event)
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (music-is-of-type? (list-ref elts 2) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-triple)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-triple)
+                  (equal? (ly:music-property (list-ref elts 2) 'duration) short-triple))
+             (let* ((first (list-ref elts 0)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (loop (cdddr elts) (cons first acc))))
+            ;; A16 B A B -> A8 B8
+            ((and (not triples?) ;; Don't take groups of 4 in triple rhythm case.
+                  (>= (length elts) 4)
+                  (music-is-of-type? (list-ref elts 0) 'note-event)
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (music-is-of-type? (list-ref elts 2) 'note-event)
+                  (music-is-of-type? (list-ref elts 3) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 2) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 3) 'duration) short-dur)
+                  (same-pitch? (list-ref elts 0) (list-ref elts 2))
+                  (same-pitch? (list-ref elts 1) (list-ref elts 3)))
+             (let* ((first (list-ref elts 0))
+                    (second (list-ref elts 1)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (set! (ly:music-property second 'duration) long-dur)
+               (loop (cddddr elts) (cons second (cons first acc)))))
+            ;; A16 B -> A8
+            ((and (not triples?) ;; Don't groups of 2 in triple rhythm case
+                  (pair? elts)
+                  (music-is-of-type? (car elts) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-dur)
+                  (pair? (cdr elts))
+                  ;;(or (ly:message "(cdr elts) ~a" (cdr elts)) #t)
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur))
+             (let* ((first (car elts)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (loop (cddr elts) (cons first acc))))
+            (else
+             (loop (cdr elts) (cons (car elts) acc)))))
+         (if (music-is-of-type? music 'time-scaled-music)
+             (ly:music-property music 'element)
+             music)))
+   (music-map pair->eighth (ly:music-deep-copy music)))
+
+simplifyPart = \simplifyPairs 16 ##f \keepWithTag #'(original Aclef) \etc
+simplifyPartToQuarters = \simplifyPairs 8 ##f \keepWithTag #'(original Aclef) \etc
+simplifyPartToDottedQuarters = \simplifyPairs 8 ##t \keepWithTag #'(original Aclef) \etc
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -545,7 +656,7 @@ BalI_MvI_KbdRhTwo =  \relative e' {
     }
 
 BalI_MvI_KbdLh =  \relative c' {
-    \clef "bass" \key c \major  \time 2/4
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \key c \major  \time 2/4
     \partial 4 c8-\tous f,8 | % 1
     e8 e8 e8 e8 | % 2
     f8 e8 d8 g8 | % 3
@@ -849,7 +960,7 @@ BalI_MvII_KbdRhTwo =  \relative e' {
     }
 
 BalI_MvII_KbdLh =  \relative c' {
-    \clef "bass" \time 3/4 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/4 \key c \major | % 1
     c2-\seul g4 | % 2
     c2 f,4 | % 3
     e4 b4 c4 | % 4
@@ -1243,7 +1354,7 @@ BalI_MvIII_KbdRhTwo =  \relative e' {
     }
 
 BalI_MvIII_KbdLh = \relative c {
-    \clef "bass" \time 2/4 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 2/4 \key c \major | % 1
     R2*9 | \barNumberCheck #10
     c2-\tous | % 11
     d2 | % 12
@@ -1645,7 +1756,7 @@ BalI_MvIV_KbdRhTwo =  \relative ef' {
     }
 
 BalI_MvIV_KbdLh =  \relative c' {
-    \clef "bass" \time 4/4 \key bf \major \partial 2 c4-\seul g4 | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 4/4 \key bf \major \partial 2 c4-\seul g4 | % 1
     c4 c,4 c'4 b4 | % 2
     c2 ef,4 d8 f8 | % 3
     ef4 c4 f8 g8 af8 f8 | % 4
@@ -2131,7 +2242,7 @@ BalI_MvV_KbdRhTwo =  \relative g' {
     }
 
 BalI_MvV_KbdLh =  \relative e {
-    \clef "bass" \time 3/4 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/4 \key c \major | % 1
     r4 e4-\seul c4 | % 2
     g'4 b,4 g4 | % 3
     d'4 b4 c4 | % 4
@@ -2906,7 +3017,7 @@ BalII_MvI_KbdRhTwo =  \relative e' {
     }
 
 BalII_MvI_KbdLh =  \relative c' {
-    \clef "bass" \time 3/8 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/8 \key c \major | % 1
     c8-\tous r8 r8 | % 2
     c,8 c16 d16 e16 c16 | % 3
     f8 g8 g,8 | % 4
@@ -3232,7 +3343,7 @@ BalII_MvII_KbdRhTwo =  \relative e' {
     }
 
 BalII_MvII_KbdLh =  \relative c' {
-    \clef "bass" \numericTimeSignature\time 2/2 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \numericTimeSignature\time 2/2 \key c \major | % 1
     c2-\tous b2 | % 2
     c4 c,4 r2 | % 3
     c'4 f,4 f4 f4 | % 4
@@ -3617,7 +3728,7 @@ BalII_MvIII_KbdRhTwo =  \relative g' {
     }
 
 BalII_MvIII_KbdLh =  \relative e {
-    \clef "bass" \time 2/4 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 2/4 \key c \major | % 1
     e4-\tous c4 | % 2
     g'8 g8 g8 g8 | % 3
     g4 b,4 | % 4
@@ -3885,7 +3996,7 @@ BalII_MvIV_KbdRhTwo =  \relative ef' {
     }
 
 BalII_MvIV_KbdLh =  \relative c' {
-    \clef "bass" \time 3/4 \key bf \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/4 \key bf \major | % 1
     c2 g4 | % 2
     c,4. c'8 b8 g8 | % 3
     c4 b4 g4 | % 4
@@ -4434,7 +4545,7 @@ BalII_MvV_KbdRhTwo =  \relative e' {
     }
 
 BalII_MvV_KbdLh =  \relative c' {
-    \clef "bass" \time 6/8 \key c \major
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 6/8 \key c \major
     \partial 4. c4.-\tousEd | % 1
     b4. b,4. | % 2
     a4. a'4. | % 3
@@ -5057,7 +5168,7 @@ BalIII_MvI_KbdRhTwo = \relative e' {
     }
 
 BalIII_MvI_KbdLh =  \relative c {
-    \clef "bass" \numericTimeSignature\time 2/2 \key c \major
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \numericTimeSignature\time 2/2 \key c \major
     \partial 2 r2 | % 1
     R1 | % 2
     r2 c4-\tous g'4 | % 3
@@ -5097,14 +5208,14 @@ BalIII_MvI_KbdLh =  \relative c {
     r2 c4 g'4 | % 39
     c,4 g'4 e4 f4 | \barNumberCheck #40
     g2 f4 e4 | % 41
-    \clef "bass" d4 c4 b4 a4 | % 42
+    d4 c4 b4 a4 | % 42
     g4 g'8 f8 e4 b4 | % 43
     c2. f,4 | % 44
     c'4 d4 e4 c4 | % 45
     f4 d4 g4 c,4 | % 46
     g4 g'4 b4 g4 | % 47
     c4 f,4 g4 g,4 | % 48
-    \clef "bass" c2 r2 | % 49
+    c2 r2 | % 49
     c2-\seul r2 | \barNumberCheck #50
     c2 c'4 c4 | % 51
     c4 f,4 g4 g,4 | % 52
@@ -5559,7 +5670,7 @@ BalIII_MvII_KbdRhTwo =  \relative e' {
     }
 
 BalIII_MvII_KbdLh =  \relative c {
-    \clef "bass" \time 2/4 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 2/4 \key c \major | % 1
     c8-\tousEd d8 e8 c8 | % 2
     g'4 g4 | % 3
     d8 e8 f8 d8 | % 4
@@ -5792,7 +5903,7 @@ BalIII_MvIII_KbdRhTwo =  \relative ef' {
     }
 
 BalIII_MvIII_KbdLh =  \relative c {
-    \clef "bass" \time 4/4 \key bf \major \partial 2 r2 | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 4/4 \key bf \major \partial 2 r2 | % 1
     c2-\seul r2 | % 2
     c2 r2 | % 3
     c2 r2 | % 4
@@ -6579,7 +6690,7 @@ BalIII_MvIV_KbdRhTwo =  \relative e' {
     }
 
 BalIII_MvIV_KbdLh =  \relative c' {
-    \clef "bass" \time 3/8 \key c \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/8 \key c \major | % 1
     c8-\tousEd b8 c8 | % 2
     g8 c,4 | % 3
     f16 e16 d8 g,8 | % 4
@@ -7177,7 +7288,7 @@ BalIV_MvI_KbdRhTwo =  \relative g' {
     }
 
 BalIV_MvI_KbdLh =  \relative g {
-    \clef "bass" \time 3/4 \key g \major \partial 4 g4-\tous | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/4 \key g \major \partial 4 g4-\tous | % 1
     g4 c,4 d4 | % 2
     e4 b4 c4 | % 3
     g4 d'4 d,4 | % 4
@@ -7682,7 +7793,7 @@ BalIV_MvII_KbdRhTwo =  \relative g' {
     }
 
 BalIV_MvII_KbdLh =  \relative g, {
-    \clef "bass" \time 2/4 \key g \major \partial 8 g8-\seul | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 2/4 \key g \major \partial 8 g8-\seul | % 1
     g8 b8 b16 g16 b16 g16 | % 2
     d'8 d4 d8 | % 3
     g,4. g8 | % 4
@@ -8079,7 +8190,7 @@ BalIV_MvIII_KbdRhTwo =  \relative g' {
     }
 
 BalIV_MvIII_KbdLh =  \relative g {
-    \clef "bass" \time 6/8 \key g \major \partial 4. g4.-\tousEd | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 6/8 \key g \major \partial 4. g4.-\tousEd | % 1
     d'4. b4. | % 2
     c4. b4. | % 3
     c4. d4. | % 4
@@ -8341,7 +8452,7 @@ BalIV_MvIV_DessusTwo =  \relative g' {
     fs8 e8 d8 e8 fs8 e8 fs8 g8 | \barNumberCheck #60
     fs8 e8 d8 e8 fs8 e8 fs8 g8 | % 61
     fs4 e8 d8 cs4.-+ d8 | % 62
-    d2 r4 b8-\tous ( c16 d16 ) | % 63
+    d2 r4-\tous b8 ( c16 d16 ) | % 63
     c4-+ b4 r4 b8 ( c16 d16 ) | % 64
     c4-+ b4 g'4 g,4 | % 65
     c4 b4 a4 d4 | % 66
@@ -8385,7 +8496,7 @@ BalIV_MvIV_DessusTwo =  \relative g' {
     fs8 e8 fs8 g8 fs8 d8 e8 fs8 | % 109
     g8 fs8 e8 fs8 fs4.-+ g8 | \barNumberCheck #110
     g2 r2 | % 111
-    r4 d4-\tous \tuplet 3/2 { e8[ d e] c8 d e } | % 112
+    r4-\tous d4 \tuplet 3/2 { e8[ d e] c8 d e } | % 112
     d4 b4 \tuplet 3/2 { c8[ b c] a8 b c } | % 113
     b4 b4 b8 a8 b8 c8 | % 114
     a4 a'8 g8 fs8 e8 d8 c8 | % 115
@@ -8640,7 +8751,7 @@ BalIV_MvIV_KbdRhTwo =  \relative g' {
     }
 
 BalIV_MvIV_KbdLh =  \relative g, {
-    \clef "bass" \time 3/2 \key g \major | % 1
+    \tag #'Oclef { \clef bass } \tag #'Aclef { \clef "alto_8" } \time 3/2 \key g \major | % 1
     g2-\tousEd r2 r2 | % 2
     g2 r2 r2 | % 3
     g2 r2 r2 | % 4
@@ -8769,6 +8880,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
 
 \book {
 
+    \header { instrument = "Score" }
+    \paper {
+      page-breaking = #ly:optimal-breaking
+      auto-first-page-number = ##f
+    }
+
 \bookpart {
 
     \header { title = "PREMIER BALET" }
@@ -8776,12 +8893,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "1. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvI_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalI_MvI_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalI_MvI_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalI_MvI_DessusTwo }
             \new PianoStaff <<
                 %\new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvI_KbdRhOne} \new Voice {\voiceTwo \BalI_MvI_KbdRhTwo} >>
-                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'original \BalI_MvI_KbdLh }
-                \new Staff { \keepWithTag #'complified \BalI_MvI_KbdLh }
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalI_MvI_KbdLh }
+                \new Staff { \simplifyPart \BalI_MvI_KbdLh }
             >>
         >>
         \layout {}
@@ -8791,11 +8908,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "2. Gracieusement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalI_MvII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalI_MvII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalI_MvII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvII_KbdRhOne} \new Voice {\voiceTwo \BalI_MvII_KbdRhTwo} >>
-                \new Staff { \BalI_MvII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvII_KbdRhOne} \new Voice {\voiceTwo \BalI_MvII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalI_MvII_KbdLh }
+                \new Staff { \simplifyPart \BalI_MvII_KbdLh }
             >>
         >>
         \layout {}
@@ -8805,11 +8923,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "3. Vivement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalI_MvIII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalI_MvIII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalI_MvIII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalI_MvIII_KbdRhTwo} >>
-                \new Staff { \BalI_MvIII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalI_MvIII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalI_MvIII_KbdLh }
+                \new Staff { \simplifyPart \BalI_MvIII_KbdLh }
             >>
         >>
         \layout {}
@@ -8819,11 +8938,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "4. Modérément" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalI_MvIV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalI_MvIV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalI_MvIV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalI_MvIV_KbdRhTwo} >>
-                \new Staff { \BalI_MvIV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalI_MvIV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalI_MvIV_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalI_MvIV_KbdLh }
             >>
         >>
         \layout {}
@@ -8833,11 +8953,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "5. Mouvement de Chaconne" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalI_MvV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalI_MvV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalI_MvV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvV_KbdRhOne} \new Voice {\voiceTwo \BalI_MvV_KbdRhTwo} >>
-                \new Staff { \BalI_MvV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalI_MvV_KbdRhOne} \new Voice {\voiceTwo \BalI_MvV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalI_MvV_KbdLh }
+                \new Staff { \simplifyPart \BalI_MvV_KbdLh }
             >>
         >>
         \layout {}
@@ -8850,11 +8971,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "1. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvI_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalII_MvI_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalII_MvI_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalII_MvI_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvI_KbdRhOne} \new Voice {\voiceTwo \BalII_MvI_KbdRhTwo} >>
-                \new Staff { \BalII_MvI_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvI_KbdRhOne} \new Voice {\voiceTwo \BalII_MvI_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalII_MvI_KbdLh }
+                \new Staff { \simplifyPart \BalII_MvI_KbdLh }
             >>
         >>
         \layout {}
@@ -8864,11 +8986,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "2. Pesament" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalII_MvII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalII_MvII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalII_MvII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvII_KbdRhOne} \new Voice {\voiceTwo \BalII_MvII_KbdRhTwo} >>
-                \new Staff { \BalII_MvII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvII_KbdRhOne} \new Voice {\voiceTwo \BalII_MvII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalII_MvII_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalII_MvII_KbdLh }
             >>
         >>
         \layout {}
@@ -8878,11 +9001,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "3. Vite" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalII_MvIII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalII_MvIII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalII_MvIII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalII_MvIII_KbdRhTwo} >>
-                \new Staff { \BalII_MvIII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalII_MvIII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalII_MvIII_KbdLh }
+                \new Staff { \simplifyPart \BalII_MvIII_KbdLh }
             >>
         >>
         \layout {}
@@ -8892,11 +9016,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "4. Lentement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalII_MvIV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalII_MvIV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalII_MvIV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalII_MvIV_KbdRhTwo} >>
-                \new Staff { \BalII_MvIV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalII_MvIV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalII_MvIV_KbdLh }
+                \new Staff { \simplifyPart \BalII_MvIV_KbdLh }
             >>
         >>
         \layout {}
@@ -8906,11 +9031,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "5. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalII_MvV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalII_MvV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalII_MvV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvV_KbdRhOne} \new Voice {\voiceTwo \BalII_MvV_KbdRhTwo} >>
-                \new Staff { \BalII_MvV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalII_MvV_KbdRhOne} \new Voice {\voiceTwo \BalII_MvV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalII_MvV_KbdLh }
+                \new Staff { \simplifyPart \BalII_MvV_KbdLh }
             >>
         >>
         \layout {}
@@ -8924,11 +9050,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "1. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvI_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIII_MvI_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIII_MvI_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIII_MvI_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvI_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvI_KbdRhTwo} >>
-                \new Staff { \BalIII_MvI_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvI_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvI_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIII_MvI_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalIII_MvI_KbdLh }
             >>
         >>
         \layout {}
@@ -8938,11 +9065,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "2. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIII_MvII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIII_MvII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIII_MvII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvII_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvII_KbdRhTwo} >>
-                \new Staff { \BalIII_MvII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvII_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIII_MvII_KbdLh }
+                \new Staff { \simplifyPart \BalIII_MvII_KbdLh }
             >>
         >>
         \layout {}
@@ -8952,11 +9080,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "3. Doucement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIII_MvIII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIII_MvIII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIII_MvIII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvIII_KbdRhTwo} >>
-                \new Staff { \BalIII_MvIII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvIII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIII_MvIII_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalIII_MvIII_KbdLh }
             >>
         >>
         \layout {}
@@ -8966,11 +9095,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "4. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIII_MvIV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIII_MvIV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIII_MvIV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvIV_KbdRhTwo} >>
-                \new Staff { \BalIII_MvIV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIII_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalIII_MvIV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIII_MvIV_KbdLh }
+                \new Staff { \simplifyPart \BalIII_MvIV_KbdLh }
             >>
         >>
         \layout {}
@@ -8984,11 +9114,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "1. Rondement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvI_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIV_MvI_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIV_MvI_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIV_MvI_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvI_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvI_KbdRhTwo} >>
-                \new Staff { \BalIV_MvI_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvI_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvI_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIV_MvI_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalIV_MvI_KbdLh }
             >>
         >>
         \layout {}
@@ -8998,11 +9129,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "2. Gaiment" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIV_MvII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIV_MvII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIV_MvII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvII_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvII_KbdRhTwo} >>
-                \new Staff { \BalIV_MvII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvII_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIV_MvII_KbdLh }
+                \new Staff { \simplifyPart \BalIV_MvII_KbdLh }
             >>
         >>
         \layout {}
@@ -9012,11 +9144,12 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "3. Légérement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIII_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIV_MvIII_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIV_MvIII_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIV_MvIII_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvIII_KbdRhTwo} >>
-                \new Staff { \BalIV_MvIII_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvIII_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvIII_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIV_MvIII_KbdLh }
+                \new Staff { \simplifyPartToDottedQuarters \BalIV_MvIII_KbdLh }
             >>
         >>
         \layout {}
@@ -9026,21 +9159,21 @@ BalIV_MvIV_KbdLh =  \relative g, {
     \score {
         \header { piece = "4. Doucement" }
         \new StaffGroup <<
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIV_DessusOne }
-            \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #-1 }{ \BalIV_MvIV_DessusTwo }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #1 } { \BalIV_MvIV_DessusOne }
+            \new Staff \with { midiInstrument = "dulcimer" midiPanPosition = #-1 }{ \BalIV_MvIV_DessusTwo }
             \new PianoStaff <<
-                \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvIV_KbdRhTwo} >>
-                \new Staff { \BalIV_MvIV_KbdLh }
+                % \new Staff \with { \consists Merge_rests_engraver } << \new Voice {\voiceOne \BalIV_MvIV_KbdRhOne} \new Voice {\voiceTwo \BalIV_MvIV_KbdRhTwo} >>
+                \new Staff \with { \magnifyStaff #5/7 midiMaximumVolume = #0 } { \keepWithTag #'(original Oclef) \BalIV_MvIV_KbdLh }
+                \new Staff { \simplifyPartToQuarters \BalIV_MvIV_KbdLh }
             >>
         >>
         \layout {}
         \midi {\tempo 2 = 80 }
     }
 
-}
-% /bookpart
+} % END/bookpart
 
-} % /book
+} % END/book
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9049,119 +9182,146 @@ BalIV_MvIV_KbdLh =  \relative g, {
 
 \book {
 
-\paper { output-suffix = "-dessus1" }
+    \header { instrument = "Dessus I" }
+
+\paper {
+    output-suffix = "-dessus1"
+    auto-first-page-number = ##f
+}
+
+\bookpart {
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvI_DessusOne }
+    \new Staff { \BalI_MvI_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gracieusement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvII_DessusOne }
+    \new Staff { \BalI_MvII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Vivement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIII_DessusOne }
+    \new Staff { \BalI_MvIII_DessusOne }
     \layout {}
 }
 
+\pageBreak
+
 \score {
     \header { piece = "4. Modérément" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIV_DessusOne }
+    \new Staff { \BalI_MvIV_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Mouvement de Chaconne" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvV_DessusOne }
+    \new Staff { \BalI_MvV_DessusOne }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "DEUXIÈME BALET" }
+
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvI_DessusOne }
+    \new Staff { \BalII_MvI_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Pesament" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvII_DessusOne }
-    \layout {}
+    \new Staff { \BalII_MvII_DessusOne }
+    \layout {
+        \context {\Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/2)}
+    }
 }
 
 \score {
     \header { piece = "3. Vite" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIII_DessusOne }
+    \new Staff { \BalII_MvIII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Lentement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIV_DessusOne }
+    \new Staff { \BalII_MvIV_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvV_DessusOne }
+    \new Staff { \BalII_MvV_DessusOne }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "TROISIÈME BALET" }
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvI_DessusOne }
+    \new Staff { \BalIII_MvI_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvII_DessusOne }
+    \new Staff { \BalIII_MvII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Doucement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIII_DessusOne }
+    \new Staff { \BalIII_MvIII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIV_DessusOne }
+    \new Staff { \BalIII_MvIV_DessusOne }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "QUATRIÈME BALET" }
 
 \score {
     \header { piece = "1. Rondement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvI_DessusOne }
-    \layout {}
+    \new Staff { \BalIV_MvI_DessusOne }
+    \layout {
+        \context {\Score \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)}
+    }
 }
+
+\pageBreak
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvII_DessusOne }
+    \new Staff { \BalIV_MvII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Légérement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIII_DessusOne }
+    \new Staff { \BalIV_MvIII_DessusOne }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Doucement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIV_DessusOne }
+    \new Staff { \BalIV_MvIV_DessusOne }
     \layout {}
 }
 
-}
+} % /END/bookpart
+
+} % /END/book
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9170,120 +9330,283 @@ BalIV_MvIV_KbdLh =  \relative g, {
 
 \book {
 
-\paper { output-suffix = "-dessus2" }
+    \header { instrument = "Dessus II" }
+
+\paper {
+    output-suffix = "-dessus2"
+    blank-page-penalty = #10 % default = 5
+}
+
+\bookpart {
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvI_DessusTwo }
+    \new Staff { \BalI_MvI_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gracieusement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvII_DessusTwo }
+    \new Staff { \BalI_MvII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Vivement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIII_DessusTwo }
+    \new Staff { \BalI_MvIII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Modérément" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvIV_DessusTwo }
+    \new Staff { \BalI_MvIV_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Mouvement de Chaconne" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalI_MvV_DessusTwo }
+    \new Staff { \BalI_MvV_DessusTwo }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "DEUXIÈME BALET" }
+
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvI_DessusTwo }
+    \new Staff { \BalII_MvI_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Pesament" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvII_DessusTwo }
+    \new Staff { \BalII_MvII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Vite" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIII_DessusTwo }
+    \new Staff { \BalII_MvIII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Lentement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvIV_DessusTwo }
+    \new Staff { \BalII_MvIV_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalII_MvV_DessusTwo }
+    \new Staff { \BalII_MvV_DessusTwo }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "TROISIÈME BALET" }
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvI_DessusTwo }
+    \new Staff { \BalIII_MvI_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvII_DessusTwo }
+    \new Staff { \BalIII_MvII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Doucement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIII_DessusTwo }
+    \new Staff { \BalIII_MvIII_DessusTwo }
     \layout {}
 }
+
+\pageBreak
 
 \score {
     \header { piece = "4. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIII_MvIV_DessusTwo }
+    \new Staff { \BalIII_MvIV_DessusTwo }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "QUATRIÈME BALET" }
 
 \score {
     \header { piece = "1. Rondement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvI_DessusTwo }
+    \new Staff { \BalIV_MvI_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvII_DessusTwo }
+    \new Staff { \BalIV_MvII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Légérement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIII_DessusTwo }
+    \new Staff { \BalIV_MvIII_DessusTwo }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Doucement" }
-    \new Staff \with { midiInstrument = "trumpet" midiPanPosition = #1 } { \BalIV_MvIV_DessusTwo }
+    \new Staff { \BalIV_MvIV_DessusTwo }
     \layout {}
 }
 
+} % /END/bookpart
+
+} % /END/book
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Parts: Dessus Two, B flat
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\book {
+
+    \header { instrument = \markup { "Dessus II (" "B" \tiny \flat ")" } }
+
+\paper {
+    output-suffix = "-dessus2-bflat"
+    blank-page-penalty = #10 % default = 5
 }
 
+\bookpart {
+
+\score {
+    \header { piece = "1. Gaiment" }
+    \new Staff { \transpose bf c' \BalI_MvI_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "2. Gracieusement" }
+    \new Staff { \transpose bf c' \BalI_MvII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "3. Vivement" }
+    \new Staff { \transpose bf c' \BalI_MvIII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "4. Modérément" }
+    \new Staff { \transpose bf c' \BalI_MvIV_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "5. Mouvement de Chaconne" }
+    \new Staff { \transpose bf c' \BalI_MvV_DessusTwo }
+    \layout {}
+}
+
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "DEUXIÈME BALET" }
+
+\score {
+    \header { piece = "1. Gaiment" }
+    \new Staff { \transpose bf c' \BalII_MvI_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "2. Pesament" }
+    \new Staff { \transpose bf c' \BalII_MvII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "3. Vite" }
+    \new Staff { \transpose bf c' \BalII_MvIII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "4. Lentement" }
+    \new Staff { \transpose bf c' \BalII_MvIV_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "5. Gaiment" }
+    \new Staff { \transpose bf c' \BalII_MvV_DessusTwo }
+    \layout {}
+}
+
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "TROISIÈME BALET" }
+
+\score {
+    \header { piece = "1. Gaiment" }
+    \new Staff { \transpose bf c' \BalIII_MvI_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "2. Gaiment" }
+    \new Staff { \transpose bf c' \BalIII_MvII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "3. Doucement" }
+    \new Staff { \transpose bf c' \BalIII_MvIII_DessusTwo }
+    \layout {}
+}
+
+\pageBreak
+
+\score {
+    \header { piece = "4. Gaiment" }
+    \new Staff { \transpose bf c' \BalIII_MvIV_DessusTwo }
+    \layout {}
+}
+
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "QUATRIÈME BALET" }
+
+\score {
+    \header { piece = "1. Rondement" }
+    \new Staff { \transpose bf c' \BalIV_MvI_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "2. Gaiment" }
+    \new Staff { \transpose bf c' \BalIV_MvII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "3. Légérement" }
+    \new Staff { \transpose bf c' \BalIV_MvIII_DessusTwo }
+    \layout {}
+}
+
+\score {
+    \header { piece = "4. Doucement" }
+    \new Staff { \transpose bf c' \BalIV_MvIV_DessusTwo }
+    \layout {}
+}
+
+} % /END/bookpart
+
+} % /END/book
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9292,237 +9615,287 @@ BalIV_MvIV_KbdLh =  \relative g, {
 
 \book {
 
-\paper { output-suffix = "-basso" }
+    \header { instrument = "Basso" }
+
+\paper {
+    output-suffix = "-basso"
+    blank-page-penalty = #10 % default = 5
+}
+
+\bookpart {
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalI_MvI_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalI_MvI_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gracieusement" }
-    \new Staff { \keepWithTag #'original \BalI_MvII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalI_MvII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Vivement" }
-    \new Staff { \keepWithTag #'original \BalI_MvIII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalI_MvIII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Modérément" }
-    \new Staff { \keepWithTag #'original \BalI_MvIV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalI_MvIV_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Mouvement de Chaconne" }
-    \new Staff { \keepWithTag #'original \BalI_MvV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalI_MvV_KbdLh }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "DEUXIÈME BALET" }
+
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalII_MvI_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalII_MvI_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Pesament" }
-    \new Staff { \keepWithTag #'original \BalII_MvII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalII_MvII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Vite" }
-    \new Staff { \keepWithTag #'original \BalII_MvIII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalII_MvIII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Lentement" }
-    \new Staff { \keepWithTag #'original \BalII_MvIV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalII_MvIV_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "5. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalII_MvV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalII_MvV_KbdLh }
     \layout {}
 }
 
+} \bookpart {
+    \paper { auto-first-page-number = ##f }
+    \header { title = "TROISIÈME BALET" }
 
 \score {
     \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalIII_MvI_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIII_MvI_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalIII_MvII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIII_MvII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Doucement" }
-    \new Staff { \keepWithTag #'original \BalIII_MvIII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIII_MvIII_KbdLh }
     \layout {}
 }
+
+\pageBreak
 
 \score {
     \header { piece = "4. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalIII_MvIV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIII_MvIV_KbdLh }
     \layout {}
 }
 
+} \bookpart {
+
+    \paper { auto-first-page-number = ##f }
+    \header { title = "QUATRIÈME BALET" }
 
 \score {
     \header { piece = "1. Rondement" }
-    \new Staff { \keepWithTag #'original \BalIV_MvI_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIV_MvI_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "2. Gaiment" }
-    \new Staff { \keepWithTag #'original \BalIV_MvII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIV_MvII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "3. Légérement" }
-    \new Staff { \keepWithTag #'original \BalIV_MvIII_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIV_MvIII_KbdLh }
     \layout {}
 }
 
 \score {
     \header { piece = "4. Doucement" }
-    \new Staff { \keepWithTag #'original \BalIV_MvIV_KbdLh }
+    \new Staff { \keepWithTag #'(original Oclef) \BalIV_MvIV_KbdLh }
     \layout {}
 }
 
-}
+} % /END/bookpart
+
+} % /END/book
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Parts: Bass (complified
+%% Parts: Bass (simplified, alto)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \book {
 
-\paper { output-suffix = "-basso-complified" }
+    \header { instrument = "Basso" }
 
-\score {
-    \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalI_MvI_KbdLh }
-    \layout {}
-}
+    \paper {
+        output-suffix = "-basso-alto-clef-simplified"
+        blank-page-penalty = #10 % default = 5
+    }
 
-\score {
-    \header { piece = "2. Gracieusement" }
-    \new Staff { \keepWithTag #'complified \BalI_MvII_KbdLh }
-    \layout {}
-}
+\bookpart {
 
-\score {
-    \header { piece = "3. Vivement" }
-    \new Staff { \keepWithTag #'complified \BalI_MvIII_KbdLh }
-    \layout {}
-}
+    \header { title = "PREMIER BALET" }
 
-\score {
-    \header { piece = "4. Modérément" }
-    \new Staff { \keepWithTag #'complified \BalI_MvIV_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "1. Gaiment" }
+        \new Staff { \simplifyPart \BalI_MvI_KbdLh }
+        \layout {}
+    }
 
-\score {
-    \header { piece = "5. Mouvement de Chaconne" }
-    \new Staff { \keepWithTag #'complified \BalI_MvV_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "2. Gracieusement" }
+        \new Staff { \simplifyPart \BalI_MvII_KbdLh }
+        \layout {}
+    }
 
-\score {
-    \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalII_MvI_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "3. Vivement" }
+        \new Staff { \simplifyPart \BalI_MvIII_KbdLh }
+        \layout {}
+    }
 
-\score {
-    \header { piece = "2. Pesament" }
-    \new Staff { \keepWithTag #'complified \BalII_MvII_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "4. Modérément" }
+        \new Staff { \simplifyPartToQuarters \BalI_MvIV_KbdLh }
+        \layout {}
+    }
 
-\score {
-    \header { piece = "3. Vite" }
-    \new Staff { \keepWithTag #'complified \BalII_MvIII_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "5. Mouvement de Chaconne" }
+        \new Staff { \simplifyPart \BalI_MvV_KbdLh }
+        \layout {}
+    }
+} \bookpart {
 
-\score {
-    \header { piece = "4. Lentement" }
-    \new Staff { \keepWithTag #'complified \BalII_MvIV_KbdLh }
-    \layout {}
-}
+    \paper { auto-first-page-number = ##f }
+    \header { title = "DEUXIÈME BALET" }
 
-\score {
-    \header { piece = "5. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalII_MvV_KbdLh }
-    \layout {}
-}
+    \score {
+        \header { piece = "1. Gaiment" }
+        \new Staff { \simplifyPart \BalII_MvI_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "2. Pesament" }
+        \new Staff { \simplifyPartToQuarters \BalII_MvII_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "3. Vite" }
+        \new Staff { \simplifyPart \BalII_MvIII_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "4. Lentement" }
+        \new Staff { \simplifyPart \BalII_MvIV_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "5. Gaiment" }
+        \new Staff { \simplifyPart \BalII_MvV_KbdLh }
+        \layout {}
+    }
+
+} \bookpart {
+
+    \paper { auto-first-page-number = ##f }
+    \header { title = "TROISIÈME BALET" }
+
+    \score {
+        \header { piece = "1. Gaiment" }
+        \new Staff { \simplifyPartToQuarters \BalIII_MvI_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "2. Gaiment" }
+        \new Staff { \simplifyPart \BalIII_MvII_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "3. Doucement" }
+        \new Staff { \simplifyPartToQuarters \BalIII_MvIII_KbdLh }
+        \layout {}
+    }
+
+    \pageBreak
+
+    \score {
+        \header { piece = "4. Gaiment" }
+        \new Staff { \simplifyPart \BalIII_MvIV_KbdLh }
+        \layout {}
+    }
+
+} \bookpart {
+
+    \paper { auto-first-page-number = ##f }
+    \header { title = "QUATRIÈME BALET" }
+
+    \score {
+        \header { piece = "1. Rondement" }
+        \new Staff { \simplifyPartToQuarters \BalIV_MvI_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "2. Gaiment" }
+        \new Staff { \simplifyPart \BalIV_MvII_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "3. Légérement" }
+        \new Staff { \simplifyPartToDottedQuarters \BalIV_MvIII_KbdLh }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "4. Doucement" }
+        \new Staff { \simplifyPartToQuarters \BalIV_MvIV_KbdLh }
+        \layout {}
+    }
+
+} % END/bookpart
+
+} % END/book
 
 
-\score {
-    \header { piece = "1. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalIII_MvI_KbdLh }
-    \layout {}
-}
 
-\score {
-    \header { piece = "2. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalIII_MvII_KbdLh }
-    \layout {}
-}
-
-\score {
-    \header { piece = "3. Doucement" }
-    \new Staff { \keepWithTag #'complified \BalIII_MvIII_KbdLh }
-    \layout {}
-}
-
-\score {
-    \header { piece = "4. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalIII_MvIV_KbdLh }
-    \layout {}
-}
-
-
-\score {
-    \header { piece = "1. Rondement" }
-    \new Staff { \keepWithTag #'complified \BalIV_MvI_KbdLh }
-    \layout {}
-}
-
-\score {
-    \header { piece = "2. Gaiment" }
-    \new Staff { \keepWithTag #'complified \BalIV_MvII_KbdLh }
-    \layout {}
-}
-
-\score {
-    \header { piece = "3. Légérement" }
-    \new Staff { \keepWithTag #'complified \BalIV_MvIII_KbdLh }
-    \layout {}
-}
-
-\score {
-    \header { piece = "4. Doucement" }
-    \new Staff { \keepWithTag #'complified \BalIV_MvIV_KbdLh }
-    \layout {}
-}
-
-}
