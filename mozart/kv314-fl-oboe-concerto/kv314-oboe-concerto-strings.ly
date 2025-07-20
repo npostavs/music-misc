@@ -177,7 +177,7 @@ MvI_OboeSolo =  \relative d'' {
     ( g16 ) fs16 ( g16 fs16 ) a16 -. | % 118
     g16 ( fs16 ) e16 -. ds16 -. e16 ( g16 ) fs16 -. a16 -. g16 ( fs16 )
     e16 -. ds16 -. e16 ( g16 ) fs16 -. a16 -. | % 119
-    g16 ( fs16 ) e16 -. d16 -. cs16 ( d16 ) e16 -. fs16 -. g16 ( fs16 )
+    g16 ( fs16 ) e16 -. d?16 -. cs16 ( d16 ) e16 -. fs16 -. g16 ( fs16 )
     e16 -. fs16 -. g16 ( a16 ) b16 -. cs16 -. | \barNumberCheck #120
     d4 \cueDuring "m1V1" #DOWN { r4 r2 | % 121
     R1 } | % 122
@@ -1267,7 +1267,7 @@ MvI_Viola =  \relative d {
         e8 e e8 g8 fs8 fs fs8 d'8 | % 9
         cs8 cs d8 d e8 e g,8 g | \barNumberCheck #10
     }
-    <e, d'>1 | % 11
+    <f, d'>1 | % 11
     <a e'>4 <a e'>4 <a e'>4 r4 | % 12
     R1 | % 13
     d,8 -\p -\p d8 d8 d8 d8 d8 d8 d8 | % 14
@@ -3684,37 +3684,37 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
         \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe"
                            instrumentName = \oboeNameMkup
                            shortInstrumentName = "Ob."}
-        { \transpose d c \MvI_OboeSolo }
+        { \killCues \removeWithTag #'solo-part { \transpose d c \MvI_OboeSolo } }
         \new StaffGroup <<
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
-                \transpose d c \MvI_ViolinI_Simplified
+                \removeWithTag #'solo-part { \transpose d c \MvI_ViolinI_Simplified }
             >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
                 \set Staff.shortInstrumentName = "V2"
-                \transpose d c \MvI_ViolinII_Simplified
+                \removeWithTag #'solo-part { \transpose d c \MvI_ViolinII_Simplified }
             >>
             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "III" } }
                 \set Staff.shortInstrumentName = \markup { \concat { "V3" } }
-                \transpose d c \keepWithTag #'simplified { \MvI_ViolinIII }
+                \keepWithTag #'simplified { \transpose d c { \MvI_ViolinIII } }
             >>
             \new Staff \with { midiPanPosition = #-0.5 midiInstrument = "viola" }
             <<
                 \set Staff.instrumentName = "Viola"
                 \set Staff.shortInstrumentName = \markup { \concat { "V" \super "a" } }
-                \transpose d c \keepWithTag #'simplified { \MvI_Viola }
+                \keepWithTag #'simplified { \transpose d c { \MvI_Viola } }
             >>
             \new Staff \with { midiPanPosition = #0.25 midiInstrument = "cello" }
             <<
                 \set Staff.instrumentName = "Cello"
                 \set Staff.shortInstrumentName = "Cl"
-                \transpose d c \MvI_Cello
+                \keepWithTag #'simplified { \transpose d c \MvI_Cello }
             >>
         >>
     >>
@@ -3731,27 +3731,15 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
                      instrumentName = \oboeNameMkup }
         <<
             \set Staff.shortInstrumentName = "Ob."
-            \transpose d c \MvII_OboeSolo
+            \killCues \removeWithTag #'solo-part { \transpose d c \MvII_OboeSolo }
         >>
         \new StaffGroup <<
-            % \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
-            % <<
-            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
-            %     \set Staff.shortInstrumentName = "V1"
-            %     \keepWithTag #'original { \transpose d c \MvII_ViolinI }
-            % >>
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
                 \keepWithTag #'simplified { \transpose d c \MvII_ViolinI }
             >>
-            % \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
-            % <<
-            %     \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
-            %     \set Staff.shortInstrumentName = "V2"
-            %     \keepWithTag #'original { \transpose d c \MvII_ViolinII }
-            % >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
@@ -3790,7 +3778,7 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
         <<
             \set Staff.instrumentName = \oboeNameMkup
             \set Staff.shortInstrumentName = "Ob."
-            \transpose d c \MvIII_OboeSolo
+            \killCues \removeWithTag #'solo-part { \transpose d c \MvIII_OboeSolo }
         >>
         \new StaffGroup <<
             % \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" midiMaximumVolume = #0.0 \magnifyStaff #2/3 }
@@ -3869,19 +3857,19 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
         \new Staff \with { midiPanPosition = #0 midiInstrument = "oboe"
                            instrumentName = \oboeNameMkup
                            shortInstrumentName = "Ob."}
-        { \transpose d c \MvI_OboeSolo }
+        { \killCues \removeWithTag #'solo-part { \transpose d c \MvI_OboeSolo } }
         \new StaffGroup <<
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "I" } }
                 \set Staff.shortInstrumentName = "V1"
-                \transpose d c \removeWithTag #'solo-part \MvI_ViolinI
+                \removeWithTag #'solo-part { \transpose d c \MvI_ViolinI }
             >>
             \new Staff \with { midiPanPosition = #1 midiInstrument = "violin" }
             <<
                 \set Staff.instrumentName = \markup { \concat { "V" \super "ln" "II" } }
                 \set Staff.shortInstrumentName = "V2"
-                \transpose d c \MvI_ViolinII
+                \removeWithTag #'solo-part { \transpose d c \MvI_ViolinII }
             >>
             \new Staff \with { midiPanPosition = #0.5 midiInstrument = "viola" }
             <<
@@ -3899,12 +3887,12 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
             <<
                 \set Staff.instrumentName = "Cello"
                 \set Staff.shortInstrumentName = "Cl"
-                \transpose d c \MvI_Cello
+                \transpose d c \keepWithTag #'original { \MvI_Cello }
             >>
         >>
     >>
     \layout {  #(layout-set-staff-size 14) }
-    \midi { \tempo 4 = 120 }
+    \midi { \tempo 4 = 100 }
 }
 
 \score {
@@ -3915,7 +3903,7 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
                      instrumentName = \oboeNameMkup }
         <<
             \set Staff.shortInstrumentName = "Ob."
-            \transpose d c \MvII_OboeSolo
+            \killCues \removeWithTag #'solo-part { \transpose d c \MvII_OboeSolo }
         >>
         \new StaffGroup <<
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
@@ -3961,7 +3949,7 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
         <<
             \set Staff.instrumentName = \oboeNameMkup
             \set Staff.shortInstrumentName = "Ob."
-            \transpose d c \MvIII_OboeSolo
+            \killCues \removeWithTag #'solo-part { \transpose d c \MvIII_OboeSolo }
         >>
         \new StaffGroup <<
             \new Staff \with { midiPanPosition = #-1 midiInstrument = "violin" }
@@ -4031,142 +4019,147 @@ oboeNameMkup = \markup { \center-column {"Solo" "Oboe"}}
     }
 }
 
-% \book {
-%     \header { instrument = "Violin 1" }
-%     \paper { output-suffix = "part-violin1"
-%         page-count = #6
-%     }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_ViolinI_Simplified } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinI } }
-%         \layout {
-%              \context { \Score
-%                \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
-%              }
-%         }
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinI } }
-%         \layout {}
-%     }
-% }
+\book {
+    \header { instrument = "Violin 1" }
+    \paper { output-suffix = "part-violin1"
+        page-count = #6
+    }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff \with { midiInstrument = "violin" } { \keepWithTag #'simplified { \transpose d c \MvI_ViolinI_Simplified } }
+        \layout {}
+        \midi { \tempo 4 = 100 }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinI } }
+        \layout {
+             \context { \Score
+               \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/4)
+             }
+        }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinI } }
+        \layout {}
+    }
+}
 
-% \book {
-%     \header { instrument = "Violin 2" }
-%     \paper { output-suffix = "part-violin2"
-%         page-count = #6
-%     }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_ViolinII_Simplified } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinII } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinII } }
-%         \layout {}
-%     }
-% }
+\book {
+    \header { instrument = "Violin 2" }
+    \paper { output-suffix = "part-violin2"
+        page-count = #6
+    }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff \with { midiInstrument = "violin" } { \keepWithTag #'simplified { \transpose d c \MvI_ViolinII_Simplified } }
+        \layout {}
+        \midi { \tempo 4 = 100 }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinII } }
+        \layout {}
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinII } }
+        \layout {}
+    }
+}
 
-% \book {
-%     \header { instrument = "Violin 3" }
-%     \paper { output-suffix = "part-violin3"
-%         page-count = #4
-%         print-page-number = ##f
-%     }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_ViolinIII } }
-%         \layout {
-%             \context {\Score
-%               \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
-%             }
-%         }
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinIII } }
-%         \layout {
-%             \context {\Score
-%               \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
-%             }
-%         }
-%     }
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinIII } }
-%         \layout {
-%             \context {\Score
-%               \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
-%             }
-%         }
-%     }
-% }
+\book {
+    \header { instrument = "Violin 3" }
+    \paper { output-suffix = "part-violin3"
+        page-count = #4
+        print-page-number = ##f
+    }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff \with { midiInstrument = "violin" } { \keepWithTag #'simplified { \transpose d c \MvI_ViolinIII } }
+        \layout {
+            \context {\Score
+              \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
+            }
+        }
+        \midi { \tempo 4 = 100 }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_ViolinIII } }
+        \layout {
+            \context {\Score
+              \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
+            }
+        }
+    }
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_ViolinIII } }
+        \layout {
+            \context {\Score
+              \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 2/8)
+            }
+        }
+    }
+}
 
-% \book {
-%     \header { instrument = "Viola" }
-%     \paper { output-suffix = "part-viola"
-%         page-count = #4
-%         print-page-number = ##f
-%     }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_Viola } }
-%         \layout {}
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_Viola } }
-%         \layout {}
-%     }
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_Viola } }
-%         \layout {}
-%     }
-% }
+\book {
+    \header { instrument = "Viola" }
+    \paper { output-suffix = "part-viola"
+        page-count = #4
+        print-page-number = ##f
+    }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff \with { midiInstrument = "viola" } { \keepWithTag #'simplified { \transpose d c \MvI_Viola } }
+        \layout {}
+        \midi { \tempo 4 = 100 }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_Viola } }
+        \layout {}
+    }
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_Viola } }
+        \layout {}
+    }
+}
 
-% \book {
-%     \header { instrument = "Cello" }
-%     \paper { output-suffix = "part-cello"
-%         page-count = #4
-%         print-page-number = ##f
-%     }
-%     \score {
-%         \header { piece = "Allegro" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvI_Cello } }
-%         \layout {
-%             \context {\Score
-%               \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
-%             }
-%         }
-%     }
-%     \pageBreak
-%     \score {
-%         \header { piece = "Andante ma non troppo" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_Cello } }
-%         \layout {}
-%     }
-%     \score {
-%         \header { piece = "Rondeau" }
-%         \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_Cello } }
-%         \layout {}
-%     }
-% }
+\book {
+    \header { instrument = "Cello" }
+    \paper { output-suffix = "part-cello"
+        page-count = #4
+        print-page-number = ##f
+    }
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff \with { midiInstrument = "cello" } { \keepWithTag #'simplified { \transpose d c \MvI_Cello } }
+        \layout {
+            \context {\Score
+              \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/8)
+            }
+        }
+        \midi { \tempo 4 = 100 }
+    }
+    \pageBreak
+    \score {
+        \header { piece = "Andante ma non troppo" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvII_Cello } }
+        \layout {}
+    }
+    \score {
+        \header { piece = "Rondeau" }
+        \new Staff { \keepWithTag #'simplified { \transpose d c \MvIII_Cello } }
+        \layout {}
+    }
+}
