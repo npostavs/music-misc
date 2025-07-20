@@ -3,8 +3,8 @@
 \language "english"
 
 \header {
-    title =  "Triosonate d-moll"
-    compose =  "Telemann"
+    title = "Triosonate d-moll (TWV 42:d7)"
+    composer = "Telemann"
     source = "IMSLP269371-PMLP405409-Trio-d-moll-twv-42-d7.pdf"
 }
 
@@ -352,7 +352,7 @@ MvI_Bass_Complified = \relative d {
     f8 a16 bf16 c8 c,8 d8[ \grace { e16( d c } bf8)] r8 c8 | % 8
     f16 g a bf c8 c,8 f4 r8 f=8 | % 9
     e4 r8 e16 fs d4 r8 d16 e | \barNumberCheck #10
-    d16( c8.) r8 a8 e'8 e,8 r8 gs'8 | % 11
+    \appoggiatura d8 c4 r8 a8 e'8 e,8 r8 gs'8 | % 11
     a32( gs a16) a,8 r8 a8 e'16 c e,8 r8 gs'8 | % 12
     a16 c,32( b a=,8) r8 a'8 a8 f16 d= e8 e,8 | % 13
     a4 r8 cs8 d16 e d8 r8 b16 d | % 14
@@ -364,7 +364,7 @@ MvI_Bass_Complified = \relative d {
     g8 bf,16 a16 g8 bf8 c16 g c e g16 e c e | \barNumberCheck #20
     f8 a,16 g16 f8 a8 bf16 a g a c16 bf a bf | % 21
     d16 cs b8 r8 bf8 a16 cs d8 a'8 a,8 | % 22
-    bf8 b8 r8 bf8 a16 bf32 cs d32 e f g a=8 a,8 | % 23
+    bf8 b8 r8 bf8 a4 \grace { bf32 cs d32 e f g } a=8 a,8 | % 23
     d2 r2 \bar "|."
 }
 
@@ -631,7 +631,7 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff \with { midiPanPosition = #1 }{ \MvII_Bflute }
             \new Staff \with { midiPanPosition = #-1 }{ \MvII_Violin }
-            \new Staff { \keepWithTag #'simplified { \MvII_Bass } }
+            \new Staff { \keepWithTag #'original { \MvII_Bass } }
         >>
         \midi {\tempo 4. = 100 }
     }
@@ -643,7 +643,7 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff \with { midiPanPosition = #1 }{ \MvIII_Bflute }
             \new Staff \with { midiPanPosition = #-1 }{ \MvIII_Violin }
-            \new Staff { \keepWithTag #'simplified { \MvIII_Bass } }
+            \new Staff { \keepWithTag #'original { \MvIII_Bass } }
         >>
         \midi {\tempo 4 = 60 }
     }
@@ -655,7 +655,7 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff \with { midiPanPosition = #1 }{ \MvIV_Bflute }
             \new Staff \with { midiPanPosition = #-1 }{ \MvIV_Violin }
-            \new Staff { \MvIV_BassSimplified }
+            \new Staff { \MvIV_Bass }
         >>
         \midi {\tempo 4 = 120 }
     }
@@ -757,6 +757,42 @@ clefAlto = { \clef "alto_8" }
     \score {
         \header { piece = "Allegro" }
         \new Staff { \clefAlto \MvIV_BassSimplified }
+        \layout {}
+    }
+}
+
+\book {
+    \paper {
+        output-suffix = "-bass-complified"
+        bottom-margin = 4\mm
+        top-margin = 4\mm
+        left-margin = 7\mm
+        right-margin = 4\mm
+    }
+    \header { instrument = "BC" }
+    \score {
+        \header { piece = "Andante (ornamented)" }
+        \new Staff { \clef bass \MvI_Bass_Complified }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "Vivace" }
+        \new Staff { \clef bass \keepWithTag #'original { \MvII_Bass } }
+        \layout {}
+    }
+
+    \pageBreak
+
+    \score {
+        \header { piece = "Adagio" }
+        \new Staff { \clef bass \keepWithTag #'original { \MvIII_Bass } }
+        \layout {}
+    }
+
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff { \clef bass \MvIV_Bass }
         \layout {}
     }
 }
