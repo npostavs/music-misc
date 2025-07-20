@@ -341,6 +341,33 @@ MvI_Bass = \relative d {
     bf8 b8 r8 bf8 a8 d8 a'8 a,8 | % 23
     d2 r2 \bar "|."
 }
+MvI_Bass_Complified = \relative d {
+    \time 4/4 \key d \minor \partial 8 d8 | % 1
+    f8 d8 g8 a8 f8 d8 g8 a8 | % 2
+    d,8 d'8 bf8 g8 a8 a,8 r8 a'8 | % 3
+    f16 e d e g16 f a g f16 e d c bf'16 g a g | % 4
+    d16 a d e fs16 a fs e d16 g bf, a g16 a bf a | % 5
+    c16 g c e g16 e c e f8 a,16 g16 f8 a8 | % 6
+    bf16 a g a c16 bf a bf d16 c bf8 r8 c8 | % 7
+    f8 a16 bf16 c8 c,8 d8[ \grace { e16( d c } bf8)] r8 c8 | % 8
+    f16 g a bf c8 c,8 f4 r8 f=8 | % 9
+    e4 r8 e16 fs d4 r8 d16 e | \barNumberCheck #10
+    d16( c8.) r8 a8 e'8 e,8 r8 gs'8 | % 11
+    a32( gs a16) a,8 r8 a8 e'16 c e,8 r8 gs'8 | % 12
+    a16 c,32( b a=,8) r8 a'8 a8 f16 d= e8 e,8 | % 13
+    a4 r8 cs8 d16 e d8 r8 b16 d | % 14
+    c4 r8 a8 a8 bf32( a bf16) r8 g8 | % 15
+    a16 cs e8 r8 a=16 g16 f8 d8 g8 a8 | % 16
+    f8 d8 g8 a8 d,8 d'16 c bf16 a g f | % 17
+    a8 a,8 r8 a'8 f16 g d e g16 f a g | % 18
+    f16 a d,=16 f g16 bf a cs d,16 fs d a fs'=16 d a d | % 19
+    g8 bf,16 a16 g8 bf8 c16 g c e g16 e c e | \barNumberCheck #20
+    f8 a,16 g16 f8 a8 bf16 a g a c16 bf a bf | % 21
+    d16 cs b8 r8 bf8 a16 cs d8 a'8 a,8 | % 22
+    bf8 b8 r8 bf8 a16 bf32 cs d32 e f g a=8 a,8 | % 23
+    d2 r2 \bar "|."
+}
+
 MvII_Bass = \relative d {
     \time 6/8 \key d \minor d4 cs8 d4 e8 | % 2
     f4 d8 g8 a8 bf8 | % 3
@@ -544,8 +571,9 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff { \MvI_Bflute }
             \new Staff { \MvI_Violin }
-            \new Staff { \clefBass \keepWithTag #'original { \MvI_Bass } }
-            \new Staff { \clefBass \keepWithTag #'simplified { \MvI_Bass } }
+            \new Staff { \clefBass \keepWithTag #'original { \MvI_Bass } } % no simplifications
+            % \new Staff { \clefBass \keepWithTag #'simplified { \MvI_Bass } }
+            \new Staff { \clefBass \MvI_Bass_Complified }
         >>
         \layout {}
     }
@@ -590,7 +618,8 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff \with { midiPanPosition = #1 } { \MvI_Bflute }
             \new Staff \with { midiPanPosition = #-1 }{ \MvI_Violin }
-            \new Staff { \keepWithTag #'simplified { \MvI_Bass } }
+            % \new Staff { \keepWithTag #'simplified { \MvI_Bass } }
+            \new Staff { \MvI_Bass_Complified }
         >>
         \midi {\tempo 4 = 60 }
     }
