@@ -3,7 +3,7 @@
 \language "english"
 
 \header {
-    title = "Triosonate d-moll (TWV 42:d7)"
+    title = \markup \smaller { "Triosonate d-moll (TWV 42:d7)" }
     composer = "Telemann"
     source = "IMSLP269371-PMLP405409-Trio-d-moll-twv-42-d7.pdf"
 }
@@ -11,8 +11,8 @@
 \layout {
     \context { \Score
         skipBars = ##t
-        }
     }
+}
 
 clefBass = { \clef bass }
 % clefBass = { \clef "alto_8" }
@@ -22,7 +22,92 @@ clefBass = { \clef bass }
     tagline = ##f
 
     ragged-last-bottom = ##f
+    print-page-number = ##f
 }
+
+simplifyPairs =
+#(define-music-function (short-dur triples? music)
+                        ((ly:duration? (ly:make-duration 4 0)) (boolean? #f) ly:music?)
+   ;; triples? indicates a 6/8, 9/8, or 12/8 type of rhythm.
+   (define long-dur (ly:make-duration (- (ly:duration-log short-dur) 1) (if triples? 1 0)))
+   (define long-dot-dur (ly:make-duration (ly:duration-log long-dur) (if triples? 0 1)))
+   (define short-triple (ly:make-duration (ly:duration-log short-dur) 0 (if triples? 1 2/3)))
+   (define (same-pitch? a b)
+      (equal? (ly:music-property a 'pitch)
+              (ly:music-property b 'pitch)))
+   (define (pair->eighth music)
+     (if (music-is-of-type? music 'sequential-music)
+         (let loop ((elts (ly:music-property music 'elements)) (acc '()))
+           (cond
+            ((null? elts)
+             (set! (ly:music-property music 'elements) (reverse! acc))
+             music)
+            ;; Skip over short pitches completing a dotted pattern:
+            ;; (otherwise we might take pairs starting on off-beats)
+            ;; A8. B16 -> A8. B16
+            ;; A8 B16 -> A8 B16 %% triples? rhythm case
+            ((and (pair? elts)
+                  (music-is-of-type? (car elts) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) long-dot-dur)
+                  (pair? (cdr elts))
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur))
+             (let* ((first (car elts))
+                    (second (cadr elts)))
+               (loop (cddr elts) (cons second (cons first acc)))))
+            ;; \tuplet 3/2 { A B C } -> A
+            ;; A8 B C -> A4 %% triples? rhythm case
+            ((and (>= (length elts) 3)
+                  (or (music-is-of-type? (list-ref elts 0) 'note-event)
+                      (music-is-of-type? (list-ref elts 0) 'rest-event))
+                  (or (music-is-of-type? (list-ref elts 1) 'note-event)
+                      (music-is-of-type? (list-ref elts 1) 'rest-event))
+                  (or (music-is-of-type? (list-ref elts 2) 'note-event)
+                      (music-is-of-type? (list-ref elts 2) 'rest-event))
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-triple)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-triple)
+                  (equal? (ly:music-property (list-ref elts 2) 'duration) short-triple))
+             (let* ((first (list-ref elts 0)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (loop (cdddr elts) (cons first acc))))
+            ;; A16 B A B -> A8 B8
+            ((and (not triples?) ;; Don't take groups of 4 in triple rhythm case.
+                  (>= (length elts) 4)
+                  (music-is-of-type? (list-ref elts 0) 'note-event)
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (music-is-of-type? (list-ref elts 2) 'note-event)
+                  (music-is-of-type? (list-ref elts 3) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 2) 'duration) short-dur)
+                  (equal? (ly:music-property (list-ref elts 3) 'duration) short-dur)
+                  (same-pitch? (list-ref elts 0) (list-ref elts 2))
+                  (same-pitch? (list-ref elts 1) (list-ref elts 3)))
+             (let* ((first (list-ref elts 0))
+                    (second (list-ref elts 1)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (set! (ly:music-property second 'duration) long-dur)
+               (loop (cddddr elts) (cons second (cons first acc)))))
+            ;; A16 B -> A8
+            ((and (not triples?) ;; Don't groups of 2 in triple rhythm case
+                  (pair? elts)
+                  (or (music-is-of-type? (car elts) 'note-event)
+                      (music-is-of-type? (car elts) 'rest-event))
+                  (equal? (ly:music-property (list-ref elts 0) 'duration) short-dur)
+                  (pair? (cdr elts))
+                  ;;(or (ly:message "(cdr elts) ~a" (cdr elts)) #t)
+                  (music-is-of-type? (list-ref elts 1) 'note-event)
+                  (equal? (ly:music-property (list-ref elts 1) 'duration) short-dur))
+             (let* ((first (car elts)))
+               (set! (ly:music-property first 'duration) long-dur)
+               (set! (ly:music-property first 'articulations) '())
+               (loop (cddr elts) (cons first acc))))
+            (else
+             (loop (cdr elts) (cons (car elts) acc)))))
+         (if (music-is-of-type? music 'time-scaled-music)
+             (ly:music-property music 'element)
+             music)))
+   (music-map pair->eighth (ly:music-deep-copy music)))
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,6 +194,8 @@ MvII_Bflute = \relative d'' {
     cs4 d8 e8 cs8. d16 | % 48
     d4. r4. \bar "|."
 }
+\addQuote "MvII_Bflute" { \MvII_Bflute }
+
 MvIII_Bflute = \relative d''' {
     \time 4/4 \key d \minor f,4 r4 fs4 r4 | % 2
     g4 r4 ef'2 | % 3
@@ -134,7 +221,7 @@ MvIV_Bflute = \relative e'' {
         a4. e8 d4 cs4 | % 8
         d2 \fermata\fine\bar"||" r2 | % 9
         R1*3 | % 12
-        r2 r4 a'4 ~ | % 13
+        r2. a'4 ~ | % 13
         a4 gs8 a8 b4 a8 gs8 | % 14
         a8 gs8 a4 r4 d4 ~ | % 15
         d8 b8 c8 a8 a4 gs4 | % 16
@@ -179,7 +266,7 @@ MvIV_Bflute = \relative e'' {
 
 MvI_Violin = \relative a' {
     \time 4/4 \key d \minor \partial 8 r8 | % 1
-    r4 r8 a8 d16 ( e16 ) f16 ( e16 ) d8 cs8 | % 2
+    r4. a8 d16 ( e16 ) f16 ( e16 ) d8 cs8 | % 2
     d8 a8 r8 g'16 ( f16 ) e16 ( a,16 ) cs16 ( e16 ) f16 ( e16 ) d16 ( cs16) | % 3
     d4 r8 a8 d16 ( e16 ) f16 ( e16 ) d8 cs8 | % 4
     d8 a8 r8 fs'8 g8 d16 c16 d16 c16 bf16 a16 | % 5
@@ -193,7 +280,7 @@ MvI_Violin = \relative a' {
     b8 a8 r8 e'8 e8 d16 c16 b8. a16 | % 13
     a4 r8 g'8 g8 f8 r8 f8 | % 14
     f8 e8 r8 e8 e8 d8 r8 d8 | % 15
-    d8 cs8 r4 r4 r8 a8 | % 16
+    d8 cs8 r4 r4. a8 | % 16
     d16 ( e16 ) f16 ( e16 ) d8 cs8 d8 a8 r8 g'16 ( f16 ) | % 17
     e16 ( a,16 ) cs16 ( e16 ) f16 ( e16 ) d16 cs16 d4 r8 a8 | % 18
     d16 ( e16 ) f16 ( e16 ) d8 cs8 d8 a8 r8 fs'8 | % 19
@@ -205,8 +292,10 @@ MvI_Violin = \relative a' {
     d2 r2 \bar "|."
 }
 MvII_Violin = \relative d'' {
-    \time 6/8 \key d \minor R2.*5 | % 6
-    r8 e8 f8 e8 c8 d8 | \barNumberCheck #7
+    \time 6/8 \key d \minor
+    <>^\markup \tiny { "Bflute" }
+    \cueDuring "MvII_Bflute" #UP { R2.*5 | % 6
+    r8 } e8 f8 e8 c8 d8 | \barNumberCheck #7
     e8 a,8 c8 b8 d16 c16 b16 a16 | % 8
     gs8 e8 a8 b8 c16 d16 b16 c16 | % 9
     d8 c8 b8 c8 b4 | % 10
@@ -259,7 +348,7 @@ MvIII_Violin = \relative d'' {
     b,4 c2 b4 | % 7
     bf4 a4 g4. a16 bf16 | % 8
     a4 bf2 a4 | \barNumberCheck #9
-    bf4 r4 r8 d16 c16 bf8 a8 | % 10
+    bf4 r4. d16 c16 bf8 a8 | % 10
     g8 bf16 a16 g8 g8 g4 r8 cs8 | % 11
     d4. cs16 d16 cs2 \bar "|."
 }
@@ -291,7 +380,7 @@ MvIV_Violin = \relative c'' {
         g8 e8 f8 d8 d4 cs4 | % 24
         d2 r2 | % 25
         R1*3 | % 28
-        r2 r4 f,4 | % 29
+        r2. f,4 | % 29
         f4 e8 f8 g4 f8 e8 | % 30
         f8 e8 f4 r4 bf4 | % 31
         bf8 g8 a8 f8 f4 e4 | % 32
@@ -313,6 +402,155 @@ MvIV_Violin = \relative c'' {
         d8 d16 e16 fs4 -! e4 -! d4 -! | % 48
         cs2
     }
+}
+
+MvI_ViolinSimplified = \relative c'' {
+  \time 4/4
+  \key d \minor
+  \partial 8 r8 |
+  r4. a8 d4 d4 |
+  d4 r8 g e4 f4 |
+  d4 r8 a d4 d4 |
+  d4 r8 fs g4 d4 |
+  g,4 r8 e' f4 c4 |
+  f,4 g4 a8 d r8 e |
+  f4 e8. f16 f4 r8 e |
+  f4 g,8. f16 f4 d'8 8 |
+  d4 c8 8 c4 b8 8 |
+  b4 a8 8 gs4 r8 b |
+  a4 r8 a gs4 r8 b |
+  a4 r8 e' e4 b8. a16 |
+  a4 r8 g' f4 r8 f |
+  e4 r8 e d4 r8 d |
+  cs4 r4 r4. a8 |
+  d4 d4 d4 r8 g |
+  e4 f4 d4 r8 a |
+  d4 d4 d4 r8 fs |
+  g4 bf,4 g4 r8 e' |
+  f4 a,4 f4 g4 |
+  a8 d r8 g g4 e8. d16 |
+  d4 r8 e cs8 d cs8. d16 |
+  d2 r2 \fine
+}
+
+MvII_ViolinSimplified = \relative c'' {
+  \time 6/8
+  \key d \minor
+  <>^\markup \tiny { "Bflute" } \cueDuring "MvII_Bflute" #UP { R2.*5 |
+  r4. } e4. |
+  e4. b4. |
+  gs4. b4. |
+  d4. b4. |
+  a4. f'4. |
+  g4. ~ g8 f8 c |
+  f4. ~ f8 e8 c8 |
+  a4. a4. |
+  a4. bf4. |
+  g4. d'4. |
+  f,4. ~ f8 e4 |
+  f4 r8 c'4. ~ |
+  c8 a8 8 bf8 d4 ~ |
+  d4. a4. |
+  r4 ef'8 d4. |
+  d4. a4. |
+  fs4. a4. |
+  c4. a4. |
+  g4 r8 r8 d' d8 |
+  d4 r8 r8 d d8 |
+  d4. e,4. |
+  a4 r8 r8 c c8 |
+  c4 r8 r8 c c8 |
+  c4. d,4. |
+  g4 r8 r8 bf bf8 |
+  a4 r8 r8 cs cs8 |
+  d4. a'4. |
+  a4. e4. |
+  cs4. e4. |
+  g4. f8 e4\trill |
+  d4 r8 r4 g,8 |
+  g4. bf4. |
+  bf4. d4.:16 |
+  c4.:16 bf4.:16 |
+  a4.:16 g4.:16 |
+  f4. f'4. |
+  f4. g,4. |
+  e4. a4. |
+  d4. ~ d8 cs4 |
+  d4 r8 f4 r8 |
+  e4. ~ e4. |
+  g4. ~ g8 e8. d16 |
+  d4. r4. \fine
+}
+
+MvIII_ViolinSimplified = \relative c'' {
+  \time 4/4
+  \key d \minor
+  d4 r4 c4 r4 |
+  bf4 d2 c4 |
+  c4 bf4 a4. bf8 |
+  bf4 r4 b4 r4 |
+  c4 r4 a'2 |
+  b,4 c2 b4 |
+  bf4 a4 g4. a8 |
+  a4 bf2 a4 |
+  bf4 r4 r8 d bf4 |
+  g4 g4 g4 r8 cs8 |
+  d4. cs8 cs2 \fine
+}
+
+MvIV_ViolinSimplified = \relative c'' { \repeat segno 2 {
+    \key d \minor
+    \time 4/4
+    \partial 2 r4 d |
+    d2 e2 |
+    d2 r4 g |
+    g2 bf2 |
+    e,2 r4 d |
+    d2 e2 |
+    d2 r4 g |
+    g2 d4 cs |
+    d2\fermata \fine \bar "||" \section
+    a4 b |
+    c4. e8 d4 f |
+    e4. f8 g4 e |
+    f4. e8 d4 b |
+    gs2 a4 c |
+    b4. e8 d2 |
+    c2 f4. g8 |
+    e4. d8 c4 b |
+    a2 r4 d |
+    d2 e2 |
+    d2 r4 g |
+    g2 bf2 |
+    e,2 r4 d |
+    d2 e2 |
+    d2 r4 g |
+    g2 d4 cs |
+    d2 r2 |
+    R1*3 |
+    r2. f,4 |
+    f2 g2 |
+    f2 r4 bf |
+    bf2 f4 e |
+    f2 r4 d' |
+    d2 e2 |
+    d2 r4 g |
+    g2 bf2 |
+    e,2 r4 d |
+    d2 e2 |
+    d2 r4 g |
+    g2 d2 |
+    d2 \section \sectionLabel "maggiore" \key d \major
+    fs4 r4 |
+    fs4 r4 a,4 r4 |
+    fs4 r4 fs'4 r4 |
+    fs4 r4 a,4 r4 |
+    fs4 r4 cs'2 |
+    d2 cs2 |
+    d2 d2 |
+    d2 e2 |
+    cs2
+  }
 }
 
 MvI_Bass = \relative d {
@@ -565,15 +803,17 @@ MvIV_BassSimplified = \relative a, {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \book {
-    \paper { output-suffix = "-score" }
+    \paper { indent = 15\mm}
     \score {
         \header { piece = "Andante" }
         <<
             \new Staff { \MvI_Bflute }
-            \new Staff { \MvI_Violin }
-            \new Staff { \clefBass \keepWithTag #'original { \MvI_Bass } } % no simplifications
+            \new Staff \with { instrumentName = "Vln" }{ \MvI_Violin }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 \simplifyPairs 16 \MvI_Violin }
+            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvI_ViolinSimplified }
+            \new Staff \with { instrumentName = "Orig" } { \clefBass \keepWithTag #'original { \MvI_Bass } } % no simplifications
             % \new Staff { \clefBass \keepWithTag #'simplified { \MvI_Bass } }
-            \new Staff { \clefBass \MvI_Bass_Complified }
+            \new Staff \with { instrumentName = "Compl" } { \clefBass \MvI_Bass_Complified }
         >>
         \layout {}
     }
@@ -583,6 +823,8 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff { \MvII_Bflute }
             \new Staff { \MvII_Violin }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 ##t \simplifyPairs 16 \MvII_Violin }
+            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvII_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvII_Bass } }
             \new Staff { \clefBass \keepWithTag #'simplified { \MvII_Bass } }
         >>
@@ -594,6 +836,8 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff { \MvIII_Bflute }
             \new Staff { \MvIII_Violin }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 \simplifyPairs 16 \MvIII_Violin }
+            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIII_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvIII_Bass } }
             \new Staff { \clefBass \keepWithTag #'simplified { \MvIII_Bass } }
         >>
@@ -605,6 +849,8 @@ MvIV_BassSimplified = \relative a, {
         <<
             \new Staff { \MvIV_Bflute }
             \new Staff { \MvIV_Violin }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 4 \simplifyPairs 8 \simplifyPairs 16 \MvIV_Violin }
+            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIV_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvIV_Bass } }
             \new Staff { \clefBass { \MvIV_BassSimplified } }
         >>
@@ -612,14 +858,18 @@ MvIV_BassSimplified = \relative a, {
     }
 }
 
+MidiBflute = \with { midiPanPosition = #1 midiInstrument = "pan flute" }
+MidiViolin = \with { midiPanPosition = #-1 midiInstrument = "violin" }
+MidiBass = \with { midiPanPosition = #0 midiInstrument = "cello" }
+
 \book {
     \paper { output-suffix = "01-andante" }
     \score {
         <<
-            \new Staff \with { midiPanPosition = #1 } { \MvI_Bflute }
-            \new Staff \with { midiPanPosition = #-1 }{ \MvI_Violin }
-            % \new Staff { \keepWithTag #'simplified { \MvI_Bass } }
-            \new Staff { \MvI_Bass_Complified }
+            \new Staff \with \MidiBflute { \MvI_Bflute }
+            \new Staff \with \MidiViolin { \MvI_ViolinSimplified }
+            \new Staff \with \MidiBass { \keepWithTag #'simplified { \MvI_Bass } }
+            % \new Staff { \MvI_Bass_Complified }
         >>
         \midi {\tempo 4 = 60 }
     }
@@ -629,11 +879,11 @@ MvIV_BassSimplified = \relative a, {
     \paper { output-suffix = "02-vivace" }
     \score {
         <<
-            \new Staff \with { midiPanPosition = #1 }{ \MvII_Bflute }
-            \new Staff \with { midiPanPosition = #-1 }{ \MvII_Violin }
-            \new Staff { \keepWithTag #'original { \MvII_Bass } }
+            \new Staff \with \MidiBflute { \MvII_Bflute }
+            \new Staff \with \MidiViolin { \MvII_ViolinSimplified }
+            \new Staff \with \MidiBass { \keepWithTag #'simplified { \MvII_Bass } }
         >>
-        \midi {\tempo 4. = 100 }
+        \midi {\tempo 4. = 80 }
     }
 }
 
@@ -641,9 +891,9 @@ MvIV_BassSimplified = \relative a, {
     \paper { output-suffix = "03-adagio" }
     \score {
         <<
-            \new Staff \with { midiPanPosition = #1 }{ \MvIII_Bflute }
-            \new Staff \with { midiPanPosition = #-1 }{ \MvIII_Violin }
-            \new Staff { \keepWithTag #'original { \MvIII_Bass } }
+            \new Staff \with \MidiBflute { \MvIII_Bflute }
+            \new Staff \with \MidiViolin { \MvIII_ViolinSimplified }
+            \new Staff \with \MidiBass { \keepWithTag #'simplified { \MvIII_Bass } }
         >>
         \midi {\tempo 4 = 60 }
     }
@@ -653,11 +903,11 @@ MvIV_BassSimplified = \relative a, {
     \paper { output-suffix = "04-allegro" }
     \score {
         <<
-            \new Staff \with { midiPanPosition = #1 }{ \MvIV_Bflute }
-            \new Staff \with { midiPanPosition = #-1 }{ \MvIV_Violin }
-            \new Staff { \MvIV_Bass }
+            \new Staff \with \MidiBflute { \MvIV_Bflute }
+            \new Staff \with \MidiViolin { \MvIV_ViolinSimplified }
+            \new Staff \with \MidiBass { \MvIV_BassSimplified }
         >>
-        \midi {\tempo 4 = 120 }
+        \midi {\tempo 2 = 80 }
     }
 }
 
@@ -698,8 +948,13 @@ MvIV_BassSimplified = \relative a, {
     }
 }
 \book {
-    \paper { output-suffix = "-violin" }
-    \header { instrument = "Violin" }
+    \paper { output-suffix = "-violin"
+        left-margin = 8\mm
+        right-margin = 5\mm
+        top-margin = 2\mm
+        bottom-margin = 4\mm
+    }
+    \header { instrument = \markup \small { "Violin" } }
     \score {
         \header { piece = "Andante" }
         \new Staff { \MvI_Violin }
@@ -724,6 +979,52 @@ MvIV_BassSimplified = \relative a, {
         \header { piece = "Allegro" }
         \new Staff { \MvIV_Violin }
         \layout {}
+    }
+}
+
+\book {
+    \paper { output-suffix = "-violin-simple" }
+    \header { instrument = "Violin (simplified)" }
+    \score {
+        \header { piece = "Andante" }
+        \new Staff { \MvI_ViolinSimplified }
+        \layout {
+            \context { \Score
+                \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+            }
+        }
+    }
+
+    \score {
+        \header { piece = "Vivace" }
+        \new Staff { \MvII_ViolinSimplified }
+        \layout {
+            \context { \Score
+                \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/16)
+            }
+        }
+    }
+
+    \pageBreak
+
+    \score {
+        \header { piece = "Adagio" }
+        \new Staff { \MvIII_ViolinSimplified }
+        \layout {
+            \context { \Score
+                \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/32)
+            }
+        }
+    }
+
+    \score {
+        \header { piece = "Allegro" }
+        \new Staff { \MvIV_ViolinSimplified }
+        \layout {
+            \context { \Score
+                \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1/32)
+            }
+        }
     }
 }
 
@@ -796,3 +1097,4 @@ clefAlto = { \clef "alto_8" }
         \layout {}
     }
 }
+
