@@ -9,4 +9,7 @@
 *.omr
 *.svg
 *.ogg
+*.wav
+*.mp3
+*.flac
 *.csv
