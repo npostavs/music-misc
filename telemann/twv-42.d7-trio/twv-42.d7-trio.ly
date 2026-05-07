@@ -806,12 +806,12 @@ MvIV_BassSimplified = \relative a, {
     \paper { indent = 15\mm}
     \score {
         \header { piece = "Andante" }
-        <<
+        \new StaffGroup <<
             \new Staff { \MvI_Bflute }
             \new Staff \with { instrumentName = "Vln" }{ \MvI_Violin }
             % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 \simplifyPairs 16 \MvI_Violin }
-            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvI_ViolinSimplified }
-            \new Staff \with { instrumentName = "Orig" } { \clefBass \keepWithTag #'original { \MvI_Bass } } % no simplifications
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvI_ViolinSimplified }
+            % \new Staff \with { instrumentName = "Orig" } { \clefBass \keepWithTag #'original { \MvI_Bass } } % no simplifications
             % \new Staff { \clefBass \keepWithTag #'simplified { \MvI_Bass } }
             \new Staff \with { instrumentName = "Compl" } { \clefBass \MvI_Bass_Complified }
         >>
@@ -820,39 +820,41 @@ MvIV_BassSimplified = \relative a, {
 
     \score {
         \header { piece = "Vivace" }
-        <<
+        \new StaffGroup <<
             \new Staff { \MvII_Bflute }
             \new Staff { \MvII_Violin }
             % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 ##t \simplifyPairs 16 \MvII_Violin }
-            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvII_ViolinSimplified }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvII_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvII_Bass } }
-            \new Staff { \clefBass \keepWithTag #'simplified { \MvII_Bass } }
+            % \new Staff { \clefBass \keepWithTag #'simplified { \MvII_Bass } }
         >>
         \layout {}
     }
 
     \score {
         \header { piece = "Adagio" }
-        <<
+        \new StaffGroup <<
             \new Staff { \MvIII_Bflute }
             \new Staff { \MvIII_Violin }
             % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 8 \simplifyPairs 16 \MvIII_Violin }
-            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIII_ViolinSimplified }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIII_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvIII_Bass } }
-            \new Staff { \clefBass \keepWithTag #'simplified { \MvIII_Bass } }
+            % \new Staff { \clefBass \keepWithTag #'simplified { \MvIII_Bass } }
         >>
         \layout {}
     }
 
+    \pageBreak
     \score {
         \header { piece = "Allegro" }
-        <<
-            \new Staff { \MvIV_Bflute }
+        \new StaffGroup <<
+            \new Staff { << \new Dynamics { \time 4/4 \partial 2 r2 | s1*23 | \pageBreak }
+                            { \MvIV_Bflute } >> }
             \new Staff { \MvIV_Violin }
             % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \displayLilyMusic \simplifyPairs 4 \simplifyPairs 8 \simplifyPairs 16 \MvIV_Violin }
-            \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIV_ViolinSimplified }
+            % \new Staff \with { instrumentName = "Simple Vln" shortInstrumentName = "sVln"}{ \MvIV_ViolinSimplified }
             \new Staff { \clefBass \keepWithTag #'original { \MvIV_Bass } }
-            \new Staff { \clefBass { \MvIV_BassSimplified } }
+            % \new Staff { \clefBass { \MvIV_BassSimplified } }
         >>
         \layout {}
     }
