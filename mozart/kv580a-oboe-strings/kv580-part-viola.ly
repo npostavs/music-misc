@@ -1,5 +1,6 @@
 \version "2.24.1"
 
+% NOTE: also use { \override Score.OttavaBracket.style = #'none } at the top-level
 ottUp = {}
 ottDown = {}
 ottDDown = {}
@@ -7,14 +8,13 @@ ottZ = {}
 
 \include "kv580-notes.lyi"
 
-\header { instrument = "Violin" }
+\header { instrument = "Viola" }
 
-% The score definition
 \score {
     \header { piece = \markup{ \bold {Adagio} } }
     <<
         \new Dynamics { \Markings }
-        \new Staff { \clef "alto" \transpose c g, \keepWithTag #'violin \Violin }
+        \new Staff { \clef "alto" \transpose c g \Viola }
     >>
     \layout {}
 }

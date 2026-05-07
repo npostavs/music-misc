@@ -8,7 +8,15 @@ ottZ = { \ottava #0 }
 
 \include "kv580-notes.lyi"
 
-\header { instrument = "Violin" }
+\header { instrument = "Violin (flute)" }
+
+\paper {
+    ragged-last-bottom = ##f
+    bottom-margin = 10\mm
+    top-margin = 10\mm
+    left-margin = 14\mm
+    right-margin = 14\mm
+}
 
 % The score definition
 \score {
@@ -16,7 +24,7 @@ ottZ = { \ottava #0 }
     <<
         \new Dynamics { \Markings }
         \new Staff { \override Score.OttavaBracket.style = #'none
-                     \clef "treble" \transpose c g, \keepWithTag #'violin \Violin }
+                     \clef "treble" \transpose c g \keepWithTag #'flute \Violin }
     >>
     \layout {}
 }

@@ -110,13 +110,13 @@ Violin =  \relative c' {
         \key c \major \time 2/2 | % 1
         r4 c4 ( -- e4 -- c4 ) -- | % 2
         r4 d4 ( -- d4 -- d4 ) -- | % 3
-        r4 \ottDown f8 ( d8 ) b4 ( d4 ) \ottZ | % 4
+        r4 \tag #'violin { \ottDown } f8 ( d8 ) b4 ( d4 ) \ottZ | % 4
         r4 c4 ( e4 ) e4 | % 5
         r4 c4 ( -- c4 -- c4 ) -- | % 6
         r4 c4 ( -- c4 -- c4 ) -- | % 7
         r4 c4 ( -- c4 -- c4 ) -- | % 8
         r4 c4 ( -- f4 -- f4 ) -- | % 9
-        r4 \ottDown d2 ( g4 ) | \barNumberCheck #10
+        r4 \tag #'violin { \ottDown } d2 ( g4 ) | \barNumberCheck #10
         g4 e4 ( b4 c4 ) | % 11
         a4 ( c4 ) b8 ( a8 g8 d'8 ) | % 12
         e4 ( d4 ) b4 ( a4 ) | % 13
@@ -131,7 +131,7 @@ Violin =  \relative c' {
         r4 d2 ~ d4 | % 22
         ef4. ( f16 ef16 d4 cs4 ) | % 23
         d8 g4 b8 b8 ( a8 g8 fs8 ) | % 24
-        g8 r8 g'2 ( gs4 ) | % 25
+        g8 r8 \tag #'flute { \ottUp } g'2 ( gs4 ) | % 25
         gs8 ( a8 g8 fs8 e8 d8 e8 fs8 ) | % 26
         fs8 ( g8 ) g4. ( fs8 g8 gs8 ) | % 27
         gs8 ( a8 g8 fs8 e8 d8 e8 fs8 ) | % 28
@@ -144,12 +144,12 @@ Violin =  \relative c' {
         f2. ( -\< df4 ) -\! | % 34
         c4 ( b4 ) r2 | % 35
         R1 | % 36
-        r4 c,4 e4 ( -- d4 ) -- | % 37
+        r4 \tag #'flute { \ottZ } c,4 e4 ( -- d4 ) -- | % 37
         c4 r4 e4 r4 | % 38
         e1 ( | % 39
         f4 ) c4 ( d4 ds4 ) ( | \barNumberCheck #40
         e4 ) r4 c4 ( d4 | % 41
-        e4 ) r4 r8 \ottDown c8 ( d8 ds8 ) | % 42
+        e4 ) r4 r8 \tag #'violin { \ottDown } c8 ( d8 ds8 ) | % 42
         e4-\> b2.-\!  \bar "||"
         r4 c4 ( -- e4 -- c4 ) -- | % 44
         r4 d4 g8 ( fs8 ) f4 | % 45
