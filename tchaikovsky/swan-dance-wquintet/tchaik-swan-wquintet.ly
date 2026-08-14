@@ -240,7 +240,7 @@ PHorn = \transpose a g \relative ds' {
     }
 
 PBassoon = \transpose a g \relative fs, {
-    \clef "bass" \time 4/4 \key a \major | % 1
+    \time 4/4 \key a \major | % 1
     fs8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. | % 2
     fs,8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. | % 3
     fs,8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. fs,8 -. cs'8 -. | % 4
@@ -290,12 +290,19 @@ PBassoon = \transpose a g \relative fs, {
 
 %\addQuote "fl" { \PFlute }
 \addQuote "ob" { \POboe }
-\addQuote "bsn" { \PBassoon }
+\addQuote "bsn" { \clef bass \PBassoon }
 
 \book {
     \paper {
         output-suffix = "-score"
         page-breaking = #ly:minimal-breaking
+
+        #(set-paper-size '(cons (* 200 mm) (* 270 mm)))
+        left-margin = 4\mm
+        right-margin = 2\mm
+        top-margin = 1\mm
+        bottom-margin = 0\mm
+
     }
     \score {
         <<
@@ -304,7 +311,7 @@ PBassoon = \transpose a g \relative fs, {
             \new Staff \with { midiPanPosition = #+0.5 } { % \transposition bf \transpose bf c'
             \noCue \PClarinet }
             \new Staff \with { midiPanPosition = #-0.5 } { \clef "treble_8" \transpose c' f \noCue \PHorn }
-            \new Staff \with { midiPanPosition = #0    } { \noCue \PBassoon }
+            \new Staff \with { midiPanPosition = #0    } { \clef "treble_15" \noCue \PBassoon }
         >>
         \layout {}
         \midi {\tempo 4 = 100 }
@@ -372,7 +379,7 @@ PBassoon = \transpose a g \relative fs, {
         output-suffix = "-part-horn-viola"
     }
     \score {
-        \new Staff { \clef alto \PHorn }
+        \new Staff { \clef alto \transpose c' f \PHorn }
         \layout {
             \context {
               \Score
@@ -388,7 +395,7 @@ PBassoon = \transpose a g \relative fs, {
         output-suffix = "-part-bassoon"
     }
     \score {
-        \new Staff { \PBassoon }
+        \new Staff { \clef bass \PBassoon }
         \layout {
             \context {
               \Score
