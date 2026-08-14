@@ -1,6 +1,11 @@
 \version "2.24.4"
 \language "english"
 
+% clefBass = { \clef Bass }
+% clefTenor = { \clef Tenor }
+
+clefBass = { \clef "treble_15" }
+clefTenor = { \clef "treble_8" }
 
 \header {
     title =  "Quintett op. 56 No. 1 in B-Dur"
@@ -743,7 +748,7 @@ MvOne_PHorn = \removeWithTag #'orig \relative c'' {
 
 MvOne_PBassoon =  \relative bf, {
     \repeat volta 2 {
-        \clef "bass" \time 4/4 \key bf \major | % 1
+        \clefBass \time 4/4 \key bf \major | % 1
         bf1 ~ -\p | % 2
         bf1 ~ | % 3
         bf1 ~ | % 4
@@ -1207,7 +1212,7 @@ MvTwo_PHorn = \removeWithTag #'orig \relative c'' {
     }
 
 MvTwo_PBassoon =  \relative d' {
-    \clef "bass" \time 4/4 \key f \major \partial 2 d2 ~ -\pdolce | % 1
+    \clefBass \time 4/4 \key f \major \partial 2 d2 ~ -\pdolce | % 1
     d4 ( cs4 d4 ) bf4 | % 2
     a4. r8 d2 ~ | % 3
     d4 bf4 ( c4 ) c,4 | % 4
@@ -1218,7 +1223,7 @@ MvTwo_PBassoon =  \relative d' {
     a4. r8 d2 ~ | % 9
     d4 ( cs4 d4 ) bf4 | \barNumberCheck #10
     a4. r8 fs4 ( c'4 | % 11
-    bf4 ) g4 ( a4 ) a,4 \clef "tenor" | % 12
+    bf4 ) g4 ( a4 ) a,4 \clefTenor | % 12
     d4 r4 f'4. ( g8 ) | % 13
     \grace { f8 } e4 ( d8 c8 ) d8 ( e8 f8 g8 ) | % 14
     a4 ( f8 ) r8 d4 e16 ( f16 g16 f16 ) | % 15
@@ -1226,7 +1231,7 @@ MvTwo_PBassoon =  \relative d' {
     g4 r4 f4. ( g8 ) | % 17
     \grace { f8 } e4 ( d8 c8 ) d8 ( e8 f8 g8 ) | % 18
     a4 ( f8 ) r8 f4 ( e8. ) d16 | % 19
-    g8 c,8 ( f8 e8 ) d4 g4 \clef "bass" | \barNumberCheck #20
+    g8 c,8 ( f8 e8 ) d4 g4 \clefBass | \barNumberCheck #20
     c,4 r4 e,8 ( g8 c8 bf8 ) | % 21
     a8 ( c8 f,8 c'8 ) bf8 ( c8 g8 c8 ) | % 22
     a8 ( c8 f,8 c'8 ) e,8 ( g8 c8 bf8 ) | % 23
@@ -1535,7 +1540,7 @@ MvThree_PHorn = \removeWithTag #'orig \relative c'' {
 
 MvThree_PBassoon =  \relative bf {
     \repeat volta 2 {
-        \clef "bass" \time 3/4 \key bf \major | % 1
+        \clefBass \time 3/4 \key bf \major | % 1
         bf4 -\f bf4 bf4 | % 2
         a4 a4 a4 | % 3
         g4 g4 g4 | % 4
@@ -1585,12 +1590,12 @@ MvThree_PBassoon =  \relative bf {
         r4 f,4 f'4 | % 42
         r4 f4 f4 | % 43
         r4 f4 f4 | % 44
-        f4 r4 r4 \clef "tenor" | % 45
+        f4 r4 r4 \clefTenor | % 45
         g'4 -\decresc g4 r4 | % 46
         gf4 gf4 r4 | % 47
         f4 f4 r4 | % 48
         e4 ( ef4 ) r4 | % 49
-        d4 r4 r4 \clef "bass" | \barNumberCheck #50
+        d4 r4 r4 \clefBass | \barNumberCheck #50
         r4 c4 -\p c4 | % 51
         R2. | % 52
         r4 bf4 bf4 | % 53
@@ -2135,7 +2140,7 @@ MvFour_PHorn = \removeWithTag #'orig \relative c'' {
     }
 
 MvFour_PBassoon =  \relative bf {
-    \clef "bass" \time 6/8 \key bf \major \partial 8 r8 | % 1
+    \clefBass \time 6/8 \key bf \major \partial 8 r8 | % 1
     bf4 -\p r8 bf4 r8 | % 2
     f4. ( bf4 ) r8 | % 3
     bf4 r8 bf4 r8 | % 4
@@ -2178,12 +2183,12 @@ MvFour_PBassoon =  \relative bf {
     c16 d16 e16 f16 g16 a16 bf4. | % 41
     a4. f4. | % 42
     g4. ( a4. ) | % 43
-    g4. ( a4. ) \clef "tenor" | % 44
+    g4. ( a4. ) \clefTenor | % 44
     g4 r8 e'4. | % 45
     fs4. ( -\decresc g4. | % 46
     e4. f4. | % 47
     d4. e4. | % 48
-    f4 ) r8 r4. \clef "bass" | % 49
+    f4 ) r8 r4. \clefBass | % 49
     f,4. -\p g4. | \barNumberCheck #50
     e4. f4. | % 51
     f,4. f'4. | % 52
@@ -2303,6 +2308,12 @@ MvFour_PBassoon =  \relative bf {
     \paper {
         output-suffix = "-score"
         page-breaking = #ly:minimal-breaking
+
+        #(set-paper-size '(cons (* 200 mm) (* 270 mm)))
+        left-margin = 4\mm
+        right-margin = 2\mm
+        top-margin = 1\mm
+        bottom-margin = 1\mm
     }
     \score {
         \header { piece = "Allegretto" }
@@ -2350,7 +2361,7 @@ MvFour_PBassoon =  \relative bf {
             \new Staff \with { midiPanPosition = #+1   } { \noCue \MvFour_POboe }
             \new Staff \with { midiPanPosition = #+0.5 } { \noCue \MvFour_PClarinet }
             \new Staff \with { midiPanPosition = #-0.5 } { \clef "treble_8" \transpose c' f \noCue \noCue \MvFour_PHorn }
-            \new Staff \with { midiPanPosition = #0    } { \noCue \Mv Four_PBassoon }
+            \new Staff \with { midiPanPosition = #0    } { \noCue \MvFour_PBassoon }
         >>
         \layout {}
         % \midi {\tempo 4. = 92 }
